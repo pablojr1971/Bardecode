@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <tourGuide xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='city.xsd'>
+    <city>
+        <cityName>Belmopan</cityName>
+        <adminUnit>Cayo</adminUnit>
+        <country>Belize</country>
+        <population>11100</population>
+        <area>5</area>
+        <elevation>130</elevation>
+        <longitude>88.44</longitude>
+        <latitude>17.27</latitude>
+        <description>Belmopan is the capital of Belize</description>
+        <history>Belmopan was established following the devastation of the
+           former capital, Belize City, by Hurricane Hattie in 1965. High 
+           ground and open space influenced the choice and ground-breaking 
+           began in 1966.  By 1970 most government offices and operations had 
+           already moved to the new location.
+        </history>
+    </city>
+    <city>
+        <cityName>Kuala Lumpur</cityName>
+        <adminUnit>Selangor</adminUnit>
+        <country>Malaysia</country>
+        <population>1448600</population>
+        <area>243</area>
+        <elevation>111</elevation>
+        <longitude>101.71</longitude>
+        <latitude>3.16</latitude>
+        <description>Kuala Lumpur is the capital of Malaysia and the largest 
+            city in the nation</description>
+        <history>The city was founded in 1857 by Chinese tin miners and  
+            preceded Klang.  In 1880 the British government transferred their 
+            headquarters from Klang to Kuala Lumpur, and in 1896 it became the 
+            capital of Malaysia. 
+        </history>
+    </city>
+    <city>
+        <cityName>Winnipeg</cityName>
+        <adminUnit>St. Boniface</adminUnit>
+        <country>Canada</country>
+        <population>618512</population>
+        <area>124</area>
+        <elevation>40</elevation>
+        <longitude>97.14</longitude>
+        <latitude>49.54</latitude>
+        <description>Winnipeg has two seasons. Winter and Construction.</description>
+        <history>The city was founded by people at the forks (Fort Garry)
+         trading in pelts with the Hudson Bay Company. Ironically, 
+         The Bay was bought by America.
+        </history>
+    </city>
+  </tourGuide>
+  
+   <?xml version="1.0" encoding="UTF-8"?>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="unqualified">  
+    <xsd:element name="tourGuide">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="city" type="cityDetails" minOccurs = "1" maxOccurs="unbounded" />
+            </xsd:sequence>
+        </xsd:complexType>
+     </xsd:element>
+     <xsd:complexType name="cityDetails">
+        <xsd:sequence> 
+             <xsd:element name="cityName" type="xsd:string"/>
+             <xsd:element name="adminUnit" type="xsd:string"/>
+             <xsd:element name="country" type="xsd:string"/>
+             <xsd:element name="population" type="xsd:integer"/>
+             <xsd:element name="area" type="xsd:integer"/>
+             <xsd:element name="elevation" type="xsd:integer"/>
+             <xsd:element name="longitude" type="xsd:decimal"/>
+             <xsd:element name="latitude" type="xsd:decimal"/>
+             <xsd:element name="description" type="xsd:string"/>
+             <xsd:element name="history" type="xsd:string"/>
+         </xsd:sequence>
+     </xsd:complexType>
+  </xsd:schema>
+  <!--
+    Note: Latitude and Longitude are decimal data types.
+    The conversion is from the usual form (e.g., 50º 17' 35")
+    to a decimal by using the formula degrees+min/60+secs/3600.
+  -->

@@ -26,7 +26,7 @@ PUSHD C:\mydoc\ESSOD
 
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
 C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Docs by File\!_A4_DoasS_Folder!
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Output\!_A4_DoasS_Folder! 
+C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Docs by File\!_A4_DoasS_Folder! 
    
 
 "C:\Program Files (x86)\Softek Software\BardecodeFiler\"BardecodeFiler.exe %1

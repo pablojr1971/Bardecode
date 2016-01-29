@@ -45,7 +45,7 @@ echo.
 		
 			call :Barcode_Separation_FS "ESSOD_A4_First.ini"
 			
-			REM call :Barcode_Separation_Sections "ESSOD_A4_Second.ini"
+			call :Barcode_Separation_Sections "ESSOD_A4_Second.ini"
 			
 			REM The moving of files to the subfolder is done by Bardecode, so no need for these lines
 				REM for /F "tokens=1,2,3 delims=-" %%G in ('dir /B "!_A4_DobF_Path!\"*.pdf') do (
@@ -112,7 +112,7 @@ PUSHD C:\mydoc\ESSOD
 
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
 C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Docs by File\!_A4_DoasS_Folder!
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Output\!_A4_DoasS_Folder!   
+C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Docs by File\!_A4_DoasS_Folder!   
 
 
 

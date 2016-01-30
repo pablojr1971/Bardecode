@@ -8,7 +8,7 @@ goto :main
 setlocal
 
 ::Set working directory
-PUSHD C:\1983-ESSOD\Docs by File\1983-ES002116A
+PUSHD C:\1983-ESSOD\DocsbyFile\1983-ES002116A
 
 
 for /r %%x in (_ESM??????_00-ESSA.pdf) do (
@@ -41,6 +41,7 @@ for /r %%x in (_ESM??????_00-ESSD.pdf) do (
 )
 
 
+REM To rename the File Start Sheet
 for /r %%x in (_ESM??????_00-ESM??????.pdf) do (
     SET "_X=%%~nx"
     SET _X=!_X:ESM=!
@@ -48,15 +49,18 @@ for /r %%x in (_ESM??????_00-ESM??????.pdf) do (
 	rename "%%x" !_X!.pdf
 )
 
+
+REM to delete File end
 for /r %%x in (*EDFE.pdf) do (
-	REM to delete File end
+	
 	REM del "%%x"
 	move "%%x" NOBARCODE
 )	
+
 	
-	
+REM to delete Request end	
 for /r %%x in (*EDRE.pdf) do (
-	REM to delete Request end
+	
 	REM del "%%x"
 	move "%%x" NOBARCODE
 )
@@ -73,6 +77,16 @@ for /r %%x in (*Drawing.pdf) do (
 	call sejda-console.bat simplesplit -s all -f "%%x" -o "%%~dpx
 	del "%%x"
 )
+
+
+REM To delete the Drawing File Start
+for /r %%x in (1__??????_00-Drawing.pdf) do (
+	REM to delete File end
+	REM del "%%x"
+	move "%%x" NOBARCODE
+)	
+
+
 
 
 :: Return to your original working directory.

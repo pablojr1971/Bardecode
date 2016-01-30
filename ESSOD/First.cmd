@@ -10,14 +10,6 @@ setlocal
 ::Set working directory
 PUSHD C:\1983-ESSOD\Docs by File\1983-ES002116A
 
-rem for /r %%x in (_ESM??????_00-EDFE.pdf) do ren "%%x" _??????_00-File_End.pdf
-
-REM for /r %%x in (_ESM??????_00-EDFE.pdf) do (
-    REM SET "_X=%%~nx"
-    REM REM SET !_X:ESM=!
-	REM rename "%%x" !_X!
-	REM REM echo !_X!
-REM )
 
 for /r %%x in (_ESM??????_00-ESSA.pdf) do (
     SET "_X=%%~nx"
@@ -30,17 +22,58 @@ for /r %%x in (_ESM??????_00-ESSA.pdf) do (
 for /r %%x in (_ESM??????_00-ESSB.pdf) do (
     SET "_X=%%~nx"
     SET _X=!_X:ESM=!
-	SET _X=!_X:ESSB="Reports"!
+	SET _X=!_X:ESSB="Drawing"!
 	rename "%%x" !_X!.pdf
 )
 
+for /r %%x in (_ESM??????_00-ESSC.pdf) do (
+    SET "_X=%%~nx"
+    SET _X=!_X:ESM=!
+	SET _X=!_X:ESSC="Reports"!
+	rename "%%x" !_X!.pdf
+)
 
 for /r %%x in (_ESM??????_00-ESSD.pdf) do (
     SET "_X=%%~nx"
     SET _X=!_X:ESM=!
-	SET _X=!_X:ESSA="Reports Bound"!
+	SET _X=!_X:ESSD="Reports Bound"!
 	rename "%%x" !_X!.pdf
 )
+
+
+for /r %%x in (_ESM??????_00-ESM??????.pdf) do (
+    SET "_X=%%~nx"
+    SET _X=!_X:ESM=!
+	SET _X=!_X:_00-="_00-File Start_"!
+	rename "%%x" !_X!.pdf
+)
+
+for /r %%x in (*EDFE.pdf) do (
+	REM to delete File end
+	REM del "%%x"
+	move "%%x" NOBARCODE
+)	
+	
+	
+for /r %%x in (*EDRE.pdf) do (
+	REM to delete Request end
+	REM del "%%x"
+	move "%%x" NOBARCODE
+)
+
+
+REM To split Drawing into single pages
+for /r %%x in (*Drawing.pdf) do (
+
+	REM Please be aware that sejda-console has a bug in the output, RE the space in the path
+	REM After trying everything I have decided to use the short 8.3 version, keep a eye in case of errors %%~dpsx 
+	
+	REM Living proof that it was a bug, notice how I only use an opening double quote and it works!
+	
+	call sejda-console.bat simplesplit -s all -f "%%x" -o "%%~dpx
+	del "%%x"
+)
+
 
 :: Return to your original working directory.
 POPD

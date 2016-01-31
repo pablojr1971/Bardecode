@@ -82,13 +82,15 @@ goto :eof
 setlocal
 
 ::Set working directory
-PUSHD C:\mydoc\ESSOD
+PUSHD %~dp0
 
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
 
 
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Drawings as Scanned\!_LF_DrasS_Folder!
-   
+%~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Drawings as Scanned\!_LF_DrasS_Folder!
+%~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Drawings by File\!_LF_DrasS_Folder!
+%~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] exceptionFolder=System.String,C:\1983-ESSOD\Exceptions
+	  
 
 
 "C:\Program Files (x86)\Softek Software\BardecodeFiler\"BardecodeFiler.exe %1
@@ -96,9 +98,12 @@ C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder=System.Strin
 REM _temp_Folder is the name of the subfolder created by BardecodeFiler, we rename it accordingly. Check the correct sintaxis for rename
 rename "!_LF_DrbF_Path!\_temp_Folder" "!_LF_DrasS_Folder!"
 
+
 REM If you want to produce an empty assignment without removing it, use two equal signs.
 REM Syntax:  INIFILE inifileName [section] item==
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder==
+%~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder==
+%~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] outputFolder==
+REM %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] exceptionFolder==
 
 
 :: Return to your original working directory.

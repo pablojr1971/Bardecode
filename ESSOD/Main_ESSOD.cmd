@@ -10,8 +10,8 @@ setlocal
 set _JobNo=684
 REM Check job number in Scandata, it may be 684 for all files
 set "_Unit=C:"
-SET "_A4_Path=!_Unit!\1983-ESSOD\DocsbyFile"
-SET "_LF_Path=!_Unit!\1983-ESSOD\DrawingsbyFile"
+SET "_A4_Path=!_Unit!\1983-ESSOD\Docs by File"
+SET "_LF_Path=!_Unit!\1983-ESSOD\Drawings by File"
 set "_Output_Path=!_Unit!\1983-ESSOD\Output"
 
 
@@ -195,17 +195,20 @@ goto :eof
 setlocal
 REM Rename LF Drawings
 
-for /f "usebackq delims=" %%x in (`!_LF_Path!\!_LF_Folder!\%~1D`) do (
+pushd !_LF_Path!\!_LF_Folder!\%~1D
+
+for /f %%t in (*.pdf) do (
 	REM 4__055463_00-Drawing
-    SET "_X=%%~nx"
+    SET "_X=%%~nt"
     SET _X=!_X:ESM=D__!
 	SET _X=!_X:D_=_00-Drawing!
-	rename "%%x" !_X!.pdf
+	rename "%%t" !_X!.pdf
 )
 
-move "!_LF_Path!\!_LF_Folder!\!_Barcode!D\*.pdf" "%_A4_Path%\!_A4_Folder!\!_Barcode!"
+rem move "!_LF_Path!\!_LF_Folder!\!_Barcode!D\*.pdf" "%_A4_Path%\!_A4_Folder!\!_Barcode!"
 
 
+popd
 
 endlocal
 goto :eof

@@ -11,9 +11,10 @@ goto :main
 
 :main
 setlocal
+set "_Unit=C:"
+set "_A4_DoasS_Path=!_Unit!\1983-ESSOD\Docs as Scanned"
+set "_A4_DobF_Path=!_Unit!\1983-ESSOD\Docs by File"
 
-set "_A4_DoasS_Path=C:\1983-ESSOD\Docs as Scanned"
-set "_A4_DobF_Path=C:\1983-ESSOD\Docs by File"
 
 
 
@@ -68,11 +69,11 @@ goto :eof
 setlocal
 
 ::Set working directory
-PUSHD C:\mydoc\ESSOD
+PUSHD %~dp0
 
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_First.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Docs as Scanned\!_A4_DoasS_Folder!
-   
+%~dp0\inifile\INIFILE "ESSOD_A4_First.ini" [options] inputFolder=System.String,!_A4_DoasS_Path!\!_A4_DoasS_Folder!
+%~dp0\inifile\INIFILE "ESSOD_A4_First.ini" [options] LicenseKey=System.String,6FE55E78A988655E86014246B9761A93  
 
 "C:\Program Files (x86)\Softek Software\BardecodeFiler\"BardecodeFiler.exe %1
 REM If error?????
@@ -84,7 +85,7 @@ rename "!_A4_DobF_Path!\_temp_Folder" "!_A4_DoasS_Folder!"
 
 REM If you want to produce an empty assignment without removing it, use two equal signs.
 REM Syntax:  INIFILE inifileName [section] item==
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_First.ini" [options] inputFolder==
+%~dp0\inifile\INIFILE "ESSOD_A4_First.ini" [options] inputFolder==
 
 
 
@@ -106,13 +107,13 @@ goto :eof
 setlocal
 
 ::Set working directory
-PUSHD C:\mydoc\ESSOD
+PUSHD %~dp0
 
 
 
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Docs by File\!_A4_DoasS_Folder!
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Docs by File\!_A4_DoasS_Folder!   
+%~dp0\inifile\INIFILE "ESSOD_A4_Second.ini" [options] inputFolder=System.String,!_A4_DobF_Path!\!_A4_DoasS_Folder!
+%~dp0\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=System.String,!_A4_DobF_Path!\!_A4_DoasS_Folder!   
 
 
 
@@ -123,8 +124,8 @@ C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder=Syst
 
 REM If you want to produce an empty assignment without removing it, use two equal signs.
 REM Syntax:  INIFILE inifileName [section] item==
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] inputFolder==
-C:\mydoc\ESSOD\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder==
+%~dp0\inifile\INIFILE "ESSOD_A4_Second.ini" [options] inputFolder==
+%~dp0\inifile\INIFILE "ESSOD_A4_Second.ini" [options] outputFolder==
 
 
 

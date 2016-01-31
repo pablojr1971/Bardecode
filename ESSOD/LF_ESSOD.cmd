@@ -2,7 +2,7 @@
 
 REM Before we need to check that batch A, B, C in Drawings as Scanned don't have a match in 'Drawings by File'
 REM only the ones without a match will proceed to Barcode Recognition
-REM Database checking will go into main. before each merge. It will try to merge each file without a pagecount.
+
 
 setlocal EnableDelayedExpansion
 cls
@@ -12,9 +12,9 @@ goto :main
 :main
 setlocal
 
-
-set "_LF_DrasS_Path=C:\1983-ESSOD\Drawings as Scanned"
-set "_LF_DrbF_Path=C:\1983-ESSOD\Drawings by File"
+set "_Unit=C:"
+set "_LF_DrasS_Path=!_Unit!\1983-ESSOD\Drawings as Scanned"
+set "_LF_DrbF_Path=!_Unit!\1983-ESSOD\Drawings by File"
 
 
 :LF_Checking
@@ -54,7 +54,7 @@ echo.
 			
 				for /R %%C in (*.jpg) do (
 				pushd %%~dpC
-				jpeg2pdf.exe -p auto %%~nC.jpg -o %%~nC.pdf
+				%~dp0\jpeg2pdf\jpeg2pdf.exe -p auto %%~nC.jpg -o %%~nC.pdf
 				del %%~nC.jpg
 				popd
 				)
@@ -87,6 +87,8 @@ PUSHD %~dp0
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
 
 
+
+REM %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] outputTemplate=System.String,\%VALUES\%VALUES_%SEQ1 (need to cancel the sign % to be able to use the inifile program with this setting)
 %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder=System.String,C:\1983-ESSOD\Drawings as Scanned\!_LF_DrasS_Folder!
 %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] outputFolder=System.String,C:\1983-ESSOD\Drawings by File\!_LF_DrasS_Folder!
 %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] exceptionFolder=System.String,C:\1983-ESSOD\Exceptions
@@ -95,15 +97,14 @@ REM I need to modify the INI file with each step of the loop, so BardecodeFiler 
 
 "C:\Program Files (x86)\Softek Software\BardecodeFiler\"BardecodeFiler.exe %1
 
-REM _temp_Folder is the name of the subfolder created by BardecodeFiler, we rename it accordingly. Check the correct sintaxis for rename
-rename "!_LF_DrbF_Path!\_temp_Folder" "!_LF_DrasS_Folder!"
 
 
 REM If you want to produce an empty assignment without removing it, use two equal signs.
 REM Syntax:  INIFILE inifileName [section] item==
+
 %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] inputFolder==
 %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] outputFolder==
-REM %~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] exceptionFolder==
+%~dp0\inifile\INIFILE "ESSOD_LF.ini" [options] exceptionFolder==
 
 
 :: Return to your original working directory.
@@ -115,7 +116,7 @@ goto :eof
 
 
 
-REM :Merging
+REM :Merging used in Sutton process
 REM setlocal
 
 REM set "list="

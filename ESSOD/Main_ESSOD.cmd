@@ -72,7 +72,7 @@ echo Number of LF ESM000000 subfolders %_countLF%
 	echo A4 Folder and LF Folder have the same numbers of ESM000000 subfolders, ready for next step
 	echo.
 	
-	
+	call Rename_A4_ESSOD "%_A4_Path%\!_A4_Folder!"
 	call :put_together_A4_LF_Folders !_A4_Folder!
 	
 	) ELSE (
@@ -119,7 +119,7 @@ for /D %%J in ("%_A4_Path%\%1\ESM*") do (
 		
 		echo.
 		echo Pagecount and DrawingCount are Null
-		echo Proceeding with merge...
+		echo Proceeding with barcode !_Barcode!...
 		
 		
 		call :ESSOD_Merge !_Barcode!

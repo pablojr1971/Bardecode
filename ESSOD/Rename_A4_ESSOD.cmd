@@ -8,7 +8,9 @@ goto :main
 setlocal
 
 ::Set working directory
-PUSHD %1C:\1983-ESSOD\Docs by File\1983-ES002116A
+REM (line at caller Main_ESSOD.cmd) call Rename_A4_ESSOD "%_A4_Path%\!_A4_Folder!" "%_LF_Path%\!_LF_Folder!"
+PUSHD %1
+
 
 
 for /r %%x in (_ESM??????_00-ESSA.pdf) do (
@@ -24,6 +26,8 @@ for /r %%x in (_ESM??????_00-ESSB.pdf) do (
     SET _X=!_X:ESM=!
 	SET _X=!_X:ESSB="Drawing"!
 	rename "%%x" !_X!.pdf
+	REM We don't put the letter D in front of the drawings because this will be done at a later stage with the LF drawings
+	REM Also because the software doing the split will add a 1__ and 2__ at the front
 )
 
 for /r %%x in (_ESM??????_00-ESSC.pdf) do (
@@ -86,6 +90,19 @@ for /r %%x in (1__??????_00-Drawing.pdf) do (
 	move "%%x" NOBARCODE
 )	
 
+
+
+
+for /r %%x in (*D.pdf) do (
+	REM to move the control LF drawing sheet
+	REM _ESM055460_00-ESM055460D.pdf
+	
+	set "_new_folder=%%~nx"
+	set _new_folder=!_new_folder:~1,9!
+	
+	md %2\!_new_folder!D
+	move "%%x" %2\!_new_folder!D
+)
 
 
 

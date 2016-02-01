@@ -39,6 +39,17 @@ pushd !_LF_Path_Folder! 2>NUL && popd
 	echo Box to be processed is !_A4_Folder!
 	echo.
 	
+	
+	
+	
+	REM Renaming A4 Documents
+	call Rename_A4_ESSOD "%_A4_Path%\!_A4_Folder!" "%_LF_Path%\!_LF_Folder!"
+	REM ____________________________________________________________________
+	
+	
+	
+	
+	
 	call :inner
 	
 	) ELSE (
@@ -55,7 +66,7 @@ goto :eof
 
 
 
-REM We use this section as we need to have a new system by which, we scan with the A4 Fujitsu the labels for the files that do not have Large Format drawings. This are then moved to the Drawing by Files, so we can compare the exact number of ESM000000 subfolders from both folders
+REM We scan with the A4 Fujitsu the labels for the files that do not have Large Format drawings. This are then moved to the Drawing by Files, so we can compare the exact number of ESM000000 subfolders from both folders
 
 :inner
 REM To count the ESM000000 subfolders from both ES00???? batch folders - A4 and LF
@@ -72,9 +83,9 @@ echo Number of LF ESM000000 subfolders %_countLF%
 	echo A4 Folder and LF Folder have the same numbers of ESM000000 subfolders, ready for next step
 	echo.
 	
-	call Rename_A4_ESSOD "%_A4_Path%\!_A4_Folder!"
-	call :put_together_A4_LF_Folders !_A4_Folder!
 	
+	REM call :put_together_A4_LF_Folders !_A4_Folder!
+	pause
 	) ELSE (
 		echo Different number of ESM000000 subfolders. Please check  
 		echo.
@@ -99,7 +110,7 @@ for /D %%J in ("%_A4_Path%\%1\ESM*") do (
 	echo !_Barcode!
 	pause
 
-
+REM ***************** Here you are checking a folder, not a file. You need to change it to the funny format below
     if exist "!_LF_Path!\!_LF_Folder!\!_Barcode!D" (
 	echo.
 	echo.
@@ -107,6 +118,36 @@ for /D %%J in ("%_A4_Path%\%1\ESM*") do (
 	echo.
 
 	pause
+		
+		
+		
+		
+		
+		
+		
+		REM To check if the drawing folder exists
+	pushd !_LF_Path_Folder! 2>NUL && popd
+	if not errorlevel 1 (
+	echo Box to be processed is !_A4_Folder!
+	call :inner
+	) ELSE (
+	echo Drawings missing for box !_LF_Folder!
+	)
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		REM To check that PageCount and DrawingCount are both Null. Using store procedure "ReturnPageCountNull"
@@ -191,26 +232,5 @@ REM endlocal & set numberOfPages=%%C
 goto :eof
 
 
-:ESSOD_Merge
-setlocal
-REM Rename LF Drawings
-
-pushd !_LF_Path!\!_LF_Folder!\%~1D
-
-for /f %%t in (*.pdf) do (
-	REM 4__055463_00-Drawing
-    SET "_X=%%~nt"
-    SET _X=!_X:ESM=D__!
-	SET _X=!_X:D_=_00-Drawing!
-	rename "%%t" !_X!.pdf
-)
-
-rem move "!_LF_Path!\!_LF_Folder!\!_Barcode!D\*.pdf" "%_A4_Path%\!_A4_Folder!\!_Barcode!"
-
-
-popd
-
-endlocal
-goto :eof
 
 

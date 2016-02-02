@@ -14,7 +14,7 @@ set "_LF_DrbF_Path=C:\1983-ESSOD\Drawings by File"
 pushd C:\1983-ESSOD\Docs by File\1983-ES002116A
 
 
-for /r %%x in (*D.pdf.) do (
+for /r %%x in (*D.pdf) do (
 	REM to move the control LF drawing sheet
 	REM _ESM055460_00-ESM055460D.pdf
 	

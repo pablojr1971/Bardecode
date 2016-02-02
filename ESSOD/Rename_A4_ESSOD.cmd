@@ -93,6 +93,24 @@ for /r %%x in (1__??????_00-Drawing.pdf) do (
 
 
 
+REM To rename the single A4 drawings
+	REM from 	2__055460_00-Drawing.dpf
+	REM to		D_2__055463_00-Drawing.pdf
+	REM Watch out with the for /r for the renaming as it is doing weird things. i.e. D_D_2....pdf
+for /r %%x in (*_00-Drawing.pdf) do (
+	
+    SET "_X=%%~nx"
+	set _first_letter=!_X:~0,1!
+	if !_first_letter! NEQ D (
+	rename "%%x" D_!_X!.pdf
+	)
+
+)
+
+
+
+
+
 for /r %%x in (*D.pdf) do (
 	REM to move the control LF drawing sheet
 	REM _ESM055460_00-ESM055460D.pdf

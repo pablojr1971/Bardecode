@@ -84,7 +84,12 @@ echo Number of LF ESM000000 subfolders %_countLF%
 	echo.
 	
 	
-	REM call :put_together_A4_LF_Folders !_A4_Folder!
+	REM Renaming LF Documents
+	call Rename_LF_ESSOD "%_LF_Path%\!_LF_Folder!"
+	REM ____________________________________________________________________
+	
+	
+	
 	pause
 	) ELSE (
 		echo Different number of ESM000000 subfolders. Please check  

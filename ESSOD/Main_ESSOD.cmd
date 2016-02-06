@@ -38,6 +38,7 @@ pushd !_LF_Path_Folder! 2>NUL && popd
 @if not errorlevel 1 (
 	echo Box to be processed is !_A4_Folder!
 	echo.
+	pause
 	
 	
 	
@@ -52,7 +53,7 @@ pushd !_LF_Path_Folder! 2>NUL && popd
 	
 	call :inner
 	
-	) ELSE (
+	) else (
 	echo Drawings missing for box !_LF_Folder!
 	echo.
 	echo.
@@ -81,12 +82,17 @@ echo Number of LF ESM000000 subfolders %_countLF%
 
 	if %_countA4% == %_countLF% (
 	echo A4 Folder and LF Folder have the same numbers of ESM000000 subfolders, ready for next step
-	echo.
+	echo. call Rename_LF_ESSOD
+	pause
 	
 	
-	REM Renaming LF Documents
-	call Rename_LF_ESSOD "%_LF_Path%\!_LF_Folder!"
-	REM ____________________________________________________________________
+	REM Renaming LF Documents - It also moves back the Drawings to the A4 Folder to keep them together
+	call Rename_LF_ESSOD "%_LF_Path%\!_LF_Folder!" "%_A4_Path%\!_A4_Folder!"
+	
+
+	REM Processing at Barcode level ESM*
+	call :Main_Processing
+
 	
 	
 	
@@ -104,113 +110,46 @@ goto :eof
 
 
 
-:put_together_A4_LF_Folders
+:Main_Processing
 setlocal
 
 
-for /D %%J in ("%_A4_Path%\%1\ESM*") do (
+for /D %%J in ("%_A4_Path%\!_A4_Folder!\ESM*") do (
 	
-	set "_var="
-	set "_Barcode=%%~nJ"
-	echo !_Barcode!
-	pause
+set "_var="
+set "_Barcode=%%~nJ"
+echo !_Barcode!
+pause
 
-REM ***************** Here you are checking a folder, not a file. You need to change it to the funny format below
-    if exist "!_LF_Path!\!_LF_Folder!\!_Barcode!D" (
-	echo.
-	echo.
-	echo Processing file !_Barcode! 
-	echo.
-
-	pause
-		
-		
-		
-		
-		
-		
-		
-		REM To check if the drawing folder exists
-	pushd !_LF_Path_Folder! 2>NUL && popd
-	if not errorlevel 1 (
-	echo Box to be processed is !_A4_Folder!
-	call :inner
-	) ELSE (
-	echo Drawings missing for box !_LF_Folder!
-	)
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		REM To check that PageCount and DrawingCount are both Null. Using store procedure "ReturnPageCountNull"
-				
-		for /F "usebackq" %%K in (`sqlcmd -S Jerry -d Other -E -h-1 -Q "SET NOCOUNT ON; EXEC ReturnPageCountNull !_JobNo!, '!_Barcode!';"`) do set _var=%%K 
-		echo !_var!
-		
+	REM To check that PageCount and DrawingCount are both Null. Using store procedure "ReturnPageCountNull"
 			
-		if defined _var  (
+	for /F "usebackq" %%K in (`sqlcmd -S Jerry -d Other -E -h-1 -Q "SET NOCOUNT ON; EXEC ReturnPageCountNull !_JobNo!, '!_Barcode!';"`) do set _var=%%K 
+	echo !_var!
+	
 		
-		echo.
-		echo Pagecount and DrawingCount are Null
-		echo Proceeding with barcode !_Barcode!...
-		
-		
-		call :ESSOD_Merge !_Barcode!
-		
-		REM Below is the simple processing for Sutton. Only merge PDFs and then update the database.
-		REM call sejda-console.bat merge -f "!_A4_Path!"\!_A4_Folder!\!_A4_File! "!_LF_Path!"\!_LF_Folder!\!_LF_File! -o !_Output_Path!\!_Output_File!
-		
-		REM call :Update_Data "!_A4_Path!\!_A4_Folder!\%%B"
-		REM set _A4_No_of_Pages=!numberOfPages!
-		REM echo A4 Number of Pages: !_A4_No_of_Pages!
-		
-		
-		REM call :Update_Data "!_LF_Path!\!_LF_Folder!\!_LF_File!"
-		REM set _LF_No_of_Pages=!numberOfPages!
-		REM echo LF Number of Pages: !_LF_No_of_Pages!
-		
-		
-		
-		
-		
-		
-		REM SET SQL="UPDATE Pablo_Scandata SET PageCount=!_A4_No_of_Pages!, DrawingCount=!_LF_No_of_Pages! WHERE Barcode ='!_A4_File:~0,-4!'"
-		REM sqlcmd -d TimerSQL -Q !SQL!
-		
-		REM set "numberOfPages="
-		
-		) ELSE (
-		
-		echo Pagecount or DrawingCount are NOT Null		
-		echo The file !_Barcode! has already been processed.
-		echo.
-		echo.
-		echo.
-		
-		)
-		
-	) ELSE ( 
-		
-	echo !_Barcode! does not have a match in the Drawings Folder
-	echo Check for possible error in prepping / barcode not picked up by the system	
+	if defined _var  (
+	
+	echo.
+	echo Pagecount and DrawingCount are Null
+	echo Proceeding with barcode !_Barcode!...
+
+	echo. 
+	
+	call ESSOD_Merge !_A4_Folder! !_Barcode!
+	
+	call ESSOD_PageCount !_A4_Folder! !_Barcode!
+	
+	) ELSE (
+	
+	echo Pagecount or DrawingCount are NOT Null
+	echo The file !_Barcode! has already been processed.
 	echo.
 	echo.
 	echo.
 	
 	)
+	
+
 
 
 )
@@ -220,21 +159,6 @@ goto :eof
 
 
 
-:Update_Data
-REM setlocal
-
-
-
-REM pdftk %1 dumpdata | findstr NumberOfPages 
-
-for /f "tokens=2" %%C in ('pdftk.exe %1 dump_data ^| findstr NumberOfPages') do set numberOfPages=%%C
-
-REM echo !numberOfPages!
-
-
-
-REM endlocal & set numberOfPages=%%C
-goto :eof
 
 
 

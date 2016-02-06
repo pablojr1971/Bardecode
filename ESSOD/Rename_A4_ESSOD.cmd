@@ -45,12 +45,13 @@ for /r %%x in (_ESM??????_00-ESSD.pdf) do (
 )
 
 
-REM To rename the File Start Sheet
+REM To rename the File Start Sheet - now to delete
 for /r %%x in (_ESM??????_00-ESM??????.pdf) do (
     SET "_X=%%~nx"
     SET _X=!_X:ESM=!
 	SET _X=!_X:_00-="_00-File Start_"!
-	rename "%%x" A!_X!.pdf
+	REM rename "%%x" A!_X!.pdf
+	del "%%x"
 )
 
 

@@ -1,0 +1,527 @@
+/*
+//  Arabic
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "المشكلة تقرير";
+"Comments" = "تعليقات";
+"Please describe any steps needed to trigger the problem:" = "يرجى وصف أي خطوات لازمة لتحريك المشكلة :";
+"Problem Details" = "تفاصيل المشكلة";
+"System Configuration" = "تكوين النظام";
+"Report" = "تقرير";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "معلوماتك الشخصية ليست مع ارسال هذا التقرير. لن تكونوا في الاتصال الاستجابة لهذا التقرير. لدعم المنتجات ، يرجى زيارة :";
+
+
+/* In registration */
+"Registration" = "تسجيل";
+"Registration Information" = "معلومات التسجيل";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "الرجاء إدخال معلوماتك الشخصية من أجل تسجيل وتفعيل حسابك ExactCODE المنتجات.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "يبقي لي حتى الآن مع الأخبار و تحديثات البرامج، و على أحدث المعلومات حول المنتجات والخدمات.";
+"Activation key" = "تفعيل الرئيسية";
+"First Name" = "الاسم الأول";
+"Last Name" = "اسم العائلة";
+"Company or School" = "شركة أو مدرسة";
+"Address" = "العنوان";
+"City" = "مدينة";
+"State or Province, or County" = "الدولة أو المقاطعة ، أو مقاطعة";
+"Country" = "بلد";
+"Postal Code" = "الرمز البريدي";
+"Email Address" = "عنوان البريد الإلكتروني";
+"Area Code" = "رمز المنطقة";
+"Phone Number" = "رقم الهاتف";
+
+"How did you learn about this product?" = "كيف علمت عن هذا المنتج ؟";
+"Select if you like" = "حدد إذا أردت";
+"Advertisement" = "الإعلان";
+"Magazine" = "مجلة";
+"Newspaper" = "صحيفة";
+"Internet Forum" = "منتديات الانترنت";
+"Internet Website" = "موقع الانترنت";
+"Internet Search" = "البحث على الإنترنت";
+"Recommendation" = "توصية";
+
+"Where will you primarily use this computer?" = "حيث سيكون لكم في المقام الأول استخدام هذا الكمبيوتر؟";
+"Select" = "مختارة";
+"Home" = "المنزل";
+"Home Business" = "الصفحة الرئيسية الأعمال";
+"Small Business (1-99 employees)" = "الأعمال التجارية الصغيرة (1-99 الموظفين)";
+"Medium Business (100-499 employees)" = "الأعمال المتوسطة (100-499 موظف)";
+"Large Business (500+ employees)" = "الأعمال التجارية الكبيرة (500 + الموظفين)";
+"Elementary/Middle school" = "الابتدائية / الشرق المدرسة";
+"High School" = "مدرسة ثانوية";
+"College" = "كلية";
+
+"What best describes what you do?" = "أفضل ما يصف ما تفعله؟";
+"Design/Print" = "تصميم / طبعها";
+"Video/Film" = "فيديو / سينما";
+"Music" = "موسيقى";
+"Photography" = "التصوير";
+"Education Faculty/Administration" = "كلية التربية / الإدارة";
+"Engineering/Scientist/Researcher" = "الهندسة / عالم / باحث";
+"Architecture" = "الهندسة المعمارية";
+"Finance" = "المالية";
+"Law" = "القانون";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "التسويق / المبيعات";
+"Medical" = "طبية";
+"MIS/IT" = "نظم المعلومات الإدارية / تكنولوجيا المعلومات";
+"Student" = "طالب";
+"Webdesigner/Webmaster" = "Webdesigner / مشرف الموقع";
+"Retired" = "متقاعد";
+"Other" = "أخرى";
+"Register" = "سجل";
+"Export" = "تصدير";
+"Import" = "استيراد";
+
+
+/* In try-out control */
+"Try-out version" = "محاولة شاملة النسخة";
+"Try-out demo version:" = "محاولة شاملة عرض النسخة :";
+"This software expired." = "انتهت هذه البرمجيات.";
+"This is a demo version of the software which will expire in %d days." = "هذا هو برنامج عرض نسخة من البرنامج التي تنتهي في أيام ٪ د.";
+"Continue" = "تواصل";
+"Test" = "اختبار";
+"Quit" = "استقال";
+"Activate" = "نشط";
+"Purchase" = "شراء";
+
+/*In choose folder*/
+"Choose destination folder" = "اختر مجلد الوجهة";
+"Select folder where scanned images will be stored in" = "اختر مجلد الصور الممسوحة ضوئيا حيث سيتم تخزينها في";
+
+/* During software update */
+"Software Update" = "تحديث البرامج";
+"Checking for new software ..." = "لفحص البرمجيات الجديدة...";
+"Changes" = "التغييرات";
+"Cancel" = "إلغاء";
+"Install Update" = "تثبيت تحديث";
+"error parsing XML seed" = "خطأ في تحليل XML البذور";
+"There was a problem obtaining software update information (%@). Please try again later." = "هناك مشكلة في الحصول على البرمجيات تحديث المعلومات (٪@). الرجاء المحاولة مرة أخرى في وقت لاحق.";
+"No update information" = "أي تحديث المعلومات";
+"You are up to date." = "انت حتى الآن.";
+"There is no newer software update available." = "لا يوجد أي تحديث أحدث البرمجيات المتاحة.";
+"A new software version is available" = "نسخة جديدة من البرامجيات المتاحة";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "٪ ٪ @ @ متاحة (لديك ٪ @). استكمالا قد يستغرق بعض الوقت لتحميل ويتطلب تقديم طلب استئناف. اذا لم تكن على استعداد لتركيب الآن ، يمكنك التحقق من وجود تحديثات في قائمة التطبيقات في وقت لاحق.";
+"Downloading %@ %@." = "تحميل ٪ ٪ @ @.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk من %.0lfk (%.0lfk/s) – %s المتبقية ثانية";
+"Did you know?" = "هل تعلم ؟";
+"Learn more" = "معرفة المزيد";
+"Upgrade" = "الترقية";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "إصدار ExactScan مؤهلا للترقية إلى إصدارات أخرى من ExactScan مع المزيد من الميزات و OCR بسعر مخفض .";
+
+/* Scan progress */
+"Searching for supported scanners" = "البحث عن دعم والماسحات الضوئية";
+"Please wait." = "الرجاء الانتظار.";
+"Scanner Configuration" = "ماسحة التشكيل";
+"Detect" = "كشف";
+"Abort" = "اجهض";
+"OK" = "حسنا";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "لا ماسحة وقد تم تهيئتها. هذا التطبيق يحتاج إلى الحصول على هذا الطراز قبل التكوين أول استخدام لمحة والتكوين.";
+"Scanner lamp warming up" = "ماسحة مصباح الاحماء";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "بعد تمكين ضوء مصدر من جهاز الكشف عن المعادن ، مصباح يحتاج لبعض الوقت حتى تصل إلى الحارة ينبعث المقصود الإنارة.";
+"Out of documents" = "من وثائق";
+"There is no paper in the document feeder." = "لا يوجد أي ورقة في وثيقة من وثائق المغذية.";
+"Cover open" = "تغطية مفتوحة";
+"Please close the scanner cover and try again." = "الرجاء إغلاق غطاء جهاز الكشف عن المعادن وحاول مرة أخرى.";
+"Paper jam" = "ورقة مربى";
+"Please clear the paper jam in the document feeder and try again." = "يرجى اضحة الوثيقة المغذية ورقة مربى وحاول مرة أخرى.";
+"Multi feed" = "متعدد تغذية";
+"Please clear the muti feed in the document feeder and try again." = "الرجاء مسح ورقة تغذية تغذية وثيقة متعددة وحاول مرة أخرى.";
+"Device busy" = "مشغول الأجهزة";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "ويستخدم الجهاز من قبل تطبيق آخر ، عن طريق شبكة أو طابعة متصلة. ";
+"Unexpected scanner error" = "ماسحة خطأ غير متوقع";
+"An unexpected error condition occured." = "حالة حدوث خطأ غير متوقع حدث.";
+"Scanner not ready" = "ماسحة ليست مستعدة";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "السائق لم يعترف جهاز متوافق. الرجاء التأكد من جهاز الكشف عن المعادن ويرتبط لم تستخدم من قبل تطبيق آخر.";
+"Scanning" = "مسح";
+"Frontside" = "Frontside";
+"Backside" = "مساعدات";
+"frontside" = "frontside";
+"backside" = "المؤخرة";
+"Initializing scanner" = "تهيئة ماسحة";
+"Clearing document feeder" = "المقاصة وثيقة المغذية";
+"Image data for page %@ is being transferred." = "صورة لصفحة بيانات ٪ @ يجري نقل.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "هل تريد إضافة صفحة أخرى إلى وثيقة من وثائق أو وقف عملية المسح الضوئي؟ قبل اختيار \"@\" يجب عليك أن تضع في الصفحة التالية على جهاز الكشف عن المعادن.";
+"Scanning more pages" = "مسح صفحات أكثر";
+"Stop" = "توقف";
+"Add" = "إضافة";
+
+"Calibrate Scanner..." = "معايرة الماسح الضوئي...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "الماسح الضوئي يحتاج إلى معايرة. يرجى إدراج صفحة المعايرة التي يتم شحنها مع الماسحة الضوئية. إذا كنت غير مستعد لمعايرة الآن ، يمكنك تشغيله من القائمة التطبيق في وقت لاحق.";
+"Calibrating" = "معايرة";
+"Calibrating scanner" = "معايرة الماسح";
+
+"Importing files" = "استيراد ملفات";
+"Importing data from image files." = "استيراد البيانات من ملفات الصور.";
+"Processing file %@, page %d/%d" = "تجهيز ملف %@ ، صفحة د %d د %d";
+"Processing file %@, image %d/%d" = "تجهيز ملف %@ ، صورة د %d د %d";
+"Page %@: %@ ..." = "الصفحة ٪ @ : @ ٪...";
+"A file named \"%@\" already exists." = "ملف اسمه \"%@\" موجود بالفعل.";
+
+/* Preferences: Tab menu */
+"Filing" = "التسجيل";
+"Basic" = "الأساسية";
+"Basic Settings" = "الإعدادات الأساسية";
+"Advanced" = "متقدم";
+"Advanced Settings" = "المتقدمة الإعدادات";
+"OCR" = "OCR";
+"Barcode" = "الباركود";
+/* Additional OCR preferences */
+"Processing" = "تجهيز";
+"Finalization" = "وضع اللمسات الأخيرة";
+
+"Mode:" = "الوضع :";
+"Generic" = "الجنيسة";
+"Dot Matrix" = "مصفوفة نقطة";
+"Fax" = "الفاكس";
+
+"Scan" = "المسح";
+"Preview" = "عرض مسبق";
+
+"Profiles" = "لمحات";
+"Duplicate Profile" = "تكرار الملف الشخصي";
+"Reset Profile" = "إعادة لمحة";
+"Reset All Profiles" = "إعادة تعيين جميع ملامح";
+
+/* Preferences: Filing */
+"Profile name:" = "نبذة عن اسم :";
+"Folder name:" = "اسم المجلد :";
+"File name:" = "اسم الملف :";
+"Example:" = "على سبيل المثال :";
+"On existing files:" = "القائمة على ملفات :";
+"Format:" = "الصيغة :";
+"Quality:" = "الجودة :";
+"Compression quality:" = "ضغط جودة :";
+"low" = "منخفض";
+"optimal" = "الأمثل";
+"Choose" = "يختار";
+"Color detection:" = "اللون كشفها :";
+"Sensitive" = "عرضة";
+"Optimal" = "الأمثل";
+"Lossy" = "الضياع";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "مضغوط للغاية PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "نص عادي (حسابات الأمانة الأحادية - 8)";
+
+"Unique date tag per file" = "بطاقة فريدة من نوعها حتى الآن لكل ملف";
+"Edit each filename" = "تحرير كل اسم الملف";
+"Scan to workspace" = "مسح ل مساحة العمل";
+"Add -OCR extension" = "إضافة - OCR تمديد";
+"Move original file to Trash" = "نقل الملف الأصلي إلى المهملات";
+"Merge files in one batch" = "دمج الملفات دفعة واحدة";
+"Open with:" = "مفتوحة مع :";
+"no application specified" = "لم يقدم أي طلب محدد";
+"Split on page" = "سبليت في صفحة";
+"Show configuration before scan" = "إظهار التشكيل قبل المسح الضوئي";
+"Show progress indicator" = "اظهار تقدم مؤشر";
+"Scan this profile on document placement" = "المسح الضوئي على وثيقة من وثائق هذا الملف والتنسيب";
+"Ask for scanning more pages" = "اسأل لمسح صفحات أكثر";
+"Timer:" = "الموقت :";
+"Use scanner's own user interface" = "استخدام أجهزة المسح الخاصة واجهة المستخدم";
+
+"Ask user" = "اسأل المستخدم";
+"Increase sequence number" = "زيادة عدد تسلسل";
+"Silently overwrite" = "صمت فوق";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "المصدر :";
+"Colors:" = "الألوان :";
+"Color Dropout:" = "لون التسرب :";
+"Red" = "أحمر";
+"Green" = "أخضر";
+"Blue" = "أزرق";
+"None" = "لا شيء";
+"Resolution:" = "القرار :";
+"Brightness:" = "السطوع :";
+"Contrast:" = "على النقيض من :";
+"Gamma:" = "أشعة غاما :";
+"Size:" = "الحجم :";
+"Position:" = "المركز :";
+"Size: %@ MB" = "الحجم : %@ MB";
+"X:" = "العاشر :";
+"Y:" = "صاد :";
+"W:" = "دبليو :";
+"H:" = "حاء :";
+"Rotate:" = "تناوب :";
+"Rotate every second page by 180°" = "تناوب كل صفحة من قبل 180°";
+"Auto crop and de-skew" = "السيارات والمحاصيل دي تحرف";
+"Allow extra long pages" = "يسمح للصفحات طويلة جدا";
+"Auto rotate by page content" = "السيارات التي تناوب محتوى الصفحة";
+"-90° (CW)" = "-90° (الأسلحة الكيميائية)";
+"0°" = "0°";
+"90° (CCW)" = "90° التقليدية";
+"180°" = "180°";
+"Automatic" = "أوتوماتيكي";
+"Ultrasonic multi-feed detection" = "بالموجات فوق الصوتية متعددة تغذية الكشف";
+"Mechanical de-skew assist" = "الميكانيكية التوريد دي تحرف";
+"Primary" = "أساسي";
+"Secondary" = "ثانوي";
+"Use individual color settings for the back side" = "استخدام إعدادات الألوان الفردية عن الجانب الخلفي";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "تظهر تفضيلات عند بدء التشغيل";
+"De-skew based on page content" = "دي الانحراف يعتمد على محتوى الصفحة";
+"De-screen (reduce print moiré patterns)" = "دي الشاشة (الحد من أنماط الطباعة تموج في النسيج)";
+"De-speckle (image noise and defects)" = "دي رقطة (الضوضاء صورة والعيوب )";
+"Sharpen" = "شحذ";
+"Automatically optimize to b/w" = "تلقائيا الأمثل لب / ث";
+"Smooth uniform colors" = "الألوان السلس موحدة";
+"Invert image" = "صورة المقلوب";
+"Blank Page Detection:" = "صفحة بيضاء الكشف :";
+"Off" = "بعيدا";
+"Delete Blank Page" = "حذف صفحة بيضاء";
+"Placeholder" = "متغير";
+"Split Document" = "تقسيم الوثيقة";
+"Sensitivity:" = "حساسية :";
+"high" = "عال";
+"low" = "منخفض";
+"Remove page border and shadow" = "إزالة الحدود والظل الصفحة";
+"Merge front and back image" = "الأمامي و الخلفي صورة دمج";
+"Black point:" = "النقطة السوداء :";
+"White point:" = "نقطة بيضاء :";
+"Hue:" = "هيو :";
+"Saturation:" = "التشبع :";
+"Lightness:" = "خفة :";
+"Print with:" = "المطبوعة مع :";
+"no printer selected" = "لا الطابعة مختارة";
+"Keep printed file" = "إبقاء ملف المطبوعة";
+
+/* Preview */
+"New" = "جديد";
+"Front" = "الجبهة";
+"Back" = "خلف";
+
+/* Main Menu*/
+"About" = "حول";
+"About %@" = "حوالي ٪ @";
+"Check for Updates..." = "التحقق من وجود تحديثات...";
+"Activation..." = "تفعيل...";
+"Preferences..." = "تفضيلات...";
+"Preferences" = "تفضيلات";
+"%@ - Preferences" = "تفضيلات - %@";
+"Get Info" = "الحصول على معلومات";
+"Get Scanner Info" = "الحصول على معلومات الماسح";
+"Select Scanner..." = "حدد الماسح الضوئي ...";
+"%@ Info" = "٪ @ معلومات";
+"Services" = "الخدمات";
+"Hide %@" = "إخفاء ٪ @";
+"Hide Others" = "إخفاء الأخرى";
+"Show All" = "إعرض جميع";
+"Quit %@" = "استقال ٪ @";
+"New Scan" = "المسح الضوئي الجديدة";
+
+"Open" = "فتح";
+"Open File..." = "فتح ملف...";
+
+"File" = "ملف";
+"Edit" = "تحرير";
+
+"Save" = "حفظ";
+"Save As..." = "حفظ باسم...";
+
+"Undo" = "الإلغاء";
+"Redo" = "أعاد";
+"Cut" = "قص";
+"Copy" = "نسخة";
+"Paste" = "لصق";
+"Delete" = "حذف";
+"Delete all" = "حذف جميع";
+"Select All" = "اختيار الكل";
+
+"Window" = "نافذة";
+"Close" = "إغلاق";
+"Minimize" = "الحد الأدنى";
+
+"Help" = "مساعدة";
+"%@ Help" = "@ ٪ مساعدة";
+
+
+/* OCR */
+"Create searchable documents" = "تهيئة الوثائق للبحث";
+"Create searchable barcodes" = "بحث إنشاء barcodes";
+"Split document on barcode" = "تقسيم المستند على الباركود";
+"Discard split page" = "تجاهل صفحة الانقسام";
+"One or more of the configured barcodes could not be found." = "يمكن أن أحد الخام أكثر من الباركود تكوين لا يمكن العثور عليه.";
+"Dictionary-based spelling correction" = "القاموس القائم على تصحيح الإملائي";
+"The resolution is used to convert vector files." = "القرار يستخدم لتحويل ملفات النواقل.";
+
+"Language:" = "اللغة :";
+"OCR Language:" = "OCR اللغة :";
+"Bulgarian" = "البلغارية";
+"Croatian" = "الكرواتية";
+"Czech" = "التشيكية";
+"Danish" = "الدانماركية";
+"Dutch" = "الهولندية";
+"English" = "إنجليزي";
+"Estonian" = "الأستونية";
+"Finnish" = "فنلندية";
+"French" = "الفرنسية";
+"German" = "الألمانية";
+"Hungarian" = "الهنغارية";
+"Italian" = "الايطالية";
+"Japanese" = "اليابانية";
+"Korean" = "الكورية";
+"Latvian" = "لاتفيا";
+"Lithuanian" = "اللتوانية";
+"Norwegian" = "النرويجية";
+"Polish" = "البولندية";
+"Portuguese" = "البرتغالية";
+"Rumanian" = "رومانيا";
+"Russian" = "الروسية";
+"Serbian" = "صربي";
+"Simplified Chinese" = "الصينية المبسطة";
+"Slovenian" = "السلوفينية";
+"Spanish" = "الأسبانية";
+"Swedish" = "السويدية";
+"Traditional Chinese" = "الصينية التقليدية";
+"Turkish" = "التركية";
+"Ukrainian" = "الأوكرانية";
+
+"Type:" = "النوع :";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "بصمة النص علامة";
+"Font:" = "الخط :";
+"Rotation:" = "الدوران :";
+"Color:" = "اللون :";
+"Style:" = "نمط :";
+"Change" = "تغييرر";
+"Filled" = "ملأ";
+"Outline" = "الخطوط العريضةاا";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "الكل";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 المشهد";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "الصورة 6\"x4\"";
+"Photo 5\"x3\"" = "الصورة 5\"X3\"";
+"Business Card" = "بطاقة العمل";
+"Credit Card" = "بطاقة الائتمان";
+"Postcard" = "بطاقة بريدية";
+"Custom" = "مخصص";
+
+"Inch" = "بوصة بوصة";
+"cm" = "سم";
+"mm" = "مم";
+"Pixel" = "بكسل";
+"Point" = "نقطة نقطة";
+"Percent" = "في المئة في المئة";
+
+"dpi" = "في البوصة";
+
+"Normal" = "طبيعي";
+"Flatbed" = "مسطحة";
+"Automatic Feeder" = "الطاعم التلقائي";
+"ADF Front" = "جبهة القوى الديمقراطية المتحالفة";
+"ADF Back" = "الجبهة الديمقراطية المتحالفة العودة";
+"ADF Duplex" = "الجبهة الديمقراطية المتحالفة مزدوج";
+
+"Black & white" = "أسود وأبيض";
+"Lineart" = "Lineart";
+"Dithered" = "مرتبك";
+"Gray" = "جراي";
+"12bit Gray" = "12bit جراي";
+"16bit Gray" = "16bit جراي";
+"Color" = "لون";
+"12bit Color" = "12bit لون";
+"16bit Color" = "16bit لون";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "تواين جسر التثبيت";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan يأتي مع جسر تواين لمسح غيرها من تواين التطبيق.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "هل ترغب في تثبيت ExactScan تواين جسر الآن؟";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "جسر تواين مثبت مسبقا من قبل نسخة أخرى من ExactScan. ";
+"Do not ask me again." = "لا تسألني مرة أخرى.";
+"Yes" = "نعم";
+"No" = "لا";
+
+"Defaults" = "التقصيرات";
+"Optimize" = "تحسين";
+"Optimize:" = "الأمثل :";
+"Unexpected error" = "خطأ غير متوقع";
+"An unexpected error condition occured. Please report." = "حالة حدوث خطأ غير متوقع حدث. يرجى التقرير.";
+"Internal error" = "خطأ داخلي";
+"Internal error in the i/o core. Please report." = "خطأ داخلي في ط / س الأساسية. يرجى التقرير.";
+"No compatible scanner detected." = "لا اكتشاف أجهزة المسح متوافقة.";
+"Rescan" = "إعادة مسح";
+"Insert scan" = "إدراج فحص";
+"Insert file" = "إدراج ملف";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "جهاز مسح عام للسائق Avision USB والسكازي الأجهزة. حقوق النشر 2004-2010 ExactCODE.";
+"Flushing pages" = "وتتزامن هذه الصفحات";
+"Flushing remaining pages after preview with high-speed scanner." = "وتتزامن هذه الصفحات المتبقية بعد معاينة مع ماسحة عالية السرعة.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "وتتزامن هذه الصفحات المتبقية بعد إلغاء المسح الضوئي مع ماسحة عالية السرعة.";
+"no profile" = "لا صورة";
+"Custom" = "مخصص";
+"Profile %d" = "الملف الشخصي D٪";
+
+/* default profile names */
+"Color PDF" = "اللون الشعبي";
+"Gray PDF" = "رمادي الشعبي";
+"B/W PDF" = "باء / دبليو الشعبي";
+"Color Copy" = "صورة ملونة";
+"Gray Copy" = "صورة رمادية";
+"B/W Copy" = "باء / دبليو نسخ";
+"Color Email" = "لون البريد الإلكتروني";
+"Gray Email" = "رمادي البريد الإلكتروني";
+"iPhoto" = "iPhoto";
+"Photo" = "الصورة";
+
+/* miscelaneos */
+"No scanner" = "لا ماسحة";
+
+/* info */
+"Vendor:" = "بائع :";
+"Model:" = "نموذج :";
+"ASIC:" = "أسيك :";
+"Firmware:" = "Firmware:";
+"Region code:" = "رمز المنطقة :";
+"Series:" = "السلسلة :";
+"Version:" = "الإصدار :";
+"Serial number:" = "الرقم التسلسلي :";
+"Manufacturing date:" = "تاريخ التصنيع :";
+"First scan date:" = "تفحص أولا التاريخ :";
+"Flatbed scans:" = "مسطحة بالاشعة :";
+"Pad scans:" = "اللوحة بمسح :";
+"ADF scans:" = "ADF بمسح :";
+"ADF simplex scans:" = "بفحص قوة الدفاع الاسترالية البسيط :";
+"ADF duplex scans:" = "بفحص قوة الدفاع الاسترالية على الوجهين :";
+"Roller scans:" = "الأسطوانة بالاشعة :";
+"Multi feeds:" = "يغذي متعددة :";
+"Paper jams:" = "انحشار الورق :";

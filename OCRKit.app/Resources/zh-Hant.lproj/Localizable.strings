@@ -1,0 +1,527 @@
+/*
+//  Traditional Chinese
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "問題報告";
+"Comments" = "附註";
+"Please describe any steps needed to trigger the problem:" = "請描述需要重現這個問題所需要的步驟：";
+"Problem Details" = "問題細節";
+"System Configuration" = "系统設定";
+"Report" = "報告";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "您的個人資訊沒有和這個報告一起寄出。關於產品服務，請瀏覽網站： ";
+
+
+/* In registration */
+"Registration" = "Registration";
+"Registration Information" = "註冊資訊";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "請輸入你個人的資料以便註冊並啓動ExactCODE產品。";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "讓我最新的新聞，軟件更新，以及產品和服務的最新信息。";
+"Activation key" = "啟動的鑰匙";
+"First Name" = "名字";
+"Last Name" = "姓";
+"Company or School" = "公司/學校";
+"Address" = "地址";
+"City" = "城市";
+"State or Province, or County" = "省或縣";
+"Country" = "國家";
+"Postal Code" = "郵遞區號";
+"Email Address" = "電子郵件地址";
+"Area Code" = "區域號碼";
+"Phone Number" = "電話號碼";
+
+"How did you learn about this product?" = "你是怎麼了解這個產品？";
+"Select if you like" = "選擇，如果你喜歡";
+"Advertisement" = "廣告";
+"Magazine" = "雜誌";
+"Newspaper" = "報紙";
+"Internet Forum" = "互聯網論壇";
+"Internet Website" = "互聯網網站";
+"Internet Search" = "互聯網搜索";
+"Recommendation" = "建議";
+
+"Where will you primarily use this computer?" = " 你主要在哪裡使用這台電腦？";
+"Select" = "選擇";
+"Home" = "住家";
+"Home Business" = " 家庭企業";
+"Small Business (1-99 employees)" = " 小型企業(員工人數1-99名)";
+"Medium Business (100-499 employees)" = "中型企業(員工人數100-499名)";
+"Large Business (500+ employees)" = "大型企業(員工人數500位以上)";
+"Elementary/Middle school" = "小學/中學";
+"High School" = "高中";
+"College" = "學院";
+
+"What best describes what you do?" = " 你從事什麼工作？";
+"Design/Print" = "設計或印刷 ";
+"Video/Film" = "錄影或影片";
+"Music" = "音樂";
+"Photography" = "攝影";
+"Education Faculty/Administration" = "教育機構/行政管理";
+"Engineering/Scientist/Researcher" = "工程師/科學家/研究員";
+"Architecture" = "建築 ";
+"Finance" = "財務";
+"Law" = "法律";
+"Manufacturing" = "製造業";
+"Marketing/Sales" = "市場或銷售";
+"Medical" = "醫療";
+"MIS/IT" = "資訊管理";
+"Student" = "學生";
+"Webdesigner/Webmaster" = "網站設計者/網站管理員";
+"Retired" = "退休";
+"Other" = "其他";
+"Register" = "註冊";
+"Export" = "出口";
+"Import" = "進口";
+
+
+/* In try-out control */
+"Try-out version" = "試用版本";
+"Try-out demo version:" = "試用版本：";
+"This software expired." = "這個應用軟體已過期。";
+"This is a demo version of the software which will expire in %d days." = "這是在%d天後將會到期的試用版本。";
+"Continue" = "繼續";
+"Test" = "測試";
+"Quit" = "離開";
+"Activate" = "啟動";
+"Purchase" = "購買";
+
+/*In choose folder*/
+"Choose destination folder" = "選擇目的地資料夾";
+"Select folder where scanned images will be stored in" = "選擇存放掃瞄影像的資料夾";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "檢查新的軟體…";
+"Changes" = "更動";
+"Cancel" = "取消";
+"Install Update" = "安裝更新";
+"error parsing XML seed" = "解析XML語法錯誤";
+"There was a problem obtaining software update information (%@). Please try again later." = "要得到軟體更新的訊息(%@)有問題。 請稍後再試。";
+"No update information" = "沒有更新的訊息";
+"You are up to date." = "你目前使用的是最新的。";
+"There is no newer software update available." = "沒有更新的軟體可以安裝。";
+"A new software version is available" = "一個新的軟體版本可以使用";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@是可利用的(您有%@)。 更新也許要花一些時間來下載並且要重新開啓應用軟件。 如果您現在不準備安裝，你可以稍後在選單上再更新。";
+"Downloading %@ %@." = "正在下載%@ %@。";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "還需要 %.0lfk 的 %.0lfk (%.0lfk/s) - %d 時間";
+"Did you know?" = "Did you know?";
+"Learn more" = "Learn more";
+"Upgrade" = "Upgrade";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "您的版本的ExactScan是可升級到其他版本的ExactScan更多的功能和OCR以較低的價格。";
+
+/* Scan progress */
+"Searching for supported scanners" = "搜尋支援的掃瞄器";
+"Please wait." = "請稍後。";
+"Scanner Configuration" = "掃瞄器的設定";
+"Detect" = "偵測";
+"Abort" = "放棄";
+"OK" = "確定";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "沒有掃瞄器被設定。 這個應用軟體在使用前需要獲得掃瞄器設定的資訊。";
+"Scanner lamp warming up" = "掃瞄器燈管暖機中";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "啓動燈管後，掃瞄器需要暖機才能達到需要的亮度。";
+"Out of documents" = "沒有文件";
+"There is no paper in the document feeder." = "自動進紙器內沒有紙。";
+"Cover open" = "蓋子被開啓";
+"Please close the scanner cover and try again." = "請先關上掃瞄器上蓋, 然後再試一次。";
+"Paper jam" = "卡紙";
+"Please clear the paper jam in the document feeder and try again." = "請清除自動文件進紙器上的卡紙，然後再試一次。";
+"Multi feed" = "多飼料";
+"Please clear the muti feed in the document feeder and try again." = "请清除自动文件进纸器上的卡纸，然后再试一次。";
+"Device busy" = "裝置忙碌";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "此裝置正被另一種應用使用，可能是網路或一臺連接的印表機。當此裝置就緒時，請再試一試。";
+"Unexpected scanner error" = "無法預期的掃瞄器錯誤";
+"An unexpected error condition occured." = "一個無法預期的錯誤發生了。";
+"Scanner not ready" = "掃瞄器還有沒準備好";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "掃瞄器驅動程式沒有偵測出一個支援的裝置。 請確認你有連接掃瞄器並且掃瞄器沒有被另一個應用程式所使用。";
+"Scanning" = "掃瞄";
+"Frontside" = "前端";
+"Backside" = "背面";
+"frontside" = "正面";
+"backside" = "背面";
+"Initializing scanner" = "掃瞄器正在進行初始化";
+"Clearing document feeder" = "清潔扫描仪";
+"Image data for page %@ is being transferred." = "正在傳送%@頁的圖像資料。";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "您是否想要增加另一頁到本文件或停止掃瞄？ 選擇 \"%@\"之前，您應該先將下一張紙放在掃瞄器中。";
+"Scanning more pages" = "掃瞄更多頁";
+"Stop" = "中止";
+"Add" = "增加";
+
+"Calibrate Scanner..." = "校準掃描器…";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "掃瞄器需要被校正。 請插入隨機附贈的校正卡。 如果您現在不準備校正，您可以稍後從應用軟體中再去執行。";
+"Calibrating" = "校正中";
+"Calibrating scanner" = "掃瞄器校正中";
+
+"Importing files" = "匯入文件";
+"Importing data from image files." = "從圖檔匯入資料。";
+"Processing file %@, page %d/%d" = "處理文件%@，頁%d/%d";
+"Processing file %@, image %d/%d" = "處理文件%@，圖像%d/%d";
+"Page %@: %@ ..." = "頁%@ ： %@…";
+"A file named \"%@\" already exists." = "一個文件名為“％@“已經存在。";
+
+/* Preferences: Tab menu */
+"Filing" = "歸檔";
+"Basic" = "基本的";
+"Basic Settings" = "基本設定";
+"Advanced" = "先進";
+"Advanced Settings" = "進階設定";
+"OCR" = "OCR";
+"Barcode" = "條碼";
+/* Additional OCR preferences */
+"Processing" = "處理中";
+"Finalization" = "定稿";
+
+"Mode:" = "方式：";
+"Generic" = "普通";
+"Dot Matrix" = "点矩阵";
+"Fax" = "電傳";
+
+"Scan" = "掃瞄";
+"Preview" = "預覽視窗";
+
+"Profiles" = "個人設定";
+"Duplicate Profile" = "重複簡介";
+"Reset Profile" = "重設單一個人設定";
+"Reset All Profiles" = "重設所有個人設定";
+
+/* Preferences: Filing */
+"Profile name:" = "個人設定名稱：";
+"Folder name:" = "資料夾名稱：";
+"File name:" = "檔案名稱：";
+"Example:" = "範例：";
+"On existing files:" = "與現有檔名相同時：";
+"Format:" = "檔案格式：";
+"Quality:" = "品質：";
+"Compression quality:" = "壓縮品質：";
+"low" = "低";
+"optimal" = "最佳化";
+"Choose" = "選擇";
+"Color detection:" = "顏色辨認：";
+"Sensitive" = "敏感";
+"Optimal" = "最佳化";
+"Lossy" = "Lossy";
+
+"PDF" = "PDF";
+"Compressed PDF" = "高壓縮PDF";
+"Highly Compressed PDF" = "高壓縮PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "純文字(UTF-8)";
+
+"Unique date tag per file" = "每個檔案獨特的日期標籤";
+"Edit each filename" = "編輯每個檔名";
+"Scan to workspace" = "掃描到工作區";
+"Add -OCR extension" = "添加-OCR擴展";
+"Move original file to Trash" = "原始文件移動到回收站";
+"Merge files in one batch" = "合併在一個批處理文件";
+"Open with:" = "開啟應用軟體：";
+"no application specified" = "沒有指定的應用軟體";
+"Split on page" = "分割頁面";
+"Show configuration before scan" = "掃瞄前先檢查設定";
+"Show progress indicator" = "顯示掃瞄的進度";
+"Scan this profile on document placement" = "放入紙張後開始掃瞄";
+"Ask for scanning more pages" = "請求掃瞄更多頁";
+"Timer:" = "定時器：";
+"Use scanner's own user interface" = "使用掃瞄器本身的使用者界面";
+
+"Ask user" = "詢問使用者";
+"Increase sequence number" = "以流水號遞增";
+"Silently overwrite" = "直接覆蓋";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "掃瞄來源：";
+"Colors:" = "影像模式：";
+"Color Dropout:" = "濾色：";
+"Red" = "紅色";
+"Green" = "綠色";
+"Blue" = "藍色";
+"None" = "無";
+"Resolution:" = "解析度：";
+"Brightness:" = "亮度：";
+"Contrast:" = "對比度：";
+"Gamma:" = "伽瑪：";
+"Size:" = "尺寸：";
+"Position:" = "位置：";
+"Size: %@ MB" = "大小： %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "寬度:";
+"H:" = "高度:";
+"Rotate:" = "旋轉：";
+"Rotate every second page by 180°" = "每第二頁旋轉180°";
+"Auto crop and de-skew" = "自動裁剪和自動糾斜";
+"Allow extra long pages" = "允許超長頁面";
+"Auto rotate by page content" = "自動旋轉頁面內容";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Automatic";
+"Ultrasonic multi-feed detection" = "超音波偵測多張進紙";
+"Mechanical de-skew assist" = "機械偏移輔助";
+"Primary" = "主要";
+"Secondary" = "次";
+"Use individual color settings for the back side" = "使用背面的的個別顏色設置為";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "在啟動時顯示首選項";
+"De-skew based on page content" = "基於頁面內容的相位偏移";
+"De-screen (reduce print moiré patterns)" = "去網點";
+"De-speckle (image noise and defects)" = "斑點（圖像噪聲和缺陷）";
+"Sharpen" = "銳利化";
+"Automatically optimize to b/w" = "自動將黑白影像最佳化";
+"Smooth uniform colors" = "光滑均勻的顏色";
+"Invert image" = "黑白反相";
+"Blank Page Detection:" = "偵測空白頁：";
+"Off" = "不偵測";
+"Delete Blank Page" = "刪除空白頁";
+"Placeholder" = "保留空白頁";
+"Split Document" = "分割文件";
+"Sensitivity:" = "敏感度：";
+"high" = "高";
+"low" = "低";
+"Remove page border and shadow" = "刪除頁面邊框和陰影";
+"Merge front and back image" = "合併正面和背面的圖像";
+"Black point:" = "黑點：";
+"White point:" = "白點：";
+"Hue:" = "色調：";
+"Saturation:" = "飽和度：";
+"Lightness:" = "亮度：";
+"Print with:" = "列印使用：";
+"no printer selected" = " 沒有選擇印表機";
+"Keep printed file" = "保留列印的檔案";
+
+/* Preview */
+"New" = "預覽";
+"Front" = "正面";
+"Back" = "背面";
+
+/* Main Menu*/
+"About" = "關於";
+"About %@" = "關於 %@";
+"Check for Updates..." = "檢查更新⋯";
+"Activation..." = "啓動⋯";
+"Preferences..." = "偏好設定⋯";
+"Preferences" = "偏好設定";
+"%@ - Preferences" = "%@ - 偏好設定";
+"Get Info" = "得到資訊";
+"Get Scanner Info" = "取得掃描器資訊";
+"Select Scanner..." = "選擇掃描儀⋯";
+"%@ Info" = "%@資訊";
+"Services" = "服務";
+"Hide %@" = "隱藏 %@";
+"Hide Others" = "隱藏其他";
+"Show All" = "顯示全部";
+"Quit %@" = "結束 %@";
+"New Scan" = "新的掃瞄";
+
+"Open" = "打開";
+"Open File..." = "打開文件…";
+
+"File" = "檔案";
+"Edit" = "編輯";
+
+"Save" = "儲存";
+"Save As..." = "另存為...";
+
+"Undo" = "還原";
+"Redo" = "重作";
+"Cut" = "剪下";
+"Copy" = "拷貝";
+"Paste" = "貼上";
+"Delete" = "删除";
+"Delete all" = "全部刪除";
+"Select All" = "全選";
+
+"Window" = "視窗";
+"Close" = "關閉";
+"Minimize" = "縮到最小";
+
+"Help" = "輔助說明";
+"%@ Help" = "%@ 輔助說明";
+
+
+/* OCR */
+"Create searchable documents" = "建立可搜尋的文件";
+"Create searchable barcodes" = "建立可搜尋的條碼";
+"Split document on barcode" = "有條碼時分割文件";
+"Discard split page" = "放棄分割頁面";
+"One or more of the configured barcodes could not be found." = "不能找到一個或更多已設定好的條碼。";
+"Dictionary-based spelling correction" = "以字典為基礎更正拼字";
+"The resolution is used to convert vector files." = "這個解析度在轉向量檔時使用。";
+
+"Language:" = "語言：";
+"OCR Language:" = "OCR語言：";
+"Bulgarian" = "保加利亞語";
+"Croatian" = "克羅地亞語";
+"Czech" = "捷克語";
+"Danish" = "丹麥語";
+"Dutch" = "荷蘭語";
+"English" = "英語";
+"Estonian" = "愛沙尼亞語";
+"Finnish" = "芬蘭";
+"French" = "法語";
+"German" = "德語";
+"Hungarian" = "匈牙利語";
+"Italian" = "意大利語";
+"Japanese" = "日語";
+"Korean" = "韓語";
+"Latvian" = "拉脫維亞語";
+"Lithuanian" = "立陶宛語";
+"Norwegian" = "挪威語";
+"Polish" = "波蘭語";
+"Portuguese" = "葡萄牙語";
+"Rumanian" = "羅馬尼亞語";
+"Russian" = "俄語";
+"Serbian" = "塞爾維亞人";
+"Simplified Chinese" = "簡體中文";
+"Slovenian" = "斯洛文尼亞語";
+"Spanish" = "西班牙語";
+"Swedish" = "瑞典語";
+"Traditional Chinese" = "繁體中文";
+"Turkish" = "土耳其語";
+"Ukrainian" = "烏克蘭語";
+
+"Type:" = "類型：";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "數據矩陣";
+"QR Code" = "QR代碼";
+
+/* Imprinter */
+"Imprinter" = "列印器";
+"Imprint text mark" = "列印文字標記";
+"Font:" = "字體：";
+"Rotation:" = "自轉：";
+"Color:" = "顏色：";
+"Style:" = "樣式：";
+"Change" = "變動";
+"Filled" = "填裝";
+"Outline" = "轉曲線";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "掃瞄器最大範圍";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 水平";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "照片 6\"x4\"";
+"Photo 5\"x3\"" = "照片 5\"x3\"";
+"Business Card" = "名片";
+"Credit Card" = "信用卡";
+"Postcard" = "明信片";
+"Custom" = "自訂";
+
+"Inch" = "英寸";
+"cm" = "公分";
+"mm" = "毫米";
+"Pixel" = "畫素";
+"Point" = "點";
+"Percent" = "百分之";
+
+"dpi" = "dpi";
+
+"Normal" = "平台";
+"Flatbed" = "平板";
+"Automatic Feeder" = "自動送稿機";
+"ADF Front" = "ADF 正面";
+"ADF Back" = "ADF 反面";
+"ADF Duplex" = "ADF 雙面";
+
+"Black & white" = "黑與白";
+"Lineart" = "黑白線條";
+"Dithered" = "遞色";
+"Gray" = "灰階";
+"12bit Gray" = "12位元灰階";
+"16bit Gray" = "16位元灰階";
+"Color" = "彩色";
+"12bit Color" = "12位元彩色/色板";
+"16bit Color" = "16位元彩色/色板";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "安裝 TWAIN Bridge";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan附有與TWAIN Bridge的物件, 可以讓你從其他合乎TWAIN的應用程式中掃瞄。";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "您現在要不要安裝ExactScan與TWAIN Bridge的物件？";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "與TWAIN Bridge的物件已安裝在ExactScan的另一個版本。 您要不要使用ExactScan的這個版本？";
+"Do not ask me again." = "不要再詢問我。";
+"Yes" = "是";
+"No" = "No";
+
+"Defaults" = "預設值";
+"Optimize" = "優化";
+"Optimize:" = "最佳化：";
+"Unexpected error" = "無法預期的錯誤";
+"An unexpected error condition occured. Please report." = "一個無法預期的錯誤發生了。 請報告。";
+"Internal error" = "內部錯誤";
+"Internal error in the i/o core. Please report." = "輸入輸出的內部錯誤, 請提供報告。";
+"No compatible scanner detected." = "沒有偵測出支援的掃瞄器。";
+"Rescan" = "重新掃瞄";
+"Insert scan" = "插入掃描";
+"Insert file" = "插入文件";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Avision USB和SCSI 裝置的掃瞄器驅動程式。 版權2004-2010 ExactCODE。";
+"Flushing pages" = "中止掃瞄的頁數";
+"Flushing remaining pages after preview with high-speed scanner." = "執行預覽以後中止掃瞄剩餘的頁數。";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "執行取消以後中止剩餘的頁數。";
+"no profile" = "沒有個人設定";
+"Custom" = "自訂";
+"Profile %d" = "輪廓 %d";
+
+/* default profile names */
+"Color PDF" = "彩色PDF";
+"Gray PDF" = "灰階PDF";
+"B/W PDF" = "黑白PDF";
+"Color Copy" = "彩色複印";
+"Gray Copy" = "灰階複印";
+"B/W Copy" = "黑白複印";
+"Color Email" = "彩色電子郵件";
+"Gray Email" = "灰階電子郵件";
+"iPhoto" = "iPhoto";
+"Photo" = "照片";
+
+/* miscelaneos */
+"No scanner" = "沒有掃描器";
+
+/* info */
+"Vendor:" = "供營商：";
+"Model:" = "模型：";
+"ASIC:" = "ASIC：";
+"Firmware:" = "固件：";
+"Region code:" = "Region code:";
+"Series:" = "系列：";
+"Version:" = "版本：";
+"Serial number:" = "序號：";
+"Manufacturing date:" = "製造日期：";
+"First scan date:" = "第一次掃瞄日期：";
+"Flatbed scans:" = "平台掃瞄：";
+"Pad scans:" = "墊片掃瞄：";
+"ADF scans:" = "ADF掃描：";
+"ADF simplex scans:" = "ADF單面掃瞄：";
+"ADF duplex scans:" = "ADF雙面掃瞄：";
+"Roller scans:" = "滾輪掃瞄：";
+"Multi feeds:" = "多張進紙：";
+"Paper jams:" = "卡紙：";

@@ -1,0 +1,527 @@
+/*
+//  Finnish
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Ongelma Raportti";
+"Comments" = "Kommentit";
+"Please describe any steps needed to trigger the problem:" = "Kuvailkaa kaikki tarvittavat voi laukaista ongelman:";
+"Problem Details" = "Ongelma Details";
+"System Configuration" = "Järjestelmän säätäminen";
+"Report" = "Raportti";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Käyttäjän henkilökohtaisia tietoja ei lähetetä tästä mietinnöstä. Et saa yhteyttä vastaus tähän mietintöön. Tuote-tukea, osoitteessa:";
+
+
+/* In registration */
+"Registration" = "Rekisteröinti";
+"Registration Information" = "Rekisteröintitiedot";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Ole hyvä ja anna henkilökohtaisia tietoja, jotta voidaan rekisteröidä ja aktivoida ExactCODE tuote.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Pysy ajan tasalla uutisia , ohjelmistopäivityksiä jauusinta tietoa tuotteista ja palveluista .";
+"Activation key" = "Toimitusehdot";
+"First Name" = "Etunimi";
+"Last Name" = "Sukunimi";
+"Company or School" = "Yrityksen tai koulun";
+"Address" = "Osoite";
+"City" = "Kaupunki";
+"State or Province, or County" = "Valtion tai maakunta tai lääni";
+"Country" = "Maa";
+"Postal Code" = "Postinumero";
+"Email Address" = "Sähköpostiosoite";
+"Area Code" = "Suuntanumero";
+"Phone Number" = "Puhelinnumero";
+
+"How did you learn about this product?" = "Miten sait tietää tästä tuotteesta ?";
+"Select if you like" = "Valitse jos haluat";
+"Advertisement" = "Mainos";
+"Magazine" = "Aikakauslehti";
+"Newspaper" = "Sanomalehti";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internet-osoite";
+"Internet Search" = "Internet Search";
+"Recommendation" = "Suositus";
+
+"Where will you primarily use this computer?" = "Jos aiotte ensisijaisesti käyttää tätä tietokonetta?";
+"Select" = "Valitse";
+"Home" = "Koti";
+"Home Business" = "Aloitus Liiketoiminta -";
+"Small Business (1-99 employees)" = "Small Business (1-99 työntekijää)";
+"Medium Business (100-499 employees)" = "Medium Business (100-499 työntekijää)";
+"Large Business (500+ employees)" = "Suuret yritykset (500 + työntekijää)";
+"Elementary/Middle school" = "Elementary / Lähi-koulu";
+"High School" = "Lukio";
+"College" = "College";
+
+"What best describes what you do?" = "Mikä parhaiten kuvaa, mitä teet?";
+"Design/Print" = "Design / Tulosta";
+"Video/Film" = "Video / Film";
+"Music" = "Musiikki";
+"Photography" = "Kuvaus";
+"Education Faculty/Administration" = "Koulutus tiedekunta / Hallinto";
+"Engineering/Scientist/Researcher" = "Insinöörin / Tiedemies / Tutkija";
+"Architecture" = "Arkkitehtuuri";
+"Finance" = "Valtiovarainministeriö";
+"Law" = "Laki";
+"Manufacturing" = "Valmistaessamme";
+"Marketing/Sales" = "Markkinointi / Myynti";
+"Medical" = "Medical";
+"MIS/IT" = "MIS / IT";
+"Student" = "Opiskelija";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "Eläkkeellä";
+"Other" = "Muu";
+"Register" = "Rekisteröidy";
+"Export" = "Vienti";
+"Import" = "Tuoda";
+
+
+/* In try-out control */
+"Try-out version" = "Try-out-versio";
+"Try-out demo version:" = "Try-out-demo-versio:";
+"This software expired." = "Tämä ohjelmisto lakkaa.";
+"This is a demo version of the software which will expire in %d days." = "Tämä on demo-versio on ohjelmisto, joka päättyy vuonna %d päivää.";
+"Continue" = "Jatka";
+"Test" = "Testi";
+"Quit" = "Sulje";
+"Activate" = "Aktivoi";
+"Purchase" = "Hankinta";
+
+/*In choose folder*/
+"Choose destination folder" = "Valitse määränpää kansio";
+"Select folder where scanned images will be stored in" = "Valitse kansio, johon skannatut kuvat tallennetaan";
+
+/* During software update */
+"Software Update" = "Ohjelmiston päivitys";
+"Checking for new software ..." = "Etsitään uusia ohjelmistoja ...";
+"Changes" = "Muutokset";
+"Cancel" = "Peruuta";
+"Install Update" = "Asenna päivitys";
+"error parsing XML seed" = "XML siemeniä";
+"There was a problem obtaining software update information (%@). Please try again later." = "Meillä oli ongelmia saada ohjelmistopäivitys tiedot (%@). Ole hyvä ja yritä myöhemmin uudelleen.";
+"No update information" = "Ei-päivityksen tiedot";
+"You are up to date." = "Olet ajan tasalla.";
+"There is no newer software update available." = "Ei ole uudempia ohjelmistopäivitys saatavilla.";
+"A new software version is available" = "Uusi ohjelmistoversio on saatavilla";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ On saatavilla (sinulla on %@). Yksi päivitys saattaa kestää jonkin aikaa ladata ja edellytetään, että hakemus uudelleen. Jos et ole valmis asentamaan nyt, voit tarkistaa päivitykset sovelluksen valikon myöhemmin.";
+"Downloading %@ %@." = "Ladataan %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk of %.0lfk (%.0lfk/s) - %d sekuntia jäljellä";
+"Did you know?" = "Tiesitkö?";
+"Learn more" = "Lue lisää";
+"Upgrade" = "parantaa";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Versiosi ExactScan on oikeutettu päivittää muihin versioihin ExactScan enemmän ominaisuuksia ja OCR alennettuun hintaan .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Haku tuetut skannerit";
+"Please wait." = "Odota.";
+"Scanner Configuration" = "Scanner Kokoonpano";
+"Detect" = "Tunnistus";
+"Abort" = "Abort";
+"OK" = "OK";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "N: o skanneri on määritetty. Tämä sovellus tarvitsee hankkia skanneri kokoonpanon ennen ensimmäistä käyttöä ja profiilin määritys.";
+"Scanner lamp warming up" = "Skannerin lamppu lämpenee";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Kun olet ottanut valonlähde on skanneri, lampun tarvitsee jonkin aikaa lämmetä päästää tarkoitettu luminanssi.";
+"Out of documents" = "Out of asiakirjat";
+"There is no paper in the document feeder." = "Ei ole mitään paperia asiakirjan syöttölaite.";
+"Cover open" = "Kansi auki";
+"Please close the scanner cover and try again." = "Ole hyvä ja sulje skannerin kansi ja yritä uudelleen.";
+"Paper jam" = "Paperitukoksen";
+"Please clear the paper jam in the document feeder and try again." = "Ole hyvä ja selkeä asiakirja syöttöliikenteen paperitukoksen ja yritä uudelleen.";
+"Multi feed" = "Nippusyöttölaite";
+"Please clear the muti feed in the document feeder and try again." = "Ota selvää syöttölaite paperi nippusyöttölaite ja yritä uudelleen.";
+"Device busy" = "Laitteen kiireinen";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Laite on toisen sovelluksen käytössä, verkon kautta tai liitetty tulostin. ";
+"Unexpected scanner error" = "Odottamaton skanneri virhe";
+"An unexpected error condition occured." = "Tapahtui odottamaton virhe kunnossa tapahtunut.";
+"Scanner not ready" = "Scanner ole valmis";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Kuljettaja ei ole tunnustettu laitteeseen. Varmista, että skanneri on kytketty ja joita ei ole käytetty toisessa sovelluksessa.";
+"Scanning" = "Skannaus";
+"Frontside" = "Frontside";
+"Backside" = "takapuoli";
+"frontside" = "edestä";
+"backside" = "takapuoli";
+"Initializing scanner" = "Valmistellaan skanneri";
+"Clearing document feeder" = "Clearing syöttölaite";
+"Image data for page %@ is being transferred." = "Kuvan tiedot sivun %@ on siirretty.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Haluatko lisätä vielä yhden sivun asiakirja tai lopettaa Skannaus? Ennen kuin valitset \"%@\" Sinun pitäisi sijoittaa seuraavan sivun skanneri.";
+"Scanning more pages" = "Skannaus lisää sivuja";
+"Stop" = "Seis";
+"Add" = "Lisää";
+
+"Calibrate Scanner..." = "Kalibroi skanneri ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Skanneri on kalibroitava. Aseta kalibrointi-sivulle, jossa mukana skannerin. Jos et ole valmis kalibroida nyt, voit suorittaa sen soveltamisesta valikosta myöhemmin.";
+"Calibrating" = "Kalibrointilaitteita";
+"Calibrating scanner" = "Kalibrointilaitteita skanneri";
+
+"Importing files" = "Tuojana kuvaa";
+"Importing data from image files." = "Tuominen tiedot kuvatiedostoja.";
+"Processing file %@, page %d/%d" = "Processing tiedosto %@, sivu %d/%d";
+"Processing file %@, image %d/%d" = "Processing tiedosto %@, kuva %d/%d";
+"Page %@: %@ ..." = "Page %@: %@ ...";
+"A file named \"%@\" already exists." = "Tiedosto nimeltä \"%@\" on jo olemassa .";
+
+/* Preferences: Tab menu */
+"Filing" = "Arkistointi";
+"Basic" = "perustiedot";
+"Basic Settings" = "Perusasetukset";
+"Advanced" = "edistyksellinen";
+"Advanced Settings" = "Advanced Settings";
+"OCR" = "OCR";
+"Barcode" = "Viivakoodi";
+/* Additional OCR preferences */
+"Processing" = "Jalostus";
+"Finalization" = "Viimeistelty";
+
+"Mode:" = "Mode:";
+"Generic" = "Geneerisen";
+"Dot Matrix" = "Pistematriisi";
+"Fax" = "Telekopiona";
+
+"Scan" = "Scan";
+"Preview" = "Esikatselu";
+
+"Profiles" = "Profiilit";
+"Duplicate Profile" = "Monista Profile";
+"Reset Profile" = "Palauta Profile";
+"Reset All Profiles" = "Nollaa profiilit";
+
+/* Preferences: Filing */
+"Profile name:" = "Profiilin nimi:";
+"Folder name:" = "Kansion nimi:";
+"File name:" = "Tiedoston nimi:";
+"Example:" = "Esimerkki:";
+"On existing files:" = "Käytössä olevat tiedostot:";
+"Format:" = "Formaatti:";
+"Quality:" = "Laatu:";
+"Compression quality:" = "Compression laatu:";
+"low" = "matala";
+"optimal" = "optimaalinen";
+"Choose" = "Valitse";
+"Color detection:" = "Väri Detection:";
+"Sensitive" = "Alttiisiin";
+"Optimal" = "Optimaalisesti";
+"Lossy" = "Häviöllinen";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Erittäin Pakattu PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Vain teksti (UTF-8)";
+
+"Unique date tag per file" = "Ainutlaatuinen päivämäärä tag tiedostoa kohti";
+"Edit each filename" = "Muokkaa kunkin tiedoston nimi";
+"Scan to workspace" = "Skannaus työtila";
+"Add -OCR extension" = "Add -OCR laajennus";
+"Move original file to Trash" = "Siirrä alkuperäinen tiedosto roskakoriin";
+"Merge files in one batch" = "Yhdistä tiedostot yhdessä erässä";
+"Open with:" = "Avoinna:";
+"no application specified" = "Ei hakemusta määritelty";
+"Split on page" = "Split sivulla";
+"Show configuration before scan" = "Näytä varmuuskopiointia ennen scan";
+"Show progress indicator" = "Näytä edistymisen ilmaisin";
+"Scan this profile on document placement" = "Scan tämän profiilin asiakirjan sijoittaminen";
+"Ask for scanning more pages" = "Kysy skannaus lisää sivuja";
+"Timer:" = "Ajastin:";
+"Use scanner's own user interface" = "Käytä skannerin oma käyttöliittymä";
+
+"Ask user" = "Kysy käyttäjä";
+"Increase sequence number" = "Nosta järjestysnumero";
+"Silently overwrite" = "Hiljaa korvata";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Lähde:";
+"Colors:" = "Värit:";
+"Color Dropout:" = "Värin poisto :";
+"Red" = "punainen";
+"Green" = "vihreä";
+"Blue" = "sininen";
+"None" = "ei mitään";
+"Resolution:" = "Resoluutio:";
+"Brightness:" = "Kirkkaus:";
+"Contrast:" = "Kontrasti:";
+"Gamma:" = "Gamma:";
+"Size:" = "Koko:";
+"Position:" = "Kanta:";
+"Size: %@ MB" = "Koko: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "Käännä:";
+"Rotate every second page by 180°" = "Kierrä joka toinen sivu 180 °";
+"Auto crop and de-skew" = "Autom kasvinviljelytuotteisiin ja de-vino";
+"Allow extra long pages" = "Salli erikoispitkä sivut";
+"Auto rotate by page content" = "Auto kiertää by sivun sisältöön";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Automaattinen";
+"Ultrasonic multi-feed detection" = "Ultraääni moni - syötteen havaitsemisen";
+"Mechanical de-skew assist" = "Mekaaninen de - vinossa assist";
+"Primary" = "Ensisijainen";
+"Secondary" = "Toissijainen";
+"Use individual color settings for the back side" = "Käytä yksittäisiä väriasetuksettakana";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Näytä asetukset käynnistyksen";
+"De-skew based on page content" = "De - vinossa perustuu sivun sisältöön";
+"De-screen (reduce print moiré patterns)" = "De-näyttö (pienentää tulosta moiré mallit)";
+"De-speckle (image noise and defects)" = "De - pilkku ( kuvan kohinaa ja viat )";
+"Sharpen" = "Terävöittää";
+"Automatically optimize to b/w" = "Automaattisesti optimoi B/W";
+"Smooth uniform colors" = "Tasasävyisestä värit";
+"Invert image" = "Käänteinen kuva";
+"Blank Page Detection:" = "Tyhjä sivu Detection:";
+"Off" = "Pois";
+"Delete Blank Page" = "Poista tyhjä sivu";
+"Placeholder" = "Paikkamerkki";
+"Split Document" = "Erillinen asiakirja";
+"Sensitivity:" = "Herkkyys:";
+"high" = "korkea";
+"low" = "matala";
+"Remove page border and shadow" = "Irrota sivu raja ja varjo";
+"Merge front and back image" = "Yhdistä edessä ja takana kuva";
+"Black point:" = "Musta kohta:";
+"White point:" = "Valkoinen kohta:";
+"Hue:" = "Sävy:";
+"Saturation:" = "Kyllästys:";
+"Lightness:" = "Keveys:";
+"Print with:" = "Tulosta kanssa:";
+"no printer selected" = "ei tulostinta valittu";
+"Keep printed file" = "Pidä painettu tiedosto";
+
+/* Preview */
+"New" = "Uusi";
+"Front" = "Etusivu";
+"Back" = "Takaisin";
+
+/* Main Menu*/
+"About" = "noin";
+"About %@" = "Tietoa %@";
+"Check for Updates..." = "Tarkista päivitykset ...";
+"Activation..." = "Aktivointi ...";
+"Preferences..." = "Asetukset ...";
+"Preferences" = "Asetukset";
+"%@ - Preferences" = "%@ - Asetukset";
+"Get Info" = "Get Info";
+"Get Scanner Info" = "Get Scanner Info";
+"Select Scanner..." = "Valitse skanneri ...";
+"%@ Info" = "%@ Info";
+"Services" = "Palvelut";
+"Hide %@" = "Piilota %@";
+"Hide Others" = "Piilota Muut";
+"Show All" = "Näytä kaikki";
+"Quit %@" = "Lopeta %@";
+"New Scan" = "Uusi Scan";
+
+"Open" = "avata";
+"Open File..." = "Avaa tiedosto ...";
+
+"File" = "Tiedosto";
+"Edit" = "Muokkaa";
+
+"Save" = "Tallentaa";
+"Save As..." = "Tallenna nimellä ...";
+
+"Undo" = "Kumoa";
+"Redo" = "Uudelleen";
+"Cut" = "Leikata";
+"Copy" = "Kopioi";
+"Paste" = "Liitä";
+"Delete" = "Poistaa";
+"Delete all" = "Poista kaikki";
+"Select All" = "Valitse kaikki";
+
+"Window" = "Ikkuna";
+"Close" = "Sulje";
+"Minimize" = "Minimize";
+
+"Help" = "Apu";
+"%@ Help" = "%@ Ohje";
+
+
+/* OCR */
+"Create searchable documents" = "Luo hakukelpoisia asiakirjat";
+"Create searchable barcodes" = "Luo hakukelpoisia viivakoodeja";
+"Split document on barcode" = "Split asiakirja viivakoodin";
+"Discard split page" = "Hävitä split sivu";
+"One or more of the configured barcodes could not be found." = "Yhden tai useampia määritetty viivakoodeja ei löytynyt.";
+"Dictionary-based spelling correction" = "Sanakirja perustuu oikeinkirjoituksen korjaus";
+"The resolution is used to convert vector files." = "Päätöslauselman käytetään muuntaa vektori-tiedostoja.";
+
+"Language:" = "Kieli:";
+"OCR Language:" = "OCR Kieli :";
+"Bulgarian" = "Bulgaria";
+"Croatian" = "Kroatiassa";
+"Czech" = "Tšekki";
+"Danish" = "Tanska";
+"Dutch" = "Hollanti";
+"English" = "Englanti";
+"Estonian" = "Viro";
+"Finnish" = "Suomalainen";
+"French" = "Ranska";
+"German" = "Saksa";
+"Hungarian" = "Unkari";
+"Italian" = "Italia";
+"Japanese" = "Japani";
+"Korean" = "Korea";
+"Latvian" = "Latvian";
+"Lithuanian" = "Liettua";
+"Norwegian" = "Norja";
+"Polish" = "Puola";
+"Portuguese" = "Portugali";
+"Rumanian" = "Romanialainen";
+"Russian" = "Venäjä";
+"Serbian" = "Serbialainen";
+"Simplified Chinese" = "Yksinkertaistettu kiina";
+"Slovenian" = "Sloveeni";
+"Spanish" = "Espanja";
+"Swedish" = "Ruotsi";
+"Traditional Chinese" = "Perinteinen kiina";
+"Turkish" = "Turkki";
+"Ukrainian" = "Ukraina";
+
+"Type:" = "Tyyppi:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "Imprint tekstin merkki";
+"Font:" = "Font:";
+"Rotation:" = "Kierto:";
+"Color:" = "Väri:";
+"Style:" = "Tyyli:";
+"Change" = "Muuta";
+"Filled" = "Täytetty";
+"Outline" = "Ääriviivat";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Kaikki";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 maisema";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Kuva 6\"x4\"";
+"Photo 5\"x3\"" = "Kuva 5\"x3\"";
+"Business Card" = "Käyntikorttina";
+"Credit Card" = "Luottokortti";
+"Postcard" = "Postikortti";
+"Custom" = "Mukautettu";
+
+"Inch" = "Tuuma Tuuma";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Kohta Kohta";
+"Percent" = "Prosentti Prosentti";
+
+"dpi" = "dpi";
+
+"Normal" = "Normaali";
+"Flatbed" = "tasoskanneri";
+"Automatic Feeder" = "automaattinen syöttölaite";
+"ADF Front" = "ADF Etusivu";
+"ADF Back" = "ADF Takaisin";
+"ADF Duplex" = "ADF kaksisuuntainen";
+
+"Black & white" = "Mustavalkoinen";
+"Lineart" = "Lineart";
+"Dithered" = "Rasteroitu";
+"Gray" = "Harmaa";
+"12bit Gray" = "12BIT Harmaa";
+"16bit Gray" = "16bit Harmaa";
+"Color" = "Väri";
+"12bit Color" = "12BIT Väri";
+"16bit Color" = "16bit Väri";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Bridge Asennus";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan tulee TWAIN Bridge skannata muista TWAIN soveltamisesta.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Haluatko asentaa ExactScan TWAIN Bridge nyt?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "TWAIN silta on jo asennettu toinen versio ExactScan. ";
+"Do not ask me again." = "Älä kysy uudelleen.";
+"Yes" = "Kyllä";
+"No" = "Ei";
+
+"Defaults" = "Oletukset";
+"Optimize" = "optimoida";
+"Optimize:" = "Optimoi:";
+"Unexpected error" = "Odottamaton virhe";
+"An unexpected error condition occured. Please report." = "Tapahtui odottamaton virhe kunnossa tapahtunut. Ilmoita.";
+"Internal error" = "Sisäinen virhe";
+"Internal error in the i/o core. Please report." = "Sisäinen virhe I/O-ydin. Ilmoita.";
+"No compatible scanner detected." = "Ei yhteensopiva skanneri havaittu.";
+"Rescan" = "Etsi uudelleen";
+"Insert scan" = "Aseta skannata";
+"Insert file" = "Aseta tiedosto";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Generic skannerin ajuri Avision USB-ja SCSI-laitteet. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Flushing sivut";
+"Flushing remaining pages after preview with high-speed scanner." = "Flushing muita sivuja jälkeen esikatsella ja suurnopeusmatkustaja-skanneri.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Flushing muita sivuja jälkeen peruutamme skannata ja suurnopeusmatkustaja-skanneri.";
+"no profile" = "ole profiili";
+"Custom" = "Mukautettu";
+"Profile %d" = "Profiili %d";
+
+/* default profile names */
+"Color PDF" = "Väri PDF";
+"Gray PDF" = "Gray PDF";
+"B/W PDF" = "B/W PDF";
+"Color Copy" = "Color Copy";
+"Gray Copy" = "Gray Kopioi";
+"B/W Copy" = "B/W Kopioi";
+"Color Email" = "Väri Email";
+"Gray Email" = "Gray Email";
+"iPhoto" = "iPhoto";
+"Photo" = "Valokuvan";
+
+/* miscelaneos */
+"No scanner" = "Ei skanneri";
+
+/* info */
+"Vendor:" = "Toimittaja:";
+"Model:" = "Malli:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Aluekoodi :";
+"Series:" = "Sarja:";
+"Version:" = "Versio:";
+"Serial number:" = "Sarjanumero:";
+"Manufacturing date:" = "Manufacturing date:";
+"First scan date:" = "Ensimmäinen tarkistus päivämäärä:";
+"Flatbed scans:" = "Tasoskannaus skannaukset:";
+"Pad scans:" = "Pad skannaukset:";
+"ADF scans:" = "ADF skannaukset:";
+"ADF simplex scans:" = "ADF simplex skannaukset:";
+"ADF duplex scans:" = "ADF kaksipuolinen skannaus:";
+"Roller scans:" = "Roller skannaukset:";
+"Multi feeds:" = "Multi-syötteet:";
+"Paper jams:" = "Paperitukoksia:";

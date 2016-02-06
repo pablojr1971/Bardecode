@@ -1,0 +1,527 @@
+/*
+//  Russian
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by Susanne Klaus.
+//  Translator: Slavyshensky Alexandr.
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Отчет о проблемы";
+"Comments" = "Комментарии";
+"Please describe any steps needed to trigger the problem:" = "Пожалуйста опишите всё, что привело к проблеме:";
+"Problem Details" = "Детали проблемы";
+"System Configuration" = "Конфигурация системы";
+"Report" = "Сообщить";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Ваша персональная информация не будет передана с этим рапортом. С Вами не будут связываться в ответ на этот рапорт. Для поддержки продукта, пожалуйста посетите: ";
+
+
+/* In registration */
+"Registration" = "регистрация";
+"Registration Information" = "Регистрационная информация";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Пожалуйста введите Вашу персональную информацию для того, чтобы зарегистрировать и активировать ExactCODE.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Держите меня в курсе последних новостей , обновления программного обеспечения и самую свежую информацию о продуктах и ​​услугах.";
+"Activation key" = "Ключ активации";
+"First Name" = "Имя";
+"Last Name" = "Фамилия";
+"Company or School" = "Компания или школа";
+"Address" = "Адрес";
+"City" = "Город";
+"State or Province, or County" = "Положение или провинция, или графство";
+"Country" = "Страна";
+"Postal Code" = "Почтовый Код";
+"Email Address" = "Адрес электронной почты";
+"Area Code" = "Почтовый Код";
+"Phone Number" = "Телефонный номер";
+
+"How did you learn about this product?" = "Как Вы узнали о нашем магазине ?";
+"Select if you like" = "Выберите , если хотите";
+"Advertisement" = "Реклама";
+"Magazine" = "Журнал";
+"Newspaper" = "газета";
+"Internet Forum" = "Интернет-форум";
+"Internet Website" = "в сети Интернет,";
+"Internet Search" = "Поиск в Интернете";
+"Recommendation" = "Рекомендация";
+
+"Where will you primarily use this computer?" = "Где вы главным образом будете использовать этот компьютер?";
+"Select" = "Выбрать";
+"Home" = "Дома";
+"Home Business" = "Домашний бизнес";
+"Small Business (1-99 employees)" = "Мелкий бизнес (1-99 работников)";
+"Medium Business (100-499 employees)" = "Средний бизнес (100-499 работников)";
+"Large Business (500+ employees)" = "Большой бизнес (500+ работников)";
+"Elementary/Middle school" = "Начальнаяо/Средняя школа";
+"High School" = "Высшая школа";
+"College" = "Коллеж";
+
+"What best describes what you do?" = "Что лучше описывает Ваше занятие?";
+"Design/Print" = "Дизайн/Печать";
+"Video/Film" = "Видео/пленка";
+"Music" = "Мызыка";
+"Photography" = "Фотография";
+"Education Faculty/Administration" = "Факультет образования/Администрация";
+"Engineering/Scientist/Researcher" = "Проектирование/Научный работник/исследователь";
+"Architecture" = "Архитектура";
+"Finance" = "Финансы";
+"Law" = "Закон";
+"Manufacturing" = "Производство";
+"Marketing/Sales" = "Рынок/Продажи";
+"Medical" = "Медицина";
+"MIS/IT" = "MIS/IT";
+"Student" = "Студент";
+"Webdesigner/Webmaster" = "Вэбмастер/Вебдизайнер";
+"Retired" = "Пенсионер";
+"Other" = "Другое";
+"Register" = "Регистрировать";
+"Export" = "экспорт";
+"Import" = "импорт";
+
+
+/* In try-out control */
+"Try-out version" = "Пробная версия";
+"Try-out demo version:" = "Демоверсия программы:";
+"This software expired." = "Срок действия программы истёк.";
+"This is a demo version of the software which will expire in %d days." = "Это демоверсия программы истекает через %d дней.";
+"Continue" = "Продолжить";
+"Test" = "Испытание";
+"Quit" = "выход";
+"Activate" = "Активация";
+"Purchase" = "Покупка";
+
+/*In choose folder*/
+"Choose destination folder" = "Выберите папку назначения";
+"Select folder where scanned images will be stored in" = "Выберите папку для сохранения отсканированных файлов";
+
+/* During software update */
+"Software Update" = "Обновление программного обеспечения";
+"Checking for new software ..." = "Проверка нового программного обеспечения...";
+"Changes" = "Изменения";
+"Cancel" = "Отмена";
+"Install Update" = "Установка обновления";
+"error parsing XML seed" = "oшибка анализа источника XML";
+"There was a problem obtaining software update information (%@). Please try again later." = "Проблема получения данный по обновлению программного обеспечения (%@). Пожалуйста повторите попытку позже.";
+"No update information" = "Информация об обновлении отсутствует";
+"You are up to date." = "У Вас самая последняя версия";
+"There is no newer software update available." = "Нет новых доступных обновлений.";
+"A new software version is available" = "Доступна новая версия программы";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ доступна (у Вас %@). Обновление может занять некоторое время для загрузки и требуется перезапуск приложения. Если Вы не готовы устанавливать сейчас, Вы можете проверить наличие обновлений в меню приложений позже.";
+"Downloading %@ %@." = "Загружаю %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk из %.0lfk (%.0lfk/s) - %d временно откомандировывает оставать";
+"Did you know?" = "Знаете ли вы?";
+"Learn more" = "Узнать больше";
+"Upgrade" = "модернизация";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Ваша версия ExactScan имеет право перейти на другие версии ExactScan с более широкими возможностями и OCR по сниженной цене .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Поиск поддерживаемых сканеров";
+"Please wait." = "Пожалуйста ждите.";
+"Scanner Configuration" = "Конфигурация сканера";
+"Detect" = "Найти";
+"Abort" = "Прекратить";
+"OK" = "ОК";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Сканер не настроен. Программа должна получить конфигурацию сканера перед первым использованием.";
+"Scanner lamp warming up" = "Лампа сканера прогревается";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "После включения источник света сканера, нужно некоторое время для его прогрева.";
+"Out of documents" = "Документов больше нет";
+"There is no paper in the document feeder." = "Отсутствует бумага в подающем механизме.";
+"Cover open" = "Крышка открыта";
+"Please close the scanner cover and try again." = "Пожалуйста закройте крышку сканера и повторите попытку.";
+"Paper jam" = "Замятие бумаги";
+"Please clear the paper jam in the document feeder and try again." = "Пожалуйста устраните замятие бумаги в подающем механизме и повторите попытку.";
+"Multi feed" = "Multi питание";
+"Please clear the muti feed in the document feeder and try again." = "Пожалуйста ясно питание и попытка бумаги фидера документа multi снова.";
+"Device busy" = "Многодельное прибора";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Прибор использован другим применением, через сеть или прикрепленный принтер. Пожалуйста пробуйте снова когда ie прибора готовый.";
+"Unexpected scanner error" = "Непредвиденная ошибка сканера";
+"An unexpected error condition occured." = "Произошла непредвиденная ошибка.";
+"Scanner not ready" = "Сканер не готов";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Драйвер не распознал совместимые устройства. Пожалуйста убедитесь, что сканер подключен и не занят другим приложением.";
+"Scanning" = "Сканирование";
+"Frontside" = "Передние";
+"Backside" = "зад";
+"frontside" = "лицевая сторона";
+"backside" = "обратная сторона";
+"Initializing scanner" = "Инициализация сканера";
+"Clearing document feeder" = "Фидер документа расчистки";
+"Image data for page %@ is being transferred." = "Данные изображения для страницы %@ перемещаются.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Вы хотите добавить другую страницу к документу или остановить процесс скеннирования? Перед выбором \"%@\" Вы должны поместить следующую страницу  в сканер.";
+"Scanning more pages" = "Сканировать ещё страницы";
+"Stop" = "Стоп";
+"Add" = "Добавить";
+
+"Calibrate Scanner..." = "Откалибрируйте блок развертки...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Блоку развертки нужно быть откалибрированным. Пожалуйста введите страницу тарировки которая грузила с блоком развертки. Если вы не готовы откалибрировать теперь, то вы можете побежать оно от меню применения более поздно.";
+"Calibrating" = "Калибрировать";
+"Calibrating scanner" = "Калибрируя блок развертки";
+
+"Importing files" = "Импортировать архивы";
+"Importing data from image files." = "Импортировать данные от архивов изображения.";
+"Processing file %@, page %d/%d" = "Обрабатывать архив %@, страница %d/%d";
+"Processing file %@, image %d/%d" = "Обрабатывать архив %@, изображение %d/%d";
+"Page %@: %@ ..." = "Страница %@: %@…";
+"A file named \"%@\" already exists." = "файл с именем \"%@\" уже существует.";
+
+/* Preferences: Tab menu */
+"Filing" = "Сохранение";
+"Basic" = "основной";
+"Basic Settings" = "Основные";
+"Advanced" = "Дополнительные";
+"Advanced Settings" = "Дополнительные";
+"OCR" = "OCR";
+"Barcode" = "Barcode";
+/* Additional OCR preferences */
+"Processing" = "Обработка";
+"Finalization" = "Завершение";
+
+"Mode:" = "Режим:";
+"Generic" = "Родово";
+"Dot Matrix" = "Матрица многоточия";
+"Fax" = "Факс";
+
+"Scan" = "Сканирование";
+"Preview" = "Просмотр";
+
+"Profiles" = "Профили";
+"Duplicate Profile" = "дубликат профиля";
+"Reset Profile" = "Переустановите профиль";
+"Reset All Profiles" = "Переустановите все профили";
+
+/* Preferences: Filing */
+"Profile name:" = "Имя профиля:";
+"Folder name:" = "Имя папки:";
+"File name:" = "Имя файла:";
+"Example:" = "Например:";
+"On existing files:" = "На существующих файлах:";
+"Format:" = "Формат:";
+"Quality:" = "Качество:";
+"Compression quality:" = "Качество обжатия:";
+"low" = "низкая";
+"optimal" = "оптимальное";
+"Choose" = "Выберите";
+"Color detection:" = "Обнаружение цвета:";
+"Sensitive" = "Чувствительно";
+"Optimal" = "Оптимально";
+"Lossy" = "Потери";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Сжатый PDF";
+"Highly Compressed PDF" = "Сильно сжатый PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Незашифрованный текст (UTF-8)";
+
+"Unique date tag per file" = "Уникальная метка данных для файла";
+"Edit each filename" = "Редактировать каждое имя файла";
+"Scan to workspace" = "Сканирование в рабочем пространстве";
+"Add -OCR extension" = "Добавить OCR - расширение";
+"Move original file to Trash" = "Переместите исходный файл в корзину";
+"Merge files in one batch" = "Объединение файлов в одной партии";
+"Open with:" = "Открывать с помошью:";
+"no application specified" = "прложение не выбрано";
+"Split on page" = "Разделение на странице";
+"Show configuration before scan" = "Показать настройки перед сканированием";
+"Show progress indicator" = "Показать индикатор прогресса";
+"Scan this profile on document placement" = "Сканировать сразу при вставке с определённым профилем";
+"Ask for scanning more pages" = "Попросите добавить страницы";
+"Timer:" = "Таймер:";
+"Use scanner's own user interface" = "Используйте собственный интерфейс сканера";
+
+"Ask user" = "Спросить пользователя";
+"Increase sequence number" = "Увеличить порядковый номер";
+"Silently overwrite" = "Переписывать не спрашивая";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Источник:";
+"Colors:" = "Цвета:";
+"Color Dropout:" = "Исключение цвета :";
+"Red" = "красный";
+"Green" = "зеленый";
+"Blue" = "синий";
+"None" = "Ни один";
+"Resolution:" = "Разрешение:";
+"Brightness:" = "Яркость:";
+"Contrast:" = "Контрастность:";
+"Gamma:" = "Гамма:";
+"Size:" = "Размер:";
+"Position:" = "Должность:";
+"Size: %@ MB" = "Размер: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "Ш:";
+"H:" = "В:";
+"Rotate:" = "Повернуть:";
+"Rotate every second page by 180°" = "Поворот каждой второй страницы на 180°";
+"Auto crop and de-skew" = "Автоматически обрезать и выровнить";
+"Allow extra long pages" = "Разрешить Удлиненные страницы";
+"Auto rotate by page content" = "Автоматический поворот от содержимого страницы";
+"-90° (CW)" = "-90° (По Часовой)";
+"0°" = "0°";
+"90° (CCW)" = "90° (Против Часовой)";
+"180°" = "180°";
+"Automatic" = "автоматический";
+"Ultrasonic multi-feed detection" = "Ультразвуковая подачи нескольких листов обнаружения";
+"Mechanical de-skew assist" = "Механические де - косые голевой";
+"Primary" = "Первичный";
+"Secondary" = "Вторичный";
+"Use individual color settings for the back side" = "Использовать индивидуальные настройки цвета для обратной стороны";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Показать предпочтения при запуске";
+"De-skew based on page content" = "Де- косо на основе содержимого страницы";
+"De-screen (reduce print moiré patterns)" = "Уменьшение муара при печати шаблона";
+"De-speckle (image noise and defects)" = "De - спекл (шумы и дефекты изображения )";
+"Sharpen" = "Резкость";
+"Automatically optimize to b/w" = "Автоматически оптимизировать до ч/б";
+"Smooth uniform colors" = "Ровные равномерные цветы";
+"Invert image" = "Инвертировать изображение";
+"Blank Page Detection:" = "Обнаружение пустой страницы:";
+"Off" = "Отключено";
+"Delete Blank Page" = "Удалить пустую страницу";
+"Placeholder" = "Заполнитель";
+"Split Document" = "Разделенный документ";
+"Sensitivity:" = "Чувствительность:";
+"high" = "высокая";
+"low" = "низкая";
+"Remove page border and shadow" = "Удалить страницу границы и тени";
+"Merge front and back image" = "Слиянием передней и задней стороны вместе";
+"Black point:" = "Черный точка:";
+"White point:" = "Белый точка:";
+"Hue:" = "Оттенок:";
+"Saturation:" = "Насыщенность:";
+"Lightness:" = "Осветление:";
+"Print with:" = "Печать с помощью:";
+"no printer selected" = "принтер не выбран";
+"Keep printed file" = "Сохранить напечатнный файл";
+
+/* Preview */
+"New" = "Новый";
+"Front" = "Лицевая сторона";
+"Back" = "Обратная сторона";
+
+/* Main Menu*/
+"About" = "о";
+"About %@" = "О программе %@";
+"Check for Updates..." = "Проверить обновления...";
+"Activation..." = "Активация...";
+"Preferences..." = "Настройки...";
+"Preferences" = "Настройки";
+"%@ - Preferences" = "%@ - Настройки";
+"Get Info" = "Получите Info";
+"Get Scanner Info" = "Получите блок развертки Info";
+"Select Scanner..." = "Выбрать сканер ...";
+"%@ Info" = "%@ Info";
+"Services" = "Службы";
+"Hide %@" = "Скрыть %@";
+"Hide Others" = "Скрыть остальные";
+"Show All" = "Показать все";
+"Quit %@" = "Завершить %@";
+"New Scan" = "Новое сканирование";
+
+"Open" = "открыть";
+"Open File..." = "Открытый архив...";
+
+"File" = "Файл";
+"Edit" = "Правка";
+
+"Save" = "Сохранить";
+"Save As..." = "Сохранить как ...";
+
+"Undo" = "Отменить";
+"Redo" = "Повторить";
+"Cut" = "Вырезать";
+"Copy" = "Копировать";
+"Paste" = "Вставить";
+"Delete" = "Удалить";
+"Delete all" = "Удалить все";
+"Select All" = "Выбрать все";
+
+"Window" = "Окно";
+"Close" = "Закрыть";
+"Minimize" = "Уменьшите";
+
+"Help" = "Справка";
+"%@ Help" = "Справка %@";
+
+
+/* OCR */
+"Create searchable documents" = "Создайть документы доступные для поиска";
+"Create searchable barcodes" = "Создайте штрихкоды доступные для поиска";
+"Split document on barcode" = "Разделенный документ на barcode";
+"Discard split page" = "Откажитесь разделенную страницу";
+"One or more of the configured barcodes could not be found." = "Один штуф больше установленных barcodes не смог быть найден.";
+"Dictionary-based spelling correction" = "Словар-основано говорящ коррекцию по буквам";
+"The resolution is used to convert vector files." = "Использовано разрешение преобразовать архивы вектора.";
+
+"Language:" = "Язык:";
+"OCR Language:" = "OCR Язык:";
+"Bulgarian" = "Болгарский";
+"Croatian" = "Хорватский";
+"Czech" = "Чешский";
+"Danish" = "Датский";
+"Dutch" = "Голландский";
+"English" = "Английский";
+"Estonian" = "Эстонский";
+"Finnish" = "Финский";
+"French" = "Французский";
+"German" = "Немецкий";
+"Hungarian" = "Венгерский";
+"Italian" = "Итальянский";
+"Japanese" = "Японский";
+"Korean" = "Корейский";
+"Latvian" = "Латышско";
+"Lithuanian" = "Литовский";
+"Norwegian" = "Норвежско";
+"Polish" = "Польский";
+"Portuguese" = "Португальский";
+"Rumanian" = "Румынский";
+"Russian" = "Русский";
+"Serbian" = "Сербский";
+"Simplified Chinese" = "Упрощенный китайский";
+"Slovenian" = "Словенский";
+"Spanish" = "Испанский";
+"Swedish" = "Шведский";
+"Traditional Chinese" = "Традиционный китайский";
+"Turkish" = "Турецкий";
+"Ukrainian" = "Украинский";
+
+"Type:" = "Тип:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Матрица данных";
+"QR Code" = "Код QR";
+
+/* Imprinter */
+"Imprinter" = "Штамповать";
+"Imprint text mark" = "Метка текста отпечатка";
+"Font:" = "Купель:";
+"Rotation:" = "Вращение:";
+"Color:" = "Цвет:";
+"Style:" = "Тип:";
+"Change" = "Изменение";
+"Filled" = "Заполнено";
+"Outline" = "План";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Все";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 альбомная";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "фото 6\"x4\"";
+"Photo 5\"x3\"" = "фото 5\"x3\"";
+"Business Card" = "Визитная карточка";
+"Credit Card" = "кредитная карта";
+"Postcard" = "открытка";
+"Custom" = "Пользовательский";
+
+"Inch" = "Дюйм";
+"cm" = "см";
+"mm" = "mm";
+"Pixel" = "Пиксел";
+"Point" = "Пункт";
+"Percent" = "Проценты";
+
+"dpi" = "dpi";
+
+"Normal" = "Нормально";
+"Flatbed" = "Планшетный";
+"Automatic Feeder" = "автоподатчике";
+"ADF Front" = "Фронт ADF";
+"ADF Back" = "Задняя часть ADF";
+"ADF Duplex" = "Дуплекс ADF";
+
+"Black & white" = "Черное и белое";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "Серо";
+"12bit Gray" = "серый цвет 12bit";
+"16bit Gray" = "серый цвет 16bit";
+"Color" = "Цвет";
+"12bit Color" = "цвет 12bit";
+"16bit Color" = "цвет 16bit";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "Установка TWAIN Bridge";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan приходит с мостом TWAIN просмотреть от другого применения TWAIN.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Вы полюбите установить ExactScan TWAIN навести теперь?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "Мост TWAIN уже установлен другой версией ExactScan. И вы любите изменить его для использования этой версии ExactScan?";
+"Do not ask me again." = "Не спрашивайте мне снова.";
+"Yes" = "Да";
+"No" = "Нет";
+
+"Defaults" = "Значения по умолчанию";
+"Optimize" = "оптимизировать";
+"Optimize:" = "Оптимизация:";
+"Unexpected error" = "Непредвиденная ошибка";
+"An unexpected error condition occured. Please report." = "Произошла непредвиденная ошибка. Пожалуйста опишите её.";
+"Internal error" = "Внутренняя ошибка";
+"Internal error in the i/o core. Please report." = "Внутренняя ошибка в ввода/вывода. Пожалуйста опишите её.";
+"No compatible scanner detected." = "Отсутствует совместимый сканер.";
+"Rescan" = "Сканировать заново";
+"Insert scan" = "Вставьте сканирования";
+"Insert file" = "Вставить файл";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Общий драйвер для устройств Avision USB и SCSI. Авторское право ExactCODE 2004-2010.";
+"Flushing pages" = "Извлечение страниц";
+"Flushing remaining pages after preview with high-speed scanner." = "Извлечение оставшихся страниц после предварительного просмотра с помощью высокоскоростного сканера.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Извлечение оставшихся страниц после отмены сканирования с помощью высокоскоростного сканера.";
+"no profile" = "отсутствие профиля";
+"Custom" = "Пользовательский";
+"Profile %d" = "Профиль %d";
+
+/* default profile names */
+"Color PDF" = "Цветной PDF";
+"Gray PDF" = "Серый PDF";
+"B/W PDF" = "Ч/Б PDF";
+"Color Copy" = "Цветная копия";
+"Gray Copy" = "Серый экземпляр";
+"B/W Copy" = "Ч/Б Копия";
+"Color Email" = "Цветной Email";
+"Gray Email" = "Email в оттенках серого";
+"iPhoto" = "iPhoto";
+"Photo" = "Фото";
+
+/* miscelaneos */
+"No scanner" = "Отсутствует сканер";
+
+/* info */
+"Vendor:" = "Поставщик:";
+"Model:" = "Модель:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Код региона:";
+"Series:" = "Серия:";
+"Version:" = "Версия:";
+"Serial number:" = "Серийный номер:";
+"Manufacturing date:" = "Дата изготавливания:";
+"First scan date:" = "Во первых дата развертки:";
+"Flatbed scans:" = "Планшетные развертки:";
+"Pad scans:" = "номер страниц резиновых:";
+"ADF scans:" = "ADF сканирования:";
+"ADF simplex scans:" = "номер страницы Фронт ADF:";
+"ADF duplex scans:" = "номер страницы Дуплекс ADF:";
+"Roller scans:" = "Развертки ролика:";
+"Multi feeds:" = "Multi питания:";
+"Paper jams:" = "Бумажные варенья:";

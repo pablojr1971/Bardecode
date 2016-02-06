@@ -1,0 +1,527 @@
+/*
+//  Hebrew
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "הבעיה דווח";
+"Comments" = "תגובות";
+"Please describe any steps needed to trigger the problem:" = "תאר בבקשה את כל הצעדים הדרושים כדי להפעיל את הבעיה :";
+"Problem Details" = "הבעיה פרטים";
+"System Configuration" = "תצורת מערכת";
+"Report" = "דווח דווח";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "המידע האישי שלך לא נשלחים עם הדוח הזה .";
+
+
+/* In registration */
+"Registration" = "הרשמה";
+"Registration Information" = "הרשמה מידע";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "נא להזין את פרטיך האישיים כדי לרשום ולהפעיל את המוצר ExactCODE שלך .";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "שמור אותי עד כה עם חדשות, עדכוני תוכנה ,ואת המידע העדכני ביותר על מוצרים ושירותים .";
+"Activation key" = "מקש הפעלה";
+"First Name" = "הראשון שם הראשון שם";
+"Last Name" = "שם אחרונה שם אחרונה";
+"Company or School" = "החברה או בית הספר";
+"Address" = "כתובת כתובת";
+"City" = "העיר העיר";
+"State or Province, or County" = "מדינה או מחוז , או קאונטי";
+"Country" = "מדינה";
+"Postal Code" = "מיקוד";
+"Email Address" = "כתובת דואל";
+"Area Code" = "קדומת";
+"Phone Number" = "מספר טלפון";
+
+"How did you learn about this product?" = "איך למדת על מוצר זה ?";
+"Select if you like" = "בחר אם אתה רוצה";
+"Advertisement" = "פרסומת";
+"Magazine" = "מגזין";
+"Newspaper" = "עיתון";
+"Internet Forum" = "אינטרנט פורום";
+"Internet Website" = "אתר אינטרנט";
+"Internet Search" = "חיפוש באינטרנט";
+"Recommendation" = "המלצה";
+
+"Where will you primarily use this computer?" = "איפה אתה תהיה בעיקר להשתמש במחשב זה ?";
+"Select" = "בחר בחר";
+"Home" = "דף הבית דף הבית";
+"Home Business" = "דף הבית עסקים";
+"Small Business (1-99 employees)" = "עסקים קטנים (1-99 עובדים)";
+"Medium Business (100-499 employees)" = "הביתי (100-499 עובדים)";
+"Large Business (500+ employees)" = "עסקים גדולים (500 + עובדים)";
+"Elementary/Middle school" = "יסודי / בית הספר התיכון";
+"High School" = "בית ספר תיכון בית ספר תיכון";
+"College" = "מכללה מכללה";
+
+"What best describes what you do?" = "מה מתאר בצורה הטובה ביותר את מה שאתה עושה ?";
+"Design/Print" = "עיצוב / ההדפסה";
+"Video/Film" = "וידאו / סרט";
+"Music" = "מוסיקה מוסיקה";
+"Photography" = "צילום צילום";
+"Education Faculty/Administration" = "הפקולטה לחינוך / מינהל";
+"Engineering/Scientist/Researcher" = "/ הנדסת המדען / חוקר";
+"Architecture" = "אדריכלות אדריכלות";
+"Finance" = "לממן לממן";
+"Law" = "חוק חוק";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "שיווק / מכירות";
+"Medical" = "רפואי רפואי";
+"MIS/IT" = "MIS / IT";
+"Student" = "סטודנט סטודנט";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "בדימוס בדימוס";
+"Other" = "אחרים אחרים";
+"Register" = "הרשמה הרשמה";
+"Export" = "יצוא";
+"Import" = "יבוא";
+
+
+/* In try-out control */
+"Try-out version" = "נסה הקצוב לגרסה";
+"Try-out demo version:" = "נסו את גרסת ההדגמה - :";
+"This software expired." = "תוכנה זו פג .";
+"This is a demo version of the software which will expire in %d days." = "זוהי גרסת ההדגמה של התוכנה אשר יפוג ב %d ימים .";
+"Continue" = "להמשיך להמשיך";
+"Test" = "מבחן מבחן";
+"Quit" = "להתפטר להתפטר";
+"Activate" = "להפעיל להפעיל";
+"Purchase" = "רכישה רכישה";
+
+/*In choose folder*/
+"Choose destination folder" = "בחר בתיקיית היעד";
+"Select folder where scanned images will be stored in" = "התיקיה בחר שם תמונות סרוקות יאוחסנו";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "בדיקת תוכנה חדשה ...";
+"Changes" = "שינויים";
+"Cancel" = "לבטל לבטל";
+"Install Update" = "התקן את עדכון";
+"error parsing XML seed" = "שגיאת ניתוח XML זרע";
+"There was a problem obtaining software update information (%@). Please try again later." = "היתה בעיה בהשגת לעדכן את פרטי התוכנה (%@). ";
+"No update information" = "אין מידע עדכון";
+"You are up to date." = "אתה מעודכן .";
+"There is no newer software update available." = "אין תוכנה חדשה עדכון זמין .";
+"A new software version is available" = "גירסת התוכנה החדשה זמינה";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ זמין (יש לך %@).";
+"Downloading %@ %@." = "הורדת %@ %@ .";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk של %.0lfk (.0%lfk / s) - שניות %d הנותרים";
+"Did you know?" = "הידעת?";
+"Learn more" = "למידע נוסף";
+"Upgrade" = "שדרוג";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "הגרסה שלך ExactScan זכאי לשדרג גירסאות אחרות של ExactScan עם יותר תכונות OCR במחיר מוזל .";
+
+/* Scan progress */
+"Searching for supported scanners" = "מחפש סורקים נתמכים";
+"Please wait." = "אנא המתן .";
+"Scanner Configuration" = "סורק תצורת";
+"Detect" = "לגלות לגלות";
+"Abort" = "להפיל להפיל";
+"OK" = "אישור אישור";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "הסורק לא הוגדר . ";
+"Scanner lamp warming up" = "סורק המנורה מתחמם";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "לאחר הפעלת מקור האור של הסורק , המנורה צריכה קצת זמן להתחמם כדי לפלוט עוצמת ההארה מיועדת .";
+"Out of documents" = "מתוך המסמכים";
+"There is no paper in the document feeder." = "אין נייר במזין המסמכים .";
+"Cover open" = "כיסוי פתוח";
+"Please close the scanner cover and try again." = "נא לסגור את מכסה הסורק ונסה שוב .";
+"Paper jam" = "חסימת נייר";
+"Please clear the paper jam in the document feeder and try again." = "נא לנקות את מזין מסמכים הנייר התקוע ולנסות שוב .";
+"Multi feed" = "רב להאכיל";
+"Please clear the muti feed in the document feeder and try again." = "נא לנקות את מזין מסמכים נייר להאכיל רב ונסה שוב .";
+"Device busy" = "המכשיר עסוק";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "המכשיר נמצא בשימוש על ידי יישום אחר , דרך הרשת או מחוברת מדפסת . ";
+"Unexpected scanner error" = "שגיאה לא צפויה הסורק";
+"An unexpected error condition occured." = "מצב שגיאה בלתי צפויה .";
+"Scanner not ready" = "סורק לא מוכן";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "הנהג לא זיהה התקן תואם . ";
+"Scanning" = "סריקה";
+"Frontside" = "frontside";
+"Backside" = "ישבן";
+"frontside" = "frontside";
+"backside" = "ישבן ישבן";
+"Initializing scanner" = "מאתחל הסורק";
+"Clearing document feeder" = "ניקוי מזין מסמכים";
+"Image data for page %@ is being transferred." = "נתוני התמונה על הדף %@ מועבר .";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "האם אתם רוצים להוסיף דף נוסף למסמך או לעצור את תהליך הסריקה ? ";
+"Scanning more pages" = "סריקת דפים נוספים";
+"Stop" = "עצור עצור";
+"Add" = "הוסף הוסף";
+
+"Calibrate Scanner..." = "כיול סורק ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "הסורק צריך להיות מכויל . ";
+"Calibrating" = "כיול";
+"Calibrating scanner" = "כיול הסורק";
+
+"Importing files" = "ייבוא ​​קבצים";
+"Importing data from image files." = "ייבוא ​​נתונים מקבצים התמונה .";
+"Processing file %@, page %d/%d" = "עיבוד הקובץ %@, בעמוד %d/%d";
+"Processing file %@, image %d/%d" = "עיבוד הקובץ %@, תמונה %d/%d";
+"Page %@: %@ ..." = "עמוד %@ : %@ ...";
+"A file named \"%@\" already exists." = "קובץ בשם \"%@\" כבר קיים.";
+
+/* Preferences: Tab menu */
+"Filing" = "תיוק";
+"Basic" = "בסיסי";
+"Basic Settings" = "הגדרות בסיסיות";
+"Advanced" = "מתקדם";
+"Advanced Settings" = "הגדרות מתקדמות";
+"OCR" = "OCR";
+"Barcode" = "ברקוד";
+/* Additional OCR preferences */
+"Processing" = "עיבוד";
+"Finalization" = "השלמת";
+
+"Mode:" = "מצב :";
+"Generic" = "כללי כללי";
+"Dot Matrix" = "מטריצת";
+"Fax" = "פקס פקס";
+
+"Scan" = "לסרוק לסרוק";
+"Preview" = "תצוגה תצוגה";
+
+"Profiles" = "פרופילים";
+"Duplicate Profile" = "כפל פרופיל";
+"Reset Profile" = "איפוס פרופיל";
+"Reset All Profiles" = "איפוס כל הפרופילים";
+
+/* Preferences: Filing */
+"Profile name:" = "פרופיל שם :";
+"Folder name:" = "שם התיקייה :";
+"File name:" = "שם קובץ :";
+"Example:" = "לדוגמה :";
+"On existing files:" = "על הקבצים הקיימים :";
+"Format:" = "עיצוב :";
+"Quality:" = "איכות :";
+"Compression quality:" = "דחיסה באיכות :";
+"low" = "נמוך נמוך";
+"optimal" = "אופטימלי אופטימלי";
+"Choose" = "בחר בחר";
+"Color detection:" = "צבע זיהוי :";
+"Sensitive" = "רגיש רגיש";
+"Optimal" = "אופטימלי אופטימלי";
+"Lossy" = "Lossy";
+
+"PDF" = "PDF";
+"Compressed PDF" = "דחוס בפורמט PDF";
+"Highly Compressed PDF" = "מאוד דחוס PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG - 2000";
+"TIFF" = "TIFF TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "מיקרוסופט BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Plain Text (UTF-8)";
+
+"Unique date tag per file" = "ייחודיות תג תאריך לכל קובץ";
+"Edit each filename" = "עריכת כל קובץ";
+"Scan to workspace" = "סריקה לסביבת העבודה";
+"Add -OCR extension" = "הארכת תוספת OCR";
+"Move original file to Trash" = "העברת הקובץ המקורי Trash";
+"Merge files in one batch" = "מיזוג קבצים אצווה אחת";
+"Open with:" = "פתח עם :";
+"no application specified" = "אין יישום שצוין";
+"Split on page" = "פיצול בעמוד";
+"Show configuration before scan" = "הצג תצורה לפני סריקה";
+"Show progress indicator" = "הצג מחוון ההתקדמות";
+"Scan this profile on document placement" = "סריקה זו פרופיל על מיקום במסמך";
+"Ask for scanning more pages" = "לבקש סריקת דפים נוספים";
+"Timer:" = "טיימר :";
+"Use scanner's own user interface" = "הסורק של שימוש בממשק המשתמש עצמו";
+
+"Ask user" = "שאל את המשתמש";
+"Increase sequence number" = "הגדלת מספר רצף";
+"Silently overwrite" = "בשקט להחליף";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "מקור :";
+"Colors:" = "צבעים :";
+"Color Dropout:" = "צבע נשירה :";
+"Red" = "אדום";
+"Green" = "ירוק";
+"Blue" = "כחול";
+"None" = "אף לא אחד";
+"Resolution:" = "החלטה :";
+"Brightness:" = "בהירות :";
+"Contrast:" = "לעומת זאת :";
+"Gamma:" = "גמא :";
+"Size:" = "גודל :";
+"Position:" = "מיקום :";
+"Size: %@ MB" = "גודל : %@ מגה";
+"X:" = "X :";
+"Y:" = "Y :";
+"W:" = "W :";
+"H:" = "H :";
+"Rotate:" = "סובב :";
+"Rotate every second page by 180°" = "סובב כל העמוד השני של 180 °";
+"Auto crop and de-skew" = "Auto היבול ו-de להטות";
+"Allow extra long pages" = "אפשר לדפים ארוכים במיוחד";
+"Auto rotate by page content" = "סיבוב אוטומטי של תוכן הדף";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "אוטומטי";
+"Ultrasonic multi-feed detection" = "זיהוי קולי רב להאכיל";
+"Mechanical de-skew assist" = "אסיסט דה להטות מכאניים";
+"Primary" = "יסודי";
+"Secondary" = "משני";
+"Use individual color settings for the back side" = "השתמש בהגדרות צבע בודדותלצד האחורי";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "צג העדפות בהפעלה";
+"De-skew based on page content" = "De- להטות מבוסס על תוכן דף";
+"De-screen (reduce print moiré patterns)" = "דה המסך ( להפחית להדפיס moiré דפוסי )";
+"De-speckle (image noise and defects)" = "De- רבב ( רעש בתמונהופגמים )";
+"Sharpen" = "לחדד לחדד";
+"Automatically optimize to b/w" = "אופטימיזציה אוטומטית כדי ש / ל";
+"Smooth uniform colors" = "חלקות בצבעים אחידים";
+"Invert image" = "היפוך התמונה";
+"Blank Page Detection:" = "בלנק איתור עמוד :";
+"Off" = "Off";
+"Delete Blank Page" = "דף ריק מחק";
+"Placeholder" = "מציין מיקום";
+"Split Document" = "פיצול מסמך";
+"Sensitivity:" = "רגישות :";
+"high" = "גבוה גבוה";
+"low" = "נמוך נמוך";
+"Remove page border and shadow" = "הסר את גבול עמוד וצל";
+"Merge front and back image" = "מיזוג קדמי ואחורית תמונה";
+"Black point:" = "שחור הצבע :";
+"White point:" = "לבן הצבע :";
+"Hue:" = "הגוון :";
+"Saturation:" = "הרוויה :";
+"Lightness:" = "הקלות :";
+"Print with:" = "הדפס עם :";
+"no printer selected" = "לא המדפסת שנבחרה";
+"Keep printed file" = "שמור קובץ מודפס";
+
+/* Preview */
+"New" = "חדש חדש";
+"Front" = "חזית חזית";
+"Back" = "חזרה חזרה";
+
+/* Main Menu*/
+"About" = "על";
+"About %@" = "כ %@";
+"Check for Updates..." = "בדוק אם יש עדכונים ...";
+"Activation..." = "הפעלת ...";
+"Preferences..." = "העדפות ...";
+"Preferences" = "העדפות";
+"%@ - Preferences" = "העדפות - %@";
+"Get Info" = "Get Info";
+"Get Scanner Info" = "Get Info סורק";
+"Select Scanner..." = "בחר סורק ...";
+"%@ Info" = "%@ פרטי";
+"Services" = "שירותים שירותים";
+"Hide %@" = "הסתר %@";
+"Hide Others" = "הסתר אחרים";
+"Show All" = "הצג הכל";
+"Quit %@" = "צא %@";
+"New Scan" = "סריקה חדשה";
+
+"Open" = "לפתוח";
+"Open File..." = "פתח קובץ ...";
+
+"File" = "קובץ קובץ";
+"Edit" = "לערוך לערוך";
+
+"Save" = "שמור שמור";
+"Save As..." = "שמירה בשם ...";
+
+"Undo" = "לבטל לבטל";
+"Redo" = "לעשות שוב לעשות שוב";
+"Cut" = "לחתוך לחתוך";
+"Copy" = "עותק עותק";
+"Paste" = "להדביק להדביק";
+"Delete" = "מחק מחק";
+"Delete all" = "למחוק את כל";
+"Select All" = "בחר הכל";
+
+"Window" = "חלון חלון";
+"Close" = "קרוב קרוב";
+"Minimize" = "לצמצם לצמצם";
+
+"Help" = "עזרה עזרה";
+"%@ Help" = "%@ עזרה";
+
+
+/* OCR */
+"Create searchable documents" = "צור מסמכים לחיפוש";
+"Create searchable barcodes" = "יצירת ברקודים לחיפוש";
+"Split document on barcode" = "פיצול מסמך על ברקוד";
+"Discard split page" = "מחק דף מפוצל";
+"One or more of the configured barcodes could not be found." = "אחת בצר יותר של ברקודים מוגדר לא ניתן למצוא .";
+"Dictionary-based spelling correction" = "איות מילון מבוססי תיקון";
+"The resolution is used to convert vector files." = "ההחלטה משמש להמרת קבצים וקטור .";
+
+"Language:" = "שפה :";
+"OCR Language:" = "OCR שפה:";
+"Bulgarian" = "בולגריה";
+"Croatian" = "קרואטית";
+"Czech" = "צ 'כיה";
+"Danish" = "דני דני";
+"Dutch" = "הולנדית הולנדית";
+"English" = "אנגלית אנגלית";
+"Estonian" = "אסטוניה";
+"Finnish" = "פינית";
+"French" = "צרפתי צרפתי";
+"German" = "גרמנית גרמנית";
+"Hungarian" = "הונגרי הונגרי";
+"Italian" = "איטלקית איטלקית";
+"Japanese" = "יפנית יפנית";
+"Korean" = "קוריאה";
+"Latvian" = "לטביה";
+"Lithuanian" = "ליטא";
+"Norwegian" = "הנורבגי";
+"Polish" = "פולנית פולנית";
+"Portuguese" = "פורטוגזית";
+"Rumanian" = "רומני רומני";
+"Russian" = "רוסית רוסית";
+"Serbian" = "הסרבית";
+"Simplified Chinese" = "סינית";
+"Slovenian" = "סלובניה";
+"Spanish" = "ספרדית";
+"Swedish" = "שוודית";
+"Traditional Chinese" = "סינית מסורתית";
+"Turkish" = "טורקית טורקית";
+"Ukrainian" = "אוקראינית";
+
+"Type:" = "סוג :";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF - 417";
+"Data Matrix" = "נתונים מטריקס";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "דפוסת לסמן טקסט";
+"Font:" = "גופן :";
+"Rotation:" = "סיבוב :";
+"Color:" = "צבע :";
+"Style:" = "סגנון :";
+"Change" = "שינוי שינוי";
+"Filled" = "מילא מילא";
+"Outline" = "מתאר מתאר";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "כל כל";
+"US Legal" = "ארהב משפטי";
+"US Letter" = "ארהב מכתב";
+"A3" = "A3";
+"A4 landscape" = "A4 נוף";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "תמונה 6\"x4\"";
+"Photo 5\"x3\"" = "תמונה 5\"x3\"";
+"Business Card" = "כרטיס ביקור";
+"Credit Card" = "כרטיס אשראי";
+"Postcard" = "גלויה גלויה";
+"Custom" = "מנהג מנהג";
+
+"Inch" = "אינטש אינטש";
+"cm" = "סמ";
+"mm" = "ממ";
+"Pixel" = "פיקסל פיקסל";
+"Point" = "הצבע הצבע";
+"Percent" = "אחוזים אחוזים";
+
+"dpi" = "dpi";
+
+"Normal" = "נורמלי נורמלי";
+"Flatbed" = "משטח";
+"Automatic Feeder" = "מזין אוטומטי";
+"ADF Front" = "ADF החזית";
+"ADF Back" = "ADF חזרה";
+"ADF Duplex" = "ADF דופלקס";
+
+"Black & white" = "שחור לבן";
+"Lineart" = "Lineart";
+"Dithered" = "מיזוג צבעים";
+"Gray" = "אפור אפור";
+"12bit Gray" = "12bit גריי";
+"16bit Gray" = "16bit גריי";
+"Color" = "צבע צבע";
+"12bit Color" = "צבע 12bit";
+"16bit Color" = "צבע 16bit";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN התקנת גשר";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan מגיע עם גשר TWAIN לסרוק מיישום TWAIN אחרים .";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "האם ברצונך להתקין את TWAIN ExactScan גשר עכשיו ?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "גשר TWAIN מותקן כבר גרסה אחרת של ExactScan . ";
+"Do not ask me again." = "אל תשאל אותי שוב .";
+"Yes" = "כן כן";
+"No" = "לא לא";
+
+"Defaults" = "ברירות מחדל";
+"Optimize" = "מטב";
+"Optimize:" = "מטב :";
+"Unexpected error" = "שגיאה לא צפויה";
+"An unexpected error condition occured. Please report." = "מצב שגיאה בלתי צפויה . ";
+"Internal error" = "שגיאה פנימית";
+"Internal error in the i/o core. Please report." = "שגיאה פנימית ב הליבה I / O . ";
+"No compatible scanner detected." = "לא סורק תואם זוהה .";
+"Rescan" = "Rescan";
+"Insert scan" = "הכנס לסרוק";
+"Insert file" = "הכנס קובץ";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Generic התקן הסורק עבור Avision USB והתקנים SCSI . ";
+"Flushing pages" = "פלאשינג עמודים";
+"Flushing remaining pages after preview with high-speed scanner." = "פלאשינג הדפים שנותרו אחרי התצוגה עם סורק במהירות גבוהה .";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "פלאשינג עמודים שנותרו לאחר ביטול סריקה עם סורק במהירות גבוהה .";
+"no profile" = "אין פרופיל";
+"Custom" = "מנהג מנהג";
+"Profile %d" = "פרופיל %d";
+
+/* default profile names */
+"Color PDF" = "צבע PDF";
+"Gray PDF" = "גריי PDF";
+"B/W PDF" = "B / W -PDF";
+"Color Copy" = "צבע העתק";
+"Gray Copy" = "גריי העתק";
+"B/W Copy" = "B / W העתקה";
+"Color Email" = "צבע דואל";
+"Gray Email" = "גריי דואל";
+"iPhoto" = "iPhoto";
+"Photo" = "צילום צילום";
+
+/* miscelaneos */
+"No scanner" = "לא סורק";
+
+/* info */
+"Vendor:" = "הספק :";
+"Model:" = "דגם :";
+"ASIC:" = "ASIC :";
+"Firmware:" = "קושחה :";
+"Region code:" = "אזור הקוד :";
+"Series:" = "סדרה :";
+"Version:" = "גירסה :";
+"Serial number:" = "מספר סידורי:";
+"Manufacturing date:" = "ייצור מ :";
+"First scan date:" = "הסריקה הראשונה תאריך :";
+"Flatbed scans:" = "משטח סורק :";
+"Pad scans:" = "Pad סריקות :";
+"ADF scans:" = "סריקות ה-ADF :";
+"ADF simplex scans:" = "ADF סריקות סימפלקס :";
+"ADF duplex scans:" = "ADF סורק דופלקס :";
+"Roller scans:" = "רולר סריקות :";
+"Multi feeds:" = "ריבוי הזנות :";
+"Paper jams:" = "נייר ריבות :";

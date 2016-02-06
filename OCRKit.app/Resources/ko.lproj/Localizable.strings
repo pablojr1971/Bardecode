@@ -1,0 +1,527 @@
+/*
+//  Korean
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "문제 보고";
+"Comments" = "코멘트";
+"Please describe any steps needed to trigger the problem:" = "문제를 방아쇠를 당기기 위하여 필요로 한 어떤 단계든지 기술하십시오:";
+"Problem Details" = "문제 세부사항";
+"System Configuration" = "시스템 구성";
+"Report" = "보고";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "당신의 인적사항은 이 보고로 보내지지 않는다. 당신과 이 보고에 응하여 연락되지 않을 것이다. 제품 지원을 위해, 방문하십시오: ";
+
+
+/* In registration */
+"Registration" = "등록";
+"Registration Information" = "등록 정보";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "ExactCODE 당신의 제품을 등록하고 활성화하기 위하여 당신의 인적사항에 들어가십시오.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "뉴스, 소프트웨어 업데이트 , 제품 및 서비스에 대한 최신 정보를 최신 상태로 나를 계속.";
+"Activation key" = "활성화 열쇠";
+"First Name" = "이름";
+"Last Name" = "성";
+"Company or School" = "회사 또는 학교";
+"Address" = "주소";
+"City" = "도시";
+"State or Province, or County" = "국가 또는 지방, 또는 군";
+"Country" = "나라";
+"Postal Code" = "우편 번호";
+"Email Address" = "이메일 주소";
+"Area Code" = "지역 번호";
+"Phone Number" = "전화 번호";
+
+"How did you learn about this product?" = "당신은 어떻게 이 제품 에 대해 배웠는가 ?";
+"Select if you like" = "당신이 좋아하는 경우에 선택";
+"Advertisement" = "광고";
+"Magazine" = "매거진";
+"Newspaper" = "신문";
+"Internet Forum" = "인터넷 포럼";
+"Internet Website" = "인터넷 웹 사이트";
+"Internet Search" = "인터넷 검색";
+"Recommendation" = "추천";
+
+"Where will you primarily use this computer?" = "당신은 어디에서 1 차적으로 이 컴퓨터를 사용할 것인가?";
+"Select" = "추려낸";
+"Home" = "가정";
+"Home Business" = "가내 사업";
+"Small Business (1-99 employees)" = "소기업 (1-99명의 직원)";
+"Medium Business (100-499 employees)" = "중간 사업 (100-499명의 직원)";
+"Large Business (500+ employees)" = "큰 사업 (500+ 직원)";
+"Elementary/Middle school" = "초등 중학교";
+"High School" = "고등학교";
+"College" = "대학";
+
+"What best describes what you do?" = "당신이 무슨을 무슨 베스트가 기술하는가?";
+"Design/Print" = "디자인 또는 인쇄";
+"Video/Film" = "영상 또는 필름";
+"Music" = "음악";
+"Photography" = "사진술";
+"Education Faculty/Administration" = "교육 능력 또는 행정";
+"Engineering/Scientist/Researcher" = "기술설계 또는 과학자 또는 연구원";
+"Architecture" = "건축술";
+"Finance" = "재정";
+"Law" = "법률";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "매매 또는 판매";
+"Medical" = "의학";
+"MIS/IT" = "MIS/IT";
+"Student" = "학생";
+"Webdesigner/Webmaster" = "Webdesigner 또는 웹마스터";
+"Retired" = "은퇴하는";
+"Other" = "다른 사람";
+"Register" = "기록기";
+"Export" = "수출";
+"Import" = "수입";
+
+
+/* In try-out control */
+"Try-out version" = "적성 검사 버전";
+"Try-out demo version:" = "적성 검사 민주당원 버전:";
+"This software expired." = "이 소프트웨어는 만료되었다.";
+"This is a demo version of the software which will expire in %d days." = "이것은 %d일 만료됩니다 소프트웨어의 데모 버전입니다.";
+"Continue" = "계속하십시오";
+"Test" = "시험";
+"Quit" = "종료하는";
+"Activate" = "활성화하십시오";
+"Purchase" = "구입";
+
+/*In choose folder*/
+"Choose destination folder" = "목적지 폴더를 선택하십시오";
+"Select folder where scanned images will be stored in" = "검사된 심상이 안으로 저장될 폴더를 선정하십시오";
+
+/* During software update */
+"Software Update" = "소프트웨어 업데이트";
+"Checking for new software ..." = "새로운 소프트웨어를 검사…";
+"Changes" = "변화";
+"Cancel" = "취소";
+"Install Update" = "갱신을 설치하십시오";
+"error parsing XML seed" = "XML 씨를 분석하는 과실";
+"There was a problem obtaining software update information (%@). Please try again later." = "소프트웨어 갱신 정보 (%@)를 얻는 문제가 있었다. 재시도 해주십시오 나중에.";
+"No update information" = "갱신 정보 없음";
+"You are up to date." = "당신은 최신 이다.";
+"There is no newer software update available." = "유효한 더 새로운 소프트웨어 갱신이 없다.";
+"A new software version is available" = "새로운 소프트웨어 버전은 유효하다";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@는 유효하다 (당신은 %@가 있다). 갱신은 다운로드하는 시간을 걸릴지도 모르고다 신청 재착수를 요구한다. 당신이 지금 설치하게 준비되어 있지 않는 경우에, 당신은 신청 메뉴에 있는 갱신을 나중에 검사할 수 있다.";
+"Downloading %@ %@." = "%@ %@ 다운로드.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk 의 %.0lfk (%.0lfk/s) - %d 남아 있을 후원한다";
+"Did you know?" = "당신은 알고 계십니까?";
+"Learn more" = "자세히보기";
+"Upgrade" = "업그레 이드";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "ExactScan 의 버전은 저렴한 가격 에 더 많은 기능과 OCR 과 ExactScan 의 다른 버전 으로 업그레이 드 받을 수있는 제품입니다.";
+
+/* Scan progress */
+"Searching for supported scanners" = "지원된 스캐너를 찾기";
+"Please wait." = "기다려주십시오.";
+"Scanner Configuration" = "스캐너 윤곽";
+"Detect" = "검출하십시오";
+"Abort" = "비행 중지";
+"OK" = "좋습니다";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "아무 스캐너도 형성되지 않았다. 이 신청은 scanner&#039를 얻을 필요가 있다; 첫번째 사용 및 단면도 윤곽의 앞에 s 윤곽.";
+"Scanner lamp warming up" = "스캐너 램프 데우기";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "스캐너의 광원을 가능하게 하기 후에, 램프는 예정한 발광성을 방출하기 위하여 데우는 약간 시간을 필요로 한다.";
+"Out of documents" = "문서에서";
+"There is no paper in the document feeder." = "문서 지류에 있는 아무 종이도 없다.";
+"Cover open" = "열려있는 덮개";
+"Please close the scanner cover and try again." = "스캐너 덮개 및 시험을 다시 닫으십시오.";
+"Paper jam" = "서류상 잼";
+"Please clear the paper jam in the document feeder and try again." = "명확한 문서 지류 서류상 잼 및 재시도.";
+"Multi feed" = "다 급식";
+"Please clear the muti feed in the document feeder and try again." = "명확한 문서 지류 종이 다 급식 및 재시도.";
+"Device busy" = "장치 사용 중";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "장치는 네트워크 또는 붙어 있던 인쇄 기계를 통해 다른 신청에 의해, 사용된다. 재시도 해주십시오 때 준비되어 있는 장치 ie.";
+"Unexpected scanner error" = "의외 스캐너 과실";
+"An unexpected error condition occured." = "의외 오류 상태는 일어났다.";
+"Scanner not ready" = "준비되어 있지 않음 스캐너";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "운전사는 호환성 장치를 인식하지 않았다. 스캐너가 다른 신청에 의해 연결되고 사용되지 않는다는 것을 확인하십시오.";
+"Scanning" = "스캐닝";
+"Frontside" = "프론트 사이드";
+"Backside" = "뒷면";
+"frontside" = "frontside";
+"backside" = "후부";
+"Initializing scanner" = "초기화 스캐너";
+"Clearing document feeder" = "개간 문서 지류";
+"Image data for page %@ is being transferred." = "페이지 %@를 위한 이미지 데이터는 옮겨지고 있다.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "당신은 다른 페이지를 문서에 추가하거나 스캐닝 과정을 멈추고 싶은가? 전에 선정하기 \"%@ \" 당신은 스캐너에 다음 페이지를 두어야 한다.";
+"Scanning more pages" = "페이지 더 검사";
+"Stop" = "정지";
+"Add" = "추가하십시오";
+
+"Calibrate Scanner..." = "측정하십시오 스캐너를…";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "스캐너는 측정될 필요가 있다. 스캐너로 발송한 구경측정 페이지를 삽입하십시오. 당신이 지금 측정하게 준비되어 있지 않는 경우에, 당신은 신청 메뉴에서 그것을 나중에 달릴 수 있다.";
+"Calibrating" = "측정";
+"Calibrating scanner" = "측정 스캐너";
+
+"Importing files" = "수입은 신청한다";
+"Importing data from image files." = "이미지 파일의 자료 수입.";
+"Processing file %@, page %d/%d" = "파일 %@ 가공, 페이지 %d/%d";
+"Processing file %@, image %d/%d" = "파일 %@ 가공, 심상 %d/%d";
+"Page %@: %@ ..." = "페이지 %@: %@…";
+"A file named \"%@\" already exists." = "파일 이름 \"%@\" 이미 존재합니다.";
+
+/* Preferences: Tab menu */
+"Filing" = "서류정리";
+"Basic" = "기본";
+"Basic Settings" = "기본적인 조정";
+"Advanced" = "고급";
+"Advanced Settings" = "진보된 조정";
+"OCR" = "OCR";
+"Barcode" = "Barcode";
+/* Additional OCR preferences */
+"Processing" = "처리";
+"Finalization" = "Finalization";
+
+"Mode:" = "형태:";
+"Generic" = "일반";
+"Dot Matrix" = "점 행렬";
+"Fax" = "팩시밀리";
+
+"Scan" = "검사";
+"Preview" = "시사";
+
+"Profiles" = "단면도";
+"Duplicate Profile" = "프로필을 중복";
+"Reset Profile" = "리셋 단면도";
+"Reset All Profiles" = "모든 단면도를 다시 놓으십시오";
+
+/* Preferences: Filing */
+"Profile name:" = "단면도 이름:";
+"Folder name:" = "폴더 이름:";
+"File name:" = "파일 이름:";
+"Example:" = "보기:";
+"On existing files:" = "기존 파일에:";
+"Format:" = "체재:";
+"Quality:" = "질:";
+"Compression quality:" = "압축 질:";
+"low" = "낮은";
+"optimal" = "최선";
+"Choose" = "선택하십시오";
+"Color detection:" = "색깔 탐지:";
+"Sensitive" = "과민한";
+"Optimal" = "최선";
+"Lossy" = "손실";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "높은 압축 PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "평문 (UTF-8)";
+
+"Unique date tag per file" = "파일 당 유일한 날짜 꼬리표";
+"Edit each filename" = "각 파일 이름을 편집하십시오";
+"Scan to workspace" = "작업 영역에 스캔";
+"Add -OCR extension" = "추가 OCR 확장";
+"Move original file to Trash" = "휴지통으로 원본 파일 을 이동";
+"Merge files in one batch" = "일괄 의 파일을 병합";
+"Open with:" = "로 여십시오:";
+"no application specified" = "아무 신청도 지정하지 않았다";
+"Split on page" = "페이지 나누기";
+"Show configuration before scan" = "검사의 앞에 쇼 윤곽";
+"Show progress indicator" = "쇼 진도 지시자";
+"Scan this profile on document placement" = "문서 배치에 이 단면도를 검사하십시오";
+"Ask for scanning more pages" = "페이지 더 검사를 요구하십시오";
+"Timer:" = "타이머";
+"Use scanner's own user interface" = "사용 scanner' s는 사용자 인터페이스를 소유한다";
+
+"Ask user" = "사용자를 요구하십시오";
+"Increase sequence number" = "증가 순차 번호";
+"Silently overwrite" = "조용히 겹쳐서 쓰십시오";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "근원:";
+"Colors:" = "색깔:";
+"Color Dropout:" = "색상 제거 :";
+"Red" = "빨강";
+"Green" = "녹색";
+"Blue" = "푸른";
+"None" = "없음";
+"Resolution:" = "해결책:";
+"Brightness:" = "광도:";
+"Contrast:" = "대조:";
+"Gamma:" = "감마:";
+"Size:" = "크기:";
+"Position:" = "위치 :";
+"Size: %@ MB" = "크기: %@ MB";
+"X:" = "x:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "자전하십시오:";
+"Rotate every second page by 180°" = "180°에 의하여 각 두번째 페이지를 자전하십시오";
+"Auto crop and de-skew" = "자동 작물은 de 비뚤어진다";
+"Allow extra long pages" = "여분의 긴 페이지 수";
+"Auto rotate by page content" = "자동 페이지 콘텐츠 로 회전";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "자동";
+"Ultrasonic multi-feed detection" = "초음파 다중 피드 검출";
+"Mechanical de-skew assist" = "기계 드 스큐 보조";
+"Primary" = "예비 선거";
+"Secondary" = "차";
+"Use individual color settings for the back side" = "뒷면 에 개별적인 색상 설정을 사용하여";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "시작할 때 환경 설정을 표시";
+"De-skew based on page content" = "드 - 스큐 페이지의 콘텐츠 를 기반으로";
+"De-screen (reduce print moiré patterns)" = "De 스크린 (인쇄 moiré 본을 감소시키십시오)";
+"De-speckle (image noise and defects)" = "( 이미지 노이즈 및 결함 ) 드 반점";
+"Sharpen" = "날카롭게 하십시오";
+"Automatically optimize to b/w" = "자동적으로 b/w에 낙관하십시오";
+"Smooth uniform colors" = "매끄러운 획일한 색깔";
+"Invert image" = "전화하는 심상";
+"Blank Page Detection:" = "공백 페이지 탐지:";
+"Off" = "떨어져";
+"Delete Blank Page" = "감소 공백 페이지";
+"Placeholder" = "플래이스 홀더";
+"Split Document" = "쪼개지는 문서";
+"Sensitivity:" = "감성:";
+"high" = "높은";
+"low" = "낮은";
+"Remove page border and shadow" = "페이지 테두리와 그림자를 제거";
+"Merge front and back image" = "전면 및 후면 이미지를 병합";
+"Black point:" = "흑수병:";
+"White point:" = "백색 점:";
+"Hue:" = "색상:";
+"Saturation:" = "포화:";
+"Lightness:" = "가벼움:";
+"Print with:" = "인쇄를 가진:";
+"no printer selected" = "선정되는 인쇄 기계 없음";
+"Keep printed file" = "보유 인쇄 파일";
+
+/* Preview */
+"New" = "새로운";
+"Front" = "정면";
+"Back" = "뒤";
+
+/* Main Menu*/
+"About" = "약";
+"About %@" = "%@에 관하여";
+"Check for Updates..." = "갱신을 위한 검사…";
+"Activation..." = "활성화…";
+"Preferences..." = "특혜…";
+"Preferences" = "특혜";
+"%@ - Preferences" = "%@ - 특혜";
+"Get Info" = "정보를 얻으십시오";
+"Get Scanner Info" = "스캐너 정보를 얻으십시오";
+"Select Scanner..." = "스캐너 를 선택 ...";
+"%@ Info" = "%@ 정보";
+"Services" = "서비스";
+"Hide %@" = "은신처 %@";
+"Hide Others" = "은신처 다른 사람";
+"Show All" = "모두를 보여주십시오";
+"Quit %@" = "%@를 종료하십시오";
+"New Scan" = "새로운 검사";
+
+"Open" = "열려있는";
+"Open File..." = "파일을 연다…";
+
+"File" = "파일";
+"Edit" = "편집하십시오";
+
+"Save" = "를 제외하고";
+"Save As..." = "다른 이름으로 저장 ...";
+
+"Undo" = "원상태로 돌리십시오";
+"Redo" = "다시 하십시오";
+"Cut" = "커트";
+"Copy" = "사본";
+"Paste" = "풀";
+"Delete" = "감소";
+"Delete all" = "모두 삭제";
+"Select All" = "모두를 선정하십시오";
+
+"Window" = "창";
+"Close" = "마지막";
+"Minimize" = "극소화하십시오";
+
+"Help" = "도움";
+"%@ Help" = "%@ 도움";
+
+
+/* OCR */
+"Create searchable documents" = "찾을 수 있는 문서를 창조하십시오";
+"Create searchable barcodes" = "찾을 수 있는 barcodes를 창조하십시오";
+"Split document on barcode" = "barcode에 쪼개지는 문서";
+"Discard split page" = "분할 페이지 를 삭제";
+"One or more of the configured barcodes could not be found." = "형성한 barcodes의 1개의 광석은 좀더 찾아낼 수 없었다.";
+"Dictionary-based spelling correction" = "사전 기초를 두는 개정 철자";
+"The resolution is used to convert vector files." = "벡터 파일을 개조하는 해결책은 이용된다.";
+
+"Language:" = "언어:";
+"OCR Language:" = "OCR 언어 :";
+"Bulgarian" = "불가리아어";
+"Croatian" = "크로아티아 사람";
+"Czech" = "체코어";
+"Danish" = "덴마크어";
+"Dutch" = "네덜란드어";
+"English" = "영어";
+"Estonian" = "에스토니아";
+"Finnish" = "핀란드의";
+"French" = "프랑스어";
+"German" = "독어";
+"Hungarian" = "헝가리어";
+"Italian" = "이탈리아어";
+"Japanese" = "일본어";
+"Korean" = "한국어";
+"Latvian" = "라트비아";
+"Lithuanian" = "리투아니아";
+"Norwegian" = "노르웨이어";
+"Polish" = "폴란드어";
+"Portuguese" = "포르투갈어";
+"Rumanian" = "루마니아어";
+"Russian" = "러시아어";
+"Serbian" = "Serbian";
+"Simplified Chinese" = "간결체 한자";
+"Slovenian" = "슬로베니아어";
+"Spanish" = "스페인어";
+"Swedish" = "스웨덴어";
+"Traditional Chinese" = "전통 중국어";
+"Turkish" = "터키";
+"Ukrainian" = "우크라이나";
+
+"Type:" = "유형:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "각인기";
+"Imprint text mark" = "인장 원본 표";
+"Font:" = "글꼴:";
+"Rotation:" = "교체:";
+"Color:" = "색깔:";
+"Style:" = "작풍:";
+"Change" = "변화";
+"Filled" = "채우는";
+"Outline" = "개략";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "모두";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 조경";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "사진 6\"x4\"";
+"Photo 5\"x3\"" = "사진 5\"x3\"";
+"Business Card" = "명함";
+"Credit Card" = "신용 카드";
+"Postcard" = "그림엽서";
+"Custom" = "관례";
+
+"Inch" = "인치";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "화소";
+"Point" = "점";
+"Percent" = "퍼센트";
+
+"dpi" = "dpi";
+
+"Normal" = "정상";
+"Flatbed" = "평판";
+"Automatic Feeder" = "자동 급지 장치";
+"ADF Front" = "ADF 정면";
+"ADF Back" = "ADF 뒤";
+"ADF Duplex" = "ADF 쌍신회로";
+
+"Black & white" = "블랙 \u0026 화이트";
+"Lineart" = "Lineart";
+"Dithered" = "당황하는";
+"Gray" = "회색";
+"12bit Gray" = "12bit 회색";
+"16bit Gray" = "16bit 회색";
+"Color" = "색깔";
+"12bit Color" = "12bit 색깔";
+"16bit Color" = "16bit 색깔";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN 교량 임명";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan는 TWAIN 교량에 TWAIN 다른 신청에서 검사하기 위하여 온다.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "당신 ExactScan TWAIN를 설치하고 싶다 지금 다리를 놓기 위하여 하고자 했는가?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "TWAIN 교량은 ExactScan의 다른 버전에 의해 이미 설치된다. 당신은 ExactScan의 이 버전을 사용하기 위하여 그것을 바꾸고 싶은가 하고자 했는가?";
+"Do not ask me again." = "저를 다시 요구하지 말라.";
+"Yes" = "그렇습니다";
+"No" = "아니다";
+
+"Defaults" = "과태";
+"Optimize" = "최적화";
+"Optimize:" = "낙관하십시오:";
+"Unexpected error" = "의외 과실";
+"An unexpected error condition occured. Please report." = "의외 오류 상태는 일어났다. 보고하십시오.";
+"Internal error" = "내부 오류";
+"Internal error in the i/o core. Please report." = "입력/출력 중핵에 있는 내부 오류. 보고하십시오.";
+"No compatible scanner detected." = "호환성 스캐너는 검출하지 않았다.";
+"Rescan" = "Rescan";
+"Insert scan" = "스캔 삽입";
+"Insert file" = "파일을 삽입";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Avision USB와 스카시 장치를 위한 일반적인 스캐너 운전사. 저작권 2004-2010년 ExactCODE.";
+"Flushing pages" = "내뿜는 페이지";
+"Flushing remaining pages after preview with high-speed scanner." = "고속 스캐너를 가진 시사 후에 내뿜는 잔여 페이지.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "고속 스캐너를 가진 검사를 취소한 후에 내뿜는 잔여 페이지.";
+"no profile" = "단면도 없음";
+"Custom" = "관례";
+"Profile %d" = "프로필 d";
+
+/* default profile names */
+"Color PDF" = "색깔 PDF";
+"Gray PDF" = "회색 PDF";
+"B/W PDF" = "B/W PDF";
+"Color Copy" = "색깔 사본";
+"Gray Copy" = "회색 사본";
+"B/W Copy" = "B/W 사본";
+"Color Email" = "색깔 전자 우편";
+"Gray Email" = "회색 전자 우편";
+"iPhoto" = "iPhoto";
+"Photo" = "사진";
+
+/* miscelaneos */
+"No scanner" = "스캐너 없음";
+
+/* info */
+"Vendor:" = "납품업자:";
+"Model:" = "모형:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "굳힌모:";
+"Region code:" = "지역 코드 :";
+"Series:" = "시리즈:";
+"Version:" = "버전:";
+"Serial number:" = "일련 번호:";
+"Manufacturing date:" = "제조 날짜:";
+"First scan date:" = "첫째로 검사 날짜:";
+"Flatbed scans:" = "평상형 트레일러는 검사한다:";
+"Pad scans:" = "패드는 검사한다:";
+"ADF scans:" = "ADF 는 스캔 :";
+"ADF simplex scans:" = "ADF 심플렉스는 검사한다:";
+"ADF duplex scans:" = "ADF 쌍신회로는 검사한다:";
+"Roller scans:" = "롤러는 검사한다:";
+"Multi feeds:" = "다 급식:";
+"Paper jams:" = "서류상 잼:";

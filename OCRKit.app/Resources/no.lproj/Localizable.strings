@@ -1,0 +1,527 @@
+/*
+//  Norwegian
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Problem Report";
+"Comments" = "Kommentarer";
+"Please describe any steps needed to trigger the problem:" = "Beskriv noen skritt som trengs for å utløse problemet:";
+"Problem Details" = "Problemet Detaljer";
+"System Configuration" = "Systemkonfigurasjon";
+"Report" = "Rapporter";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Din personlige informasjon blir ikke sendt med denne rapporten. Du vil ikke bli kontaktet i svar til denne rapporten. For produktet, vennligst besøk:";
+
+
+/* In registration */
+"Registration" = "Registrering";
+"Registration Information" = "Registrering Informasjon";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Vennligst oppgi din personlige informasjon for å registrere og aktivere ExactCODE produktet.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Hold meg oppdatert med nyheter , programvareoppdateringer og den nyeste informasjonen om produkter og tjenester.";
+"Activation key" = "Aktiveringsnøkkel";
+"First Name" = "Fornavn";
+"Last Name" = "Etternavn";
+"Company or School" = "Bedrift eller skole";
+"Address" = "Adresse";
+"City" = "By";
+"State or Province, or County" = "Delstat eller provins, eller County";
+"Country" = "Land";
+"Postal Code" = "Postnummer";
+"Email Address" = "E-postadresse";
+"Area Code" = "Retningsnummer";
+"Phone Number" = "Telefonnummer";
+
+"How did you learn about this product?" = "Hvordan fikk du vite om dette produktet?";
+"Select if you like" = "Velg om du liker";
+"Advertisement" = "Annonse";
+"Magazine" = "Magazine";
+"Newspaper" = "Avis";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internett Nettsted";
+"Internet Search" = "Søk på internett";
+"Recommendation" = "Anbefaling";
+
+"Where will you primarily use this computer?" = "Hvor vil du primært bruke denne datamaskinen?";
+"Select" = "Velg";
+"Home" = "Hjem";
+"Home Business" = "Home Business";
+"Small Business (1-99 employees)" = "Små bedrifter (1-99 ansatte)";
+"Medium Business (100-499 employees)" = "Mellomstore bedrifter (100-499 ansatte)";
+"Large Business (500+ employees)" = "Store bedrifter (500 + ansatte)";
+"Elementary/Middle school" = "Grunnskole / Midt skole";
+"High School" = "High school";
+"College" = "Agder";
+
+"What best describes what you do?" = "Hva som best beskriver hva du gjør?";
+"Design/Print" = "Design / Skriv ut";
+"Video/Film" = "Video / Film";
+"Music" = "Musikk";
+"Photography" = "Fotografi";
+"Education Faculty/Administration" = "Utdanning Avdeling / Administrasjon";
+"Engineering/Scientist/Researcher" = "Engineering / Forsker / forsker";
+"Architecture" = "Arkitektur";
+"Finance" = "Finans";
+"Law" = "Juss";
+"Manufacturing" = "Produksjonssysmymet";
+"Marketing/Sales" = "Markedsføring / salg";
+"Medical" = "Medisinsk";
+"MIS/IT" = "MIS / IT";
+"Student" = "Student";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "Pensjonist";
+"Other" = "Annet";
+"Register" = "Registrer";
+"Export" = "Eksportere";
+"Import" = "Importer";
+
+
+/* In try-out control */
+"Try-out version" = "Prøv ut versjon";
+"Try-out demo version:" = "Prøv ut demo versjon:";
+"This software expired." = "Denne programvaren er utløpt.";
+"This is a demo version of the software which will expire in %d days." = "Dette er en demo versjon av programvaren som utløper i %d dager.";
+"Continue" = "Fortsett";
+"Test" = "Test";
+"Quit" = "Avslutt";
+"Activate" = "Aktiver";
+"Purchase" = "Kjøp";
+
+/*In choose folder*/
+"Choose destination folder" = "Velg målmappe";
+"Select folder where scanned images will be stored in" = "Velg mappen hvor skannede bilder vil bli lagret i";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "Leter etter ny programvare ...";
+"Changes" = "Endringer";
+"Cancel" = "Avbryt";
+"Install Update" = "Installer Oppdatering";
+"error parsing XML seed" = "feil analysering XML-seedet";
+"There was a problem obtaining software update information (%@). Please try again later." = "Det var et problem å skaffe programvareoppdatering informasjon (%@). Vennligst prøv igjen senere.";
+"No update information" = "Ingen informasjon";
+"You are up to date." = "Du er oppdatert.";
+"There is no newer software update available." = "Det er ingen nyere programvare oppdatering tilgjengelig.";
+"A new software version is available" = "En ny programvareversjon er tilgjengelig";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ Er tilgjengelig (du har %@). En oppdatering kan ta litt tid å laste ned og krever et program starter. Hvis du ikke er klar til å installere nå, kan du se etter oppdateringer i programmenyen senere.";
+"Downloading %@ %@." = "Laster ned %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk av %.0lfk (%.0lfk/s) - %d sekunder gjenstår";
+"Did you know?" = "Visste du dette?";
+"Learn more" = "Lær mer";
+"Upgrade" = "Oppgrader";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Din versjon av ExactScan er kvalifisert til å oppgradere til andre versjoner av ExactScan med flere funksjoner og OCR til en redusert pris .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Søker etter støttes skannere";
+"Please wait." = "Vennligst vent.";
+"Scanner Configuration" = "Scanner Configuration";
+"Detect" = "Gjenkjenne";
+"Abort" = "Abort";
+"OK" = "OK";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Ingen skanneren har blitt konfigurert. Denne applikasjonen krever å få scanneren konfigurasjon før første gangs bruk og profil konfigurasjonen.";
+"Scanner lamp warming up" = "Scanner Lampen varmer opp";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Etter aktivering av lyskilde av skanner, lampe trenger litt tid til å varme opp for å avgi den tiltenkte luminans.";
+"Out of documents" = "Ut av dokumenter";
+"There is no paper in the document feeder." = "Det er ikke noe papir i dokumentmater.";
+"Cover open" = "Cover åpne";
+"Please close the scanner cover and try again." = "Vennligst lukk skanneren dekke, og prøv igjen.";
+"Paper jam" = "Papirstopp";
+"Please clear the paper jam in the document feeder and try again." = "Vær klar til dokumentmater papirstopp og prøv igjen.";
+"Multi feed" = "Multi feed";
+"Please clear the muti feed in the document feeder and try again." = "Vennligst klart dokumentmateren papiret multi fôr og prøv igjen.";
+"Device busy" = "Enhet opptatt";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Enheten brukes av et annet program, via nettverk eller en tilkoblet skriver. ";
+"Unexpected scanner error" = "Uventet skanneren feil";
+"An unexpected error condition occured." = "En uventet feil oppstod.";
+"Scanner not ready" = "Scanner ikke klar";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Sjåføren har ikke anerkjent en kompatibel enhet. Kontroller at skanneren er tilkoblet og ikke brukes av et annet program.";
+"Scanning" = "Skanning";
+"Frontside" = "frontside";
+"Backside" = "backside";
+"frontside" = "frontside";
+"backside" = "baksiden";
+"Initializing scanner" = "Initialiserer skanner";
+"Clearing document feeder" = "Clearing dokumentmater";
+"Image data for page %@ is being transferred." = "Image data for siden %@ pågår.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Vil du legge til en ny side i dokumentet eller stoppe Skanningsprosessen? Før du velger \"%@\" bør du plassere den neste siden i skanneren.";
+"Scanning more pages" = "Skanning av flere sider";
+"Stop" = "Stoppe";
+"Add" = "Legge til";
+
+"Calibrate Scanner..." = "Kalibrer Scanner ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Skanneren må kalibreres. Sett inn kalibreringen siden som fulgte med skanneren. Hvis du ikke er klar til å kalibrere nå, kan du kjøre den fra programmenyen senere.";
+"Calibrating" = "Kalibrering";
+"Calibrating scanner" = "Kalibrering skanner";
+
+"Importing files" = "Importere filer";
+"Importing data from image files." = "Importere data fra bildefiler.";
+"Processing file %@, page %d/%d" = "Processing file %@, side %d/%d";
+"Processing file %@, image %d/%d" = "Processing file %@, image %d/%d";
+"Page %@: %@ ..." = "Side %@: %@ ...";
+"A file named \"%@\" already exists." = "En fil som heter \"%@\" finnes allerede .";
+
+/* Preferences: Tab menu */
+"Filing" = "Innlevering";
+"Basic" = "Basic";
+"Basic Settings" = "Grunnleggende innstillinger";
+"Advanced" = "Avansert";
+"Advanced Settings" = "Avanserte innstillinger";
+"OCR" = "OCR";
+"Barcode" = "Strekkode";
+/* Additional OCR preferences */
+"Processing" = "Processing";
+"Finalization" = "Ferdiggjøring";
+
+"Mode:" = "Mode:";
+"Generic" = "Generisk";
+"Dot Matrix" = "Matriseskrivere";
+"Fax" = "Fax";
+
+"Scan" = "Scan";
+"Preview" = "Forhåndsvisning";
+
+"Profiles" = "Profiler";
+"Duplicate Profile" = "Duplikatprofil";
+"Reset Profile" = "Tilbakestill profil";
+"Reset All Profiles" = "Tilbakestille alle profilene";
+
+/* Preferences: Filing */
+"Profile name:" = "Profilnavn:";
+"Folder name:" = "Mappenavn:";
+"File name:" = "Filnavn:";
+"Example:" = "Eksempel:";
+"On existing files:" = "På eksisterende filer:";
+"Format:" = "Format:";
+"Quality:" = "Kvalitet:";
+"Compression quality:" = "Compression kvalitet:";
+"low" = "lav";
+"optimal" = "optimal";
+"Choose" = "Velge";
+"Color detection:" = "Color Detection:";
+"Sensitive" = "Mottakelige";
+"Optimal" = "Optimal";
+"Lossy" = "Lossy";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Svært komprimert PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Ren tekst (UTF-8)";
+
+"Unique date tag per file" = "Unike dato tag per fil";
+"Edit each filename" = "Rediger hvert filnavn";
+"Scan to workspace" = "Skann til arbeidsområde";
+"Add -OCR extension" = "Add -OCR forlengelse";
+"Move original file to Trash" = "Flytt opprinnelige filen til papirkurven";
+"Merge files in one batch" = "Slå sammen filer i en batch";
+"Open with:" = "Åpne med:";
+"no application specified" = "ingen søknad spesifisert";
+"Split on page" = "Split på side";
+"Show configuration before scan" = "Vis før skanningen";
+"Show progress indicator" = "Vis fremgang indikatoren";
+"Scan this profile on document placement" = "Scan denne profilen på dokumentet plassering";
+"Ask for scanning more pages" = "Spør for skanning av flere sider";
+"Timer:" = "Tidsur:";
+"Use scanner's own user interface" = "Bruk skanneren eget brukergrensesnitt";
+
+"Ask user" = "Spør brukeren";
+"Increase sequence number" = "Øk sekvens nummer";
+"Silently overwrite" = "Stille overskrive";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Kilde:";
+"Colors:" = "Farger:";
+"Color Dropout:" = "Color Dropout :";
+"Red" = "Red";
+"Green" = "grønn";
+"Blue" = "blå";
+"None" = "Ingen";
+"Resolution:" = "Vedtak:";
+"Brightness:" = "Lysstyrke:";
+"Contrast:" = "Kontrast:";
+"Gamma:" = "Gamma:";
+"Size:" = "Størrelse:";
+"Position:" = "Stilling:";
+"Size: %@ MB" = "Størrelse: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "Roter:";
+"Rotate every second page by 180°" = "Rotér hvert sekund siden ved 180°";
+"Auto crop and de-skew" = "Auto beskjære og de-skew";
+"Allow extra long pages" = "Tillate ekstra lange sider";
+"Auto rotate by page content" = "Auto rotere sideinnhold";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Automatisk";
+"Ultrasonic multi-feed detection" = "Ultralyd multi - feed deteksjon";
+"Mechanical de-skew assist" = "Mekaniske de- skew assist";
+"Primary" = "Primære";
+"Secondary" = "Sekundær";
+"Use individual color settings for the back side" = "Bruke individuelle fargeinnstillingene for baksiden";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Vis Preferences ved oppstart";
+"De-skew based on page content" = "De-skew basert på sidens innhold";
+"De-screen (reduce print moiré patterns)" = "De-skjermen (redusere print moiré mønstrene)";
+"De-speckle (image noise and defects)" = "De- flekker ( bildestøy og defekter )";
+"Sharpen" = "Sharpen";
+"Automatically optimize to b/w" = "Automatisk optimalisere å b/w";
+"Smooth uniform colors" = "Jevn og fin farge";
+"Invert image" = "Inverter bilde";
+"Blank Page Detection:" = "Blank side gjenkjenning:";
+"Off" = "Av";
+"Delete Blank Page" = "Slett blank side";
+"Placeholder" = "Placeholder";
+"Split Document" = "Separate Document";
+"Sensitivity:" = "Følsomhet:";
+"high" = "høy";
+"low" = "lav";
+"Remove page border and shadow" = "Ta side ramme og skygge";
+"Merge front and back image" = "Flette foran og bak bilde";
+"Black point:" = "Svart punkt:";
+"White point:" = "Hvitt punkt:";
+"Hue:" = "Kulør:";
+"Saturation:" = "Metning:";
+"Lightness:" = "Lightness:";
+"Print with:" = "Skriv ut med:";
+"no printer selected" = "ingen valgte skriveren";
+"Keep printed file" = "Holde trykket fil";
+
+/* Preview */
+"New" = "Ny";
+"Front" = "Front";
+"Back" = "Tilbake";
+
+/* Main Menu*/
+"About" = "Om";
+"About %@" = "Om %@";
+"Check for Updates..." = "Se etter oppdateringer ...";
+"Activation..." = "Aktivering ...";
+"Preferences..." = "Innstillinger ...";
+"Preferences" = "Innstillinger";
+"%@ - Preferences" = "%@ - Innstillinger";
+"Get Info" = "Få info";
+"Get Scanner Info" = "Få Scanner info";
+"Select Scanner..." = "Select Scanner ...";
+"%@ Info" = "%@ Info";
+"Services" = "Tjenester";
+"Hide %@" = "Skjul %@";
+"Hide Others" = "Skjul andre";
+"Show All" = "Vis alle";
+"Quit %@" = "Avslutt %@";
+"New Scan" = "Ny Scan";
+
+"Open" = "åpent";
+"Open File..." = "Åpne fil ...";
+
+"File" = "Fil";
+"Edit" = "Rediger";
+
+"Save" = "Lagre";
+"Save As..." = "Lagre som ...";
+
+"Undo" = "Angre";
+"Redo" = "Gjenta";
+"Cut" = "Kutte";
+"Copy" = "Kopier";
+"Paste" = "Lim";
+"Delete" = "Slette";
+"Delete all" = "Slett alle";
+"Select All" = "Velg alle";
+
+"Window" = "Vindu";
+"Close" = "Lukke";
+"Minimize" = "Minimer";
+
+"Help" = "Hjelp";
+"%@ Help" = "%@ Hjelp";
+
+
+/* OCR */
+"Create searchable documents" = "Opprett søkbare dokumenter";
+"Create searchable barcodes" = "Opprett søkbar strekkoder";
+"Split document on barcode" = "Split dokument på strekkode";
+"Discard split page" = "Kast split side";
+"One or more of the configured barcodes could not be found." = "Ett eller flere av de konfigurert strekkoder kunne ikke bli funnet.";
+"Dictionary-based spelling correction" = "Ordbok - baserte stavekontroll";
+"The resolution is used to convert vector files." = "Oppløsningen brukes til å konvertere vektor filer.";
+
+"Language:" = "Språk:";
+"OCR Language:" = "OCR-språk :";
+"Bulgarian" = "Bulgarsk";
+"Croatian" = "Kroatisk";
+"Czech" = "Tsjekkisk";
+"Danish" = "Dansk";
+"Dutch" = "Nederlandsk";
+"English" = "Engelsk";
+"Estonian" = "Estisk";
+"Finnish" = "Finsk";
+"French" = "Fransk";
+"German" = "Tysk";
+"Hungarian" = "Ungarsk";
+"Italian" = "Italiensk";
+"Japanese" = "Japansk";
+"Korean" = "Koreansk";
+"Latvian" = "Latvisk";
+"Lithuanian" = "Litauisk";
+"Norwegian" = "Norsk";
+"Polish" = "Polsk";
+"Portuguese" = "Portugisisk";
+"Rumanian" = "Rumanian";
+"Russian" = "Russisk";
+"Serbian" = "Serbisk";
+"Simplified Chinese" = "Forenkla kinesisk";
+"Slovenian" = "Slovene";
+"Spanish" = "Spansk";
+"Swedish" = "Svensk";
+"Traditional Chinese" = "Tradisjonell kinesisk";
+"Turkish" = "Tyrkisk";
+"Ukrainian" = "Ukrainsk";
+
+"Type:" = "Type:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "Imprint tekst mark";
+"Font:" = "Font:";
+"Rotation:" = "Rotasjon:";
+"Color:" = "Farge:";
+"Style:" = "Style:";
+"Change" = "Endre";
+"Filled" = "Fylt";
+"Outline" = "Outline";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Alle";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 liggende";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Vilde 6\"x4\"";
+"Photo 5\"x3\"" = "Vilde 5\"x3\"";
+"Business Card" = "Business Card";
+"Credit Card" = "Kredittkort";
+"Postcard" = "Postkort";
+"Custom" = "Skikk";
+
+"Inch" = "Inch";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Point";
+"Percent" = "Prosent";
+
+"dpi" = "ppt";
+
+"Normal" = "Normal";
+"Flatbed" = "Flatbed";
+"Automatic Feeder" = "automatisk mater";
+"ADF Front" = "ADF Front";
+"ADF Back" = "ADF Tilbake";
+"ADF Duplex" = "ADF Dupleks";
+
+"Black & white" = "Black \u0026 white";
+"Lineart" = "LineArt";
+"Dithered" = "Rastrert";
+"Gray" = "Grå";
+"12bit Gray" = "12bit Gray";
+"16bit Gray" = "16bit Gray";
+"Color" = "Farge";
+"12bit Color" = "12bit Color";
+"16bit Color" = "16bit Color";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Bridge Installasjon";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan kommer med en TWAIN Bridge for å skanne fra andre TWAIN program.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Vil du installere ExactScan TWAIN Bridge nå?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "TWAIN Bridge er allerede installert ved en annen versjon av ExactScan. ";
+"Do not ask me again." = "Ikke spør meg igjen.";
+"Yes" = "Ja";
+"No" = "Ingen";
+
+"Defaults" = "Standarder";
+"Optimize" = "optimalisere";
+"Optimize:" = "Optimaliser:";
+"Unexpected error" = "Uventet feil";
+"An unexpected error condition occured. Please report." = "En uventet feil oppstod. Vennligst rapporter.";
+"Internal error" = "Intern feil";
+"Internal error in the i/o core. Please report." = "Intern feil i I/O-kjerne. Vennligst rapporter.";
+"No compatible scanner detected." = "Ingen kompatibel scanner oppdaget.";
+"Rescan" = "Skanne";
+"Insert scan" = "Sett skanne";
+"Insert file" = "Sett inn fil";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Generisk skanner driveren for Avision USB og SCSI-enheter. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Flushing sider";
+"Flushing remaining pages after preview with high-speed scanner." = "Flushing gjenværende sidene etter forhåndsvisning med høyhastighets-skanner.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Flushing gjenværende sidene etter avbryter skanningen med høyhastighets-skanner.";
+"no profile" = "Ingen profil";
+"Custom" = "Skikk";
+"Profile %d" = "Profile %d";
+
+/* default profile names */
+"Color PDF" = "Color PDF";
+"Gray PDF" = "Gray PDF";
+"B/W PDF" = "B/W PDF";
+"Color Copy" = "Color Kopier";
+"Gray Copy" = "Gray Kopier";
+"B/W Copy" = "B/W Kopier";
+"Color Email" = "Color Epost";
+"Gray Email" = "Gray Epost";
+"iPhoto" = "iPhoto";
+"Photo" = "Foto";
+
+/* miscelaneos */
+"No scanner" = "Ingen scanner";
+
+/* info */
+"Vendor:" = "Leverandør:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Region kode:";
+"Series:" = "Series:";
+"Version:" = "Versjon:";
+"Serial number:" = "Serienummer:";
+"Manufacturing date:" = "Fremstilling dato:";
+"First scan date:" = "Første skanning dato:";
+"Flatbed scans:" = "Flatbed skanner:";
+"Pad scans:" = "Pad skanninger:";
+"ADF scans:" = "ADF skanninger:";
+"ADF simplex scans:" = "ADF simplex skanner:";
+"ADF duplex scans:" = "ADF duplex skanner:";
+"Roller scans:" = "Roller skanninger:";
+"Multi feeds:" = "Multi feeds:";
+"Paper jams:" = "Papirstopp:";

@@ -1,0 +1,527 @@
+/*
+//  Romanian
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Problema Raport";
+"Comments" = "Comentarii";
+"Please describe any steps needed to trigger the problem:" = "Vă rugăm să descrie orice măsuri necesare pentru a declanşa problema:";
+"Problem Details" = "Problema Detalii";
+"System Configuration" = "Configurare sistem";
+"Report" = "Raport";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Informaţiile dvs. personale nu sunt trimise cu acest raport. Nu veţi fi contactat în răspuns la acest raport. Pentru asistenţă privind produsul, vă rugăm să vizitaţi:";
+
+
+/* In registration */
+"Registration" = "înregistrare";
+"Registration Information" = "Informaţii de înregistrare";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Vă rugăm să introduceţi informaţiile dvs. personale pentru a vă activa şi a înregistra ExactCODE produs.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Ține-mă la curent cu știri, actualizări de software , precum și cele mai recente informații despre produse și servicii .";
+"Activation key" = "Cheie de activare";
+"First Name" = "Prenume";
+"Last Name" = "Nume";
+"Company or School" = "Scoala de companie sau";
+"Address" = "Adresă";
+"City" = "Oraş";
+"State or Province, or County" = "Stat sau de provincie, sau Judeţ";
+"Country" = "Țară";
+"Postal Code" = "Cod Postal";
+"Email Address" = "Adresa de email";
+"Area Code" = "Codul zonei";
+"Phone Number" = "Numărul de telefon";
+
+"How did you learn about this product?" = "Cum ați aflat despre acest produs ?";
+"Select if you like" = "Selectați dacă doriți";
+"Advertisement" = "Publicitate";
+"Magazine" = "Magazine";
+"Newspaper" = "Ziar";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internet Website";
+"Internet Search" = "Internet Căutare";
+"Recommendation" = "Recomandarea";
+
+"Where will you primarily use this computer?" = "În cazul în care vă va utiliza în primul rând, acest computer?";
+"Select" = "Selectaţi";
+"Home" = "Acasă";
+"Home Business" = "Home Business";
+"Small Business (1-99 employees)" = "Afaceri mici (1-99 de salariaţi)";
+"Medium Business (100-499 employees)" = "Medium Business (100-499 de salariaţi)";
+"Large Business (500+ employees)" = "Mare de afaceri (+ 500 de salariaţi)";
+"Elementary/Middle school" = "Elementare / Middle school";
+"High School" = "Liceu";
+"College" = "Colegiul";
+
+"What best describes what you do?" = "Ce descrie cel mai bine ceea ce faci?";
+"Design/Print" = "Design / Print";
+"Video/Film" = "Video / Film";
+"Music" = "Muzică";
+"Photography" = "Fotografie";
+"Education Faculty/Administration" = "Facultatea de Educaţie / Administratie";
+"Engineering/Scientist/Researcher" = "Inginerie / Scientist / Cercetător";
+"Architecture" = "Arhitectura";
+"Finance" = "Finanţe";
+"Law" = "Legea";
+"Manufacturing" = "Fabricaţie";
+"Marketing/Sales" = "Marketing / Vanzari";
+"Medical" = "Medicale";
+"MIS/IT" = "MIS / IT";
+"Student" = "Student";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "Pensionar";
+"Other" = "Alt";
+"Register" = "Register";
+"Export" = "Export";
+"Import" = "Import";
+
+
+/* In try-out control */
+"Try-out version" = "Încercaţi să-versiune";
+"Try-out demo version:" = "Încercaţi versiunea demo-out:";
+"This software expired." = "Acest software expirat.";
+"This is a demo version of the software which will expire in %d days." = "Aceasta este o versiune demo a software-ului care va expira în %d de zile.";
+"Continue" = "Continuare";
+"Test" = "Încercare";
+"Quit" = "Nu mai";
+"Activate" = "Activare";
+"Purchase" = "Cumpărare";
+
+/*In choose folder*/
+"Choose destination folder" = "Alegeţi dosarul de destinaţie";
+"Select folder where scanned images will be stored in" = "Selectaţi folderul în care imaginile scanate vor fi stocate în";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "Pentru software de Verificarea noi ...";
+"Changes" = "Modificări";
+"Cancel" = "Anulare";
+"Install Update" = "Instalaţi Actualizare de";
+"error parsing XML seed" = "eroare la analiza XML seminţe";
+"There was a problem obtaining software update information (%@). Please try again later." = "Există o problemă la obţinerea de informaţii de actualizare software (%@). Vă rugăm să încercaţi din nou mai târziu.";
+"No update information" = "Nu actualizare informaţii";
+"You are up to date." = "Sunteti până la data de.";
+"There is no newer software update available." = "Nu este nici o actualizare disponibilă o versiune mai nouă de software.";
+"A new software version is available" = "O nouă versiune de software este disponibil";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ Este disponibil (pe care le-aţi %@). O actualizare poate lua ceva timp pentru a descărca şi necesită o repornire de aplicare. Dacă nu sunteţi gata să instalaţi acum, puteţi verifica pentru actualizări de la punerea în aplicare meniul de mai târziu.";
+"Downloading %@ %@." = "Descărcarea %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk din %.0lfk (%.0lfk/s) - %d secunde rămase";
+"Did you know?" = "Ştiaţi că?";
+"Learn more" = "Aflaţi mai multe";
+"Upgrade" = "Upgrade";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Versiunea dvs. de ExactScan este eligibil pentru upgrade la alte versiuni de ExactScan cu mai multe caracteristici şi OCR la un preţ redus .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Căutarea a sprijinit scanere";
+"Please wait." = "Vă rugăm să aşteptaţi.";
+"Scanner Configuration" = "Configurarea Scanner";
+"Detect" = "Detecta";
+"Abort" = "Abandona";
+"OK" = "OK";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Nu scaner a fost configurată. Această aplicaţie are nevoie pentru a obţine aturi de configurare înainte de prima utilizare şi de profil de configurare.";
+"Scanner lamp warming up" = "Scanner de lampă de incalzirea";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "După activarea de sursă de lumină de la scaner, lampa are nevoie de ceva timp pentru a încălzi până la a emite destinate luminance.";
+"Out of documents" = "Afară de documente";
+"There is no paper in the document feeder." = "Nu există nici o lucrare în documentul de mâncăcios.";
+"Cover open" = "Coperta deschis";
+"Please close the scanner cover and try again." = "Vă rugăm să acopere aproape de scanner şi încercaţi din nou.";
+"Paper jam" = "Blocaj de hârtie";
+"Please clear the paper jam in the document feeder and try again." = "Vă rugăm să clar documentul mâncăcios blocaj de hârtie şi încercaţi din nou.";
+"Multi feed" = "Multi furaje";
+"Please clear the muti feed in the document feeder and try again." = "Vă rugăm să clare de hârtie documentul tip "feeder" pentru hrana animalelor şi încercaţi din nou mai multe.";
+"Device busy" = "Dispozitiv ocupat";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Dispozitivul este utilizat de altă aplicaţie, prin intermediul reţelei sau o imprimantă ataşată. ";
+"Unexpected scanner error" = "Scanner de eroare neaşteptată";
+"An unexpected error condition occured." = "O condiţie a apărut erori neaşteptate.";
+"Scanner not ready" = "Scanner nu gata";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Soferul nu a recunoscut un aparat compatibil. Vă rugăm să vă asiguraţi-vă că scannerul nu este conectat şi de utilizat de o altă aplicaţie.";
+"Scanning" = "De scanare";
+"Frontside" = "frontside";
+"Backside" = "Reversul";
+"frontside" = "frontside";
+"backside" = "spatele";
+"Initializing scanner" = "Iniţializare scanner";
+"Clearing document feeder" = "Clearing alimentator de documente";
+"Image data for page %@ is being transferred." = "Imagine de date pentru pagina de %@ este de a fi transferaţi.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Doriţi să adăugaţi o altă pagină de la documentul sau de a opri procesul de scanare? Înainte de selectarea \"%@\", ar trebui să loc, pe pagina următoare, de pe scanner.";
+"Scanning more pages" = "Mai multe pagini de scanare";
+"Stop" = "Opri";
+"Add" = "Adăuga";
+
+"Calibrate Scanner..." = "Calibra Scanner ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Scanerului trebuie să fie calibrate. Vă rugăm să introduceţi pagina de calibrare care a livrat împreună cu scanerul. Dacă nu sunteţi gata să calibreze acum, el se poate executa din meniul de aplicare mai târziu.";
+"Calibrating" = "De calibrare";
+"Calibrating scanner" = "Calibrarea scanner";
+
+"Importing files" = "Importul fişierelor";
+"Importing data from image files." = "Importul de date din fişierele imagine.";
+"Processing file %@, page %d/%d" = "Procesarea fişierul %@, de start %d/%d";
+"Processing file %@, image %d/%d" = "Procesarea fişierul %@, imagine %d/%d";
+"Page %@: %@ ..." = "Pagina %@: %@ ...";
+"A file named \"%@\" already exists." = "Un fişier numit \"%@\" există deja .";
+
+/* Preferences: Tab menu */
+"Filing" = "Depunerea";
+"Basic" = "de bază";
+"Basic Settings" = "Setări de bază";
+"Advanced" = "avansat";
+"Advanced Settings" = "Setări avansate";
+"OCR" = "OCR";
+"Barcode" = "Coduri de bare";
+/* Additional OCR preferences */
+"Processing" = "Prelucrare";
+"Finalization" = "Finalizarea";
+
+"Mode:" = "Mod:";
+"Generic" = "Generic";
+"Dot Matrix" = "Dot Matrix";
+"Fax" = "Fax";
+
+"Scan" = "Scanare";
+"Preview" = "Previzualizare";
+
+"Profiles" = "Profile";
+"Duplicate Profile" = "Duplicate Profil";
+"Reset Profile" = "Resetare Profil";
+"Reset All Profiles" = "Resetaţi toate profilurile";
+
+/* Preferences: Filing */
+"Profile name:" = "Nume profil:";
+"Folder name:" = "Dosar nume:";
+"File name:" = "Nume fişier:";
+"Example:" = "Exemplu:";
+"On existing files:" = "Pe fişierele existente:";
+"Format:" = "Format:";
+"Quality:" = "Calitate:";
+"Compression quality:" = "Calitate de compresie:";
+"low" = "jos";
+"optimal" = "optime";
+"Choose" = "Alege";
+"Color detection:" = "Culoare de detectare:";
+"Sensitive" = "Sensibile";
+"Optimal" = "Optim";
+"Lossy" = "Lossy";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Extrem de comprimat PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Plain Text (UTF-8)";
+
+"Unique date tag per file" = "Unic pe data de tag-ul de fişiere";
+"Edit each filename" = "Editare fiecare nume de fişier";
+"Scan to workspace" = "Scanare a spațiului de lucru";
+"Add -OCR extension" = "Adaugă -OCR extensie";
+"Move original file to Trash" = "Mutaţi fişierul original la Coşul de gunoi";
+"Merge files in one batch" = "Merge fişiere într-un singur lot";
+"Open with:" = "Deschide cu:";
+"no application specified" = "nu aplicare specificat";
+"Split on page" = "Split pe pagina";
+"Show configuration before scan" = "Arata de configurare înainte de scanare";
+"Show progress indicator" = "Arată indicator de progres";
+"Scan this profile on document placement" = "Scanare acest profil de pe documentul de plasare";
+"Ask for scanning more pages" = "Cere mai multe pagini de scanare";
+"Timer:" = "Timer:";
+"Use scanner's own user interface" = "Utilizaţi aturi proprii de interfaţă cu utilizatorul";
+
+"Ask user" = "Întreabă utilizatorul";
+"Increase sequence number" = "Măriţi numărul de ordine";
+"Silently overwrite" = "Silenţios suprascriere";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Sursa:";
+"Colors:" = "Culori:";
+"Color Dropout:" = "Culoare Dropout :";
+"Red" = "roșu";
+"Green" = "verde";
+"Blue" = "albastru";
+"None" = "nici unul";
+"Resolution:" = "Rezolutie:";
+"Brightness:" = "Luminozitate:";
+"Contrast:" = "Contrast:";
+"Gamma:" = "Gamma:";
+"Size:" = "Dimensiune:";
+"Position:" = "Poziţie:";
+"Size: %@ MB" = "Dimensiune: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "Rotaţie:";
+"Rotate every second page by 180°" = "Rotire la fiecare două pagini de 180°";
+"Auto crop and de-skew" = "Auto de cultură şi de-oblic";
+"Allow extra long pages" = "Permiteți pagini foarte lungi";
+"Auto rotate by page content" = "Rotire automată de conţinutul paginii";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Automat";
+"Ultrasonic multi-feed detection" = "Ultrasunete multi - feed detectare";
+"Mechanical de-skew assist" = "Mecanice asistență de - oblic";
+"Primary" = "Primar";
+"Secondary" = "Secundar";
+"Use individual color settings for the back side" = "Utilizați setările individuale de culoare pentrupartea din spate";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Arată Preferințe la pornire";
+"De-skew based on page content" = "De-skew bazată pe conținutul paginii";
+"De-screen (reduce print moiré patterns)" = "De-ecran (reducerea de imprimare moar modele)";
+"De-speckle (image noise and defects)" = "De - pistrui ( zgomot și defectele imagine )";
+"Sharpen" = "Conturare";
+"Automatically optimize to b/w" = "Pentru a optimiza automat, b/w";
+"Smooth uniform colors" = "Smooth culori uniforme";
+"Invert image" = "Imagine inversa";
+"Blank Page Detection:" = "Blank pagina de detectare:";
+"Off" = "De pe";
+"Delete Blank Page" = "Ştergere pagină de gol";
+"Placeholder" = "Substituent";
+"Split Document" = "Separaţi documentului";
+"Sensitivity:" = "Sensibilitate:";
+"high" = "înalt";
+"low" = "jos";
+"Remove page border and shadow" = "Scoateți frontieră pagină și umbră";
+"Merge front and back image" = "Merge din față și din spate imagine";
+"Black point:" = "Black punct:";
+"White point:" = "Punctului alb:";
+"Hue:" = "Hue:";
+"Saturation:" = "Saturaţie:";
+"Lightness:" = "Uşurinţă:";
+"Print with:" = "Imprimare cu:";
+"no printer selected" = "nici o imprimantă selectat";
+"Keep printed file" = "Păstraţi tipărit fişier";
+
+/* Preview */
+"New" = "Nou";
+"Front" = "Frontul de";
+"Back" = "Înapoi";
+
+/* Main Menu*/
+"About" = "despre";
+"About %@" = "Despre %@";
+"Check for Updates..." = "Check for Updates ...";
+"Activation..." = "Activarea ...";
+"Preferences..." = "Preferinţe ...";
+"Preferences" = "Preferinţe";
+"%@ - Preferences" = "%@ - Preferinţe";
+"Get Info" = "Get Info";
+"Get Scanner Info" = "Get Info Scanner";
+"Select Scanner..." = "Selectaţi scanerul ...";
+"%@ Info" = "%@ Info";
+"Services" = "Servicii";
+"Hide %@" = "Ascundeţi %@";
+"Hide Others" = "Ascundeţi Altele";
+"Show All" = "Afişează tot";
+"Quit %@" = "Închideţi %@";
+"New Scan" = "Nou de scanare";
+
+"Open" = "deschide";
+"Open File..." = "Open File ...";
+
+"File" = "Dosar";
+"Edit" = "Editare";
+
+"Save" = "Economisi";
+"Save As..." = "Salvare ca ...";
+
+"Undo" = "Undo";
+"Redo" = "Refacere";
+"Cut" = "Tăia";
+"Copy" = "Copiere";
+"Paste" = "Lipire";
+"Delete" = "Şterge";
+"Delete all" = "Ștergeți toate";
+"Select All" = "Selectaţi Toate";
+
+"Window" = "Window";
+"Close" = "Închide";
+"Minimize" = "Minimizare";
+
+"Help" = "Ajuta";
+"%@ Help" = "%@ Ajutor";
+
+
+/* OCR */
+"Create searchable documents" = "Creaţi documente căutate";
+"Create searchable barcodes" = "Creaţi-căutate coduri de bare";
+"Split document on barcode" = "documentul Split pe coduri de bare";
+"Discard split page" = "Aruncați pagina Split,";
+"One or more of the configured barcodes could not be found." = "Una sau mai multe dintre codurile de bare configurat nu a putut fi găsit.";
+"Dictionary-based spelling correction" = "Dicţionar pe bază de ortografie corecţie";
+"The resolution is used to convert vector files." = "Rezoluţia este folosit pentru a converti fişierele vector.";
+
+"Language:" = "Limba:";
+"OCR Language:" = "OCR Limba :";
+"Bulgarian" = "Bulgară";
+"Croatian" = "Croată";
+"Czech" = "Cehă";
+"Danish" = "Daneză";
+"Dutch" = "Olandeză";
+"English" = "Engleză";
+"Estonian" = "Estonă";
+"Finnish" = "Finlandeză";
+"French" = "Franceză";
+"German" = "Germană";
+"Hungarian" = "Maghiară";
+"Italian" = "Italiană";
+"Japanese" = "Japoneză";
+"Korean" = "Coreeană";
+"Latvian" = "Leton";
+"Lithuanian" = "Lituaniană";
+"Norwegian" = "Norvegiană";
+"Polish" = "Poloneză";
+"Portuguese" = "Portugheză";
+"Rumanian" = "Română";
+"Russian" = "Rusă";
+"Serbian" = "Sârb";
+"Simplified Chinese" = "Chineză simplificată";
+"Slovenian" = "Slovenă";
+"Spanish" = "Spaniolă";
+"Swedish" = "Suedeză";
+"Traditional Chinese" = "Chineză Tradiţională";
+"Turkish" = "Turcă";
+"Ukrainian" = "Ucraineană";
+
+"Type:" = "Tip:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "Imprint text marca";
+"Font:" = "Font:";
+"Rotation:" = "Rotaţie:";
+"Color:" = "Culoare:";
+"Style:" = "Stil:";
+"Change" = "Schimbare";
+"Filled" = "Umplut";
+"Outline" = "Contur";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Toţi";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 peisaj";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Foto 6 \"x4\"";
+"Photo 5\"x3\"" = "Foto 5 \"x3\"";
+"Business Card" = "Carte de vizită";
+"Credit Card" = "Cardul de credit";
+"Postcard" = "Carte poştală";
+"Custom" = "Obicei";
+
+"Inch" = "Inch Inch";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Punct Punct";
+"Percent" = "La sută La sută";
+
+"dpi" = "dpi";
+
+"Normal" = "Normal";
+"Flatbed" = "platformă";
+"Automatic Feeder" = "Alimentatorul automat";
+"ADF Front" = "ADF Frontul";
+"ADF Back" = "ADF Înapoi";
+"ADF Duplex" = "ADF Duplex";
+
+"Black & white" = "Black \u0026 White";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "Gray";
+"12bit Gray" = "12bit Gray";
+"16bit Gray" = "16bit Gray";
+"Color" = "Culoare";
+"12bit Color" = "12bit color";
+"16bit Color" = "16bit color";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Bridge de instalare";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan vine cu o punte de legătură Twain pentru a scana de la alte aplicatii TWAIN.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Doriţi să instalaţi ExactScan TWAIN Bridge acum?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "Podul TWAIN este deja instalat de o altă versiune de ExactScan. ";
+"Do not ask me again." = "Nu mă întreba din nou.";
+"Yes" = "Da";
+"No" = "Nu";
+
+"Defaults" = "Valori prestabilite";
+"Optimize" = "optimizarea";
+"Optimize:" = "Optimizaţi:";
+"Unexpected error" = "Eroare neaşteptată";
+"An unexpected error condition occured. Please report." = "O condiţie a apărut erori neaşteptate. Vă rugăm să raport.";
+"Internal error" = "Eroare internă";
+"Internal error in the i/o core. Please report." = "Eroare internă în I/O de bază. Vă rugăm să raport.";
+"No compatible scanner detected." = "Nu compatibil scanner detectat.";
+"Rescan" = "Rescan";
+"Insert scan" = "Introduceți scanare";
+"Insert file" = "Inserare fișier";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Generic Avision scanner driver pentru USB şi dispozitive SCSI. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Înroşirea feţei pagini";
+"Flushing remaining pages after preview with high-speed scanner." = "Înroşirea feţei pagini rămase după previzualiza cu scanner de mare viteză.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Înroşirea feţei pagini rămase după anularea cu scanare de mare viteza de scanare.";
+"no profile" = "nici un profil";
+"Custom" = "Obicei";
+"Profile %d" = "Profilul %d";
+
+/* default profile names */
+"Color PDF" = "Culoare PDF";
+"Gray PDF" = "Gray PDF";
+"B/W PDF" = "B/W PDF";
+"Color Copy" = "Copie color";
+"Gray Copy" = "Gray Copiere";
+"B/W Copy" = "B/W Copiere";
+"Color Email" = "Culoare Email";
+"Gray Email" = "Gray Email";
+"iPhoto" = "iPhoto";
+"Photo" = "Photo";
+
+/* miscelaneos */
+"No scanner" = "Nu scanerului";
+
+/* info */
+"Vendor:" = "Vendor:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Regiunea code:";
+"Series:" = "Seria:";
+"Version:" = "Versiune:";
+"Serial number:" = "Număr de ordine:";
+"Manufacturing date:" = "Data de fabricaţie:";
+"First scan date:" = "Prima dată de scanare:";
+"Flatbed scans:" = "Flatbed scanează:";
+"Pad scans:" = "Pad scanează:";
+"ADF scans:" = "ADF scanează:";
+"ADF simplex scans:" = "Simplex ADF scanează:";
+"ADF duplex scans:" = "ADF duplex scanează:";
+"Roller scans:" = "Roller scanează:";
+"Multi feeds:" = "Multi feed-uri:";
+"Paper jams:" = "Blocaje de hârtie:";

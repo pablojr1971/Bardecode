@@ -1,0 +1,527 @@
+/*
+//  Kroation
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Izvjesti o problemu";
+"Comments" = "Komentari";
+"Please describe any steps needed to trigger the problem:" = "Molimo opišite što uzrokuje problem:";
+"Problem Details" = "Opišite problem";
+"System Configuration" = "Podešavanje sustava";
+"Report" = "Izvješće";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Vaši osobni podaci neće biti vidljivi. Nećete biti kontaktirani glede odgovora. Za podršku, molimo posjetite:";
+
+
+/* In registration */
+"Registration" = "Registracija";
+"Registration Information" = "Informacije za registraciju";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Molimo unesite svoje osobne podatke kako bi registrirali i aktivirali svoju ExactCODE aplikaciju.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Mi bi u toku s vijestima , ažuriranje softvera , te najnovije informacije o proizvodima i uslugama .";
+"Activation key" = "Aktivacijski ključ";
+"First Name" = "Ime";
+"Last Name" = "Prezime";
+"Company or School" = "Tvrtka ili škola";
+"Address" = "Adresa";
+"City" = "Grad";
+"State or Province, or County" = "Država ili pokrajina ili županija";
+"Country" = "Država";
+"Postal Code" = "Poštanski broj";
+"Email Address" = "Adresa e-pošte";
+"Area Code" = "Pozivni broj";
+"Phone Number" = "Broj telefona";
+
+"How did you learn about this product?" = "Kako ste saznali o ovom proizvodu ?";
+"Select if you like" = "Odaberite ako želite";
+"Advertisement" = "Reklama";
+"Magazine" = "Magazin";
+"Newspaper" = "Novine";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internetska stranica";
+"Internet Search" = "Internet Traži";
+"Recommendation" = "Preporuka";
+
+"Where will you primarily use this computer?" = "Gdje ćete primarno koristiti ovo računalo?";
+"Select" = "Odaberite";
+"Home" = "Kod kuće";
+"Home Business" = "Kućni posao";
+"Small Business (1-99 employees)" = "Manja tvrtka (1-99 zaposlenih)";
+"Medium Business (100-499 employees)" = "Srednje velika tvrtka (100-499 zaposlenih)";
+"Large Business (500+ employees)" = "Veliko poduzeće (500 + zaposlenih)";
+"Elementary/Middle school" = "Osnovna škola";
+"High School" = "Srednja škola";
+"College" = "Visoka škola";
+
+"What best describes what you do?" = "Šta najbolje opisuje vaš posao?";
+"Design/Print" = "Dizajn / Print";
+"Video/Film" = "Video / Film";
+"Music" = "Glazba";
+"Photography" = "Fotografija";
+"Education Faculty/Administration" = "Obrazovanje Fakultet / Administracija";
+"Engineering/Scientist/Researcher" = "Inženjerstvo / znanstvenik / istraživač";
+"Architecture" = "Arhitektura";
+"Finance" = "Financije";
+"Law" = "Zakon";
+"Manufacturing" = "Proizvodnja";
+"Marketing/Sales" = "Marketing / prodaja";
+"Medical" = "Medicina";
+"MIS/IT" = "MIS / IT";
+"Student" = "Student";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "U mirovini";
+"Other" = "Ostalo";
+"Register" = "Registracija";
+"Export" = "Izvoz";
+"Import" = "Uvoz";
+
+
+/* In try-out control */
+"Try-out version" = "Isprobajte";
+"Try-out demo version:" = "Demo verzija:";
+"This software expired." = "Ovaj softver je istekao.";
+"This is a demo version of the software which will expire in %d days." = "Ovo je demo verzija programa koji će isteći u %d dana.";
+"Continue" = "Nastavi";
+"Test" = "Test";
+"Quit" = "Zatvorite";
+"Activate" = "Aktiviraj";
+"Purchase" = "Kupi";
+
+/*In choose folder*/
+"Choose destination folder" = "Odaberite odredišnu mapu";
+"Select folder where scanned images will be stored in" = "Odaberite mapu za pohranu skeniranih datoteka";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "Provjera za novu verziju aplikacije ...";
+"Changes" = "Promjene";
+"Cancel" = "Odustani";
+"Install Update" = "Instaliraj nadogradnju";
+"error parsing XML seed" = "pogreška prilagodbe XML-a";
+"There was a problem obtaining software update information (%@). Please try again later." = "Došlo je do problema u dobivanju nove inačice softvera (%@). Molimo pokušajte ponovno kasnije.";
+"No update information" = "Nema novih inačica.";
+"You are up to date." = "Vaša je verzija najnovija.";
+"There is no newer software update available." = "Nema novijih inačica.";
+"A new software version is available" = "Dostupna je nova inačica aplikacije";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ Dostupna je verzija (si %@). Skidanje inačice može potrajati i zahtijeva ponovno pokretanje programa. Provjeru za nadogradnju možete pokrenuti i iz programskog izbornika.";
+"Downloading %@ %@." = "Preuzimanje %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk od %.0lfk (%.0lfk/s) - %d sekundi preostalo";
+"Did you know?" = "Jeste li znali ?";
+"Learn more" = "Saznajte više";
+"Upgrade" = "poboljšati";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Vaša verzija ExactScan je pravo na nadogradnju na drugim verzijama ExactScan s više mogućnosti i OCR po sniženoj cijeni .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Tražeenje podržanih skenera";
+"Please wait." = "Molimo pričekajte.";
+"Scanner Configuration" = "Konfiguracija skenera";
+"Detect" = "Otkriti";
+"Abort" = "Prekini";
+"OK" = "U redu";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Skener nije definiran. Ovaj program treba učitati postavke skenera prije prve upotrebe.";
+"Scanner lamp warming up" = "Zagrijavanje skenera.";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Prilikom uključivanja skenera lamp je potrebno vrijeme zagrijavanja kaki bi postigla pun snagu..";
+"Out of documents" = "Izvan dokumenata";
+"There is no paper in the document feeder." = "Nema papira ...";
+"Cover open" = "Poklopac otvoren";
+"Please close the scanner cover and try again." = "Molimo zatvorite poklopac skenera i pokušajte ponovno.";
+"Paper jam" = "Zastoj papira";
+"Please clear the paper jam in the document feeder and try again." = "Molimo riješite zastoj papira i pokušajte ponovno.";
+"Multi feed" = "Multi feed";
+"Please clear the muti feed in the document feeder and try again." = "Molimo očistite uvlakač papira i pokušajte ponovno.";
+"Device busy" = "Uređaj je zauzet";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Uređaj koristi neka druga aplikacija, mreže ili pisač.";
+"Unexpected scanner error" = "Neočekivana pogreška";
+"An unexpected error condition occured." = "Dogodila se neočekivana greška.";
+"Scanner not ready" = "Skener nine spreman";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Pokretački program ne prepoznaje odgovarajući uređaj. Provjerite da li je skener spoken i da nine korišten od strain druge aplikacije.";
+"Scanning" = "Skeniranje";
+"Frontside" = "Frontside";
+"Backside" = "zadnjica";
+"frontside" = "prednja strana";
+"backside" = "poleđina";
+"Initializing scanner" = "Pokretanje skenera";
+"Clearing document feeder" = "čišćenje uvlakača papira";
+"Image data for page %@ is being transferred." = "Podaci za stranicu %@ u prijenosu.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Želite li skenirati još jednu stranicu ili zaustaviti proces skeniranja? Prije odabira \"%@\" trebali bi suavity sljedeću stranicu na skener.";
+"Scanning more pages" = "Skeniranje više stranica";
+"Stop" = "Zaustavi";
+"Add" = "Dodaj";
+
+"Calibrate Scanner..." = "Kalibrirati Scanner ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Skener treba kalibrirati. Molimo unesite kalibracija stranicu koja se dostavljaju sa skenerom. Ako niste spremni da kalibrira sada, možete proces pokrenuti iz izbornika aplikacije kasnije.";
+"Calibrating" = "Kalibriranje";
+"Calibrating scanner" = "Kalibriranje skener";
+
+"Importing files" = "Uvoz datoteka";
+"Importing data from image files." = "Uvoz podataka iz slikovne datoteke.";
+"Processing file %@, page %d/%d" = "Obrada datoteka %@ strana %d/%d";
+"Processing file %@, image %d/%d" = "Obrada datoteka %@, slika %d/%d";
+"Page %@: %@ ..." = "Stranica %@: %@ ...";
+"A file named \"%@\" already exists." = "Datoteku pod nazivom \"%@\" već postoji .";
+
+/* Preferences: Tab menu */
+"Filing" = "Uređivanje";
+"Basic" = "osnovni";
+"Basic Settings" = "Osnovne postavke";
+"Advanced" = "napredan";
+"Advanced Settings" = "Napredne postavke";
+"OCR" = "OCR";
+"Barcode" = "Barkod";
+/* Additional OCR preferences */
+"Processing" = "Obrada";
+"Finalization" = "Finalizacije";
+
+"Mode:" = "Mod:";
+"Generic" = "Generički";
+"Dot Matrix" = "Matrični";
+"Fax" = "Faks";
+
+"Scan" = "Skan";
+"Preview" = "Pregled";
+
+"Profiles" = "Profili";
+"Duplicate Profile" = "Dvostruki Profile";
+"Reset Profile" = "Poništavanje profila";
+"Reset All Profiles" = "Poništi sve profile";
+
+/* Preferences: Filing */
+"Profile name:" = "Naziv profila:";
+"Folder name:" = "Naziv mapa:";
+"File name:" = "Naziv datoteke:";
+"Example:" = "Primjer:";
+"On existing files:" = "Na postojeće datoteke:";
+"Format:" = "Format:";
+"Quality:" = "Kvaliteta:";
+"Compression quality:" = "Kvaliteta kompresije:";
+"low" = "nisko";
+"optimal" = "optimalno";
+"Choose" = "Izaberi";
+"Color detection:" = "Detektiranje boje:";
+"Sensitive" = "Osjetljivo";
+"Optimal" = "Optimalno";
+"Lossy" = "Rasipanje";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Visoko Komprimirani PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Obični tekst (UTF-8)";
+
+"Unique date tag per file" = "Jedinstvena oznaka po datumu datoteku";
+"Edit each filename" = "Ured ime datoteke";
+"Scan to workspace" = "Skeniranje u radnom prostoru";
+"Add -OCR extension" = "Dodaj -OCR proširenje";
+"Move original file to Trash" = "Premještanje izvornu datoteku u smeće";
+"Merge files in one batch" = "Spoji datoteke u jednoj seriji";
+"Open with:" = "Otvori sa:";
+"no application specified" = "Nije navedena ni jedna aplikacija";
+"Split on page" = "Prelomi na stranici";
+"Show configuration before scan" = "Prikaži konfiguracije prije skaniranja";
+"Show progress indicator" = "Prikaži indikator napredovanja";
+"Scan this profile on document placement" = "Skeniraj prema ovom profilu";
+"Ask for scanning more pages" = "Pitajte za skeniranje više stranica";
+"Timer:" = "Odbrojavanje :";
+"Use scanner's own user interface" = "Koristite korisničko sučelje skenera";
+
+"Ask user" = "Pitajte korisnika";
+"Increase sequence number" = "Povećanje rednog broja";
+"Silently overwrite" = "Prebrisati u pozadini";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Izvor:";
+"Colors:" = "Boje:";
+"Color Dropout:" = "Boja Dropout :";
+"Red" = "Crven";
+"Green" = "Zelen";
+"Blue" = "Plav";
+"None" = "Nijedan";
+"Resolution:" = "Rezolucija:";
+"Brightness:" = "Svjetloća:";
+"Contrast:" = "Kontrast:";
+"Gamma:" = "Gama:";
+"Size:" = "Veličina:";
+"Position:" = "Pozicija:";
+"Size: %@ MB" = "Veličina: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "Rotacija:";
+"Rotate every second page by 180°" = "Zakreni svaku drug stranicu za 180°";
+"Auto crop and de-skew" = "Automatsko izrezivanje i poravnaje";
+"Allow extra long pages" = "Dopustite dugačke stranice";
+"Auto rotate by page content" = "Automatsko zakretanje po sadržaju stranice";
+"-90° (CW)" = "-90° (u smjeru sata)";
+"0°" = "0°";
+"90° (CCW)" = "90° (suprotno od sata)";
+"180°" = "180°";
+"Automatic" = "automatski";
+"Ultrasonic multi-feed detection" = "Ultrazvučno otkrivanje više stranica";
+"Mechanical de-skew assist" = "Mehaničke de-izvrtati assist";
+"Primary" = "Osnovni";
+"Secondary" = "Sekundarna";
+"Use individual color settings for the back side" = "Koristite pojedinačne postavke boja za stražnjoj strani";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Prikaži postavke pri pokretanju";
+"De-skew based on page content" = "De - izvrtati temelji na sadržaj stranice";
+"De-screen (reduce print moiré patterns)" = "De-screen (smanjiti Moire obrasce kod printanja)";
+"De-speckle (image noise and defects)" = "De - razbacan ( šum slike i nedostaci )";
+"Sharpen" = "Izoštravanje";
+"Automatically optimize to b/w" = "Automatski optimizirati na crno/bijelo";
+"Smooth uniform colors" = "Omekani slične boje";
+"Invert image" = "Inverzija boja";
+"Blank Page Detection:" = "Detekcija prazne strane:";
+"Off" = "Isključeno";
+"Delete Blank Page" = "Brisanje prazne stranice";
+"Placeholder" = "Rezervirano mjesto";
+"Split Document" = "Podijeli dokument";
+"Sensitivity:" = "Osjetljivost:";
+"high" = "visoko";
+"low" = "nisko";
+"Remove page border and shadow" = "Izvadite stranicu granice i sjene";
+"Merge front and back image" = "Spajanje prednje i stražnje slike";
+"Black point:" = "Crna točka:";
+"White point:" = "Bijela točka:";
+"Hue:" = "NIjansa boje:";
+"Saturation:" = "Intenzitet boje:";
+"Lightness:" = "Svjetlina:";
+"Print with:" = "Ispiši sa:";
+"no printer selected" = "niste odabrali pisač";
+"Keep printed file" = "Sačuvati printanu datoteku";
+
+/* Preview */
+"New" = "Novo";
+"Front" = "Prednji";
+"Back" = "Stražnji";
+
+/* Main Menu*/
+"About" = "Oko";
+"About %@" = "O %@";
+"Check for Updates..." = "Provjera za nadogradnju ...";
+"Activation..." = "Aktiviranje ...";
+"Preferences..." = "Postavke ...";
+"Preferences" = "Postavke";
+"%@ - Preferences" = "%@ - Postavke";
+"Get Info" = "Vidi info";
+"Get Scanner Info" = "Informacije glede skenera";
+"Select Scanner..." = "Odaberite skener ...";
+"%@ Info" = "%@ Info";
+"Services" = "Usluge";
+"Hide %@" = "Sakriti %@";
+"Hide Others" = "Sakrij ostale";
+"Show All" = "Prikaži sve";
+"Quit %@" = "Zatvorite %@";
+"New Scan" = "Novi Scan";
+
+"Open" = "Otvoreno";
+"Open File..." = "Otvori datoteku ...";
+
+"File" = "Datoteka";
+"Edit" = "Uredi";
+
+"Save" = "Spremi";
+"Save As..." = "Spremi kao ...";
+
+"Undo" = "Poništi";
+"Redo" = "Ponovi";
+"Cut" = "Izreži";
+"Copy" = "Kopiraj";
+"Paste" = "Zalijepi";
+"Delete" = "Izbriši";
+"Delete all" = "Obriši sve";
+"Select All" = "Odaberi eve";
+
+"Window" = "Prozor";
+"Close" = "Zatvori";
+"Minimize" = "Minimiziraj";
+
+"Help" = "Pomoć";
+"%@ Help" = "%@ Pomoć";
+
+
+/* OCR */
+"Create searchable documents" = "Kreirajte dokumente koji se mogu pretraživati";
+"Create searchable barcodes" = "Kreirajte barkodove koji se mogu pretraživati";
+"Split document on barcode" = "Prelomi dokument kod barkoda";
+"Discard split page" = "Odbaci podijeljenog stranicu";
+"One or more of the configured barcodes could not be found." = "Jedan ili više barkodova nine pronađeno.";
+"Dictionary-based spelling correction" = "ispravljanja pravopisa temeljeno na rječniku";
+"The resolution is used to convert vector files." = "Ova rezolucija se koristi za konverziju vektor dartoteka.";
+
+"Language:" = "Jezik:";
+"OCR Language:" = "OCR Jezik:";
+"Bulgarian" = "Bugarski";
+"Croatian" = "Hrvatski";
+"Czech" = "Češki";
+"Danish" = "Danski";
+"Dutch" = "Nizozemski";
+"English" = "Engleski";
+"Estonian" = "Estonijski";
+"Finnish" = "Finski";
+"French" = "Francuski";
+"German" = "Njemački";
+"Hungarian" = "Mađarski";
+"Italian" = "Talijanski";
+"Japanese" = "Japanski";
+"Korean" = "Korejski";
+"Latvian" = "Letonski";
+"Lithuanian" = "Litvanski";
+"Norwegian" = "Norveški";
+"Polish" = "Poljski";
+"Portuguese" = "Portugalski";
+"Rumanian" = "Rumunski";
+"Russian" = "Ruski";
+"Serbian" = "Srpski";
+"Simplified Chinese" = "Kineski";
+"Slovenian" = "Slovenski";
+"Spanish" = "Španjolski";
+"Swedish" = "Švedski";
+"Traditional Chinese" = "Kineski";
+"Turkish" = "Turski";
+"Ukrainian" = "Ukrajinski";
+
+"Type:" = "Tip:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "Imprint tekst oznaka";
+"Font:" = "Font:";
+"Rotation:" = "Rotacija:";
+"Color:" = "Boja:";
+"Style:" = "Stil:";
+"Change" = "Promjena";
+"Filled" = "Ispunjeno";
+"Outline" = "Obris";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Sve";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 landscape";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Foto 6\"x4\"";
+"Photo 5\"x3\"" = "Foto 5\"x3\"";
+"Business Card" = "Business Card";
+"Credit Card" = "kreditna kartica";
+"Postcard" = "Razglednica";
+"Custom" = "Po volji";
+
+"Inch" = "Inča";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Točka";
+"Percent" = "Posto";
+
+"dpi" = "dpi";
+
+"Normal" = "Normalno";
+"Flatbed" = "Plošni";
+"Automatic Feeder" = "Automatski Uvlakač";
+"ADF Front" = "ADF Prednji";
+"ADF Back" = "ADF Natrag";
+"ADF Duplex" = "ADF Dvojna";
+
+"Black & white" = "Crno- bijeli";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "Siva";
+"12bit Gray" = "12bit siva";
+"16bit Gray" = "16bit siva";
+"Color" = "Boja";
+"12bit Color" = "12bit boja";
+"16bit Color" = "16bit boja";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Bridge Instalacija";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan dolazi s TWAIN Bridge za skaniranje iz  iz drugih TWAIN aplikacija.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Želite li instalirati ExactScan TWAIN Bridge sada?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "TWAIN Most je već instaliran od prethodne inačice ExactScan. ";
+"Do not ask me again." = "Ne pitaj me ponovo.";
+"Yes" = "Da";
+"No" = "Ne";
+
+"Defaults" = "Početni parametri";
+"Optimize" = "Optimiziran";
+"Optimize:" = "Optimiziraj:";
+"Unexpected error" = "Neočekivana pogreška";
+"An unexpected error condition occured. Please report." = "Dogodila se neočekivana pogreška. Molimo izvješće.";
+"Internal error" = "Interna pogreška";
+"Internal error in the i/o core. Please report." = "Interna u/I pogreška. Molimo izvješće.";
+"No compatible scanner detected." = "Nije detektiran kompatibilan skener.";
+"Rescan" = "Ponovi sken";
+"Insert scan" = "Umetnite skeniranje";
+"Insert file" = "Stavite datoteku";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Generički Avision skener driver za USB i SCSI uređaje. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Brisanje predmemorije stranica";
+"Flushing remaining pages after preview with high-speed scanner." = "Pražnjenje predmemorije za preostale stranice nano predpregleda sa brim skenerom.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Pražnjenje predmemorije preostalih stranice nano poništavanja skeniranja sa brzim skenerom.";
+"no profile" = "nema profila";
+"Custom" = "Po volji";
+"Profile %d" = "Profil %d";
+
+/* default profile names */
+"Color PDF" = "Color PDF";
+"Gray PDF" = "Sivi PDF";
+"B/W PDF" = "Crno/bijeli PDF";
+"Color Copy" = "Ispis u boji";
+"Gray Copy" = "Ispis u nijansama sivog";
+"B/W Copy" = "Crno/bijeli ispis";
+"Color Email" = "Email u boji";
+"Gray Email" = "Email u tonovima sive";
+"iPhoto" = "iPhoto";
+"Photo" = "Fotografija";
+
+/* miscelaneos */
+"No scanner" = "Nema skenera";
+
+/* info */
+"Vendor:" = "Proiozvođač:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Regija broj:";
+"Series:" = "Serija:";
+"Version:" = "Verzija:";
+"Serial number:" = "Serijski broj:";
+"Manufacturing date:" = "Datum proizvodnje:";
+"First scan date:" = "Datum prvog skena:";
+"Flatbed scans:" = "Horizontalnih skenova:";
+"Pad scans:" = "Pad skanovi:";
+"ADF scans:" = "ADF skenira:";
+"ADF simplex scans:" = "ADF jednostruki skenovi:";
+"ADF duplex scans:" = "ADF duplex skenovi:";
+"Roller scans:" = "Roller skenovi:";
+"Multi feeds:" = "Skenovi sa uvlakačem:";
+"Paper jams:" = "Zastoja papira:";

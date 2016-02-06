@@ -1,0 +1,527 @@
+/*
+//  Czech
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Nahlášení problému";
+"Comments" = "Komentáře";
+"Please describe any steps needed to trigger the problem:" = "Popište, prosím, jakékoliv kroky potřebné ke spuštění problém:";
+"Problem Details" = "Problém Detaily";
+"System Configuration" = "Konfigurace systému";
+"Report" = "Zpráva";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Vaše osobní údaje nejsou zaslány současně s touto zprávou. Nebudete se obrátit v reakci na tuto zprávu. Pro podporu produktu, prosím navštivte:";
+
+
+/* In registration */
+"Registration" = "Registrace";
+"Registration Information" = "Informace o registraci";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Prosím, zadejte své osobní informace tak, aby se zaregistrovat a aktivovat svůj produkt ExactCODE.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Informuj mě o novinkách , aktualizace softwaru , a nejnovější informace o produktech a službách .";
+"Activation key" = "Aktivační klíč";
+"First Name" = "Jméno";
+"Last Name" = "Příjmení";
+"Company or School" = "Společnost či školu";
+"Address" = "Adresa";
+"City" = "Město";
+"State or Province, or County" = "Stát nebo provincie, nebo County";
+"Country" = "Země";
+"Postal Code" = "PSČ";
+"Email Address" = "E-mailová adresa";
+"Area Code" = "Směrové číslo";
+"Phone Number" = "Telefonní číslo";
+
+"How did you learn about this product?" = "Jak jste se dozvěděli o tomto produktu ?";
+"Select if you like" = "Zvolte, zda chcete";
+"Advertisement" = "Reklama";
+"Magazine" = "Magazine";
+"Newspaper" = "Oviny";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internetové stránky";
+"Internet Search" = "Internet Search";
+"Recommendation" = "Doporučení";
+
+"Where will you primarily use this computer?" = "Pokud budete používat především v tomto počítači?";
+"Select" = "Vyberte";
+"Home" = "Domů";
+"Home Business" = "Domů";
+"Small Business (1-99 employees)" = "Small Business (1-99 zaměstnanců)";
+"Medium Business (100-499 employees)" = "Střední podniky (100-499 zaměstnanců)";
+"Large Business (500+ employees)" = "Velký Business (500 + employees)";
+"Elementary/Middle school" = "Elementární / Střední školy";
+"High School" = "Střední škola";
+"College" = "College";
+
+"What best describes what you do?" = "Co nejlépe popisuje to, co chceš dělat?";
+"Design/Print" = "Design / Print";
+"Video/Film" = "Video / Film";
+"Music" = "Hudba";
+"Photography" = "Fotografie";
+"Education Faculty/Administration" = "Vzdělání Fakulta / Administrativa";
+"Engineering/Scientist/Researcher" = "Strojírenství / vědec / pracovnice";
+"Architecture" = "Architektura";
+"Finance" = "Financí";
+"Law" = "Právo";
+"Manufacturing" = "MANUFACTORING";
+"Marketing/Sales" = "Marketing / Prodej";
+"Medical" = "Lékařská";
+"MIS/IT" = "MIS / IT";
+"Student" = "Student";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "Důchodci";
+"Other" = "Jiný";
+"Register" = "Registrovat";
+"Export" = "Export";
+"Import" = "Import";
+
+
+/* In try-out control */
+"Try-out version" = "Zkuste-out verze";
+"Try-out demo version:" = "Zkuste-out demo verze:";
+"This software expired." = "Tento software vypršela.";
+"This is a demo version of the software which will expire in %d days." = "Jedná se o demo verzi softwaru, který skončí v %d dní.";
+"Continue" = "Pokračovat";
+"Test" = "Test";
+"Quit" = "Ukončete";
+"Activate" = "Aktivovat";
+"Purchase" = "Nákup";
+
+/*In choose folder*/
+"Choose destination folder" = "Vyberte cílovou složku";
+"Select folder where scanned images will be stored in" = "Vyberte složku, kde naskenované obrázky budou uloženy v";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "Kontrola na nový software ...";
+"Changes" = "Změny";
+"Cancel" = "Zrušit";
+"Install Update" = "Instalace Update";
+"error parsing XML seed" = "chyba parsování XML osiva";
+"There was a problem obtaining software update information (%@). Please try again later." = "Nebyl problém získat informace o aktualizacích softwaru (%@). Prosím, zkuste to znovu později.";
+"No update information" = "Ne aktualizace informací";
+"You are up to date." = "Ty jsou stále aktuální.";
+"There is no newer software update available." = "Neexistuje žádná novější aktualizace softwaru jsou k dispozici.";
+"A new software version is available" = "A nové verze softwaru je k dispozici";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ Je k dispozici (máte %@). Aktualizace může trvat nějaký čas ke stažení a vyžaduje restart aplikace. Pokud si nejste připraveni nainstalovat nyní můžete kontrolovat aktualizace v menu aplikace později.";
+"Downloading %@ %@." = "Stažení %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk of %.0lfk (%.0lfk/s) - %d sekund zbývá";
+"Did you know?" = "Věděli jste, že?";
+"Learn more" = "Další informace";
+"Upgrade" = "upgrade";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Vaše verze ExactScan je nárok na upgrade na další verze ExactScan více funkcí OCR a za sníženou cenu .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Hledání pro podporované skenery";
+"Please wait." = "Čekejte prosím.";
+"Scanner Configuration" = "Konfigurace skeneru";
+"Detect" = "Rozpoznat";
+"Abort" = "Přerušeno";
+"OK" = "OK";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Č. byla Scanneru nakonfigurován. Tato aplikace potřebuje získat skener nastavení před prvním použitím profilu a nastavení.";
+"Scanner lamp warming up" = "Scanner lampa zahřívání";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Po umožňuje zdroj světla, ze skeneru, lampa potřebuje určitý čas, než se zahřát, aby vysílal určena jasu.";
+"Out of documents" = "Z dokumentů";
+"There is no paper in the document feeder." = "Neexistuje žádný papír do podavače dokumentů.";
+"Cover open" = "Obal otevřen";
+"Please close the scanner cover and try again." = "Prosím, zavřete kryt skeneru a zkuste to znovu.";
+"Paper jam" = "Uvíznutí papíru";
+"Please clear the paper jam in the document feeder and try again." = "Prosím jasné podavače dokumentů uvíznutí papíru a zkuste to znovu.";
+"Multi feed" = "Multi feed";
+"Please clear the muti feed in the document feeder and try again." = "Prosím, zrušte podavače dokumentů papír více krmiv a zkuste to znovu.";
+"Device busy" = "Zařízení obsazeno";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Přístroj je používán jinou aplikací, přes síť nebo na připojené tiskárně. ";
+"Unexpected scanner error" = "Neočekávaná chyba skeneru";
+"An unexpected error condition occured." = "K neočekávané chybě stavu došlo.";
+"Scanner not ready" = "Scanner není připravena";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Řidič nebyl rozpoznán kompatibilního přístroje. Prosím, ujistěte se, že skener je připojen a neměly by být používány jinou aplikací.";
+"Scanning" = "Skenování";
+"Frontside" = "na přední straně";
+"Backside" = "zadnice";
+"frontside" = "lícní strana";
+"backside" = "zadek";
+"Initializing scanner" = "Inicializace skeneru";
+"Clearing document feeder" = "Clearing podavač";
+"Image data for page %@ is being transferred." = "Obrazová data pro stránku %@ is přeložení.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Opravdu chcete přidat další stránku dokumentu nebo zastavení procesu skenování? Před zvolením \"%@\", měli byste místo další stránku, na skener.";
+"Scanning more pages" = "Skenování více stránek";
+"Stop" = "Stop";
+"Add" = "Přidat";
+
+"Calibrate Scanner..." = "Kalibrace skeneru ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Skener musí být kalibrován. Prosím vložte kalibrační stránku, na které dodávané se skenerem. Pokud nejste připraveni kalibraci teď, můžete jej spustit z menu aplikace později.";
+"Calibrating" = "Kalibraci";
+"Calibrating scanner" = "Kalibraci skeneru";
+
+"Importing files" = "Import souborů";
+"Importing data from image files." = "Import dat z obrazových souborů.";
+"Processing file %@, page %d/%d" = "Zpracování souboru %@, strana %d/%d";
+"Processing file %@, image %d/%d" = "Zpracování souboru %@, image %d/%d";
+"Page %@: %@ ..." = "Page %@: %@ ...";
+"A file named \"%@\" already exists." = "Soubor s názvem \"%@\" již existuje.";
+
+/* Preferences: Tab menu */
+"Filing" = "Podání";
+"Basic" = "základní";
+"Basic Settings" = "Základní nastavení";
+"Advanced" = "pokročilý";
+"Advanced Settings" = "Upřesnit nastavení";
+"OCR" = "OCR";
+"Barcode" = "Čárových kódů";
+/* Additional OCR preferences */
+"Processing" = "Zpracování";
+"Finalization" = "Dokončení";
+
+"Mode:" = "Mode:";
+"Generic" = "Generic";
+"Dot Matrix" = "Jehličkové";
+"Fax" = "Fax";
+
+"Scan" = "Scan";
+"Preview" = "Náhled";
+
+"Profiles" = "Profily";
+"Duplicate Profile" = "Duplicitní profil";
+"Reset Profile" = "Reset Profil";
+"Reset All Profiles" = "Reset všechny profily";
+
+/* Preferences: Filing */
+"Profile name:" = "Profil jméno:";
+"Folder name:" = "Název složky:";
+"File name:" = "Název souboru:";
+"Example:" = "Příklad:";
+"On existing files:" = "O stávajících souborů:";
+"Format:" = "Formát:";
+"Quality:" = "Kvalita:";
+"Compression quality:" = "Komprese kvality:";
+"low" = "nízký";
+"optimal" = "Optimální";
+"Choose" = "Vybrat";
+"Color detection:" = "Barva Detekce:";
+"Sensitive" = "Náchylné";
+"Optimal" = "Optimální";
+"Lossy" = "Ztrátový";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Vysoce stlačený PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Prostý text (UTF-8)";
+
+"Unique date tag per file" = "Unikátní datum záznamu na obrázek";
+"Edit each filename" = "Upravit každého souboru";
+"Scan to workspace" = "Skenování do pracovního prostoru";
+"Add -OCR extension" = "Add -OCR rozšíření";
+"Move original file to Trash" = "Přesun původní soubor do koše";
+"Merge files in one batch" = "Slučování souborů v jedné dávce";
+"Open with:" = "Otevřít:";
+"no application specified" = "žádná aplikace uvedených";
+"Split on page" = "Split na stránce";
+"Show configuration before scan" = "Show konfigurace před scan";
+"Show progress indicator" = "Show pokrok ukazatel";
+"Scan this profile on document placement" = "Scan tento profil na dokumentu umístění";
+"Ask for scanning more pages" = "Zeptejte se pro skenování více stran";
+"Timer:" = "Timer:";
+"Use scanner's own user interface" = "Používejte skener vlastní uživatelské rozhraní";
+
+"Ask user" = "Zeptejte se uživatel";
+"Increase sequence number" = "Zvýšení pořadové číslo";
+"Silently overwrite" = "Tichá přepsat";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Zdroj:";
+"Colors:" = "Barvy:";
+"Color Dropout:" = "Výpadek barev :";
+"Red" = "červený";
+"Green" = "zelený";
+"Blue" = "modrý";
+"None" = "nikdo";
+"Resolution:" = "Rozlišení:";
+"Brightness:" = "Jas:";
+"Contrast:" = "Kontrast:";
+"Gamma:" = "Gamma:";
+"Size:" = "Velikost:";
+"Position:" = "Pozice:";
+"Size: %@ MB" = "Velikost: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "Z:";
+"H:" = "H:";
+"Rotate:" = "Otočit:";
+"Rotate every second page by 180°" = "Střídat každou druhou stranu o 180°";
+"Auto crop and de-skew" = "Auto crop a de-šikmý";
+"Allow extra long pages" = "Povolit extra dlouhé stránky";
+"Auto rotate by page content" = "Automatické otáčení od obsah stránky";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Automatický";
+"Ultrasonic multi-feed detection" = "Ultrazvuková detekce podání více -";
+"Mechanical de-skew assist" = "Mechanické de- skew asistent";
+"Primary" = "Primární";
+"Secondary" = "Sekundární";
+"Use individual color settings for the back side" = "Použít individuální nastavení barev pro zadní stranu";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Zobrazit Předvolby na startu";
+"De-skew based on page content" = "De - skew na základě obsahu stránky";
+"De-screen (reduce print moiré patterns)" = "De-Screen (snížení tisk moaré vzory)";
+"De-speckle (image noise and defects)" = "De- flíček ( obrazový šum a vady)";
+"Sharpen" = "Zaostření";
+"Automatically optimize to b/w" = "Automaticky optimalizovat na b/w";
+"Smooth uniform colors" = "Hladké jednotné barvy";
+"Invert image" = "Invertovat obrázek";
+"Blank Page Detection:" = "Prázdná stránka detekce:";
+"Off" = "Pryč";
+"Delete Blank Page" = "Odstranit prázdné stránky";
+"Placeholder" = "Zástupce";
+"Split Document" = "Split dokumentů";
+"Sensitivity:" = "Citlivost:";
+"high" = "vysoký";
+"low" = "nízký";
+"Remove page border and shadow" = "Odstraňte stránku okraj a stín";
+"Merge front and back image" = "Sloučení přední a zadní obrázek";
+"Black point:" = "Černý bod:";
+"White point:" = "Bílý bod:";
+"Hue:" = "Odstín:";
+"Saturation:" = "Sytost:";
+"Lightness:" = "Lehkost:";
+"Print with:" = "Tisk s:";
+"no printer selected" = "žádná tiskárna vybraných";
+"Keep printed file" = "Mějte tištěný obrázek";
+
+/* Preview */
+"New" = "Nový";
+"Front" = "Přední";
+"Back" = "Zpět";
+
+/* Main Menu*/
+"About" = "o";
+"About %@" = "O %@";
+"Check for Updates..." = "Zkontrolovat aktualizace ...";
+"Activation..." = "Aktivační ...";
+"Preferences..." = "Předvolby ...";
+"Preferences" = "Předvolby";
+"%@ - Preferences" = "%@ - Předvolby";
+"Get Info" = "Get Info";
+"Get Scanner Info" = "Získejte Scanner Info";
+"Select Scanner..." = "Vybrat skener ...";
+"%@ Info" = "%@ Info";
+"Services" = "Služby";
+"Hide %@" = "Skrýt %@";
+"Hide Others" = "Skrýt Ostatní";
+"Show All" = "Ukázat vše";
+"Quit %@" = "Ukončete %@";
+"New Scan" = "Nové Scan";
+
+"Open" = "otevřeno";
+"Open File..." = "Open File ...";
+
+"File" = "Soubor";
+"Edit" = "Upravit";
+
+"Save" = "Uložit";
+"Save As..." = "Uložit jako ...";
+
+"Undo" = "Vrátit";
+"Redo" = "Znovu";
+"Cut" = "Useknout";
+"Copy" = "Kopírovat";
+"Paste" = "Vložit";
+"Delete" = "Odstranit";
+"Delete all" = "smazat vše";
+"Select All" = "Vybrat vše";
+
+"Window" = "Window";
+"Close" = "Zavřít";
+"Minimize" = "Minimalizovat";
+
+"Help" = "Nápověda";
+"%@ Help" = "%@ Nápověda";
+
+
+/* OCR */
+"Create searchable documents" = "Vytvořit vyhledávatelné dokumenty";
+"Create searchable barcodes" = "Vytvořit vyhledávatelné čárové kódy";
+"Split document on barcode" = "Split dokument o čárový kód";
+"Discard split page" = "Zrušit rozdělení stránku";
+"One or more of the configured barcodes could not be found." = "Jedním nebo více nakonfigurován čárových kódů se nepodařilo nalézt.";
+"Dictionary-based spelling correction" = "Slovník - založený překlepů";
+"The resolution is used to convert vector files." = "Usnesení se používá pro převod vektorových obrázků.";
+
+"Language:" = "Jazyk:";
+"OCR Language:" = "OCR Jazyk:";
+"Bulgarian" = "Bulharština";
+"Croatian" = "Chorvatština";
+"Czech" = "Čeština";
+"Danish" = "Dánština";
+"Dutch" = "Nizozemština";
+"English" = "Angličtina";
+"Estonian" = "Estonština";
+"Finnish" = "Finské";
+"French" = "Francouzština";
+"German" = "Němčina";
+"Hungarian" = "Maďarština";
+"Italian" = "Italština";
+"Japanese" = "Japonština";
+"Korean" = "Korejština";
+"Latvian" = "Lotyšský";
+"Lithuanian" = "Litevština";
+"Norwegian" = "Norština";
+"Polish" = "Polština";
+"Portuguese" = "Portugalština";
+"Rumanian" = "Rumunština";
+"Russian" = "Ruština";
+"Serbian" = "Srbský";
+"Simplified Chinese" = "Čínština";
+"Slovenian" = "Slovenščina";
+"Spanish" = "Španělština";
+"Swedish" = "Švédština";
+"Traditional Chinese" = "Čínština";
+"Turkish" = "Turečtina";
+"Ukrainian" = "Ukrajinština";
+
+"Type:" = "Typ:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "Tiráž text značka";
+"Font:" = "Písmo:";
+"Rotation:" = "Rotace:";
+"Color:" = "Barva:";
+"Style:" = "Styl:";
+"Change" = "Změnit";
+"Filled" = "Plný";
+"Outline" = "Obrys";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Vše";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 krajiny";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Foto 6\"x4\"";
+"Photo 5\"x3\"" = "Foto 5\"x3\"";
+"Business Card" = "Business Card";
+"Credit Card" = "Kreditní karta";
+"Postcard" = "Pohlednice";
+"Custom" = "Vlastní";
+
+"Inch" = "Palec Palec";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Bod Bod";
+"Percent" = "Procent Procent";
+
+"dpi" = "dpi";
+
+"Normal" = "Normal";
+"Flatbed" = "Plochý";
+"Automatic Feeder" = "Automatický podavač";
+"ADF Front" = "ADF Přední";
+"ADF Back" = "ADF Back";
+"ADF Duplex" = "ADF Duplex";
+
+"Black & white" = "Black \u0026 white";
+"Lineart" = "LineArt";
+"Dithered" = "Dithered";
+"Gray" = "Gray";
+"12bit Gray" = "12bit Gray";
+"16bit Gray" = "16bit Gray";
+"Color" = "Barva";
+"12bit Color" = "12bit barvy";
+"16bit Color" = "16bit barvy";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Bridge Instalace";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan přichází s mostem TWAIN skenovat z jiných aplikačních rozhraní TWAIN.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Chtěli byste nainstalovat ExactScan TWAIN Bridge teď?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "TWAIN most je již nainstalována jiná verze ExactScan. ";
+"Do not ask me again." = "Neptejte se mě znovu.";
+"Yes" = "Ano";
+"No" = "Ne";
+
+"Defaults" = "Výchozí nastavení";
+"Optimize" = "optimalizovat";
+"Optimize:" = "Optimalizovat:";
+"Unexpected error" = "Neočekávaná chyba";
+"An unexpected error condition occured. Please report." = "K neočekávané chybě stavu došlo. Prosím zprávu.";
+"Internal error" = "Vnitřní chyba";
+"Internal error in the i/o core. Please report." = "Vnitřní chyba při I/O jádru. Prosím zprávu.";
+"No compatible scanner detected." = "Ne kompatibilní skener detekován.";
+"Rescan" = "Otestovat";
+"Insert scan" = "Vložte skenování";
+"Insert file" = "vložení souboru";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Generic skener Avision ovladač pro USB a SCSI zařízení. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Návaly stránky";
+"Flushing remaining pages after preview with high-speed scanner." = "Návaly zbývající po náhledu stránky s vysokou rychlostí-skener.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Návaly zbývajících stránkách po zrušení skenování s vysokou rychlostí-skener.";
+"no profile" = "č. profilu";
+"Custom" = "Vlastní";
+"Profile %d" = "Profil %d";
+
+/* default profile names */
+"Color PDF" = "Barva PDF";
+"Gray PDF" = "Gray PDF";
+"B/W PDF" = "B/W PDF";
+"Color Copy" = "Barevné kopírování";
+"Gray Copy" = "Gray Kopírovat";
+"B/W Copy" = "B / W Kopírovat";
+"Color Email" = "Barva Email";
+"Gray Email" = "Gray Email";
+"iPhoto" = "iPhoto";
+"Photo" = "Foto";
+
+/* miscelaneos */
+"No scanner" = "Ne skener";
+
+/* info */
+"Vendor:" = "Prodejce:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Regionální kód :";
+"Series:" = "Série:";
+"Version:" = "Verze:";
+"Serial number:" = "Pořadové číslo:";
+"Manufacturing date:" = "Datum výroby:";
+"First scan date:" = "První scan datum:";
+"Flatbed scans:" = "Ploché provedení vyšetření:";
+"Pad scans:" = "Pad skenování:";
+"ADF scans:" = "ADF testů:";
+"ADF simplex scans:" = "ADF simplex skenování:";
+"ADF duplex scans:" = "ADF duplex skenování:";
+"Roller scans:" = "Roller skenování:";
+"Multi feeds:" = "Multi kanály:";
+"Paper jams:" = "Papíru:";

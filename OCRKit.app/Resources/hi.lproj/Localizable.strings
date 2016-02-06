@@ -1,0 +1,527 @@
+/*
+//  Hindi
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "समस्या रिपोर्ट";
+"Comments" = "टिप्पणियाँ";
+"Please describe any steps needed to trigger the problem:" = "कृपया किसी भी कदम इस समस्या को गति प्रदान करने की आवश्यकता का वर्णन:";
+"Problem Details" = "समस्या विवरण";
+"System Configuration" = "सिस्टम विन्यास";
+"Report" = "रिपोर्ट";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "आपकी व्यक्तिगत जानकारी को इस रिपोर्ट के साथ भेजा नहीं कर रहे हैं. क्या आप इस रिपोर्ट के जवाब में से संपर्क नहीं किया जाएगा. उत्पाद समर्थन के लिए, कृपया देखें:";
+
+
+/* In registration */
+"Registration" = "पंजीकरण";
+"Registration Information" = "पंजीकरण सूचना";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "आदेश में रजिस्टर करने के लिए और अपने ExactCODE उत्पाद को सक्रिय कृपया अपने व्यक्तिगत जानकारी दर्ज करें.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "समाचार , सॉफ्टवेयर अद्यतन , और उत्पादों और सेवाओं के बारे में नवीनतम जानकारी के साथ तारीख को मेरे ऊपर रखें .";
+"Activation key" = "सक्रियकरण कुंजी";
+"First Name" = "प्रथम नाम";
+"Last Name" = "अंतिम नाम";
+"Company or School" = "कंपनी या स्कूल";
+"Address" = "पता";
+"City" = "नगर";
+"State or Province, or County" = "राज्य या प्रदेश, या काउंटी";
+"Country" = "देश";
+"Postal Code" = "पोस्टल कोड";
+"Email Address" = "ईमेल पता";
+"Area Code" = "क्षेत्र कोड";
+"Phone Number" = "फ़ोन नंबर";
+
+"How did you learn about this product?" = "कैसे आप इस उत्पाद के बारे में सीखा?";
+"Select if you like" = "अगर आप की तरह का चयन करें";
+"Advertisement" = "विज्ञापन";
+"Magazine" = "पत्रिका";
+"Newspaper" = "अख़बार";
+"Internet Forum" = "इंटरनेट फोरम";
+"Internet Website" = "इंटरनेट वेबसाइट";
+"Internet Search" = "इंटरनेट खोज";
+"Recommendation" = "सिफारिश";
+
+"Where will you primarily use this computer?" = "तुम कहाँ मुख्य रूप से इस कंप्यूटर का इस्तेमाल करेंगे?";
+"Select" = "चुनें";
+"Home" = "घर";
+"Home Business" = "घर व्यापार";
+"Small Business (1-99 employees)" = "लघु व्यापार (1-99 कर्मचारियों)";
+"Medium Business (100-499 employees)" = "मध्यम व्यापार (100-499 कर्मचारियों)";
+"Large Business (500+ employees)" = "बड़े व्यापार (500 + कर्मचारियों)";
+"Elementary/Middle school" = "प्राथमिक / मध्य विद्यालय";
+"High School" = "हाई स्कूल";
+"College" = "कॉलेज";
+
+"What best describes what you do?" = "क्या सबसे अच्छा तुम क्या कर वर्णन किया?";
+"Design/Print" = "डिजाइन / मुद्रण";
+"Video/Film" = "वीडियो / फिल्म";
+"Music" = "संगीत";
+"Photography" = "फोटोग्राफी";
+"Education Faculty/Administration" = "शिक्षा संकाय / प्रशासन";
+"Engineering/Scientist/Researcher" = "अभियांत्रिकी / वैज्ञानिक / शोधकर्ता";
+"Architecture" = "वास्तुकला";
+"Finance" = "वित्त";
+"Law" = "कानून";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "विपणन / बिक्री";
+"Medical" = "चिकित्सा";
+"MIS/IT" = "एमआईएस / आईटी";
+"Student" = "विद्यार्थी";
+"Webdesigner/Webmaster" = "Webdesigner / वेबमास्टर";
+"Retired" = "सेवानिवृत्त";
+"Other" = "अन्य";
+"Register" = "रजिस्टर";
+"Export" = "निर्यात";
+"Import" = "आयात";
+
+
+/* In try-out control */
+"Try-out version" = "कोशिश-बाहर संस्करण";
+"Try-out demo version:" = "कोशिश-डेमो संस्करण बाहर:";
+"This software expired." = "इस सॉफ्टवेयर समाप्त हो गई है.";
+"This is a demo version of the software which will expire in %d days." = "यह जो%d दिनों में समाप्त हो जाएगी कि सॉफ्टवेयर के एक डेमो संस्करण है.";
+"Continue" = "जारी रखें";
+"Test" = "टेस्ट";
+"Quit" = "Quit";
+"Activate" = "सक्रिय";
+"Purchase" = "क्रय";
+
+/*In choose folder*/
+"Choose destination folder" = "गंतव्य फ़ोल्डर चुनें";
+"Select folder where scanned images will be stored in" = "चयन करें फ़ोल्डर कहाँ स्कैन छवियों में संग्रहित किया जाएगा";
+
+/* During software update */
+"Software Update" = "सॉफ़्टवेयर अद्यतन";
+"Checking for new software ..." = "नए सॉफ्टवेयर के लिए जाँच हो रही है ...";
+"Changes" = "परिवर्तन";
+"Cancel" = "रद्द करें";
+"Install Update" = "Install अद्यतन";
+"error parsing XML seed" = "XML पार्स त्रुटि बीज";
+"There was a problem obtaining software update information (%@). Please try again later." = "वहाँ एक समस्या सॉफ़्टवेयर अद्यतन जानकारी (%@). प्राप्त करने गया था कृपया बाद में फिर से कोशिश करें.";
+"No update information" = "कोई अद्यतन जानकारी";
+"You are up to date." = "तुम तिथि करने के लिए कर रहे हैं.";
+"There is no newer software update available." = "कोई नया सॉफ्टवेयर उपलब्ध अद्यतन है.";
+"A new software version is available" = "एक नया सॉफ्टवेयर संस्करण उपलब्ध है";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ (आप %@) पास उपलब्ध है. एक अद्यतन डाउनलोड करने के लिए कुछ समय लग सकता है और एक आवेदन को पुनः आरंभ करने की आवश्यकता है. यदि आप अब स्थापित करने के लिए तैयार नहीं हैं, तो आप आवेदन मेनू में अद्यतनों के लिए बाद में जाँच कर सकते हैं.";
+"Downloading %@ %@." = "%@ %@डाऊनलोड कर रहे हैं.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk के %.0lfk (%.0lfk/s) - %d शेष सेकंड";
+"Did you know?" = "क्या आप जानते हैं?";
+"Learn more" = "अधिक जानें";
+"Upgrade" = "अपग्रेड";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "ExactScan का आपका संस्करण अधिक सुविधाओं और एक कम कीमत पर ओसीआर के साथ ExactScan के अन्य संस्करणों को नवीनीकृत करने के लिए पात्र है.";
+
+/* Scan progress */
+"Searching for supported scanners" = "समर्थित स्कैनर के लिए खोज";
+"Please wait." = "कृपया प्रतीक्षा करें.";
+"Scanner Configuration" = "स्कैनर विन्यास";
+"Detect" = "पता लगाने";
+"Abort" = "समाप्त";
+"OK" = "ठीक है";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "कोई स्कैनर कॉन्फ़िगर किया गया है. यह अनुप्रयोग पहले इस्तेमाल और प्रोफ़ाइल विन्यास से पहले स्कैनर है configuration प्राप्त करने की जरूरत है.";
+"Scanner lamp warming up" = "स्कैनर दीपक वार्मिंग अप";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "इस स्कैनर के प्रकाश स्रोत को सक्षम करने के बाद, दीपक इच्छित luminance फेंकना को गरम करने के लिए कुछ समय की जरूरत है.";
+"Out of documents" = "बाहर दस्तावेजों की";
+"There is no paper in the document feeder." = "वहाँ के फीडर दस्तावेज़ में कोई कागज है.";
+"Cover open" = "कवर खुला";
+"Please close the scanner cover and try again." = "कृपया को कवर किया और फिर कोशिश करें कि स्कैनर बंद करो.";
+"Paper jam" = "कागज मुरब्बा";
+"Please clear the paper jam in the document feeder and try again." = "कृपया इस दस्तावेज़ को फीडर कागज जाम स्पष्ट और फिर कोशिश करें.";
+"Multi feed" = "बहु फ़ीड";
+"Please clear the muti feed in the document feeder and try again." = "कृपया दस्तावेज़ फीडर कागज बहु फ़ीड स्पष्ट और फिर कोशिश करें.";
+"Device busy" = "व्यस्त डिवाइस";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "युक्ति अन्य अनुप्रयोग के द्वारा प्रयोग किया जाता है नेटवर्क के माध्यम से या एक संलग्न प्रिंटर,. ";
+"Unexpected scanner error" = "अप्रत्याशित स्कैनर त्रुटि";
+"An unexpected error condition occured." = "एक अनपेक्षित त्रुटि हालत हुई.";
+"Scanner not ready" = "स्कैनर तैयार नहीं";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "चालक से एक युक्ति संगत मान्यता प्राप्त नहीं हुआ है. कृपया स्कैनर और जुड़ा हुआ है और एक आवेदन के द्वारा उपयोग नहीं किया जाता सुनिश्चित करें.";
+"Scanning" = "स्कैनिंग";
+"Frontside" = "frontside";
+"Backside" = "पीठ";
+"frontside" = "frontside";
+"backside" = "पृष्ठभाग";
+"Initializing scanner" = "स्कैनर आरंभ";
+"Clearing document feeder" = "समाशोधन दस्तावेज़ फीडर";
+"Image data for page %@ is being transferred." = "पेज %@के लिए छवि डेटा स्थानांतरित किया जा रहा है.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "आप दस्तावेज़ के लिए एक और पृष्ठ जोड़ने के लिए या स्कैनिंग की प्रक्रिया को रोक चाहते हैं? चुनने से पहले \"%@\" क्या आप स्कैनर पर अगले पृष्ठ जगह चाहिए.";
+"Scanning more pages" = "और अधिक पृष्ठों को स्कैन";
+"Stop" = "रुकना";
+"Add" = "जोड़ना";
+
+"Calibrate Scanner..." = "जांचना स्कैनर ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "स्कैनर को कैलिब्रेटेड की जरूरत है. कृपया अंशांकन पृष्ठ जो स्कैनर के साथ भेज दिया डालें. यदि आप अब ठीक करना करने के लिए तैयार नहीं हैं, तो आप इसे बाद में आवेदन मेनू से चला सकते हैं.";
+"Calibrating" = "औजार";
+"Calibrating scanner" = "स्कैनर औजार";
+
+"Importing files" = "आयात फ़ाइलें";
+"Importing data from image files." = "छवि फ़ाइलों से डेटा आयात.";
+"Processing file %@, page %d/%d" = "प्रसंस्करण %@ फ़ाइल, पृष्ठ %d/%d";
+"Processing file %@, image %d/%d" = "प्रसंस्करण %@ फ़ाइल, छवि %d/%d";
+"Page %@: %@ ..." = "पृष्ठ %@: %@ ...";
+"A file named \"%@\" already exists." = "एक फ़ाइल नाम \"%@\" पहले से मौजूद है.";
+
+/* Preferences: Tab menu */
+"Filing" = "दाखिल";
+"Basic" = "बुनियादी";
+"Basic Settings" = "मूल सेटिंग्स";
+"Advanced" = "उन्नत";
+"Advanced Settings" = "उन्नत सेटिंग्स";
+"OCR" = "OCR";
+"Barcode" = "बारकोड";
+/* Additional OCR preferences */
+"Processing" = "प्रसंस्करण";
+"Finalization" = "अंतिम रूप देने";
+
+"Mode:" = "मोड:";
+"Generic" = "सामान्य";
+"Dot Matrix" = "डॉट मैट्रिक्स";
+"Fax" = "फैक्स";
+
+"Scan" = "स्कैन";
+"Preview" = "पूर्वावलोकन";
+
+"Profiles" = "प्रोफाइल";
+"Duplicate Profile" = "प्रोफ़ाइल डुप्लिकेट";
+"Reset Profile" = "रीसेट प्रोफ़ाइल";
+"Reset All Profiles" = "रीसेट सभी प्रोफाइल";
+
+/* Preferences: Filing */
+"Profile name:" = "प्रोफ़ाइल नाम:";
+"Folder name:" = "फ़ोल्डर का नाम:";
+"File name:" = "फ़ाइल नाम:";
+"Example:" = "उदाहरण:";
+"On existing files:" = "मौजूदा फ़ाइलों पर:";
+"Format:" = "प्रारूप:";
+"Quality:" = "गुणवत्ता:";
+"Compression quality:" = "संपीड़न गुणवत्ता:";
+"low" = "नीचा";
+"optimal" = "इष्टतम";
+"Choose" = "चुनना";
+"Color detection:" = "रंग जांच:";
+"Sensitive" = "अतिसंवेदनशील";
+"Optimal" = "इष्टतम";
+"Lossy" = "हानिपूर्ण";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "अत्यधिक संकुचित पीडीएफ";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "सादा पाठ (UTF-8)";
+
+"Unique date tag per file" = "फ़ाइल प्रति Unique तिथि टैग";
+"Edit each filename" = "संपादित करें प्रत्येक फ़ाइल नाम";
+"Scan to workspace" = "कार्यक्षेत्र के लिए स्कैन करें";
+"Add -OCR extension" = "ऐड - ओसीआर विस्तार";
+"Move original file to Trash" = "मूल फ़ाइल को रद्दी में स्थानांतरित करें";
+"Merge files in one batch" = "एक बैच में फाइलें मर्ज";
+"Open with:" = "खुला के साथ:";
+"no application specified" = "कोई आवेदन निर्दिष्ट";
+"Split on page" = "पृष्ठ पर विभाजित";
+"Show configuration before scan" = "से पहले दिखाएँ configuration स्कैन";
+"Show progress indicator" = "दिखाएँ प्रगति सूचक";
+"Scan this profile on document placement" = "स्कैन के दस्तावेज़ पर इस प्रोफाइल स्थापन";
+"Ask for scanning more pages" = "और अधिक पृष्ठों स्कैनिंग के लिए पूछें";
+"Timer:" = "टाइमर:";
+"Use scanner's own user interface" = "उपयोग स्कैनर की अपनी उपयोगकर्ता इंटरफ़ेस";
+
+"Ask user" = "प्रयोक्ता पूछें";
+"Increase sequence number" = "अनुक्रम संख्या में वृद्धि";
+"Silently overwrite" = "चुपचाप अधिलेखित";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "स्रोत:";
+"Colors:" = "रंग:";
+"Color Dropout:" = "रंग ख़ारिज :";
+"Red" = "लाल";
+"Green" = "ग्रीन";
+"Blue" = "नीला";
+"None" = "कोई नहीं";
+"Resolution:" = "संकल्प:";
+"Brightness:" = "चमक:";
+"Contrast:" = "इसके विपरीत:";
+"Gamma:" = "गामा:";
+"Size:" = "आकार:";
+"Position:" = "स्थिति:";
+"Size: %@ MB" = "आकार: MB %@";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W";
+"H:" = "H:";
+"Rotate:" = "घुमाएँ:";
+"Rotate every second page by 180°" = "घुमाएँ हर दूसरे पृष्ठ 180° द्वारा";
+"Auto crop and de-skew" = "ऑटो फसल और de-तिरछा";
+"Allow extra long pages" = "अतिरिक्त लंबे पृष्ठों की अनुमति दें";
+"Auto rotate by page content" = "ऑटो पृष्ठ की सामग्री द्वारा बारी बारी से";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "स्वचालित";
+"Ultrasonic multi-feed detection" = "अल्ट्रासोनिक बहु - फ़ीड पहचान";
+"Mechanical de-skew assist" = "मैकेनिकल डे तिरछा सहायता";
+"Primary" = "प्राथमिक";
+"Secondary" = "माध्यमिक";
+"Use individual color settings for the back side" = "पीछे की ओर के लिए अलग - अलग रंग सेटिंग्स का उपयोग करें";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "स्टार्टअप पर प्राथमिकताएं दिखाएं";
+"De-skew based on page content" = "De- तिरछा पृष्ठ सामग्री पर आधारित";
+"De-screen (reduce print moiré patterns)" = "De-() प्रिंट moiré पैटर्न को कम स्क्रीन";
+"De-speckle (image noise and defects)" = "( छवि शोर और दोषों ) de- धब्बा";
+"Sharpen" = "तेज करें";
+"Automatically optimize to b/w" = "स्वचालित रूप से करने के लिए b अनुकूलन / W";
+"Smooth uniform colors" = "चिकनी वर्दी रंग";
+"Invert image" = "औंधा करना छवि";
+"Blank Page Detection:" = "रिक्त पृष्ठ की पहचान:";
+"Off" = "बंद";
+"Delete Blank Page" = "हटाएँ रिक्त पृष्ठ";
+"Placeholder" = "Placeholder";
+"Split Document" = "भाजित दस्तावेज";
+"Sensitivity:" = "संवेदनशीलता:";
+"high" = "ऊँचा";
+"low" = "नीचा";
+"Remove page border and shadow" = "पृष्ठ बॉर्डर और छाया निकालें";
+"Merge front and back image" = "आगे और पीछे की छवि मर्ज";
+"Black point:" = "काले बिंदु:";
+"White point:" = "सफेद बिंदु:";
+"Hue:" = "ह्यू:";
+"Saturation:" = "संतृप्ति:";
+"Lightness:" = "लपट:";
+"Print with:" = "के साथ मुद्रण:";
+"no printer selected" = "कोई प्रिंटर का चयन";
+"Keep printed file" = "फ़ाइल मुद्रित रखें";
+
+/* Preview */
+"New" = "नया";
+"Front" = "मोर्चा";
+"Back" = "पीछे";
+
+/* Main Menu*/
+"About" = "के बारे में";
+"About %@" = "के बारे में%@";
+"Check for Updates..." = "चेक अपडेट के लिए ...";
+"Activation..." = "सक्रियण ...";
+"Preferences..." = "वरीयताएँ ...";
+"Preferences" = "वरीयताएँ";
+"%@ - Preferences" = "%@ - वरीयताएँ";
+"Get Info" = "जानकारी प्राप्त करें";
+"Get Scanner Info" = "स्कैनर जानकारी प्राप्त करें";
+"Select Scanner..." = "स्कैनर का चयन करें ...";
+"%@ Info" = "जानकारी %@";
+"Services" = "सेवाएं";
+"Hide %@" = "छुपाएँ%@";
+"Hide Others" = "छुपाएँ दूसरे लोग";
+"Show All" = "सभी दिखाएँ";
+"Quit %@" = "छोड़%@";
+"New Scan" = "नई स्कैन";
+
+"Open" = "खुला";
+"Open File..." = "खुला फाइल ...";
+
+"File" = "फ़ाइल";
+"Edit" = "संपादित करें";
+
+"Save" = "बचाना";
+"Save As..." = "इस रूप में सहेजें ...";
+
+"Undo" = "पूर्ववत करें";
+"Redo" = "फिर से करें";
+"Cut" = "काटना";
+"Copy" = "प्रतिलिपि";
+"Paste" = "चिपकाएँ";
+"Delete" = "मिटाना";
+"Delete all" = "सभी हटाएँ";
+"Select All" = "सभी का चयन करें";
+
+"Window" = "खिड़की";
+"Close" = "बंद करना";
+"Minimize" = "कम से कम";
+
+"Help" = "मदद";
+"%@ Help" = "मदद %@";
+
+
+/* OCR */
+"Create searchable documents" = "खोजा दस्तावेजों बनाएँ";
+"Create searchable barcodes" = "खोजा barcodes बनाएँ";
+"Split document on barcode" = "बारकोड दस्तावेज़ पर स्पलिट";
+"Discard split page" = "विभाजन पेज त्यागें";
+"One or more of the configured barcodes could not be found." = "एक कॉन्फ़िगर barcodes अधिक अयस्क पाया नहीं जा सका.";
+"Dictionary-based spelling correction" = "शब्दकोश आधारित वर्तनी सुधार";
+"The resolution is used to convert vector files." = "प्रस्ताव को वेक्टर फ़ाइलों को परिवर्तित किया जाता है.";
+
+"Language:" = "भाषा:";
+"OCR Language:" = "ओसीआर भाषा:";
+"Bulgarian" = "बल्गेरियन्";
+"Croatian" = "क्रोएशन्";
+"Czech" = "चेक";
+"Danish" = "डैनीश";
+"Dutch" = "डच्";
+"English" = "अंग्रेजी";
+"Estonian" = "ऐस्तोनियन्";
+"Finnish" = "फिनिश";
+"French" = "फ्रेंच";
+"German" = "जर्मन";
+"Hungarian" = "हंगेरी";
+"Italian" = "इतालवी";
+"Japanese" = "जापानी";
+"Korean" = "कोरियाई";
+"Latvian" = "लात्वीयावासी";
+"Lithuanian" = "लिथुनियन्";
+"Norwegian" = "नार्वेजीयन्";
+"Polish" = "पॉलिश";
+"Portuguese" = "पुर्तगाली";
+"Rumanian" = "रूमानियावासी";
+"Russian" = "रूसी";
+"Serbian" = "सर्बियाई";
+"Simplified Chinese" = "चीनी";
+"Slovenian" = "Slovene";
+"Spanish" = "स्पेनिश";
+"Swedish" = "स्विडिश";
+"Traditional Chinese" = "चीनी";
+"Turkish" = "तुर्की";
+"Ukrainian" = "यूक्रेनी";
+
+"Type:" = "प्रकार:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "छाप पाठ निशान";
+"Font:" = "फ़ॉन्ट:";
+"Rotation:" = "रोटेशन:";
+"Color:" = "रंग:";
+"Style:" = "शैली:";
+"Change" = "परिवर्तन";
+"Filled" = "भरा हुआ";
+"Outline" = "रूपरेखा";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "सब";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 परिदृश्य";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "फ़ोटो 6 \"x4\"";
+"Photo 5\"x3\"" = "फोटो 5 \"x3\"";
+"Business Card" = "व्यापार कार्ड";
+"Credit Card" = "क्रेडिट कार्ड";
+"Postcard" = "पोस्टकार्ड";
+"Custom" = "प्रथा";
+
+"Inch" = "इंच इंच";
+"cm" = "सेमी";
+"mm" = "मिमी";
+"Pixel" = "पिक्सेल";
+"Point" = "बिंदु बिंदु";
+"Percent" = "प्रतिशत प्रतिशत";
+
+"dpi" = "dpi";
+
+"Normal" = "सामान्य";
+"Flatbed" = "फ्लैटबेड";
+"Automatic Feeder" = "स्वचालित फीडर";
+"ADF Front" = "ADF मोर्चा";
+"ADF Back" = "ADF Back";
+"ADF Duplex" = "ADF द्वैध";
+
+"Black & white" = "काला और सफेद";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "ग्रे";
+"12bit Gray" = "12bit ग्रे";
+"16bit Gray" = "16bit ग्रे";
+"Color" = "रंग";
+"12bit Color" = "12bit रंग";
+"16bit Color" = "16bit रंग";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "जुड़वां ब्रिज स्थापना";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan एक जुड़वां ब्रिज के साथ आता है के लिए अन्य जुड़वां आवेदन से स्कैन.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "आप ExactScan जुड़वां पुल अब स्थापित करना चाहेंगे?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "जुड़वां पुल पहले से ही ExactScan का एक और संस्करण द्वारा स्थापित किया है. ";
+"Do not ask me again." = "फिर मुझे मत पूछना नहीं है.";
+"Yes" = "हां";
+"No" = "नहीं";
+
+"Defaults" = "चूक";
+"Optimize" = "ऑप्टिमाइज़ करें";
+"Optimize:" = "अनुकूलन:";
+"Unexpected error" = "अनपेक्षित त्रुटि";
+"An unexpected error condition occured. Please report." = "एक अनपेक्षित त्रुटि हालत हुई. कृपया रिपोर्ट.";
+"Internal error" = "आंतरिक त्रुटि";
+"Internal error in the i/o core. Please report." = "इस i में आन्तरिक त्रुटि / o कोर. कृपया रिपोर्ट.";
+"No compatible scanner detected." = "कोई संगत स्कैनर का पता चला.";
+"Rescan" = "Rescan";
+"Insert scan" = "स्कैन डालें";
+"Insert file" = "फ़ाइल सम्मिलित करें";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Avision USB और SCSI उपकरणों के लिए सामान्य स्कैनर ड्राइवर. कॉपीराइट 2004-2010 ExactCODE.";
+"Flushing pages" = "पन्नों Flushing";
+"Flushing remaining pages after preview with high-speed scanner." = "उच्च गति स्कैनर के साथ पूर्वावलोकन के बाद शेष पन्नों Flushing.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "उच्च गति स्कैनर के साथ स्कैन रद्द करने के बाद शेष पन्नों Flushing.";
+"no profile" = "कोई प्रोफ़ाइल";
+"Custom" = "प्रथा";
+"Profile %d" = "प्रोफ़ाइल %d";
+
+/* default profile names */
+"Color PDF" = "रंग पीडीएफ";
+"Gray PDF" = "ग्रे पीडीएफ";
+"B/W PDF" = "बी / डब्ल्यू पीडीएफ";
+"Color Copy" = "रंग कॉपी";
+"Gray Copy" = "ग्रे कॉपी";
+"B/W Copy" = "बी / डब्ल्यू कॉपी";
+"Color Email" = "रंग ईमेल";
+"Gray Email" = "ग्रे ईमेल";
+"iPhoto" = "iPhoto";
+"Photo" = "फोटो";
+
+/* miscelaneos */
+"No scanner" = "नहीं स्कैनर";
+
+/* info */
+"Vendor:" = "विक्रेता से:";
+"Model:" = "मॉडल:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "क्षेत्र कोड :";
+"Series:" = "श्रृंखला:";
+"Version:" = "संस्करण:";
+"Serial number:" = "सीरियल नंबर:";
+"Manufacturing date:" = "उत्पादन तिथि:";
+"First scan date:" = "पहली तारीख को स्कैन:";
+"Flatbed scans:" = "Flatbed स्कैन:";
+"Pad scans:" = "पैड स्कैन:";
+"ADF scans:" = "एडीएफ स्कैन :";
+"ADF simplex scans:" = "ADF सिंप्लेक्स स्कैन:";
+"ADF duplex scans:" = "ADF द्वैध स्कैन:";
+"Roller scans:" = "रोलर स्कैन:";
+"Multi feeds:" = "बहु फ़ीड:";
+"Paper jams:" = "कागज jams:";

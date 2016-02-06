@@ -1,0 +1,527 @@
+/*
+//  Polish
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Zgłoś problem";
+"Comments" = "Komentarze";
+"Please describe any steps needed to trigger the problem:" = "Proszę opisać jakie kroki prowadzą do wystąpienia problemu:";
+"Problem Details" = "Szczegóły problemu";
+"System Configuration" = "Konfiguracja systemu";
+"Report" = "Raport";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Twoje prywatne dane nie są wysyłane wraz z raportem. Nie będziemy kontaktowali się z Tobą w związku z tym raportem. By skorzystać ze wsparcia technicznego odwiedź stronę:";
+
+
+/* In registration */
+"Registration" = "Rejestracja";
+"Registration Information" = "Informacje rejestracyjne";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Proszę podać swoje dane w celu zarejestrowania i aktywacji produktu firmy ExactCODE.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Chciałbym być na bieżąco z aktualnościami, aktualizacje oprogramowania i najnowsze informacje na temat produktów i usług.";
+"Activation key" = "Klucz aktywacyjny";
+"First Name" = "Imię";
+"Last Name" = "Nazwisko";
+"Company or School" = "Nazwa firmy lub szkoły";
+"Address" = "Adres";
+"City" = "Miasto";
+"State or Province, or County" = "Stan, prowincja lub kraj";
+"Country" = "Kraj";
+"Postal Code" = "Kod pocztowy";
+"Email Address" = "Adres e-mail";
+"Area Code" = "Numer kierunkowy";
+"Phone Number" = "Numer telefonu";
+
+"How did you learn about this product?" = "Jak dowiedziałeś się o tym produkcie ?";
+"Select if you like" = "Wybierz , czy chcesz";
+"Advertisement" = "Reklama";
+"Magazine" = "Magazyn";
+"Newspaper" = "Gazeta";
+"Internet Forum" = "Forum internetowe";
+"Internet Website" = "Internet Strona WWW";
+"Internet Search" = "Wyszukiwanie w Internecie";
+"Recommendation" = "Zalecenie";
+
+"Where will you primarily use this computer?" = "Gdzie zwykle używasz tego komputera?";
+"Select" = "Wybierz";
+"Home" = "Dom";
+"Home Business" = "Własna firemka";
+"Small Business (1-99 employees)" = "Mała firma (1-99 pracowników)";
+"Medium Business (100-499 employees)" = "Średnia firma (100-499 pracowników)";
+"Large Business (500+ employees)" = "Duża firma (>500 pracowników)";
+"Elementary/Middle school" = "Szkoła podstawowa / gimnazjum";
+"High School" = "Szkoła wyższa";
+"College" = "Koledż";
+
+"What best describes what you do?" = "Co najlepiej opisuje Twoją profesję?";
+"Design/Print" = "Projektowanie / usługi drukarskie";
+"Video/Film" = "Wideo / film";
+"Music" = "Muzyka";
+"Photography" = "Fotografia";
+"Education Faculty/Administration" = "Edukacja / Administracja";
+"Engineering/Scientist/Researcher" = "Inżynieria / Nauka / Badania";
+"Architecture" = "Architektura";
+"Finance" = "Finanse";
+"Law" = "Prawo";
+"Manufacturing" = "Produkcja";
+"Marketing/Sales" = "Marketing / Dział handlowy";
+"Medical" = "Medycyna";
+"MIS/IT" = "Zarządzanie / Informatyka";
+"Student" = "Uczeń";
+"Webdesigner/Webmaster" = "Tworzenie stron internetowych / Webmaster";
+"Retired" = "Emeryt";
+"Other" = "Inny";
+"Register" = "Zarejestruj się";
+"Export" = "Eksport";
+"Import" = "Import";
+
+
+/* In try-out control */
+"Try-out version" = "Wersja próbna";
+"Try-out demo version:" = "Próbna wersja demonstracyjna:";
+"This software expired." = "Minął okres demonstracyjny.";
+"This is a demo version of the software which will expire in %d days." = "To jest wersja demonstracyjna, okres próbny minie za %d dni.";
+"Continue" = "Kontynuuj";
+"Test" = "Testuję";
+"Quit" = "Zamknij";
+"Activate" = "Aktywacja";
+"Purchase" = "Zakup";
+
+/*In choose folder*/
+"Choose destination folder" = "Wybierz folder docelowy";
+"Select folder where scanned images will be stored in" = "Wybierz folder, w którym chcesz by zapisywać zeskanowane obrazy";
+
+/* During software update */
+"Software Update" = "Aktualizacja oprogramowania";
+"Checking for new software ..." = "Sprawdzam dostępnośc aktualizacji...";
+"Changes" = "Zmiany";
+"Cancel" = "Anuluj";
+"Install Update" = "Zainstaluj aktualizację";
+"error parsing XML seed" = "błąd podczas analizy źródła XML";
+"There was a problem obtaining software update information (%@). Please try again later." = "Podczas sprawdzania informacji o dostępności aktualizacji wystąpił błąd (%@). Proszę spróbować później.";
+"No update information" = "Brak informacji o aktualizacji";
+"You are up to date." = "Używasz najnowszej wersji.";
+"There is no newer software update available." = "Nie są dostępne żadne aktualizacje.";
+"A new software version is available" = "Dostępna jest nowa wersja oprogramowania";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "Dostępna jest wersja %@ %@ (używasz %@). Aktualizacja zajmie trochę czasu i będzie wymagała ponownego uruchomienia aplikacji. Jeśli nie chcesz wykonać aktualizacji teraz, to możesz wybrać opcję sprawdzenia aktualizacji później.";
+"Downloading %@ %@." = "Pobieram %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk z %.0lfk (%.0lfk/s) - %d sekund pozostało";
+"Did you know?" = "Czy wiesz, że?";
+"Learn more" = "Dowiedz się więcej";
+"Upgrade" = "Rozszerzenie";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Twoja wersja ExactScan upoważnia Cię do ulgowego zakupu rozszerzonej wersji ExactScan posiadające więcej funkcji i OCR.";
+
+/* Scan progress */
+"Searching for supported scanners" = "Szukam obsługiwanych skanerów";
+"Please wait." = "Proszę czekać.";
+"Scanner Configuration" = "Konfiguracja skanera";
+"Detect" = "Wykryj";
+"Abort" = "Przerwij";
+"OK" = "OK";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Żaden skaner nie został skonfigurowany. Ta aplikacja wymaga uzyskania konfiguracji skanera przed pierwszym użyciem.";
+"Scanner lamp warming up" = "Rozgrzewanie lampy skanera";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Po włączeniu lampy skanera potrzebuje ona trochę czasu by osiągnąć odpowiednią temperaturę barwową.";
+"Out of documents" = "Brak dokumentów";
+"There is no paper in the document feeder." = "Podajnuk dokumentów jest pusty.";
+"Cover open" = "Pokrywa jest otwarta";
+"Please close the scanner cover and try again." = "Proszę zamknąć pokrywaę skanera i spróbować ponownie.";
+"Paper jam" = "Zacięcie papieru";
+"Please clear the paper jam in the document feeder and try again." = "Proszę usunąć zacięcie dokumentu i spróbować ponownie.";
+"Multi feed" = "Pobrano kilka kartek";
+"Please clear the muti feed in the document feeder and try again." = "Usuń pobrane kartki i spróbuj ponownie.";
+"Device busy" = "Urządzenie jest zajęte";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Urządzenie jest używane przez inną aplikację, np. za pośrednictwem sieci. Proszę spróbować później, gdy skaner nie będzie zajęty.";
+"Unexpected scanner error" = "Niespodziewany błąd skanera";
+"An unexpected error condition occured." = "Wystąpił niespodziewany błąd skanera.";
+"Scanner not ready" = "Skaner nie jest gotowy";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Sterownik nie rozpoznał kompatybilnego urządzenia. Proszę sprawdzić czy skaner jest podłączony i nie jest używany przez inną aplikację.";
+"Scanning" = "Skanowanie";
+"Frontside" = "Frontside";
+"Backside" = "tyłek";
+"frontside" = "strona przednia";
+"backside" = "strona tylna";
+"Initializing scanner" = "Inicjalizuję skaner";
+"Clearing document feeder" = "Opróżniam podajnik dokumentów";
+"Image data for page %@ is being transferred." = "Przesyłam obraz strony nr %@.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Chcesz zeskanować kolejną stronę dokumentu czy zakończyć skanowanie? Przed wybraniem \"%@\" umieść kolejną stronę w skanerze.";
+"Scanning more pages" = "Skanowanie kolejnych stron";
+"Stop" = "Zakończ";
+"Add" = "Dodaj";
+
+"Calibrate Scanner..." = "Kalibruj skaner ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Skaner wymaga kalibracji. Umieść w skanerze dostarczoną z nim stronę kalibarcyjną. Jeśli nie chcesz teraz dokonać kalibracji, to możesz ją uruchomić za pomocą menu aplikacji.";
+"Calibrating" = "Kalibruję";
+"Calibrating scanner" = "Kalibruję skaner";
+
+"Importing files" = "Importowanie plików";
+"Importing data from image files." = "Importowanie danych z plików graficznych.";
+"Processing file %@, page %d/%d" = "Przetwarzanie pliku %@, strona %d/%d";
+"Processing file %@, image %d/%d" = "Przetwarzanie pliku %@, obraz %d/%d";
+"Page %@: %@ ..." = " Strona %@: %@ ...";
+"A file named \"%@\" already exists." = "Plik o nazwie \"%@\" już istnieje.";
+
+/* Preferences: Tab menu */
+"Filing" = "Porządkowe";
+"Basic" = "podstawowy";
+"Basic Settings" = "Podstawowe";
+"Advanced" = "zaawansowany";
+"Advanced Settings" = "Zaawansowane";
+"OCR" = "OCR";
+"Barcode" = "Kod kreskowy";
+/* Additional OCR preferences */
+"Processing" = "Przetwarzanie";
+"Finalization" = "Finalizacja";
+
+"Mode:" = "Tryb:";
+"Generic" = "Ogólny";
+"Dot Matrix" = "Drukarka igłowa";
+"Fax" = "Faks";
+
+"Scan" = "Skanowanie";
+"Preview" = "Podgląd";
+
+"Profiles" = "Profile";
+"Duplicate Profile" = "Powiel profil";
+"Reset Profile" = "Zresetuj profil";
+"Reset All Profiles" = "Zresetuj wszystkie profile";
+
+/* Preferences: Filing */
+"Profile name:" = "Nazwa profilu:";
+"Folder name:" = "Nazwa folderu:";
+"File name:" = "Nazwa pliku:";
+"Example:" = "Przykład:";
+"On existing files:" = "Dla istniejącego pliku:";
+"Format:" = "Format:";
+"Quality:" = "Jakość:";
+"Compression quality:" = "Stopień kompresji:";
+"low" = "niska";
+"optimal" = "optymalny";
+"Choose" = "Wybierz";
+"Color detection:" = "Detekcja koloru:";
+"Sensitive" = "Czuła";
+"Optimal" = "Optymalna";
+"Lossy" = "Stratna";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Skompresowany PDF";
+"Highly Compressed PDF" = "Wysoce skomplresowany PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "BMP (Microsoft)";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Zwykły tekst (UTF-8)";
+
+"Unique date tag per file" = "Unikalny znacznik daty w pliku";
+"Edit each filename" = "Edycja nazwy dla każdego pliku";
+"Scan to workspace" = "Skanowanie do obszaru roboczego";
+"Add -OCR extension" = "Dodaj rozszerzenie -OCR";
+"Move original file to Trash" = "Przenieś oryginalny plik do kosza";
+"Merge files in one batch" = "Połącz pliki w porcji";
+"Open with:" = "Otwórz za pomocą:";
+"no application specified" = "nie wybrano aplikacji";
+"Split on page" = "Wydziel na stronie";
+"Show configuration before scan" = "Pokaż konfigurację przed skanowaniem";
+"Show progress indicator" = "Wyświetlanie wskaźnika postępu";
+"Scan this profile on document placement" = "Skanuj za pomocą tego profilu przy włożeniu dokumentu";
+"Ask for scanning more pages" = "Pytanie o skanowanie kolejnych stron";
+"Timer:" = "Zegar:";
+"Use scanner's own user interface" = "Wyświetlaj oryginalny interfejs użytkownika dla skanera";
+
+"Ask user" = "Zapytaj użytkownika";
+"Increase sequence number" = "Zwiększ numer kolejny";
+"Silently overwrite" = "Nadpisuj bez pytania";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Źródło:";
+"Colors:" = "Kolory:";
+"Color Dropout:" = "Kolor Dropout :";
+"Red" = "czerwony";
+"Green" = "zielony";
+"Blue" = "niebieski";
+"None" = "żaden";
+"Resolution:" = "Rozdzielczość:";
+"Brightness:" = "Jasność:";
+"Contrast:" = "Kontrast:";
+"Gamma:" = "Gamma:";
+"Size:" = "Rozmiar:";
+"Position:" = "Pozycja:";
+"Size: %@ MB" = "Rozmiar: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "Szer.:";
+"H:" = "Wys.:";
+"Rotate:" = "Obrót:";
+"Rotate every second page by 180°" = "Obróć co drugą stronę o 180°";
+"Auto crop and de-skew" = "Automatycznie przytnij i wyrównaj";
+"Allow extra long pages" = "Pozwól długie strony";
+"Auto rotate by page content" = "Obróć automatycznie na podstawie treści strony";
+"-90° (CW)" = "-90° (zgodnie z ruchem wskazówek zegara)";
+"0°" = "0°";
+"90° (CCW)" = "90° (przeciwnie do ruchu wskazówek zegara)";
+"180°" = "180°";
+"Automatic" = "Automatycznie";
+"Ultrasonic multi-feed detection" = "Ultradźwiękowe wykrywanie pobrania wielu kartek";
+"Mechanical de-skew assist" = "Mechaniczne wspomaganie de- pochylać";
+"Primary" = "Przednia";
+"Secondary" = "Tylna";
+"Use individual color settings for the back side" = "Użyj niezależnych ustawień koloru dla tylnej strony";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Pokaż ustawienia przy starcie";
+"De-skew based on page content" = "Prostuj na podstawie zawartości strony";
+"De-screen (reduce print moiré patterns)" = "Usuwaj morę (dotyczy materiałów drukowanych)";
+"De-speckle (image noise and defects)" = "De - łata ( zakłócenia obrazu i wady )";
+"Sharpen" = "Wyostrz";
+"Automatically optimize to b/w" = "Automatycznie optymalizuj do cz-b";
+"Smooth uniform colors" = "Wygładź podobne kolory";
+"Invert image" = "Inwersja kolorów";
+"Blank Page Detection:" = "Wykrywanie pustych stron:";
+"Off" = "wyłączone";
+"Delete Blank Page" = "Kasuj puste strony";
+"Placeholder" = "Wypełniacz (placeholder)";
+"Split Document" = "Dziel dokument";
+"Sensitivity:" = "Czułość:";
+"high" = "wysoka";
+"low" = "niska";
+"Remove page border and shadow" = "Usuń stronę granicy cienia";
+"Merge front and back image" = "Scalanie obraz front i back";
+"Black point:" = "Punkt czerni:";
+"White point:" = "Punkt bieli:";
+"Hue:" = "Odcień:";
+"Saturation:" = "Nasycenie:";
+"Lightness:" = "Jasność:";
+"Print with:" = "Drukuj na:";
+"no printer selected" = "nie wybrano drukarki";
+"Keep printed file" = "Zachowaj drukowany plik";
+
+/* Preview */
+"New" = "Nowy";
+"Front" = "Przednia";
+"Back" = "Tylna";
+
+/* Main Menu*/
+"About" = "o";
+"About %@" = "O %@";
+"Check for Updates..." = "Sprawdź dostępność aktualizacji...";
+"Activation..." = "Aktywacja ...";
+"Preferences..." = "Preferencje ...";
+"Preferences" = "Preferencje";
+"%@ - Preferences" = "%@ - Preferencje";
+"Get Info" = "Pobierz informacje";
+"Get Scanner Info" = "Pobierz informację o skanerze";
+"Select Scanner..." = "Wybierz skaner...";
+"%@ Info" = "%@ Informacja";
+"Services" = "Usługi";
+"Hide %@" = "Ukryj %@";
+"Hide Others" = "Ukryj Inne";
+"Show All" = "Pokaż Wszystkie";
+"Quit %@" = "Zakończ %@";
+"New Scan" = "Nowe Skanowanie";
+
+"Open" = "otwarte";
+"Open File..." = "Otwórz Plik ...";
+
+"File" = "Plik";
+"Edit" = "Edycja";
+
+"Save" = "Zapisz";
+"Save As..." = "Zapisz Jako ...";
+
+"Undo" = "Cofnij";
+"Redo" = "Przywróć";
+"Cut" = "Wytnij";
+"Copy" = "Kopiuj";
+"Paste" = "Wklej";
+"Delete" = "Skasuj";
+"Delete all" = "Usuń wszystko";
+"Select All" = "Zaznacz wszystko";
+
+"Window" = "Okno";
+"Close" = "Zamknij";
+"Minimize" = "Minimalizuj";
+
+"Help" = "Pomoc";
+"%@ Help" = "Pomoc %@";
+
+
+/* OCR */
+"Create searchable documents" = "Utwórz dokumenty przeszukiwalne";
+"Create searchable barcodes" = "Tworzenie przeszukiwalnych kodów kreskowych";
+"Split document on barcode" = "Dziel dokument przy kodzie kreskowym";
+"Discard split page" = "Wyrzuć stronę podziału";
+"One or more of the configured barcodes could not be found." = "Nie znaleziono =jednego lub więcej skonfigurowanych kofkodów kreskowych skonfigurowany nie można znaleźć.";
+"Dictionary-based spelling correction" = "Sprawdzanie pisownie za pomocą słownika";
+"The resolution is used to convert vector files." = "Rozdzielczość jest używana przy konwersji plików wektorowych.";
+
+"Language:" = "Język:";
+"OCR Language:" = "OCR Język:";
+"Bulgarian" = "Bułgarski";
+"Croatian" = "Vhorwacki";
+"Czech" = "Vzeski";
+"Danish" = "Duński";
+"Dutch" = "Niderlandzki";
+"English" = "Angielski";
+"Estonian" = "Estoński";
+"Finnish" = "Fiński";
+"French" = "Francuski";
+"German" = "Niemiecki";
+"Hungarian" = "Węgierski";
+"Italian" = "Włoski";
+"Japanese" = "Japoński";
+"Korean" = "Koreański";
+"Latvian" = "Łotewski";
+"Lithuanian" = "Litewski";
+"Norwegian" = "Norweski";
+"Polish" = "Polski";
+"Portuguese" = "Portugalski";
+"Rumanian" = "Rumuński";
+"Russian" = "Rosyjski";
+"Serbian" = "Serbski";
+"Simplified Chinese" = "Chiński uproszczony";
+"Slovenian" = "Słoweński";
+"Spanish" = "Hiszpański";
+"Swedish" = "szwedzki";
+"Traditional Chinese" = "Chiński tradycyjny";
+"Turkish" = "Turecki";
+"Ukrainian" = "Ukraiński";
+
+"Type:" = "Typ:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "Code 2 z 5";
+"CODE39" = "Code 39";
+"CODE128" = "Code 128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Kod Data Matrix";
+"QR Code" = "Kod QR";
+
+/* Imprinter */
+"Imprinter" = "Nadruk";
+"Imprint text mark" = "Tekst do nadrukowania";
+"Font:" = "Czcionka:";
+"Rotation:" = "Obrót:";
+"Color:" = "Kolor:";
+"Style:" = "Styl:";
+"Change" = "Zmień";
+"Filled" = "Wypełniony";
+"Outline" = "Kontur";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Wszystkie";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 poziomo";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Zdjęcie 6\"x4\"";
+"Photo 5\"x3\"" = "Zdjęcie 5\"x3\"";
+"Business Card" = "Wizytówka";
+"Credit Card" = "Karta kredytowa";
+"Postcard" = "Widokówka";
+"Custom" = "Własny";
+
+"Inch" = "Cale";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Piksele";
+"Point" = "Punkty";
+"Percent" = "Procent";
+
+"dpi" = "dpi";
+
+"Normal" = "Szyba";
+"Flatbed" = "Skrzynia";
+"Automatic Feeder" = "Automatyczny podajnik";
+"ADF Front" = "Podajnik dokumentów - przednia strona";
+"ADF Back" = "Podajnik dokumentów - tylna strona";
+"ADF Duplex" = "Podajnik dokumentów - obie strony";
+
+"Black & white" = "Black \u0026 white";
+"Lineart" = "Czarno-biały";
+"Dithered" = "Rozpraszany";
+"Gray" = "Odcienie szarości";
+"12bit Gray" = "12-bitowe odcienie szarości";
+"16bit Gray" = "16-bitowe odcienie szarości";
+"Color" = "Kolor";
+"12bit Color" = "12-bitowy kolor";
+"16bit Color" = "16-bitowy kolor";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "Instalacja pośrednika TWAIN";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan jest wyposażony w pośrednik TWAIN umożliwiający skanowanie innym aplikacją używającym TWAIN.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Czy chcesz teraz zainstalować pośrednika TWAIN ExactScan?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "Pośrednik TWAIN jest już zainstalowany przez inną wersję ExactScan. Czy chcesz zainstalować pośrednika z tej wersji ExactScan?";
+"Do not ask me again." = "Nie pytaj mnie ponownie.";
+"Yes" = "Tak";
+"No" = "Nie";
+
+"Defaults" = "Domyślne";
+"Optimize" = "Optymalizacja";
+"Optimize:" = "Optymalizuj:";
+"Unexpected error" = "Niespodziewany błąd";
+"An unexpected error condition occured. Please report." = "Wystąpił niespodziewany błąd. Proszę wysłać zgłoszenie.";
+"Internal error" = "Błąd wewnętrzny";
+"Internal error in the i/o core. Please report." = "Błąd wewnętrzny w jądrze we/wy. Prosze wysłać zgłoszenie.";
+"No compatible scanner detected." = "Nie znaleziono kompatybilnego skanera.";
+"Rescan" = "Wyszukaj ponownie";
+"Insert scan" = "Włóż skanować";
+"Insert file" = "Wstaw plik";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Podstawowy sterownik dla Avision USB lub SCSI. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Upróżnienie stron";
+"Flushing remaining pages after preview with high-speed scanner." = "Opróżnienie pozostałych stron po podglądzie.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Opróżnienie pozostałych stron po anulowaniu.";
+"no profile" = "brak profilu";
+"Custom" = "Własny";
+"Profile %d" = "Profil %d";
+
+/* default profile names */
+"Color PDF" = "PDF Kolorowy";
+"Gray PDF" = "PDF Odcienie szarości";
+"B/W PDF" = "PDF Czarno-biały";
+"Color Copy" = "Kopia kolorowa";
+"Gray Copy" = "Kopia w odcieniach szarości";
+"B/W Copy" = "Kopia czarno-biała";
+"Color Email" = "e-mail kolorze";
+"Gray Email" = "e-mail odcieniach szarości";
+"iPhoto" = "iPhoto";
+"Photo" = "Zdjęcie";
+
+/* miscelaneos */
+"No scanner" = "Brak skanera";
+
+/* info */
+"Vendor:" = "Producent:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Kod regionu:";
+"Series:" = "Seria:";
+"Version:" = "Wersja:";
+"Serial number:" = "Numer seryjny:";
+"Manufacturing date:" = "Data produkcji:";
+"First scan date:" = "Data pierwszego skanowania:";
+"Flatbed scans:" = "Ilość skanów z szyby:";
+"Pad scans:" = "Ilośc skanów z podkładkami (PAD):";
+"ADF scans:" = "Skany z podajnika:";
+"ADF simplex scans:" = "Skany jednostronne za pomocą podajnika:";
+"ADF duplex scans:" = "Skany dwustronne za pomocą podajnika:";
+"Roller scans:" = "Ilość skanów z rolką (roller):";
+"Multi feeds:" = "Pobrania więcej niż jednej kartki:";
+"Paper jams:" = "Zacięc papieru:";

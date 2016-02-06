@@ -1,0 +1,527 @@
+/*
+//  Turkish
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Sorun Raporu";
+"Comments" = "Yorumlar";
+"Please describe any steps needed to trigger the problem:" = "Sorun tetiklemek için gerekli herhangi bir adım açıklayınız:";
+"Problem Details" = "Sorun Detayları";
+"System Configuration" = "Sistem Yapılandırma";
+"Report" = "Rapor";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Kişisel bilgileriniz bu rapor ile gönderilmez. Bu rapora yanıt olarak temas olmayacaktır. Ürün desteği için şu adresi ziyaret edin: ";
+
+
+/* In registration */
+"Registration" = "Tescil";
+"Registration Information" = "Kayıt Bilgileri";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Kayıt için kişisel bilgilerinizi girin ve ExactCODE ürün etkinleştirin.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Haber, yazılım güncellemeleri, ürün ve hizmet hakkında en son bilgileri ile güncel beni tutun.";
+"Activation key" = "Etkinleştirme anahtarı";
+"First Name" = "İsim";
+"Last Name" = "Soyadı";
+"Company or School" = "Firma veya okul";
+"Address" = "Adres";
+"City" = "Şehir";
+"State or Province, or County" = "Devlet veya İl veya İlçe";
+"Country" = "Ülke";
+"Postal Code" = "Posta Kodu";
+"Email Address" = "E-posta Adresi";
+"Area Code" = "Alan Kodu";
+"Phone Number" = "Telefon Numarası";
+
+"How did you learn about this product?" = "Nasıl bu ürün hakkında öğrendin ?";
+"Select if you like" = "Isterseniz seçin";
+"Advertisement" = "Reklam";
+"Magazine" = "Dergi";
+"Newspaper" = "Gazete";
+"Internet Forum" = "İnternet Forumu";
+"Internet Website" = "İnternet Sitesi";
+"Internet Search" = "Internet Arama";
+"Recommendation" = "Öneri";
+
+"Where will you primarily use this computer?" = "Öncelikle nerede bu bilgisayarı kullanacak?";
+"Select" = "Seçmek";
+"Home" = "Ev";
+"Home Business" = "Ev İşyeri";
+"Small Business (1-99 employees)" = "Küçük İşletmeler (1-99 çalışan)";
+"Medium Business (100-499 employees)" = "Orta Ölçekli İşletmeler (100-499 çalışan)";
+"Large Business (500+ employees)" = "Büyük İşletme (500+ çalışan)";
+"Elementary/Middle school" = "Orta / İlköğretim";
+"High School" = "Lise";
+"College" = "Üniversite";
+
+"What best describes what you do?" = "Ne iyi ne yapmak açıklar?";
+"Design/Print" = "Tasarım / Baskı";
+"Video/Film" = "Video / Film";
+"Music" = "müzik";
+"Photography" = "Fotoğrafçılık";
+"Education Faculty/Administration" = "Eğitim Fakültesi / Yönetim";
+"Engineering/Scientist/Researcher" = "Mühendislik / Bilim / Araştırmacı";
+"Architecture" = "Mimari";
+"Finance" = "Finanse etmek";
+"Law" = "Hukuk";
+"Manufacturing" = "Üretim";
+"Marketing/Sales" = "Pazarlama / Satış";
+"Medical" = "Tıbbi";
+"MIS/IT" = "MIS / BT";
+"Student" = "öğrenci";
+"Webdesigner/Webmaster" = "Webdesigner / Webmaster";
+"Retired" = "Emekli";
+"Other" = "Diğer";
+"Register" = "Kaydetmek";
+"Export" = "Ihracat";
+"Import" = "Ithal";
+
+
+/* In try-out control */
+"Try-out version" = "Deneyin-out sürümü";
+"Try-out demo version:" = "Deneyin-out demo sürümü:";
+"This software expired." = "Bu yazılım süresi doldu.";
+"This is a demo version of the software which will expire in %d days." = "Bu %d gün içinde dolacak yazılımın bir demo versiyonu.";
+"Continue" = "Devam etmek";
+"Test" = "Test";
+"Quit" = "Çıkmak";
+"Activate" = "Etkinleştirmek";
+"Purchase" = "Satın alma";
+
+/*In choose folder*/
+"Choose destination folder" = "Hedef klasörü seçin";
+"Select folder where scanned images will be stored in" = "Taranan görüntüler saklanır klasörü seçin";
+
+/* During software update */
+"Software Update" = "Yazılım Güncelleme";
+"Checking for new software ..." = "Yeni yazılım için denetleniyor ...";
+"Changes" = "Değişiklikler";
+"Cancel" = "Iptal";
+"Install Update" = "Yükleyin";
+"error parsing XML seed" = "Hata ayrıştırma XML tohum";
+"There was a problem obtaining software update information (%@). Please try again later." = "Bir sorun elde yazılım güncelleştirmesi bilgileri (%@) oluştu. Daha sonra tekrar deneyiniz.";
+"No update information" = "Hiçbir güncelleştirme bilgileri";
+"You are up to date." = "Sen güncel olup.";
+"There is no newer software update available." = "Uygun hiçbir yeni yazılım güncellemesi bulunmaktadır.";
+"A new software version is available" = "Yeni bir yazılım sürümü mevcut";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ (Eğer %@ var) kullanılabilir. Bir güncelleştirmeyi karşıdan yüklemek ve bir uygulama yeniden başlatma gerektirir için biraz zaman alabilir. Şimdi yüklemeye hazır değilseniz, daha sonra uygulama menüsünde güncellemeleri kontrol edebilirsiniz.";
+"Downloading %@ %@." = "Indirme %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk of %.0lfk (%.0lfk/s) - Kalan %d saniye";
+"Did you know?" = "Bunları biliyor muydunuz?";
+"Learn more" = "Daha fazla bilgi edinin";
+"Upgrade" = "Yükseltmek";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "ExactScan sürümü daha düşük fiyata daha fazla özellik ve OCR ile ExactScan diğer sürümleri yükseltmek için uygundur.";
+
+/* Scan progress */
+"Searching for supported scanners" = "Desteklenen tarayıcılar aranıyor";
+"Please wait." = "Lütfen bekleyin.";
+"Scanner Configuration" = "Tarayıcı Yapılandırma";
+"Detect" = "Belirlemek";
+"Abort" = "Iptal etmek";
+"OK" = "Tamam";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Hiçbir tarayıcı yapılandırılmıştır. Bu uygulama ilk kullanımdan ve profil yapılandırma önce tarayıcının yapılandırmasını almak gerekiyor.";
+"Scanner lamp warming up" = "Tarayıcı lambası ısınıyor";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Tarayıcının ışık kaynağı etkinleştirdikten sonra, lamba amaçlanan parlaklık yaymak için ısınmak için biraz zaman gerekiyor.";
+"Out of documents" = "Belgeleri dışarı";
+"There is no paper in the document feeder." = "Doküman besleyiciye kağıt yok.";
+"Cover open" = "Kapak açık";
+"Please close the scanner cover and try again." = "Tarayıcı kapağını açın ve tekrar deneyin kapatın.";
+"Paper jam" = "kağıt sıkışması";
+"Please clear the paper jam in the document feeder and try again." = "Doküman besleyiciye kağıt sıkışmasını giderin ve tekrar deneyin.";
+"Multi feed" = "çoklu besleme";
+"Please clear the muti feed in the document feeder and try again." = "Doküman besleyiciyemuti yem temizlemek ve yeniden deneyin.";
+"Device busy" = "Meşgul cihaz";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Cihaz ağ veya bağlı bir yazıcı ile, başka bir uygulama tarafından kullanılır. Sırasında aygıt yani hazır tekrar deneyin.";
+"Unexpected scanner error" = "Beklenmeyen tarayıcı hatası";
+"An unexpected error condition occured." = "Beklenmeyen bir hata durumu oluştu.";
+"Scanner not ready" = "Tarayıcı hazır değil";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Sürücü uyumlu bir cihaza tanımadı. Tarayıcı başka bir uygulama tarafından bağlı ve kullanılmaz emin olun.";
+"Scanning" = "Tarama";
+"Frontside" = "Frontside";
+"Backside" = "Arka taraf";
+"frontside" = "Frontside";
+"backside" = "Arka taraf";
+"Initializing scanner" = "Tarayıcı başlatılıyor";
+"Clearing document feeder" = "Belge besleyici Takas";
+"Image data for page %@ is being transferred." = "Sayfa %@ için görüntü verileri aktarılıyor.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner.";
+"Scanning more pages" = "Daha fazla sayfa tarama";
+"Stop" = "Durdurmak";
+"Add" = "Eklemek";
+
+"Calibrate Scanner..." = "Tarayıcı Kalibre ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Tarayıcı kalibre edilmesi gerekir. Tarayıcı ile birlikte kalibrasyon sayfasını giriniz. Şimdi kalibre hazır değilseniz, daha sonra uygulama menüsünden çalıştırabilirsiniz.";
+"Calibrating" = "Kalibre";
+"Calibrating scanner" = "Tarayıcı kalibrasyonu";
+
+"Importing files" = "İthalat dosya";
+"Importing data from image files." = "Görüntü dosyaları veri alma.";
+"Processing file %@, page %d/%d" = "İşleme dosyası %@, sayfa %d/%d";
+"Processing file %@, image %d/%d" = "İşleme dosyası %@, resim %d/%d";
+"Page %@: %@ ..." = "Sayfa %@: %@ ...";
+"A file named \"%@\" already exists." = "Adlı bir dosya \"%@\" zaten var.";
+
+/* Preferences: Tab menu */
+"Filing" = "Dosyalama";
+"Basic" = "Temel";
+"Basic Settings" = "Temel Ayarlar";
+"Advanced" = "Gelişmiş";
+"Advanced Settings" = "Gelişmiş Ayarlar";
+"OCR" = "OCR";
+"Barcode" = "Barkod";
+/* Additional OCR preferences */
+"Processing" = "Işleme";
+"Finalization" = "Sonlandırma";
+
+"Mode:" = "Modu:";
+"Generic" = "Genel";
+"Dot Matrix" = "Dot Matrix";
+"Fax" = "Faks";
+
+"Scan" = "Taramak";
+"Preview" = "Önizleme";
+
+"Profiles" = "Profilleri";
+"Duplicate Profile" = "Profil yinelenen";
+"Reset Profile" = "Profil Sıfırla";
+"Reset All Profiles" = "Tüm Profiller Sıfırla";
+
+/* Preferences: Filing */
+"Profile name:" = "Profil adı:";
+"Folder name:" = "Klasör adı:";
+"File name:" = "Dosya adı:";
+"Example:" = "Örnek:";
+"On existing files:" = "Mevcut dosyaları:";
+"Format:" = "Biçimi:";
+"Quality:" = "Kalite:";
+"Compression quality:" = "Sıkıştırma kalitesi:";
+"low" = "düşük";
+"optimal" = "en uygun";
+"Choose" = "Seçmek";
+"Color detection:" = "Renk algılama:";
+"Sensitive" = "Duyarlı";
+"Optimal" = "En uygun";
+"Lossy" = "Kayıplı";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Sıkıştırılmış PDF";
+"Highly Compressed PDF" = "Yüksek Sıkıştırılmış PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Düz Metin (UTF-8)";
+
+"Unique date tag per file" = "Dosya başına benzersiz tarih etiketi";
+"Edit each filename" = "Her dosya düzenleme";
+"Scan to workspace" = "Çalışma alanına Tarama";
+"Add -OCR extension" = "Ekle -OCR uzatma";
+"Move original file to Trash" = "Çöp Kutusuna orijinal dosya taşımak";
+"Merge files in one batch" = "Bir toplu iş dosyaları birleştirme";
+"Open with:" = "Ile açın:";
+"no application specified" = "belirtilen herhangi bir uygulama";
+"Split on page" = "Sayfada bölünmüş";
+"Show configuration before scan" = "Tarama önce yapılandırma göster";
+"Show progress indicator" = "Ilerleme göstergesi göster";
+"Scan this profile on document placement" = "Belge yerleştirme Bu profili Tarama";
+"Ask for scanning more pages" = "Daha fazla sayfa tarama isteyin";
+"Timer:" = "Zamanlayıcı:";
+"Use scanner's own user interface" = "Tarayıcının kendi kullanıcı arayüzü kullanın";
+
+"Ask user" = "Kullanıcı isteyin";
+"Increase sequence number" = "Sıra numarası artırın";
+"Silently overwrite" = "Sessizce üzerine";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Kaynak:";
+"Colors:" = "Renkler:";
+"Color Dropout:" = "Renk Eksikliği:";
+"Red" = "Kırmızı";
+"Green" = "Yeşil";
+"Blue" = "Mavi";
+"None" = "Hiçbiri";
+"Resolution:" = "Çözünürlük:";
+"Brightness:" = "Parlaklık:";
+"Contrast:" = "Kontrast:";
+"Gamma:" = "Gamma:";
+"Size:" = "Boyutu:";
+"Position:" = "Pozisyonu:";
+"Size: %@ MB" = "Boyutu: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "Döndür:";
+"Rotate every second page by 180°" = "180° her saniye sayfa çevirin";
+"Auto crop and de-skew" = "Otomatik kırpma ve de-çarpık";
+"Allow extra long pages" = "Ekstra uzun sayfaları izin ver";
+"Auto rotate by page content" = "Otomatik sayfa içeriği ile döndürmek";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (sola)";
+"180°" = "180°";
+"Automatic" = "Otomatik";
+"Ultrasonic multi-feed detection" = "Ultrasonik çoklu besleme algılama";
+"Mechanical de-skew assist" = "Mekanik de-çarpık yardımı";
+"Primary" = "Birincil";
+"Secondary" = "Ikincil";
+"Use individual color settings for the back side" = "Arka tarafı için ayrı renk ayarları kullanın";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Başlangıçta Tercihler göster";
+"De-skew based on page content" = "De-çarpık sayfa içeriğine göre";
+"De-screen (reduce print moiré patterns)" = "De ekran (baskı Dalgalı desenleri azaltmak)";
+"De-speckle (image noise and defects)" = "(Görüntü gürültü ve kusurları) De-benek";
+"Sharpen" = "Keskinleştirmek";
+"Automatically optimize to b/w" = "Otomatik s/b optimize";
+"Smooth uniform colors" = "Pürüzsüz üniforma renkleri";
+"Invert image" = "Görüntü ters";
+"Blank Page Detection:" = "Boş Sayfa Algılama:";
+"Off" = "Kapalı";
+"Delete Blank Page" = "Boş Sayfa Sil";
+"Placeholder" = "Tutucu";
+"Split Document" = "Belgeyi Böl";
+"Sensitivity:" = "Hassasiyet:";
+"high" = "yüksek";
+"low" = "düşük";
+"Remove page border and shadow" = "Sayfa sınır ve gölge kaldırmak";
+"Merge front and back image" = "Ön ve arka görüntü birleştirme";
+"Black point:" = "Siyah nokta:";
+"White point:" = "Beyaz nokta:";
+"Hue:" = "Hue:";
+"Saturation:" = "Doygunluk:";
+"Lightness:" = "Hafiflik:";
+"Print with:" = "Ile yazdırmak:";
+"no printer selected" = "Seçilen herhangi bir yazıcı";
+"Keep printed file" = "Basılı dosyası tutmak";
+
+/* Preview */
+"New" = "Yeni";
+"Front" = "Ön";
+"Back" = "Geri";
+
+/* Main Menu*/
+"About" = "Hakkında";
+"About %@" = "Yaklaşık %@";
+"Check for Updates..." = "Güncellemeleri Kontrol Et ...";
+"Activation..." = "Aktivasyon ...";
+"Preferences..." = "Tercihler ...";
+"Preferences" = "Tercihler";
+"%@ - Preferences" = "%@ - Tercihler";
+"Get Info" = "Bilgi Al";
+"Get Scanner Info" = "Tarayıcı Bilgi Al";
+"Select Scanner..." = "Tarayıcı seçin ...";
+"%@ Info" = "%@ Bilgi";
+"Services" = "Hizmetler";
+"Hide %@" = "%@ Gizle";
+"Hide Others" = "Diğer gizle";
+"Show All" = "Tüm göster";
+"Quit %@" = "%@ Çıkın";
+"New Scan" = "Yeni Tarama";
+
+"Open" = "Açık";
+"Open File..." = "Dosya Aç ...";
+
+"File" = "Dosya";
+"Edit" = "Düzenle";
+
+"Save" = "Kurtarmak";
+"Save As..." = "Farklı Kaydet ...";
+
+"Undo" = "Geri Al";
+"Redo" = "Yeniden yapmak";
+"Cut" = "Kesmek";
+"Copy" = "Kopyalama";
+"Paste" = "Yapıştırmak";
+"Delete" = "Silmek";
+"Delete all" = "Tümünü sil";
+"Select All" = "Tümünü Seç";
+
+"Window" = "Pencere";
+"Close" = "Yakın";
+"Minimize" = "Azaltmak";
+
+"Help" = "Yardım";
+"%@ Help" = "%@ Yardım";
+
+
+/* OCR */
+"Create searchable documents" = "Aranabilir belgeler oluşturun";
+"Create searchable barcodes" = "Aranabilir barkod oluşturun";
+"Split document on barcode" = "Barkod, Split ile belge";
+"Discard split page" = "Bölünmüş sayfasını atın";
+"One or more of the configured barcodes could not be found." = "Yapılandırılmış barkod biri veya daha fazlası bulunamadı.";
+"Dictionary-based spelling correction" = "Sözlük tabanlı yazım düzeltme";
+"The resolution is used to convert vector files." = "Kararda vektör dosyaları dönüştürmek için kullanılır.";
+
+"Language:" = "Dil:";
+"OCR Language:" = "OCR Dili:";
+"Bulgarian" = "Bulgar";
+"Croatian" = "Hırvat";
+"Czech" = "Çek";
+"Danish" = "Danimarkalı";
+"Dutch" = "Hollanda";
+"English" = "İngilizce";
+"Estonian" = "Estonyalı";
+"Finnish" = "Fince";
+"French" = "Fransız";
+"German" = "Alman";
+"Hungarian" = "Macar";
+"Italian" = "İtalyan";
+"Japanese" = "Japon";
+"Korean" = "Kore";
+"Latvian" = "Letonya";
+"Lithuanian" = "Litvanya";
+"Norwegian" = "Norveç";
+"Polish" = "Polonya";
+"Portuguese" = "Portekizce";
+"Rumanian" = "Romen";
+"Russian" = "Rus";
+"Serbian" = "Sırp";
+"Simplified Chinese" = "Basitleştirilmiş Çince";
+"Slovenian" = "Slovence";
+"Spanish" = "İspanyolca";
+"Swedish" = "İsveç";
+"Traditional Chinese" = "geleneksel Çince";
+"Turkish" = "Türk";
+"Ukrainian" = "Ukrayna";
+
+"Type:" = "Türü:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Damgalayıcı";
+"Imprint text mark" = "Künye metin işareti";
+"Font:" = "Yazı:";
+"Rotation:" = "Rotasyon:";
+"Color:" = "Renk:";
+"Style:" = "Stil:";
+"Change" = "Değiştirmek";
+"Filled" = "Dolu";
+"Outline" = "Taslak";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Tüm";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 manzara";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Foto 6\"x4\"";
+"Photo 5\"x3\"" = "Fotoğraf 5\"x3\"";
+"Business Card" = "Kartvizit";
+"Credit Card" = "Kredi Kartı";
+"Postcard" = "Kartpostal";
+"Custom" = "Gelenek";
+
+"Inch" = "Inç";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Piksel";
+"Point" = "Nokta";
+"Percent" = "Yüzde";
+
+"dpi" = "dpi";
+
+"Normal" = "Normal";
+"Flatbed" = "Masaüstü";
+"Automatic Feeder" = "Otomatik Besleyici";
+"ADF Front" = "ADF Ön";
+"ADF Back" = "ADF Geri";
+"ADF Duplex" = "ADF Dubleks";
+
+"Black & white" = "Siyah ve beyaz";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "Gri";
+"12bit Gray" = "12bit Gri";
+"16bit Gray" = "Gri 16bit";
+"Color" = "Renk";
+"12bit Color" = "12bit Renk";
+"16bit Color" = "16bit Renk";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Köprüsü Kurulum";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan diğer TWAIN uygulamasına tarama için bir TWAIN Köprüsü ile birlikte gelir.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Şimdi ExactScan TWAIN Köprüsü yüklemek ister misiniz?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "TWAIN Köprüsü zaten ExactScan başka bir versiyonu ile yüklenir. Eğer ExactScan bu sürümünü kullanmak için değiştirmek ister misiniz?";
+"Do not ask me again." = "Tekrar sorma.";
+"Yes" = "Evet";
+"No" = "Yok";
+
+"Defaults" = "Varsayılanları";
+"Optimize" = "Optimize";
+"Optimize:" = "Optimize:";
+"Unexpected error" = "Beklenmeyen hata";
+"An unexpected error condition occured. Please report." = "Beklenmeyen bir hata durumu oluştu. Rapor edin.";
+"Internal error" = "Dahili hata";
+"Internal error in the i/o core. Please report." = "I/O çekirdek iç hata.";
+"No compatible scanner detected." = "Hiçbir uyumlu tarayıcı tespit.";
+"Rescan" = "Yeniden tara";
+"Insert scan" = "Tarama Ekle";
+"Insert file" = "Dosya ekleme";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Avision USB ve SCSI aygıtları için genel tarayıcı sürücüsü. Telif Hakkı 2004-2010 ExactCODE.";
+"Flushing pages" = "Flushing sayfa";
+"Flushing remaining pages after preview with high-speed scanner." = "Yüksek hızlı tarayıcı ile önizleme sonra kalan sayfaları Flushing.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Yüksek hızlı tarayıcı ile tarama iptal ettikten sonra kalan sayfaları Flushing.";
+"no profile" = "kimse";
+"Custom" = "Gelenek";
+"Profile %d" = "Profil %d";
+
+/* default profile names */
+"Color PDF" = "Renkli PDF";
+"Gray PDF" = "Gri PDF";
+"B/W PDF" = "S/B PDF";
+"Color Copy" = "Renkli Kopya";
+"Gray Copy" = "Gri Kopyalama";
+"B/W Copy" = "S/B Fotokopi";
+"Color Email" = "Renk E-posta";
+"Gray Email" = "Gri E-posta";
+"iPhoto" = "iPhoto";
+"Photo" = "Fotoğraf";
+
+/* miscelaneos */
+"No scanner" = "Hiçbir tarayıcı";
+
+/* info */
+"Vendor:" = "Satıcı:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Bölge kodu:";
+"Series:" = "Seri:";
+"Version:" = "Sürüm:";
+"Serial number:" = "Seri numarası:";
+"Manufacturing date:" = "Tarihi Üretim:";
+"First scan date:" = "İlk tarama tarihi:";
+"Flatbed scans:" = "Masaüstü taramaları:";
+"Pad scans:" = "Pad taramaları:";
+"ADF scans:" = "ADF tarar:";
+"ADF simplex scans:" = "ADF simpleks taramaları:";
+"ADF duplex scans:" = "ADF dubleks tarar:";
+"Roller scans:" = "Rulo taramaları:";
+"Multi feeds:" = "Çok beslemeleri:";
+"Paper jams:" = "Kağıt sıkışmaları:";

@@ -1,0 +1,527 @@
+/*
+//  Bulgarian
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Проблем Доклад";
+"Comments" = "Коментари";
+"Please describe any steps needed to trigger the problem:" = "Моля, опишете всички стъпки, необходими за задействане на проблема:";
+"Problem Details" = "Проблем Подробности";
+"System Configuration" = "Система за конфигуриране";
+"Report" = "Доклад";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Вашата лична информация не се изпраща заедно с този доклад. Вие няма да бъде търсен в отговор на този доклад. За поддръжка на продукта, моля посетете:";
+
+
+/* In registration */
+"Registration" = "регистрация";
+"Registration Information" = "Информация за регистрацията";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Моля въведете вашата лична информация с цел да се регистрирате и активирате вашия ExactCODE продукт.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Дръжте ме в течение на новините , софтуерни актуализации , и най-новата информация за продукти и услуги .";
+"Activation key" = "Ключ за активиране";
+"First Name" = "Собствено име";
+"Last Name" = "Фамилия";
+"Company or School" = "Дружеството или училище";
+"Address" = "Адрес";
+"City" = "Град";
+"State or Province, or County" = "Щат или провинция, или Каунти";
+"Country" = "Държава";
+"Postal Code" = "Пощенски код";
+"Email Address" = "Имейл адрес";
+"Area Code" = "Код на населеното място";
+"Phone Number" = "Телефонен номер";
+
+"How did you learn about this product?" = "Как научихте за този продукт?";
+"Select if you like" = "Изберете, ако искате";
+"Advertisement" = "Реклама";
+"Magazine" = "Magazine";
+"Newspaper" = "Вестник";
+"Internet Forum" = "интернет Форум";
+"Internet Website" = "Internet Website";
+"Internet Search" = "Internet Search";
+"Recommendation" = "Препоръка";
+
+"Where will you primarily use this computer?" = "Къде ще използват основно този компютър?";
+"Select" = "Изберете";
+"Home" = "У дома";
+"Home Business" = "Начало Бизнес";
+"Small Business (1-99 employees)" = "Малък бизнес (1-99 човека персонал)";
+"Medium Business (100-499 employees)" = "Среден бизнес (100-499 човека персонал)";
+"Large Business (500+ employees)" = "Големи Бизнес (500 + служители)";
+"Elementary/Middle school" = "Елементарни / Близкия училище";
+"High School" = "Гимназия";
+"College" = "Колеж";
+
+"What best describes what you do?" = "Какво най-добре описва това, което правим?";
+"Design/Print" = "Дизайн / Печат";
+"Video/Film" = "Видео / Филм";
+"Music" = "Музика";
+"Photography" = "Фотография";
+"Education Faculty/Administration" = "Образование факултет / Администрация";
+"Engineering/Scientist/Researcher" = "Инженеринг / учено / изследовател";
+"Architecture" = "Архитектура";
+"Finance" = "Финанси";
+"Law" = "Закон";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "Маркетинг / Продажби";
+"Medical" = "Медицински";
+"MIS/IT" = "ИСУН / ИТ";
+"Student" = "Студент";
+"Webdesigner/Webmaster" = "Уебдизайнер / Webmaster";
+"Retired" = "Пенсиониран";
+"Other" = "Други";
+"Register" = "Регистър";
+"Export" = "износ";
+"Import" = "внос";
+
+
+/* In try-out control */
+"Try-out version" = "Опитайте с по-версия";
+"Try-out demo version:" = "Опитайте с по-демо версия:";
+"This software expired." = "В този софтуер е изтекъл.";
+"This is a demo version of the software which will expire in %d days." = "Това е демо версия на софтуера, който ще изтече в %d дни.";
+"Continue" = "Продължи";
+"Test" = "Тест";
+"Quit" = "Затворете";
+"Activate" = "Активиране";
+"Purchase" = "Покупка";
+
+/*In choose folder*/
+"Choose destination folder" = "Изберете папка";
+"Select folder where scanned images will be stored in" = "Изберете папка, където ще бъдат сканирани изображения, съхранявани в";
+
+/* During software update */
+"Software Update" = "Software Update";
+"Checking for new software ..." = "Проверка за нови софтуерни ...";
+"Changes" = "Промени";
+"Cancel" = "Отменя";
+"Install Update" = "Инсталирайте Актуализация";
+"error parsing XML seed" = "Грешка при обработката на XML семена";
+"There was a problem obtaining software update information (%@). Please try again later." = "Имаше проблем при получаването на софтуер за обновяване информация (%@). Моля опитайте по-късно.";
+"No update information" = "Не актуализира информация";
+"You are up to date." = "Вие сте в крак.";
+"There is no newer software update available." = "Не е по-нова софтуерна актуализация на разположение.";
+"A new software version is available" = "Новата версия е достъпна софтуер";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ Е достъпен (вие имате %@). Актуализацията може да отнеме известно време, за да изтеглите и изисква рестартиране на приложението. Ако не сте готови да инсталирате сега, можете да проверите за актуализации в заявлението менюто по-късно.";
+"Downloading %@ %@." = "Зареждането %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk на %.0lfk (%.0lfk/S) - %d секунди преди края";
+"Did you know?" = "Знаете ли че?";
+"Learn more" = "Научете повече";
+"Upgrade" = "Upgrade";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Вашата версия на ExactScan отговаря на условията за надграждане на други версии на ExactScan с повече функции и OCR на намалена цена .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Търсят се поддържа скенери";
+"Please wait." = "Моля, изчакайте.";
+"Scanner Configuration" = "Скенер за конфигурация";
+"Detect" = "Откриване";
+"Abort" = "Прекратяване";
+"OK" = "Добре";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Не скенер е конфигурирано. Това заявление трябва да получи скенер на конфигурацията преди първата употреба и профила на конфигурация.";
+"Scanner lamp warming up" = "Скенер лампа ПОДГРЯВАНЕ";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "След като дава възможност на светлинен източник на скенер, лампата се нуждае от известно време се затопли до емисии, предназначени яркост.";
+"Out of documents" = "Вън от документи";
+"There is no paper in the document feeder." = "Не е книга, в документа фидер.";
+"Cover open" = "Покритието на открито";
+"Please close the scanner cover and try again." = "Моля, затворете скенер покритие и опитайте отново.";
+"Paper jam" = "Заседнала хартия";
+"Please clear the paper jam in the document feeder and try again." = "Моля, изчистване на документа подавач заседнала хартия и опитайте отново.";
+"Multi feed" = "Multi фуражи";
+"Please clear the muti feed in the document feeder and try again." = "Моля, изчистете подаващо устройство хартия много храна и опитайте отново.";
+"Device busy" = "План зает";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Устройството се използва от друго приложение, чрез мрежата или в поставена принтера. ";
+"Unexpected scanner error" = "Неочаквана грешка скенер";
+"An unexpected error condition occured." = "Една неочаквана грешка при условие, настъпили.";
+"Scanner not ready" = "Скенер не е готова";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Шофьорът не е признат съвместимо устройство. Моля, уверете се, че скенер е свързан и не използва от друго приложение.";
+"Scanning" = "Сканиране";
+"Frontside" = "Frontside";
+"Backside" = "задник";
+"frontside" = "frontside";
+"backside" = "гръб";
+"Initializing scanner" = "Започване скенер";
+"Clearing document feeder" = "Клиринговата подаващо устройство";
+"Image data for page %@ is being transferred." = "Изображение на данни за страница %@ се прехвърлят.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Искате ли да добавите друга страница на документа или спиране на процеса на сканиране? Преди да изберете \"%@\" трябва да поставите следващата страница на скенер.";
+"Scanning more pages" = "Сканиране повече страници";
+"Stop" = "Спри";
+"Add" = "Добавите";
+
+"Calibrate Scanner..." = "Calibrate скенер ...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Скенерът е необходимо да се калибрира. Моля, въведете калибриране страница, която доставя със скенера. Ако не сте готови да калибрирате сега, можете да го стартирате от менюто за приложения по-късно.";
+"Calibrating" = "Калибриране";
+"Calibrating scanner" = "Калибриране скенер";
+
+"Importing files" = "Импортиране на файлове";
+"Importing data from image files." = "Импортиране на данни от файлове с изображения.";
+"Processing file %@, page %d/%d" = "Обработка на файла %@, страница %d/%d";
+"Processing file %@, image %d/%d" = "Обработка на файла %@, изображението %d/%d";
+"Page %@: %@ ..." = "Страница %@: %@ ...";
+"A file named \"%@\" already exists." = "Един файл с име \"%@\" вече съществува.";
+
+/* Preferences: Tab menu */
+"Filing" = "Подаване";
+"Basic" = "основен";
+"Basic Settings" = "Основни настройки";
+"Advanced" = "напреднал";
+"Advanced Settings" = "Разширени настройки";
+"OCR" = "OCR";
+"Barcode" = "Баркод";
+/* Additional OCR preferences */
+"Processing" = "Обработка";
+"Finalization" = "Финализиране";
+
+"Mode:" = "Режим:";
+"Generic" = "Generic";
+"Dot Matrix" = "Матрични";
+"Fax" = "Факс";
+
+"Scan" = "Сканирайте";
+"Preview" = "Предварителен преглед";
+
+"Profiles" = "Профили";
+"Duplicate Profile" = "Дублиране на профил";
+"Reset Profile" = "Нулиране Профил";
+"Reset All Profiles" = "Изчисти всички профили";
+
+/* Preferences: Filing */
+"Profile name:" = "Профил име:";
+"Folder name:" = "Папка име:";
+"File name:" = "Име на файла:";
+"Example:" = "Пример:";
+"On existing files:" = "Върху съществуващите файлове:";
+"Format:" = "Формат:";
+"Quality:" = "Качество:";
+"Compression quality:" = "Компресията:";
+"low" = "нисък";
+"optimal" = "оптимално";
+"Choose" = "Изберете";
+"Color detection:" = "Цвят на откриване:";
+"Sensitive" = "Уязвими";
+"Optimal" = "Оптимално";
+"Lossy" = "Загуба";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Висока степен на компресиране PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Обикновен текст (UTF-8)";
+
+"Unique date tag per file" = "Уникални дата тага на файла";
+"Edit each filename" = "Редактиране всеки Файлово";
+"Scan to workspace" = "Сканиране към работното пространство";
+"Add -OCR extension" = "Добави OCR разширение";
+"Move original file to Trash" = "Преместване на оригиналния файл в кошчето";
+"Merge files in one batch" = "Обединяване на файлове в една партида";
+"Open with:" = "Отвори с:";
+"no application specified" = "заявлението не е посочено";
+"Split on page" = "Разделяне на страница";
+"Show configuration before scan" = "Показване на конфигурацията преди да сканирате";
+"Show progress indicator" = "Покажи прогрес индикатор";
+"Scan this profile on document placement" = "Сканирайте този профил на документ настаняване";
+"Ask for scanning more pages" = "Питайте за сканиране повече страници";
+"Timer:" = "Таймер:";
+"Use scanner's own user interface" = "Използвайте скенер собствените потребителски интерфейс";
+
+"Ask user" = "Питайте потребител";
+"Increase sequence number" = "Увеличение пореден номер";
+"Silently overwrite" = "Тихо презапишете";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Източник:";
+"Colors:" = "Цветове:";
+"Color Dropout:" = "Color отпадане :";
+"Red" = "червен";
+"Green" = "зелен";
+"Blue" = "син";
+"None" = "никой";
+"Resolution:" = "Разделителна способност:";
+"Brightness:" = "Яркост:";
+"Contrast:" = "Контраст:";
+"Gamma:" = "Гама:";
+"Size:" = "Размер:";
+"Position:" = "Позиция:";
+"Size: %@ MB" = "Размер: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "W:";
+"H:" = "H:";
+"Rotate:" = "Въртене:";
+"Rotate every second page by 180°" = "Завъртане на всяка втора страница от 180 °";
+"Auto crop and de-skew" = "Авто културите и де-кос";
+"Allow extra long pages" = "Оставете по-дълги страници";
+"Auto rotate by page content" = "Автоматично се върти от съдържанието на страницата";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "автоматичен";
+"Ultrasonic multi-feed detection" = "Ултразвукова мулти -емисия откриване";
+"Mechanical de-skew assist" = "Механични де - кос асистенция";
+"Primary" = "Първичен";
+"Secondary" = "Вторичен";
+"Use individual color settings for the back side" = "Използвайте отделните цветови настройки за гърба";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Покажи преференции при стартиране";
+"De-skew based on page content" = "De- кос , въз основа на съдържанието на страницата";
+"De-screen (reduce print moiré patterns)" = "Де-екран (намаляване Print моаре образци)";
+"De-speckle (image noise and defects)" = "De - спекъл ( шум и дефекти)";
+"Sharpen" = "Подострям";
+"Automatically optimize to b/w" = "Автоматично оптимизиране на B / w";
+"Smooth uniform colors" = "Гладка единни цветове";
+"Invert image" = "Обръщане на изображението";
+"Blank Page Detection:" = "Празна страница за откриване:";
+"Off" = "От";
+"Delete Blank Page" = "Изтриване на празна страница";
+"Placeholder" = "Заместител";
+"Split Document" = "Сплит Документ";
+"Sensitivity:" = "Чувствителност:";
+"high" = "високо";
+"low" = "нисък";
+"Remove page border and shadow" = "Махни страница граница и сянка";
+"Merge front and back image" = "Обединяване на предната и задната изображение";
+"Black point:" = "Черна точка:";
+"White point:" = "Бяла точка:";
+"Hue:" = "Хуе:";
+"Saturation:" = "Насищане:";
+"Lightness:" = "Лекота:";
+"Print with:" = "Печат с:";
+"no printer selected" = "не избрания принтер";
+"Keep printed file" = "Продължавай да отпечатва файла";
+
+/* Preview */
+"New" = "Нова";
+"Front" = "Отпред";
+"Back" = "Назад";
+
+/* Main Menu*/
+"About" = "около";
+"About %@" = "Около %@";
+"Check for Updates..." = "Проверка за актуализации ...";
+"Activation..." = "Активиране на ...";
+"Preferences..." = "Предпочитания ...";
+"Preferences" = "Предпочитания";
+"%@ - Preferences" = "%@ - Предпочитания";
+"Get Info" = "Получете информация";
+"Get Scanner Info" = "Вземи скенер информация";
+"Select Scanner..." = "Изберете скенер ...";
+"%@ Info" = "Информация%@";
+"Services" = "Услуги";
+"Hide %@" = "Скрий %@";
+"Hide Others" = "Скриване на другите";
+"Show All" = "Покажи всички";
+"Quit %@" = "Затворете %@";
+"New Scan" = "Нови сканиране";
+
+"Open" = "отворен";
+"Open File..." = "Отворете файла ...";
+
+"File" = "Досие";
+"Edit" = "Редактирам";
+
+"Save" = "Спасявам";
+"Save As..." = "Save As ...";
+
+"Undo" = "Разкопчавам";
+"Redo" = "Преправям";
+"Cut" = "Режа";
+"Copy" = "Копие";
+"Paste" = "Паста";
+"Delete" = "Заличи";
+"Delete all" = "Изтрий всичко";
+"Select All" = "Избери всички";
+
+"Window" = "Window";
+"Close" = "Близо";
+"Minimize" = "Минимизирай";
+
+"Help" = "Помогнете";
+"%@ Help" = "%@ Помощ";
+
+
+/* OCR */
+"Create searchable documents" = "Създайте търсят документи";
+"Create searchable barcodes" = "Създайте търсими баркодове";
+"Split document on barcode" = "Разделяне на документа на баркод";
+"Discard split page" = "Изхвърлете страницата сплит";
+"One or more of the configured barcodes could not be found." = "Един или повече от конфигуриран баркодове не може да бъде намерена.";
+"Dictionary-based spelling correction" = "Речник - базирани коригиране на правопис";
+"The resolution is used to convert vector files." = "В тази резолюция се използва за конвертиране на векторни файлове.";
+
+"Language:" = "Език:";
+"OCR Language:" = "OCR Език:";
+"Bulgarian" = "Български";
+"Croatian" = "Хърватски";
+"Czech" = "Чешки";
+"Danish" = "Датски";
+"Dutch" = "Холандски";
+"English" = "Английски";
+"Estonian" = "Естонски";
+"Finnish" = "Фински";
+"French" = "Френски";
+"German" = "Немски";
+"Hungarian" = "Унгарски";
+"Italian" = "Италиански";
+"Japanese" = "Японски";
+"Korean" = "Корейски";
+"Latvian" = "Латвийски";
+"Lithuanian" = "Литовски";
+"Norwegian" = "Норвежки";
+"Polish" = "Полски";
+"Portuguese" = "Португалски";
+"Rumanian" = "Румънски";
+"Russian" = "Руски";
+"Serbian" = "Сръбски";
+"Simplified Chinese" = "Китайски";
+"Slovenian" = "Словенски";
+"Spanish" = "Испански";
+"Swedish" = "Шведски";
+"Traditional Chinese" = "Китайски";
+"Turkish" = "Турски";
+"Ukrainian" = "Украински";
+
+"Type:" = "Тип:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Отпечатващи";
+"Imprint text mark" = "Сведения текст марка";
+"Font:" = "Шрифта:";
+"Rotation:" = "Ротация:";
+"Color:" = "Цвят:";
+"Style:" = "Категории:";
+"Change" = "Промяна";
+"Filled" = "Изпълнен";
+"Outline" = "Структура";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Всички";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 пейзаж";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "Б4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "СНИМКА 6\"x4\"";
+"Photo 5\"x3\"" = "СНИМКА 5\"x3\"";
+"Business Card" = "Визитна картичка";
+"Credit Card" = "кредитна карта";
+"Postcard" = "пощенска картичка";
+"Custom" = "Обичай";
+
+"Inch" = "Инч Инч";
+"cm" = "см";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Точка Точка";
+"Percent" = "Процента Процента";
+
+"dpi" = "разделителна способност";
+
+"Normal" = "Нормален";
+"Flatbed" = "Flatbed";
+"Automatic Feeder" = "автоматичното подаващо устройство";
+"ADF Front" = "ОДС фронт";
+"ADF Back" = "ОДС Обратно";
+"ADF Duplex" = "ОДС Многостаен";
+
+"Black & white" = "Черно и бяло";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "Сив";
+"12bit Gray" = "12bit Грей";
+"16bit Gray" = "16bit Грей";
+"Color" = "Цветен";
+"12bit Color" = "12bit Цвят";
+"16bit Color" = "16bit Цвят";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "TWAIN Bridge Инсталация";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan идва с TWAIN мост, за да сканирате от друго приложение TWAIN.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Бихте ли искали да инсталирате ExactScan TWAIN Бридж сега?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "В TWAIN мост вече е инсталиран от друга версия на ExactScan. ";
+"Do not ask me again." = "Не ме питай повече.";
+"Yes" = "Да";
+"No" = "Не";
+
+"Defaults" = "По подразбиране";
+"Optimize" = "оптимизирам";
+"Optimize:" = "Оптимизиране:";
+"Unexpected error" = "Неочаквана грешка";
+"An unexpected error condition occured. Please report." = "Една неочаквана грешка при условие, настъпили. Моля доклада.";
+"Internal error" = "Вътрешна грешка";
+"Internal error in the i/o core. Please report." = "Вътрешна грешка при I / O сърцевина. Моля доклада.";
+"No compatible scanner detected." = "Не съвместим скенер открито.";
+"Rescan" = "Rescan";
+"Insert scan" = "Поставете сканирате";
+"Insert file" = "Поставете файла";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Родови скенери Avision драйвер за USB и SCSI устройства. Copyright 2004-2010 ExactCODE.";
+"Flushing pages" = "Зачервяване страници";
+"Flushing remaining pages after preview with high-speed scanner." = "Зачервяване оставащите страници след предварителен преглед с високоскоростен скенер.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Зачервяване оставащите страници прекратява след сканиране с високоскоростен скенер.";
+"no profile" = "не профил";
+"Custom" = "Обичай";
+"Profile %d" = "Профил %d";
+
+/* default profile names */
+"Color PDF" = "Цветни PDF";
+"Gray PDF" = "Сив PDF";
+"B/W PDF" = "B / W PDF";
+"Color Copy" = "Цветни Копирай";
+"Gray Copy" = "Сив Копирай";
+"B/W Copy" = "B / W Копиране";
+"Color Email" = "Цветни Email";
+"Gray Email" = "Сив Email";
+"iPhoto" = "iPhoto";
+"Photo" = "Фото";
+
+/* miscelaneos */
+"No scanner" = "Не скенер";
+
+/* info */
+"Vendor:" = "Производител:";
+"Model:" = "Модел:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Район код:";
+"Series:" = "Поредица:";
+"Version:" = "Версия:";
+"Serial number:" = "Сериен номер:";
+"Manufacturing date:" = "Производство дата:";
+"First scan date:" = "Първо сканиране дата:";
+"Flatbed scans:" = "Плосък сканиране:";
+"Pad scans:" = "Подложка сканиране:";
+"ADF scans:" = "ADF сканира:";
+"ADF simplex scans:" = "ADF симплекс сканиране:";
+"ADF duplex scans:" = "ADF дуплекс сканиране:";
+"Roller scans:" = "Ролкови сканиране:";
+"Multi feeds:" = "Multi емисии:";
+"Paper jams:" = "Задръстване с хартия:";

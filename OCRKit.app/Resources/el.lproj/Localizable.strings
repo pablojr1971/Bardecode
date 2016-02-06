@@ -1,0 +1,527 @@
+/*
+//  Greek
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Corrections: <Niarchos Theodoros, Athens, Greece>
+//
+//  Copyright (c) 2005-2014 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Έκθεση προβλήματος";
+"Comments" = "Σχόλια";
+"Please describe any steps needed to trigger the problem:" = "Παρακαλώ περιγράψτε τα βήματα που έγιναν και προκάλεσαν το πρόβλημα:";
+"Problem Details" = "Λεπτομέρειες προβλήματος";
+"System Configuration" = "Σύνθεση συστήματος";
+"Report" = "Έκθεση";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Η προσωπική πληροφορία σας δεν στέλνεται με αυτήν την έκθεση. Δεν θα ενημερώνεστε με απάντηση σε αυτή την έκθεση. Για την υποστήριξη προϊόντων, παρακαλώ επισκεφτείτε: ";
+
+
+/* In registration */
+"Registration" = "εγγραφή";
+"Registration Information" = "Πληροφορίες εγγραφής";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Παρακαλώ εισάγετε τα προσωπικά σας στοιχεία για να εγγραφείτε και να ενεργοποιήσετε το προϊόν ExactCODE σας.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Κρατήστε μου μέχρι σήμερα με νέα , ενημερώσεις λογισμικού , και τις πιο πρόσφατες πληροφορίες σχετικά με τα προϊόντα και τις υπηρεσίες .";
+"Activation key" = "Κλειδί ενεργοποίησης";
+"First Name" = "Όνομα";
+"Last Name" = "Επώνυμο";
+"Company or School" = "Επιχείρηση ή σχολείο";
+"Address" = "Διεύθυνση";
+"City" = "Πόλη";
+"State or Province, or County" = "Κράτος ή επαρχία, ή κομητεία";
+"Country" = "Χώρα";
+"Postal Code" = "Ταχυδρομικός κώδικας";
+"Email Address" = "Διεύθυνση ηλεκτρονικού ταχυδρομείου";
+"Area Code" = "Κώδικας περιοχής";
+"Phone Number" = "Αριθμός τηλεφώνου";
+
+"How did you learn about this product?" = "Πώς μάθατε για το προϊόν αυτό ;";
+"Select if you like" = "Επιλέξτε αν θέλετε";
+"Advertisement" = "Διαφήμιση";
+"Magazine" = "Περιοδικό";
+"Newspaper" = "Εφημερίδα";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internet Ιστοσελίδα";
+"Internet Search" = "Αναζήτηση στο Διαδίκτυο";
+"Recommendation" = "σύσταση";
+
+"Where will you primarily use this computer?" = "Ποιος είναι ο κύριος λόγος χρήσης αυτού του υπολογιστή;";
+"Select" = "Επιλέξτε";
+"Home" = "Σπίτι";
+"Home Business" = "Οικογενειακή επιχείρηση";
+"Small Business (1-99 employees)" = "Μικρή επιχείρηση (1-99 υπάλληλοι)";
+"Medium Business (100-499 employees)" = "Μέση επιχείρηση (100-499 υπάλληλοι)";
+"Large Business (500+ employees)" = "Μεγάλη επιχείρηση (500+ υπάλληλοι)";
+"Elementary/Middle school" = "Δημοτικό/Γυμνάσιο";
+"High School" = "Λύκειο";
+"College" = "Κολέγιο";
+
+"What best describes what you do?" = "Περιγράψτε καλύτερα αυτό που κάνετε;";
+"Design/Print" = "Σχέδιο/εκτύπωση";
+"Video/Film" = "Βίντεο/ταινία";
+"Music" = "Μουσική";
+"Photography" = "Φωτογραφία";
+"Education Faculty/Administration" = "Σχολή/διοίκηση εκπαίδευσης";
+"Engineering/Scientist/Researcher" = "Εφαρμοσμένη μηχανική/επιστήμονας/ερευνητής";
+"Architecture" = "Αρχιτεκτονική";
+"Finance" = "Οικονομικά";
+"Law" = "Νομική";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "Μάρκετινγκ/πωλήσεις";
+"Medical" = "Ιατρικός";
+"MIS/IT" = "MIS/IT";
+"Student" = "Σπουδαστής";
+"Webdesigner/Webmaster" = "Webdesigner/Webmaster";
+"Retired" = "Συνταξιούχος";
+"Other" = "Άλλο";
+"Register" = "Εγγραφή";
+"Export" = "εξαγωγή";
+"Import" = "εισαγωγή";
+
+
+/* In try-out control */
+"Try-out version" = "Δοκιμαστική έκδοση";
+"Try-out demo version:" = "Δοκιμαστική έκδοση επίδειξης:";
+"This software expired." = "Αυτό το λογισμικό έληξε.";
+"This is a demo version of the software which will expire in %d days." = "Αυτή είναι μια έκδοση επίδειξης λογισμικού που θα λήξει σε %d μέρες.";
+"Continue" = "Συνεχιστείτε";
+"Test" = "Δοκιμή";
+"Quit" = "Έξοδος";
+"Activate" = "Ενεργοποιήστε";
+"Purchase" = "Αγορά";
+
+/*In choose folder*/
+"Choose destination folder" = "Επιλέξτε το φάκελο προορισμού";
+"Select folder where scanned images will be stored in" = "Επιλέξτε το φάκελο μέσα στον οποίο θα αποθηκευτούν οι σαρωμένες εικόνες";
+
+/* During software update */
+"Software Update" = "Ενημέρωση λογισμικού";
+"Checking for new software ..." = "Έλεγχος για νέο λογισμικό";
+"Changes" = "Αλλαγές";
+"Cancel" = "Ακυρώστε";
+"Install Update" = "Εγκαταστήστε την ενημέρωση";
+"error parsing XML seed" = "Σφάλμα ανάλυσης XML";
+"There was a problem obtaining software update information (%@). Please try again later." = "Υπήρξε πρόβλημα κατά την διάρκεια ενημερώσεως λογισμικού (%@). Παρακαλώ προσπαθήστε πάλι αργότερα.";
+"No update information" = "Καμία πληροφορία ενημέρωσης";
+"You are up to date." = "Είστε ενημερωμένοι.";
+"There is no newer software update available." = "Δεν υπάρχει καμία νεότερη διαθέσιμη ενημέρωση λογισμικού.";
+"A new software version is available" = "Μια νέα έκδοση λογισμικού είναι διαθέσιμη";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ είναι διαθέσιμη (έχετε %@). Μια ενημέρωση μπορεί να πάρει κάποιο χρόνο να μεταφορτωθεί και απαιτείται μια νέα επανεκκίνηση της εφαρμογής. Εάν δεν είστε έτοιμοι να κάνετε εγκατάσταση τώρα, μπορείτε να ελέγξετε για ανανεώσεις από τις επιλογές της εφαρμογής αργότερα.";
+"Downloading %@ %@." = "Μεταφόρτωση %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk από %.0lfk (%.0lfk/s) - %d δευτερόλεπτα που απομένουν";
+"Did you know?" = "Αυτό το ξέρατε;";
+"Learn more" = "Μάθετε περισσότερα";
+"Upgrade" = "αναβάθμιση";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Η έκδοση του ExactScan είναι επιλέξιμες για την αναβάθμιση σε άλλες εκδόσεις των ExactScan με περισσότερες δυνατότητες και OCR σε μειωμένη τιμή .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Έρευνα για υποστηριζόμενους σαρωτές";
+"Please wait." = "Παρακαλώ περιμένετε.";
+"Scanner Configuration" = "Σύνθεση σαρωτών";
+"Detect" = "Ανιχνεύστε";
+"Abort" = "Ματαιώστε";
+"OK" = "ΟΚ";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Κανένας σαρωτής δεν έχει διαμορφωθεί. Αυτή η εφαρμογή πρέπει να εξασφάλιση τη διαμόρφωση του σαρωτή πριν από την πρώτη χρήση και του προφίλ διαμόρφωσης.";
+"Scanner lamp warming up" = "Ζέσταμα λαμπτήρων σαρωτή";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Μετά την ενεργοποίηση της πηγής φωτός του σαρωτή, ο λαμπτήρας χρειάζεται κάποιο χρόνο για να ζεσταθεί και να εκπέμψει την προβλεπόμενη φωτεινότητα.";
+"Out of documents" = "Εκτός εγγράφων";
+"There is no paper in the document feeder." = "Δεν υπάρχει κανένα έγγραφο στον τροφοδότη εγγράφων.";
+"Cover open" = "Το κάλυμμα είναι ανοικτό";
+"Please close the scanner cover and try again." = "Παρακαλώ κλείστε το κάλυμμα του σαρωτή και προσπαθήστε πάλι.";
+"Paper jam" = "Εμπλοκή εγγράφου";
+"Please clear the paper jam in the document feeder and try again." = "Παρακαλώ καθαρίστε τον τροφοδότη εγγράφων από εμπλοκή εγγράφου και προσπαθήστε πάλι.";
+"Multi feed" = "Πολλαπλή τροφοδότηση";
+"Please clear the muti feed in the document feeder and try again." = "Παρακαλώ καθαρίστε τον τροφοδότη πολλαπλών εγγράφων και προσπαθήστε πάλι.";
+"Device busy" = "Συσκευή απασχολημένη";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Η συσκευή χρησιμοποιείται από μια άλλη εφαρμογή, μέσω του δικτύου ή ενός συνημμένου εκτυπωτή. Παρακαλώ προσπαθήστε πάλι όταν η συσκευή δηλ. έτοιμη.";
+"Unexpected scanner error" = "Απροσδόκητο λάθος σαρωτή";
+"An unexpected error condition occured." = "Ένας απροσδόκητο λάθος εμφανίστηκε.";
+"Scanner not ready" = "Ο σαρωτής δεν είναι έτοιμος";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "Ο οδηγός δεν έχει αναγνωρίσει μια συμβατή συσκευή. Παρακαλώ σιγουρευτείτε ότι ο σαρωτής είναι συνδεδεμένος και δεν χρησιμοποιείται από μια άλλη εφαρμογή.";
+"Scanning" = "Σάρωση";
+"Frontside" = "frontside";
+"Backside" = "πίσω πλευρά";
+"frontside" = "μπροστινή πλευρά";
+"backside" = "πίσω πλευρά";
+"Initializing scanner" = "Αρχικοποίηση σαρωτή";
+"Clearing document feeder" = "Καθαρισμός τροφοδότη εγγράφων";
+"Image data for page %@ is being transferred." = "Τα στοιχεία εικόνας για τη σελίδα %@ μεταφέρονται.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Θέλετε να προσθέσετε μια άλλη σελίδα στο έγγραφο ή να σταματήσετε τη διαδικασία σάρωσης; Πριν επιλέξετε \"%@\" πρέπει να τοποθετήσετε την επόμενη σελίδα στον σαρωτή.";
+"Scanning more pages" = "Σάρωση περισσότερων σελίδων";
+"Stop" = "Παύση";
+"Add" = "Προσθέστε";
+
+"Calibrate Scanner..." = "Βαθμονομήστε τον σαρωτή";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "Ο σαρωτής πρέπει να βαθμονομηθεί. Παρακαλώ παρεμβάλατε τη σελίδα βαθμονόμησης που ήλθε με τον σαρωτή. Εάν δεν είστε έτοιμοι να βαθμονομήσετε τώρα, μπορείτε να την εκτελέσετε αργότερα από τις επιλογές της εφαρμογής.";
+"Calibrating" = "Βαθμονόμηση";
+"Calibrating scanner" = "Βαθμονομώντας τον σαρωτή";
+
+"Importing files" = "Εισαγωγή αρχείων";
+"Importing data from image files." = "Εισαγωγή δεδομένων από αρχεία εικόνας.";
+"Processing file %@, page %d/%d" = "Επεξεργασία αρχείου %@, σελίδα %d/%d";
+"Processing file %@, image %d/%d" = "Επεξεργασία αρχείου %@, εικόνα %d/%d";
+"Page %@: %@ ..." = "Σελίδα %@: %@…";
+"A file named \"%@\" already exists." = "Ένα αρχείο με όνομα \"%@\" υπάρχει ήδη.";
+
+/* Preferences: Tab menu */
+"Filing" = "Αρχειοθέτηση";
+"Basic" = "βασικός";
+"Basic Settings" = "Βασικές ρυθμίσεις";
+"Advanced" = "Αναλυτική";
+"Advanced Settings" = "Προηγμένες ρυθμίσεις";
+"OCR" = "OCR";
+"Barcode" = "Γραμμωτός κώδικας";
+/* Additional OCR preferences */
+"Processing" = "Επεξεργασία";
+"Finalization" = "Οριστικοποίηση";
+
+"Mode:" = "Λειτουργία:";
+"Generic" = "Γενικά";
+"Dot Matrix" = "Μήτρα σημείων";
+"Fax" = "Fax (Τηλεομοιοτυπία)";
+
+"Scan" = "Σάρωση";
+"Preview" = "Προεπισκόπηση";
+
+"Profiles" = "Προφίλ";
+"Duplicate Profile" = "Αντίγραφο Προφίλ";
+"Reset Profile" = "Επαναρυθμίστε το Προφίλ";
+"Reset All Profiles" = "Επαναρυθμίστε όλα τα Προφίλ";
+
+/* Preferences: Filing */
+"Profile name:" = "Όνομα Προφίλ:";
+"Folder name:" = "Όνομα φακέλου:";
+"File name:" = "Όνομα αρχείου:";
+"Example:" = "Παράδειγμα:";
+"On existing files:" = "Στα υπάρχοντα αρχεία:";
+"Format:" = "Μορφή αρχείου:";
+"Quality:" = "Ποιότητα:";
+"Compression quality:" = "Ποιότητα συμπίεσης:";
+"low" = "χαμηλή";
+"optimal" = "βέλτιστη";
+"Choose" = "Επιλέξτε";
+"Color detection:" = "Ανίχνευση χρώματος:";
+"Sensitive" = "Ευαίσθητος";
+"Optimal" = "Βέλτιστος";
+"Lossy" = "Με απώλειες";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Συμπιεσμένο PDF";
+"Highly Compressed PDF" = "Πολύ Συμπιεσμένο PDF";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Απλό κείμενο (utf-8)";
+
+"Unique date tag per file" = "Μοναδική ετικέτα ημερομηνίας ανά αρχείο";
+"Edit each filename" = "Επεξεργαστείτε κάθε όνομα αρχείου";
+"Scan to workspace" = "Σάρωση στο χώρο εργασίας";
+"Add -OCR extension" = "Προσθήκη OCR - επέκταση";
+"Move original file to Trash" = "Μετακινήστε το αρχικό αρχείο στον κάδο";
+"Merge files in one batch" = "Συγχώνευση αρχείων σε ένα σύνολο εγγράφων";
+"Open with:" = "Ανοίξτε με:";
+"no application specified" = "δεν προσδιορίζετε καμία εφαρμογή";
+"Split on page" = "Διαχωρισμός σε σελίδα";
+"Show configuration before scan" = "Παρουσιάστε την σύνθεση πριν από την σάρωση";
+"Show progress indicator" = "Παρουσιάστε δείκτη προόδου";
+"Scan this profile on document placement" = "Σάρωση εγγράφων με αυτό το προφίλ";
+"Ask for scanning more pages" = "Ζητήστε την σάρωση περισσότερων σελίδων";
+"Timer:" = "Χρόνος:";
+"Use scanner's own user interface" = "Χρησιμοποιήστε το πρόγραμμα του σαρωτή σας";
+
+"Ask user" = "Ρωτήστε το χρήστη";
+"Increase sequence number" = "Αύξοντας αριθμός";
+"Silently overwrite" = "Σιωπηλά επικαλύψτε";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Πηγή:";
+"Colors:" = "Χρώματα:";
+"Color Dropout:" = "Χρώμα απόρριψης :";
+"Red" = "κόκκινος";
+"Green" = "πράσινος";
+"Blue" = "μπλε";
+"None" = "κανένας";
+"Resolution:" = "Ανάλυση:";
+"Brightness:" = "Φωτεινότητα:";
+"Contrast:" = "Αντίθεση:";
+"Gamma:" = "Gamma (Γάμμα):";
+"Size:" = "Μέγεθος:";
+"Position:" = "Θέση:";
+"Size: %@ MB" = "Μέγεθος: %@ ΜΒ";
+"X:" = "Χ:";
+"Y:" = "Υ:";
+"W:" = "W:";
+"H:" = "Χ:";
+"Rotate:" = "Περιστροφή:";
+"Rotate every second page by 180°" = "Περιστροφή κάθε δεύτερη σελίδα ανά 180°";
+"Auto crop and de-skew" = "Αυτόματη αποκοπή και διόρθωση κλίσης";
+"Allow extra long pages" = "Αφήστε επιπλέον μεγάλες σελίδες";
+"Auto rotate by page content" = "Αυτόματη περιστροφή περιεχομένου σελίδας";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Αυτόματο";
+"Ultrasonic multi-feed detection" = "Υπέρηχοι ανίχνευσης πολλαπλής τροφοδοσίας";
+"Mechanical de-skew assist" = "Μηχανική Απολόξευση βοηθήσει";
+"Primary" = "Αρχική";
+"Secondary" = "Δευτερεύουσα";
+"Use individual color settings for the back side" = "Χρήση μεμονωμένης ρύθμισης χρωμάτων της πίσω πλευράς";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Εμφάνιση προτιμήσεων κατά την εκκίνηση";
+"De-skew based on page content" = "Ευθυγράμμιση βάση περιεχομένου σελίδας";
+"De-screen (reduce print moiré patterns)" = "Μείωση τυπωμένης κουκκίδας (μοτίβο moiré)";
+"De-speckle (image noise and defects)" = "De - σημαδάκι ( θόρυβο της εικόνας και ελαττώματα )";
+"Sharpen" = "Όξυνση (Sharpen)";
+"Automatically optimize to b/w" = "Αυτόματη βελτιστοποίηση ασπρόμαυρου";
+"Smooth uniform colors" = "Ομαλά ομοιόμορφα χρώματα";
+"Invert image" = "Αναστρέψτε την εικόνα";
+"Blank Page Detection:" = "Ανίχνευση κενών σελίδων:";
+"Off" = "Καμία λειτουργία";
+"Delete Blank Page" = "Διαγράψτε την κενή σελίδα";
+"Placeholder" = "Κρατήστε την κενή σελίδα";
+"Split Document" = "Διαχωρισμός έγγραφου";
+"Sensitivity:" = "Ευαισθησία:";
+"high" = "υψηλή";
+"low" = "χαμηλή";
+"Remove page border and shadow" = "Αφαιρέστε το περίγραμμα της σελίδας και τη σκιά";
+"Merge front and back image" = "Συγχωνεύστε την εμπρός και πίσω εικόνα";
+"Black point:" = "Μαύρο σημείο:";
+"White point:" = "Λευκό σημείο:";
+"Hue:" = "Απόχρωση:";
+"Saturation:" = "Κορεσμός:";
+"Lightness:" = "Φωτεινότητα:";
+"Print with:" = "Εκτύπωση με:";
+"no printer selected" = "Δεν έχει επιλεγεί κανένας εκτυπωτής";
+"Keep printed file" = "Κρατήστε το τυπωμένο αρχείο";
+
+/* Preview */
+"New" = "Νέο";
+"Front" = "Εμπρός";
+"Back" = "Πίσω";
+
+/* Main Menu*/
+"About" = "περίπου";
+"About %@" = "Περί του %@";
+"Check for Updates..." = "Έλεγχος για ανανεώσεις";
+"Activation..." = "Ενεργοποίηση";
+"Preferences..." = "Προτιμήσεις…";
+"Preferences" = "Προτιμήσεις";
+"%@ - Preferences" = "%@ - Προτιμήσεις";
+"Get Info" = "Πάρτε τις πληροφορίες";
+"Get Scanner Info" = "Πληροφορίες σαρωτή";
+"Select Scanner..." = "Επιλέξτε το σαρωτή ...";
+"%@ Info" = "Πληροφορίες: %@";
+"Services" = "Υπηρεσίες";
+"Hide %@" = "Απόκρυψη %@";
+"Hide Others" = "Απόκρυψη άλλων";
+"Show All" = "Παρουσίαση όλων";
+"Quit %@" = "Έξοδος %@";
+"New Scan" = "Νέα σάρωση";
+
+"Open" = "ανοιχτό";
+"Open File..." = "Άνοιγμα αρχείου…";
+
+"File" = "Αρχείο";
+"Edit" = "Επεξεργασία";
+
+"Save" = "Αποθήκευση";
+"Save As..." = "Αποθήκευση ως ...";
+
+"Undo" = "Αναίρεση";
+"Redo" = "Επαναφορά";
+"Cut" = "Περικοπή";
+"Copy" = "Αντιγραφή";
+"Paste" = "Επικόλληση";
+"Delete" = "Διαγραφή";
+"Delete all" = "Διαγραφή όλων";
+"Select All" = "Επιλογή όλων";
+
+"Window" = "Παράθυρο";
+"Close" = "Κλείστε";
+"Minimize" = "Ελαχιστοποιήστε";
+
+"Help" = "Βοήθεια";
+"%@ Help" = "%@ βοήθεια";
+
+
+/* OCR */
+"Create searchable documents" = "Δημιουργήστε ερευνήσιμα έγγραφα";
+"Create searchable barcodes" = "Δημιουργήστε ερευνήσιμους γραμμωτούς κώδικες";
+"Split document on barcode" = "Διαχωρίστε έγγραφο κατά γραμμωτό κώδικα";
+"Discard split page" = "Απορρίψτε τη σελίδα διάσπαση";
+"One or more of the configured barcodes could not be found." = "Ένας ή περισσότεροι διαμορφωμένοι γραμμωτοί κώδικες δεν μπορούν να βρεθούν.";
+"Dictionary-based spelling correction" = "Διόρθωση συλλαβισμού βασισμένη σε λεξικό";
+"The resolution is used to convert vector files." = "Η ανάλυση χρησιμοποιείται για την μετατροπή διανυσματικών αρχείων.";
+
+"Language:" = "Γλώσσα:";
+"OCR Language:" = "OCR Language :";
+"Bulgarian" = "Βουλγάρικα";
+"Croatian" = "Κροατικά";
+"Czech" = "Τσέχικα";
+"Danish" = "Δανέζικα";
+"Dutch" = "Ολλανδικά";
+"English" = "Αγγλικά";
+"Estonian" = "Εσθονικά";
+"Finnish" = "Φινλανδική";
+"French" = "Γαλλικά";
+"German" = "Γερμανικά";
+"Hungarian" = "Ουγγρικά";
+"Italian" = "Ιταλικά";
+"Japanese" = "Ιαπωνικά";
+"Korean" = "Κορεατικά";
+"Latvian" = "Λεττονικά";
+"Lithuanian" = "Λιθουανικά";
+"Norwegian" = "Νορβηγικά";
+"Polish" = "Πολωνικά";
+"Portuguese" = "Πορτογαλικά";
+"Rumanian" = "Ρουμανικά";
+"Russian" = "Ρωσικά";
+"Serbian" = "Σερβικά";
+"Simplified Chinese" = "Τα απλουστευμένα κινέζικα";
+"Slovenian" = "Σλοβένικα";
+"Spanish" = "Ισπανικά";
+"Swedish" = "Σουηδικά";
+"Traditional Chinese" = "Παραδοσιακά κινέζικα";
+"Turkish" = "Τουρκικά";
+"Ukrainian" = "Ουκρανικά";
+
+"Type:" = "Τύπος:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "Pdf-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Aποτύπωμα";
+"Imprint text mark" = "Ενεργοποίηση αποτυπώματος κειμένου";
+"Font:" = "Γραμματοσειρά:";
+"Rotation:" = "Περιστροφή:";
+"Color:" = "Χρώμα:";
+"Style:" = "Στυλ:";
+"Change" = "Αλλαγή";
+"Filled" = "Γεμισμένο";
+"Outline" = "Περίγραμμα";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Όλο";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 πλάγιο";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "φωτογραφία 6\"x4\"";
+"Photo 5\"x3\"" = "φωτογραφία 5\"x3\"";
+"Business Card" = "Επαγγελματική κάρτα";
+"Credit Card" = "Πιστωτική Κάρτα";
+"Postcard" = "Ταχυδρομική Κάρτα";
+"Custom" = "Προσαρμοσμένο/η";
+
+"Inch" = "Ίντσα";
+"cm" = "εκατ.";
+"mm" = "χιλιοστά";
+"Pixel" = "Εικονοστοιχείο";
+"Point" = "Στιγμές (point)";
+"Percent" = "Τοις εκατό %";
+
+"dpi" = "dpi";
+
+"Normal" = "Κανονική";
+"Flatbed" = "Επίπεδος";
+"Automatic Feeder" = "Αυτόματος τροφοδότης";
+"ADF Front" = "Εμπρός ADF";
+"ADF Back" = "Πίσω ADF";
+"ADF Duplex" = "Ντούμπλεξ ADF";
+
+"Black & white" = "Ασπρόμαυρη";
+"Lineart" = "Γραμμικό σχέδιο";
+"Dithered" = "Dithered";
+"Gray" = "Γκρίζο";
+"12bit Gray" = "12bit γκρίζο";
+"16bit Gray" = "16bit γκρίζο";
+"Color" = "Έγχρωμο";
+"12bit Color" = "12bit έγχρωμο";
+"16bit Color" = "16bit έγχρωμο";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "Εγκατάσταση TWAIN Bridge";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "Το ExactScan έρχεται με TWAIN Bridge για να σαρώσετε από άλλες TWAIN εφαρμογές.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Θα επιθυμούσατε να εγκαταστήσετε τη ExactScan TWAIN Bridge τώρα;";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "Η TWAIN Bridge είναι ήδη εγκατεστημένη από άλλη έκδοση ExactScan. Θα επιθυμούσατε να την αλλάξετε με αυτήν την έκδοση ExactScan;";
+"Do not ask me again." = "Να μην ερωτηθείτε ξανά.";
+"Yes" = "Ναι";
+"No" = "Δεν";
+
+"Defaults" = "Προκαθορισμένα";
+"Optimize" = "Βελτιστοποίηση";
+"Optimize:" = "Βελτιστοποιήστε:";
+"Unexpected error" = "Απροσδόκητο λάθος";
+"An unexpected error condition occured. Please report." = "Ένας απροσδόκητο λάθος εμφανίστηκε. Παρακαλώ υποβάλτε έκθεση.";
+"Internal error" = "Εσωτερικό λάθος";
+"Internal error in the i/o core. Please report." = "Εσωτερικό λάθος στο I/O πυρήνα. Παρακαλώ υποβάλτε έκθεση.";
+"No compatible scanner detected." = "Δεν ανιχνεύεται κανένας συμβατός σαρωτής.";
+"Rescan" = "Επανασάρωση";
+"Insert scan" = "Εισαγωγή σάρωση";
+"Insert file" = "Τοποθετήστε το αρχείο";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Γενικός οδηγός ανιχνευτών για τις συσκευές Avision USB και SCSI. Πνευματικά δικαιώματα 2004-2010 ExactCODE.";
+"Flushing pages" = "Εκκαθάριση σελίδων";
+"Flushing remaining pages after preview with high-speed scanner." = "Εκκαθάριση υπολειπόμενων σελίδων μετά την προεπισκόπηση σαρωτή υψηλής ταχύτητας.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Εκκαθάριση υπολειπόμενων σελίδων μετά από ακύρωση σάρωσης, σαρωτή υψηλής ταχύτητας.";
+"no profile" = "κανένα προφίλ";
+"Custom" = "Προσαρμοσμένο/η";
+"Profile %d" = "Προφίλ %d";
+
+/* default profile names */
+"Color PDF" = "Έγχρωμο PDF";
+"Gray PDF" = "Γκρίζο PDF";
+"B/W PDF" = "Ασπρόμαυρο PDF";
+"Color Copy" = "Αντίγραφο χρώματος";
+"Gray Copy" = "Γκρίζο αντίγραφο";
+"B/W Copy" = "Ασπρόμαυρο αντίγραφο";
+"Color Email" = "Έγχρωμο Ηλεκτρονικό ταχυδρομείο";
+"Gray Email" = "Γκρίζο Ηλεκτρονικό ταχυδρομείο";
+"iPhoto" = "iPhoto";
+"Photo" = "Φωτογραφία";
+
+/* miscelaneos */
+"No scanner" = "Κανένας σαρωτής";
+
+/* info */
+"Vendor:" = "Προμηθευτής:";
+"Model:" = "Μοντέλο:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Κωδικός περιοχής:";
+"Series:" = "Σειρά:";
+"Version:" = "Έκδοση:";
+"Serial number:" = "Σειριακός αριθμός:";
+"Manufacturing date:" = "Ημερομηνία κατασκευής:";
+"First scan date:" = "Πρώτη ημερομηνία σάρωσης:";
+"Flatbed scans:" = "Επίπεδη σάρωση:";
+"Pad scans:" = "Μπλοκ σάρωσης:";
+"ADF scans:" = "ADF σαρώσεις :";
+"ADF simplex scans:" = "Μονοκατευθυντικές ανιχνεύσεις ADF:";
+"ADF duplex scans:" = "Διπλές ανιχνεύσεις ADF:";
+"Roller scans:" = "Ανιχνεύσεις κυλίνδρων:";
+"Multi feeds:" = "Πολυτροφοδότιση:";
+"Paper jams:" = "Εμπλοκή εγγράφων:";

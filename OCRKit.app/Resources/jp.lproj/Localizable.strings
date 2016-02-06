@@ -1,0 +1,527 @@
+/*
+//  Japanese
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by Susanne Klaus.
+//  Translator: NEXX Inc. Central Labs, René Rebe ExactCODE GmbH
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "問題のレポート";
+"Comments" = "コメント";
+"Please describe any steps needed to trigger the problem:" = "問題が生じる原因と考えられるステップを以下に記述してください:";
+"Problem Details" = "問題の詳細";
+"System Configuration" = "システム構成";
+"Report" = "レポート";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "個人情報はこのレポートと一緒には送られませんので、このレポートへの応答としてあなたへのコンタクトが来ることはありません。製品サポートを受けるためには、以下にコンタクトしてください。: ";
+
+
+/* In registration */
+"Registration" = "登録";
+"Registration Information" = "登録情報";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "ユーザー情報を入力して登録し、ExactCODE製品をアクティベートしてください。";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "ニュース、ソフトウェアのアップデート、および製品やサービスに関する最新の情報を日付に私を続けてください。";
+"Activation key" = "アクティベーションキー";
+"First Name" = "名";
+"Last Name" = "姓";
+"Company or School" = "勤務先名/学校";
+"Address" = "住所";
+"City" = "市町村名";
+"State or Province, or County" = "都道府県名";
+"Country" = "カントリー";
+"Postal Code" = "郵便番号";
+"Email Address" = "電子メールアドレス";
+"Area Code" = "市外局番";
+"Phone Number" = "電話番号";
+
+"How did you learn about this product?" = "どのようにこの製品について学びましたか？";
+"Select if you like" = "あなたが好きな場合に選択します";
+"Advertisement" = "広告";
+"Magazine" = "雑誌";
+"Newspaper" = "新聞";
+"Internet Forum" = "インターネットフォーラム";
+"Internet Website" = "インターネットウェブサイト";
+"Internet Search" = "インターネット検索";
+"Recommendation" = "勧告";
+
+"Where will you primarily use this computer?" = "このコンピュータを主にお使いになる場所";
+"Select" = "選択";
+"Home" = "自宅";
+"Home Business" = "自営業";
+"Small Business (1-99 employees)" = "小企業(1-99人の従業員)";
+"Medium Business (100-499 employees)" = "中規模ビジネス(100-499人の従業員)";
+"Large Business (500+ employees)" = "大規模ビジネス(500+従業員)";
+"Elementary/Middle school" = "小・中学校";
+"High School" = "高等学校";
+"College" = "大学";
+
+"What best describes what you do?" = "主な仕事";
+"Design/Print" = "設計/印刷";
+"Video/Film" = "ビデオ/フィルム";
+"Music" = "音楽";
+"Photography" = "写真";
+"Education Faculty/Administration" = "教育/教育事務";
+"Engineering/Scientist/Researcher" = "エンジニア/サイエンティスト/研究者";
+"Architecture" = "建築";
+"Finance" = "金融";
+"Law" = "法律";
+"Manufacturing" = "製造";
+"Marketing/Sales" = "マーケティング/営業";
+"Medical" = "医療";
+"MIS/IT" = "情報システム";
+"Student" = "学生";
+"Webdesigner/Webmaster" = "ウェブデザイナー/ウェブマスター";
+"Retired" = "退職";
+"Other" = "他";
+"Register" = "登録";
+"Export" = "エクスポート";
+"Import" = "インポート";
+
+
+/* In try-out control */
+"Try-out version" = "試用版";
+"Try-out demo version:" = "試用デモ版:";
+"This software expired." = "ソフトウェアの期限が切れました";
+"This is a demo version of the software which will expire in %d days." = "このデモ版ソフトウェアは%d日間ご利用可能です";
+"Continue" = "継続";
+"Test" = "テスト";
+"Quit" = "終了";
+"Activate" = "アクティベート";
+"Purchase" = "購入";
+
+/*In choose folder*/
+"Choose destination folder" = "保存先フォルダーを選択";
+"Select folder where scanned images will be stored in" = "スキャンイメージ保存先のフォルダーを選択";
+
+/* During software update */
+"Software Update" = "ソフトウェアアップデート";
+"Checking for new software ..." = "新しいソフトウェアをチェック中…";
+"Changes" = "変更";
+"Cancel" = "取消";
+"Install Update" = "更新をインストール";
+"error parsing XML seed" = "XMLシードのパース・エラー";
+"There was a problem obtaining software update information (%@). Please try again later." = "ソフトウエア更新情報(%@)の取得中にエラー発生。 後でもう一度行ってください。";
+"No update information" = "更新情報なし";
+"You are up to date." = "最新です。";
+"There is no newer software update available." = "ソフトウェアの更新はありません";
+"A new software version is available" = "ソフトウェアの更新があります";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@の更新があります。(現在は%@)。 更新のダウンロードには時間がかかり、さらに再起動する時間が必要です。もし今実行する準備ができていない場合は、あとでアプリケーションメニューから更新をチェックすることが可能です。";
+"Downloading %@ %@." = "%@ %@をダウンロード中";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfkの%.0lfk (%.0lfk/s) - %d残を支持する";
+"Did you know?" = "ご存知ですか？";
+"Learn more" = "詳細はこちら";
+"Upgrade" = "アップグレード";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "ExactScanのバージョンは、低価格でより多くの機能とOCRとExactScanの他のバージョンへアップグレードする権利があります。";
+
+/* Scan progress */
+"Searching for supported scanners" = "サポートされているスキャナを探しています";
+"Please wait." = "お待ち下さい";
+"Scanner Configuration" = "スキャナコンフィギュレーション";
+"Detect" = "検出";
+"Abort" = "中止";
+"OK" = "ＯＫ";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "スキャナのコンフィギュレーションが必要です。このプログラムは最初のご使用の前にスキャナのコンフィギュレーションデータを取得して、プロファイルを構成することが必要です";
+"Scanner lamp warming up" = "スキャナーランプのウォームアップ中";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "スキャナーの光源をＯＮにして、ランプが所定の輝度に達するまでにウォームアップの時間が必要です";
+"Out of documents" = "原稿がありません";
+"There is no paper in the document feeder." = "フィーダーに原稿がありません";
+"Cover open" = "カバーが開いたままです";
+"Please close the scanner cover and try again." = "スキャナのカバーを閉じて再度実行してください";
+"Paper jam" = "用紙が詰まっている";
+"Please clear the paper jam in the document feeder and try again." = "ドキュメントフィーダー中の用紙を全部取り除きてから、再度試みてください。";
+"Multi feed" = "多供給";
+"Please clear the muti feed in the document feeder and try again." = "自動ドキュメントフィーダー上の用紙を全部取り除きてから、再度試みてください。";
+"Device busy" = "装置使用中";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "装置はネットワークか付けられたプリンターで別の適用によって、使用される。 時準備ができた装置ieもう一度試しなさい。";
+"Unexpected scanner error" = "予期しないスキャナーのエラー";
+"An unexpected error condition occured." = "予期しないエラー状態が発生しました";
+"Scanner not ready" = "スキャナーの準備ができていません";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "ドライバーがデバイスを見つけられませんでした。スキャナーの接続を確かめてください。　また、他のアプリケーションで使用中でないことを確認してください。";
+"Scanning" = "スキャン中";
+"Frontside" = "フロントサイド";
+"Backside" = "尻";
+"frontside" = "表面";
+"backside" = "裏面";
+"Initializing scanner" = "スキャナの初期化中";
+"Clearing document feeder" = "清算の原稿送り装置";
+"Image data for page %@ is being transferred." = " %@ページの画像データを転送中";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "他のページもスキャンして同じ文書に追加するか、この文書のスキャンを停止するかを選択します。\"%@\"を選んだ場合は、ボタンを押す前に原稿をスキャナに置いて下さい。";
+"Scanning more pages" = "ページを更に追加します";
+"Stop" = "停止";
+"Add" = "追加";
+
+"Calibrate Scanner..." = "目盛りを付けなさい走査器に…";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "走査器は目盛りが付いている必要がある。 走査器によって出荷した口径測定のページを挿入しなさい。 今目盛りが付いて準備ができていなければ適用メニューからそれを後で動かすことができる。";
+"Calibrating" = "目盛り付け";
+"Calibrating scanner" = "目盛り付けの走査器";
+
+"Importing files" = "輸入はファイルする";
+"Importing data from image files." = "イメージファイルからデータを輸入すること。";
+"Processing file %@, page %d/%d" = "ファイル%@の処理、ページ%d/%d";
+"Processing file %@, image %d/%d" = "ファイル%@の処理、イメージ%d/%d";
+"Page %@: %@ ..." = "ページ%@: %@…";
+"A file named \"%@\" already exists." = "ファイル名 \"％@\" はすでに存在しています。";
+
+/* Preferences: Tab menu */
+"Filing" = "ファイリング";
+"Basic" = "基本";
+"Basic Settings" = "基本設定";
+"Advanced" = "高度な";
+"Advanced Settings" = "高度な設定";
+"OCR" = "OCR";
+"Barcode" = "バーコード";
+/* Additional OCR preferences */
+"Processing" = "処理";
+"Finalization" = "ファイナライズ";
+
+"Mode:" = "モード:";
+"Generic" = "一般的";
+"Dot Matrix" = "ドットマトリクス";
+"Fax" = "ファクシミリ";
+
+"Scan" = "スキャン";
+"Preview" = "プレビュー";
+
+"Profiles" = "プロファイル";
+"Duplicate Profile" = "プロファイルを複製";
+"Reset Profile" = "プロファイルのリセット";
+"Reset All Profiles" = "全プロファイルのリセット";
+
+/* Preferences: Filing */
+"Profile name:" = "プロファイル名：";
+"Folder name:" = "フォルダー名：";
+"File name:" = "ファイル名：";
+"Example:" = "例：";
+"On existing files:" = "同名ファイルの処置：";
+"Format:" = "ファイル形式：";
+"Quality:" = "画質：";
+"Compression quality:" = "圧縮の質:";
+"low" = "低";
+"optimal" = "最適";
+"Choose" = "選択";
+"Color detection:" = "色の検出:";
+"Sensitive" = "敏感";
+"Optimal" = "最適";
+"Lossy" = "非可逆";
+
+"PDF" = "PDF";
+"Compressed PDF" = "圧縮されたPDFファイル";
+"Highly Compressed PDF" = "高度に圧縮されたPDFファイル";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "平文(UTF-8)";
+
+"Unique date tag per file" = "日付タグベースのファイル名（自動）";
+"Edit each filename" = "スキャン後ファイル名編集（手動）";
+"Scan to workspace" = "ワークスペースにスキャン";
+"Add -OCR extension" = "アドオンOCRの拡張";
+"Move original file to Trash" = "ゴミ箱に元のファイルを移動する";
+"Merge files in one batch" = "つのバッチでファイルをマージ";
+"Open with:" = "下記のプログラムで開く：";
+"no application specified" = "アプリケーションが指定されていません";
+"Split on page" = "ページ上の分離";
+"Show configuration before scan" = "スキャン前にコンフィギュレーション表示";
+"Show progress indicator" = "プログレスインディケータ表示";
+"Scan this profile on document placement" = "自動スキャン";
+"Ask for scanning more pages" = "スキャンを続ける";
+"Timer:" = "タイマー：";
+"Use scanner's own user interface" = "スキャナ側のＵＩを使用";
+
+"Ask user" = "ユーザーが決める（手動）";
+"Increase sequence number" = "連番を付加（自動）";
+"Silently overwrite" = "上書き（自動）";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "ソース:";
+"Colors:" = "カラー:";
+"Color Dropout:" = "カラードロップアウト：";
+"Red" = "赤";
+"Green" = "グリーン";
+"Blue" = "ブルー";
+"None" = "なし";
+"Resolution:" = "解像度:";
+"Brightness:" = "輝度:";
+"Contrast:" = "コントラスト:";
+"Gamma:" = "ガンマ:";
+"Size:" = "サイズ:";
+"Position:" = "位置：";
+"Size: %@ MB" = "サイズ: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "幅:";
+"H:" = "高さ:";
+"Rotate:" = "回転:";
+"Rotate every second page by 180°" = "偶数ページを180°回転";
+"Auto crop and de-skew" = "自動切り取り・傾き補正";
+"Allow extra long pages" = "余分な長いページを許可する";
+"Auto rotate by page content" = "自動でページの内容によって回転させる";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "自動";
+"Ultrasonic multi-feed detection" = "超音波マルチフィード検出";
+"Mechanical de-skew assist" = "メカニカルデスキューアシスト";
+"Primary" = "プライマリー";
+"Secondary" = "二次";
+"Use individual color settings for the back side" = "裏面の個々の色の設定を使用";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "起動時に環境設定を表示";
+"De-skew based on page content" = "デスキューページのコンテンツに基づいて、";
+"De-screen (reduce print moiré patterns)" = "デ・スクリーン(プリント上のモアレパターンを減らす)";
+"De-speckle (image noise and defects)" = "（画像ノイズや欠陥）デスペック";
+"Sharpen" = "シャープン";
+"Automatically optimize to b/w" = "自動で白黒2値に最適化";
+"Smooth uniform colors" = "滑らかな均一色";
+"Invert image" = "イメージ反転";
+"Blank Page Detection:" = "白紙ページ検出:";
+"Off" = "オフ";
+"Delete Blank Page" = "白紙ページ除去";
+"Placeholder" = "プレイスホルダー";
+"Split Document" = "割れた文書";
+"Sensitivity:" = "感度:";
+"high" = "高";
+"low" = "低";
+"Remove page border and shadow" = "ページ罫線と影を削除する";
+"Merge front and back image" = "前面と背面の画像をマージする";
+"Black point:" = "黒点:";
+"White point:" = "白点:";
+"Hue:" = "色相:";
+"Saturation:" = "飽和:";
+"Lightness:" = "明度:";
+"Print with:" = "印刷:";
+"no printer selected" = "プリンターが選択されていません";
+"Keep printed file" = "印刷ファイルを保存";
+
+/* Preview */
+"New" = "新規";
+"Front" = "表面";
+"Back" = "裏面";
+
+/* Main Menu*/
+"About" = "約";
+"About %@" = "%@ について";
+"Check for Updates..." = "更新をチェック…";
+"Activation..." = "アクティベート…";
+"Preferences..." = "環境設定…";
+"Preferences" = "環境設定";
+"%@ - Preferences" = "%@ - 環境設定";
+"Get Info" = "情報を得なさい";
+"Get Scanner Info" = "走査器情報を得なさい";
+"Select Scanner..." = "スキャナを選択...";
+"%@ Info" = "%@情報";
+"Services" = "サービス";
+"Hide %@" = "%@ を隠す";
+"Hide Others" = "ほかを隠す";
+"Show All" = "すべてを表示";
+"Quit %@" = "%@ を終了";
+"New Scan" = "新しいスキャン";
+
+"Open" = "オープン";
+"Open File..." = "ファイルを開く…";
+
+"File" = "ファイル";
+"Edit" = "編集";
+
+"Save" = "保存";
+"Save As..." = "名前を付けて保存...";
+
+"Undo" = "取り消す";
+"Redo" = "やり直す";
+"Cut" = "カット";
+"Copy" = "コピー";
+"Paste" = "ペースト";
+"Delete" = "削除";
+"Delete all" = "すべて削除";
+"Select All" = "すべてを選択";
+
+"Window" = "ウインドウ";
+"Close" = "閉じる";
+"Minimize" = "しまう";
+
+"Help" = "ヘルプ";
+"%@ Help" = "%@ ヘルプ";
+
+
+/* OCR */
+"Create searchable documents" = "検索可能文書を生成";
+"Create searchable barcodes" = "検索可能バーコードを生成";
+"Split document on barcode" = "バーコードの割れた文書";
+"Discard split page" = "分割ページを破棄";
+"One or more of the configured barcodes could not be found." = "形成されたバーコードの1つの鉱石はもっと見つけることができなかった。";
+"Dictionary-based spelling correction" = "辞書基づかせている訂正を綴る";
+"The resolution is used to convert vector files." = "決断はベクトルファイルを変える使用される。";
+
+"Language:" = "言語:";
+"OCR Language:" = "OCR言語：";
+"Bulgarian" = "ブルガリア語";
+"Croatian" = "クロアチア語";
+"Czech" = "チェコ語";
+"Danish" = "デンマーク語";
+"Dutch" = "オランダ語";
+"English" = "英語";
+"Estonian" = "エストニア語";
+"Finnish" = "フィンランド";
+"French" = "フランス語";
+"German" = "ドイツ語";
+"Hungarian" = "ハンガリー語";
+"Italian" = "イタリア語";
+"Japanese" = "日本語";
+"Korean" = "韓国語";
+"Latvian" = "ラトビア語";
+"Lithuanian" = "リトアニア語";
+"Norwegian" = "ノルウェー語";
+"Polish" = "ポーランド語";
+"Portuguese" = "ポルトガル語";
+"Rumanian" = "ルーマニア語";
+"Russian" = "ロシア語";
+"Serbian" = "セルビア人";
+"Simplified Chinese" = "中国語簡体";
+"Slovenian" = "スロベニア語";
+"Spanish" = "スペイン語";
+"Swedish" = "スウェーデン語";
+"Traditional Chinese" = "中国語繁体";
+"Turkish" = "トルコ語";
+"Ukrainian" = "ウクライナ語";
+
+"Type:" = "タイプ:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "インプリンター";
+"Imprint text mark" = "奥付テキストマーク";
+"Font:" = "フォント：";
+"Rotation:" = "回転数：";
+"Color:" = "カラー：";
+"Style:" = "スタイル：";
+"Change" = "変更変更";
+"Filled" = "充填";
+"Outline" = "概要";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "すべて";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 ランドスケープ";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "写真6\"x4\"";
+"Photo 5\"x3\"" = "写真5\"x3\"";
+"Business Card" = "名刺";
+"Credit Card" = "クレジットカード";
+"Postcard" = "郵便はがき";
+"Custom" = "カスタム";
+
+"Inch" = "インチインチ";
+"cm" = "cm";
+"mm" = "ミリメートル";
+"Pixel" = "ピクセルピクセル";
+"Point" = "ポイントポイント";
+"Percent" = "パーセントパーセント";
+
+"dpi" = "dpi";
+
+"Normal" = "フラットベッド";
+"Flatbed" = "平台";
+"Automatic Feeder" = "自動送り装置";
+"ADF Front" = "ADF 表面";
+"ADF Back" = "ADF 裏面";
+"ADF Duplex" = "ADF 両面";
+
+"Black & white" = "ブラック＆ホワイト";
+"Lineart" = "ラインアート";
+"Dithered" = "ディザー";
+"Gray" = "グレイスケール";
+"12bit Gray" = "12bitグレイスケール";
+"16bit Gray" = "16bitグレイスケール";
+"Color" = "カラー";
+"12bit Color" = "12bitカラー";
+"16bit Color" = "16bitカラー";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "トワイン橋取付け";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScanはトワイン橋によってトワインの他の適用からスキャンすることを来る。";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "ExactScanトワインを取付けるのを好む今繋ぐためにか。";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "トワイン橋はExactScanの別の版によって既に取付けられている。 ExactScanのこの版を使用するためにそれを変えるのを好むか。";
+"Do not ask me again." = "私に再度尋ねてはいけない。";
+"Yes" = "はい";
+"No" = "いいえ";
+
+"Defaults" = "既定値";
+"Optimize" = "最適化する";
+"Optimize:" = "最適化:";
+"Unexpected error" = "予期しないエラー";
+"An unexpected error condition occured. Please report." = "予期しないエラーが発生しました。報告してください。";
+"Internal error" = "内部エラー";
+"Internal error in the i/o core. Please report." = "I/Oコアに内部エラーが発生しました。報告してください。";
+"No compatible scanner detected." = "互換性のあるスキャナーが検出されません";
+"Rescan" = "再スキャン";
+"Insert scan" = "スキャン挿入";
+"Insert file" = "ファイルの挿入";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "USB/SCSIデバイス用一般スキャナドライバー。 ©2004-2010 ExactCODE。";
+"Flushing pages" = "ページを削除しています";
+"Flushing remaining pages after preview with high-speed scanner." = "高速スキャナによるプレビュー後、残りのページを削除";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "高速スキャナによるスキャンをキャンセル後、残りのページを削除";
+"no profile" = "プロファイル無し";
+"Custom" = "カスタム";
+"Profile %d" = "プロフィール％dの";
+
+/* default profile names */
+"Color PDF" = "PDF カラー";
+"Gray PDF" = "PDF グレイ";
+"B/W PDF" = "PDF B/W";
+"Color Copy" = "コピー カラー";
+"Gray Copy" = "コピー グレイ";
+"B/W Copy" = "コピー B/W";
+"Color Email" = "E Mail カラー";
+"Gray Email" = "E Mail グレイ";
+"iPhoto" = "iPhoto";
+"Photo" = "写真";
+
+/* miscelaneos */
+"No scanner" = "スキャナが見つかりません";
+
+/* info */
+"Vendor:" = "売り手:";
+"Model:" = "モデル:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "ファームウェア:";
+"Region code:" = "地域コード：";
+"Series:" = "シリーズ:";
+"Version:" = "バージョン:";
+"Serial number:" = "シリアル番号:";
+"Manufacturing date:" = "製造日:";
+"First scan date:" = "最初の日付をスキャン:";
+"Flatbed scans:" = "フラットベッドのスキャン:";
+"Pad scans:" = "パッドをスキャン:";
+"ADF scans:" = "ADFスキャン。";
+"ADF simplex scans:" = "ADFの表面をキャン:";
+"ADF duplex scans:" = "ADFの両面をスキャン:";
+"Roller scans:" = "ローラーのスキャン:";
+"Multi feeds:" = "マルチのフィード:";
+"Paper jams:" = "紙詰まり:";

@@ -1,0 +1,527 @@
+/*
+//  Dutch
+//  Localizable.strings
+//  ExactScan
+//
+//  Created by ExactCODE GmbH.
+//  Translator: <to be filled by external translator!>
+//
+//  Copyright (c) 2005-2013 ExactCODE GmbH. All rights reserved.
+*/
+
+/* In crash reporter tab */
+"Problem Report" = "Probleem rapport";
+"Comments" = "Opmerkingen";
+"Please describe any steps needed to trigger the problem:" = "Omschrijf de stappen die dit probleem veroorzaken:";
+"Problem Details" = "Details van het probleem";
+"System Configuration" = "Systeem configuratie";
+"Report" = "Bericht";
+"Your personal information are not sent with this report. You will not be contacted in response to this report. For product support, please visit: " = "Uw persoonlijke gegevens worden niet verzonden met dit bericht. U zult op dit bericht geen antwoord ontvangen. Voor hulp, ga naar: ";
+
+
+/* In registration */
+"Registration" = "Registratie";
+"Registration Information" = "Registratie Informatie";
+"Thank you for choosing an ExactCODE product. Please enter some personal information below in order to activate your license. This also allows us to better assist you with product support in the future." = "Vul uw persoonlijke gegevens in om het ExactCODE-product te registreren en te activeren.";
+"Keep me up to date with news, software updates, and the latest information on products and services." = "Hou me op de hoogte van nieuws , software-updates en het laatste nieuws over producten en diensten .";
+"Activation key" = "Activeringssleutel";
+"First Name" = "Voornaam";
+"Last Name" = "Familienaam";
+"Company or School" = "Bedrijf of School";
+"Address" = "Adres";
+"City" = "Stad";
+"State or Province, or County" = "Provincie of Land";
+"Country" = "Land";
+"Postal Code" = "Postcode";
+"Email Address" = "E-mailadres";
+"Area Code" = "Landnummer";
+"Phone Number" = "Telefoonnummer";
+
+"How did you learn about this product?" = "Hoe wist u van dit product ?";
+"Select if you like" = "Selecteer deze optie als u wilt";
+"Advertisement" = "Advertentie";
+"Magazine" = "Magazine";
+"Newspaper" = "Krant";
+"Internet Forum" = "Internet Forum";
+"Internet Website" = "Internet Website";
+"Internet Search" = "Internet Zoeken";
+"Recommendation" = "Aanbeveling";
+
+"Where will you primarily use this computer?" = "Voor welk doel gebruikt uw deze computer hoofdzakelijk?";
+"Select" = "Selecteer";
+"Home" = "Prive";
+"Home Business" = "Thuis-zakelijk";
+"Small Business (1-99 employees)" = "Midden klein bedrijf (1-99 werknemers)";
+"Medium Business (100-499 employees)" = "Middelgroot bedrijf (100-499 werknemers)";
+"Large Business (500+ employees)" = "Groot bedrijf (werknemers 500+)";
+"Elementary/Middle school" = "Primair Onderwijs/Lagere school";
+"High School" = "Middelbare Onderwijs";
+"College" = "Universiteit/Hogeschool";
+
+"What best describes what you do?" = "Wat beschrijft het beste uw branche of werk?";
+"Design/Print" = "Ontwerp/Drukkerij";
+"Video/Film" = "Video/Film";
+"Music" = "Muziek";
+"Photography" = "Fotografie";
+"Education Faculty/Administration" = "De Faculteit/het Beleid van het onderwijs";
+"Engineering/Scientist/Researcher" = "Techniek/Wetenschapper/Onderzoeker";
+"Architecture" = "Architectuur";
+"Finance" = "Financiën";
+"Law" = "Wet";
+"Manufacturing" = "Manufactoring";
+"Marketing/Sales" = "Marketing/Verkoop";
+"Medical" = "Medisch";
+"MIS/IT" = "MIS/IT";
+"Student" = "Student";
+"Webdesigner/Webmaster" = "Webdesigner/Webmaster";
+"Retired" = "Gepensioneerd";
+"Other" = "Andere";
+"Register" = "Registreer";
+"Export" = "Exporteren";
+"Import" = "Importeren";
+
+
+/* In try-out control */
+"Try-out version" = "Proef versie";
+"Try-out demo version:" = "Proef demo versie:";
+"This software expired." = "Deze software licentie is verlopen.";
+"This is a demo version of the software which will expire in %d days." = "Dit is een demo versie van de software die in %d dagen zal verlopen.";
+"Continue" = "Ga verder";
+"Test" = "Test";
+"Quit" = "Stop";
+"Activate" = "Activeer";
+"Purchase" = "Aankoop";
+
+/*In choose folder*/
+"Choose destination folder" = "Kies doelmap";
+"Select folder where scanned images will be stored in" = "Selecteer de map waarin gescande bestanden worden opgeslagen";
+
+/* During software update */
+"Software Update" = "Software-update";
+"Checking for new software ..." = "Controleren of er nieuwe software is ...";
+"Changes" = "Veranderingen";
+"Cancel" = "Annuleer";
+"Install Update" = "Installeer update";
+"error parsing XML seed" = "fout die XML ontleedt";
+"There was a problem obtaining software update information (%@). Please try again later." = "Er was een probleem bij het ophalen van informatie voor de software update  (%@). aub later opnieuw proberen.";
+"No update information" = "Geen software update informatie";
+"You are up to date." = "Uw software is up to date.";
+"There is no newer software update available." = "Er is geen nieuwere software versie beschikbaar.";
+"A new software version is available" = "Een nieuwe software -versie is beschikbaar.";
+"%@ %@ is available (you have %@). An update may take some time to download and requires an application restart. If you are not ready to install now, you can check for updates in the application menu later." = "%@ %@ is beschikbaar (u hebt %@). Een update kan wat tijd vragen om te downloaden en vereist vervolgens dat u het programma opnieuw opstart. Als u nu niet wilt updaten dan kunt u later vanuit het menu updates activeren.";
+"Downloading %@ %@." = "Downloaden van %@ %@.";
+"%.0lfk of %.0lfk (%.0lfk/s) – %d seconds remaining" = "%.0lfk van %.0lfk (%.0lfk/s) - %d seconden seconden resterend";
+"Did you know?" = "Wist u dat?";
+"Learn more" = "Meer informatie";
+"Upgrade" = "Upgrade";
+"Your version of ExactScan is eligible to upgrade to other versions of ExactScan with more features and OCR at a reduced price." = "Uw versie van ExactScan komt in aanmerking om te upgraden naar andere versies van ExactScan met meer functies en OCR tegen een gereduceerde prijs .";
+
+/* Scan progress */
+"Searching for supported scanners" = "Zoeken naar ondersteunde scanners";
+"Please wait." = "Alstublieft even wachten.";
+"Scanner Configuration" = "Scanner configuratie";
+"Detect" = "Zoeken";
+"Abort" = "Afbreken";
+"OK" = "OK";
+"No scanner has been configured. This application needs to obtain the scanner's configuration before the first use and profile configuration." = "Geen scanner is geconfigureerd. Dit programma moet de configuratie van de scanner verkrijgen voor het eerste gebruik van de profielconfiguratie.";
+"Scanner lamp warming up" = "De lamp van de scanner warmt op";
+"After enabling the light source of the scanner, the lamp needs some time to warm up to emit the intended luminance." = "Na het aanzetten van de lichtbron van de scanner, heeft de lamp wat tijd nodig om de ingestelde lichtsterkte uit te bereiken.";
+"Out of documents" = "Geen documenten";
+"There is no paper in the document feeder." = "Er is geen papier in de document houder.";
+"Cover open" = "Klep open";
+"Please close the scanner cover and try again." = "Sluit de klep van de scanner en probeer opnieuw.";
+"Paper jam" = "Papier vastgelopen";
+"Please clear the paper jam in the document feeder and try again." = "Verwijder papier uit de papierla en probeer opnieuw.";
+"Multi feed" = "Multi voer";
+"Please clear the muti feed in the document feeder and try again." = "Ontruim gelieve het het document van de documentvoeder multivoer en opnieuw te proberen.";
+"Device busy" = "Bezig apparaat";
+"The device is used by another application, via network or an attached printer. Please try again when the device ie ready." = "Het apparaat wordt gebruikt door een andere toepassing, via netwerk of een printer in bijlage. Gelieve te proberen opnieuw wanneer het apparaat d.w.z. klaar.";
+"Unexpected scanner error" = "Onverwachte scannerfout";
+"An unexpected error condition occured." = "Een onverwachte fout heeft plaatsgevonden.";
+"Scanner not ready" = "Scanner niet klaar";
+"The driver has not recognized a compatible device. Please make sure the scanner is connected and not used by another application." = "De driver heeft geen geschikt apparaat herkend. Zorg ervoor dat de scanner aangesloten is en niet door een andere toepassing wordt gebruikt.";
+"Scanning" = "Scannen";
+"Frontside" = "frontside";
+"Backside" = "achterkant";
+"frontside" = "voorkant";
+"backside" = "achterkant";
+"Initializing scanner" = "Scanner wordt geinitialiseerd";
+"Clearing document feeder" = "Het documentvoeder van de opheldering";
+"Image data for page %@ is being transferred." = "Beelddata voor pagina %@ wordt verzonden.";
+"Do you want to add another page to the document or stop the scanning process? Before selecting \"%@\" you should place the next page on the scanner." = "Wilt u een andere pagina aan het document toevoegen of het scanproces beeindigen? Plaats te scannen pagina's eerst in de scanner alvoron \"%@\" te selecteren.";
+"Scanning more pages" = "Meer pagina's worden gescand";
+"Stop" = "Stop";
+"Add" = "Toevoegen";
+
+"Calibrate Scanner..." = "Kalibreer Scanner...";
+"The scanner needs to be calibrated. Please insert the calibration page which shipped with the scanner. If you are not ready to calibrate now, you can run it from the application menu later." = "De scanner moet worden gekalibreerd. Gelieve te nemen de kaliberbepalingspagina op die met de scanner verscheepte. Als u niet bereid bent nu te kalibreren, kunt u het van het toepassingsmenu later in werking stellen.";
+"Calibrating" = "Het kalibreren";
+"Calibrating scanner" = "Kalibrerende scanner";
+
+"Importing files" = "Importeer bestanden";
+"Importing data from image files." = "Het invoeren gegevens van afbeeldingen.";
+"Processing file %@, page %d/%d" = "verwerken bestand %@, pagina %d/%d";
+"Processing file %@, image %d/%d" = "verwerken bestand %@, beeld %d/%d";
+"Page %@: %@ ..." = "Pagina %@: %@…";
+"A file named \"%@\" already exists." = "Een bestand met de naam \"%@\" al bestaat.";
+
+/* Preferences: Tab menu */
+"Filing" = "Archief";
+"Basic" = "basis-";
+"Basic Settings" = "Basis instelllingen";
+"Advanced" = "vergevorderd";
+"Advanced Settings" = "Geavanceerde instellingen";
+"OCR" = "OCR";
+"Barcode" = "Streepjescode";
+/* Additional OCR preferences */
+"Processing" = "Verwerking";
+"Finalization" = "Afronding";
+
+"Mode:" = "Wijze:";
+"Generic" = "Generisch";
+"Dot Matrix" = "De Matrijs van de punt";
+"Fax" = "Fax";
+
+"Scan" = "Scannen";
+"Preview" = "Voorbeeld";
+
+"Profiles" = "Profielen";
+"Duplicate Profile" = "Dubbele profiel";
+"Reset Profile" = "Profiel terugzetten";
+"Reset All Profiles" = "Alle Profielen terugzetten";
+
+/* Preferences: Filing */
+"Profile name:" = "Profielnaam:";
+"Folder name:" = "De naam van de map:";
+"File name:" = "Bestandsnaam:";
+"Example:" = "Voorbeeld:";
+"On existing files:" = "Op bestaande bestanden:";
+"Format:" = "Formaat:";
+"Quality:" = "Kwaliteit:";
+"Compression quality:" = "De kwaliteit van de compressie:";
+"low" = "laag";
+"optimal" = "optimaal";
+"Choose" = "Kies";
+"Color detection:" = "De opsporing van de kleur:";
+"Sensitive" = "Gevoelig";
+"Optimal" = "Optimaal";
+"Lossy" = "Verlieslijdend";
+
+"PDF" = "PDF";
+"Compressed PDF" = "Compressed PDF";
+"Highly Compressed PDF" = "Sterk gecomprimeerde PDF-";
+"JPEG" = "JPEG";
+"JPEG-2000" = "JPEG-2000";
+"TIFF" = "TIFF";
+"PNG" = "PNG";
+"Microsoft BMP" = "Microsoft BMP";
+"PNM" = "PNM";
+"RTF" = "RTF";
+"HTML" = "HTML";
+"Plain Text (UTF-8)" = "Gewone Tekst (utf-8)";
+
+"Unique date tag per file" = "Unieke datum markering per bestand";
+"Edit each filename" = "Geef zelf bestandsnaam";
+"Scan to workspace" = "Scannen naar werkruimte";
+"Add -OCR extension" = "Add -OCR uitbreiding";
+"Move original file to Trash" = "Verhuizen originele bestand naar de prullenbak";
+"Merge files in one batch" = "Samen te voegen bestanden in een batch";
+"Open with:" = "Open met:";
+"no application specified" = "geen gespecificeerde toepassing";
+"Split on page" = "Split op pagina";
+"Show configuration before scan" = "Toon configuratie voor dat men scant";
+"Show progress indicator" = "Toon de status balk";
+"Scan this profile on document placement" = "Pas dit profiel toe bij invoer document in scanner";
+"Ask for scanning more pages" = "Vraag voor scannen van meerdere pagina's";
+"Timer:" = "timer :";
+"Use scanner's own user interface" = "Gebruik scanner's eigen gebruikersinterface";
+
+"Ask user" = "Vraag gebruiker";
+"Increase sequence number" = "Aantal verhogen";
+"Silently overwrite" = "Overschijf zonder te vragen";
+
+
+/* Preferences: Basic Settings */
+
+"Source:" = "Bron:";
+"Colors:" = "Kleuren:";
+"Color Dropout:" = "Kleur verwijderen :";
+"Red" = "rood";
+"Green" = "groen";
+"Blue" = "blauw";
+"None" = "niemand";
+"Resolution:" = "Resolutie:";
+"Brightness:" = "Helderheid:";
+"Contrast:" = "Contrast:";
+"Gamma:" = "Gamma's:";
+"Size:" = "Grootte:";
+"Position:" = "Functie:";
+"Size: %@ MB" = "Grootte: %@ MB";
+"X:" = "X:";
+"Y:" = "Y:";
+"W:" = "B:";
+"H:" = "H:";
+"Rotate:" = "Roteer:";
+"Rotate every second page by 180°" = "Roteer elke tweede pagina 180°";
+"Auto crop and de-skew" = "Automatisch bijsnijden en roteren";
+"Allow extra long pages" = "Laat extra lange pagina";
+"Auto rotate by page content" = "Automatisch draaien door de pagina-inhoud";
+"-90° (CW)" = "-90° (CW)";
+"0°" = "0°";
+"90° (CCW)" = "90° (CCW)";
+"180°" = "180°";
+"Automatic" = "Automatisch";
+"Ultrasonic multi-feed detection" = "Ultrasone multi- feed detectie";
+"Mechanical de-skew assist" = "Mechanische de- skew assist";
+"Primary" = "Primair";
+"Secondary" = "Secundair";
+"Use individual color settings for the back side" = "Gebruik individuele kleurinstellingen voor de achterzijde";
+
+/* Preferences: Advanced Settings */
+
+"Show Preferences on startup" = "Toon Voorkeuren bij het opstarten";
+"De-skew based on page content" = "De-skew gebaseerd op inhoud pagina";
+"De-screen (reduce print moiré patterns)" = "Het DE-scherm (verminder druk moiré patronen)";
+"De-speckle (image noise and defects)" = "De- spikkel ( beeldruis en defecten )";
+"Sharpen" = "Verscherp";
+"Automatically optimize to b/w" = "Automatische optimalisatie aan b/w";
+"Smooth uniform colors" = "Vlotte eenvormige kleuren";
+"Invert image" = "Negatief beeld";
+"Blank Page Detection:" = "Automatisch opsporing van een blanco pagina:";
+"Off" = "Uit";
+"Delete Blank Page" = "Verwijder blanco pagina";
+"Placeholder" = "Plaatsaanduider";
+"Split Document" = "Gespleten Document";
+"Sensitivity:" = "Gevoeligheid:";
+"high" = "hoog";
+"low" = "laag";
+"Remove page border and shadow" = "Haal pagina grens en schaduw";
+"Merge front and back image" = "Voor-en imago terug samenvoegen";
+"Black point:" = "Zwart punt:";
+"White point:" = "Wit punt:";
+"Hue:" = "Tint:";
+"Saturation:" = "Verzadiging:";
+"Lightness:" = "Lichtheid:";
+"Print with:" = "Afdrukken met:";
+"no printer selected" = "geen printer geselecteerd";
+"Keep printed file" = "Behoud gedrukt bestand";
+
+/* Preview */
+"New" = "Nieuw";
+"Front" = "Voorzijde";
+"Back" = "Achterzijde";
+
+/* Main Menu*/
+"About" = "over";
+"About %@" = "Over %@";
+"Check for Updates..." = "Updates controle...";
+"Activation..." = "Activering...";
+"Preferences..." = "Voorkeuren...";
+"Preferences" = "Voorkeuren";
+"%@ - Preferences" = "%@ - Voorkeuren";
+"Get Info" = "Krijg Info";
+"Get Scanner Info" = "Krijg Info van de Scanner";
+"Select Scanner..." = "Selecteer Scanner ...";
+"%@ Info" = "%@ info";
+"Services" = "Voorzieningen";
+"Hide %@" = "Verberg %@";
+"Hide Others" = "Verberg andere";
+"Show All" = "Toon alles";
+"Quit %@" = "Stop %@";
+"New Scan" = "Nieuwe scan";
+
+"Open" = "Open";
+"Open File..." = "Open bestand...";
+
+"File" = "Archief";
+"Edit" = "Wijzig";
+
+"Save" = "Bewaar";
+"Save As..." = "Opslaan als ...";
+
+"Undo" = "Herstel";
+"Redo" = "Opnieuw";
+"Cut" = "Knip";
+"Copy" = "Kopieer";
+"Paste" = "Plak";
+"Delete" = "Verwijder";
+"Delete all" = "Verwijder alle";
+"Select All" = "Selecteer alles";
+
+"Window" = "Venster";
+"Close" = "Sluit";
+"Minimize" = "Minimaliseer";
+
+"Help" = "Help";
+"%@ Help" = "%@ Help";
+
+
+/* OCR */
+"Create searchable documents" = "Maak doorzoekbare documenten";
+"Create searchable barcodes" = "Maak doorzoekbare streepjescodes";
+"Split document on barcode" = "Gespleten document op streepjescode";
+"Discard split page" = "Gooi gesplitste pagina";
+"One or more of the configured barcodes could not be found." = "Een of meerdere streepjescodes kon niet worden gevonden.";
+"Dictionary-based spelling correction" = "Op woordenboek-gebaseerde het spellen correctie";
+"The resolution is used to convert vector files." = "De resolutie wordt gebruikt om vectordossiers om te zetten.";
+
+"Language:" = "Taal:";
+"OCR Language:" = "OCR-taal :";
+"Bulgarian" = "Bulgaars";
+"Croatian" = "Kroatisch";
+"Czech" = "Tsjechisch";
+"Danish" = "Deens";
+"Dutch" = "Nederlands";
+"English" = "Engels";
+"Estonian" = "Estlands";
+"Finnish" = "Finse";
+"French" = "Frans";
+"German" = "Duits";
+"Hungarian" = "Hongaars";
+"Italian" = "Italiaans";
+"Japanese" = "Japans";
+"Korean" = "Koreaans";
+"Latvian" = "Lets";
+"Lithuanian" = "Litouws";
+"Norwegian" = "Noors";
+"Polish" = "Pools";
+"Portuguese" = "Portugees";
+"Rumanian" = "Roemeens";
+"Russian" = "Russisch";
+"Serbian" = "Servisch";
+"Simplified Chinese" = "Vereenvoudigde Chinees";
+"Slovenian" = "Sloveens";
+"Spanish" = "Spaans";
+"Swedish" = "Zweeds";
+"Traditional Chinese" = "Traditionele Chinees";
+"Turkish" = "Turks";
+"Ukrainian" = "Oekraiens";
+
+"Type:" = "Type:";
+"UPC" = "UPC";
+"EAN" = "EAN";
+"CODE25" = "CODE25";
+"CODE39" = "CODE39";
+"CODE128" = "CODE128";
+"PDF-417" = "PDF-417";
+"Data Matrix" = "Data Matrix";
+"QR Code" = "QR Code";
+
+/* Imprinter */
+"Imprinter" = "Imprinter";
+"Imprint text mark" = "Imprint watermerk";
+"Font:" = "Lettertype:";
+"Rotation:" = "Rotatie:";
+"Color:" = "Kleur:";
+"Style:" = "Stijl:";
+"Change" = "Verandering";
+"Filled" = "Gevuld";
+"Outline" = "Overzicht";
+
+/* PopUpButtons: Source, Size, ...*/
+"All" = "Allen";
+"US Legal" = "US Legal";
+"US Letter" = "US Letter";
+"A3" = "A3";
+"A4 landscape" = "A4 landscape";
+"A4" = "A4";
+"A5" = "A5";
+"A6" = "A6";
+"B4" = "B4";
+"B5" = "B5";
+"B6" = "B6";
+"Photo 6\"x4\"" = "Foto 6\"x4\"";
+"Photo 5\"x3\"" = "Foto 5\"x3\"";
+"Business Card" = "Visitekaartje";
+"Credit Card" = "Credit Card";
+"Postcard" = "Briefkaart";
+"Custom" = "Zelf instelbaar";
+
+"Inch" = "Duim";
+"cm" = "cm";
+"mm" = "mm";
+"Pixel" = "Pixel";
+"Point" = "Punt";
+"Percent" = "Percenten";
+
+"dpi" = "dpi";
+
+"Normal" = "Normaal";
+"Flatbed" = "flatbed";
+"Automatic Feeder" = "Automatische Feeder";
+"ADF Front" = "ADF voorkant";
+"ADF Back" = "ADF achterkant";
+"ADF Duplex" = "ADF duplex";
+
+"Black & white" = "Black \u0026 white";
+"Lineart" = "Lineart";
+"Dithered" = "Dithered";
+"Gray" = "Grijs";
+"12bit Gray" = "12bit grijs";
+"16bit Gray" = "16 bits grijs";
+"Color" = "Kleur";
+"12bit Color" = "12bit kleur";
+"16bit Color" = "16 bits kleur";
+
+/* TWAIN driver */
+"TWAIN Bridge Installation" = "De Installatie van de TWAIN Bridge";
+"ExactScan comes with a TWAIN Bridge to scan from other TWAIN application." = "ExactScan komt met een TWAIN Bridgevan andere toepassing af te tasten TWAIN.";
+"Would you like to install the ExactScan TWAIN Bridge now?" = "Zou u de ExactScan TWAIN Bridge willen nu installeren?";
+"The TWAIN Bridge is already installed by another version of ExactScan. Would you like to change it to use this version of ExactScan?" = "De TWAIN Bridge wordt reeds geïnstalleerd: door een andere versie van ExactScan. Zou u het om deze versie van ExactScan te gebruiken willen veranderen?";
+"Do not ask me again." = "Vraag opnieuw me niet.";
+"Yes" = "Ja";
+"No" = "Nr";
+
+"Defaults" = "Basis instellingen";
+"Optimize" = "optimaliseren";
+"Optimize:" = "Optimaliseer:";
+"Unexpected error" = "Onverwachte fout";
+"An unexpected error condition occured. Please report." = "Een onverwachte fout kwam voor. Rapporteer dit alstublieft.";
+"Internal error" = "Interne fout";
+"Internal error in the i/o core. Please report." = "Interne fout in de i/o kernal. Rapporteer alstublieft.";
+"No compatible scanner detected." = "Geen compatibele scanner gevonden.";
+"Rescan" = "Scan opnieuw";
+"Insert scan" = "Plaats scannen";
+"Insert file" = "invoegen bestand";
+"Generic scanner driver for Avision USB and SCSI devices. Copyright 2004-2010 ExactCODE." = "Scanprogramma voor de Avisiion USB en SCSI producten. Auteursrecht 2004-2010 ExactCODE.";
+"Flushing pages" = "uitgeworpen pagina's";
+"Flushing remaining pages after preview with high-speed scanner." = "Na voorproefpagina worden alle pagina uitgeworpen door hoge snelheidsscanner.";
+"Flushing remaining pages after canceling scan with high-speed scanner." = "Als men voorproef afbreekt worden alle pagina uitgeworpen door hoge snelheidsscanner.";
+"no profile" = "geen profiel";
+"Custom" = "Zelf instelbaar";
+"Profile %d" = "Profiel %d";
+
+/* default profile names */
+"Color PDF" = "Kleur PDF";
+"Gray PDF" = "Grijze PDF";
+"B/W PDF" = "Z/W PDF";
+"Color Copy" = "Kleuren exemplaar";
+"Gray Copy" = "Grijs exemplaar";
+"B/W Copy" = "Z/W exemplaar";
+"Color Email" = "Kleuren E-mail";
+"Gray Email" = "Grijze E-mail";
+"iPhoto" = "iPhoto";
+"Photo" = "Foto";
+
+/* miscelaneos */
+"No scanner" = "Geen scanner";
+
+/* info */
+"Vendor:" = "Verkoper:";
+"Model:" = "Model:";
+"ASIC:" = "ASIC:";
+"Firmware:" = "Firmware:";
+"Region code:" = "Regio code:";
+"Series:" = "Reeks:";
+"Version:" = "Versie:";
+"Serial number:" = "Serienummer:";
+"Manufacturing date:" = "De datum van de productie:";
+"First scan date:" = "Eerst aftastendatum:";
+"Flatbed scans:" = "Flatbed aftasten:";
+"Pad scans:" = "Gebruik van de druk rubber:";
+"ADF scans:" = "ADF scans:";
+"ADF simplex scans:" = "ADF simplexaftasten:";
+"ADF duplex scans:" = "ADF duplexaftasten:";
+"Roller scans:" = "Het aftasten van de rol:";
+"Multi feeds:" = "Multi voer:";
+"Paper jams:" = "De jam van het document:";

@@ -39,6 +39,8 @@ set /a _Total_LF_numberOfPages+=!_numberOfPages!
 call :Final_Rename "%%G"
 
 )
+echo.
+echo.
 echo Total number of LF pages:  !_Total_LF_numberOfPages!
 
 for /f "tokens=1,2 delims=-" %%H IN ('dir /b *.pdf') DO (
@@ -49,16 +51,24 @@ for /f "tokens=1,2 delims=-" %%H IN ('dir /b *.pdf') DO (
 	if "%%I"=="Reports Bound.pdf" set _Or_trick=1
 	if defined _Or_trick (
 		call :Update_Data "%%H"-"%%I"
+		
 		echo File:%%H-%%I A4 Number of Pages: !_numberOfPages!
 		set "_Or_trick="
 		set /a _Total_A4_numberOfPages+=!_numberOfPages!
 		
-		call :Final_Rename "%%H"-"%%I"
+		call :Final_Rename "%%H-%%I"
 	) 
 )	
-echo Total number of A4 pages !_Total_A4_numberOfPages!	
+echo.
+echo.
+echo Total number of A4 pages !_Total_A4_numberOfPages!
 
 
+SET SQL="UPDATE Scandata SET PageCount=!_Total_A4_numberOfPages!, DrawingCount=!_Total_LF_numberOfPages!, Box='SCANNED' WHERE Barcode='!_Barcode!'"
+sqlcmd -S Jerry -d Other -E -Q !SQL!
+
+
+	
 popd
 
 endlocal
@@ -68,27 +78,30 @@ goto :eof
 
 :Update_Data
 set _numberOfPages=0
+
 for /f "tokens=2" %%C in ('%~dp0\PDFTKBuilderPortable\App\pdftkbuilder\pdftk.exe %1 dump_data ^| findstr NumberOfPages') do set _numberOfPages=%%C
 
- 
 goto :eof
 
 
 
 
 :Final_Rename
-set _file_name_before=%1
+set _file_name_before=%~nx1
+echo.
+echo.
 echo !_file_name_before!
 
 for /f "usebackq" %%J in (`sqlcmd -S Jerry -d Other -E -h-1 -Q "SET NOCOUNT ON; SELECT Field1 from Scandata WHERE Barcode='!_Barcode!';"`) do set _value_retrieved=%%J 
 echo !_value_retrieved!
 
-set _value_modified=!_value_retrieved:/=-!
-echo !_value_modified!
+set _value_modified1=!_value_retrieved:/=-!
+set _value_modified2=!_value_modified1: =!
+echo !_value_modified2!
 
-echo rename !_file_name_before! !_value_modified!!_file_name_before!
+rename "!_file_name_before!" "!_value_modified2!!_file_name_before!"
 
 
-pause
+
 
 goto :eof

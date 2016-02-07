@@ -118,8 +118,8 @@ for /D %%J in ("%_A4_Path%\!_A4_Folder!\ESM*") do (
 	
 set "_var="
 set "_Barcode=%%~nJ"
-echo !_Barcode!
-pause
+echo Barcode to be processed is !_Barcode!
+
 
 	REM To check that PageCount and DrawingCount are both Null. Using store procedure "ReturnPageCountNull"
 			
@@ -137,15 +137,20 @@ pause
 	
 	call ESSOD_Merge !_A4_Folder! !_Barcode!
 	
-	call ESSOD_PageCount !_A4_Folder! !_Barcode!
+	call ESSOD_PageCount_Rename !_A4_Folder! !_Barcode!
 	
-		
-	SET SQL="UPDATE Scandata SET PageCount=!_Total_A4_numberOfPages!, DrawingCount=!_Total_LF_numberOfPages!, Box='SCANNED' WHERE Barcode ='!_Barcode!'"
-	sqlcmd -S Jerry -d Other -E -Q !SQL!
+	REM Move all files inside the subdirectory up one level.
 
-	pause
+	pushd "%%J"
 	
-	REM Rename each file - Include file name fields
+	REM move /s *.* ..\.
+	move *.* ..\.
+	
+	popd
+	
+    REM Delete the directories if they are empty.
+    RD "%%J"
+	
 	
 	
 	) ELSE (

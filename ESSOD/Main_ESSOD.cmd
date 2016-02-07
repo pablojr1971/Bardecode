@@ -139,6 +139,15 @@ pause
 	
 	call ESSOD_PageCount !_A4_Folder! !_Barcode!
 	
+		
+	SET SQL="UPDATE Scandata SET PageCount=!_Total_A4_numberOfPages!, DrawingCount=!_Total_LF_numberOfPages!, Box='SCANNED' WHERE Barcode ='!_Barcode!'"
+	sqlcmd -S Jerry -d Other -E -Q !SQL!
+
+	pause
+	
+	REM Rename each file - Include file name fields
+	
+	
 	) ELSE (
 	
 	echo Pagecount or DrawingCount are NOT Null

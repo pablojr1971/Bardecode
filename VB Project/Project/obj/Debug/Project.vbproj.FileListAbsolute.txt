@@ -1,0 +1,35 @@
+D:\Repositories\Project\Project\Project\bin\Debug\Project.exe.config
+D:\Repositories\Project\Project\Project\obj\Debug\Project.Form1.resources
+D:\Repositories\Project\Project\Project\obj\Debug\Project.Resources.resources
+D:\Repositories\Project\Project\Project\obj\Debug\Project.vbproj.GenerateResource.Cache
+D:\Repositories\Project\Project\Project\bin\Debug\Project.exe
+D:\Repositories\Project\Project\Project\bin\Debug\Project.pdb
+D:\Repositories\Project\Project\Project\bin\Debug\Project.xml
+D:\Repositories\Project\Project\Project\obj\Debug\Project.exe
+D:\Repositories\Project\Project\Project\obj\Debug\Project.xml
+D:\Repositories\Project\Project\Project\obj\Debug\Project.pdb
+D:\Repositories\Project\Project\Project\'\Project.exe.config
+C:\VB Projects\Project\Project\'\Project.exe.config
+C:\VB Projects\Project\Project\obj\Debug\Project.exe
+C:\VB Projects\Project\Project\obj\Debug\Project.xml
+C:\VB Projects\Project\Project\obj\Debug\Project.pdb
+C:\VB Projects\Project\Project\'\Project.exe
+C:\VB Projects\Project\Project\'\Project.pdb
+C:\VB Projects\Project\Project\'\Project.xml
+C:\VB Projects\Project\Project\obj\Debug\Project.Form1.resources
+C:\VB Projects\Project\Project\obj\Debug\Project.Resources.resources
+C:\VB Projects\Project\Project\obj\Debug\Project.vbproj.GenerateResource.Cache
+C:\VB_Projects\Project\Project\'\Project.exe.config
+C:\VB_Projects\Project\Project\obj\Debug\Project.exe
+C:\VB_Projects\Project\Project\obj\Debug\Project.xml
+C:\VB_Projects\Project\Project\obj\Debug\Project.pdb
+C:\VB_Projects\Project\Project\obj\Debug\Project.Form1.resources
+C:\VB_Projects\Project\Project\obj\Debug\Project.Resources.resources
+C:\VB_Projects\Project\Project\obj\Debug\Project.vbproj.GenerateResource.Cache
+C:\VB_Projects\Project\Project\'\Project.exe
+C:\VB_Projects\Project\Project\'\Project.pdb
+C:\VB_Projects\Project\Project\'\Project.xml
+C:\Repository\Bardecode\VB Project\Project\'\Project.exe.config
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.exe
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.xml
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.pdb

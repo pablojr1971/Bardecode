@@ -7,10 +7,11 @@ goto :main
 :main
 setlocal
 
-set _JobNo=1839
-SET "_A4_Path=C:\1839-Sutton\Docs by File"
-SET "_LF_Path=C:\1839-Sutton\Drawings by File"
-set "_Output_Path=C:\1839-Sutton\Output"
+set _JobNo=2003
+SET "_A4_Path=C:\2003-Southampton\Docs by File"
+SET "_LF_Path=C:\2003-Southampton\Drawings by File"
+set "_Output_Path=C:\2003-Southampton\Output"
+
 
 :outer
 REM To check that there is a LF folder for each A4 Folder in "Docs by File"
@@ -31,9 +32,7 @@ pushd !_LF_Path_Folder! 2>NUL && popd
 	echo Drawings missing for box !_LF_Folder!
 	)
 
-
 )
-
 goto :eof
 
 
@@ -82,7 +81,7 @@ set _LF_File=!_A4_File:~0,-4!D!_A4_File:~-4,4!
 set _Output_File=!_A4_File:~0,-4!F!_A4_File:~-4,4!
 
 
-    if exist "!_LF_Path!\!_LF_Folder!\!_LF_File!" (
+	if exist "!_LF_Path!\!_LF_Folder!\!_LF_File!" (
 	echo.
 	echo.
 	echo Processing file !_A4_File! 
@@ -91,10 +90,10 @@ set _Output_File=!_A4_File:~0,-4!F!_A4_File:~-4,4!
 		REM To check that PageCount and DrawingCount are both Null. Using store procedure "ReturnPageCountNull"
 		set "_Barcode=!_A4_File:~0,-4!"
 		
-		for /F "usebackq" %%G in (`sqlcmd -d TimerSQL -h-1 -Q "SET NOCOUNT ON; EXEC ReturnPageCountNull !_JobNo!, '!_Barcode!';"`) do set _var=%%G 
+		for /F "usebackq" %%G in (`sqlcmd -d TimerSQL -h-1 -Q "SET NOCOUNT ON; EXEC ReturnPageCountNull !_JobNo!, '!_Barcode!';"`) do set _var=%%G
 		REM echo !_var!
 	
-		if defined _var  (
+		if defined _var (
 		
 		echo.
 		echo Pagecount and DrawingCount are Null

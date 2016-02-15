@@ -43,12 +43,16 @@ echo.
 			echo.
 			echo.
 		
-			call :Barcode_Separation "A4_Southampton.ini"
+			call :Barcode_Separation_FS "A4_Southampton.ini"
+			
 			REM The moving of files to the subfolder is done by Bardecode, so no need for these lines
 				REM for /F "tokens=1,2,3 delims=-" %%G in ('dir /B "!_A4_DobF_Path!\"*.pdf') do (
 				REM mkdir "!_A4_DobF_Path!\!_A4_DoasS_Folder!"
 				REM move "!_A4_DobF_Path!\"%%G-%%H-%%I "!_A4_DobF_Path!\!_A4_DoasS_Folder!\"%%I
 				REM )
+			
+			
+			call :Barcode_Separation_Sections "A4_Southampton_Sections.ini"
 			
 			rename "!_A4_DoasS_Path!\!_A4_DoasS_Folder!" "Done-!_A4_DoasS_Folder!"
 			 
@@ -59,14 +63,14 @@ goto :eof
 
 
 
-:Barcode_Separation
+:Barcode_Separation_FS
 setlocal
 
 ::Set working directory
-PUSHD C:\mydoc\Southampton
+PUSHD %~dp0
 
 REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
-C:\mydoc\Southampton\inifile\INIFILE "A4_Southampton.ini" [options] inputFolder=System.String,C:\2003-Southampton\Docs as Scanned\!_A4_DoasS_Folder!
+%~dp0\inifile\INIFILE "A4_Southampton.ini" [options] inputFolder=System.String,C:\2003-Southampton\Docs as Scanned\!_A4_DoasS_Folder!
    
 
 "C:\Program Files (x86)\Softek Software\BardecodeFiler\"BardecodeFiler.exe %1
@@ -79,8 +83,47 @@ rename "!_A4_DobF_Path!\_temp_Folder" "!_A4_DoasS_Folder!"
 
 REM If you want to produce an empty assignment without removing it, use two equal signs.
 REM Syntax:  INIFILE inifileName [section] item==
-C:\mydoc\Southampton\inifile\INIFILE "A4_Southampton.ini" [options] inputFolder==
+%~dp0\inifile\INIFILE "A4_Southampton.ini" [options] inputFolder==
 
+
+
+:: Return to your original working directory.
+POPD
+
+endlocal
+goto :eof
+
+
+
+
+
+:Barcode_Separation_Sections
+setlocal
+
+::Set working directory
+PUSHD %~dp0
+
+
+
+REM I need to modify the INI file with each step of the loop, so BardecodeFiler will only process one box at a time, and not the whole input folder
+%~dp0\inifile\INIFILE "A4_Southampton_Sections.ini" [options] inputFolder=System.String,!_A4_DobF_Path!\!_A4_DoasS_Folder!
+%~dp0\inifile\INIFILE "A4_Southampton_Sections.ini" [options] outputFolder=System.String,!_A4_DobF_Path!\!_A4_DoasS_Folder!   
+
+
+
+"C:\Program Files (x86)\Softek Software\BardecodeFiler\"BardecodeFiler.exe %1
+
+
+
+
+REM If you want to produce an empty assignment without removing it, use two equal signs.
+REM Syntax:  INIFILE inifileName [section] item==
+%~dp0\inifile\INIFILE "A4_Southampton_Sections.ini" [options] inputFolder==
+%~dp0\inifile\INIFILE "A4_Southampton_Sections.ini" [options] outputFolder==
+
+
+REM We rename the file-end sheets and the control drawing sheet.
+echo rename "!_A4_DobF_Path!\_temp_Folder" "!_A4_DoasS_Folder!"
 
 
 :: Return to your original working directory.

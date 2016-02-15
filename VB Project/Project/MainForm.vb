@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class Main
+Public Class MainForm
     Private Const Bardecode = "C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe"
     Private JobPath As String
     Private Ini As IniFile

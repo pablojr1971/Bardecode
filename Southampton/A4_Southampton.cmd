@@ -122,8 +122,34 @@ REM Syntax:  INIFILE inifileName [section] item==
 %~dp0\inifile\INIFILE "A4_Southampton_Sections.ini" [options] outputFolder==
 
 
-REM We rename the file-end sheets and the control drawing sheet.
-echo rename "!_A4_DobF_Path!\_temp_Folder" "!_A4_DoasS_Folder!"
+
+REM Rename the original file
+FOR /R "%_A4_DobF_Path%" %%G IN (*_NOBARCODE.pdf) DO (
+	echo %%~nG
+    SET "_X=%%~nG"
+    SET _X=!_X:_NOBARCODE=!
+
+	rename "%%G" !_X!.pdf
+)
+
+
+REM Rename the File End Sheet
+FOR /R "%_A4_DobF_Path%" %%G IN (*_EDFE.pdf) DO (
+	echo %%~nG
+    SET "_X=%%~nG"
+    SET _X=!_X:_EDFE=_File_End_Sheet!
+
+	rename "%%G" !_X!.pdf
+)
+
+REM Rename the control sheets
+FOR /R "%_A4_DobF_Path%" %%G IN (*D.pdf) DO (
+	echo %%~nG
+	SET "_X=%%~nG"
+	set _X=!_X:~0,9!
+	rename "%%G" !_X!D.pdf
+)
+
 
 
 :: Return to your original working directory.

@@ -1,14 +1,13 @@
 ﻿Imports System.IO
 Imports PdfSharp.Pdf
+Imports PdfSharp.Pdf.Advanced
 Imports PdfSharp.Pdf.IO
 Imports PdfSharp.Drawing
 Imports System.Drawing
 
 Public Class MainForm
-    ' By now the path of the Bardecode application is a constant in the source but we will change when we have a settings form on our application
-    Private Const Bardecode = "C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe"
-    Private JobPath As String
-    Private Ini As IniFile
+    Private Profile As ProfileSettings
+
     Private Folders As Collection = New Collection()
     Private Files As Collection = New Collection()
 
@@ -26,33 +25,38 @@ Public Class MainForm
     End Enum
 
     Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
-        JobPath = JobPathText.Text
+        Me.Profile = New ProfileSettings(New FileInfo(ProfileText.Text))
 
-        If Directory.Exists(JobPath) Then
-            If File.Exists(JobPath + "\INIFILE.ini") Then
-                ' if the ini file exists we can create the object to manage it
-                Ini = New IniFile(JobPath + "\INIFILE.ini")
-            End If
+        ' Now the validations of paths will be done on the ProfileSettings class on save method and on write properties
 
-            Me.Log(LogType.Begin, "")
+        Me.Log(LogType.Begin, "")
 
-            ' Get the A4 folders
-            Me.GetFolders(FolderType.A4Doc)
-            Me.Log(LogType.ProcessingA4, CStr(Folders.Count))
+        ' Get the A4 folders
+        Me.GetFolders(FolderType.A4Doc)
+        Me.Log(LogType.ProcessingA4, CStr(Folders.Count))
 
-            ' Start to Split the files in the boxes of A4
-            Me.SplitBoxesFiles(FolderType.A4Doc)
+        ' Start to Split the files in the boxes of A4
+        Me.SplitBoxesFiles(FolderType.A4Doc)
 
-            ' Get the Drawings folders
-            Me.GetFolders(FolderType.Drawing)
-            Me.Log(LogType.ProcessingDrawing, CStr(Folders.Count))
+        ' Get the Drawings folders
+        Me.GetFolders(FolderType.Drawing)
+        Me.Log(LogType.ProcessingDrawing, CStr(Folders.Count))
 
+        ' Start to Split the files in the boxes of Drawings
+        Me.SplitBoxesFiles(FolderType.Drawing)
 
-            ' Start to Split the files in the boxes of Drawings
-            Me.SplitBoxesFiles(FolderType.Drawing)
+        Me.Log(LogType.Done, "")
+    End Sub
 
-            Me.Log(LogType.Done, "")
-        End If
+    Private Sub ChangeBardecodeProcessingFolder(Folder As DirectoryInfo, FolderType As FolderType)
+        ' check the type of the folder that are being processed and create the IniFile object according with it
+        Dim BardecodeIni As IniFile = New IniFile(IIf(FolderType = (MainForm.FolderType.A4Doc), Me.Profile.A4BardecodeIni.FullName, Me.Profile.LFBardecodeIni.FullName))
+        Dim outputFolder As String = IIf(FolderType = MainForm.FolderType.A4Doc, Me.Profile.A4OutputFolder.FullName, Me.Profile.LFOutputFolder.FullName)
+
+        BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Folder.FullName)
+        BardecodeIni.WriteValue("options", "outputFolder", "System.String," + outputFolder)
+        BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Folder.Name + "\%VALUES")
+        BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Folder.Name + "\%VALUES")
     End Sub
 
     Private Sub SplitBoxesFiles(FolderType As FolderType)
@@ -60,16 +64,15 @@ Public Class MainForm
         ' Going through each sub folder on the AsScanned folder and running bardecode for each folder
         For Each Folder As DirectoryInfo In Folders
 
-            ' change the ini files according with the folder that we are running
-            Ini.WriteValue("options", "inputFolder", "System.String," + Folder.FullName)
-            Ini.WriteValue("options", "outputTemplate", "System.String," + Folder.Name + "\%VALUES")
+            ' change the Bardecode's ini files according with the folder that are being processed
+            ChangeBardecodeProcessingFolder(Folder, FolderType)
 
             Me.Log(LogType.Folder, Folder.FullName)
 
             ' start a windows process, passing the filename and the arguments
             Dim pHelp As New ProcessStartInfo
-            pHelp.FileName = Bardecode
-            pHelp.Arguments = Ini.Path
+            pHelp.FileName = Me.Profile.BardecodeExe.FullName
+            pHelp.Arguments = IIf(FolderType = MainForm.FolderType.A4Doc, Me.Profile.A4BardecodeIni.FullName, Me.Profile.LFBardecodeIni.FullName)
             pHelp.UseShellExecute = True
             pHelp.WindowStyle = ProcessWindowStyle.Normal
             Dim proc As Process = Process.Start(pHelp)
@@ -78,9 +81,8 @@ Public Class MainForm
             proc.WaitForExit()
             proc.Close()
 
-            ' finish processing we need convert images to pdf files
-            ' Only for drawings
-            If FolderType = MainForm.FolderType.Drawing Then
+            ' if the output format is Image we can convert is to pdf
+            If (Me.Profile.LFOutputFormat = ProfileSettings.LFFormatType.JPG) Then
                 Me.ConvertImagesToPDF(Folder)
             End If
         Next
@@ -96,13 +98,13 @@ Public Class MainForm
 
             ' begining the process, the data will be the number of subfolders found
             Case MainForm.LogType.Begin
-                Me.ProcessLogText.AppendText("----PROCESS BEGIN----" + vbCrLf + vbCrLf)
+                Me.ProcessLogText.AppendText("----PROCESS BEGIN----")
 
             Case MainForm.LogType.ProcessingA4
-                Me.ProcessLogText.AppendText("Spliting A4 files, " + data + " boxes found" + vbCrLf + vbCrLf)
+                Me.ProcessLogText.AppendText(vbCrLf + vbCrLf + "Spliting A4 files, " + data + " boxes found" + vbCrLf + vbCrLf)
 
             Case MainForm.LogType.ProcessingDrawing
-                Me.ProcessLogText.AppendText("Spliting Drawing files, " + data + " boxes found" + vbCrLf + vbCrLf)
+                Me.ProcessLogText.AppendText(vbCrLf + vbCrLf + "Spliting Drawing files, " + data + " boxes found" + vbCrLf + vbCrLf)
 
                 ' log which folder is being processed at the moment, the data will be the folder
             Case MainForm.LogType.Folder
@@ -111,7 +113,7 @@ Public Class MainForm
 
                 ' end of process, just to say done and that the process went well
             Case MainForm.LogType.Done
-                Me.ProcessLogText.AppendText("----PROCESS DONE----")
+                Me.ProcessLogText.AppendText(vbCrLf + vbCrLf + "----PROCESS DONE----")
 
         End Select
     End Sub
@@ -125,22 +127,22 @@ Public Class MainForm
 
             Case MainForm.FolderType.A4Doc
                 ' the name of the folder DocAsScanned is a constant in the source by now, but we will change when we have a settings form
-                For Each Folder In Directory.GetDirectories(JobPath + "\DocAsScanned")
+                For Each Folder In Directory.GetDirectories(Me.Profile.A4InputFolder.FullName)
                     Dim FolderInfo As DirectoryInfo = New DirectoryInfo(Folder)
 
-                    ' check if not have a correspongind folder in ByFiles 
-                    If Not Directory.Exists(JobPath + "\DocByFile\" + FolderInfo.Name) Then
+                    ' check if not have a correspongind folder in the output folder
+                    If Not Directory.Exists(Me.Profile.A4OutputFolder.FullName + FolderInfo.Name) Then
                         Me.Folders.Add(FolderInfo)
                     End If
                 Next
 
 
             Case MainForm.FolderType.Drawing
-                For Each Folder In Directory.GetDirectories(JobPath + "\DrawingAsScanned")
+                For Each Folder In Directory.GetDirectories(Me.Profile.LFInputFolder.FullName)
                     Dim FolderInfo As DirectoryInfo = New DirectoryInfo(Folder)
 
                     ' check if not have a correspongind folder in ByFiles 
-                    If Not Directory.Exists(JobPath + "\DrawingByFile\" + FolderInfo.Name) Then
+                    If Not Directory.Exists(Me.Profile.LFOutputFolder.FullName + FolderInfo.Name) Then
                         Me.Folders.Add(FolderInfo)
                     End If
                 Next
@@ -149,7 +151,7 @@ Public Class MainForm
 
     Private Sub ConvertImagesToPDF(Folder As DirectoryInfo)
         ' using PDFSharp library to convert images to PDF and to merge PDFs. Is an openSource library
-        ' pick all image files on DrawingbyFile folder and put together in one PDF
+        ' pick all image files on Drawing output folder and put together in one PDF
 
         Dim Doc As PdfDocument = New PdfDocument()
 
@@ -181,13 +183,38 @@ Public Class MainForm
         Doc.Dispose()
     End Sub
 
-    Private Sub ConvertPdfToTiff(File As FileInfo)
+    Private Sub ExtractImage(File As FileInfo)
+        Dim count As Integer = 0
         Dim Doc As PdfDocument = PdfReader.Open(File.FullName)
 
         For Each page As PdfPage In Doc.Pages
-            ' TODO read the pages pick the images and export them as TIFF
+
+            Dim resources As PdfDictionary = page.Elements.GetDictionary("/Resources")
+            If Not IsNothing(resources) Then
+                Dim xObjects As PdfDictionary = resources.Elements.GetDictionary("/XObject")
+                If Not IsNothing(xObjects) Then
+
+                    Dim items As ICollection(Of PdfItem) = xObjects.Elements.Values
+
+                    For Each item As PdfReference In items
+                        If Not IsNothing(item) Then
+                            Dim xObject As PdfDictionary = item.Value
+                            If Not IsNothing(xObject) Then
+                                If xObject.Elements.GetString("/Subtype") = "/Image" Then
+                                    Dim fs As FileStream = New FileStream(String.Format(File.Directory.FullName + "\Image{0}.JPG", count), FileMode.Create, FileAccess.Write)
+                                    Dim bw As BinaryWriter = New BinaryWriter(fs)
+
+                                    Dim teste As PdfDictionary.PdfStream = xObject.Stream
+
+                                    bw.Write(xObject.Stream.UnfilteredValue)
+                                    bw.Close()
+                                    count = count + 1
+                                End If
+                            End If
+                        End If
+                    Next
+                End If
+            End If
         Next
-
     End Sub
-
 End Class

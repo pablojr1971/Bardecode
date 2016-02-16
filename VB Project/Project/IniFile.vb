@@ -1,7 +1,7 @@
 ﻿Public Class IniFile
 
     ' This is a class just to manage ini files.
-    ' We can read and write data trough the sections and keys
+    ' We can read and write data through the sections and keys
 
     Private Declare Ansi Function GetPrivateProfileString Lib "kernel32.dll" Alias "GetPrivateProfileStringA" _
         (ByVal lpApplicationName As String, _

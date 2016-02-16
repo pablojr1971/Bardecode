@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProfileSettings.vb" />
     <Compile Include="IniFile.vb" />
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>

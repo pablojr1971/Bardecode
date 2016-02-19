@@ -42,3 +42,16 @@ C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbproj.GenerateReso
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbprojResolveAssemblyReference.cache
 C:\Repository\Bardecode\VB Project\Project\'\PdfSharp.dll
 C:\Repository\Bardecode\VB Project\Project\'\de\PdfSharp.resources.dll
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Interop.Acrobat.dll
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbproj.ResolveComReference.cache
+C:\Repository\Bardecode\VB Project\Project\'\x64\liblept172.dll
+C:\Repository\Bardecode\VB Project\Project\'\x64\libtesseract304.dll
+C:\Repository\Bardecode\VB Project\Project\'\x86\liblept172.dll
+C:\Repository\Bardecode\VB Project\Project\'\x86\libtesseract304.dll
+C:\Repository\Bardecode\VB Project\Project\'\Tesseract.dll
+C:\Repository\Bardecode\VB Project\Project\'\Tesseract.xml
+C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.Native.dll
+C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.dll
+C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.xml
+C:\Repository\Bardecode\VB Project\Project\'\Puma.Net.dll
+C:\Repository\Bardecode\VB Project\Project\'\puma.interop.dll

@@ -1,9 +1,12 @@
 ﻿Imports System.IO
+Imports System.Drawing
+Imports System.Drawing.Imaging
 Imports PdfSharp.Pdf
 Imports PdfSharp.Pdf.Advanced
 Imports PdfSharp.Pdf.IO
 Imports PdfSharp.Drawing
-Imports System.Drawing
+Imports Acrobat
+Imports ImageMagick
 
 Public Class MainForm
     Private Profile As ProfileSettings
@@ -25,9 +28,13 @@ Public Class MainForm
     End Enum
 
     Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
-        Me.Profile = New ProfileSettings(New FileInfo(ProfileText.Text))
+        'Me.Profile = New ProfileSettings(New FileInfo(ProfileText.Text))
 
-        ' Now the validations of paths will be done on the ProfileSettings class on save method and on write properties
+        ' OCR tests
+        Me.TestOCR()
+
+        ' exiting because I'm just testing the OCR
+        Exit Sub
 
         Me.Log(LogType.Begin, "")
 
@@ -46,6 +53,106 @@ Public Class MainForm
         Me.SplitBoxesFiles(FolderType.Drawing)
 
         Me.Log(LogType.Done, "")
+    End Sub
+
+    Private Function ColourAvg(ByVal szAvgSize As Size, ByVal szfImageSize As SizeF, ByVal intX As Integer, ByVal intY As Integer, imag As Bitmap) As Color
+
+        Dim arrlPixels As New ArrayList 'Host All Pixels
+
+        Dim x As Integer 'X Location
+        Dim y As Integer 'Y Location
+
+        'Find Each Pixel's Colour And Add To ArrayList
+        For x = intX - CInt(szAvgSize.Width / 2) To intX + CInt(szAvgSize.Width / 2) 'Left To Right
+
+            For y = intY - CInt(szAvgSize.Height / 2) To intY + CInt(szAvgSize.Height / 2) 'Up To Down
+
+                If (x > 0 And x < szfImageSize.Width) And (y > 0 And y < szfImageSize.Height) Then 'If Not Out Of Bounds
+                    arrlPixels.Add(imag.GetPixel(x, y)) 'Add To ArrayList
+
+                End If
+
+            Next
+
+        Next
+
+        Dim clrCurrColour As Color 'Current Colour
+
+        Dim intAlpha As Integer = 0 'Alpha Channel
+        Dim intRed As Integer = 0 'Red Channel
+        Dim intGreen As Integer = 0 'Green Channel
+        Dim intBlue As Integer = 0 'Blue Channel
+
+        For Each clrCurrColour In arrlPixels 'Loop Through Each Colour
+
+            'Store Each Colour
+            intAlpha += clrCurrColour.A
+            intRed += clrCurrColour.R
+            intGreen += clrCurrColour.G
+            intBlue += clrCurrColour.B
+
+        Next
+
+        ' Return Average A, R, G, B  
+        Return Color.FromArgb(intAlpha / arrlPixels.Count, intRed / arrlPixels.Count, intGreen / arrlPixels.Count, intBlue / arrlPixels.Count)
+
+    End Function
+
+    Private Sub doBlur(ByVal imag As Bitmap, ByVal szBlurSize As Size, blnAlphaEdges As Boolean)
+
+        Dim Y As Integer 'Y
+        Dim X As Integer 'X
+
+        'Loop Through Image
+        For Y = 0 To imag.Height - 1
+            For X = 0 To imag.Width - 1
+
+                If Not blnAlphaEdges Then 'AlphaEdges Not Chosen 
+                    imag.SetPixel(X, Y, Me.ColourAvg(szBlurSize, imag.PhysicalDimension, X, Y, imag)) 'Do Blur
+
+                ElseIf imag.GetPixel(X, Y).A <> 255 Then 'Alpha Is Not Set To 255 
+                    imag.SetPixel(X, Y, Me.ColourAvg(szBlurSize, imag.PhysicalDimension, X, Y, imag)) 'Do Blur
+
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub TestOCR()
+
+        ' pdf file to be processed
+        Dim fil As FileInfo = New FileInfo("C:\VB_Projects\samples\FHH000269_Finance_Insurance Claims_PL 006_28-11-2002.pdf")
+        Dim Dir As DirectoryInfo = fil.Directory
+
+        Dim index As Integer = 0
+        ' tesseract laguage pack (tessdata folder with eng.traineddata file)
+        Dim tes As Tesseract.TesseractEngine = New Tesseract.TesseractEngine("C:\Repository\Bardecode\VB Project\Project\bin\Debug\tessdata", "eng")
+        ' seting whitelist to avoid weird characters on final text
+        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-")
+
+        For Each item As KeyValuePair(Of Integer, MagickImage) In Me.ExtractImagesFromPdf(fil, Dir)
+
+            ' usgin image 24, page 24 of pdf, testing with just this one image
+            '          If item.Key = 24 Then
+            ' increasing image dpi because tesseract didn't work well with low dpi images
+
+            item.Value.Resample(180, 180) ' adjusting to 150 dpi
+            item.Value.ReduceNoise()
+            item.Value.Posterize(2)
+            With tes.Process(item.Value.ToBitmap)
+                '.Image.Save(Dir.FullName + "\image24.bmp", Tesseract.ImageFormat.Bmp)
+                Dim fl As System.IO.StreamWriter = New StreamWriter(String.Format(Dir.FullName + "\page{0}.html", index))
+                fl.Write(.GetHOCRText(0))
+                fl.Close()
+                fl.Dispose()
+                .Dispose()
+                index = index + 1
+            End With
+            '          End If
+        Next
+
+        tes.Dispose()
+        MessageBox.Show("Done")
     End Sub
 
     Private Sub ChangeBardecodeProcessingFolder(Folder As DirectoryInfo, FolderType As FolderType)
@@ -183,38 +290,31 @@ Public Class MainForm
         Doc.Dispose()
     End Sub
 
-    Private Sub ExtractImage(File As FileInfo)
-        Dim count As Integer = 0
-        Dim Doc As PdfDocument = PdfReader.Open(File.FullName)
+    Private Function ExtractImagesFromPdf(Pdf As FileInfo, OutputFolder As DirectoryInfo) As Dictionary(Of Integer, MagickImage)
+        ' this method will return a list of images from each page of the PDF received
+        ' Using dictionary as list type because I can put the page number as a key, so if I want just page number x latre I can get by this key
 
-        For Each page As PdfPage In Doc.Pages
+        ExtractImagesFromPdf = New Dictionary(Of Integer, MagickImage)
 
-            Dim resources As PdfDictionary = page.Elements.GetDictionary("/Resources")
-            If Not IsNothing(resources) Then
-                Dim xObjects As PdfDictionary = resources.Elements.GetDictionary("/XObject")
-                If Not IsNothing(xObjects) Then
+        ' using adobe acrobat library to capture an image from each page
+        Dim doc As AcroPDDoc = New AcroPDDoc()
+        Dim pdfPage As AcroPDPage = Nothing
 
-                    Dim items As ICollection(Of PdfItem) = xObjects.Elements.Values
+        Dim pdfPoint As AcroPoint = New AcroPoint()
+        Dim pdfrect As AcroRect = New AcroRect()
 
-                    For Each item As PdfReference In items
-                        If Not IsNothing(item) Then
-                            Dim xObject As PdfDictionary = item.Value
-                            If Not IsNothing(xObject) Then
-                                If xObject.Elements.GetString("/Subtype") = "/Image" Then
-                                    Dim fs As FileStream = New FileStream(String.Format(File.Directory.FullName + "\Image{0}.JPG", count), FileMode.Create, FileAccess.Write)
-                                    Dim bw As BinaryWriter = New BinaryWriter(fs)
+        doc.Open(Pdf.FullName)
 
-                                    Dim teste As PdfDictionary.PdfStream = xObject.Stream
+        For index As Integer = 0 To doc.GetNumPages() - 1
+            pdfPage = CType(doc.AcquirePage(index), CAcroPDPage)
+            pdfPoint = CType(pdfPage.GetSize(), CAcroPoint)
+            pdfrect.Left = 0
+            pdfrect.right = pdfPoint.x
+            pdfrect.Top = 0
+            pdfrect.bottom = pdfPoint.y
 
-                                    bw.Write(xObject.Stream.UnfilteredValue)
-                                    bw.Close()
-                                    count = count + 1
-                                End If
-                            End If
-                        End If
-                    Next
-                End If
-            End If
+            pdfPage.CopyToClipboard(pdfrect, 0, 0, 100)
+            ExtractImagesFromPdf.Add(index, New MagickImage(Clipboard.GetImage()))
         Next
-    End Sub
+    End Function
 End Class

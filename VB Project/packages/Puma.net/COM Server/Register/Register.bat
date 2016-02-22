@@ -1,1 +1,0 @@
-regsvr32 ..\apuma.dll

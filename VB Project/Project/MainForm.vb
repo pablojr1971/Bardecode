@@ -5,8 +5,9 @@ Imports PdfSharp.Pdf
 Imports PdfSharp.Pdf.Advanced
 Imports PdfSharp.Pdf.IO
 Imports PdfSharp.Drawing
-Imports Acrobat
-Imports ImageMagick
+Imports Ghostscript.NET.Rasterizer
+Imports Clock.Pdf
+Imports Clock.Hocr
 
 Public Class MainForm
     Private Profile As ProfileSettings
@@ -30,8 +31,7 @@ Public Class MainForm
     Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
         'Me.Profile = New ProfileSettings(New FileInfo(ProfileText.Text))
 
-        ' OCR tests
-        Me.TestOCR()
+        Me.CreateOCRedDocument(New FileInfo(ProfileText.Text))
 
         ' exiting because I'm just testing the OCR
         Exit Sub
@@ -98,62 +98,56 @@ Public Class MainForm
 
     End Function
 
-    Private Sub doBlur(ByVal imag As Bitmap, ByVal szBlurSize As Size, blnAlphaEdges As Boolean)
+    Private Sub CreateOCRedDocument(file As FileInfo)
+        Dim htmlfile As FileStream
+        Dim hdoc As hDocument = New hDocument
+        Dim Pages As Dictionary(Of Bitmap, String) = Me.GetOCRedPages(file)
 
-        Dim Y As Integer 'Y
-        Dim X As Integer 'X
+        Dim pdfset As PDFSettings = New PDFSettings()
+        pdfset.ImageType = PdfImageType.Tif
+        pdfset.ImageQuality = 100
+        pdfset.Dpi = 200
+        pdfset.PdfOcrMode = Clock.Util.OcrMode.Tesseract
+        pdfset.WriteTextMode = WriteTextMode.Word
 
-        'Loop Through Image
-        For Y = 0 To imag.Height - 1
-            For X = 0 To imag.Width - 1
+        Dim pdfCreator As PdfCreator = New PdfCreator(pdfset, Replace(file.FullName, ".pdf", "_OCR.pdf"))
 
-                If Not blnAlphaEdges Then 'AlphaEdges Not Chosen 
-                    imag.SetPixel(X, Y, Me.ColourAvg(szBlurSize, imag.PhysicalDimension, X, Y, imag)) 'Do Blur
-
-                ElseIf imag.GetPixel(X, Y).A <> 255 Then 'Alpha Is Not Set To 255 
-                    imag.SetPixel(X, Y, Me.ColourAvg(szBlurSize, imag.PhysicalDimension, X, Y, imag)) 'Do Blur
-
-                End If
-            Next
-        Next
-    End Sub
-
-    Private Sub TestOCR()
-
-        ' pdf file to be processed
-        Dim fil As FileInfo = New FileInfo("C:\VB_Projects\samples\FHH000269_Finance_Insurance Claims_PL 006_28-11-2002.pdf")
-        Dim Dir As DirectoryInfo = fil.Directory
-
-        Dim index As Integer = 0
-        ' tesseract laguage pack (tessdata folder with eng.traineddata file)
-        Dim tes As Tesseract.TesseractEngine = New Tesseract.TesseractEngine("C:\Repository\Bardecode\VB Project\Project\bin\Debug\tessdata", "eng")
-        ' seting whitelist to avoid weird characters on final text
-        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-")
-
-        For Each item As KeyValuePair(Of Integer, MagickImage) In Me.ExtractImagesFromPdf(fil, Dir)
-
-            ' usgin image 24, page 24 of pdf, testing with just this one image
-            '          If item.Key = 24 Then
-            ' increasing image dpi because tesseract didn't work well with low dpi images
-
-            item.Value.Resample(180, 180) ' adjusting to 150 dpi
-            item.Value.ReduceNoise()
-            item.Value.Posterize(2)
-            With tes.Process(item.Value.ToBitmap)
-                '.Image.Save(Dir.FullName + "\image24.bmp", Tesseract.ImageFormat.Bmp)
-                Dim fl As System.IO.StreamWriter = New StreamWriter(String.Format(Dir.FullName + "\page{0}.html", index))
-                fl.Write(.GetHOCRText(0))
-                fl.Close()
-                fl.Dispose()
+        For Each page As KeyValuePair(Of Bitmap, String) In Pages
+            htmlfile = New FileStream(file.Directory.FullName + "\_temp.html", FileMode.Create, FileAccess.Write)
+            With New StreamWriter(htmlfile)
+                .Write(page.Value)
+                .Close()
                 .Dispose()
-                index = index + 1
             End With
-            '          End If
+            hdoc.AddFile(htmlfile.Name)
+            pdfCreator.AddPage(hdoc.Pages(hdoc.Pages.Count - 1), page.Key)
+            htmlfile.Dispose()
+            My.Computer.FileSystem.DeleteFile(file.Directory.FullName + "\_temp.html")
         Next
 
-        tes.Dispose()
+        pdfCreator.SaveAndClose()
+        pdfCreator.Dispose()
         MessageBox.Show("Done")
     End Sub
+
+
+    Private Function GetOCRedPages(File As FileInfo) As Dictionary(Of Bitmap, String)
+        GetOCRedPages = New Dictionary(Of Bitmap, String)
+
+        Dim a As String = ""
+        Dim tes As Tesseract.TesseractEngine = New Tesseract.TesseractEngine(Application.StartupPath + "\tessdata", "eng")
+        ' seting whitelist to avoid weird characters on final text
+        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
+        For Each item As Bitmap In Me.ExtractImagesFromPdf(File, File.Directory)
+            a = a + item.Size.ToString + vbCrLf
+            With tes.Process(item)
+                GetOCRedPages.Add(item, .GetHOCRText(0))
+                .Dispose()
+            End With
+        Next
+        MessageBox.Show(a)
+        tes.Dispose()
+    End Function
 
     Private Sub ChangeBardecodeProcessingFolder(Folder As DirectoryInfo, FolderType As FolderType)
         ' check the type of the folder that are being processed and create the IniFile object according with it
@@ -290,31 +284,13 @@ Public Class MainForm
         Doc.Dispose()
     End Sub
 
-    Private Function ExtractImagesFromPdf(Pdf As FileInfo, OutputFolder As DirectoryInfo) As Dictionary(Of Integer, MagickImage)
-        ' this method will return a list of images from each page of the PDF received
-        ' Using dictionary as list type because I can put the page number as a key, so if I want just page number x latre I can get by this key
+    Public Function ExtractImagesFromPdf(Pdf As FileInfo, OutputFolder As DirectoryInfo) As List(Of Bitmap)
+        ExtractImagesFromPdf = New List(Of Bitmap)
 
-        ExtractImagesFromPdf = New Dictionary(Of Integer, MagickImage)
-
-        ' using adobe acrobat library to capture an image from each page
-        Dim doc As AcroPDDoc = New AcroPDDoc()
-        Dim pdfPage As AcroPDPage = Nothing
-
-        Dim pdfPoint As AcroPoint = New AcroPoint()
-        Dim pdfrect As AcroRect = New AcroRect()
-
-        doc.Open(Pdf.FullName)
-
-        For index As Integer = 0 To doc.GetNumPages() - 1
-            pdfPage = CType(doc.AcquirePage(index), CAcroPDPage)
-            pdfPoint = CType(pdfPage.GetSize(), CAcroPoint)
-            pdfrect.Left = 0
-            pdfrect.right = pdfPoint.x
-            pdfrect.Top = 0
-            pdfrect.bottom = pdfPoint.y
-
-            pdfPage.CopyToClipboard(pdfrect, 0, 0, 100)
-            ExtractImagesFromPdf.Add(index, New MagickImage(Clipboard.GetImage()))
-        Next
+        Dim rasterizer = New GhostscriptRasterizer()
+        rasterizer.Open(Pdf.FullName)
+        For index As Integer = 1 To rasterizer.PageCount
+            ExtractImagesFromPdf.Add(rasterizer.GetPage(200, 200, index))
+        Next()
     End Function
 End Class

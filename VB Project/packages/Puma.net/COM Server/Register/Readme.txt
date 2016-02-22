@@ -1,1 +1,0 @@
-Use .bat files to manually register or unregister the COM server situated in the root directory.

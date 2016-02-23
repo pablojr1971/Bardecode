@@ -86,20 +86,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\PropertiesBardecode.vb" />
-    <Compile Include="Classes\PropertiesOCR.vb" />
-    <Compile Include="Classes\StepBardecode.vb" />
-    <Compile Include="Classes\StepOCR.vb" />
-    <Compile Include="Enums\StepType.vb" />
-    <Compile Include="Interfaces and Abstract Classes\IStep.vb" />
-    <Compile Include="Interfaces and Abstract Classes\IProperties.vb" />
-    <Compile Include="Enums\FileSize.vb" />
-    <Compile Include="Classes\ProfileSettings.vb" />
-    <Compile Include="Classes\IniFile.vb" />
-    <Compile Include="Forms\MainForm.vb">
+    <Compile Include="ProfileSettings.vb" />
+    <Compile Include="IniFile.vb" />
+    <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.vb">
+    <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -120,7 +112,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

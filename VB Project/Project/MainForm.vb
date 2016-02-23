@@ -12,8 +12,8 @@ Imports Clock.Hocr
 Public Class MainForm
     Private Profile As ProfileSettings
 
-    Private Folders As List(Of DirectoryInfo) = New List(Of DirectoryInfo)()
-    Private Files As List(Of FileInfo) = New List(Of FileInfo)()
+    Private Folders As Collection = New Collection()
+    Private Files As Collection = New Collection()
 
     Enum LogType
         Begin
@@ -28,16 +28,12 @@ Public Class MainForm
         Drawing
     End Enum
 
-    Sub test(path As String)
-        Dim teste As StepOCR = New StepOCR()
-        teste.RunFile(New FileInfo(path))
-        teste.dispose()
-    End Sub
-
     Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
+        'Me.Profile = New ProfileSettings(New FileInfo(ProfileText.Text))
 
-        Me.test(ProfileText.Text)
+        Me.CreateOCRedDocument(New FileInfo(ProfileText.Text))
 
+        ' exiting because I'm just testing the OCR
         Exit Sub
 
         Me.Log(LogType.Begin, "")
@@ -58,6 +54,100 @@ Public Class MainForm
 
         Me.Log(LogType.Done, "")
     End Sub
+
+    Private Function ColourAvg(ByVal szAvgSize As Size, ByVal szfImageSize As SizeF, ByVal intX As Integer, ByVal intY As Integer, imag As Bitmap) As Color
+
+        Dim arrlPixels As New ArrayList 'Host All Pixels
+
+        Dim x As Integer 'X Location
+        Dim y As Integer 'Y Location
+
+        'Find Each Pixel's Colour And Add To ArrayList
+        For x = intX - CInt(szAvgSize.Width / 2) To intX + CInt(szAvgSize.Width / 2) 'Left To Right
+
+            For y = intY - CInt(szAvgSize.Height / 2) To intY + CInt(szAvgSize.Height / 2) 'Up To Down
+
+                If (x > 0 And x < szfImageSize.Width) And (y > 0 And y < szfImageSize.Height) Then 'If Not Out Of Bounds
+                    arrlPixels.Add(imag.GetPixel(x, y)) 'Add To ArrayList
+
+                End If
+
+            Next
+
+        Next
+
+        Dim clrCurrColour As Color 'Current Colour
+
+        Dim intAlpha As Integer = 0 'Alpha Channel
+        Dim intRed As Integer = 0 'Red Channel
+        Dim intGreen As Integer = 0 'Green Channel
+        Dim intBlue As Integer = 0 'Blue Channel
+
+        For Each clrCurrColour In arrlPixels 'Loop Through Each Colour
+
+            'Store Each Colour
+            intAlpha += clrCurrColour.A
+            intRed += clrCurrColour.R
+            intGreen += clrCurrColour.G
+            intBlue += clrCurrColour.B
+
+        Next
+
+        ' Return Average A, R, G, B  
+        Return Color.FromArgb(intAlpha / arrlPixels.Count, intRed / arrlPixels.Count, intGreen / arrlPixels.Count, intBlue / arrlPixels.Count)
+
+    End Function
+
+    Private Sub CreateOCRedDocument(file As FileInfo)
+        Dim htmlfile As FileStream
+        Dim hdoc As hDocument = New hDocument
+        Dim Pages As Dictionary(Of Bitmap, String) = Me.GetOCRedPages(file)
+
+        Dim pdfset As PDFSettings = New PDFSettings()
+        pdfset.ImageType = PdfImageType.Tif
+        pdfset.ImageQuality = 100
+        pdfset.Dpi = 200
+        pdfset.PdfOcrMode = Clock.Util.OcrMode.Tesseract
+        pdfset.WriteTextMode = WriteTextMode.Word
+
+        Dim pdfCreator As PdfCreator = New PdfCreator(pdfset, Replace(file.FullName, ".pdf", "_OCR.pdf"))
+
+        For Each page As KeyValuePair(Of Bitmap, String) In Pages
+            htmlfile = New FileStream(file.Directory.FullName + "\_temp.html", FileMode.Create, FileAccess.Write)
+            With New StreamWriter(htmlfile)
+                .Write(page.Value)
+                .Close()
+                .Dispose()
+            End With
+            hdoc.AddFile(htmlfile.Name)
+            pdfCreator.AddPage(hdoc.Pages(hdoc.Pages.Count - 1), page.Key)
+            htmlfile.Dispose()
+            My.Computer.FileSystem.DeleteFile(file.Directory.FullName + "\_temp.html")
+        Next
+
+        pdfCreator.SaveAndClose()
+        pdfCreator.Dispose()
+        MessageBox.Show("Done")
+    End Sub
+
+
+    Private Function GetOCRedPages(File As FileInfo) As Dictionary(Of Bitmap, String)
+        GetOCRedPages = New Dictionary(Of Bitmap, String)
+
+        Dim a As String = ""
+        Dim tes As Tesseract.TesseractEngine = New Tesseract.TesseractEngine(Application.StartupPath + "\tessdata", "eng")
+        ' seting whitelist to avoid weird characters on final text
+        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
+        For Each item As Bitmap In Me.ExtractImagesFromPdf(File, File.Directory)
+            a = a + item.Size.ToString + vbCrLf
+            With tes.Process(item)
+                GetOCRedPages.Add(item, .GetHOCRText(0))
+                .Dispose()
+            End With
+        Next
+        MessageBox.Show(a)
+        tes.Dispose()
+    End Function
 
     Private Sub ChangeBardecodeProcessingFolder(Folder As DirectoryInfo, FolderType As FolderType)
         ' check the type of the folder that are being processed and create the IniFile object according with it
@@ -194,4 +284,13 @@ Public Class MainForm
         Doc.Dispose()
     End Sub
 
+    Public Function ExtractImagesFromPdf(Pdf As FileInfo, OutputFolder As DirectoryInfo) As List(Of Bitmap)
+        ExtractImagesFromPdf = New List(Of Bitmap)
+
+        Dim rasterizer = New GhostscriptRasterizer()
+        rasterizer.Open(Pdf.FullName)
+        For index As Integer = 1 To rasterizer.PageCount
+            ExtractImagesFromPdf.Add(rasterizer.GetPage(200, 200, index))
+        Next()
+    End Function
 End Class

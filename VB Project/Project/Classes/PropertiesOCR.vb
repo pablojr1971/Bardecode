@@ -2,9 +2,7 @@
 Imports System.Collections
 Imports System.Drawing.Imaging
 
-Public Class PropertiesOCR
-    Implements IProperties
-
+Public Structure PropertiesOCR
     Property OutputDirectory As DirectoryInfo
     Property SaveHtmlFiles As Boolean
     Property SaveImageFiles As Boolean
@@ -14,13 +12,7 @@ Public Class PropertiesOCR
     Property TesseractData As String
     Property TesseractLanguage As String
 
-    Sub New()
-        Me.ReadProperties()
-    End Sub
-
-    Public Sub ReadProperties() Implements IProperties.ReadProperties
-        ' Implement read Properties if don't have a place where to read set the standard properties
-        ' false because it will be a condition when implement readproperties
+    Public Sub SetDefaultValues()
         If False Then
 
         Else
@@ -34,9 +26,5 @@ Public Class PropertiesOCR
             Me.TesseractLanguage = "eng"
         End If
     End Sub
-
-    Public Sub SaveProperties() Implements IProperties.SaveProperties
-
-    End Sub
-End Class
+End Structure
 

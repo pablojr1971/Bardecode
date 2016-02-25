@@ -87,12 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\PropertiesBardecode.vb" />
+    <Compile Include="Classes\PropertiesCSVIndexing.vb" />
+    <Compile Include="Classes\PropertiesImgsToPDF.vb" />
     <Compile Include="Classes\PropertiesOCR.vb" />
     <Compile Include="Classes\StepBardecode.vb" />
+    <Compile Include="Classes\StepCSVIndexing.vb" />
+    <Compile Include="Classes\StepImgsToPDF.vb" />
     <Compile Include="Classes\StepOCR.vb" />
+    <Compile Include="Enums\BarcodeType.vb" />
     <Compile Include="Enums\StepType.vb" />
     <Compile Include="Interfaces and Abstract Classes\IStep.vb" />
-    <Compile Include="Interfaces and Abstract Classes\IProperties.vb" />
     <Compile Include="Enums\FileSize.vb" />
     <Compile Include="Classes\ProfileSettings.vb" />
     <Compile Include="Classes\IniFile.vb" />

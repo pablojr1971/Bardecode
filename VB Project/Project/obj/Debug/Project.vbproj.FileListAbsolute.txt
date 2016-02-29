@@ -54,3 +54,7 @@ C:\Repository\Bardecode\VB Project\Project\'\hOcr2Pdf.dll
 C:\Repository\Bardecode\VB Project\Project\'\itextsharp.dll
 C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.dll
 C:\Repository\Bardecode\VB Project\Project\'\hOcr2Pdf.pdb
+C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.dll
+C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.SqlServer.dll
+C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.xml
+C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.SqlServer.xml

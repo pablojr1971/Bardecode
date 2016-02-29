@@ -49,6 +49,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ghostscript.NET, Version=1.2.0.0, Culture=neutral, PublicKeyToken=f85051de34525b59, processorArchitecture=MSIL">
       <HintPath>..\packages\Ghostscript.NET.1.2.0\lib\net40\Ghostscript.NET.dll</HintPath>
       <Private>True</Private>
@@ -60,9 +68,13 @@
       <HintPath>PDFsharp\GDI+\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -86,6 +98,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Process.vb" />
     <Compile Include="Classes\PropertiesBardecode.vb" />
     <Compile Include="Classes\PropertiesCSVIndexing.vb" />
     <Compile Include="Classes\PropertiesImgsToPDF.vb" />
@@ -94,8 +107,18 @@
     <Compile Include="Classes\StepCSVIndexing.vb" />
     <Compile Include="Classes\StepImgsToPDF.vb" />
     <Compile Include="Classes\StepOCR.vb" />
+    <Compile Include="Classes\XMLSerializer.vb" />
     <Compile Include="Enums\BarcodeType.vb" />
     <Compile Include="Enums\StepType.vb" />
+    <Compile Include="EProcess.vb">
+      <DependentUpon>VBProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EStep.vb">
+      <DependentUpon>VBProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EStepType.vb">
+      <DependentUpon>VBProject.tt</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces and Abstract Classes\IStep.vb" />
     <Compile Include="Enums\FileSize.vb" />
     <Compile Include="Classes\ProfileSettings.vb" />
@@ -122,6 +145,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="VBProject.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VBProject.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VBProject.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VBProject.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="VBProject.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VBProject.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\MainForm.resx">
@@ -146,6 +184,23 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="VBProject.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VBProject.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VBProject.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VBProject.edmx</DependentUpon>
+      <LastGenOutput>VBProject.Context.vb</LastGenOutput>
+    </None>
+    <None Include="VBProject.edmx.diagram">
+      <DependentUpon>VBProject.edmx</DependentUpon>
+    </None>
+    <None Include="VBProject.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VBProject.edmx</DependentUpon>
+      <LastGenOutput>VBProject.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="x64\liblept172.dll">
@@ -160,6 +215,9 @@
     <Content Include="x86\libtesseract304.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

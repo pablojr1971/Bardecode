@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VBProjectModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ProcessEntities" EntityType="VBProjectModel.ProcessEntity" />
+    <EntitySet Name="StepEntities" EntityType="VBProjectModel.StepEntity" />
+    <EntitySet Name="StepTypeEntities" EntityType="VBProjectModel.StepTypeEntity" />
+    <AssociationSet Name="FK__Steps__Process__0F975522" Association="VBProjectModel.FK__Steps__Process__0F975522">
+      <End Role="Processes" EntitySet="ProcessEntities" />
+      <End Role="Steps" EntitySet="StepEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Steps__type__108B795B" Association="VBProjectModel.FK__Steps__type__108B795B">
+      <End Role="StepType" EntitySet="StepTypeEntities" />
+      <End Role="Steps" EntitySet="StepEntities" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ProcessEntity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Processes" ToRole="Steps" />
+  </EntityType>
+  <EntityType Name="StepEntity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Process" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="RunOrder" Type="Int32" Nullable="false" />
+    <Property Name="PropertiesObj" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Process1" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Steps" ToRole="Processes" />
+    <NavigationProperty Name="StepType" Relationship="VBProjectModel.FK__Steps__type__108B795B" FromRole="Steps" ToRole="StepType" />
+  </EntityType>
+  <EntityType Name="StepTypeEntity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__type__108B795B" FromRole="StepType" ToRole="Steps" />
+  </EntityType>
+  <Association Name="FK__Steps__Process__0F975522">
+    <End Role="Processes" Type="VBProjectModel.ProcessEntity" Multiplicity="1" />
+    <End Role="Steps" Type="VBProjectModel.StepEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Processes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Steps">
+        <PropertyRef Name="Process" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Steps__type__108B795B">
+    <End Role="StepType" Type="VBProjectModel.StepTypeEntity" Multiplicity="1" />
+    <End Role="Steps" Type="VBProjectModel.StepEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StepType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Steps">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

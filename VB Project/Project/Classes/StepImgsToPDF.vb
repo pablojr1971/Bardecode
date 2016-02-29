@@ -86,14 +86,14 @@ Public Class StepImgsToPDF
                 Me.Gfx.DrawImage(Me.XImg, Me.GfxPoint)
 
                 If Me.ImgsToPDFProperties.MergeOutput = MergeOutputType.FilePerFile Then
-                    Me.Doc.Save(ImgsToPDFProperties.Outputfolder.FullName + "\" + Replace(File.Name, File.Extension, ".pdf"))
+                    Me.Doc.Save(Me.ImgsToPDFProperties.Outputfolder.FullName + "\" + Replace(File.Name, File.Extension, ".pdf"))
                     Me.Doc.Dispose()
                 End If
             End If
         Next
 
         If Me.ImgsToPDFProperties.MergeOutput = MergeOutputType.FilePerFolder Then
-            Me.Doc.Save(ImgsToPDFProperties.Outputfolder.FullName + "\" + ImgsToPDFProperties.OutputName)
+            Me.Doc.Save(Me.ImgsToPDFProperties.Outputfolder.FullName + "\" + Me.ImgsToPDFProperties.OutputName)
             Me.Doc.Dispose()
         End If
     End Sub

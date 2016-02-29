@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VBProjectModelStoreContainer">
+    <EntitySet Name="Processes" EntityType="VBProjectModel.Store.Processes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Steps" EntityType="VBProjectModel.Store.Steps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StepType" EntityType="VBProjectModel.Store.StepType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Steps__Process__0F975522" Association="VBProjectModel.Store.FK__Steps__Process__0F975522">
+      <End Role="Processes" EntitySet="Processes" />
+      <End Role="Steps" EntitySet="Steps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Steps__type__108B795B" Association="VBProjectModel.Store.FK__Steps__type__108B795B">
+      <End Role="StepType" EntitySet="StepType" />
+      <End Role="Steps" EntitySet="Steps" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Processes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Steps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Process" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="RunOrder" Type="int" Nullable="false" />
+    <Property Name="PropertiesObj" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="StepType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Steps__Process__0F975522">
+    <End Role="Processes" Type="VBProjectModel.Store.Processes" Multiplicity="1" />
+    <End Role="Steps" Type="VBProjectModel.Store.Steps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Processes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Steps">
+        <PropertyRef Name="Process" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Steps__type__108B795B">
+    <End Role="StepType" Type="VBProjectModel.Store.StepType" Multiplicity="1" />
+    <End Role="Steps" Type="VBProjectModel.Store.Steps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StepType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Steps">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

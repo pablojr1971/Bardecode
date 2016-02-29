@@ -7,8 +7,9 @@ Imports Clock.Hocr
 Public Class StepOCR
     Implements IStep
 
+    Private tes As Tesseract.TesseractEngine
     Public OCRProperties As PropertiesOCR
-    Public ReadOnly Property Type As StepType Implements IStep.Type
+    Public ReadOnly Property Type As Project.StepType Implements IStep.Type
         Get
             Return StepType.OCR
         End Get
@@ -16,6 +17,9 @@ Public Class StepOCR
 
     Sub New()
         Me.OCRProperties = New PropertiesOCR()
+        Me.OCRProperties.SetDefaultValues()
+        Me.tes = New Tesseract.TesseractEngine(Me.OCRProperties.TesseractData, Me.OCRProperties.TesseractLanguage)
+        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
     End Sub
 
     Public Sub RunFile(File As FileInfo) Implements IStep.RunFile
@@ -24,13 +28,14 @@ Public Class StepOCR
         Dim index As Integer = 0
 
         Dim pdfset As PDFSettings = New PDFSettings()
-        pdfset.ImageType = PdfImageType.Tif
+        pdfset.ImageType = PdfImageType.Jpg
         pdfset.ImageQuality = 100
         pdfset.Dpi = 200
         pdfset.PdfOcrMode = Clock.Util.OcrMode.Tesseract
-        pdfset.WriteTextMode = WriteTextMode.Word
+        pdfset.WriteTextMode = WriteTextMode.Line
+        pdfset.Language = "eng"
 
-        Dim pdfCreator As PdfCreator = New PdfCreator(pdfset, Me.OCRProperties.OutputDirectory.FullName + "\" + Replace(File.Name, ".pdf", Me.OCRProperties.OutputNameTemplate))
+        Dim pdfCreator As PdfCreator = New PdfCreator(pdfset, Replace(File.FullName, ".pdf", Me.OCRProperties.OutputNameTemplate))
 
         For Each page As KeyValuePair(Of Bitmap, String) In Me.GetOCRedPages(File)
             htmlfile = New FileStream(String.Format(Me.OCRProperties.OutputDirectory.FullName + "\page{0}.html", index), FileMode.Create, FileAccess.Write)
@@ -56,13 +61,9 @@ Public Class StepOCR
     Private Function GetOCRedPages(File As FileInfo) As Dictionary(Of Bitmap, String)
         GetOCRedPages = New Dictionary(Of Bitmap, String)
         Dim index As Integer
-
-        Dim tes As Tesseract.TesseractEngine = New Tesseract.TesseractEngine(Me.OCRProperties.TesseractData, Me.OCRProperties.TesseractLanguage)
-        ' seting whitelist to avoid weird characters on final text
-        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
         For Each item As Bitmap In Me.ExtractImagesFromPdf(File, File.Directory)
             With tes.Process(item)
-                GetOCRedPages.Add(item, .GetHOCRText(0))
+                GetOCRedPages.Add(item, .GetHOCRText(0, True))
                 .Dispose()
             End With
             If Me.OCRProperties.SaveImageFiles Then
@@ -70,8 +71,6 @@ Public Class StepOCR
                 index = index + 1
             End If
         Next
-        tes.Dispose()
-        GC.Collect()
     End Function
 
     Private Function ExtractImagesFromPdf(Pdf As FileInfo, OutputFolder As DirectoryInfo) As List(Of Bitmap)
@@ -86,10 +85,21 @@ Public Class StepOCR
     End Function
 
     Public Sub RunFiles(Files As List(Of FileInfo)) Implements IStep.RunFiles
-
+        For Each File In Files
+            Me.RunFile(File)
+        Next
     End Sub
 
     Public Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String) Implements IStep.RunFolder
+        If RunSubFolders Then
+            For Each subfolder In IIf(SearchPattern = "", Folder.GetDirectories(), Folder.GetDirectories(SearchPattern))
+                ' recursive method to run all folders till the most specific one where we will have only files and then goes out to run the files of that folder
+                RunFolder(subfolder, RunSubFolders, SearchPattern)
+            Next
+        End If
 
+        For Each File In IIf(SearchPattern = "", Folder.GetFiles("*.pdf"), Folder.GetFiles(SearchPattern))
+            Me.RunFile(File)
+        Next
     End Sub
 End Class

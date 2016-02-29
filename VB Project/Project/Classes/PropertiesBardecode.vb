@@ -3,7 +3,6 @@
 Public Structure PropertiesBardecode
 
     '[Bardecode]
-    Dim IniFilePath As String
     Dim BardecodeExe As String
 
     '[Folders and FileName]
@@ -31,10 +30,11 @@ Public Structure PropertiesBardecode
     Dim WhitelistChar As String
 
     Sub SetDefaultvalues()
-        Me.InputFolder = Application.ExecutablePath()
-        Me.OutputFolder = Application.ExecutablePath()
-        Me.ExceptionFolder = Application.ExecutablePath()
-        Me.ProcessedFolder = Application.ExecutablePath()
+        Me.BardecodeExe = "C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe"
+        Me.InputFolder = Directory.GetCurrentDirectory()
+        Me.OutputFolder = Directory.GetCurrentDirectory()
+        Me.ExceptionFolder = Directory.GetCurrentDirectory()
+        Me.ProcessedFolder = Directory.GetCurrentDirectory()
         Me.FileNamePattern = ""
         Me.OutputNameTemplate = "%VALUES_%SEQ3"
         Me.BarcodeTypes = New List(Of BarcodeType) From {BarcodeType.Code_128, BarcodeType.Code_2_of_5, BarcodeType.Code_3_of_9}

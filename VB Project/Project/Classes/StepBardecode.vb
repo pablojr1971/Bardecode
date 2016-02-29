@@ -6,9 +6,9 @@ Public Class StepBardecode
     Private BardecodeProcessInfo As ProcessStartInfo
     Public BardecodeProperties As PropertiesBardecode
 
-    Public ReadOnly Property Type As StepType Implements IStep.Type
+    Public ReadOnly Property Type As Project.StepType Implements IStep.Type
         Get
-            Return StepType.Bardecode
+            Return Project.StepType.Bardecode
         End Get
     End Property
 
@@ -31,7 +31,7 @@ Public Class StepBardecode
     Public Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String) Implements IStep.RunFolder
         SetBardecodeProperties()
         If RunSubFolders Then
-            For Each Subfolder In Folder.GetDirectories(SearchPattern)
+            For Each Subfolder In IIf(SearchPattern = "", Folder.GetDirectories(), Folder.GetDirectories(SearchPattern))
                 Me.ChangeInputPath(Subfolder.FullName)
                 Me.StartBardecodeProcess()
             Next
@@ -44,10 +44,11 @@ Public Class StepBardecode
     Public Sub StartBardecodeProcess()
         Me.BardecodeProcessInfo = New ProcessStartInfo()
         Me.BardecodeProcessInfo.FileName = Me.BardecodeProperties.BardecodeExe
-        Me.BardecodeProcessInfo.Arguments = Me.BardecodeProperties.IniFilePath
+        Me.BardecodeProcessInfo.Arguments = "BardecodeIni.ini"
         Me.BardecodeProcessInfo.UseShellExecute = True
         Me.BardecodeProcessInfo.WindowStyle = ProcessWindowStyle.Normal
-        With Process.Start(Me.BardecodeProcessInfo)
+
+        With System.Diagnostics.Process.Start(Me.BardecodeProcessInfo)
             .WaitForExit()
             .Close()
             .Dispose()
@@ -60,13 +61,13 @@ Public Class StepBardecode
         ' will have to modify the inifiles each time that i run bardecode passing just the subfolders and not the whole input folder of the boxes
 
         ' check the type of the folder that are being processed and create the IniFile object according with it
-        Dim BardecodeIni As IniFile = New IniFile(Me.BardecodeProperties.IniFilePath)
+        Dim BardecodeIni As IniFile = New IniFile(Directory.GetCurrentDirectory() + "\BardecodeIni.ini")
 
         'Folders and files
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Me.BardecodeProperties.InputFolder)
         BardecodeIni.WriteValue("options", "outputFolder", "System.String," + Me.BardecodeProperties.OutputFolder)
         BardecodeIni.WriteValue("options", "exceptionFolder", "System.String," + Me.BardecodeProperties.ExceptionFolder)
-        BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Me.BardecodeProperties.OutputFolder)
+        BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Me.BardecodeProperties.OutputNameTemplate)
         BardecodeIni.WriteValue("options", "FilePattern", "System.String," + Me.BardecodeProperties.FileNamePattern)
         BardecodeIni.WriteValue("options", "ProcessSubFolders", "System.Boolean," + Me.BardecodeProperties.ProcessSubFolders.ToString())
         BardecodeIni.WriteValue("options", "SubFolderPattern", "System.String," + Me.BardecodeProperties.SubFolderPattern)
@@ -95,7 +96,7 @@ Public Class StepBardecode
         ' this method will be invoked just through the loop to change the input folder of the bardecode inifile configuration
         ' we need to process just one folder at time so thats the reason why we need to change the input folder on the inifile on the go
 
-        Dim BardecodeIni As IniFile = New IniFile(Me.BardecodeProperties.IniFilePath)
+        Dim BardecodeIni As IniFile = New IniFile(Directory.GetCurrentDirectory() + "\BardecodeIni.ini")
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Path)
     End Sub
 End Class

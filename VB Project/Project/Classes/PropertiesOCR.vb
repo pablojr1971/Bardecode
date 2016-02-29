@@ -17,12 +17,12 @@ Public Structure PropertiesOCR
 
         Else
             Me.SaveHtmlFiles = False
-            Me.SaveImageFiles = True
+            Me.SaveImageFiles = False
             Me.SaveImageFormat = ImageFormat.Tiff
             Me.ImageDPI = 200
             Me.OutputNameTemplate = "_OCR.pdf"
-            Me.OutputDirectory = New DirectoryInfo(Application.StartupPath)
-            Me.TesseractData = Application.StartupPath + "\tessdata"
+            Me.OutputDirectory = New DirectoryInfo(Directory.GetCurrentDirectory())
+            Me.TesseractData = Directory.GetCurrentDirectory() + "\tessdata"
             Me.TesseractLanguage = "eng"
         End If
     End Sub

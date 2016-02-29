@@ -20,6 +20,25 @@ Public Class MainForm
     End Enum
 
     Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
+        ' test the bardecode step class
+
+        Dim bardecode As New StepBardecode()
+        With bardecode.BardecodeProperties
+            .BarcodeTypes.AddRange({BarcodeType.Code_128, BarcodeType.Code_2_of_5, BarcodeType.Code_3_of_9})
+            .InputFolder = "c:\vb_projects\box19268\docasscanned"
+            .MinimumBarcodeSize = 4
+            .MaximumBarcodeSize = 99
+            .OutputFolder = "c:\vb_projects\box19268\test"
+            .BarcodePattern = "^(sut)[0-9]{6}$"
+        End With
+
+        bardecode.RunFolder(New DirectoryInfo("c:\vb_projects\box19268\docasscanned"), True, "")
+        MessageBox.Show("done bardecode")
+
+        Dim OCR As StepOCR = New StepOCR()
+        OCR.RunFolder(New DirectoryInfo("C:\VB_Projects\Box19268\test"), True, "")
+
+        MessageBox.Show("OCR Done")
 
         Exit Sub
 

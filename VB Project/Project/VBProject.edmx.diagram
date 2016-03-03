@@ -6,10 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="54cac0cbf7d047c2967f0474ee25a01f" Name="Diagram1">
         <EntityTypeShape EntityType="VBProjectModel.EProcess" Width="1.5" PointX="0.875" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="VBProjectModel.EStep" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="VBProjectModel.EStepType" Width="1.5" PointX="5.125" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="VBProjectModel.FK__Steps__Process__0F975522" ManuallyRouted="false" />
-        <AssociationConnector Association="VBProjectModel.FK__Steps__type__108B795B" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VBProjectModel.EStep" Width="1.5" PointX="3.125" PointY="1" />
+        <AssociationConnector Association="VBProjectModel.FK__Steps__Process__0F975522" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,17 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="VBProjectModelStoreContainer">
           <EntitySet Name="Processes" EntityType="VBProjectModel.Store.Processes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Steps" EntityType="VBProjectModel.Store.Steps" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="StepType" EntityType="VBProjectModel.Store.StepType" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK__Steps__Process__0F975522" Association="VBProjectModel.Store.FK__Steps__Process__0F975522">
             <End Role="Processes" EntitySet="Processes" />
-            <End Role="Steps" EntitySet="Steps" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Steps__type__108B795B" Association="VBProjectModel.Store.FK__Steps__type__108B795B">
-            <End Role="StepType" EntitySet="StepType" />
             <End Role="Steps" EntitySet="Steps" />
           </AssociationSet>
         </EntityContainer>
@@ -23,6 +18,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Description" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
         <EntityType Name="Steps">
@@ -30,17 +26,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Process" Type="int" Nullable="false" />
-          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="Process" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="StepType" Type="int" Nullable="false" />
           <Property Name="RunOrder" Type="int" Nullable="false" />
           <Property Name="PropertiesObj" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="StepType">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Steps__Process__0F975522">
           <End Role="Processes" Type="VBProjectModel.Store.Processes" Multiplicity="1" />
@@ -54,34 +43,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Steps__type__108B795B">
-          <End Role="StepType" Type="VBProjectModel.Store.StepType" Multiplicity="1" />
-          <End Role="Steps" Type="VBProjectModel.Store.Steps" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StepType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Steps">
-              <PropertyRef Name="type" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VBProjectModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="VBProjectContext" p1:LazyLoadingEnabled="true">
           <EntitySet Name="EProcesses" EntityType="VBProjectModel.EProcess" />
           <EntitySet Name="ESteps" EntityType="VBProjectModel.EStep" />
-          <EntitySet Name="EStepTypes" EntityType="VBProjectModel.EStepType" />
           <AssociationSet Name="FK__Steps__Process__0F975522" Association="VBProjectModel.FK__Steps__Process__0F975522">
-            <End Role="Processes" EntitySet="EProcesses" />
-            <End Role="Steps" EntitySet="ESteps" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Steps__type__108B795B" Association="VBProjectModel.FK__Steps__type__108B795B">
-            <End Role="StepType" EntitySet="EStepTypes" />
-            <End Role="Steps" EntitySet="ESteps" />
+            <End Role="EProcess" EntitySet="EProcesses" />
+            <End Role="Step" EntitySet="ESteps" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="EProcess">
@@ -90,49 +61,29 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Processes" ToRole="Steps" />
+          <Property Type="String" Name="Number" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="EProcess" ToRole="Step" />
         </EntityType>
         <EntityType Name="EStep">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Process" Type="Int32" Nullable="false" />
-          <Property Name="type" Type="Int32" Nullable="false" />
-          <Property Name="RunOrder" Type="Int32" Nullable="false" />
-          <Property Name="PropertiesObj" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Process1" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Steps" ToRole="Processes" />
-          <NavigationProperty Name="StepType" Relationship="VBProjectModel.FK__Steps__type__108B795B" FromRole="Steps" ToRole="StepType" />
-        </EntityType>
-        <EntityType Name="EStepType">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__type__108B795B" FromRole="StepType" ToRole="Steps" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Process" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="StepType" Nullable="false" />
+          <Property Type="Int32" Name="RunOrder" Nullable="false" />
+          <Property Type="String" Name="PropertiesObj" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Process1" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Step" ToRole="EProcess" />
         </EntityType>
         <Association Name="FK__Steps__Process__0F975522">
-          <End Role="Processes" Type="VBProjectModel.EProcess" Multiplicity="1" />
-          <End Role="Steps" Type="VBProjectModel.EStep" Multiplicity="*" />
+          <End Type="VBProjectModel.EProcess" Role="EProcess" Multiplicity="1" />
+          <End Type="VBProjectModel.EStep" Role="Step" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Processes">
+            <Principal Role="EProcess">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Steps">
+            <Dependent Role="Step">
               <PropertyRef Name="Process" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Steps__type__108B795B">
-          <End Role="StepType" Type="VBProjectModel.EStepType" Multiplicity="1" />
-          <End Role="Steps" Type="VBProjectModel.EStep" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StepType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Steps">
-              <PropertyRef Name="type" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -145,6 +96,7 @@
           <EntitySetMapping Name="EProcesses">
             <EntityTypeMapping TypeName="VBProjectModel.EProcess">
               <MappingFragment StoreEntitySet="Processes">
+                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
@@ -153,19 +105,11 @@
           <EntitySetMapping Name="ESteps">
             <EntityTypeMapping TypeName="VBProjectModel.EStep">
               <MappingFragment StoreEntitySet="Steps">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Process" ColumnName="Process" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
                 <ScalarProperty Name="PropertiesObj" ColumnName="PropertiesObj" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EStepTypes">
-            <EntityTypeMapping TypeName="VBProjectModel.EStepType">
-              <MappingFragment StoreEntitySet="StepType">
+                <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
+                <ScalarProperty Name="StepType" ColumnName="StepType" />
+                <ScalarProperty Name="Process" ColumnName="Process" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

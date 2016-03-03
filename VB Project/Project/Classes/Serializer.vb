@@ -7,7 +7,7 @@ Imports System.Runtime.Serialization
 Imports System.Runtime.Serialization.Formatters.Binary
 
 ' Static Class
-Public NotInheritable Class XMLSerializer1
+Public NotInheritable Class Serializer
 
     Private Sub New()
         ' to prevent this classs to be instanciated
@@ -30,7 +30,7 @@ Public NotInheritable Class XMLSerializer1
 
 
     Public Shared Function ToXml(ByVal Obj As Object, ByVal ObjType As System.Type) As String
-        Dim ser As XmlSerializer = New XmlSerializer(ObjType, TargetNamespace)
+        Dim ser As XMLSerializer = New XMLSerializer(ObjType, TargetNamespace)
         Dim memStream As MemoryStream = New MemoryStream()
         Dim xmlWriter As XmlTextWriter = New XmlTextWriter(memStream, Encoding.UTF8)
         xmlWriter.Namespaces = True
@@ -46,7 +46,7 @@ Public NotInheritable Class XMLSerializer1
 
 
     Public Shared Function FromXml(ByVal Xml As String, ByVal ObjType As System.Type) As Object
-        Dim ser As XmlSerializer = New XmlSerializer(ObjType)
+        Dim ser As XMLSerializer = New XMLSerializer(ObjType)
         Dim stringReader As StringReader = New StringReader(Xml)
         Dim xmlReader As XmlTextReader = New XmlTextReader(stringReader)
         Dim obj As Object

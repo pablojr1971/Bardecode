@@ -107,7 +107,7 @@
     <Compile Include="Classes\StepCSVIndexing.vb" />
     <Compile Include="Classes\StepImgsToPDF.vb" />
     <Compile Include="Classes\StepOCR.vb" />
-    <Compile Include="Classes\XMLSerializer.vb" />
+    <Compile Include="Classes\Serializer.vb" />
     <Compile Include="Enums\BarcodeType.vb" />
     <Compile Include="Enums\StepType.vb" />
     <Compile Include="EProcess.vb">
@@ -116,18 +116,34 @@
     <Compile Include="EStep.vb">
       <DependentUpon>VBProject.tt</DependentUpon>
     </Compile>
-    <Compile Include="EStepType.vb">
-      <DependentUpon>VBProject.tt</DependentUpon>
+    <Compile Include="Forms\FrmProcesses.Designer.vb">
+      <DependentUpon>FrmProcesses.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces and Abstract Classes\IStep.vb" />
+    <Compile Include="Forms\FrmProcesses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProcessesSearch.Designer.vb">
+      <DependentUpon>FrmProcessesSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProcessesSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSteps.Designer.vb">
+      <DependentUpon>FrmSteps.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSteps.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces, Static, Abstract Classes\GlobalVariables.vb" />
+    <Compile Include="Interfaces, Static, Abstract Classes\IStep.vb" />
     <Compile Include="Enums\FileSize.vb" />
     <Compile Include="Classes\ProfileSettings.vb" />
     <Compile Include="Classes\IniFile.vb" />
-    <Compile Include="Forms\MainForm.vb">
+    <Compile Include="Forms\FrmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.vb">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <Compile Include="Forms\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -162,8 +178,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProcesses.resx">
+      <DependentUpon>FrmProcesses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProcessesSearch.resx">
+      <DependentUpon>FrmProcessesSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSteps.resx">
+      <DependentUpon>FrmSteps.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

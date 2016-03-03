@@ -24,6 +24,5 @@ Partial Public Class VBProjectContext
 
     Public Property EProcesses() As DbSet(Of EProcess)
     Public Property ESteps() As DbSet(Of EStep)
-    Public Property EStepTypes() As DbSet(Of EStepType)
 
 End Class

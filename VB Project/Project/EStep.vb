@@ -13,11 +13,10 @@ Imports System.Collections.Generic
 Partial Public Class EStep
     Public Property Id As Integer
     Public Property Process As Integer
-    Public Property type As Integer
+    Public Property StepType As Integer
     Public Property RunOrder As Integer
     Public Property PropertiesObj As String
 
     Public Overridable Property Process1 As EProcess
-    Public Overridable Property StepType As EStepType
 
 End Class

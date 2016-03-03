@@ -43,7 +43,7 @@ Public Class StepBardecode
 
     Public Sub StartBardecodeProcess()
         Me.BardecodeProcessInfo = New ProcessStartInfo()
-        Me.BardecodeProcessInfo.FileName = Me.BardecodeProperties.BardecodeExe
+        Me.BardecodeProcessInfo.FileName = GlobalVariables.BardecodeExe
         Me.BardecodeProcessInfo.Arguments = "BardecodeIni.ini"
         Me.BardecodeProcessInfo.UseShellExecute = True
         Me.BardecodeProcessInfo.WindowStyle = ProcessWindowStyle.Normal

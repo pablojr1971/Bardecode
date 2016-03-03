@@ -36,7 +36,6 @@ C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.pdb
 C:\Repository\Bardecode\VB Project\Project\'\Project.exe
 C:\Repository\Bardecode\VB Project\Project\'\Project.pdb
 C:\Repository\Bardecode\VB Project\Project\'\Project.xml
-C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.MainForm.resources
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.Resources.resources
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbproj.GenerateResource.Cache
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbprojResolveAssemblyReference.cache
@@ -58,3 +57,7 @@ C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.dll
 C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.SqlServer.dll
 C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.xml
 C:\Repository\Bardecode\VB Project\Project\'\EntityFramework.SqlServer.xml
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmMain.resources
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmProcesses.resources
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmProcessesSearch.resources
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmSteps.resources

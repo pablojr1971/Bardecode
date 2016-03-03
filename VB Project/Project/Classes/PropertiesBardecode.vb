@@ -2,9 +2,6 @@
 
 Public Structure PropertiesBardecode
 
-    '[Bardecode]
-    Dim BardecodeExe As String
-
     '[Folders and FileName]
     Dim InputFolder As String
     Dim OutputFolder As String
@@ -30,7 +27,6 @@ Public Structure PropertiesBardecode
     Dim WhitelistChar As String
 
     Sub SetDefaultvalues()
-        Me.BardecodeExe = "C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe"
         Me.InputFolder = Directory.GetCurrentDirectory()
         Me.OutputFolder = Directory.GetCurrentDirectory()
         Me.ExceptionFolder = Directory.GetCurrentDirectory()

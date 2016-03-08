@@ -8,15 +8,11 @@
         End Get
     End Property
 
-    Public Sub RunFile(File As IO.FileInfo) Implements IStep.RunFile
+    Public Sub RunFolder(Folder As IO.DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String)
 
     End Sub
 
-    Public Sub RunFiles(Files As List(Of IO.FileInfo)) Implements IStep.RunFiles
-
-    End Sub
-
-    Public Sub RunFolder(Folder As IO.DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String) Implements IStep.RunFolder
+    Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
 
     End Sub
 End Class

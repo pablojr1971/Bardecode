@@ -2,31 +2,36 @@
 ' and then a method run, who will iterate the steps and  run each of them
 
 Public Class Process
+    Private ctx As VBProjectContext = New VBProjectContext()
     Property Id As Integer
-    Property Name As String
-    Property Description As String
-    Property Steps As Dictionary(Of IStep, RunMethod)
+    Property Steps As List(Of IStep)
 
-    Enum RunMethod
-        SingleFile = 1
-        Folder = 2
-        FileCollection = 3
-    End Enum
+    Public Sub New(ProcessId As Integer)
+        Id = ProcessId
+        Steps = (From a In ctx.ESteps Where a.Process = ProcessId Select a.Id).AsEnumerable().Select(Function(p) CreateStepObj(p)).ToList()
+    End Sub
 
-    Public Sub Run()
-        'this will be the basic engine of the processes
-        For Each StepRun As KeyValuePair(Of IStep, RunMethod) In Steps
-            If StepRun.Value = RunMethod.SingleFile Then
-                StepRun.Key.RunFile(New System.IO.FileInfo(""))
-            End If
+    Private Function CreateStepObj(StepId As Integer) As IStep
+        CreateStepObj = Nothing
+        With ctx.ESteps.Single(Function(p) p.Id = StepId)
+            Select Case .StepType
+                Case StepType.Bardecode
+                    CreateStepObj = StepBardecode.LoadStep(.Id, ctx)
 
-            If StepRun.Value = RunMethod.FileCollection Then
-                StepRun.Key.RunFiles(New List(Of System.IO.FileInfo))
-            End If
+                Case StepType.OCR
+                    CreateStepObj = StepOCR.LoadStep(.Id, ctx)
 
-            If StepRun.Value = RunMethod.Folder Then
-                StepRun.Key.RunFolder(New System.IO.DirectoryInfo(""), True, "")
-            End If
+                Case StepType.ImgsToPDF
+                    CreateStepObj = StepImgsToPDF.LoadStep(.Id, ctx)
+
+                Case StepType.CSVIndexingProperties
+            End Select
+        End With
+    End Function
+
+    Public Sub Run(LogSub As IStep.LogSubDelegate)
+        For Each StepRun In Steps
+            StepRun.Run(LogSub)
         Next
     End Sub
 End Class

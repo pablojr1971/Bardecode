@@ -134,7 +134,6 @@
     <Compile Include="Forms\FrmSteps.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces, Static, Abstract Classes\GlobalVariables.vb" />
     <Compile Include="Interfaces, Static, Abstract Classes\IStep.vb" />
     <Compile Include="Enums\FileSize.vb" />
     <Compile Include="Classes\ProfileSettings.vb" />

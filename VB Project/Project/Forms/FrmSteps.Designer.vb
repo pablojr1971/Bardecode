@@ -54,6 +54,16 @@ Partial Class FrmSteps
         Me.tx1ExceptionFolder = New System.Windows.Forms.TextBox()
         Me.tx1InputFolder = New System.Windows.Forms.TextBox()
         Me.PgOCR = New System.Windows.Forms.TabPage()
+        Me.ch2SaveHTML = New System.Windows.Forms.CheckBox()
+        Me.ch2SaveImage = New System.Windows.Forms.CheckBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.gb2Paths = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.tx2OutputFolder = New System.Windows.Forms.TextBox()
+        Me.tx2InputFolder = New System.Windows.Forms.TextBox()
         Me.PgImgsToPdf = New System.Windows.Forms.TabPage()
         Me.MainPanel.SuspendLayout()
         Me.gbStepSettings.SuspendLayout()
@@ -62,6 +72,9 @@ Partial Class FrmSteps
         Me.gb1Barcodes.SuspendLayout()
         Me.gb1Patterns.SuspendLayout()
         Me.gb1Paths.SuspendLayout()
+        Me.PgOCR.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.gb2Paths.SuspendLayout()
         Me.SuspendLayout()
         '
         'MainPanel
@@ -82,7 +95,7 @@ Partial Class FrmSteps
         Me.txRunOrder.Location = New System.Drawing.Point(77, 448)
         Me.txRunOrder.Name = "txRunOrder"
         Me.txRunOrder.Size = New System.Drawing.Size(46, 20)
-        Me.txRunOrder.TabIndex = 6
+        Me.txRunOrder.TabIndex = 2
         '
         'Label1
         '
@@ -117,7 +130,7 @@ Partial Class FrmSteps
         Me.gbStepSettings.Location = New System.Drawing.Point(12, 12)
         Me.gbStepSettings.Name = "gbStepSettings"
         Me.gbStepSettings.Size = New System.Drawing.Size(482, 430)
-        Me.gbStepSettings.TabIndex = 2
+        Me.gbStepSettings.TabIndex = 1
         Me.gbStepSettings.TabStop = False
         Me.gbStepSettings.Text = "Step Settings"
         '
@@ -364,6 +377,10 @@ Partial Class FrmSteps
         '
         'PgOCR
         '
+        Me.PgOCR.Controls.Add(Me.ch2SaveHTML)
+        Me.PgOCR.Controls.Add(Me.ch2SaveImage)
+        Me.PgOCR.Controls.Add(Me.GroupBox1)
+        Me.PgOCR.Controls.Add(Me.gb2Paths)
         Me.PgOCR.Location = New System.Drawing.Point(4, 22)
         Me.PgOCR.Name = "PgOCR"
         Me.PgOCR.Padding = New System.Windows.Forms.Padding(3)
@@ -371,6 +388,100 @@ Partial Class FrmSteps
         Me.PgOCR.TabIndex = 1
         Me.PgOCR.Text = "OCR"
         Me.PgOCR.UseVisualStyleBackColor = True
+        '
+        'ch2SaveHTML
+        '
+        Me.ch2SaveHTML.AutoSize = True
+        Me.ch2SaveHTML.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ch2SaveHTML.Location = New System.Drawing.Point(219, 147)
+        Me.ch2SaveHTML.Name = "ch2SaveHTML"
+        Me.ch2SaveHTML.Size = New System.Drawing.Size(162, 17)
+        Me.ch2SaveHTML.TabIndex = 4
+        Me.ch2SaveHTML.Text = "Save each page HTML Files"
+        Me.ch2SaveHTML.UseVisualStyleBackColor = True
+        '
+        'ch2SaveImage
+        '
+        Me.ch2SaveImage.AutoSize = True
+        Me.ch2SaveImage.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ch2SaveImage.Location = New System.Drawing.Point(6, 147)
+        Me.ch2SaveImage.Name = "ch2SaveImage"
+        Me.ch2SaveImage.Size = New System.Drawing.Size(163, 17)
+        Me.ch2SaveImage.TabIndex = 3
+        Me.ch2SaveImage.Text = "Save Each Page Image Files"
+        Me.ch2SaveImage.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label17)
+        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 89)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(456, 52)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Patterns"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(6, 22)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(93, 13)
+        Me.Label17.TabIndex = 4
+        Me.Label17.Text = "File Out Template:"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(104, 19)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(346, 20)
+        Me.TextBox5.TabIndex = 0
+        '
+        'gb2Paths
+        '
+        Me.gb2Paths.Controls.Add(Me.Label11)
+        Me.gb2Paths.Controls.Add(Me.Label12)
+        Me.gb2Paths.Controls.Add(Me.tx2OutputFolder)
+        Me.gb2Paths.Controls.Add(Me.tx2InputFolder)
+        Me.gb2Paths.Location = New System.Drawing.Point(6, 6)
+        Me.gb2Paths.Name = "gb2Paths"
+        Me.gb2Paths.Size = New System.Drawing.Size(456, 77)
+        Me.gb2Paths.TabIndex = 0
+        Me.gb2Paths.TabStop = False
+        Me.gb2Paths.Text = "Process Paths"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(74, 13)
+        Me.Label11.TabIndex = 11
+        Me.Label11.Text = "Output Folder:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 22)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(66, 13)
+        Me.Label12.TabIndex = 10
+        Me.Label12.Text = "Input Folder:"
+        '
+        'tx2OutputFolder
+        '
+        Me.tx2OutputFolder.Location = New System.Drawing.Point(104, 45)
+        Me.tx2OutputFolder.Name = "tx2OutputFolder"
+        Me.tx2OutputFolder.Size = New System.Drawing.Size(346, 20)
+        Me.tx2OutputFolder.TabIndex = 9
+        '
+        'tx2InputFolder
+        '
+        Me.tx2InputFolder.Location = New System.Drawing.Point(104, 19)
+        Me.tx2InputFolder.Name = "tx2InputFolder"
+        Me.tx2InputFolder.Size = New System.Drawing.Size(346, 20)
+        Me.tx2InputFolder.TabIndex = 8
         '
         'PgImgsToPdf
         '
@@ -389,6 +500,7 @@ Partial Class FrmSteps
         Me.ClientSize = New System.Drawing.Size(506, 483)
         Me.Controls.Add(Me.MainPanel)
         Me.Name = "FrmSteps"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Steps"
         Me.MainPanel.ResumeLayout(False)
         Me.MainPanel.PerformLayout()
@@ -400,6 +512,12 @@ Partial Class FrmSteps
         Me.gb1Patterns.PerformLayout()
         Me.gb1Paths.ResumeLayout(False)
         Me.gb1Paths.PerformLayout()
+        Me.PgOCR.ResumeLayout(False)
+        Me.PgOCR.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.gb2Paths.ResumeLayout(False)
+        Me.gb2Paths.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -436,4 +554,14 @@ Partial Class FrmSteps
     Friend WithEvents tx1WhitelistChar As System.Windows.Forms.TextBox
     Friend WithEvents txRunOrder As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents gb2Paths As System.Windows.Forms.GroupBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents tx2OutputFolder As System.Windows.Forms.TextBox
+    Friend WithEvents tx2InputFolder As System.Windows.Forms.TextBox
+    Friend WithEvents ch2SaveHTML As System.Windows.Forms.CheckBox
+    Friend WithEvents ch2SaveImage As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
 End Class

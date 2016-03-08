@@ -26,7 +26,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Process" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="Process" Type="int" Nullable="false" />
           <Property Name="StepType" Type="int" Nullable="false" />
           <Property Name="RunOrder" Type="int" Nullable="false" />
           <Property Name="PropertiesObj" Type="varchar(max)" />
@@ -69,11 +69,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Process" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="Process" annotation:StoreGeneratedPattern="None" Nullable="false" />
           <Property Type="Int32" Name="StepType" Nullable="false" />
           <Property Type="Int32" Name="RunOrder" Nullable="false" />
           <Property Type="String" Name="PropertiesObj" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Process1" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Step" ToRole="EProcess" />
         </EntityType>
         <Association Name="FK__Steps__Process__0F975522">
           <End Type="VBProjectModel.EProcess" Role="EProcess" Multiplicity="1" />

@@ -30,14 +30,14 @@ Partial Class FrmProcesses
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.dgSteps = New System.Windows.Forms.DataGridView()
+        Me.RunOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbProcessInfo = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txDescription = New System.Windows.Forms.TextBox()
         Me.txNumber = New System.Windows.Forms.TextBox()
-        Me.RunOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MainPanel.SuspendLayout()
         Me.gbSteps.SuspendLayout()
         CType(Me.dgSteps, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +125,28 @@ Partial Class FrmProcesses
         Me.dgSteps.Size = New System.Drawing.Size(469, 264)
         Me.dgSteps.TabIndex = 0
         '
+        'RunOrder
+        '
+        Me.RunOrder.DataPropertyName = "RunOrder"
+        Me.RunOrder.HeaderText = "Order"
+        Me.RunOrder.Name = "RunOrder"
+        Me.RunOrder.ReadOnly = True
+        '
+        'Type
+        '
+        Me.Type.DataPropertyName = "StepType"
+        Me.Type.HeaderText = "Type"
+        Me.Type.Name = "Type"
+        Me.Type.ReadOnly = True
+        Me.Type.Width = 347
+        '
+        'Id
+        '
+        Me.Id.DataPropertyName = "Id"
+        Me.Id.HeaderText = "Id"
+        Me.Id.Name = "Id"
+        Me.Id.Visible = False
+        '
         'gbProcessInfo
         '
         Me.gbProcessInfo.Controls.Add(Me.Label2)
@@ -170,28 +192,6 @@ Partial Class FrmProcesses
         Me.txNumber.Size = New System.Drawing.Size(100, 20)
         Me.txNumber.TabIndex = 0
         '
-        'RunOrder
-        '
-        Me.RunOrder.DataPropertyName = "RunOrder"
-        Me.RunOrder.HeaderText = "Order"
-        Me.RunOrder.Name = "RunOrder"
-        Me.RunOrder.ReadOnly = True
-        '
-        'Type
-        '
-        Me.Type.DataPropertyName = "StepType"
-        Me.Type.HeaderText = "Type"
-        Me.Type.Name = "Type"
-        Me.Type.ReadOnly = True
-        Me.Type.Width = 347
-        '
-        'Id
-        '
-        Me.Id.DataPropertyName = "Id"
-        Me.Id.HeaderText = "Id"
-        Me.Id.Name = "Id"
-        Me.Id.Visible = False
-        '
         'FrmProcesses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -199,6 +199,7 @@ Partial Class FrmProcesses
         Me.ClientSize = New System.Drawing.Size(506, 448)
         Me.Controls.Add(Me.MainPanel)
         Me.Name = "FrmProcesses"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Process"
         Me.MainPanel.ResumeLayout(False)
         Me.gbSteps.ResumeLayout(False)

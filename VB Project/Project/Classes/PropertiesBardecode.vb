@@ -3,30 +3,30 @@
 Public Structure PropertiesBardecode
 
     '[Folders and FileName]
-    Dim InputFolder As String
-    Dim OutputFolder As String
-    Dim ExceptionFolder As String
-    Dim ProcessedFolder As String
+    Public InputFolder As String
+    Public OutputFolder As String
+    Public ExceptionFolder As String
+    Public ProcessedFolder As String
 
-    Dim ProcessSubFolders As Boolean
-    Dim SubFolderPattern As String
+    Public ProcessSubFolders As Boolean
+    Public SubFolderPattern As String
     'This property must contain a regex expression that bardecode will use to find just files that matches with this expression
-    Dim FileNamePattern As String
+    Public FileNamePattern As String
 
     '[output]
     'Must contain the output name in the same format that bardecode use to generate the file names
-    Dim OutputNameTemplate As String
+    Public OutputNameTemplate As String
 
     '[Barcode recognition]
-    Dim BarcodeTypes As List(Of BarcodeType)
+    Public BarcodeTypes As List(Of BarcodeType)
     'Must contain a regex expression that bardecode will use to pick up just the barcodes that matches with the expression
-    Dim BarcodePattern As String
-    Dim MinimumBarcodeSize As Integer
-    Dim MaximumBarcodeSize As Integer
+    Public BarcodePattern As String
+    Public MinimumBarcodeSize As Integer
+    Public MaximumBarcodeSize As Integer
     'This propertie must contain all chars that bardecode can recognize in barcode values
-    Dim WhitelistChar As String
+    Public WhitelistChar As String
 
-    Sub SetDefaultvalues()
+    Public Sub SetDefaultvalues()
         Me.InputFolder = Directory.GetCurrentDirectory()
         Me.OutputFolder = Directory.GetCurrentDirectory()
         Me.ExceptionFolder = Directory.GetCurrentDirectory()

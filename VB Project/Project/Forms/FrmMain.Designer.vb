@@ -23,49 +23,51 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ProfileText = New System.Windows.Forms.TextBox()
-        Me.RunButton = New System.Windows.Forms.Button()
-        Me.ProcessLogText = New System.Windows.Forms.RichTextBox()
+        Me.txProcess = New System.Windows.Forms.TextBox()
+        Me.btRun = New System.Windows.Forms.Button()
+        Me.txProcessLog = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btSelect = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 8)
+        Me.Label1.Location = New System.Drawing.Point(7, 14)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Profile:"
+        Me.Label1.Text = "Process:"
         '
-        'ProfileText
+        'txProcess
         '
-        Me.ProfileText.Location = New System.Drawing.Point(50, 5)
-        Me.ProfileText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ProfileText.Name = "ProfileText"
-        Me.ProfileText.Size = New System.Drawing.Size(422, 20)
-        Me.ProfileText.TabIndex = 2
+        Me.txProcess.Location = New System.Drawing.Point(59, 11)
+        Me.txProcess.Margin = New System.Windows.Forms.Padding(2)
+        Me.txProcess.Name = "txProcess"
+        Me.txProcess.ReadOnly = True
+        Me.txProcess.Size = New System.Drawing.Size(291, 20)
+        Me.txProcess.TabIndex = 2
         '
-        'RunButton
+        'btRun
         '
-        Me.RunButton.Location = New System.Drawing.Point(417, 29)
-        Me.RunButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.RunButton.Name = "RunButton"
-        Me.RunButton.Size = New System.Drawing.Size(56, 24)
-        Me.RunButton.TabIndex = 4
-        Me.RunButton.Text = "Run"
-        Me.RunButton.UseVisualStyleBackColor = True
+        Me.btRun.Location = New System.Drawing.Point(417, 10)
+        Me.btRun.Margin = New System.Windows.Forms.Padding(2)
+        Me.btRun.Name = "btRun"
+        Me.btRun.Size = New System.Drawing.Size(56, 24)
+        Me.btRun.TabIndex = 4
+        Me.btRun.Text = "Run"
+        Me.btRun.UseVisualStyleBackColor = True
         '
-        'ProcessLogText
+        'txProcessLog
         '
-        Me.ProcessLogText.Location = New System.Drawing.Point(9, 57)
-        Me.ProcessLogText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ProcessLogText.Name = "ProcessLogText"
-        Me.ProcessLogText.ReadOnly = True
-        Me.ProcessLogText.Size = New System.Drawing.Size(464, 325)
-        Me.ProcessLogText.TabIndex = 5
-        Me.ProcessLogText.Text = ""
+        Me.txProcessLog.Location = New System.Drawing.Point(9, 57)
+        Me.txProcessLog.Margin = New System.Windows.Forms.Padding(2)
+        Me.txProcessLog.Name = "txProcessLog"
+        Me.txProcessLog.ReadOnly = True
+        Me.txProcessLog.Size = New System.Drawing.Size(464, 325)
+        Me.txProcessLog.TabIndex = 5
+        Me.txProcessLog.Text = ""
         '
         'Label2
         '
@@ -77,27 +79,39 @@ Partial Class FrmMain
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Process Log:"
         '
-        'MainForm
+        'btSelect
+        '
+        Me.btSelect.Location = New System.Drawing.Point(355, 10)
+        Me.btSelect.Name = "btSelect"
+        Me.btSelect.Size = New System.Drawing.Size(57, 23)
+        Me.btSelect.TabIndex = 7
+        Me.btSelect.Text = "Select"
+        Me.btSelect.UseVisualStyleBackColor = True
+        '
+        'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(483, 391)
+        Me.Controls.Add(Me.btSelect)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ProcessLogText)
-        Me.Controls.Add(Me.RunButton)
-        Me.Controls.Add(Me.ProfileText)
+        Me.Controls.Add(Me.txProcessLog)
+        Me.Controls.Add(Me.btRun)
+        Me.Controls.Add(Me.txProcess)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Name = "MainForm"
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Name = "FrmMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Process files"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ProfileText As System.Windows.Forms.TextBox
-    Friend WithEvents RunButton As System.Windows.Forms.Button
-    Friend WithEvents ProcessLogText As System.Windows.Forms.RichTextBox
+    Friend WithEvents txProcess As System.Windows.Forms.TextBox
+    Friend WithEvents btRun As System.Windows.Forms.Button
+    Friend WithEvents txProcessLog As System.Windows.Forms.RichTextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btSelect As System.Windows.Forms.Button
 
 End Class

@@ -29,14 +29,14 @@ Partial Class FrmProcessesSearch
         Me.btDelete = New System.Windows.Forms.Button()
         Me.gbProcesses = New System.Windows.Forms.GroupBox()
         Me.dgProcesses = New System.Windows.Forms.DataGridView()
-        Me.SearchGroupBox = New System.Windows.Forms.GroupBox()
-        Me.btFilter = New System.Windows.Forms.Button()
-        Me.txSearch = New System.Windows.Forms.TextBox()
-        Me.lbNumber = New System.Windows.Forms.Label()
         Me.Number = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Steps = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Description = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SearchGroupBox = New System.Windows.Forms.GroupBox()
+        Me.btFilter = New System.Windows.Forms.Button()
+        Me.txSearch = New System.Windows.Forms.TextBox()
+        Me.lbNumber = New System.Windows.Forms.Label()
         Me.MainPanel.SuspendLayout()
         Me.gbProcesses.SuspendLayout()
         CType(Me.dgProcesses, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,6 +121,42 @@ Partial Class FrmProcessesSearch
         Me.dgProcesses.Size = New System.Drawing.Size(461, 242)
         Me.dgProcesses.TabIndex = 0
         '
+        'Number
+        '
+        Me.Number.DataPropertyName = "Number"
+        Me.Number.HeaderText = "Number"
+        Me.Number.Name = "Number"
+        Me.Number.ReadOnly = True
+        Me.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        Me.Number.Width = 50
+        '
+        'Steps
+        '
+        Me.Steps.DataPropertyName = "Steps"
+        Me.Steps.HeaderText = "Steps"
+        Me.Steps.Name = "Steps"
+        Me.Steps.ReadOnly = True
+        Me.Steps.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Steps.Width = 50
+        '
+        'Description
+        '
+        Me.Description.DataPropertyName = "Description"
+        Me.Description.HeaderText = "Description"
+        Me.Description.Name = "Description"
+        Me.Description.ReadOnly = True
+        Me.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Description.Width = 338
+        '
+        'Id
+        '
+        Me.Id.DataPropertyName = "Id"
+        Me.Id.HeaderText = "Id"
+        Me.Id.Name = "Id"
+        Me.Id.ReadOnly = True
+        Me.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Id.Visible = False
+        '
         'SearchGroupBox
         '
         Me.SearchGroupBox.Controls.Add(Me.btFilter)
@@ -158,49 +194,14 @@ Partial Class FrmProcessesSearch
         Me.lbNumber.TabIndex = 0
         Me.lbNumber.Text = "Number:"
         '
-        'Number
-        '
-        Me.Number.DataPropertyName = "Number"
-        Me.Number.HeaderText = "Number"
-        Me.Number.Name = "Number"
-        Me.Number.ReadOnly = True
-        Me.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
-        Me.Number.Width = 50
-        '
-        'Steps
-        '
-        Me.Steps.DataPropertyName = "Steps"
-        Me.Steps.HeaderText = "Steps"
-        Me.Steps.Name = "Steps"
-        Me.Steps.ReadOnly = True
-        Me.Steps.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Steps.Width = 50
-        '
-        'Description
-        '
-        Me.Description.DataPropertyName = "Description"
-        Me.Description.HeaderText = "Description"
-        Me.Description.Name = "Description"
-        Me.Description.ReadOnly = True
-        Me.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Description.Width = 338
-        '
-        'Id
-        '
-        Me.Id.DataPropertyName = "Id"
-        Me.Id.HeaderText = "Id"
-        Me.Id.Name = "Id"
-        Me.Id.ReadOnly = True
-        Me.Id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Id.Visible = False
-        '
-        'SearchProcesses
+        'FrmProcessesSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(490, 366)
         Me.Controls.Add(Me.MainPanel)
-        Me.Name = "SearchProcesses"
+        Me.Name = "FrmProcessesSearch"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Processes"
         Me.MainPanel.ResumeLayout(False)
         Me.gbProcesses.ResumeLayout(False)

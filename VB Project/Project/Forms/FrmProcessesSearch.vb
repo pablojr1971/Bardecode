@@ -1,5 +1,6 @@
 ﻿Public Class FrmProcessesSearch
     Private _SelectedId As Integer
+    Private _SelectedProcessName As String
     Private ctx As VBProjectContext = New VBProjectContext()
 
     Public ReadOnly Property SelectedId As Integer
@@ -8,6 +9,16 @@
         End Get
     End Property
 
+    Public ReadOnly Property SelectedProcessName As String
+        Get
+            Return _SelectedProcessName
+        End Get
+    End Property
+
+    Public Sub New(ParentForm As System.Windows.Forms.IWin32Window)
+        InitializeComponent()
+        Me.ShowDialog(ParentForm)
+    End Sub
 
     Private Sub btFilter_Click(sender As Object, e As EventArgs) Handles btFilter.Click
         RefreshGrid()
@@ -15,6 +26,7 @@
 
     Private Sub btSelect_Click(sender As Object, e As EventArgs) Handles btSelect.Click
         Me._SelectedId = dgProcesses.CurrentRow.Cells("Id").Value
+        Me._SelectedProcessName = dgProcesses.CurrentRow.Cells("Description").Value
         Me.Close()
     End Sub
 
@@ -50,5 +62,9 @@
                         Order By Number Ascending
         Me.gbProcesses.Text = "Processes: " + CStr(Processes.Count())
         Me.dgProcesses.DataSource = Processes.ToList()
+    End Sub
+
+    Private Sub FrmProcessesSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RefreshGrid()
     End Sub
 End Class

@@ -22,7 +22,13 @@ Public Class StepOCR
         tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
     End Sub
 
-    Public Sub RunFile(File As FileInfo) Implements IStep.RunFile
+    Sub New(Properties As PropertiesOCR)
+        Me.OCRProperties = Properties
+        Me.tes = New Tesseract.TesseractEngine(Me.OCRProperties.TesseractData, Me.OCRProperties.TesseractLanguage)
+        tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
+    End Sub
+
+    Public Sub RunFile(File As FileInfo)
         Dim htmlfile As FileStream
         Dim hdoc As hDocument = New hDocument
         Dim index As Integer = 0
@@ -84,13 +90,7 @@ Public Class StepOCR
         rasterizer.Dispose()
     End Function
 
-    Public Sub RunFiles(Files As List(Of FileInfo)) Implements IStep.RunFiles
-        For Each File In Files
-            Me.RunFile(File)
-        Next
-    End Sub
-
-    Public Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String) Implements IStep.RunFolder
+    Public Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String)
         If RunSubFolders Then
             For Each subfolder In IIf(SearchPattern = "", Folder.GetDirectories(), Folder.GetDirectories(SearchPattern))
                 ' recursive method to run all folders till the most specific one where we will have only files and then goes out to run the files of that folder
@@ -101,5 +101,15 @@ Public Class StepOCR
         For Each File In IIf(SearchPattern = "", Folder.GetFiles("*.pdf"), Folder.GetFiles(SearchPattern))
             Me.RunFile(File)
         Next
+    End Sub
+
+    Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepOCR
+        With ctx.ESteps.Single(Function(p) p.Id = StepId)
+            LoadStep = New StepOCR(Serializer.FromXml(.PropertiesObj, GetType(PropertiesOCR)))
+        End With
+    End Function
+
+    Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
+
     End Sub
 End Class

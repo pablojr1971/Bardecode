@@ -16,7 +16,7 @@ Public Structure PropertiesOCR
         If False Then
 
         Else
-            Me.SaveHtmlFiles = False
+            Me.SaveHtmlFiles = True
             Me.SaveImageFiles = False
             Me.SaveImageFormat = ImageFormat.Tiff
             Me.ImageDPI = 200

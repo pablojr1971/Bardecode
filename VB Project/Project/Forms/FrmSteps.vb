@@ -1,4 +1,6 @@
-﻿Public Class FrmSteps
+﻿Imports System.Data.Entity
+
+Public Class FrmSteps
 
     Private Entity As EStep
     Private Inserting As Boolean
@@ -17,8 +19,18 @@
 
     Public Sub New(Id As Integer, ParentForm As System.Windows.Forms.IWin32Window)
         InitializeComponent()
-        Me.Entity = ctx.ESteps.Local.Single(Function(p) p.Id = Id)
+        ctx.ESteps.Where(Function(p) p.Id = Id).Load()
+        Me.Entity = ctx.ESteps.Single(Function(p) p.Id = Id)
+        ShowForm()
+    End Sub
 
+    Public Sub New(ByVal StepEntity As EStep, ParentForm As System.Windows.Forms.IWin32Window)
+        InitializeComponent()
+        Me.Entity = StepEntity
+        ShowForm()
+    End Sub
+
+    Private Sub ShowForm()
         Select Case Me.Entity.StepType
             Case StepType.Bardecode
                 tcSteps.SelectedTab = PgBardecode
@@ -28,15 +40,15 @@
 
             Case StepType.ImgsToPDF
                 tcSteps.SelectedTab = PgImgsToPdf
-
         End Select
+        LoadProperties()
         Me.ShowDialog(ParentForm)
     End Sub
 
     Private Sub btOk_Click(sender As Object, e As EventArgs) Handles btOk.Click
         Select Case tcSteps.SelectedIndex
             Case 0 ' Bardecode
-                Dim Props As New PropertiesBardecode
+                Dim Props As PropertiesBardecode = New PropertiesBardecode
                 Props.BarcodeTypes = New List(Of BarcodeType)
                 Props.BarcodePattern = tx1BarcodeRegex.Text
                 Props.ExceptionFolder = tx1ExceptionFolder.Text
@@ -48,11 +60,11 @@
                 Props.ProcessSubFolders = cx1SubFolders.Checked
                 Props.SubFolderPattern = tx1SubFolderRegex.Text
                 Props.WhitelistChar = tx1WhitelistChar.Text
-                For Each item In cx1Barcodes.SelectedIndices
-                    Props.BarcodeTypes.Add(item)
+                For Each item In cx1Barcodes.CheckedIndices
+                    Props.BarcodeTypes.Add(CType(item, BarcodeType))
                 Next
 
-                Entity.RunOrder = CInt(txRunOrder.text)
+                Entity.RunOrder = CInt(txRunOrder.Text)
                 Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
                 Entity.StepType = StepType.Bardecode
             Case 1 ' OCR
@@ -66,5 +78,40 @@
     Private Sub btCancel_Click(sender As Object, e As EventArgs) Handles btCancel.Click
         Me.Entity = Nothing
         Close()
+    End Sub
+
+    Private Sub LoadProperties()
+        If Not String.IsNullOrEmpty(Me.Entity.PropertiesObj) Then            
+            Select Case EntityStep.StepType
+                Case StepType.Bardecode
+                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesBardecode)), PropertiesBardecode)
+                        tx1BarcodeRegex.Text = .BarcodePattern
+                        tx1ExceptionFolder.Text = .ExceptionFolder
+                        tx1FileInRegex.Text = .FileNamePattern
+                        tx1InputFolder.Text = .InputFolder
+                        tx1OutputFolder.Text = .OutputFolder
+                        tx1FileOutTemplate.Text = .OutputNameTemplate
+                        tx1ProcessedFolder.Text = .ProcessedFolder
+                        cx1SubFolders.Checked = .ProcessSubFolders
+                        tx1SubFolderRegex.Text = .SubFolderPattern
+                        tx1WhitelistChar.Text = .WhitelistChar
+                        For Each item In .BarcodeTypes
+                            cx1Barcodes.SetItemChecked(item, True)
+                        Next
+                    End With
+
+                Case StepType.OCR
+                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesOCR)), PropertiesOCR)
+
+                    End With
+
+                Case StepType.ImgsToPDF
+                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesImgsToPDF)), PropertiesImgsToPDF)
+
+                    End With
+
+            End Select
+        End If
+        txRunOrder.Text = Entity.RunOrder
     End Sub
 End Class

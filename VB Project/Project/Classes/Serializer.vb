@@ -30,29 +30,22 @@ Public NotInheritable Class Serializer
 
 
     Public Shared Function ToXml(ByVal Obj As Object, ByVal ObjType As System.Type) As String
-        Dim ser As XMLSerializer = New XMLSerializer(ObjType, TargetNamespace)
-        Dim memStream As MemoryStream = New MemoryStream()
-        Dim xmlWriter As XmlTextWriter = New XmlTextWriter(memStream, Encoding.UTF8)
-        xmlWriter.Namespaces = True
-        ser.Serialize(xmlWriter, Obj, GetNamespaces())
-        xmlWriter.Close()
-        memStream.Close()
-        Dim xml As String
-        xml = Encoding.UTF8.GetString(memStream.GetBuffer())
-        xml = xml.Substring(xml.IndexOf(Convert.ToChar(60)))
-        xml = xml.Substring(0, (xml.LastIndexOf(Convert.ToChar(62)) + 1))
-        Return xml
+        Dim xml As New System.Xml.Serialization.XmlSerializer(ObjType)
+        Dim sw As New IO.StringWriter()
+        xml.Serialize(sw, Obj, GetNamespaces)
+
+        If sw IsNot Nothing Then
+            Return sw.ToString()
+        Else
+            Return ""
+        End If
     End Function
 
 
     Public Shared Function FromXml(ByVal Xml As String, ByVal ObjType As System.Type) As Object
-        Dim ser As XMLSerializer = New XMLSerializer(ObjType)
-        Dim stringReader As StringReader = New StringReader(Xml)
-        Dim xmlReader As XmlTextReader = New XmlTextReader(stringReader)
-        Dim obj As Object
-        obj = ser.Deserialize(xmlReader)
-        xmlReader.Close()
-        stringReader.Close()
+        Dim ser As New System.Xml.Serialization.XmlSerializer(ObjType)
+        Dim sr As New IO.StringReader(Xml)
+        Dim obj As Object = ser.Deserialize(sr)
         Return obj
     End Function
 End Class

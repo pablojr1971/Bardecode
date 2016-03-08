@@ -21,7 +21,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Process" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+    <Property Name="Process" Type="int" Nullable="false" />
     <Property Name="StepType" Type="int" Nullable="false" />
     <Property Name="RunOrder" Type="int" Nullable="false" />
     <Property Name="PropertiesObj" Type="varchar(max)" />

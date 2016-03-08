@@ -17,6 +17,4 @@ Partial Public Class EStep
     Public Property RunOrder As Integer
     Public Property PropertiesObj As String
 
-    Public Overridable Property Process1 As EProcess
-
 End Class

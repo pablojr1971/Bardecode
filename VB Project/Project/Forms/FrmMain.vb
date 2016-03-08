@@ -7,76 +7,41 @@ Imports Clock.Hocr
 
 Public Class FrmMain
     Private Profile As ProfileSettings
+    Private Process As Process
+    Private _ProcessId As Integer
 
     Private Folders As List(Of DirectoryInfo) = New List(Of DirectoryInfo)()
     Private Files As List(Of FileInfo) = New List(Of FileInfo)()
 
-    Enum LogType
-        Begin
-        ProcessingA4
-        ProcessingDrawing
-        Folder
-        Done
-    End Enum
+    Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles btRun.Click
+        ' need to create a process object 
+        ' create a instance of the process class
+        ' load the steps of the process 
+        ' invoke the method run for each step in the step list
+        ' generate a log file registering everything that the process are doing
+        ' This method should handle exceptions with a try catch because it will be the main engine
+        RunProcess()
 
-    Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
-        ' test the bardecode step class
-
-        Dim bardecode As New StepBardecode()
-        With bardecode.BardecodeProperties
-            .BarcodeTypes.AddRange({BarcodeType.Code_128, BarcodeType.Code_2_of_5, BarcodeType.Code_3_of_9})
-            .InputFolder = "c:\vb_projects\box19268\docasscanned"
-            .MinimumBarcodeSize = 4
-            .MaximumBarcodeSize = 99
-            .OutputFolder = "c:\vb_projects\box19268\test"
-            .BarcodePattern = "^(sut)[0-9]{6}$"
-        End With
-
-        bardecode.RunFolder(New DirectoryInfo("c:\vb_projects\box19268\docasscanned"), True, "")
-        MessageBox.Show("done bardecode")
-
-        Dim OCR As StepOCR = New StepOCR()
-        OCR.RunFolder(New DirectoryInfo("C:\VB_Projects\Box19268\test"), True, "")
-
-        MessageBox.Show("OCR Done")
-
-        Exit Sub
-
-        Me.Log(LogType.Begin, "")
-        ' Get the A4 folders
-        Me.Log(LogType.ProcessingA4, CStr(Folders.Count))
-        ' Get the Drawings folders
-        Me.Log(LogType.ProcessingDrawing, CStr(Folders.Count))
-        Me.Log(LogType.Done, "")
     End Sub
 
-    Private Sub Log(LogType As LogType, data As String)
+    Private Sub btSelect_Click(sender As Object, e As EventArgs) Handles btSelect.Click
+        With New FrmProcessesSearch(Me)
+            txProcess.Text = .SelectedProcessName
+            _ProcessId = .SelectedId
+            .Dispose()
+        End With
+    End Sub
 
-        ' this is a sub just to have a log on the main form of what the code is doing
-        ' about the arguments of the sub, the index define the kind of log that we will write, and the data is what we will log
-        ' I`ve made this sub to concentrate logs in just one place of the source
+    Private Sub RunProcess()
+        Dim ProcessObj As Process = New Process(_ProcessId)
+        ProcessObj.Run(AddressOf writeLog)
+    End Sub
 
-        Select Case LogType
-
-            ' begining the process, the data will be the number of subfolders found
-            Case FrmMain.LogType.Begin
-                Me.ProcessLogText.AppendText("----PROCESS BEGIN----")
-
-            Case FrmMain.LogType.ProcessingA4
-                Me.ProcessLogText.AppendText(vbCrLf + vbCrLf + "Spliting A4 files, " + data + " boxes found" + vbCrLf + vbCrLf)
-
-            Case FrmMain.LogType.ProcessingDrawing
-                Me.ProcessLogText.AppendText(vbCrLf + vbCrLf + "Spliting Drawing files, " + data + " boxes found" + vbCrLf + vbCrLf)
-
-                ' log which folder is being processed at the moment, the data will be the folder
-            Case FrmMain.LogType.Folder
-                Me.ProcessLogText.AppendText("Processing folder: " + vbCrLf + _
-                                             "    " + data + vbCrLf)
-
-                ' end of process, just to say done and that the process went well
-            Case FrmMain.LogType.Done
-                Me.ProcessLogText.AppendText(vbCrLf + vbCrLf + "----PROCESS DONE----")
-
-        End Select
+    Private Sub writeLog(Log As String)
+        ' This sub should just write a string into the log edit
+        ' this sub will be passed as a delegate to the step objects to log the process    
+        ' We could ReWrite this function to Write the logs on a text file,
+        ' so if we need to run the process in a assync mode or in a separated thred without visual elements, we can!
+        txProcessLog.AppendText(Log + vbCrLf)
     End Sub
 End Class

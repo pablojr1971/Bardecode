@@ -50,7 +50,6 @@ Public Class FrmProcesses
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ctx.SaveChangesAsync()
         With New FrmSteps(Me)
             If Not (IsNothing(.EntityStep)) Then
                 .EntityStep.Process = Me.Entity.Id
@@ -60,9 +59,8 @@ Public Class FrmProcesses
         RefreshGrid()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ctx.SaveChangesAsync()
-        With New FrmSteps(dgSteps.CurrentRow.Cells("Id").Value, Me)
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click        
+        With New FrmSteps(Me.Entity.Steps.Single(Function(p) (p.Id = 0 Or p.Id = dgSteps.CurrentRow.Cells("Id").Value) And p.RunOrder = dgSteps.CurrentRow.Cells("RunOrder").Value), Me)
             .Dispose()
         End With
         RefreshGrid()
@@ -70,8 +68,14 @@ Public Class FrmProcesses
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If MsgBox("Are you sure?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.Yes Then
-            If ctx.ESteps.Local.Remove(ctx.ESteps.Local.Single(Function(p) p.Id = dgSteps.CurrentRow.Cells("Id").Value And p.RunOrder = dgSteps.CurrentRow.Cells("RunOrder").Value)) Then
-                RefreshGrid()
+            If Entity.Id > 0 Then
+                If ctx.ESteps.Local.Remove(Me.Entity.Steps.Single(Function(p) (p.Id = 0 Or p.Id = dgSteps.CurrentRow.Cells("Id").Value) And p.RunOrder = dgSteps.CurrentRow.Cells("RunOrder").Value)) Then
+                    RefreshGrid()
+                End If
+            Else
+                If Entity.Steps.Remove(Me.Entity.Steps.Single(Function(p) (p.Id = 0 Or p.Id = dgSteps.CurrentRow.Cells("Id").Value) And p.RunOrder = dgSteps.CurrentRow.Cells("RunOrder").Value)) Then
+                    RefreshGrid()
+                End If
             End If
         End If
     End Sub

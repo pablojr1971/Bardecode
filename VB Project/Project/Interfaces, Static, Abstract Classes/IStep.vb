@@ -3,10 +3,8 @@ Imports System.Collections
 
 Public Interface IStep
 
+    Delegate Sub LogSubDelegate(Log As String)
     ReadOnly Property Type As StepType
-
-    Sub RunFile(File As FileInfo)
-    Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String)
-    Sub RunFiles(Files As List(Of FileInfo))
+    Sub Run(LogSub As LogSubDelegate)
 
 End Interface

@@ -85,6 +85,7 @@ Public Class FrmProcesses
             dgSteps.DataSource.Clear()
         End If
         dgSteps.DataSource = (From p In Entity.Steps.Where(Function(p) p.Process = Entity.Id)
-                              Select p.Id, StepType = CType(p.StepType, StepType), p.RunOrder).ToList()
+                              Select p.Id, StepType = CType(p.StepType, StepType), p.RunOrder
+                              Order By RunOrder).ToList()
     End Sub
 End Class

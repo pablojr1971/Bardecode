@@ -20,6 +20,7 @@ Public Class FrmMain
         ' invoke the method run for each step in the step list
         ' generate a log file registering everything that the process are doing
         ' This method should handle exceptions with a try catch because it will be the main engine
+        txProcessLog.Clear()
         RunProcess()
 
     End Sub
@@ -34,6 +35,10 @@ Public Class FrmMain
 
     Private Sub RunProcess()
         Dim ProcessObj As Process = New Process(_ProcessId)
+
+        ' If we want to write the log in a file, or in another place 
+        ' we just need to change this delegate function and pass one that 
+        ' do what we want
         ProcessObj.Run(AddressOf writeLog)
     End Sub
 

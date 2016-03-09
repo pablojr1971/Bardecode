@@ -101,10 +101,12 @@
     <Compile Include="Classes\Process.vb" />
     <Compile Include="Classes\PropertiesBardecode.vb" />
     <Compile Include="Classes\PropertiesCSVIndexing.vb" />
+    <Compile Include="Classes\PropertiesCustom.vb" />
     <Compile Include="Classes\PropertiesImgsToPDF.vb" />
     <Compile Include="Classes\PropertiesOCR.vb" />
     <Compile Include="Classes\StepBardecode.vb" />
     <Compile Include="Classes\StepCSVIndexing.vb" />
+    <Compile Include="Classes\StepCustom.vb" />
     <Compile Include="Classes\StepImgsToPDF.vb" />
     <Compile Include="Classes\StepOCR.vb" />
     <Compile Include="Classes\Serializer.vb" />

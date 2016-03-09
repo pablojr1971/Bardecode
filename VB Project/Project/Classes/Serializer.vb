@@ -32,7 +32,7 @@ Public NotInheritable Class Serializer
     Public Shared Function ToXml(ByVal Obj As Object, ByVal ObjType As System.Type) As String
         Dim xml As New System.Xml.Serialization.XmlSerializer(ObjType)
         Dim sw As New IO.StringWriter()
-        xml.Serialize(sw, Obj, GetNamespaces)
+        xml.Serialize(sw, Obj)
 
         If sw IsNot Nothing Then
             Return sw.ToString()

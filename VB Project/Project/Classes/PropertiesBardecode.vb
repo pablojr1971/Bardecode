@@ -8,6 +8,7 @@ Public Structure PropertiesBardecode
     Public ExceptionFolder As String
     Public ProcessedFolder As String
 
+    Public CreateOutputSubFolders As Boolean
     Public ProcessSubFolders As Boolean
     Public SubFolderPattern As String
     'This property must contain a regex expression that bardecode will use to find just files that matches with this expression
@@ -23,8 +24,6 @@ Public Structure PropertiesBardecode
     Public BarcodePattern As String
     Public MinimumBarcodeSize As Integer
     Public MaximumBarcodeSize As Integer
-    'This propertie must contain all chars that bardecode can recognize in barcode values
-    Public WhitelistChar As String
 
     Public Sub SetDefaultvalues()
         Me.InputFolder = Directory.GetCurrentDirectory()
@@ -37,7 +36,7 @@ Public Structure PropertiesBardecode
         Me.BarcodePattern = ""
         Me.MinimumBarcodeSize = 4
         Me.MaximumBarcodeSize = 99
-        Me.WhitelistChar = "123456789_+-:.$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+        Me.CreateOutputSubFolders = True
     End Sub
 
 End Structure

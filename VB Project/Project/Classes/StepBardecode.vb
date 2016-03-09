@@ -26,13 +26,13 @@ Public Class StepBardecode
         If RunSubFolders Then
 
         Else
-            Me.ChangeInputPath(Folder.FullName)
+            Me.ChangePath(Folder.FullName)
             Me.StartBardecodeProcess()
         End If
     End Sub
 
     Public Sub StartBardecodeProcess()
-        With System.Diagnostics.Process.Start("C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe", "C:\Repository\Bardecode\VB Project\Project\'\BardecodeIni.ini")
+        With System.Diagnostics.Process.Start("C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe", """" + Directory.GetCurrentDirectory() + "\BardecodeIni.ini""")
             .WaitForExit()
             .Close()
             .Dispose()
@@ -44,7 +44,7 @@ Public Class StepBardecode
         ' and pass it to the inifile on the same directory were bardecode is placed
         ' will have to modify the inifiles each time that i run bardecode passing just the subfolders and not the whole input folder of the boxes
         ' check the type of the folder that are being processed and create the IniFile object according with it
-        Dim BardecodeIni As IniFile = New IniFile("C:\Repository\Bardecode\VB Project\Project\'\BardecodeIni.ini")
+        Dim BardecodeIni As IniFile = New IniFile(Directory.GetCurrentDirectory() + "\BardecodeIni.ini")
 
         'Folders and files
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Me.BardecodeProperties.InputFolder)
@@ -68,19 +68,23 @@ Public Class StepBardecode
         BardecodeIni.WriteValue("options", "Datamatrix", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.Datamatrix).ToString())
         BardecodeIni.WriteValue("options", "QR-Code", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.QR_Code).ToString())
 
-        'Barcode Pattern, Size e WhiteChars
+        'Barcode Pattern, Size
         BardecodeIni.WriteValue("options", "Pattern", "System.String," + Me.BardecodeProperties.BarcodePattern)
         BardecodeIni.WriteValue("options", "MinLength", "System.Int32," + "4")
         BardecodeIni.WriteValue("options", "MaxLength", "System.Int32," + "99")
-        BardecodeIni.WriteValue("options", "FilterChars", "System.String," + Me.BardecodeProperties.WhitelistChar)
     End Sub
 
-    Public Sub ChangeInputPath(Path As String)
+    Public Sub ChangePath(Path As String)
         ' this method will be invoked just through the loop to change the input folder of the bardecode inifile configuration
         ' we need to process just one folder at time so thats the reason why we need to change the input folder on the inifile on the go
 
-        Dim BardecodeIni As IniFile = New IniFile("C:\Repository\Bardecode\VB Project\Project\'\BardecodeIni.ini")
+        Dim BardecodeIni As IniFile = New IniFile(Directory.GetCurrentDirectory() + "\BardecodeIni.ini")
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Path)
+
+        If BardecodeProperties.CreateOutputSubFolders Then            
+            BardecodeIni.WriteValue("options", "outputFolder", "System.String," + Directory.CreateDirectory(BardecodeProperties.OutputFolder + "\" + New DirectoryInfo(Path).Name).FullName)
+        End If
+
     End Sub
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepBardecode
@@ -97,7 +101,7 @@ Public Class StepBardecode
         If BardecodeProperties.ProcessSubFolders Then
             For Each subFolder In New DirectoryInfo(BardecodeProperties.InputFolder).GetDirectories()
                 LogSub("Folder: " + subFolder.FullName)
-                ChangeInputPath(subFolder.FullName)
+                ChangePath(subFolder.FullName)
                 StartBardecodeProcess()
             Next
         Else

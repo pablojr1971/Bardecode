@@ -8,7 +8,10 @@ Public Class Process
 
     Public Sub New(ProcessId As Integer)
         Id = ProcessId
-        Steps = (From a In ctx.ESteps Where a.Process = ProcessId Select a.Id).AsEnumerable().Select(Function(p) CreateStepObj(p)).ToList()
+        Steps = (From a In ctx.ESteps
+                 Where a.Process = ProcessId
+                 Select a.Id, a.RunOrder
+                 Order By RunOrder).AsEnumerable().Select(Function(p) CreateStepObj(p.Id)).ToList()
     End Sub
 
     Private Function CreateStepObj(StepId As Integer) As IStep
@@ -23,6 +26,9 @@ Public Class Process
 
                 Case StepType.ImgsToPDF
                     CreateStepObj = StepImgsToPDF.LoadStep(.Id, ctx)
+
+                Case StepType.Custom
+                    CreateStepObj = StepCustom.LoadStep(.Id, ctx)
 
                 Case StepType.CSVIndexingProperties
             End Select

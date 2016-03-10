@@ -3,6 +3,7 @@ Imports System.Collections
 Imports Ghostscript.NET.Rasterizer
 Imports Clock.Pdf
 Imports Clock.Hocr
+Imports Clock.Util
 
 Public Class StepOCR
     Implements IStep
@@ -18,89 +19,52 @@ Public Class StepOCR
     Sub New()
         Me.OCRProperties = New PropertiesOCR()
         Me.OCRProperties.SetDefaultValues()
-        Me.tes = New Tesseract.TesseractEngine(Me.OCRProperties.TesseractData, Me.OCRProperties.TesseractLanguage)
+        Me.tes = New Tesseract.TesseractEngine(Directory.GetCurrentDirectory + "\tessdata", "eng")
         tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
     End Sub
 
     Sub New(Properties As PropertiesOCR)
         Me.OCRProperties = Properties
-        Me.tes = New Tesseract.TesseractEngine(Me.OCRProperties.TesseractData, Me.OCRProperties.TesseractLanguage)
+        Me.tes = New Tesseract.TesseractEngine(Directory.GetCurrentDirectory + "\tessdata", "eng")
         tes.SetVariable("tessedit_char_whitelist", " $.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,'-()\/")
     End Sub
 
-    Public Sub RunFile(File As FileInfo)
-        Dim htmlfile As FileStream
-        Dim hdoc As hDocument = New hDocument
-        Dim index As Integer = 0
-
+    Public Sub RunFile(File As FileInfo, OutFolder As String, LogSub As IStep.LogSubDelegate)
+        Dim currentPage As Image
         Dim pdfset As PDFSettings = New PDFSettings()
         pdfset.ImageType = PdfImageType.Jpg
-        pdfset.ImageQuality = 100
-        pdfset.Dpi = 200
-        pdfset.PdfOcrMode = Clock.Util.OcrMode.Tesseract
+        pdfset.ImageQuality = 150
+        pdfset.Dpi = 500
+        pdfset.PdfOcrMode = Clock.Util.OcrMode.TesseractDigitsOnly
         pdfset.WriteTextMode = WriteTextMode.Line
         pdfset.Language = "eng"
 
-        Dim pdfCreator As PdfCreator = New PdfCreator(pdfset, Replace(File.FullName, ".pdf", Me.OCRProperties.OutputNameTemplate))
+        Dim hdoc As hDocument = New hDocument()
+        Dim hpage As hPage = New hPage()
+        Dim pdfCreator As PdfCreator = New PdfCreator(pdfset, Replace(OutFolder + "\" + File.Name, ".pdf", Me.OCRProperties.OutputNameTemplate))
 
-        For Each page As KeyValuePair(Of Bitmap, String) In Me.GetOCRedPages(File)
-            htmlfile = New FileStream(String.Format(Me.OCRProperties.OutputDirectory.FullName + "\page{0}.html", index), FileMode.Create, FileAccess.Write)
-            With New StreamWriter(htmlfile)
-                .Write(page.Value)
-                .Close()
+        Dim rasterizer = New GhostscriptRasterizer()
+
+        rasterizer.Open(File.FullName)
+        For index As Integer = 1 To rasterizer.PageCount
+            LogSub(String.Format("Page {0} of {1}", index, rasterizer.PageCount))
+            currentPage = rasterizer.GetPage(200, 200, index)
+            If {41, 42}.Contains(index) Then
+                pdfCreator.AddPage(currentPage)
+                Continue For
+            End If
+            With tes.Process(currentPage)
+                OCRParser.ParseHOCR(hdoc, .GetHOCRText(0, True), True)
+                pdfCreator.AddPage(hdoc.Pages(hdoc.Pages.Count - 1), currentPage)
+                hdoc.Pages.RemoveAt(hdoc.Pages.Count - 1)
+
                 .Dispose()
             End With
-            hdoc.AddFile(htmlfile.Name)
-            pdfCreator.AddPage(hdoc.Pages(hdoc.Pages.Count - 1), page.Key)
-            hdoc.Pages.RemoveAt(hdoc.Pages.Count - 1)
-            htmlfile.Dispose()
-            If Not Me.OCRProperties.SaveHtmlFiles Then
-                My.Computer.FileSystem.DeleteFile(String.Format(Me.OCRProperties.OutputDirectory.FullName + "\page{0}.html", index))
-            End If
-            index = index + 1
         Next
         pdfCreator.SaveAndClose()
         pdfCreator.Dispose()
-        GC.Collect()
-    End Sub
-
-    Private Function GetOCRedPages(File As FileInfo) As Dictionary(Of Bitmap, String)
-        GetOCRedPages = New Dictionary(Of Bitmap, String)
-        Dim index As Integer
-        For Each item As Bitmap In Me.ExtractImagesFromPdf(File, File.Directory)
-            With tes.Process(item)
-                GetOCRedPages.Add(item, .GetHOCRText(0, True))
-                .Dispose()
-            End With
-            If Me.OCRProperties.SaveImageFiles Then
-                item.Save(String.Format(Me.OCRProperties.OutputDirectory.FullName + "\page{0}." + Me.OCRProperties.SaveImageFormat.ToString, index), Me.OCRProperties.SaveImageFormat)
-                index = index + 1
-            End If
-        Next
-    End Function
-
-    Private Function ExtractImagesFromPdf(Pdf As FileInfo, OutputFolder As DirectoryInfo) As List(Of Bitmap)
-        ExtractImagesFromPdf = New List(Of Bitmap)
-
-        Dim rasterizer = New GhostscriptRasterizer()
-        rasterizer.Open(Pdf.FullName)
-        For index As Integer = 1 To rasterizer.PageCount
-            ExtractImagesFromPdf.Add(rasterizer.GetPage(200, 200, index))
-        Next
         rasterizer.Dispose()
-    End Function
-
-    Public Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String)
-        If RunSubFolders Then
-            For Each subfolder In IIf(SearchPattern = "", Folder.GetDirectories(), Folder.GetDirectories(SearchPattern))
-                ' recursive method to run all folders till the most specific one where we will have only files and then goes out to run the files of that folder
-                RunFolder(subfolder, RunSubFolders, SearchPattern)
-            Next
-        End If
-
-        For Each File In IIf(SearchPattern = "", Folder.GetFiles("*.pdf"), Folder.GetFiles(SearchPattern))
-            Me.RunFile(File)
-        Next
+        GC.Collect()
     End Sub
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepOCR
@@ -110,6 +74,18 @@ Public Class StepOCR
     End Function
 
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
+        Me.RecursiveRun(New DirectoryInfo(OCRProperties.InputFolder), OCRProperties.ProcessSubFolders, LogSub)
+    End Sub
 
+    Private Sub RecursiveRun(Folders As DirectoryInfo, RunSubFolders As Boolean, LogSub As IStep.LogSubDelegate)
+        If RunSubFolders Then
+            For Each subfolder In Folders.GetDirectories()
+                RecursiveRun(subfolder, True, LogSub)
+            Next
+        End If
+
+        For Each File In Folders.GetFiles("*.pdf")
+            RunFile(File, OCRProperties.OutputFolder, LogSub)
+        Next
     End Sub
 End Class

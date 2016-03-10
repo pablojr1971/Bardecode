@@ -64,6 +64,10 @@
     <Reference Include="hOcr2Pdf">
       <HintPath>..\packages\hocr2pdf.net\Release\hOcr2Pdf.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PdfSharp">
       <HintPath>PDFsharp\GDI+\PdfSharp.dll</HintPath>
     </Reference>
@@ -98,6 +102,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\OCRParser.vb" />
     <Compile Include="Classes\Process.vb" />
     <Compile Include="Classes\PropertiesBardecode.vb" />
     <Compile Include="Classes\PropertiesCSVIndexing.vb" />

@@ -33,6 +33,7 @@ Partial Class FrmSteps
         Me.gb1Barcodes = New System.Windows.Forms.GroupBox()
         Me.cx1Barcodes = New System.Windows.Forms.CheckedListBox()
         Me.gb1Patterns = New System.Windows.Forms.GroupBox()
+        Me.cx1CreateOutSubFolders = New System.Windows.Forms.CheckBox()
         Me.cx1SubFolders = New System.Windows.Forms.CheckBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -52,27 +53,26 @@ Partial Class FrmSteps
         Me.tx1ExceptionFolder = New System.Windows.Forms.TextBox()
         Me.tx1InputFolder = New System.Windows.Forms.TextBox()
         Me.PgOCR = New System.Windows.Forms.TabPage()
-        Me.ch2SaveHTML = New System.Windows.Forms.CheckBox()
-        Me.ch2SaveImage = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.tx2FileOutTemplate = New System.Windows.Forms.TextBox()
         Me.gb2Paths = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.tx2OutputFolder = New System.Windows.Forms.TextBox()
         Me.tx2InputFolder = New System.Windows.Forms.TextBox()
         Me.PgImgsToPdf = New System.Windows.Forms.TabPage()
-        Me.cx1CreateOutSubFolders = New System.Windows.Forms.CheckBox()
         Me.pgCustom = New System.Windows.Forms.TabPage()
+        Me.gb4CustomProcess = New System.Windows.Forms.GroupBox()
+        Me.cb4CustomProcess = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.gb4ProcessPath = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.tx4OutputFolder = New System.Windows.Forms.TextBox()
         Me.tx4InputFolder = New System.Windows.Forms.TextBox()
-        Me.gb4CustomProcess = New System.Windows.Forms.GroupBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.cb4CustomProcess = New System.Windows.Forms.ComboBox()
+        Me.cx2CreateOutSubFolders = New System.Windows.Forms.CheckBox()
+        Me.cx2ProcessSubFolders = New System.Windows.Forms.CheckBox()
         Me.MainPanel.SuspendLayout()
         Me.gbStepSettings.SuspendLayout()
         Me.tcSteps.SuspendLayout()
@@ -84,8 +84,8 @@ Partial Class FrmSteps
         Me.GroupBox1.SuspendLayout()
         Me.gb2Paths.SuspendLayout()
         Me.pgCustom.SuspendLayout()
-        Me.gb4ProcessPath.SuspendLayout()
         Me.gb4CustomProcess.SuspendLayout()
+        Me.gb4ProcessPath.SuspendLayout()
         Me.SuspendLayout()
         '
         'MainPanel
@@ -211,6 +211,19 @@ Partial Class FrmSteps
         Me.gb1Patterns.TabIndex = 1
         Me.gb1Patterns.TabStop = False
         Me.gb1Patterns.Text = "Patterns"
+        '
+        'cx1CreateOutSubFolders
+        '
+        Me.cx1CreateOutSubFolders.AutoSize = True
+        Me.cx1CreateOutSubFolders.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx1CreateOutSubFolders.Checked = True
+        Me.cx1CreateOutSubFolders.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cx1CreateOutSubFolders.Location = New System.Drawing.Point(150, 130)
+        Me.cx1CreateOutSubFolders.Name = "cx1CreateOutSubFolders"
+        Me.cx1CreateOutSubFolders.Size = New System.Drawing.Size(151, 17)
+        Me.cx1CreateOutSubFolders.TabIndex = 9
+        Me.cx1CreateOutSubFolders.Text = "Create Output Sub Folders"
+        Me.cx1CreateOutSubFolders.UseVisualStyleBackColor = True
         '
         'cx1SubFolders
         '
@@ -372,8 +385,6 @@ Partial Class FrmSteps
         '
         'PgOCR
         '
-        Me.PgOCR.Controls.Add(Me.ch2SaveHTML)
-        Me.PgOCR.Controls.Add(Me.ch2SaveImage)
         Me.PgOCR.Controls.Add(Me.GroupBox1)
         Me.PgOCR.Controls.Add(Me.gb2Paths)
         Me.PgOCR.Location = New System.Drawing.Point(4, 22)
@@ -384,33 +395,11 @@ Partial Class FrmSteps
         Me.PgOCR.Text = "OCR"
         Me.PgOCR.UseVisualStyleBackColor = True
         '
-        'ch2SaveHTML
-        '
-        Me.ch2SaveHTML.AutoSize = True
-        Me.ch2SaveHTML.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ch2SaveHTML.Location = New System.Drawing.Point(219, 147)
-        Me.ch2SaveHTML.Name = "ch2SaveHTML"
-        Me.ch2SaveHTML.Size = New System.Drawing.Size(162, 17)
-        Me.ch2SaveHTML.TabIndex = 4
-        Me.ch2SaveHTML.Text = "Save each page HTML Files"
-        Me.ch2SaveHTML.UseVisualStyleBackColor = True
-        '
-        'ch2SaveImage
-        '
-        Me.ch2SaveImage.AutoSize = True
-        Me.ch2SaveImage.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ch2SaveImage.Location = New System.Drawing.Point(6, 147)
-        Me.ch2SaveImage.Name = "ch2SaveImage"
-        Me.ch2SaveImage.Size = New System.Drawing.Size(163, 17)
-        Me.ch2SaveImage.TabIndex = 3
-        Me.ch2SaveImage.Text = "Save Each Page Image Files"
-        Me.ch2SaveImage.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label17)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 89)
+        Me.GroupBox1.Controls.Add(Me.tx2FileOutTemplate)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 115)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(456, 52)
         Me.GroupBox1.TabIndex = 2
@@ -426,22 +415,24 @@ Partial Class FrmSteps
         Me.Label17.TabIndex = 4
         Me.Label17.Text = "File Out Template:"
         '
-        'TextBox5
+        'tx2FileOutTemplate
         '
-        Me.TextBox5.Location = New System.Drawing.Point(104, 19)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(346, 20)
-        Me.TextBox5.TabIndex = 0
+        Me.tx2FileOutTemplate.Location = New System.Drawing.Point(104, 19)
+        Me.tx2FileOutTemplate.Name = "tx2FileOutTemplate"
+        Me.tx2FileOutTemplate.Size = New System.Drawing.Size(346, 20)
+        Me.tx2FileOutTemplate.TabIndex = 0
         '
         'gb2Paths
         '
+        Me.gb2Paths.Controls.Add(Me.cx2CreateOutSubFolders)
+        Me.gb2Paths.Controls.Add(Me.cx2ProcessSubFolders)
         Me.gb2Paths.Controls.Add(Me.Label11)
         Me.gb2Paths.Controls.Add(Me.Label12)
         Me.gb2Paths.Controls.Add(Me.tx2OutputFolder)
         Me.gb2Paths.Controls.Add(Me.tx2InputFolder)
         Me.gb2Paths.Location = New System.Drawing.Point(6, 6)
         Me.gb2Paths.Name = "gb2Paths"
-        Me.gb2Paths.Size = New System.Drawing.Size(456, 77)
+        Me.gb2Paths.Size = New System.Drawing.Size(456, 103)
         Me.gb2Paths.TabIndex = 0
         Me.gb2Paths.TabStop = False
         Me.gb2Paths.Text = "Process Paths"
@@ -488,19 +479,6 @@ Partial Class FrmSteps
         Me.PgImgsToPdf.Text = "ImgsToPdf"
         Me.PgImgsToPdf.UseVisualStyleBackColor = True
         '
-        'cx1CreateOutSubFolders
-        '
-        Me.cx1CreateOutSubFolders.AutoSize = True
-        Me.cx1CreateOutSubFolders.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cx1CreateOutSubFolders.Checked = True
-        Me.cx1CreateOutSubFolders.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cx1CreateOutSubFolders.Location = New System.Drawing.Point(150, 130)
-        Me.cx1CreateOutSubFolders.Name = "cx1CreateOutSubFolders"
-        Me.cx1CreateOutSubFolders.Size = New System.Drawing.Size(151, 17)
-        Me.cx1CreateOutSubFolders.TabIndex = 9
-        Me.cx1CreateOutSubFolders.Text = "Create Output Sub Folders"
-        Me.cx1CreateOutSubFolders.UseVisualStyleBackColor = True
-        '
         'pgCustom
         '
         Me.pgCustom.Controls.Add(Me.gb4CustomProcess)
@@ -512,6 +490,34 @@ Partial Class FrmSteps
         Me.pgCustom.TabIndex = 3
         Me.pgCustom.Text = "Custom"
         Me.pgCustom.UseVisualStyleBackColor = True
+        '
+        'gb4CustomProcess
+        '
+        Me.gb4CustomProcess.Controls.Add(Me.cb4CustomProcess)
+        Me.gb4CustomProcess.Controls.Add(Me.Label14)
+        Me.gb4CustomProcess.Location = New System.Drawing.Point(6, 89)
+        Me.gb4CustomProcess.Name = "gb4CustomProcess"
+        Me.gb4CustomProcess.Size = New System.Drawing.Size(456, 53)
+        Me.gb4CustomProcess.TabIndex = 2
+        Me.gb4CustomProcess.TabStop = False
+        Me.gb4CustomProcess.Text = "Custom Process"
+        '
+        'cb4CustomProcess
+        '
+        Me.cb4CustomProcess.FormattingEnabled = True
+        Me.cb4CustomProcess.Location = New System.Drawing.Point(104, 19)
+        Me.cb4CustomProcess.Name = "cb4CustomProcess"
+        Me.cb4CustomProcess.Size = New System.Drawing.Size(346, 21)
+        Me.cb4CustomProcess.TabIndex = 1
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 22)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(98, 13)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "Custom Process Id:"
         '
         'gb4ProcessPath
         '
@@ -558,33 +564,31 @@ Partial Class FrmSteps
         Me.tx4InputFolder.Size = New System.Drawing.Size(346, 20)
         Me.tx4InputFolder.TabIndex = 8
         '
-        'gb4CustomProcess
+        'cx2CreateOutSubFolders
         '
-        Me.gb4CustomProcess.Controls.Add(Me.cb4CustomProcess)
-        Me.gb4CustomProcess.Controls.Add(Me.Label14)
-        Me.gb4CustomProcess.Location = New System.Drawing.Point(6, 89)
-        Me.gb4CustomProcess.Name = "gb4CustomProcess"
-        Me.gb4CustomProcess.Size = New System.Drawing.Size(456, 53)
-        Me.gb4CustomProcess.TabIndex = 2
-        Me.gb4CustomProcess.TabStop = False
-        Me.gb4CustomProcess.Text = "Custom Process"
+        Me.cx2CreateOutSubFolders.AutoSize = True
+        Me.cx2CreateOutSubFolders.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx2CreateOutSubFolders.Checked = True
+        Me.cx2CreateOutSubFolders.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cx2CreateOutSubFolders.Location = New System.Drawing.Point(150, 80)
+        Me.cx2CreateOutSubFolders.Name = "cx2CreateOutSubFolders"
+        Me.cx2CreateOutSubFolders.Size = New System.Drawing.Size(151, 17)
+        Me.cx2CreateOutSubFolders.TabIndex = 13
+        Me.cx2CreateOutSubFolders.Text = "Create Output Sub Folders"
+        Me.cx2CreateOutSubFolders.UseVisualStyleBackColor = True
         '
-        'Label14
+        'cx2ProcessSubFolders
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 22)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(98, 13)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "Custom Process Id:"
-        '
-        'cb4CustomProcess
-        '
-        Me.cb4CustomProcess.FormattingEnabled = True
-        Me.cb4CustomProcess.Location = New System.Drawing.Point(104, 19)
-        Me.cb4CustomProcess.Name = "cb4CustomProcess"
-        Me.cb4CustomProcess.Size = New System.Drawing.Size(346, 21)
-        Me.cb4CustomProcess.TabIndex = 1
+        Me.cx2ProcessSubFolders.AutoSize = True
+        Me.cx2ProcessSubFolders.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx2ProcessSubFolders.Checked = True
+        Me.cx2ProcessSubFolders.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cx2ProcessSubFolders.Location = New System.Drawing.Point(6, 80)
+        Me.cx2ProcessSubFolders.Name = "cx2ProcessSubFolders"
+        Me.cx2ProcessSubFolders.Size = New System.Drawing.Size(123, 17)
+        Me.cx2ProcessSubFolders.TabIndex = 12
+        Me.cx2ProcessSubFolders.Text = "Process Sub Folders"
+        Me.cx2ProcessSubFolders.UseVisualStyleBackColor = True
         '
         'FrmSteps
         '
@@ -606,16 +610,15 @@ Partial Class FrmSteps
         Me.gb1Paths.ResumeLayout(False)
         Me.gb1Paths.PerformLayout()
         Me.PgOCR.ResumeLayout(False)
-        Me.PgOCR.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gb2Paths.ResumeLayout(False)
         Me.gb2Paths.PerformLayout()
         Me.pgCustom.ResumeLayout(False)
-        Me.gb4ProcessPath.ResumeLayout(False)
-        Me.gb4ProcessPath.PerformLayout()
         Me.gb4CustomProcess.ResumeLayout(False)
         Me.gb4CustomProcess.PerformLayout()
+        Me.gb4ProcessPath.ResumeLayout(False)
+        Me.gb4ProcessPath.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -655,11 +658,9 @@ Partial Class FrmSteps
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents tx2OutputFolder As System.Windows.Forms.TextBox
     Friend WithEvents tx2InputFolder As System.Windows.Forms.TextBox
-    Friend WithEvents ch2SaveHTML As System.Windows.Forms.CheckBox
-    Friend WithEvents ch2SaveImage As System.Windows.Forms.CheckBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents tx2FileOutTemplate As System.Windows.Forms.TextBox
     Friend WithEvents cx1CreateOutSubFolders As System.Windows.Forms.CheckBox
     Friend WithEvents pgCustom As System.Windows.Forms.TabPage
     Friend WithEvents gb4CustomProcess As System.Windows.Forms.GroupBox
@@ -670,4 +671,6 @@ Partial Class FrmSteps
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents tx4OutputFolder As System.Windows.Forms.TextBox
     Friend WithEvents tx4InputFolder As System.Windows.Forms.TextBox
+    Friend WithEvents cx2CreateOutSubFolders As System.Windows.Forms.CheckBox
+    Friend WithEvents cx2ProcessSubFolders As System.Windows.Forms.CheckBox
 End Class

@@ -39,18 +39,10 @@ Public Class FrmSteps
 
     Private Sub btOk_Click(sender As Object, e As EventArgs) Handles btOk.Click
         Select Case tcSteps.SelectedIndex
-            Case 0
-                SaveBardecode()
-
-            Case 1 ' OCR
-
-
-            Case 2 ' ImgsToPDF
-
-            Case 3 ' Custom
-                SaveCustom()
-
-
+            Case 0 : SaveBardecode()
+            Case 1 : SaveOCR()
+            Case 2 'SaveImgsToPDF
+            Case 3 : SaveCustom()
         End Select
         Entity.RunOrder = txRunOrder.Text
         Close()
@@ -83,7 +75,11 @@ Public Class FrmSteps
 
                 Case StepType.OCR
                     With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesOCR)), PropertiesOCR)
-
+                        tx2InputFolder.Text = .InputFolder
+                        tx2OutputFolder.Text = .OutputFolder
+                        tx2FileOutTemplate.Text = .OutputNameTemplate
+                        cx2CreateOutSubFolders.Checked = .CreateOutputSubFolders
+                        cx2ProcessSubFolders.Checked = .ProcessSubFolders
                     End With
 
                 Case StepType.ImgsToPDF
@@ -144,5 +140,16 @@ Public Class FrmSteps
         Props.CustomRunID = cb4CustomProcess.Text
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
         Entity.StepType = StepType.Custom
+    End Sub
+
+    Private Sub SaveOCR()
+        Dim Props As PropertiesOCR = New PropertiesOCR()
+        Props.InputFolder = tx2InputFolder.Text
+        Props.OutputFolder = tx2OutputFolder.Text
+        Props.OutputNameTemplate = tx2FileOutTemplate.Text
+        Props.ProcessSubFolders = cx2ProcessSubFolders.Checked
+        Props.CreateOutputSubFolders = cx2CreateOutSubFolders.Checked
+        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
+        Entity.StepType = StepType.OCR
     End Sub
 End Class

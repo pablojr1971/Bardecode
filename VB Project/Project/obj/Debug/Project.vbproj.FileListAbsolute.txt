@@ -83,3 +83,5 @@ C:\Repository\Bardecode\VB Project\Project\Build\Ghostscript.NET.xml
 C:\Repository\Bardecode\VB Project\Project\Build\hOcr2Pdf.pdb
 C:\Repository\Bardecode\VB Project\Project\Build\Tesseract.xml
 C:\Repository\Bardecode\VB Project\Project\Build\de\PdfSharp.resources.dll
+C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.pdb
+C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.xml

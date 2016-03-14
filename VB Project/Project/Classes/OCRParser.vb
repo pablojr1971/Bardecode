@@ -8,7 +8,15 @@ Imports System.IO
 Imports System.Diagnostics
 Imports HtmlAgilityPack
 
+' This class is almost the same Parser class that we have in hOcr2PDF library
+' However that class is an internal class and we can't access
+' I rewrote this class because if you want to add a page from a HTML document
+' in a PDFCreator object, you need to pass a file path of a HTML file.
 
+' When we run tesseract, the output is a String containing the HTML data
+' In the common way you will need to save the String as a HTML file and then call the method
+' In this class you can call the ParseHOCR method passing only a string containing 
+' the HTML data which is the tesseract output.
 Public Class OCRParser
     Shared doc As HtmlDocument
     Shared hDoc As hDocument
@@ -35,7 +43,13 @@ Public Class OCRParser
 
         ParseNodes(nodes)
 
-        Return hDoc
+        ParseHOCR = hDoc
+
+        doc = Nothing
+        currentPage = Nothing
+        currentPara = Nothing
+        currentLine = Nothing
+        hDoc = Nothing
     End Function
 
     Private Shared Sub ParseNodes(nodes As HtmlNodeCollection)
@@ -88,7 +102,6 @@ Public Class OCRParser
                         End If
                         currentPara.Lines.Add(currentLine)
 
-
                     Case "ocrx_word"
                         Dim w As hWord = New hWord()
                         w.ClassName = className
@@ -96,6 +109,7 @@ Public Class OCRParser
                         ParseTitle(title, w)
                         w.Text = node.InnerText
                         currentLine.Words.Add(w)
+                        w = Nothing
 
                     Case "ocr_word"
                         Dim w1 As hWord = New hWord()
@@ -104,6 +118,7 @@ Public Class OCRParser
                         ParseTitle(title, w1)
                         w1.Text = node.InnerText
                         currentLine.Words.Add(w1)
+                        w1 = Nothing
                 End Select
             End If
             ParseNodes(node.ChildNodes)
@@ -129,6 +144,7 @@ Public Class OCRParser
                 Dim coords As String = s.Replace("bbox", "")
                 Dim box As BBox = New BBox(coords)
                 ocrclass.BBox = box
+                box = Nothing
             End If
         Next
     End Sub

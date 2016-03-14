@@ -26,9 +26,9 @@ Partial Class FrmProcesses
         Me.btOk = New System.Windows.Forms.Button()
         Me.btCancel = New System.Windows.Forms.Button()
         Me.gbSteps = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btNewStep = New System.Windows.Forms.Button()
+        Me.btEditStep = New System.Windows.Forms.Button()
+        Me.btDeleteStep = New System.Windows.Forms.Button()
         Me.dgSteps = New System.Windows.Forms.DataGridView()
         Me.RunOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,9 +76,9 @@ Partial Class FrmProcesses
         '
         'gbSteps
         '
-        Me.gbSteps.Controls.Add(Me.Button1)
-        Me.gbSteps.Controls.Add(Me.Button2)
-        Me.gbSteps.Controls.Add(Me.Button3)
+        Me.gbSteps.Controls.Add(Me.btNewStep)
+        Me.gbSteps.Controls.Add(Me.btEditStep)
+        Me.gbSteps.Controls.Add(Me.btDeleteStep)
         Me.gbSteps.Controls.Add(Me.dgSteps)
         Me.gbSteps.Location = New System.Drawing.Point(12, 89)
         Me.gbSteps.Name = "gbSteps"
@@ -87,32 +87,32 @@ Partial Class FrmProcesses
         Me.gbSteps.TabStop = False
         Me.gbSteps.Text = "Steps"
         '
-        'Button1
+        'btNewStep
         '
-        Me.Button1.Location = New System.Drawing.Point(238, 289)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "New"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btNewStep.Location = New System.Drawing.Point(238, 289)
+        Me.btNewStep.Name = "btNewStep"
+        Me.btNewStep.Size = New System.Drawing.Size(75, 23)
+        Me.btNewStep.TabIndex = 11
+        Me.btNewStep.Text = "New"
+        Me.btNewStep.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btEditStep
         '
-        Me.Button2.Location = New System.Drawing.Point(319, 289)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btEditStep.Location = New System.Drawing.Point(319, 289)
+        Me.btEditStep.Name = "btEditStep"
+        Me.btEditStep.Size = New System.Drawing.Size(75, 23)
+        Me.btEditStep.TabIndex = 10
+        Me.btEditStep.Text = "Edit"
+        Me.btEditStep.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btDeleteStep
         '
-        Me.Button3.Location = New System.Drawing.Point(400, 289)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 9
-        Me.Button3.Text = "Delete"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btDeleteStep.Location = New System.Drawing.Point(400, 289)
+        Me.btDeleteStep.Name = "btDeleteStep"
+        Me.btDeleteStep.Size = New System.Drawing.Size(75, 23)
+        Me.btDeleteStep.TabIndex = 9
+        Me.btDeleteStep.Text = "Delete"
+        Me.btDeleteStep.UseVisualStyleBackColor = True
         '
         'dgSteps
         '
@@ -219,9 +219,9 @@ Partial Class FrmProcesses
     Friend WithEvents btOk As System.Windows.Forms.Button
     Friend WithEvents btCancel As System.Windows.Forms.Button
     Friend WithEvents dgSteps As System.Windows.Forms.DataGridView
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btNewStep As System.Windows.Forms.Button
+    Friend WithEvents btEditStep As System.Windows.Forms.Button
+    Friend WithEvents btDeleteStep As System.Windows.Forms.Button
     Friend WithEvents RunOrder As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Type As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Id As System.Windows.Forms.DataGridViewTextBoxColumn

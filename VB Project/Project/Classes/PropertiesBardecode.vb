@@ -10,6 +10,7 @@ Public Structure PropertiesBardecode
 
     Public CreateOutputSubFolders As Boolean
     Public ProcessSubFolders As Boolean
+    Public DeleteInputFiles As Boolean
     Public SubFolderPattern As String
     'This property must contain a regex expression that bardecode will use to find just files that matches with this expression
     Public FileNamePattern As String
@@ -22,8 +23,8 @@ Public Structure PropertiesBardecode
     Public BarcodeTypes As List(Of BarcodeType)
     'Must contain a regex expression that bardecode will use to pick up just the barcodes that matches with the expression
     Public BarcodePattern As String
-    Public MinimumBarcodeSize As Integer
-    Public MaximumBarcodeSize As Integer
+    'Split Mode
+    Public SplitMode As Integer
 
     Public Sub SetDefaultvalues()
         Me.InputFolder = Directory.GetCurrentDirectory()
@@ -34,9 +35,10 @@ Public Structure PropertiesBardecode
         Me.OutputNameTemplate = "%VALUES_%SEQ3"
         Me.BarcodeTypes = New List(Of BarcodeType) From {BarcodeType.Code_128, BarcodeType.Code_2_of_5, BarcodeType.Code_3_of_9}
         Me.BarcodePattern = ""
-        Me.MinimumBarcodeSize = 4
-        Me.MaximumBarcodeSize = 99
-        Me.CreateOutputSubFolders = True
+        Me.CreateOutputSubFolders = False
+        Me.ProcessSubFolders = False
+        Me.DeleteInputFiles = False
+        Me.SplitMode = Project.SplitMode.BarcodeStart
     End Sub
 
 End Structure

@@ -18,20 +18,9 @@ Public Class FrmSteps
         Me.ShowDialog(ParentForm)
     End Sub
 
-    Public Sub New(Id As Integer, ParentForm As System.Windows.Forms.IWin32Window)
-        InitializeComponent()
-        ctx.ESteps.Where(Function(p) p.Id = Id).Load()
-        Me.Entity = ctx.ESteps.Single(Function(p) p.Id = Id)
-        ShowForm()
-    End Sub
-
     Public Sub New(ByVal StepEntity As EStep, ParentForm As System.Windows.Forms.IWin32Window)
         InitializeComponent()
         Me.Entity = StepEntity
-        ShowForm()
-    End Sub
-
-    Private Sub ShowForm()
         tcSteps.SelectedIndex = Me.Entity.StepType
         LoadProperties()
         Me.ShowDialog(ParentForm)
@@ -56,48 +45,10 @@ Public Class FrmSteps
     Private Sub LoadProperties()
         If Not String.IsNullOrEmpty(Me.Entity.PropertiesObj) Then            
             Select Case EntityStep.StepType
-                Case StepType.Bardecode
-                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesBardecode)), PropertiesBardecode)
-                        tx1BarcodeRegex.Text = .BarcodePattern
-                        tx1ExceptionFolder.Text = .ExceptionFolder
-                        tx1FileInRegex.Text = .FileNamePattern
-                        tx1InputFolder.Text = .InputFolder
-                        tx1OutputFolder.Text = .OutputFolder
-                        tx1FileOutTemplate.Text = .OutputNameTemplate
-                        tx1ProcessedFolder.Text = .ProcessedFolder
-                        cx1SubFolders.Checked = .ProcessSubFolders
-                        tx1SubFolderRegex.Text = .SubFolderPattern
-                        cx1CreateOutSubFolders.Checked = .CreateOutputSubFolders
-                        For Each item In .BarcodeTypes
-                            cx1Barcodes.SetItemChecked(item, True)
-                        Next
-                    End With
-
-                Case StepType.OCR
-                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesOCR)), PropertiesOCR)
-                        tx2InputFolder.Text = .InputFolder
-                        tx2OutputFolder.Text = .OutputFolder
-                        tx2FileOutTemplate.Text = .OutputNameTemplate
-                        cx2CreateOutSubFolders.Checked = .CreateOutputSubFolders
-                        cx2ProcessSubFolders.Checked = .ProcessSubFolders
-                    End With
-
-                Case StepType.ImgsToPDF
-                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesImgsToPDF)), PropertiesImgsToPDF)
-
-                    End With
-
-                Case StepType.Custom
-                    With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesCustom)), PropertiesCustom)
-                        tx4InputFolder.Text = .InputDirectory
-                        tx4OutputFolder.Text = .OutputDirectory
-                        cb4CustomProcess.Text = .CustomRunID
-                    End With
-                    cb4CustomProcess.Items.Clear()
-                    For Each method In GetType(StepCustom).GetMethods(BindingFlags.NonPublic Or BindingFlags.Instance Or BindingFlags.DeclaredOnly)
-                        cb4CustomProcess.Items.Add(method.Name)
-                    Next
-
+                Case StepType.Bardecode : LoadBardecode()
+                Case StepType.OCR : LoadOCR()
+                Case StepType.ImgsToPDF ' LoadImgsToPDF
+                Case StepType.Custom : LoadCustom()
             End Select
         End If
         txRunOrder.Text = Entity.RunOrder
@@ -126,6 +77,8 @@ Public Class FrmSteps
         Props.ProcessSubFolders = cx1SubFolders.Checked
         Props.SubFolderPattern = tx1SubFolderRegex.Text
         Props.CreateOutputSubFolders = cx1CreateOutSubFolders.Checked
+        Props.DeleteInputFiles = cx1DeleteInputFiles.Checked
+        Props.SplitMode = cb1SplitMode.SelectedIndex
         For Each item In cx1Barcodes.CheckedIndices
             Props.BarcodeTypes.Add(CType(item, BarcodeType))
         Next
@@ -135,8 +88,9 @@ Public Class FrmSteps
 
     Private Sub SaveCustom()
         Dim Props As PropertiesCustom = New PropertiesCustom()
-        Props.InputDirectory = tx4InputFolder.Text
-        Props.OutputDirectory = tx4OutputFolder.Text
+        Props.Input1 = tx4Input1.Text
+        Props.Input2 = tx4Input2.Text
+        Props.Output = tx4Output.Text
         Props.CustomRunID = cb4CustomProcess.Text
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
         Entity.StepType = StepType.Custom
@@ -151,5 +105,48 @@ Public Class FrmSteps
         Props.CreateOutputSubFolders = cx2CreateOutSubFolders.Checked
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
         Entity.StepType = StepType.OCR
+    End Sub
+
+    Private Sub LoadBardecode()
+        With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesBardecode)), PropertiesBardecode)
+            tx1BarcodeRegex.Text = .BarcodePattern
+            tx1ExceptionFolder.Text = .ExceptionFolder
+            tx1FileInRegex.Text = .FileNamePattern
+            tx1InputFolder.Text = .InputFolder
+            tx1OutputFolder.Text = .OutputFolder
+            tx1FileOutTemplate.Text = .OutputNameTemplate
+            tx1ProcessedFolder.Text = .ProcessedFolder
+            cx1SubFolders.Checked = .ProcessSubFolders
+            tx1SubFolderRegex.Text = .SubFolderPattern
+            cx1CreateOutSubFolders.Checked = .CreateOutputSubFolders
+            cx1DeleteInputFiles.Checked = .DeleteInputFiles
+            cb1SplitMode.SelectedIndex = .SplitMode
+            For Each item In .BarcodeTypes
+                cx1Barcodes.SetItemChecked(item, True)
+            Next
+        End With
+    End Sub
+
+    Private Sub LoadCustom()
+        With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesCustom)), PropertiesCustom)
+            tx4Input1.Text = .Input1
+            tx4Input2.Text = .Input2
+            tx4Output.Text = .Output
+            cb4CustomProcess.Text = .CustomRunID
+        End With
+        cb4CustomProcess.Items.Clear()
+        For Each method In GetType(StepCustom).GetMethods(BindingFlags.NonPublic Or BindingFlags.Instance Or BindingFlags.DeclaredOnly)
+            cb4CustomProcess.Items.Add(method.Name)
+        Next
+    End Sub
+
+    Private Sub LoadOCR()
+        With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesOCR)), PropertiesOCR)
+            tx2InputFolder.Text = .InputFolder
+            tx2OutputFolder.Text = .OutputFolder
+            tx2FileOutTemplate.Text = .OutputNameTemplate
+            cx2CreateOutSubFolders.Checked = .CreateOutputSubFolders
+            cx2ProcessSubFolders.Checked = .ProcessSubFolders
+        End With
     End Sub
 End Class

@@ -68,10 +68,10 @@ Public Class StepBardecode
         BardecodeIni.WriteValue("options", "Datamatrix", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.Datamatrix).ToString())
         BardecodeIni.WriteValue("options", "QR-Code", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.QR_Code).ToString())
 
-        'Barcode Pattern, Size
+        'Barcode Pattern, Delete input files, Split Mode
         BardecodeIni.WriteValue("options", "Pattern", "System.String," + Me.BardecodeProperties.BarcodePattern)
-        BardecodeIni.WriteValue("options", "MinLength", "System.Int32," + "4")
-        BardecodeIni.WriteValue("options", "MaxLength", "System.Int32," + "99")
+        BardecodeIni.WriteValue("options", "DeleteInputImages", "System.Boolean," + Me.BardecodeProperties.DeleteInputFiles.ToString())
+        BardecodeIni.WriteValue("options", "splitMode", "System.Int32," + Me.BardecodeProperties.SplitMode.ToString())
     End Sub
 
     Public Sub ChangePath(Path As String)
@@ -104,6 +104,10 @@ Public Class StepBardecode
                 ChangePath(subFolder.FullName)
                 StartBardecodeProcess()
             Next
+
+            LogSub("Folder: " + BardecodeProperties.InputFolder)
+            ChangePath(BardecodeProperties.InputFolder)
+            StartBardecodeProcess()
         Else
             LogSub("Folder: " + BardecodeProperties.InputFolder)
             StartBardecodeProcess()

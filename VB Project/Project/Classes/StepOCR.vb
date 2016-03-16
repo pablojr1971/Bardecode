@@ -19,24 +19,20 @@ Public Class StepOCR
     Sub New()
         Me.OCRProperties = New PropertiesOCR()
         Me.OCRProperties.SetDefaultValues()
-        Me.tes = New Tesseract.TesseractEngine(Directory.GetCurrentDirectory + "\tessdata", "eng")
-        tes.SetVariable("tessedit_char_whitelist", " 123456789_+-:.""'()%&/\?@$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
     End Sub
 
     Sub New(Properties As PropertiesOCR)
         Me.OCRProperties = Properties
-        Me.tes = New Tesseract.TesseractEngine(Directory.GetCurrentDirectory + "\tessdata", "eng")
-        tes.SetVariable("tessedit_char_whitelist", " 123456789_+-:.""'()%&/\?@$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
     End Sub
 
     Public Sub RunFile(File As FileInfo, OutFolder As String, LogSub As IStep.LogSubDelegate)
+        Me.tes = New Tesseract.TesseractEngine(Directory.GetCurrentDirectory + "\tessdata", "eng")
+        tes.SetVariable("tessedit_char_whitelist", " 123456789_+-:.""'()%&/\?@$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+
         Dim currentPage As Image
         Dim pdfset As PDFSettings = New PDFSettings()
-        pdfset.ImageType = PdfImageType.Bmp
-        pdfset.ImageQuality = 100
-        pdfset.Dpi = 200
         pdfset.PdfOcrMode = Clock.Util.OcrMode.Tesseract
-        pdfset.WriteTextMode = WriteTextMode.Line
+        pdfset.WriteTextMode = WriteTextMode.Word
         pdfset.Language = "eng"
 
         Dim hdoc As hDocument = New hDocument()
@@ -49,9 +45,8 @@ Public Class StepOCR
         For index As Integer = 1 To rasterizer.PageCount
             LogSub(String.Format("Page {0} of {1}", index, rasterizer.PageCount))
             currentPage = rasterizer.GetPage(200, 200, index)
-            ' this pdf creator consumes too much memory, need to find a better one
             With tes.Process(currentPage)
-                OCRParser.ParseHOCR(hdoc, .GetHOCRText(0, True), True)
+                OCRParser.ParseHOCR(hdoc, .GetHOCRText(0, False), True)
                 pdfCreator.AddPage(hdoc.Pages(0), currentPage)
                 hdoc.Pages(0) = Nothing
                 hdoc.Pages.RemoveAt(0)

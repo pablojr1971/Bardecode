@@ -102,4 +102,87 @@ Public Class StepCustom
             PDFMerge.MergePdfs(FilesToMerge.ToArray, outputFile)
         Next
     End Sub
+
+    Private Sub ConvertJPGTOPDF(LogSub As IStep.LogSubDelegate)
+        Dim document As iTextSharp.text.Document = Nothing
+        Dim filename As String = Nothing
+        Dim fs As FileStream = Nothing
+        Dim writer As iTextSharp.text.pdf.PdfWriter = Nothing
+        ' Will have a input folder, with subfolders as files
+        ' each file will have many images and need to be merged into a single multipage PDF
+        Dim img As iTextSharp.text.Image = Nothing
+        For Each subFolder In New DirectoryInfo(CustomPropeties.Input1).GetDirectories()
+            filename = subFolder.FullName.Replace("SD", "SP") + ".pdf"
+            document = New Document()
+            fs = New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None)
+            writer = PdfWriter.GetInstance(document, fs)
+            document.Open()
+            For Each File In subFolder.GetFiles("*.jpg")
+                img = Image.GetInstance(File.FullName)
+                img.SetAbsolutePosition(0, 0)
+                document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
+                document.NewPage()
+                writer.DirectContent.AddImage(img)
+                img = Nothing
+            Next
+            document.Close()
+            fs = Nothing
+            writer = Nothing
+            document = Nothing
+        Next
+    End Sub
+
+    Private Sub MergeA4AndDrawingsSplit1(LogSub As IStep.LogSubDelegate)
+        ' Documents by file will be the input1
+        ' Drawings by file will be the input2
+
+        ' I will have to go throg the subfolders of the input1 and then find the files to merge with the drawings
+        ' The second folder should have pdfs of each subfolder containing the image files merged into a single file
+
+        RecursiveMerge(New DirectoryInfo(CustomPropeties.Input1), New DirectoryInfo(CustomPropeties.Input2))
+    End Sub
+
+    Private Shared Sub RecursiveMerge(directory As DirectoryInfo, DrawingDir As DirectoryInfo)
+        ' Need to go through each folder and merge with the drawings
+        For Each subfolder In directory.GetDirectories()
+            RecursiveMerge(subfolder, DrawingDir)
+        Next
+
+        MergeFolder(directory, DrawingDir)
+    End Sub
+
+
+
+    Private Shared Sub MergeFolder(directory As DirectoryInfo, DrawingDir As DirectoryInfo)
+        Dim document As PdfDocument = Nothing
+        Dim output As FileStream = Nothing
+        Dim writer As PdfWriter = Nothing
+
+        Dim Directoryfiles As List(Of FileInfo) = directory.GetFiles().ToList()
+        Dim FinalFiles As List(Of FileInfo) = Directoryfiles.Where(Function(p) p.FullName.EndsWith("_NOBARCODE.pdf")).ToList()
+
+        Dim outputFile As String = ""
+        Directoryfiles.RemoveAll(Function(p) p.FullName.EndsWith("_NOBARCODE.pdf"))
+
+        Dim FilesToMerge As List(Of String) = New List(Of String)
+
+        For Each finalFile In FinalFiles
+            FilesToMerge.Clear()
+            FilesToMerge.Add(finalFile.FullName)
+            For Each subfile In Directoryfiles.Where(Function(p) p.FullName.StartsWith(finalFile.FullName.Replace("_NOBARCODE.pdf", "_")) And p.FullName <> finalFile.FullName)
+                FilesToMerge.Add(DrawingDir.FullName + "\" + subfile.FullName.Substring(subfile.FullName.Length - 11, 11))
+                FilesToMerge.Add(subfile.FullName)
+            Next
+            outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", "_Final.pdf")
+            PDFMerge.MergePdfs(FilesToMerge.ToArray, outputFile)
+        Next
+
+        ' Delete the files
+        For Each File In Directoryfiles
+            My.Computer.FileSystem.DeleteFile(File.FullName)
+        Next
+        For Each File In FinalFiles
+            My.Computer.FileSystem.DeleteFile(File.FullName)
+        Next
+    End Sub
 End Class

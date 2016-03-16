@@ -38,7 +38,6 @@ C:\Repository\Bardecode\VB Project\Project\'\Project.pdb
 C:\Repository\Bardecode\VB Project\Project\'\Project.xml
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.Resources.resources
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbproj.GenerateResource.Cache
-C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbprojResolveAssemblyReference.cache
 C:\Repository\Bardecode\VB Project\Project\'\PdfSharp.dll
 C:\Repository\Bardecode\VB Project\Project\'\de\PdfSharp.resources.dll
 C:\Repository\Bardecode\VB Project\Project\'\x64\liblept172.dll
@@ -86,3 +85,4 @@ C:\Repository\Bardecode\VB Project\Project\Build\de\PdfSharp.resources.dll
 C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.pdb
 C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.xml
 C:\Repository\Bardecode\VB Project\Project\'\itextsharp.xml
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbprojResolveAssemblyReference.cache

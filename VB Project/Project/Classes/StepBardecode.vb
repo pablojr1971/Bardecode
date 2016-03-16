@@ -52,7 +52,7 @@ Public Class StepBardecode
         BardecodeIni.WriteValue("options", "exceptionFolder", "System.String," + Me.BardecodeProperties.ExceptionFolder)
         BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Me.BardecodeProperties.OutputNameTemplate)
         BardecodeIni.WriteValue("options", "FilePattern", "System.String," + Me.BardecodeProperties.FileNamePattern)
-        BardecodeIni.WriteValue("options", "ProcessSubFolders", "System.Boolean," + Me.BardecodeProperties.ProcessSubFolders.ToString())
+        BardecodeIni.WriteValue("options", "ProcessSubFolders", "System.Boolean," + "False")
         BardecodeIni.WriteValue("options", "SubFolderPattern", "System.String," + Me.BardecodeProperties.SubFolderPattern)
 
         'Barcode Types
@@ -81,8 +81,12 @@ Public Class StepBardecode
         Dim BardecodeIni As IniFile = New IniFile(Directory.GetCurrentDirectory() + "\BardecodeIni.ini")
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Path)
 
-        If BardecodeProperties.CreateOutputSubFolders Then            
-            BardecodeIni.WriteValue("options", "outputFolder", "System.String," + Directory.CreateDirectory(BardecodeProperties.OutputFolder + "\" + New DirectoryInfo(Path).Name).FullName)
+        If BardecodeProperties.CreateOutputSubFolders Then
+            If BardecodeProperties.InputFolder = BardecodeProperties.OutputFolder Then
+                BardecodeIni.WriteValue("options", "outputFolder", "System.String," + Path)
+            Else
+                BardecodeIni.WriteValue("options", "outputFolder", "System.String," + BardecodeProperties.OutputFolder + "\" + New DirectoryInfo(Path).Name)
+            End If
         End If
 
     End Sub
@@ -99,19 +103,21 @@ Public Class StepBardecode
         SetBardecodeProperties()
 
         If BardecodeProperties.ProcessSubFolders Then
-            For Each subFolder In New DirectoryInfo(BardecodeProperties.InputFolder).GetDirectories()
-                LogSub("Folder: " + subFolder.FullName)
-                ChangePath(subFolder.FullName)
-                StartBardecodeProcess()
-            Next
-
-            LogSub("Folder: " + BardecodeProperties.InputFolder)
-            ChangePath(BardecodeProperties.InputFolder)
-            StartBardecodeProcess()
+            RecursiveRun(LogSub, BardecodeProperties.InputFolder)
         Else
             LogSub("Folder: " + BardecodeProperties.InputFolder)
             StartBardecodeProcess()
         End If
         LogSub(vbCrLf + "Bardecode done")
+    End Sub
+
+    Public Sub RecursiveRun(LogSub As IStep.LogSubDelegate, Path As String)
+        For Each subFolder In New DirectoryInfo(Path).GetDirectories()
+            RecursiveRun(LogSub, subFolder.FullName)
+        Next
+
+        LogSub("Folder: " + Path)
+        ChangePath(Path)
+        StartBardecodeProcess()
     End Sub
 End Class

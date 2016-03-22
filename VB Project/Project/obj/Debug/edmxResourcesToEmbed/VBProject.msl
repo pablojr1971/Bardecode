@@ -4,8 +4,8 @@
     <EntitySetMapping Name="EProcesses">
       <EntityTypeMapping TypeName="VBProjectModel.EProcess">
         <MappingFragment StoreEntitySet="Processes">
-          <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -13,11 +13,11 @@
     <EntitySetMapping Name="ESteps">
       <EntityTypeMapping TypeName="VBProjectModel.EStep">
         <MappingFragment StoreEntitySet="Steps">
-          <ScalarProperty Name="PropertiesObj" ColumnName="PropertiesObj" />
-          <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
-          <ScalarProperty Name="StepType" ColumnName="StepType" />
-          <ScalarProperty Name="Process" ColumnName="Process" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Process" ColumnName="Process" />
+          <ScalarProperty Name="StepType" ColumnName="StepType" />
+          <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
+          <ScalarProperty Name="PropertiesObj" ColumnName="PropertiesObj" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

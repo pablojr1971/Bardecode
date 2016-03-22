@@ -3,5 +3,6 @@
     OCR = 1
     ImgsToPDF = 2
     Custom = 3
-    CSVIndexingProperties = 4
+    SplitPDFSize = 4
+    CSVIndexingProperties = 5
 End Enum

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VBProjectModelStoreContainer" CdmEntityContainer="VBProjectEntities">
+    <EntitySetMapping Name="Processes">
+      <EntityTypeMapping TypeName="VBProjectModel.Process">
+        <MappingFragment StoreEntitySet="Processes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Steps">
+      <EntityTypeMapping TypeName="VBProjectModel.Step">
+        <MappingFragment StoreEntitySet="Steps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Process" ColumnName="Process" />
+          <ScalarProperty Name="StepType" ColumnName="StepType" />
+          <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
+          <ScalarProperty Name="PropertiesObj" ColumnName="PropertiesObj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

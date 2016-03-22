@@ -86,3 +86,6 @@ C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.pdb
 C:\Repository\Bardecode\VB Project\Project\'\HtmlAgilityPack.xml
 C:\Repository\Bardecode\VB Project\Project\'\itextsharp.xml
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbprojResolveAssemblyReference.cache
+C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.Native.dll
+C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.dll
+C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.xml

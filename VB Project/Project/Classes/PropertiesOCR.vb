@@ -1,6 +1,4 @@
 ﻿Imports System.IO
-Imports System.Collections
-Imports System.Drawing.Imaging
 
 Public Structure PropertiesOCR
     Public InputFolder As String

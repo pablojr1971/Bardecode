@@ -6,7 +6,6 @@ Imports Clock.Pdf
 Imports Clock.Hocr
 
 Public Class FrmMain
-    Private Profile As ProfileSettings
     Private Process As Process
     Private _ProcessId As Integer
 
@@ -39,6 +38,7 @@ Public Class FrmMain
         ' If we want to write the log in a file, or in another place 
         ' we just need to change this delegate function and pass one that 
         ' do what we want
+        btRun.Enabled = False
         ProcessObj.Run(AddressOf writeLog)
     End Sub
 
@@ -47,6 +47,21 @@ Public Class FrmMain
         ' this sub will be passed as a delegate to the step objects to log the process    
         ' We could ReWrite this function to Write the logs on a text file,
         ' so if we need to run the process in a assync mode or in a separated thred without visual elements, we can!
-        txProcessLog.AppendText(Log + vbCrLf)
+        FrmMain.CheckForIllegalCrossThreadCalls = False
+        UpdateText(Log)
+        'Me.GetType.InvokeMember("UpdateText",
+        '                        Reflection.BindingFlags.Instance Or Reflection.BindingFlags.NonPublic Or Reflection.BindingFlags.InvokeMethod,
+        '                        Nothing,
+        '                        Me,
+        '                        {Log})        
     End Sub
+
+    Private Sub UpdateText(text As String)
+        txProcessLog.AppendText(Date.Now.ToShortTimeString + " - " + text + vbCrLf)
+    End Sub
+
+    Public Sub EnableRun()
+        btRun.Enabled = True
+    End Sub
+
 End Class

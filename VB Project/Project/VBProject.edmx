@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="VBProjectModelStoreContainer">
           <EntitySet Name="Processes" EntityType="VBProjectModel.Store.Processes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Steps" EntityType="VBProjectModel.Store.Steps" store:Type="Tables" Schema="dbo" />
@@ -43,7 +43,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VBProjectModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -51,8 +52,8 @@
           <EntitySet Name="EProcesses" EntityType="VBProjectModel.EProcess" />
           <EntitySet Name="ESteps" EntityType="VBProjectModel.EStep" />
           <AssociationSet Name="FK__Steps__Process__0F975522" Association="VBProjectModel.FK__Steps__Process__0F975522">
-            <End Role="EProcess" EntitySet="EProcesses" />
-            <End Role="Step" EntitySet="ESteps" />
+            <End Role="Processes" EntitySet="EProcesses" />
+            <End Role="Steps" EntitySet="ESteps" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="EProcess">
@@ -60,28 +61,29 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Type="String" Name="Number" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="EProcess" ToRole="Step" />
+          <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Processes" ToRole="Steps" />
         </EntityType>
         <EntityType Name="EStep">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Process" annotation:StoreGeneratedPattern="None" Nullable="false" />
-          <Property Type="Int32" Name="StepType" Nullable="false" />
-          <Property Type="Int32" Name="RunOrder" Nullable="false" />
-          <Property Type="String" Name="PropertiesObj" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Process" Type="Int32" Nullable="false" />
+          <Property Name="StepType" Type="Int32" Nullable="false" />
+          <Property Name="RunOrder" Type="Int32" Nullable="false" />
+          <Property Name="PropertiesObj" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Process1" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Steps" ToRole="Processes" />
         </EntityType>
         <Association Name="FK__Steps__Process__0F975522">
-          <End Type="VBProjectModel.EProcess" Role="EProcess" Multiplicity="1" />
-          <End Type="VBProjectModel.EStep" Role="Step" Multiplicity="*" />
+          <End Role="Processes" Type="VBProjectModel.EProcess" Multiplicity="1" />
+          <End Role="Steps" Type="VBProjectModel.EStep" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="EProcess">
+            <Principal Role="Processes">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Step">
+            <Dependent Role="Steps">
               <PropertyRef Name="Process" />
             </Dependent>
           </ReferentialConstraint>
@@ -95,8 +97,8 @@
           <EntitySetMapping Name="EProcesses">
             <EntityTypeMapping TypeName="VBProjectModel.EProcess">
               <MappingFragment StoreEntitySet="Processes">
-                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -104,11 +106,11 @@
           <EntitySetMapping Name="ESteps">
             <EntityTypeMapping TypeName="VBProjectModel.EStep">
               <MappingFragment StoreEntitySet="Steps">
-                <ScalarProperty Name="PropertiesObj" ColumnName="PropertiesObj" />
-                <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
-                <ScalarProperty Name="StepType" ColumnName="StepType" />
-                <ScalarProperty Name="Process" ColumnName="Process" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Process" ColumnName="Process" />
+                <ScalarProperty Name="StepType" ColumnName="StepType" />
+                <ScalarProperty Name="RunOrder" ColumnName="RunOrder" />
+                <ScalarProperty Name="PropertiesObj" ColumnName="PropertiesObj" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

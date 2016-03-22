@@ -82,11 +82,7 @@ Public Class StepBardecode
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Path)
 
         If BardecodeProperties.CreateOutputSubFolders Then
-            If BardecodeProperties.InputFolder = BardecodeProperties.OutputFolder Then
-                BardecodeIni.WriteValue("options", "outputFolder", "System.String," + Path)
-            Else
-                BardecodeIni.WriteValue("options", "outputFolder", "System.String," + BardecodeProperties.OutputFolder + "\" + New DirectoryInfo(Path).Name)
-            End If
+            BardecodeIni.WriteValue("options", "outputFolder", "System.String," + BardecodeProperties.OutputFolder + Utils.GetOutputSubFolder(BardecodeProperties.InputFolder, Path))
         End If
 
     End Sub
@@ -99,7 +95,7 @@ Public Class StepBardecode
 
 
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
-        LogSub("Bardecode Starting" + vbCrLf)
+        LogSub("Bardecode Starting")
         SetBardecodeProperties()
 
         If BardecodeProperties.ProcessSubFolders Then
@@ -108,7 +104,7 @@ Public Class StepBardecode
             LogSub("Folder: " + BardecodeProperties.InputFolder)
             StartBardecodeProcess()
         End If
-        LogSub(vbCrLf + "Bardecode done")
+        LogSub("Bardecode done")
     End Sub
 
     Public Sub RecursiveRun(LogSub As IStep.LogSubDelegate, Path As String)

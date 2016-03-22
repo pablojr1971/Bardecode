@@ -1,7 +1,10 @@
-﻿Imports System.Reflection
+﻿Imports System.IO
+Imports System.Reflection
+Imports System.Data.Sql
+Imports System.Data.SqlClient
+Imports System.Data.OleDb
 Imports iTextSharp.text.pdf
 Imports iTextSharp.text
-Imports System.IO
 Imports Ghostscript.NET.Rasterizer
 
 Public Class StepCustom
@@ -39,42 +42,38 @@ Public Class StepCustom
     End Function
 
     Private Sub TestePdf(LogSub As IStep.LogSubDelegate)
-        LogSub("Loading the PDF")
+        Dim A5 As Integer = 0
+        Dim A4 As Integer = 0
+        Dim A3 As Integer = 0
+        Dim A2 As Integer = 0
+        Dim A1 As Integer = 0
+        Dim A0 As Integer = 0
 
         Dim rasterizer As GhostscriptRasterizer = New GhostscriptRasterizer()
         rasterizer.Open(CustomPropeties.Input1)
 
-        Dim xydif As Integer = 0
-        Dim xyratio As Double = 0
-
         For index = 1 To rasterizer.PageCount
-            With rasterizer.GetPage(300, 300, index)
-                xydif = .Height - .Width
-                xydif = IIf(xydif < 0, (xydif * -1), xydif)
-                xyratio = IIf(.Height > .Width, (.Height / .Width), (.Width / .Height))
-
-                If (xyratio <= 1.42 And xyratio >= 1.32) Then
-                    LogSub(String.Format("Page {0} is A4 - Heigh = {1} and Width = {2}", index, .Height, .Width))
-                Else
-                    LogSub(String.Format("Page {0} is Custom Size - Heigh = {1} and Width = {2}", index, .Height, .Width))
-                End If
-                .Save(String.Format(CustomPropeties.Output + "\Image{0}.Tiff", index), System.Drawing.Imaging.ImageFormat.Tiff)
+            With rasterizer.GetPage(200, 200, index)
+                Select Case Utils.GetPageSize(.Height, .Width)
+                    Case PageSize.A0 : A0 += 1
+                    Case PageSize.A1 : A1 += 1
+                    Case PageSize.A2 : A2 += 1
+                    Case PageSize.A3 : A3 += 1
+                    Case PageSize.A4 : A4 += 1
+                    Case PageSize.A5 : A5 += 1
+                End Select
                 .Dispose()
             End With
         Next
+        LogSub(String.Format("A0 = {0}", A0))
+        LogSub(String.Format("A1 = {0}", A1))
+        LogSub(String.Format("A2 = {0}", A2))
+        LogSub(String.Format("A3 = {0}", A3))
+        LogSub(String.Format("A4 = {0}", A4))
+        LogSub(String.Format("A5 = {0}", A5))
 
         rasterizer.Dispose()
         rasterizer = Nothing
-    End Sub
-
-    Private Sub TesteImageSize(LogSub As IStep.LogSubDelegate)
-        LogSub("Start")
-
-        For Each file In New DirectoryInfo(CustomPropeties.Input1).GetFiles()
-            With New Bitmap(file.FullName)
-                LogSub(.Height.ToString + " x " + .Width.ToString + " = " + (.Height * 2).ToString + " x " + (.Width * 2).ToString + "  =  " + (.Height / .Width).ToString)
-            End With
-        Next
     End Sub
 
     Private Sub MergeA4andDrawings(LogSub As IStep.LogSubDelegate)
@@ -99,7 +98,10 @@ Public Class StepCustom
             Next
             outputFile = CustomPropeties.Output + "\" + (New FileInfo(finalFile).Name.Replace("_NOBARCODE", ""))
             LogSub(outputFile)
-            PDFMerge.MergePdfs(FilesToMerge.ToArray, outputFile)
+
+            ' This sub mergePDFS can receive a delegate function 
+            ' to run after merge the PDFS and then do whatever we want, like pagecount or anything like that.
+            Utils.MergePdfs(FilesToMerge, outputFile)
         Next
     End Sub
 
@@ -174,7 +176,7 @@ Public Class StepCustom
                 FilesToMerge.Add(subfile.FullName)
             Next
             outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", "_Final.pdf")
-            PDFMerge.MergePdfs(FilesToMerge.ToArray, outputFile)
+            Utils.MergePdfs(FilesToMerge, outputFile)
         Next
 
         ' Delete the files
@@ -183,6 +185,62 @@ Public Class StepCustom
         Next
         For Each File In FinalFiles
             My.Computer.FileSystem.DeleteFile(File.FullName)
+        Next
+    End Sub
+
+    Private Sub Wolverhampton2001UpdatePageCount(LogSub As IStep.LogSubDelegate)
+        Dim csb As New SqlConnectionStringBuilder
+        csb.DataSource = "localhost\SQLEXPRESS"
+        csb.IntegratedSecurity = True
+        csb.InitialCatalog = "VBProject"
+
+        Dim connection As SqlConnection = New SqlConnection(csb.ToString())
+        connection.Open()
+
+        ' This is the way to update the database, we can just set the connection String to the server(Jerry)
+        ' and then write the command to update the pagecount of the records by barcode
+        ' need to write a method to be passed as a delegate to the merge function.
+        ' the delegate functino will run at the end of the merge process.
+        ' by doing that, everytime we merge a pdf we could pick the pagecount and update the database
+        Dim query As SqlCommand = New SqlCommand("UPDATE PROCESSES SET DESCRIPTION = 'TESTE' WHERE ID = 28", connection)
+        Dim reader As SqlDataReader = Nothing
+        LogSub(String.Format("Rows affected {0}", query.ExecuteNonQuery))
+    End Sub
+
+    Private Sub CountPages(Logsub As IStep.LogSubDelegate)
+        Dim A5 As Integer = 0
+        Dim A4 As Integer = 0
+        Dim A3 As Integer = 0
+        Dim A2 As Integer = 0
+        Dim A1 As Integer = 0
+        Dim A0 As Integer = 0
+
+
+        For Each file In New DirectoryInfo(CustomPropeties.Input1).GetFiles("*.tif")
+            With New Bitmap(file.FullName)
+                Select Case Utils.GetPageSize(.Height, .Width)
+                    Case PageSize.A0 : A0 += 1
+                    Case PageSize.A1 : A1 += 1
+                    Case PageSize.A2 : A2 += 1
+                    Case PageSize.A3 : A3 += 1
+                    Case PageSize.A4 : A4 += 1
+                    Case PageSize.A5 : A5 += 1
+                End Select
+            End With
+        Next
+
+        Logsub(String.Format("A0 = {0}", A0))
+        Logsub(String.Format("A1 = {0}", A1))
+        Logsub(String.Format("A2 = {0}", A2))
+        Logsub(String.Format("A3 = {0}", A3))
+        Logsub(String.Format("A4 = {0}", A4))
+        Logsub(String.Format("A5 = {0}", A5))
+    End Sub
+
+    Private Sub OcrTest(LogSub As IStep.LogSubDelegate)
+        For Each File In New DirectoryInfo(CustomPropeties.Input1).GetFiles("*.tif")
+            Utils.DoOCR(File.FullName, File.FullName.Replace(".tif", ""))
+            LogSub(File.Name)
         Next
     End Sub
 End Class

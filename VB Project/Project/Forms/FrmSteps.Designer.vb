@@ -33,6 +33,9 @@ Partial Class FrmSteps
         Me.gb1Barcodes = New System.Windows.Forms.GroupBox()
         Me.cx1Barcodes = New System.Windows.Forms.CheckedListBox()
         Me.gb1Patterns = New System.Windows.Forms.GroupBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.cb1SplitMode = New System.Windows.Forms.ComboBox()
+        Me.cx1DeleteInputFiles = New System.Windows.Forms.CheckBox()
         Me.cx1CreateOutSubFolders = New System.Windows.Forms.CheckBox()
         Me.cx1SubFolders = New System.Windows.Forms.CheckBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -64,15 +67,10 @@ Partial Class FrmSteps
         Me.tx2OutputFolder = New System.Windows.Forms.TextBox()
         Me.tx2InputFolder = New System.Windows.Forms.TextBox()
         Me.PgImgsToPdf = New System.Windows.Forms.TabPage()
-        Me.pgCustom = New System.Windows.Forms.TabPage()
-        Me.gb4CustomProcess = New System.Windows.Forms.GroupBox()
-        Me.cb4CustomProcess = New System.Windows.Forms.ComboBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.gb4ProcessPath = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.tx4Input2 = New System.Windows.Forms.TextBox()
-        Me.tx4Input1 = New System.Windows.Forms.TextBox()
+        Me.gb3Patterns = New System.Windows.Forms.GroupBox()
+        Me.cx3OCR = New System.Windows.Forms.CheckBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.tx3FileOutTemplate = New System.Windows.Forms.TextBox()
         Me.gb3Paths = New System.Windows.Forms.GroupBox()
         Me.cx3CreateOutputSubFolder = New System.Windows.Forms.CheckBox()
         Me.cx3ProcessSubFolders = New System.Windows.Forms.CheckBox()
@@ -80,15 +78,27 @@ Partial Class FrmSteps
         Me.Label16 = New System.Windows.Forms.Label()
         Me.tx3OutputFolder = New System.Windows.Forms.TextBox()
         Me.tx3InputFolder = New System.Windows.Forms.TextBox()
-        Me.gb3Patterns = New System.Windows.Forms.GroupBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.tx3FileOutTemplate = New System.Windows.Forms.TextBox()
-        Me.cx3OCR = New System.Windows.Forms.CheckBox()
-        Me.cx1DeleteInputFiles = New System.Windows.Forms.CheckBox()
-        Me.cb1SplitMode = New System.Windows.Forms.ComboBox()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.pgCustom = New System.Windows.Forms.TabPage()
+        Me.gb4CustomProcess = New System.Windows.Forms.GroupBox()
+        Me.cb4CustomProcess = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.gb4ProcessPath = New System.Windows.Forms.GroupBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tx4Output = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.tx4Input2 = New System.Windows.Forms.TextBox()
+        Me.tx4Input1 = New System.Windows.Forms.TextBox()
+        Me.pgSplitPDFSize = New System.Windows.Forms.TabPage()
+        Me.gb5Pattern = New System.Windows.Forms.GroupBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.tx5FileTemplate = New System.Windows.Forms.TextBox()
+        Me.gb5Paths = New System.Windows.Forms.GroupBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.cx5SubFolders = New System.Windows.Forms.CheckBox()
+        Me.tx5InputFolder = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.tx5Size = New System.Windows.Forms.TextBox()
         Me.MainPanel.SuspendLayout()
         Me.gbStepSettings.SuspendLayout()
         Me.tcSteps.SuspendLayout()
@@ -100,11 +110,14 @@ Partial Class FrmSteps
         Me.GroupBox1.SuspendLayout()
         Me.gb2Paths.SuspendLayout()
         Me.PgImgsToPdf.SuspendLayout()
+        Me.gb3Patterns.SuspendLayout()
+        Me.gb3Paths.SuspendLayout()
         Me.pgCustom.SuspendLayout()
         Me.gb4CustomProcess.SuspendLayout()
         Me.gb4ProcessPath.SuspendLayout()
-        Me.gb3Paths.SuspendLayout()
-        Me.gb3Patterns.SuspendLayout()
+        Me.pgSplitPDFSize.SuspendLayout()
+        Me.gb5Pattern.SuspendLayout()
+        Me.gb5Paths.SuspendLayout()
         Me.SuspendLayout()
         '
         'MainPanel
@@ -170,6 +183,7 @@ Partial Class FrmSteps
         Me.tcSteps.Controls.Add(Me.PgOCR)
         Me.tcSteps.Controls.Add(Me.PgImgsToPdf)
         Me.tcSteps.Controls.Add(Me.pgCustom)
+        Me.tcSteps.Controls.Add(Me.pgSplitPDFSize)
         Me.tcSteps.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tcSteps.Location = New System.Drawing.Point(3, 16)
         Me.tcSteps.Name = "tcSteps"
@@ -233,6 +247,35 @@ Partial Class FrmSteps
         Me.gb1Patterns.TabIndex = 1
         Me.gb1Patterns.TabStop = False
         Me.gb1Patterns.Text = "Patterns"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(6, 126)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(60, 13)
+        Me.Label19.TabIndex = 12
+        Me.Label19.Text = "Split Mode:"
+        '
+        'cb1SplitMode
+        '
+        Me.cb1SplitMode.FormattingEnabled = True
+        Me.cb1SplitMode.Items.AddRange(New Object() {"Files Start with barcode", "Files End with barcode", "Only content between barcodes", "Only barcode pages", "Process JPG Images", "Just Rename according barcode", "Files Start with Barcode (Only Different Values)", "Fixed Intervals", "Just Rename according last barcode page"})
+        Me.cb1SplitMode.Location = New System.Drawing.Point(104, 123)
+        Me.cb1SplitMode.Name = "cb1SplitMode"
+        Me.cb1SplitMode.Size = New System.Drawing.Size(346, 21)
+        Me.cb1SplitMode.TabIndex = 11
+        '
+        'cx1DeleteInputFiles
+        '
+        Me.cx1DeleteInputFiles.AutoSize = True
+        Me.cx1DeleteInputFiles.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx1DeleteInputFiles.Location = New System.Drawing.Point(345, 168)
+        Me.cx1DeleteInputFiles.Name = "cx1DeleteInputFiles"
+        Me.cx1DeleteInputFiles.Size = New System.Drawing.Size(105, 17)
+        Me.cx1DeleteInputFiles.TabIndex = 10
+        Me.cx1DeleteInputFiles.Text = "Delete Input files"
+        Me.cx1DeleteInputFiles.UseVisualStyleBackColor = True
         '
         'cx1CreateOutSubFolders
         '
@@ -412,7 +455,7 @@ Partial Class FrmSteps
         Me.PgOCR.Location = New System.Drawing.Point(4, 22)
         Me.PgOCR.Name = "PgOCR"
         Me.PgOCR.Padding = New System.Windows.Forms.Padding(3)
-        Me.PgOCR.Size = New System.Drawing.Size(468, 385)
+        Me.PgOCR.Size = New System.Drawing.Size(468, 441)
         Me.PgOCR.TabIndex = 1
         Me.PgOCR.Text = "OCR"
         Me.PgOCR.UseVisualStyleBackColor = True
@@ -524,97 +567,49 @@ Partial Class FrmSteps
         Me.PgImgsToPdf.Location = New System.Drawing.Point(4, 22)
         Me.PgImgsToPdf.Name = "PgImgsToPdf"
         Me.PgImgsToPdf.Padding = New System.Windows.Forms.Padding(3)
-        Me.PgImgsToPdf.Size = New System.Drawing.Size(468, 385)
+        Me.PgImgsToPdf.Size = New System.Drawing.Size(468, 441)
         Me.PgImgsToPdf.TabIndex = 2
         Me.PgImgsToPdf.Text = "ImgsToPdf"
         Me.PgImgsToPdf.UseVisualStyleBackColor = True
         '
-        'pgCustom
+        'gb3Patterns
         '
-        Me.pgCustom.Controls.Add(Me.gb4CustomProcess)
-        Me.pgCustom.Controls.Add(Me.gb4ProcessPath)
-        Me.pgCustom.Location = New System.Drawing.Point(4, 22)
-        Me.pgCustom.Name = "pgCustom"
-        Me.pgCustom.Padding = New System.Windows.Forms.Padding(3)
-        Me.pgCustom.Size = New System.Drawing.Size(468, 441)
-        Me.pgCustom.TabIndex = 3
-        Me.pgCustom.Text = "Custom"
-        Me.pgCustom.UseVisualStyleBackColor = True
+        Me.gb3Patterns.Controls.Add(Me.cx3OCR)
+        Me.gb3Patterns.Controls.Add(Me.Label18)
+        Me.gb3Patterns.Controls.Add(Me.tx3FileOutTemplate)
+        Me.gb3Patterns.Location = New System.Drawing.Point(6, 115)
+        Me.gb3Patterns.Name = "gb3Patterns"
+        Me.gb3Patterns.Size = New System.Drawing.Size(456, 74)
+        Me.gb3Patterns.TabIndex = 3
+        Me.gb3Patterns.TabStop = False
+        Me.gb3Patterns.Text = "Patterns"
         '
-        'gb4CustomProcess
+        'cx3OCR
         '
-        Me.gb4CustomProcess.Controls.Add(Me.cb4CustomProcess)
-        Me.gb4CustomProcess.Controls.Add(Me.Label14)
-        Me.gb4CustomProcess.Location = New System.Drawing.Point(6, 115)
-        Me.gb4CustomProcess.Name = "gb4CustomProcess"
-        Me.gb4CustomProcess.Size = New System.Drawing.Size(456, 53)
-        Me.gb4CustomProcess.TabIndex = 2
-        Me.gb4CustomProcess.TabStop = False
-        Me.gb4CustomProcess.Text = "Custom Process"
+        Me.cx3OCR.AutoSize = True
+        Me.cx3OCR.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx3OCR.Location = New System.Drawing.Point(6, 51)
+        Me.cx3OCR.Name = "cx3OCR"
+        Me.cx3OCR.Size = New System.Drawing.Size(204, 17)
+        Me.cx3OCR.TabIndex = 5
+        Me.cx3OCR.Text = "OCR the output PDFs (Takes Longer)"
+        Me.cx3OCR.UseVisualStyleBackColor = True
         '
-        'cb4CustomProcess
+        'Label18
         '
-        Me.cb4CustomProcess.FormattingEnabled = True
-        Me.cb4CustomProcess.Location = New System.Drawing.Point(104, 19)
-        Me.cb4CustomProcess.Name = "cb4CustomProcess"
-        Me.cb4CustomProcess.Size = New System.Drawing.Size(346, 21)
-        Me.cb4CustomProcess.TabIndex = 1
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(6, 22)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(93, 13)
+        Me.Label18.TabIndex = 4
+        Me.Label18.Text = "File Out Template:"
         '
-        'Label14
+        'tx3FileOutTemplate
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 22)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(98, 13)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "Custom Process Id:"
-        '
-        'gb4ProcessPath
-        '
-        Me.gb4ProcessPath.Controls.Add(Me.Label20)
-        Me.gb4ProcessPath.Controls.Add(Me.tx4Output)
-        Me.gb4ProcessPath.Controls.Add(Me.Label10)
-        Me.gb4ProcessPath.Controls.Add(Me.Label13)
-        Me.gb4ProcessPath.Controls.Add(Me.tx4Input2)
-        Me.gb4ProcessPath.Controls.Add(Me.tx4Input1)
-        Me.gb4ProcessPath.Location = New System.Drawing.Point(6, 6)
-        Me.gb4ProcessPath.Name = "gb4ProcessPath"
-        Me.gb4ProcessPath.Size = New System.Drawing.Size(456, 103)
-        Me.gb4ProcessPath.TabIndex = 1
-        Me.gb4ProcessPath.TabStop = False
-        Me.gb4ProcessPath.Text = "Process Paths"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 48)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(43, 13)
-        Me.Label10.TabIndex = 11
-        Me.Label10.Text = "Input 2:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 22)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(43, 13)
-        Me.Label13.TabIndex = 10
-        Me.Label13.Text = "Input 1:"
-        '
-        'tx4Input2
-        '
-        Me.tx4Input2.Location = New System.Drawing.Point(104, 45)
-        Me.tx4Input2.Name = "tx4Input2"
-        Me.tx4Input2.Size = New System.Drawing.Size(346, 20)
-        Me.tx4Input2.TabIndex = 9
-        '
-        'tx4Input1
-        '
-        Me.tx4Input1.Location = New System.Drawing.Point(104, 19)
-        Me.tx4Input1.Name = "tx4Input1"
-        Me.tx4Input1.Size = New System.Drawing.Size(346, 20)
-        Me.tx4Input1.TabIndex = 8
+        Me.tx3FileOutTemplate.Location = New System.Drawing.Point(104, 19)
+        Me.tx3FileOutTemplate.Name = "tx3FileOutTemplate"
+        Me.tx3FileOutTemplate.Size = New System.Drawing.Size(346, 20)
+        Me.tx3FileOutTemplate.TabIndex = 0
         '
         'gb3Paths
         '
@@ -689,73 +684,60 @@ Partial Class FrmSteps
         Me.tx3InputFolder.Size = New System.Drawing.Size(346, 20)
         Me.tx3InputFolder.TabIndex = 8
         '
-        'gb3Patterns
+        'pgCustom
         '
-        Me.gb3Patterns.Controls.Add(Me.cx3OCR)
-        Me.gb3Patterns.Controls.Add(Me.Label18)
-        Me.gb3Patterns.Controls.Add(Me.tx3FileOutTemplate)
-        Me.gb3Patterns.Location = New System.Drawing.Point(6, 115)
-        Me.gb3Patterns.Name = "gb3Patterns"
-        Me.gb3Patterns.Size = New System.Drawing.Size(456, 74)
-        Me.gb3Patterns.TabIndex = 3
-        Me.gb3Patterns.TabStop = False
-        Me.gb3Patterns.Text = "Patterns"
+        Me.pgCustom.Controls.Add(Me.gb4CustomProcess)
+        Me.pgCustom.Controls.Add(Me.gb4ProcessPath)
+        Me.pgCustom.Location = New System.Drawing.Point(4, 22)
+        Me.pgCustom.Name = "pgCustom"
+        Me.pgCustom.Padding = New System.Windows.Forms.Padding(3)
+        Me.pgCustom.Size = New System.Drawing.Size(468, 441)
+        Me.pgCustom.TabIndex = 3
+        Me.pgCustom.Text = "Custom"
+        Me.pgCustom.UseVisualStyleBackColor = True
         '
-        'Label18
+        'gb4CustomProcess
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(6, 22)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(93, 13)
-        Me.Label18.TabIndex = 4
-        Me.Label18.Text = "File Out Template:"
+        Me.gb4CustomProcess.Controls.Add(Me.cb4CustomProcess)
+        Me.gb4CustomProcess.Controls.Add(Me.Label14)
+        Me.gb4CustomProcess.Location = New System.Drawing.Point(6, 115)
+        Me.gb4CustomProcess.Name = "gb4CustomProcess"
+        Me.gb4CustomProcess.Size = New System.Drawing.Size(456, 53)
+        Me.gb4CustomProcess.TabIndex = 2
+        Me.gb4CustomProcess.TabStop = False
+        Me.gb4CustomProcess.Text = "Custom Process"
         '
-        'tx3FileOutTemplate
+        'cb4CustomProcess
         '
-        Me.tx3FileOutTemplate.Location = New System.Drawing.Point(104, 19)
-        Me.tx3FileOutTemplate.Name = "tx3FileOutTemplate"
-        Me.tx3FileOutTemplate.Size = New System.Drawing.Size(346, 20)
-        Me.tx3FileOutTemplate.TabIndex = 0
+        Me.cb4CustomProcess.FormattingEnabled = True
+        Me.cb4CustomProcess.Location = New System.Drawing.Point(104, 19)
+        Me.cb4CustomProcess.Name = "cb4CustomProcess"
+        Me.cb4CustomProcess.Size = New System.Drawing.Size(346, 21)
+        Me.cb4CustomProcess.TabIndex = 1
         '
-        'cx3OCR
+        'Label14
         '
-        Me.cx3OCR.AutoSize = True
-        Me.cx3OCR.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cx3OCR.Location = New System.Drawing.Point(6, 51)
-        Me.cx3OCR.Name = "cx3OCR"
-        Me.cx3OCR.Size = New System.Drawing.Size(204, 17)
-        Me.cx3OCR.TabIndex = 5
-        Me.cx3OCR.Text = "OCR the output PDFs (Takes Longer)"
-        Me.cx3OCR.UseVisualStyleBackColor = True
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 22)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(98, 13)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "Custom Process Id:"
         '
-        'cx1DeleteInputFiles
+        'gb4ProcessPath
         '
-        Me.cx1DeleteInputFiles.AutoSize = True
-        Me.cx1DeleteInputFiles.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cx1DeleteInputFiles.Location = New System.Drawing.Point(345, 168)
-        Me.cx1DeleteInputFiles.Name = "cx1DeleteInputFiles"
-        Me.cx1DeleteInputFiles.Size = New System.Drawing.Size(105, 17)
-        Me.cx1DeleteInputFiles.TabIndex = 10
-        Me.cx1DeleteInputFiles.Text = "Delete Input files"
-        Me.cx1DeleteInputFiles.UseVisualStyleBackColor = True
-        '
-        'cb1SplitMode
-        '
-        Me.cb1SplitMode.FormattingEnabled = True
-        Me.cb1SplitMode.Items.AddRange(New Object() {"Files Start with barcode", "Files End with barcode", "Only content between barcodes", "Only barcode pages", "Process JPG Images", "Just Rename according barcode", "Files Start with Barcode (Only Different Values)", "Fixed Intervals", "Just Rename according last barcode page"})
-        Me.cb1SplitMode.Location = New System.Drawing.Point(104, 123)
-        Me.cb1SplitMode.Name = "cb1SplitMode"
-        Me.cb1SplitMode.Size = New System.Drawing.Size(346, 21)
-        Me.cb1SplitMode.TabIndex = 11
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(6, 126)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(60, 13)
-        Me.Label19.TabIndex = 12
-        Me.Label19.Text = "Split Mode:"
+        Me.gb4ProcessPath.Controls.Add(Me.Label20)
+        Me.gb4ProcessPath.Controls.Add(Me.tx4Output)
+        Me.gb4ProcessPath.Controls.Add(Me.Label10)
+        Me.gb4ProcessPath.Controls.Add(Me.Label13)
+        Me.gb4ProcessPath.Controls.Add(Me.tx4Input2)
+        Me.gb4ProcessPath.Controls.Add(Me.tx4Input1)
+        Me.gb4ProcessPath.Location = New System.Drawing.Point(6, 6)
+        Me.gb4ProcessPath.Name = "gb4ProcessPath"
+        Me.gb4ProcessPath.Size = New System.Drawing.Size(456, 103)
+        Me.gb4ProcessPath.TabIndex = 1
+        Me.gb4ProcessPath.TabStop = False
+        Me.gb4ProcessPath.Text = "Process Paths"
         '
         'Label20
         '
@@ -772,6 +754,136 @@ Partial Class FrmSteps
         Me.tx4Output.Name = "tx4Output"
         Me.tx4Output.Size = New System.Drawing.Size(346, 20)
         Me.tx4Output.TabIndex = 12
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 48)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(43, 13)
+        Me.Label10.TabIndex = 11
+        Me.Label10.Text = "Input 2:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 22)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(43, 13)
+        Me.Label13.TabIndex = 10
+        Me.Label13.Text = "Input 1:"
+        '
+        'tx4Input2
+        '
+        Me.tx4Input2.Location = New System.Drawing.Point(104, 45)
+        Me.tx4Input2.Name = "tx4Input2"
+        Me.tx4Input2.Size = New System.Drawing.Size(346, 20)
+        Me.tx4Input2.TabIndex = 9
+        '
+        'tx4Input1
+        '
+        Me.tx4Input1.Location = New System.Drawing.Point(104, 19)
+        Me.tx4Input1.Name = "tx4Input1"
+        Me.tx4Input1.Size = New System.Drawing.Size(346, 20)
+        Me.tx4Input1.TabIndex = 8
+        '
+        'pgSplitPDFSize
+        '
+        Me.pgSplitPDFSize.Controls.Add(Me.gb5Pattern)
+        Me.pgSplitPDFSize.Controls.Add(Me.gb5Paths)
+        Me.pgSplitPDFSize.Location = New System.Drawing.Point(4, 22)
+        Me.pgSplitPDFSize.Name = "pgSplitPDFSize"
+        Me.pgSplitPDFSize.Padding = New System.Windows.Forms.Padding(3)
+        Me.pgSplitPDFSize.Size = New System.Drawing.Size(468, 441)
+        Me.pgSplitPDFSize.TabIndex = 4
+        Me.pgSplitPDFSize.Text = "Split PDF by Size"
+        Me.pgSplitPDFSize.UseVisualStyleBackColor = True
+        '
+        'gb5Pattern
+        '
+        Me.gb5Pattern.Controls.Add(Me.Label22)
+        Me.gb5Pattern.Controls.Add(Me.tx5Size)
+        Me.gb5Pattern.Controls.Add(Me.Label21)
+        Me.gb5Pattern.Controls.Add(Me.tx5FileTemplate)
+        Me.gb5Pattern.Location = New System.Drawing.Point(6, 89)
+        Me.gb5Pattern.Name = "gb5Pattern"
+        Me.gb5Pattern.Size = New System.Drawing.Size(456, 75)
+        Me.gb5Pattern.TabIndex = 13
+        Me.gb5Pattern.TabStop = False
+        Me.gb5Pattern.Text = "Patterns"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(6, 22)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(73, 13)
+        Me.Label21.TabIndex = 4
+        Me.Label21.Text = "File Template:"
+        '
+        'tx5FileTemplate
+        '
+        Me.tx5FileTemplate.Location = New System.Drawing.Point(104, 19)
+        Me.tx5FileTemplate.Name = "tx5FileTemplate"
+        Me.tx5FileTemplate.Size = New System.Drawing.Size(346, 20)
+        Me.tx5FileTemplate.TabIndex = 0
+        '
+        'gb5Paths
+        '
+        Me.gb5Paths.Controls.Add(Me.Label23)
+        Me.gb5Paths.Controls.Add(Me.cx5SubFolders)
+        Me.gb5Paths.Controls.Add(Me.tx5InputFolder)
+        Me.gb5Paths.Location = New System.Drawing.Point(6, 6)
+        Me.gb5Paths.Name = "gb5Paths"
+        Me.gb5Paths.Size = New System.Drawing.Size(456, 77)
+        Me.gb5Paths.TabIndex = 2
+        Me.gb5Paths.TabStop = False
+        Me.gb5Paths.Text = "Process Paths"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(6, 22)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(66, 13)
+        Me.Label23.TabIndex = 10
+        Me.Label23.Text = "Input Folder:"
+        '
+        'cx5SubFolders
+        '
+        Me.cx5SubFolders.AutoSize = True
+        Me.cx5SubFolders.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx5SubFolders.Checked = True
+        Me.cx5SubFolders.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cx5SubFolders.Location = New System.Drawing.Point(6, 54)
+        Me.cx5SubFolders.Name = "cx5SubFolders"
+        Me.cx5SubFolders.Size = New System.Drawing.Size(123, 17)
+        Me.cx5SubFolders.TabIndex = 14
+        Me.cx5SubFolders.Text = "Process Sub Folders"
+        Me.cx5SubFolders.UseVisualStyleBackColor = True
+        '
+        'tx5InputFolder
+        '
+        Me.tx5InputFolder.Location = New System.Drawing.Point(104, 19)
+        Me.tx5InputFolder.Name = "tx5InputFolder"
+        Me.tx5InputFolder.Size = New System.Drawing.Size(346, 20)
+        Me.tx5InputFolder.TabIndex = 8
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(6, 48)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(53, 13)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "Split Size:"
+        '
+        'tx5Size
+        '
+        Me.tx5Size.Location = New System.Drawing.Point(104, 45)
+        Me.tx5Size.Name = "tx5Size"
+        Me.tx5Size.Size = New System.Drawing.Size(346, 20)
+        Me.tx5Size.TabIndex = 5
         '
         'FrmSteps
         '
@@ -798,15 +910,20 @@ Partial Class FrmSteps
         Me.gb2Paths.ResumeLayout(False)
         Me.gb2Paths.PerformLayout()
         Me.PgImgsToPdf.ResumeLayout(False)
+        Me.gb3Patterns.ResumeLayout(False)
+        Me.gb3Patterns.PerformLayout()
+        Me.gb3Paths.ResumeLayout(False)
+        Me.gb3Paths.PerformLayout()
         Me.pgCustom.ResumeLayout(False)
         Me.gb4CustomProcess.ResumeLayout(False)
         Me.gb4CustomProcess.PerformLayout()
         Me.gb4ProcessPath.ResumeLayout(False)
         Me.gb4ProcessPath.PerformLayout()
-        Me.gb3Paths.ResumeLayout(False)
-        Me.gb3Paths.PerformLayout()
-        Me.gb3Patterns.ResumeLayout(False)
-        Me.gb3Patterns.PerformLayout()
+        Me.pgSplitPDFSize.ResumeLayout(False)
+        Me.gb5Pattern.ResumeLayout(False)
+        Me.gb5Pattern.PerformLayout()
+        Me.gb5Paths.ResumeLayout(False)
+        Me.gb5Paths.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -877,4 +994,14 @@ Partial Class FrmSteps
     Friend WithEvents cb1SplitMode As System.Windows.Forms.ComboBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents tx4Output As System.Windows.Forms.TextBox
+    Friend WithEvents pgSplitPDFSize As System.Windows.Forms.TabPage
+    Friend WithEvents gb5Pattern As System.Windows.Forms.GroupBox
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents tx5FileTemplate As System.Windows.Forms.TextBox
+    Friend WithEvents gb5Paths As System.Windows.Forms.GroupBox
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents cx5SubFolders As System.Windows.Forms.CheckBox
+    Friend WithEvents tx5InputFolder As System.Windows.Forms.TextBox
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents tx5Size As System.Windows.Forms.TextBox
 End Class

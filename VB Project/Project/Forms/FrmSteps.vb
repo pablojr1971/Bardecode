@@ -32,6 +32,7 @@ Public Class FrmSteps
             Case 1 : SaveOCR()
             Case 2 'SaveImgsToPDF
             Case 3 : SaveCustom()
+            Case 4 : SaveSplitPDF()
         End Select
         Entity.RunOrder = txRunOrder.Text
         Close()
@@ -49,6 +50,7 @@ Public Class FrmSteps
                 Case StepType.OCR : LoadOCR()
                 Case StepType.ImgsToPDF ' LoadImgsToPDF
                 Case StepType.Custom : LoadCustom()
+                Case StepType.SplitPDFSize : LoadSplitPDF()
             End Select
         End If
         txRunOrder.Text = Entity.RunOrder
@@ -82,7 +84,7 @@ Public Class FrmSteps
         For Each item In cx1Barcodes.CheckedIndices
             Props.BarcodeTypes.Add(CType(item, BarcodeType))
         Next
-        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
+        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.Bardecode
     End Sub
 
@@ -92,7 +94,7 @@ Public Class FrmSteps
         Props.Input2 = tx4Input2.Text
         Props.Output = tx4Output.Text
         Props.CustomRunID = cb4CustomProcess.Text
-        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
+        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.Custom
     End Sub
 
@@ -103,8 +105,18 @@ Public Class FrmSteps
         Props.OutputNameTemplate = tx2FileOutTemplate.Text
         Props.ProcessSubFolders = cx2ProcessSubFolders.Checked
         Props.CreateOutputSubFolders = cx2CreateOutSubFolders.Checked
-        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType)
+        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.OCR
+    End Sub
+
+    Private Sub SaveSplitPDF()
+        Dim Props As PropertiesSplitPDFSize = New PropertiesSplitPDFSize()
+        Props.InputFolder = tx5InputFolder.Text
+        Props.FilePattern = tx5FileTemplate.Text
+        Props.Size = CLng(tx5Size.Text)
+        Props.ProcessSubFolders = cx5SubFolders.Checked
+        Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
+        Entity.StepType = StepType.SplitPDFSize
     End Sub
 
     Private Sub LoadBardecode()
@@ -147,6 +159,15 @@ Public Class FrmSteps
             tx2FileOutTemplate.Text = .OutputNameTemplate
             cx2CreateOutSubFolders.Checked = .CreateOutputSubFolders
             cx2ProcessSubFolders.Checked = .ProcessSubFolders
+        End With
+    End Sub
+
+    Private Sub LoadSplitPDF()
+        With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesSplitPDFSize)), PropertiesSplitPDFSize)
+            tx5InputFolder.Text = .InputFolder
+            tx5FileTemplate.Text = .FilePattern
+            tx5Size.Text = .Size.ToString()
+            cx5SubFolders.Checked = .ProcessSubFolders
         End With
     End Sub
 End Class

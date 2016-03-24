@@ -26,7 +26,7 @@ Public Class StepOCR
     End Sub
 
     Public Sub RunFile(File As FileInfo, OutFolder As String, LogSub As IStep.LogSubDelegate)
-        LogSub("OCR Start")
+        LogSub("OCR Start - File:" + File.Name)
         Dim rasterizer As GhostscriptRasterizer = New GhostscriptRasterizer()
         Dim outdir As String = Directory.GetCurrentDirectory() + "\_temp"
 
@@ -54,46 +54,48 @@ Public Class StepOCR
 
         rasterizer.Open(File.FullName)
         For index = 1 To rasterizer.PageCount
-            img = rasterizer.GetPage(200, 200, index)
-            mimg = New MagickImage(img)
+            Try
+                img = rasterizer.GetPage(200, 200, index)
+                mimg = New MagickImage(img)
 
-            ' Check total color in the image, if less than 50 is greyscale of B&W and can be saved as compressed tiff
-            ' if the total colors is greater than 50 the image is colored and we will save as a compressed JPG
-            If mimg.TotalColors > 50 Then
-                encoderInfo = ImageCodecInfo.GetImageEncoders().First(Function(i) i.MimeType = "image/jpeg")
-                encoderParams.Param(0) = New EncoderParameter(Encoder.Compression, CLng(EncoderValue.CompressionNone))
-                format = "jpg"
-                img.Save(String.Format(outdir + "\page{0}.{1}", index, format), encoderInfo, encoderParams)
-            Else
-                encoderInfo = ImageCodecInfo.GetImageEncoders().First(Function(i) i.MimeType = "image/tiff")
-                encoderParams.Param(0) = New EncoderParameter(Encoder.Compression, CLng(EncoderValue.CompressionCCITT4))
-                format = "tif"
-                img.Save(String.Format(outdir + "\page{0}.{1}", index, format), encoderInfo, encoderParams)
-            End If
-
-            mimg.Dispose()
-            mimg = Nothing
-            img.Dispose()
-            img = Nothing
-
-            tess.Arguments = String.Format("""" + outdir + "\page{0}.{1}"" """ + outdir + "\page{0}"" ""pdf""", index, format)
-            LogSub(String.Format("Processing Page {0}", index))
-            With System.Diagnostics.Process.Start(tess)
-                ' wait the 10 last pages to be sure that they will not be locked when try to merge
-                If (index + 10 >= rasterizer.PageCount) Then
-                    .WaitForExit()
+                ' Check total color in the image, if less than 50 is greyscale of B&W and can be saved as compressed tiff
+                ' if the total colors is greater than 50 the image is colored and we will save as a compressed JPG
+                If mimg.TotalColors > 50 Then
+                    encoderInfo = ImageCodecInfo.GetImageEncoders().First(Function(i) i.MimeType = "image/jpeg")
+                    encoderParams.Param(0) = New EncoderParameter(Encoder.Compression, CLng(EncoderValue.CompressionNone))
+                    format = "jpg"
+                    img.Save(String.Format(outdir + "\page{0}.{1}", index, format), encoderInfo, encoderParams)
+                Else
+                    encoderInfo = ImageCodecInfo.GetImageEncoders().First(Function(i) i.MimeType = "image/tiff")
+                    encoderParams.Param(0) = New EncoderParameter(Encoder.Compression, CLng(EncoderValue.CompressionCCITT4))
+                    format = "tif"
+                    img.Save(String.Format(outdir + "\page{0}.{1}", index, format), encoderInfo, encoderParams)
                 End If
 
-                .Dispose()
-            End With
-            pdfs.Add(String.Format(outdir + "\page{0}.pdf", index))
-            If index Mod 100 = 0 Then
-                LogSub(String.Format("Page {0}...", index))
-            End If
+                mimg.Dispose()
+                mimg = Nothing
+                img.Dispose()
+                img = Nothing
+
+                tess.Arguments = String.Format("""" + outdir + "\page{0}.{1}"" """ + outdir + "\page{0}"" ""pdf""", index, format)
+                LogSub(String.Format(FrmMain.sRMLL + "Processing Page {0}", index))
+                With System.Diagnostics.Process.Start(tess)
+                    .Dispose()
+                End With
+                pdfs.Add(String.Format(outdir + "\page{0}.pdf", index))
+            Catch e As Exception
+                LogSub(String.Format("Error OCRing page {0} of the Document {1}", index, File.Name) + vbCrLf + e.Message)            
+            End Try
         Next
 
+        While System.Diagnostics.Process.GetProcessesByName("Tesseract").Count > 0
+            ' Wait till all OCR processes started on the loop finish
+            ' We need to wait because if the we don't when merge the pdfs the file will be locked to the tesseract process
+            ' and we will get an error saying that the tile is being used in another process
+            Threading.Thread.Sleep(100)
+        End While
+
         rasterizer.Dispose()
-        Threading.Thread.Sleep(100)
 
         If OCRProperties.CreateOutputSubFolders Then
             Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + Utils.GetOutputSubFolder(OCRProperties.InputFolder, File.FullName.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf"))
@@ -101,7 +103,7 @@ Public Class StepOCR
             Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + "\" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf")
         End If
         My.Computer.FileSystem.DeleteDirectory(outdir, FileIO.DeleteDirectoryOption.DeleteAllContents)
-        LogSub("OCR Done")
+        LogSub(FrmMain.sRMLL + "OCR Done - File:" + File.Name + vbCrLf)
     End Sub
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepOCR

@@ -90,8 +90,18 @@ Public NotInheritable Class Utils
         Return size
     End Function
 
-    Public Shared Function GetPageSize(Height As Integer, Width As Integer) As PageSize
+    Public Shared Function GetPageSize(Height As Integer, Width As Integer, Optional IsPDF As Boolean = False) As PageSize
         ' this should work only for images at 200dpi less or greater than that the results will be wrong
+        ' We have this parameter to know if it is pdf or not because when the images are placed in the pdf 
+        ' they change a bit the sizes.
+
+        ' Multiply the input sizes by 1.2 should solve the problem
+        If IsPDF Then
+            Height *= 1.2
+            Width *= 1.2
+        End If
+
+
         If Height > Width Then
             ' Vertical
             If (Width > 5651) And (Height > 7993) Then

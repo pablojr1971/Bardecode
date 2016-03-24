@@ -207,7 +207,7 @@ Public Class StepCustom
         LogSub(String.Format("Rows affected {0}", query.ExecuteNonQuery))
     End Sub
 
-    Private Sub CountPages(Logsub As IStep.LogSubDelegate)
+    Private Sub CountPages_Old(Logsub As IStep.LogSubDelegate)
         Dim A5 As Integer = 0
         Dim A4 As Integer = 0
         Dim A3 As Integer = 0
@@ -241,6 +241,25 @@ Public Class StepCustom
         For Each File In New DirectoryInfo(CustomPropeties.Input1).GetFiles("*.tif")
             Utils.DoOCR(File.FullName, File.FullName.Replace(".tif", ""))
             LogSub(File.Name)
+        Next
+    End Sub
+
+    Private Sub CountPages(LogSub As IStep.LogSubDelegate)
+        Dim A4 As Integer = 0
+        Dim A3 As Integer = 0
+        Dim A2 As Integer = 0
+        Dim A1 As Integer = 0
+        Dim A0 As Integer = 0
+
+        Dim reader As PdfReader = Nothing
+        Dim pageSize As iTextSharp.text.Rectangle = Nothing
+
+        For Each File In New DirectoryInfo(CustomPropeties.Input1).GetFiles("*.pdf")
+            reader = New PdfReader(File.FullName)
+
+            For index = 0 To reader.NumberOfPages
+                Beep()
+            Next
         Next
     End Sub
 End Class

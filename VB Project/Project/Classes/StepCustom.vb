@@ -67,6 +67,7 @@ Public Class StepCustom
             fs = Nothing
             writer = Nothing
             document = Nothing
+            subFolder.Delete(True)
         Next
     End Sub
 

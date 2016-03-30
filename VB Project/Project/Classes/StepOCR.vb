@@ -78,7 +78,7 @@ Public Class StepOCR
                 img = Nothing
 
                 tess.Arguments = String.Format("""" + outdir + "\page{0}.{1}"" """ + outdir + "\page{0}"" ""pdf""", index, format)
-                LogSub(String.Format(FrmMain.sRMLL + "Processing Page {0}", index))
+                LogSub(String.Format("Processing Page {0}", index))
                 With System.Diagnostics.Process.Start(tess)
                     .Dispose()
                 End With
@@ -103,7 +103,7 @@ Public Class StepOCR
             Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + "\" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf")
         End If
         My.Computer.FileSystem.DeleteDirectory(outdir, FileIO.DeleteDirectoryOption.DeleteAllContents)
-        LogSub(FrmMain.sRMLL + "OCR Done - File:" + File.Name + vbCrLf)
+        LogSub("OCR Done - File:" + File.Name + vbCrLf)
     End Sub
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepOCR

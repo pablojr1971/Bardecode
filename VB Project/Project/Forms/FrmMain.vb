@@ -9,7 +9,6 @@ Imports System.Text.RegularExpressions
 Public Class FrmMain
     ' Variable to tell the log String to Remove the Last Line 
     ' if the String Starts with this the log function must threat the operation to remove the last line
-    Public Const sRMLL As String = "%RMLL%"
 
     Private Process As Process
     Private _ProcessId As Integer
@@ -55,11 +54,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub UpdateText(text As String)
-        If text.Contains(sRMLL) Then
-            txProcessLog.Lines(txProcessLog.Lines.Count()) = Date.Now.ToShortTimeString + " - " + text.Replace(sRMLL, "")
-        Else
-            txProcessLog.AppendText(Date.Now.ToShortTimeString + " - " + text + vbCrLf)
-        End If
+        txProcessLog.AppendText(Date.Now.ToShortTimeString + " - " + text + vbCrLf)
     End Sub
 
     Public Sub EnableRun()

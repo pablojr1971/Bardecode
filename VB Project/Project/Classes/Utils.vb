@@ -6,19 +6,30 @@ Imports System.Drawing.Imaging
 Public NotInheritable Class Utils
     Public Delegate Function AfterMergeDelegate(doc As Document)
 
-    Public Shared Sub MergePdfs(InputFiles As List(Of String), outputFile As String, Optional AfterMergeFunction As AfterMergeDelegate = Nothing)
+    Public Shared Function MergePdfs(InputFiles As List(Of String), outputFile As String, Optional AfterMergeFunction As AfterMergeDelegate = Nothing) As String()
+        MergePdfs = Nothing
+        Dim a As Integer = InputFiles.Count
+        Dim ret(a) As String
+        Dim index As Integer = 0
 
         Dim document As Document = New Document()
         Dim writer As PdfCopy = New PdfCopy(document, New FileStream(outputFile, FileMode.Create))
-        If IsNothing(writer) Then
-            Exit Sub
+        Dim outinfo As FileInfo = New FileInfo(outputFile)
+        Dim finfo As FileInfo = Nothing
+        If IsNothing(writer) Then            
+            Exit Function
         End If
 
         document.Open()
         For Each File In InputFiles
+            finfo = New FileInfo(File)
             Dim reader As PdfReader = New PdfReader(File)
+            ret(index) = String.Format("Add {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber))
+
             writer.AddDocument(reader)
             reader.Close()
+            finfo = Nothing
+            index += 1
         Next
 
         writer.Close()
@@ -29,7 +40,8 @@ Public NotInheritable Class Utils
 
         writer.Dispose()
         document.Dispose()
-    End Sub
+        Return ret
+    End Function
 
     Public Shared Sub SplitFileSize(file As String, MBFileSize As Integer)
         Dim reader As PdfReader = New PdfReader(file)
@@ -65,10 +77,15 @@ Public NotInheritable Class Utils
             document.Close()
             pdfwriter.Dispose()
             document.Dispose()
-        End If
 
-        reader.Close()
-        reader = Nothing
+            reader.Close()
+            reader = Nothing
+
+            My.Computer.FileSystem.DeleteFile(file)
+        Else
+            reader.Close()
+            reader = Nothing
+        End If
     End Sub
 
     Private Shared Function getPageFileSize(Page As PdfImportedPage) As Long
@@ -90,7 +107,7 @@ Public NotInheritable Class Utils
         Return size
     End Function
 
-    Public Shared Function GetPageSize(Height As Integer, Width As Integer, Optional IsPDF As Boolean = False) As PageSize
+    Public Shared Function PageSize(Height As Integer, Width As Integer, Optional IsPDF As Boolean = False) As PageSize
         ' this should work only for images at 200dpi less or greater than that the results will be wrong
         ' We have this parameter to know if it is pdf or not because when the images are placed in the pdf 
         ' they change a bit the sizes.

@@ -14,7 +14,7 @@ Public Class Process
     Public Sub New(ProcessId As Integer)
         Id = ProcessId
         Steps = (From a In ctx.ESteps
-                 Where a.Process = ProcessId
+                 Where a.Process = ProcessId And a.RunOrder < 90
                  Select a.Id, a.RunOrder
                  Order By RunOrder).AsEnumerable().Select(Function(p) CreateStepObj(p.Id)).ToList()
     End Sub

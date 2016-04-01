@@ -84,7 +84,7 @@ Public Class StepOCR
                 End With
                 pdfs.Add(String.Format(outdir + "\page{0}.pdf", index))
             Catch e As Exception
-                LogSub(String.Format("Error OCRing page {0} of the Document {1}", index, File.Name) + vbCrLf + e.Message)            
+                LogSub(String.Format("Error OCRing page {0} of the Document {1}", index, File.Name) + vbCrLf + e.Message)
             End Try
         Next
 
@@ -133,4 +133,22 @@ Public Class StepOCR
             End If
         Next
     End Sub
+
+    Public Property inputfolder As String Implements IStep.inputfolder
+        Get
+            Return OCRProperties.InputFolder
+        End Get
+        Set(value As String)
+            OCRProperties.InputFolder = value
+        End Set
+    End Property
+
+    Public Property outputfolder As String Implements IStep.outputfolder
+        Get
+            Return OCRProperties.OutputFolder
+        End Get
+        Set(value As String)
+            OCRProperties.OutputFolder = value
+        End Set
+    End Property
 End Class

@@ -51,4 +51,22 @@ Public Class StepSplitPDFSize
             LoadStep = New StepSplitPDFSize(Serializer.FromXml(.PropertiesObj, GetType(PropertiesSplitPDFSize)))
         End With
     End Function
+
+    Public Property inputfolder As String Implements IStep.inputfolder
+        Get
+            Return SplitPDFSizeProperties.InputFolder
+        End Get
+        Set(value As String)
+            SplitPDFSizeProperties.InputFolder = value
+        End Set
+    End Property
+
+    Public Property outputfolder As String Implements IStep.outputfolder
+        Get
+            Return SplitPDFSizeProperties.InputFolder
+        End Get
+        Set(value As String)
+            SplitPDFSizeProperties.InputFolder = value
+        End Set
+    End Property
 End Class

@@ -6,8 +6,9 @@ Public Structure PropertiesImgsToPDF
         FilePerFolder = 2
     End Enum
 
-    Dim MergeOutput As MergeOutputType
-    Dim InputFormats As List(Of String)
-    Dim Outputfolder As DirectoryInfo
-    Dim OutputName As String 
+    Property MergeOutput As MergeOutputType
+    Property InputFormats As List(Of String)
+    Property Outputfolder As String
+    Property OutputName As String
+    Property InputFolder As String
 End Structure

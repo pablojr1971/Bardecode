@@ -118,7 +118,7 @@ Public Class StepCustom
 
             Dim logs As String() = Utils.MergePdfs(FilesToMerge, outputFile)
             For Each line In logs
-                LogSub(line)
+                logsub(line)
             Next
 
         Next
@@ -192,4 +192,22 @@ Public Class StepCustom
         command.Dispose()
         connection.Dispose()
     End Sub
+
+    Public Property inputfolder As String Implements IStep.inputfolder
+        Get
+            Return CustomPropeties.Input1
+        End Get
+        Set(value As String)
+            CustomPropeties.Input1 = value
+        End Set
+    End Property
+
+    Public Property outputfolder As String Implements IStep.outputfolder
+        Get
+            Return CustomPropeties.Output
+        End Get
+        Set(value As String)
+            CustomPropeties.Output = value
+        End Set
+    End Property
 End Class

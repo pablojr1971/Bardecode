@@ -115,8 +115,28 @@ Public Class StepBardecode
             RecursiveRun(LogSub, subFolder.FullName)
         Next
 
-        LogSub("Folder: " + Path)
-        ChangePath(Path)
-        StartBardecodeProcess()
+        If Directory.GetFiles(Path).Count > 0 Then
+            LogSub("Folder: " + Path)
+            ChangePath(Path)
+            StartBardecodeProcess()
+        End If
     End Sub
+
+    Public Property inputfolder As String Implements IStep.inputfolder
+        Get
+            Return BardecodeProperties.InputFolder
+        End Get
+        Set(value As String)
+            BardecodeProperties.InputFolder = value
+        End Set
+    End Property
+
+    Public Property outputfolder As String Implements IStep.outputfolder
+        Get
+            Return BardecodeProperties.OutputFolder
+        End Get
+        Set(value As String)
+            BardecodeProperties.OutputFolder = value
+        End Set
+    End Property
 End Class

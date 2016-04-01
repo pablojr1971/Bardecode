@@ -23,6 +23,8 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopyFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btSelect = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -30,8 +32,8 @@ Partial Class FrmMain
         Me.btRun = New System.Windows.Forms.Button()
         Me.txProcess = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopyFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -41,12 +43,27 @@ Partial Class FrmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(488, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(500, 24)
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyFilesToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'CopyFilesToolStripMenuItem
+        '
+        Me.CopyFilesToolStripMenuItem.Name = "CopyFilesToolStripMenuItem"
+        Me.CopyFilesToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.CopyFilesToolStripMenuItem.Text = "Copy Files"
+        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.btSelect)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.txProcessLog)
@@ -56,12 +73,12 @@ Partial Class FrmMain
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 24)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(488, 428)
+        Me.Panel1.Size = New System.Drawing.Size(500, 495)
         Me.Panel1.TabIndex = 9
         '
         'btSelect
         '
-        Me.btSelect.Location = New System.Drawing.Point(359, 11)
+        Me.btSelect.Location = New System.Drawing.Point(432, 10)
         Me.btSelect.Name = "btSelect"
         Me.btSelect.Size = New System.Drawing.Size(57, 23)
         Me.btSelect.TabIndex = 13
@@ -71,7 +88,7 @@ Partial Class FrmMain
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 41)
+        Me.Label2.Location = New System.Drawing.Point(11, 82)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 13)
@@ -83,17 +100,17 @@ Partial Class FrmMain
         Me.txProcessLog.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txProcessLog.Location = New System.Drawing.Point(13, 58)
+        Me.txProcessLog.Location = New System.Drawing.Point(13, 97)
         Me.txProcessLog.Margin = New System.Windows.Forms.Padding(2)
         Me.txProcessLog.Name = "txProcessLog"
         Me.txProcessLog.ReadOnly = True
-        Me.txProcessLog.Size = New System.Drawing.Size(464, 359)
+        Me.txProcessLog.Size = New System.Drawing.Size(476, 387)
         Me.txProcessLog.TabIndex = 11
         Me.txProcessLog.Text = ""
         '
         'btRun
         '
-        Me.btRun.Location = New System.Drawing.Point(421, 11)
+        Me.btRun.Location = New System.Drawing.Point(433, 37)
         Me.btRun.Margin = New System.Windows.Forms.Padding(2)
         Me.btRun.Name = "btRun"
         Me.btRun.Size = New System.Drawing.Size(56, 24)
@@ -107,7 +124,7 @@ Partial Class FrmMain
         Me.txProcess.Margin = New System.Windows.Forms.Padding(2)
         Me.txProcess.Name = "txProcess"
         Me.txProcess.ReadOnly = True
-        Me.txProcess.Size = New System.Drawing.Size(291, 20)
+        Me.txProcess.Size = New System.Drawing.Size(350, 20)
         Me.txProcess.TabIndex = 9
         '
         'Label1
@@ -120,24 +137,27 @@ Partial Class FrmMain
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Process:"
         '
-        'FileToolStripMenuItem
+        'TextBox1
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyFilesToolStripMenuItem})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
-        Me.FileToolStripMenuItem.Text = "File"
+        Me.TextBox1.Location = New System.Drawing.Point(63, 37)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(75, 20)
+        Me.TextBox1.TabIndex = 14
         '
-        'CopyFilesToolStripMenuItem
+        'Label3
         '
-        Me.CopyFilesToolStripMenuItem.Name = "CopyFilesToolStripMenuItem"
-        Me.CopyFilesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.CopyFilesToolStripMenuItem.Text = "Copy Files"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(11, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Job No.:"
         '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(488, 452)
+        Me.ClientSize = New System.Drawing.Size(500, 519)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -162,5 +182,7 @@ Partial Class FrmMain
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CopyFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 
 End Class

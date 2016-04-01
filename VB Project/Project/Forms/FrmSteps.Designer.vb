@@ -48,11 +48,9 @@ Partial Class FrmSteps
         Me.tx1FileOutTemplate = New System.Windows.Forms.TextBox()
         Me.gb1Paths = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tx1OutputFolder = New System.Windows.Forms.TextBox()
-        Me.tx1ProcessedFolder = New System.Windows.Forms.TextBox()
         Me.tx1ExceptionFolder = New System.Windows.Forms.TextBox()
         Me.tx1InputFolder = New System.Windows.Forms.TextBox()
         Me.PgOCR = New System.Windows.Forms.TabPage()
@@ -91,14 +89,17 @@ Partial Class FrmSteps
         Me.tx4Input1 = New System.Windows.Forms.TextBox()
         Me.pgSplitPDFSize = New System.Windows.Forms.TabPage()
         Me.gb5Pattern = New System.Windows.Forms.GroupBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.tx5Size = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.tx5FileTemplate = New System.Windows.Forms.TextBox()
         Me.gb5Paths = New System.Windows.Forms.GroupBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.cx5SubFolders = New System.Windows.Forms.CheckBox()
         Me.tx5InputFolder = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.tx5Size = New System.Windows.Forms.TextBox()
+        Me.cx2DeleteInputFiles = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.tx1ProcessedFolder = New System.Windows.Forms.TextBox()
         Me.MainPanel.SuspendLayout()
         Me.gbStepSettings.SuspendLayout()
         Me.tcSteps.SuspendLayout()
@@ -393,15 +394,6 @@ Partial Class FrmSteps
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Output Folder:"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 74)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Processed Folder:"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -426,13 +418,6 @@ Partial Class FrmSteps
         Me.tx1OutputFolder.Name = "tx1OutputFolder"
         Me.tx1OutputFolder.Size = New System.Drawing.Size(346, 20)
         Me.tx1OutputFolder.TabIndex = 3
-        '
-        'tx1ProcessedFolder
-        '
-        Me.tx1ProcessedFolder.Location = New System.Drawing.Point(104, 71)
-        Me.tx1ProcessedFolder.Name = "tx1ProcessedFolder"
-        Me.tx1ProcessedFolder.Size = New System.Drawing.Size(346, 20)
-        Me.tx1ProcessedFolder.TabIndex = 2
         '
         'tx1ExceptionFolder
         '
@@ -489,6 +474,7 @@ Partial Class FrmSteps
         '
         'gb2Paths
         '
+        Me.gb2Paths.Controls.Add(Me.cx2DeleteInputFiles)
         Me.gb2Paths.Controls.Add(Me.cx2CreateOutSubFolders)
         Me.gb2Paths.Controls.Add(Me.cx2ProcessSubFolders)
         Me.gb2Paths.Controls.Add(Me.Label11)
@@ -812,6 +798,22 @@ Partial Class FrmSteps
         Me.gb5Pattern.TabStop = False
         Me.gb5Pattern.Text = "Patterns"
         '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(6, 48)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(53, 13)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "Split Size:"
+        '
+        'tx5Size
+        '
+        Me.tx5Size.Location = New System.Drawing.Point(104, 45)
+        Me.tx5Size.Name = "tx5Size"
+        Me.tx5Size.Size = New System.Drawing.Size(346, 20)
+        Me.tx5Size.TabIndex = 5
+        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -869,21 +871,32 @@ Partial Class FrmSteps
         Me.tx5InputFolder.Size = New System.Drawing.Size(346, 20)
         Me.tx5InputFolder.TabIndex = 8
         '
-        'Label22
+        'cx2DeleteInputFiles
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(6, 48)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(53, 13)
-        Me.Label22.TabIndex = 6
-        Me.Label22.Text = "Split Size:"
+        Me.cx2DeleteInputFiles.AutoSize = True
+        Me.cx2DeleteInputFiles.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cx2DeleteInputFiles.Location = New System.Drawing.Point(345, 80)
+        Me.cx2DeleteInputFiles.Name = "cx2DeleteInputFiles"
+        Me.cx2DeleteInputFiles.Size = New System.Drawing.Size(105, 17)
+        Me.cx2DeleteInputFiles.TabIndex = 14
+        Me.cx2DeleteInputFiles.Text = "Delete Input files"
+        Me.cx2DeleteInputFiles.UseVisualStyleBackColor = True
         '
-        'tx5Size
+        'Label4
         '
-        Me.tx5Size.Location = New System.Drawing.Point(104, 45)
-        Me.tx5Size.Name = "tx5Size"
-        Me.tx5Size.Size = New System.Drawing.Size(346, 20)
-        Me.tx5Size.TabIndex = 5
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 74)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 13)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Processed Folder:"
+        '
+        'tx1ProcessedFolder
+        '
+        Me.tx1ProcessedFolder.Location = New System.Drawing.Point(104, 71)
+        Me.tx1ProcessedFolder.Name = "tx1ProcessedFolder"
+        Me.tx1ProcessedFolder.Size = New System.Drawing.Size(346, 20)
+        Me.tx1ProcessedFolder.TabIndex = 2
         '
         'FrmSteps
         '
@@ -937,11 +950,9 @@ Partial Class FrmSteps
     Friend WithEvents PgImgsToPdf As System.Windows.Forms.TabPage
     Friend WithEvents gb1Paths As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tx1OutputFolder As System.Windows.Forms.TextBox
-    Friend WithEvents tx1ProcessedFolder As System.Windows.Forms.TextBox
     Friend WithEvents tx1ExceptionFolder As System.Windows.Forms.TextBox
     Friend WithEvents tx1InputFolder As System.Windows.Forms.TextBox
     Friend WithEvents gb1Patterns As System.Windows.Forms.GroupBox
@@ -1004,4 +1015,7 @@ Partial Class FrmSteps
     Friend WithEvents tx5InputFolder As System.Windows.Forms.TextBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents tx5Size As System.Windows.Forms.TextBox
+    Friend WithEvents cx2DeleteInputFiles As System.Windows.Forms.CheckBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents tx1ProcessedFolder As System.Windows.Forms.TextBox
 End Class

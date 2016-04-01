@@ -22,96 +22,145 @@ Partial Class FrmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txProcess = New System.Windows.Forms.TextBox()
-        Me.btRun = New System.Windows.Forms.Button()
-        Me.txProcessLog = New System.Windows.Forms.RichTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btSelect = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txProcessLog = New System.Windows.Forms.RichTextBox()
+        Me.btRun = New System.Windows.Forms.Button()
+        Me.txProcess = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopyFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'MenuStrip1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 14)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Process:"
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(488, 24)
+        Me.MenuStrip1.TabIndex = 8
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'txProcess
+        'Panel1
         '
-        Me.txProcess.Location = New System.Drawing.Point(59, 11)
-        Me.txProcess.Margin = New System.Windows.Forms.Padding(2)
-        Me.txProcess.Name = "txProcess"
-        Me.txProcess.ReadOnly = True
-        Me.txProcess.Size = New System.Drawing.Size(291, 20)
-        Me.txProcess.TabIndex = 2
+        Me.Panel1.Controls.Add(Me.btSelect)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.txProcessLog)
+        Me.Panel1.Controls.Add(Me.btRun)
+        Me.Panel1.Controls.Add(Me.txProcess)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 24)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(488, 428)
+        Me.Panel1.TabIndex = 9
         '
-        'btRun
+        'btSelect
         '
-        Me.btRun.Location = New System.Drawing.Point(417, 10)
-        Me.btRun.Margin = New System.Windows.Forms.Padding(2)
-        Me.btRun.Name = "btRun"
-        Me.btRun.Size = New System.Drawing.Size(56, 24)
-        Me.btRun.TabIndex = 4
-        Me.btRun.Text = "Run"
-        Me.btRun.UseVisualStyleBackColor = True
-        '
-        'txProcessLog
-        '
-        Me.txProcessLog.Location = New System.Drawing.Point(9, 57)
-        Me.txProcessLog.Margin = New System.Windows.Forms.Padding(2)
-        Me.txProcessLog.Name = "txProcessLog"
-        Me.txProcessLog.ReadOnly = True
-        Me.txProcessLog.Size = New System.Drawing.Size(464, 325)
-        Me.txProcessLog.TabIndex = 5
-        Me.txProcessLog.Text = ""
+        Me.btSelect.Location = New System.Drawing.Point(359, 11)
+        Me.btSelect.Name = "btSelect"
+        Me.btSelect.Size = New System.Drawing.Size(57, 23)
+        Me.btSelect.TabIndex = 13
+        Me.btSelect.Text = "Select"
+        Me.btSelect.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 40)
+        Me.Label2.Location = New System.Drawing.Point(11, 41)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 13)
-        Me.Label2.TabIndex = 6
+        Me.Label2.TabIndex = 12
         Me.Label2.Text = "Process Log:"
         '
-        'btSelect
+        'txProcessLog
         '
-        Me.btSelect.Location = New System.Drawing.Point(355, 10)
-        Me.btSelect.Name = "btSelect"
-        Me.btSelect.Size = New System.Drawing.Size(57, 23)
-        Me.btSelect.TabIndex = 7
-        Me.btSelect.Text = "Select"
-        Me.btSelect.UseVisualStyleBackColor = True
+        Me.txProcessLog.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txProcessLog.Location = New System.Drawing.Point(13, 58)
+        Me.txProcessLog.Margin = New System.Windows.Forms.Padding(2)
+        Me.txProcessLog.Name = "txProcessLog"
+        Me.txProcessLog.ReadOnly = True
+        Me.txProcessLog.Size = New System.Drawing.Size(464, 359)
+        Me.txProcessLog.TabIndex = 11
+        Me.txProcessLog.Text = ""
+        '
+        'btRun
+        '
+        Me.btRun.Location = New System.Drawing.Point(421, 11)
+        Me.btRun.Margin = New System.Windows.Forms.Padding(2)
+        Me.btRun.Name = "btRun"
+        Me.btRun.Size = New System.Drawing.Size(56, 24)
+        Me.btRun.TabIndex = 10
+        Me.btRun.Text = "Run"
+        Me.btRun.UseVisualStyleBackColor = True
+        '
+        'txProcess
+        '
+        Me.txProcess.Location = New System.Drawing.Point(63, 12)
+        Me.txProcess.Margin = New System.Windows.Forms.Padding(2)
+        Me.txProcess.Name = "txProcess"
+        Me.txProcess.ReadOnly = True
+        Me.txProcess.Size = New System.Drawing.Size(291, 20)
+        Me.txProcess.TabIndex = 9
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(11, 15)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(48, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Process:"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyFilesToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'CopyFilesToolStripMenuItem
+        '
+        Me.CopyFilesToolStripMenuItem.Name = "CopyFilesToolStripMenuItem"
+        Me.CopyFilesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CopyFilesToolStripMenuItem.Text = "Copy Files"
         '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(483, 391)
-        Me.Controls.Add(Me.btSelect)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txProcessLog)
-        Me.Controls.Add(Me.btRun)
-        Me.Controls.Add(Me.txProcess)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(488, 452)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Process files"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txProcess As System.Windows.Forms.TextBox
-    Friend WithEvents btRun As System.Windows.Forms.Button
-    Friend WithEvents txProcessLog As System.Windows.Forms.RichTextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btSelect As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txProcessLog As System.Windows.Forms.RichTextBox
+    Friend WithEvents btRun As System.Windows.Forms.Button
+    Friend WithEvents txProcess As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CopyFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

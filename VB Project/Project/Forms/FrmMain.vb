@@ -9,6 +9,7 @@ Imports System.Text.RegularExpressions
 Public Class FrmMain
     ' Variable to tell the log String to Remove the Last Line 
     ' if the String Starts with this the log function must threat the operation to remove the last line
+    Public Const ScanDataStringConnection = "Server=Jerry;Database=other;User Id=sa;Password=569874123;"
 
     Private Process As Process
     Private _ProcessId As Integer
@@ -16,7 +17,7 @@ Public Class FrmMain
     Private Folders As List(Of DirectoryInfo) = New List(Of DirectoryInfo)()
     Private Files As List(Of FileInfo) = New List(Of FileInfo)()
 
-    Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles btRun.Click
+    Private Sub RunButton_Click(sender As Object, e As EventArgs)
         ' need to create a process object 
         ' create a instance of the process class
         ' load the steps of the process 
@@ -35,7 +36,7 @@ Public Class FrmMain
         End With
     End Sub
 
-    Private Sub RunProcess()
+    Private Sub RunProcess() Handles btRun.Click
         Dim ProcessObj As Process = New Process(_ProcessId)
 
         ' If we want to write the log in a file, or in another place 
@@ -63,5 +64,11 @@ Public Class FrmMain
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FrmMain.CheckForIllegalCrossThreadCalls = False
+    End Sub
+
+    Private Sub CopyFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyFilesToolStripMenuItem.Click
+        With New FrmCopyFiles(Me)
+            .Dispose()
+        End With
     End Sub
 End Class

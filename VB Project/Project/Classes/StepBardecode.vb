@@ -33,6 +33,7 @@ Public Class StepBardecode
 
     Public Sub StartBardecodeProcess()
         With System.Diagnostics.Process.Start("C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe", """" + Directory.GetCurrentDirectory() + "\BardecodeIni.ini""")
+            .PriorityClass = ProcessPriorityClass.High
             .WaitForExit()
             .Close()
             .Dispose()
@@ -49,6 +50,7 @@ Public Class StepBardecode
         'Folders and files
         BardecodeIni.WriteValue("options", "inputFolder", "System.String," + Me.BardecodeProperties.InputFolder)
         BardecodeIni.WriteValue("options", "outputFolder", "System.String," + Me.BardecodeProperties.OutputFolder)
+        BardecodeIni.WriteValue("options", "processedFolder", "System.String," + Me.BardecodeProperties.ProcessedFolder)
         BardecodeIni.WriteValue("options", "exceptionFolder", "System.String," + Me.BardecodeProperties.ExceptionFolder)
         BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Me.BardecodeProperties.OutputNameTemplate)
         BardecodeIni.WriteValue("options", "FilePattern", "System.String," + Me.BardecodeProperties.FileNamePattern)
@@ -68,9 +70,10 @@ Public Class StepBardecode
         BardecodeIni.WriteValue("options", "Datamatrix", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.Datamatrix).ToString())
         BardecodeIni.WriteValue("options", "QR-Code", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.QR_Code).ToString())
 
-        'Barcode Pattern, Delete input files, Split Mode
+        'Barcode Pattern, Delete input files, Split Mode, Move to processed.
         BardecodeIni.WriteValue("options", "Pattern", "System.String," + Me.BardecodeProperties.BarcodePattern)
         BardecodeIni.WriteValue("options", "DeleteInputImages", "System.Boolean," + Me.BardecodeProperties.DeleteInputFiles.ToString())
+        BardecodeIni.WriteValue("options", "moveToProcessedFolder", "System.Boolean," + (Not Me.BardecodeProperties.DeleteInputFiles).ToString())
         BardecodeIni.WriteValue("options", "splitMode", "System.Int32," + Me.BardecodeProperties.SplitMode.ToString())
     End Sub
 

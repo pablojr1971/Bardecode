@@ -151,6 +151,12 @@
     <Compile Include="EStep.vb">
       <DependentUpon>VBProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmCopyFiles.Designer.vb">
+      <DependentUpon>FrmCopyFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCopyFiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmProcesses.Designer.vb">
       <DependentUpon>FrmProcesses.vb</DependentUpon>
     </Compile>
@@ -211,6 +217,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmCopyFiles.resx">
+      <DependentUpon>FrmCopyFiles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>

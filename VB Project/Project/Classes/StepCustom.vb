@@ -111,7 +111,7 @@ Public Class StepCustom
             FilesToMerge.Clear()
             FilesToMerge.Add(finalFile.FullName)
             For Each subfile In Directoryfiles.Where(Function(p) p.FullName.StartsWith(finalFile.FullName.Replace("_NOBARCODE.pdf", "_")) And p.FullName <> finalFile.FullName)
-                FilesToMerge.Add(DrawingDir.FullName + "\" + subfile.FullName.Substring(subfile.FullName.Length - 11, 11))
+                FilesToMerge.Add(DrawingDir.FullName + "\" + subfile.FullName.Substring(subfile.FullName.Length - 12, 12))
                 FilesToMerge.Add(subfile.FullName)
             Next
             outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", "_Final.pdf")
@@ -177,7 +177,7 @@ Public Class StepCustom
         pagecount = A3 + A4
         drawingcount = A0 + A1 + A2
 
-        Dim connection As SqlConnection = New SqlConnection("Server=Jerry;Database=other;User Id=sa;Password=569874123;")
+        Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _

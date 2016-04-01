@@ -89,3 +89,4 @@ C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.vbprojResolveAssemb
 C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.Native.dll
 C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.dll
 C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.xml
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmCopyFiles.resources

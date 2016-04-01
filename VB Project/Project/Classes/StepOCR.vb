@@ -103,6 +103,10 @@ Public Class StepOCR
             Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + "\" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf")
         End If
         My.Computer.FileSystem.DeleteDirectory(outdir, FileIO.DeleteDirectoryOption.DeleteAllContents)
+        Threading.Thread.Sleep(500)
+        If OCRProperties.DeleteInputFile Then
+            File.Delete()
+        End If
         LogSub("OCR Done - File:" + File.Name + vbCrLf)
     End Sub
 
@@ -124,7 +128,9 @@ Public Class StepOCR
         End If
 
         For Each File In Folders.GetFiles("*.pdf")
-            RunFile(File, OCRProperties.OutputFolder, LogSub)
+            If Not File.Name.EndsWith("_OCRED.pdf") Then
+                RunFile(File, OCRProperties.OutputFolder, LogSub)
+            End If
         Next
     End Sub
 End Class

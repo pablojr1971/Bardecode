@@ -105,6 +105,7 @@ Public Class FrmSteps
         Props.OutputNameTemplate = tx2FileOutTemplate.Text
         Props.ProcessSubFolders = cx2ProcessSubFolders.Checked
         Props.CreateOutputSubFolders = cx2CreateOutSubFolders.Checked
+        Props.DeleteInputFile = cx2DeleteInputFiles.Checked
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.OCR
     End Sub
@@ -159,6 +160,7 @@ Public Class FrmSteps
             tx2FileOutTemplate.Text = .OutputNameTemplate
             cx2CreateOutSubFolders.Checked = .CreateOutputSubFolders
             cx2ProcessSubFolders.Checked = .ProcessSubFolders
+            cx2DeleteInputFiles.Checked = .DeleteInputFile
         End With
     End Sub
 

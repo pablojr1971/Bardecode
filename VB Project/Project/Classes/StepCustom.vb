@@ -24,7 +24,7 @@ Public Class StepCustom
     End Sub
 
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
-        LogSub("Running " + CustomPropeties.CustomRunID + vbCrLf)
+        LogSub("Running " + CustomPropeties.CustomRunID)
         Me.GetType.InvokeMember(Me.CustomPropeties.CustomRunID,
                                 BindingFlags.InvokeMethod Or BindingFlags.NonPublic Or BindingFlags.Public Or BindingFlags.Instance,
                                 Nothing,
@@ -87,6 +87,8 @@ Public Class StepCustom
         Dim dir2 As DirectoryInfo = New DirectoryInfo(CustomPropeties.Input2)
 
         RecursiveMerge(dir1, dir2, LogSub)
+
+        LogSub("Merge done" + vbCrLf)
     End Sub
 
     Private Shared Sub RecursiveMerge(directory As DirectoryInfo, DrawingDir As DirectoryInfo, logsub As IStep.LogSubDelegate)
@@ -98,11 +100,8 @@ Public Class StepCustom
         MergeFolder(directory, DrawingDir, logsub)
     End Sub
 
-
-
     Private Shared Sub MergeFolder(directory As DirectoryInfo, DrawingDir As DirectoryInfo, logsub As IStep.LogSubDelegate)
         Try
-
             Dim document As PdfDocument = Nothing
             Dim output As FileStream = Nothing
             Dim writer As PdfWriter = Nothing
@@ -140,8 +139,6 @@ Public Class StepCustom
             If File.Exists(directory.Parent.FullName + "\_001_NOBARCODE.pdf") Then
                 My.Computer.FileSystem.DeleteFile(directory.Parent.FullName + "\_001_NOBARCODE.pdf")
             End If
-
-            logsub("Merge done" + vbCrLf)
         Catch e As Exception
             MessageBox.Show(e.Message)
         End Try

@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e210821989954a66a703d0d55314ebb8" Name="Diagram1">
-        <EntityTypeShape EntityType="VBProjectModel.EProcess" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VBProjectModel.EProcess" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="VBProjectModel.EStep" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="VBProjectModel.FK__Steps__Process__0F975522" ManuallyRouted="false" />
       </Diagram>

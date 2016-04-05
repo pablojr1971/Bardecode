@@ -9,12 +9,7 @@ Public Structure PropertiesOCR
     Public DeleteInputFile As Boolean
 
     Public Sub SetDefaultValues()
-        Me.InputFolder = Directory.GetCurrentDirectory()
-        Me.ProcessSubFolders = True
-        Me.CreateOutputSubFolders = True
         Me.OutputNameTemplate = "_OCR.pdf"
-        Me.OutputFolder = Directory.GetCurrentDirectory()
-        Me.DeleteInputFile = False
     End Sub
 End Structure
 

@@ -23,6 +23,9 @@ Public Class StepOCR
 
     Sub New(Properties As PropertiesOCR)
         Me.OCRProperties = Properties
+        Me.OCRProperties.InputFolder = Directory.GetCurrentDirectory() + "\Processing\Documents"
+        Me.OCRProperties.OutputFolder = Me.OCRProperties.InputFolder
+        Me.OCRProperties.DeleteInputFile = True
     End Sub
 
     Public Sub RunFile(File As FileInfo, OutFolder As String, LogSub As IStep.LogSubDelegate)
@@ -78,7 +81,9 @@ Public Class StepOCR
                 img = Nothing
 
                 tess.Arguments = String.Format("""" + outdir + "\page{0}.{1}"" """ + outdir + "\page{0}"" ""pdf""", index, format)
-                LogSub(String.Format("Processing Page {0}", index))
+                If index Mod 100 Then
+                    LogSub(String.Format("Processing Page {0}", index))
+                End If
                 With System.Diagnostics.Process.Start(tess)
                     .Dispose()
                 End With
@@ -133,22 +138,4 @@ Public Class StepOCR
             End If
         Next
     End Sub
-
-    Public Property inputfolder As String Implements IStep.inputfolder
-        Get
-            Return OCRProperties.InputFolder
-        End Get
-        Set(value As String)
-            OCRProperties.InputFolder = value
-        End Set
-    End Property
-
-    Public Property outputfolder As String Implements IStep.outputfolder
-        Get
-            Return OCRProperties.OutputFolder
-        End Get
-        Set(value As String)
-            OCRProperties.OutputFolder = value
-        End Set
-    End Property
 End Class

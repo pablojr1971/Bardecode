@@ -16,6 +16,9 @@
     <Property Name="Number" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
     <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Processes" ToRole="Steps" />
+    <Property Type="String" Name="docInput" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="drwInput" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="outFolder" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="EStep">
     <Key>

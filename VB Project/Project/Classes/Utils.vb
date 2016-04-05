@@ -6,8 +6,8 @@ Imports System.Drawing.Imaging
 Public NotInheritable Class Utils
     Public Delegate Function AfterMergeDelegate(doc As Document)
 
-    Public Shared Function MergePdfs(InputFiles As List(Of String), outputFile As String, Optional AfterMergeFunction As AfterMergeDelegate = Nothing) As String()
-        MergePdfs = Nothing
+    Public Shared Function MergePdfs(InputFiles As List(Of String), outputFile As String, Optional AfterMergeFunction As AfterMergeDelegate = Nothing) As List(Of String)
+        MergePdfs = New List(Of String)
         Dim a As Integer = InputFiles.Count
         Dim ret(a) As String
         Dim index As Integer = 0
@@ -16,7 +16,7 @@ Public NotInheritable Class Utils
         Dim writer As PdfCopy = New PdfCopy(document, New FileStream(outputFile, FileMode.Create))
         Dim outinfo As FileInfo = New FileInfo(outputFile)
         Dim finfo As FileInfo = Nothing
-        If IsNothing(writer) Then            
+        If IsNothing(writer) Then
             Exit Function
         End If
 
@@ -24,7 +24,9 @@ Public NotInheritable Class Utils
         For Each File In InputFiles
             finfo = New FileInfo(File)
             Dim reader As PdfReader = New PdfReader(File)
-            ret(index) = String.Format("Add {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber))
+            If (Not File.EndsWith("_NOBARCODE.pdf") And New FileInfo(File).Name.StartsWith("SP")) Then
+                MergePdfs.Add(String.Format("Add {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber)))
+            End If
 
             writer.AddDocument(reader)
             reader.Close()
@@ -40,7 +42,6 @@ Public NotInheritable Class Utils
 
         writer.Dispose()
         document.Dispose()
-        Return ret
     End Function
 
     Public Shared Sub SplitFileSize(file As String, MBFileSize As Integer)

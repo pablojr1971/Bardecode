@@ -26,11 +26,10 @@ Public Structure PropertiesBardecode
     'Split Mode
     Public SplitMode As Integer
 
+    'Folder to process, 0 to documents, 1 to drawings
+    Public FolderType As Integer
+
     Public Sub SetDefaultvalues()
-        Me.InputFolder = Directory.GetCurrentDirectory()
-        Me.OutputFolder = Directory.GetCurrentDirectory()
-        Me.ExceptionFolder = Directory.GetCurrentDirectory()
-        Me.ProcessedFolder = Directory.GetCurrentDirectory()
         Me.FileNamePattern = ""
         Me.OutputNameTemplate = "%VALUES_%SEQ3"
         Me.BarcodeTypes = New List(Of BarcodeType) From {BarcodeType.Code_128, BarcodeType.Code_2_of_5, BarcodeType.Code_3_of_9}
@@ -39,6 +38,7 @@ Public Structure PropertiesBardecode
         Me.ProcessSubFolders = False
         Me.DeleteInputFiles = False
         Me.SplitMode = Project.SplitMode.BarcodeStart
+        Me.FolderType = 0
     End Sub
 
 End Structure

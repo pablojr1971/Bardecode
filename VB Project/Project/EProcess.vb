@@ -14,6 +14,9 @@ Partial Public Class EProcess
     Public Property Id As Integer
     Public Property Number As String
     Public Property Description As String
+    Public Property docInput As String
+    Public Property drwInput As String
+    Public Property outFolder As String
 
     Public Overridable Property Steps As ICollection(Of EStep) = New HashSet(Of EStep)
 

@@ -43,14 +43,14 @@ Public Class StepImgsToPDF
                 Me.Gfx.DrawImage(Me.XImg, Me.GfxPoint)
 
                 If Me.ImgsToPDFProperties.MergeOutput = MergeOutputType.FilePerFile Then
-                    Me.Doc.Save(Me.ImgsToPDFProperties.Outputfolder + "\" + Replace(File.Name, File.Extension, ".pdf"))
+                    Me.Doc.Save(Directory.GetCurrentDirectory + "\Processing\Drawings\" + Replace(File.Name, File.Extension, ".pdf"))
                     Me.Doc.Dispose()
                 End If
             End If
         Next
 
         If Me.ImgsToPDFProperties.MergeOutput = MergeOutputType.FilePerFolder Then
-            Me.Doc.Save(Me.ImgsToPDFProperties.Outputfolder + "\" + Me.ImgsToPDFProperties.OutputName)
+            Me.Doc.Save(Directory.GetCurrentDirectory + "\Processing\Drawings\" + Me.ImgsToPDFProperties.OutputName)
             Me.Doc.Dispose()
         End If
     End Sub
@@ -70,15 +70,4 @@ Public Class StepImgsToPDF
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
 
     End Sub
-
-    Public Property inputfolder As String Implements IStep.inputfolder
-        Get
-            Return ImgsToPDFProperties.InputFolder
-        End Get
-        Set(value As String)
-            ImgsToPDFProperties.InputFolder = value
-        End Set
-    End Property
-
-    Public Property outputfolder As String Implements IStep.outputfolder
 End Class

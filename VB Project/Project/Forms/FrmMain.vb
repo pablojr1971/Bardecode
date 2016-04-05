@@ -37,9 +37,9 @@ Public Class FrmMain
     End Sub
 
     Private Sub RunProcess() Handles btRun.Click
-        Dim ProcessObj As Process = New Process(_ProcessId)
+        Dim ProcessObj As Process = New Process(_ProcessId, CInt(txJobNumber.Text))
 
-        ' If we want to write the log in a file, or in another place 
+        ' If we want to write the log in a file, or in another place
         ' we just need to change this delegate function and pass one that 
         ' do what we want
         btRun.Enabled = False

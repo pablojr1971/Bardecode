@@ -9,9 +9,6 @@ Public Structure PropertiesCustom
     Public CustomRunID As String
 
     Public Sub SetDefaultvalues()
-        Me.Input1 = Directory.GetCurrentDirectory()
-        Me.Input2 = Directory.GetCurrentDirectory()
-        Me.Output = Directory.GetCurrentDirectory()
         Me.CustomRunID = ""
     End Sub
 

@@ -26,14 +26,14 @@ Partial Class FrmMain
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CopyFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txJobNumber = New System.Windows.Forms.TextBox()
         Me.btSelect = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txProcessLog = New System.Windows.Forms.RichTextBox()
         Me.btRun = New System.Windows.Forms.Button()
         Me.txProcess = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,7 +63,7 @@ Partial Class FrmMain
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.txJobNumber)
         Me.Panel1.Controls.Add(Me.btSelect)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.txProcessLog)
@@ -75,6 +75,22 @@ Partial Class FrmMain
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(500, 495)
         Me.Panel1.TabIndex = 9
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(11, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Job No.:"
+        '
+        'txJobNumber
+        '
+        Me.txJobNumber.Location = New System.Drawing.Point(63, 37)
+        Me.txJobNumber.Name = "txJobNumber"
+        Me.txJobNumber.Size = New System.Drawing.Size(75, 20)
+        Me.txJobNumber.TabIndex = 14
         '
         'btSelect
         '
@@ -137,22 +153,6 @@ Partial Class FrmMain
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Process:"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(63, 37)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox1.TabIndex = 14
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 40)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Job No.:"
-        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -183,6 +183,6 @@ Partial Class FrmMain
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CopyFilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txJobNumber As System.Windows.Forms.TextBox
 
 End Class

@@ -18,6 +18,9 @@ Public Class StepCustom
 
     Public Sub New(Properties As PropertiesCustom)
         Me.CustomPropeties = Properties
+        Me.CustomPropeties.Input1 = Directory.GetCurrentDirectory() + "\Processing\Documents"
+        Me.CustomPropeties.Input2 = Directory.GetCurrentDirectory() + "\Processing\Drawings"
+        Me.CustomPropeties.Output = Me.CustomPropeties.Input1
     End Sub
 
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
@@ -49,26 +52,29 @@ Public Class StepCustom
         ' Will have a input folder, with subfolders as files
         ' each file will have many images and need to be merged into a single multipage PDF
         Dim img As iTextSharp.text.Image = Nothing
-        For Each subFolder In New DirectoryInfo(CustomPropeties.Input1).GetDirectories()
-            filename = subFolder.FullName.Replace("SD", "SP") + ".pdf"
-            document = New Document()
-            fs = New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None)
-            writer = PdfWriter.GetInstance(document, fs)
-            document.Open()
-            For Each File In subFolder.GetFiles("*.jpg")
-                img = Image.GetInstance(File.FullName)
-                img.SetAbsolutePosition(0, 0)
-                document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
-                document.NewPage()
-                writer.DirectContent.AddImage(img)
-                img = Nothing
-            Next
-            document.Close()
-            fs = Nothing
-            writer = Nothing
-            document = Nothing
+        For Each subFolder In New DirectoryInfo(CustomPropeties.Input2).GetDirectories()
+            If subFolder.GetFiles("*.jpg").Length > 0 Then
+                filename = subFolder.FullName.Replace("SD", "SP") + ".pdf"
+                document = New Document()
+                fs = New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None)
+                writer = PdfWriter.GetInstance(document, fs)
+                document.Open()
+                For Each File In subFolder.GetFiles("*.jpg")
+                    img = Image.GetInstance(File.FullName)
+                    img.SetAbsolutePosition(0, 0)
+                    document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
+                    document.NewPage()
+                    writer.DirectContent.AddImage(img)
+                    img = Nothing
+                Next
+                document.Close()
+                fs = Nothing
+                writer = Nothing
+                document = Nothing
+            End If
             subFolder.Delete(True)
         Next
+        LogSub("Files converted" + vbCrLf)
     End Sub
 
     Private Sub MergeA4AndDrawingsSplit1(LogSub As IStep.LogSubDelegate)
@@ -95,44 +101,50 @@ Public Class StepCustom
 
 
     Private Shared Sub MergeFolder(directory As DirectoryInfo, DrawingDir As DirectoryInfo, logsub As IStep.LogSubDelegate)
-        Dim document As PdfDocument = Nothing
-        Dim output As FileStream = Nothing
-        Dim writer As PdfWriter = Nothing
+        Try
 
-        Dim Directoryfiles As List(Of FileInfo) = directory.GetFiles().ToList()
-        Dim FinalFiles As List(Of FileInfo) = Directoryfiles.Where(Function(p) p.FullName.EndsWith("_NOBARCODE.pdf")).ToList()
+            Dim document As PdfDocument = Nothing
+            Dim output As FileStream = Nothing
+            Dim writer As PdfWriter = Nothing
 
-        Dim outputFile As String = ""
-        Directoryfiles.RemoveAll(Function(p) p.FullName.EndsWith("_NOBARCODE.pdf"))
+            Dim Directoryfiles As List(Of FileInfo) = directory.GetFiles().ToList()
+            Dim FinalFiles As List(Of FileInfo) = Directoryfiles.Where(Function(p) p.FullName.EndsWith("_NOBARCODE.pdf")).ToList()
 
-        Dim FilesToMerge As List(Of String) = New List(Of String)
+            Dim outputFile As String = ""
+            Directoryfiles.RemoveAll(Function(p) p.FullName.EndsWith("_NOBARCODE.pdf"))
 
-        For Each finalFile In FinalFiles
-            FilesToMerge.Clear()
-            FilesToMerge.Add(finalFile.FullName)
-            For Each subfile In Directoryfiles.Where(Function(p) p.FullName.StartsWith(finalFile.FullName.Replace("_NOBARCODE.pdf", "_")) And p.FullName <> finalFile.FullName)
-                FilesToMerge.Add(DrawingDir.FullName + "\" + subfile.FullName.Substring(subfile.FullName.Length - 12, 12))
-                FilesToMerge.Add(subfile.FullName)
+            Dim FilesToMerge As List(Of String) = New List(Of String)
+
+            For Each finalFile In FinalFiles
+                FilesToMerge.Clear()
+                FilesToMerge.Add(finalFile.FullName)
+                For Each subfile In Directoryfiles.Where(Function(p) p.FullName.StartsWith(finalFile.FullName.Replace("_NOBARCODE.pdf", "_")) And p.FullName <> finalFile.FullName)
+                    FilesToMerge.Add(DrawingDir.FullName + "\" + subfile.Name.Replace(finalFile.Name.Replace("NOBARCODE.pdf", ""), "").Replace("SD", "SP"))
+                    FilesToMerge.Add(subfile.FullName)
+                Next
+                outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", "_Final.pdf")
+
+                For Each line In Utils.MergePdfs(FilesToMerge, outputFile)
+                    logsub(line)
+                Next
+
             Next
-            outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", "_Final.pdf")
 
-            Dim logs As String() = Utils.MergePdfs(FilesToMerge, outputFile)
-            For Each line In logs
-                logsub(line)
+            ' Delete the files
+            For Each File In Directoryfiles
+                My.Computer.FileSystem.DeleteFile(File.FullName)
             Next
+            For Each File In FinalFiles
+                My.Computer.FileSystem.DeleteFile(File.FullName)
+            Next
+            If File.Exists(directory.Parent.FullName + "\_001_NOBARCODE.pdf") Then
+                My.Computer.FileSystem.DeleteFile(directory.Parent.FullName + "\_001_NOBARCODE.pdf")
+            End If
 
-        Next
-
-        ' Delete the files
-        For Each File In Directoryfiles
-            My.Computer.FileSystem.DeleteFile(File.FullName)
-        Next
-        For Each File In FinalFiles
-            My.Computer.FileSystem.DeleteFile(File.FullName)
-        Next
-        If File.Exists(directory.Parent.FullName + "\_001_NOBARCODE.pdf") Then
-            My.Computer.FileSystem.DeleteFile(directory.Parent.FullName + "\_001_NOBARCODE.pdf")
-        End If
+            logsub("Merge done" + vbCrLf)
+        Catch e As Exception
+            MessageBox.Show(e.Message)
+        End Try
     End Sub
 
     Private Sub CountPages(LogSub As IStep.LogSubDelegate)
@@ -177,37 +189,21 @@ Public Class StepCustom
         pagecount = A3 + A4
         drawingcount = A0 + A1 + A2
 
-        Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
-        connection.Open()
+        If (pagecount + drawingcount) > 0 Then
+            Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
+            connection.Open()
 
-        Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _
-                                                   "      SET FIELD10 = '" + StrOut + "'," + _
-                                                   "          PAGECOUNT = " + pagecount.ToString() + "," + _
-                                                   "          DRAWINGCOUNT = " + drawingcount.ToString() + _
-                                                   "   WHERE JOBNO = 2001 " + _
-                                                   "     AND BARCODE = '" + Dir.Name + "'", connection)
-        Logsub("Updated ScanData - Rows = " + command.ExecuteNonQuery().ToString())
+            Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _
+                                                       "      SET FIELD10 = '" + StrOut + "'," + _
+                                                       "          PAGECOUNT = " + pagecount.ToString() + "," + _
+                                                       "          DRAWINGCOUNT = " + drawingcount.ToString() + _
+                                                       "   WHERE JOBNO = 2001 " + _
+                                                       "     AND BARCODE = '" + Dir.Name + "'", connection)
+            Logsub(String.Format("Updated ScanData barcode {0} - Rows Affected = ", Dir.Name) + command.ExecuteNonQuery().ToString())
 
-        connection.Close()
-        command.Dispose()
-        connection.Dispose()
+            connection.Close()
+            command.Dispose()
+            connection.Dispose()
+        End If
     End Sub
-
-    Public Property inputfolder As String Implements IStep.inputfolder
-        Get
-            Return CustomPropeties.Input1
-        End Get
-        Set(value As String)
-            CustomPropeties.Input1 = value
-        End Set
-    End Property
-
-    Public Property outputfolder As String Implements IStep.outputfolder
-        Get
-            Return CustomPropeties.Output
-        End Get
-        Set(value As String)
-            CustomPropeties.Output = value
-        End Set
-    End Property
 End Class

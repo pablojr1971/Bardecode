@@ -7,7 +7,6 @@ Public Structure PropertiesSplitPDFSize
     Public Property ProcessSubFolders As Boolean
 
     Public Sub SetDefaultValues()
-        InputFolder = Directory.GetCurrentDirectory()
         FilePattern = ""
         Size = 10
         ProcessSubFolders = True

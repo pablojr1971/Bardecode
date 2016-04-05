@@ -4,6 +4,9 @@
     <EntitySetMapping Name="EProcesses">
       <EntityTypeMapping TypeName="VBProjectModel.EProcess">
         <MappingFragment StoreEntitySet="Processes">
+          <ScalarProperty Name="outFolder" ColumnName="outFolder" />
+          <ScalarProperty Name="drwInput" ColumnName="drwInput" />
+          <ScalarProperty Name="docInput" ColumnName="docInput" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="Description" ColumnName="Description" />

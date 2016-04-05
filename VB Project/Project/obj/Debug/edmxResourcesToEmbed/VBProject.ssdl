@@ -15,6 +15,9 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Number" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="Description" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="docInput" Type="varchar" MaxLength="150" />
+    <Property Name="drwInput" Type="varchar" MaxLength="150" />
+    <Property Name="outFolder" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="Steps">
     <Key>

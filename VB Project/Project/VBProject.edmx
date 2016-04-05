@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VBProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="VBProjectModelStoreContainer">
           <EntitySet Name="Processes" EntityType="VBProjectModel.Store.Processes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Steps" EntityType="VBProjectModel.Store.Steps" store:Type="Tables" Schema="dbo" />
@@ -20,6 +20,9 @@
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Number" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Description" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="docInput" Type="varchar" MaxLength="150" />
+          <Property Name="drwInput" Type="varchar" MaxLength="150" />
+          <Property Name="outFolder" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Steps">
           <Key>
@@ -43,8 +46,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VBProjectModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -64,6 +66,9 @@
           <Property Name="Number" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Steps" Relationship="VBProjectModel.FK__Steps__Process__0F975522" FromRole="Processes" ToRole="Steps" />
+          <Property Type="String" Name="docInput" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="drwInput" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="outFolder" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="EStep">
           <Key>
@@ -97,6 +102,9 @@
           <EntitySetMapping Name="EProcesses">
             <EntityTypeMapping TypeName="VBProjectModel.EProcess">
               <MappingFragment StoreEntitySet="Processes">
+                <ScalarProperty Name="outFolder" ColumnName="outFolder" />
+                <ScalarProperty Name="drwInput" ColumnName="drwInput" />
+                <ScalarProperty Name="docInput" ColumnName="docInput" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

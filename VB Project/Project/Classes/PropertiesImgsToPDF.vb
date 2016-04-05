@@ -8,7 +8,5 @@ Public Structure PropertiesImgsToPDF
 
     Property MergeOutput As MergeOutputType
     Property InputFormats As List(Of String)
-    Property Outputfolder As String
     Property OutputName As String
-    Property InputFolder As String
 End Structure

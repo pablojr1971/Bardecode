@@ -34,14 +34,16 @@ Partial Class FrmProcesses
         Me.Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbProcessInfo = New System.Windows.Forms.GroupBox()
+        Me.txOutFolder = New System.Windows.Forms.TextBox()
+        Me.txOutput = New System.Windows.Forms.Label()
+        Me.txdocInput = New System.Windows.Forms.TextBox()
+        Me.txInput = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txDescription = New System.Windows.Forms.TextBox()
         Me.txNumber = New System.Windows.Forms.TextBox()
-        Me.txInput = New System.Windows.Forms.Label()
-        Me.txInputFolder = New System.Windows.Forms.TextBox()
-        Me.txOutputFolder = New System.Windows.Forms.TextBox()
-        Me.txOutput = New System.Windows.Forms.Label()
+        Me.txDrwInput = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MainPanel.SuspendLayout()
         Me.gbSteps.SuspendLayout()
         CType(Me.dgSteps, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,13 +59,13 @@ Partial Class FrmProcesses
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(0, 0)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(506, 501)
+        Me.MainPanel.Size = New System.Drawing.Size(506, 524)
         Me.MainPanel.TabIndex = 0
         '
         'btOk
         '
         Me.btOk.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btOk.Location = New System.Drawing.Point(338, 466)
+        Me.btOk.Location = New System.Drawing.Point(338, 489)
         Me.btOk.Name = "btOk"
         Me.btOk.Size = New System.Drawing.Size(75, 23)
         Me.btOk.TabIndex = 7
@@ -73,7 +75,7 @@ Partial Class FrmProcesses
         'btCancel
         '
         Me.btCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btCancel.Location = New System.Drawing.Point(419, 466)
+        Me.btCancel.Location = New System.Drawing.Point(419, 489)
         Me.btCancel.Name = "btCancel"
         Me.btCancel.Size = New System.Drawing.Size(75, 23)
         Me.btCancel.TabIndex = 6
@@ -87,7 +89,7 @@ Partial Class FrmProcesses
         Me.gbSteps.Controls.Add(Me.btEditStep)
         Me.gbSteps.Controls.Add(Me.btDeleteStep)
         Me.gbSteps.Controls.Add(Me.dgSteps)
-        Me.gbSteps.Location = New System.Drawing.Point(12, 142)
+        Me.gbSteps.Location = New System.Drawing.Point(12, 165)
         Me.gbSteps.Name = "gbSteps"
         Me.gbSteps.Size = New System.Drawing.Size(482, 318)
         Me.gbSteps.TabIndex = 1
@@ -156,9 +158,11 @@ Partial Class FrmProcesses
         '
         'gbProcessInfo
         '
-        Me.gbProcessInfo.Controls.Add(Me.txOutputFolder)
+        Me.gbProcessInfo.Controls.Add(Me.txDrwInput)
+        Me.gbProcessInfo.Controls.Add(Me.Label3)
+        Me.gbProcessInfo.Controls.Add(Me.txOutFolder)
         Me.gbProcessInfo.Controls.Add(Me.txOutput)
-        Me.gbProcessInfo.Controls.Add(Me.txInputFolder)
+        Me.gbProcessInfo.Controls.Add(Me.txdocInput)
         Me.gbProcessInfo.Controls.Add(Me.txInput)
         Me.gbProcessInfo.Controls.Add(Me.Label2)
         Me.gbProcessInfo.Controls.Add(Me.Label1)
@@ -166,10 +170,42 @@ Partial Class FrmProcesses
         Me.gbProcessInfo.Controls.Add(Me.txNumber)
         Me.gbProcessInfo.Location = New System.Drawing.Point(12, 12)
         Me.gbProcessInfo.Name = "gbProcessInfo"
-        Me.gbProcessInfo.Size = New System.Drawing.Size(482, 128)
+        Me.gbProcessInfo.Size = New System.Drawing.Size(482, 149)
         Me.gbProcessInfo.TabIndex = 0
         Me.gbProcessInfo.TabStop = False
         Me.gbProcessInfo.Text = "Process Info"
+        '
+        'txOutFolder
+        '
+        Me.txOutFolder.Location = New System.Drawing.Point(80, 123)
+        Me.txOutFolder.Name = "txOutFolder"
+        Me.txOutFolder.Size = New System.Drawing.Size(395, 20)
+        Me.txOutFolder.TabIndex = 7
+        '
+        'txOutput
+        '
+        Me.txOutput.AutoSize = True
+        Me.txOutput.Location = New System.Drawing.Point(7, 126)
+        Me.txOutput.Name = "txOutput"
+        Me.txOutput.Size = New System.Drawing.Size(59, 13)
+        Me.txOutput.TabIndex = 6
+        Me.txOutput.Text = "Out Folder:"
+        '
+        'txdocInput
+        '
+        Me.txdocInput.Location = New System.Drawing.Point(80, 71)
+        Me.txdocInput.Name = "txdocInput"
+        Me.txdocInput.Size = New System.Drawing.Size(395, 20)
+        Me.txdocInput.TabIndex = 5
+        '
+        'txInput
+        '
+        Me.txInput.AutoSize = True
+        Me.txInput.Location = New System.Drawing.Point(6, 74)
+        Me.txInput.Name = "txInput"
+        Me.txInput.Size = New System.Drawing.Size(74, 13)
+        Me.txInput.TabIndex = 4
+        Me.txInput.Text = "Doc In Folder:"
         '
         'Label2
         '
@@ -191,55 +227,39 @@ Partial Class FrmProcesses
         '
         'txDescription
         '
-        Me.txDescription.Location = New System.Drawing.Point(75, 45)
+        Me.txDescription.Location = New System.Drawing.Point(80, 45)
         Me.txDescription.Name = "txDescription"
-        Me.txDescription.Size = New System.Drawing.Size(400, 20)
+        Me.txDescription.Size = New System.Drawing.Size(395, 20)
         Me.txDescription.TabIndex = 1
         '
         'txNumber
         '
-        Me.txNumber.Location = New System.Drawing.Point(75, 19)
+        Me.txNumber.Location = New System.Drawing.Point(80, 19)
         Me.txNumber.Name = "txNumber"
-        Me.txNumber.Size = New System.Drawing.Size(100, 20)
+        Me.txNumber.Size = New System.Drawing.Size(95, 20)
         Me.txNumber.TabIndex = 0
         '
-        'txInput
+        'txDrwInput
         '
-        Me.txInput.AutoSize = True
-        Me.txInput.Location = New System.Drawing.Point(6, 74)
-        Me.txInput.Name = "txInput"
-        Me.txInput.Size = New System.Drawing.Size(51, 13)
-        Me.txInput.TabIndex = 4
-        Me.txInput.Text = "In Folder:"
+        Me.txDrwInput.Location = New System.Drawing.Point(80, 97)
+        Me.txDrwInput.Name = "txDrwInput"
+        Me.txDrwInput.Size = New System.Drawing.Size(395, 20)
+        Me.txDrwInput.TabIndex = 9
         '
-        'txInputFolder
+        'Label3
         '
-        Me.txInputFolder.Location = New System.Drawing.Point(75, 71)
-        Me.txInputFolder.Name = "txInputFolder"
-        Me.txInputFolder.Size = New System.Drawing.Size(400, 20)
-        Me.txInputFolder.TabIndex = 5
-        '
-        'txOutputFolder
-        '
-        Me.txOutputFolder.Location = New System.Drawing.Point(75, 97)
-        Me.txOutputFolder.Name = "txOutputFolder"
-        Me.txOutputFolder.Size = New System.Drawing.Size(400, 20)
-        Me.txOutputFolder.TabIndex = 7
-        '
-        'txOutput
-        '
-        Me.txOutput.AutoSize = True
-        Me.txOutput.Location = New System.Drawing.Point(7, 100)
-        Me.txOutput.Name = "txOutput"
-        Me.txOutput.Size = New System.Drawing.Size(59, 13)
-        Me.txOutput.TabIndex = 6
-        Me.txOutput.Text = "Out Folder:"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 100)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Drw In Folder:"
         '
         'FrmProcesses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(506, 501)
+        Me.ClientSize = New System.Drawing.Size(506, 524)
         Me.Controls.Add(Me.MainPanel)
         Me.Name = "FrmProcesses"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -268,8 +288,10 @@ Partial Class FrmProcesses
     Friend WithEvents RunOrder As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Type As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txOutputFolder As System.Windows.Forms.TextBox
+    Friend WithEvents txOutFolder As System.Windows.Forms.TextBox
     Friend WithEvents txOutput As System.Windows.Forms.Label
-    Friend WithEvents txInputFolder As System.Windows.Forms.TextBox
+    Friend WithEvents txdocInput As System.Windows.Forms.TextBox
     Friend WithEvents txInput As System.Windows.Forms.Label
+    Friend WithEvents txDrwInput As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

@@ -1,5 +1,6 @@
 ﻿Imports System.Data.Entity
 Imports System.Reflection
+Imports System.IO
 
 Public Class FrmSteps
 
@@ -70,29 +71,25 @@ Public Class FrmSteps
         Dim Props As PropertiesBardecode = New PropertiesBardecode()
         Props.BarcodeTypes = New List(Of BarcodeType)
         Props.BarcodePattern = tx1BarcodeRegex.Text
-        Props.ExceptionFolder = tx1ExceptionFolder.Text
+        Props.ExceptionFolder = Directory.GetCurrentDirectory() + "\Exception"
         Props.FileNamePattern = tx1FileInRegex.Text
-        Props.InputFolder = tx1InputFolder.Text
-        Props.OutputFolder = tx1OutputFolder.Text
         Props.OutputNameTemplate = tx1FileOutTemplate.Text
-        Props.ProcessedFolder = tx1ProcessedFolder.Text
-        Props.ProcessSubFolders = cx1SubFolders.Checked
         Props.SubFolderPattern = tx1SubFolderRegex.Text
-        Props.CreateOutputSubFolders = cx1CreateOutSubFolders.Checked
-        Props.DeleteInputFiles = cx1DeleteInputFiles.Checked
         Props.SplitMode = cb1SplitMode.SelectedIndex
         For Each item In cx1Barcodes.CheckedIndices
             Props.BarcodeTypes.Add(CType(item, BarcodeType))
         Next
+        Props.FolderType = IIf(rbDocs.Checked, 0, 1)
+
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.Bardecode
     End Sub
 
     Private Sub SaveCustom()
         Dim Props As PropertiesCustom = New PropertiesCustom()
-        Props.Input1 = tx4Input1.Text
-        Props.Input2 = tx4Input2.Text
-        Props.Output = tx4Output.Text
+        Props.Input1 = Directory.GetCurrentDirectory() + "Processing\Documents"
+        Props.Input2 = Directory.GetCurrentDirectory() + "Processing\Drawings"
+        Props.Output = Directory.GetCurrentDirectory() + "Processing\Documents"
         Props.CustomRunID = cb4CustomProcess.Text
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.Custom
@@ -100,22 +97,22 @@ Public Class FrmSteps
 
     Private Sub SaveOCR()
         Dim Props As PropertiesOCR = New PropertiesOCR()
-        Props.InputFolder = tx2InputFolder.Text
-        Props.OutputFolder = tx2OutputFolder.Text
+        Props.InputFolder = Directory.GetCurrentDirectory() + "Processing\Documents"
+        Props.OutputFolder = Directory.GetCurrentDirectory() + "Processing\Documents"
         Props.OutputNameTemplate = tx2FileOutTemplate.Text
-        Props.ProcessSubFolders = cx2ProcessSubFolders.Checked
-        Props.CreateOutputSubFolders = cx2CreateOutSubFolders.Checked
-        Props.DeleteInputFile = cx2DeleteInputFiles.Checked
+        Props.ProcessSubFolders = True
+        Props.CreateOutputSubFolders = True
+        Props.DeleteInputFile = True
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.OCR
     End Sub
 
     Private Sub SaveSplitPDF()
         Dim Props As PropertiesSplitPDFSize = New PropertiesSplitPDFSize()
-        Props.InputFolder = tx5InputFolder.Text
+        Props.InputFolder = Directory.GetCurrentDirectory() + "Processing\Documents"
         Props.FilePattern = tx5FileTemplate.Text
         Props.Size = CLng(tx5Size.Text)
-        Props.ProcessSubFolders = cx5SubFolders.Checked
+        Props.ProcessSubFolders = True
         Entity.PropertiesObj = Serializer.ToXml(Props, Props.GetType())
         Entity.StepType = StepType.SplitPDFSize
     End Sub
@@ -123,28 +120,20 @@ Public Class FrmSteps
     Private Sub LoadBardecode()
         With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesBardecode)), PropertiesBardecode)
             tx1BarcodeRegex.Text = .BarcodePattern
-            tx1ExceptionFolder.Text = .ExceptionFolder
             tx1FileInRegex.Text = .FileNamePattern
-            tx1InputFolder.Text = .InputFolder
-            tx1OutputFolder.Text = .OutputFolder
             tx1FileOutTemplate.Text = .OutputNameTemplate
-            tx1ProcessedFolder.Text = .ProcessedFolder
-            cx1SubFolders.Checked = .ProcessSubFolders
             tx1SubFolderRegex.Text = .SubFolderPattern
-            cx1CreateOutSubFolders.Checked = .CreateOutputSubFolders
-            cx1DeleteInputFiles.Checked = .DeleteInputFiles
             cb1SplitMode.SelectedIndex = .SplitMode
             For Each item In .BarcodeTypes
                 cx1Barcodes.SetItemChecked(item, True)
             Next
+            rbDocs.Checked = .FolderType = 0
+            rbDrws.Checked = Not rbDocs.Checked
         End With
     End Sub
 
     Private Sub LoadCustom()
         With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesCustom)), PropertiesCustom)
-            tx4Input1.Text = .Input1
-            tx4Input2.Text = .Input2
-            tx4Output.Text = .Output
             cb4CustomProcess.Text = .CustomRunID
         End With
         cb4CustomProcess.Items.Clear()
@@ -155,21 +144,14 @@ Public Class FrmSteps
 
     Private Sub LoadOCR()
         With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesOCR)), PropertiesOCR)
-            tx2InputFolder.Text = .InputFolder
-            tx2OutputFolder.Text = .OutputFolder
             tx2FileOutTemplate.Text = .OutputNameTemplate
-            cx2CreateOutSubFolders.Checked = .CreateOutputSubFolders
-            cx2ProcessSubFolders.Checked = .ProcessSubFolders
-            cx2DeleteInputFiles.Checked = .DeleteInputFile
         End With
     End Sub
 
     Private Sub LoadSplitPDF()
         With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesSplitPDFSize)), PropertiesSplitPDFSize)
-            tx5InputFolder.Text = .InputFolder
             tx5FileTemplate.Text = .FilePattern
             tx5Size.Text = .Size.ToString()
-            cx5SubFolders.Checked = .ProcessSubFolders
         End With
     End Sub
 End Class

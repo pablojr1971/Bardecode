@@ -19,20 +19,27 @@ Public Class StepBardecode
 
     Sub New(Properties As PropertiesBardecode)
         Me.BardecodeProperties = Properties
-    End Sub
-
-    Public Sub RunFolder(Folder As DirectoryInfo, RunSubFolders As Boolean, SearchPattern As String)
-        SetBardecodeProperties()
-        If RunSubFolders Then
-
+        If Me.BardecodeProperties.FolderType = 0 Then
+            Me.BardecodeProperties.InputFolder = Directory.GetCurrentDirectory() + "\Processing\Documents"
+            Me.BardecodeProperties.CreateOutputSubFolders = True
         Else
-            Me.ChangePath(Folder.FullName)
-            Me.StartBardecodeProcess()
+            Me.BardecodeProperties.InputFolder = Directory.GetCurrentDirectory() + "\Processing\Drawings"
+            Me.BardecodeProperties.CreateOutputSubFolders = False
         End If
+        Me.BardecodeProperties.OutputFolder = Me.BardecodeProperties.InputFolder
+        Me.BardecodeProperties.DeleteInputFiles = True
+        Me.BardecodeProperties.ProcessSubFolders = True
     End Sub
 
     Public Sub StartBardecodeProcess()
-        With System.Diagnostics.Process.Start("C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe", """" + Directory.GetCurrentDirectory() + "\BardecodeIni.ini""")
+        Dim PInfo = New ProcessStartInfo
+        PInfo.FileName = "C:\Program Files (x86)\Softek Software\BardecodeFiler\BardecodeFiler.exe"
+        PInfo.Arguments = """" + Directory.GetCurrentDirectory() + "\BardecodeIni.ini"""
+        PInfo.UseShellExecute = False
+        PInfo.Verb = "runas"
+        PInfo.RedirectStandardOutput = True
+
+        With System.Diagnostics.Process.Start(PInfo)
             .PriorityClass = ProcessPriorityClass.High
             .WaitForExit()
             .Close()
@@ -55,7 +62,7 @@ Public Class StepBardecode
         BardecodeIni.WriteValue("options", "outputTemplate", "System.String," + Me.BardecodeProperties.OutputNameTemplate)
         BardecodeIni.WriteValue("options", "FilePattern", "System.String," + Me.BardecodeProperties.FileNamePattern)
         BardecodeIni.WriteValue("options", "ProcessSubFolders", "System.Boolean," + "False")
-        BardecodeIni.WriteValue("options", "SubFolderPattern", "System.String," + Me.BardecodeProperties.SubFolderPattern)
+        BardecodeIni.WriteValue("options", "SubFolderPattern", "System.String," + "")
 
         'Barcode Types
         BardecodeIni.WriteValue("options", "Codabar", "System.Boolean," + Me.BardecodeProperties.BarcodeTypes.Contains(BarcodeType.Codabar).ToString())
@@ -72,8 +79,8 @@ Public Class StepBardecode
 
         'Barcode Pattern, Delete input files, Split Mode, Move to processed.
         BardecodeIni.WriteValue("options", "Pattern", "System.String," + Me.BardecodeProperties.BarcodePattern)
-        BardecodeIni.WriteValue("options", "DeleteInputImages", "System.Boolean," + Me.BardecodeProperties.DeleteInputFiles.ToString())
-        BardecodeIni.WriteValue("options", "moveToProcessedFolder", "System.Boolean," + (Not Me.BardecodeProperties.DeleteInputFiles).ToString())
+        BardecodeIni.WriteValue("options", "DeleteInputImages", "System.Boolean," + True.ToString())
+        BardecodeIni.WriteValue("options", "moveToProcessedFolder", "System.Boolean," + False.ToString())
         BardecodeIni.WriteValue("options", "splitMode", "System.Int32," + Me.BardecodeProperties.SplitMode.ToString())
     End Sub
 
@@ -107,7 +114,7 @@ Public Class StepBardecode
             LogSub("Folder: " + BardecodeProperties.InputFolder)
             StartBardecodeProcess()
         End If
-        LogSub("Bardecode done")
+        LogSub("Bardecode done" + vbCrLf)
     End Sub
 
     Public Sub RecursiveRun(LogSub As IStep.LogSubDelegate, Path As String)
@@ -121,22 +128,4 @@ Public Class StepBardecode
             StartBardecodeProcess()
         End If
     End Sub
-
-    Public Property inputfolder As String Implements IStep.inputfolder
-        Get
-            Return BardecodeProperties.InputFolder
-        End Get
-        Set(value As String)
-            BardecodeProperties.InputFolder = value
-        End Set
-    End Property
-
-    Public Property outputfolder As String Implements IStep.outputfolder
-        Get
-            Return BardecodeProperties.OutputFolder
-        End Get
-        Set(value As String)
-            BardecodeProperties.OutputFolder = value
-        End Set
-    End Property
 End Class

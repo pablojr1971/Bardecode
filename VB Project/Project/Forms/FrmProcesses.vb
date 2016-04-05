@@ -29,6 +29,9 @@ Public Class FrmProcesses
 
         txNumber.Text = Entity.Number
         txDescription.Text = Entity.Description
+        txdocInput.Text = Entity.docInput
+        txDrwInput.Text = Entity.drwInput
+        txOutFolder.Text = Entity.outFolder
         RefreshGrid()
         Me.ShowDialog(ParentForm)
     End Sub
@@ -40,6 +43,9 @@ Public Class FrmProcesses
     Private Sub btOk_Click(sender As Object, e As EventArgs) Handles btOk.Click
         Entity.Number = txNumber.Text
         Entity.Description = txDescription.Text
+        Entity.docInput = txdocInput.Text
+        Entity.drwInput = txDrwInput.Text
+        Entity.outFolder = txOutFolder.Text
 
         If Inserting Then
             ctx.EProcesses.Add(Entity)

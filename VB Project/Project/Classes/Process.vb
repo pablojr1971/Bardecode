@@ -13,7 +13,7 @@ Public Class Process
     Private DrwInputFolder As DirectoryInfo = Nothing
     Private Outfolder As DirectoryInfo = Nothing
     Private Steps As List(Of IStep)
-    Public Delegate Sub EnableRunDelegate()
+    Public Delegate Sub FinishProcessDelegate(Path As String)
 
     Public Sub New(ProcessId As Integer, JobNumber As Integer)
         Me.Id = ProcessId
@@ -25,7 +25,9 @@ Public Class Process
 
         With ctx.EProcesses.Single(Function(p) p.Id = ProcessId)
             Me.DocInputFolder = New DirectoryInfo(.docInput)
-            Me.DrwInputFolder = New DirectoryInfo(.drwInput)
+            If Directory.Exists(.drwInput) Then
+                Me.DrwInputFolder = New DirectoryInfo(.drwInput)
+            End If
             Me.Outfolder = New DirectoryInfo(.outFolder)
         End With
 
@@ -56,10 +58,11 @@ Public Class Process
     End Function
 
     Public Sub Run(LogSub As IStep.LogSubDelegate)
-        Dim parameters(2) As Object
+        Dim parameters(4) As Object
         parameters(0) = getToProcessBoxes()
-        parameters(1) = CType(AddressOf FrmMain.EnableRun, EnableRunDelegate)
+        parameters(1) = CType(AddressOf FrmMain.FinishProcess, FinishProcessDelegate)
         parameters(2) = LogSub
+        parameters(3) = Me.JobNo
 
         Dim thread As New Thread(AddressOf ThreadTask)
         thread.IsBackground = True
@@ -69,8 +72,10 @@ Public Class Process
     Private Sub ThreadTask(ByVal parameters As Object)
         Try
             Dim Boxes As List(Of String) = parameters(0)
-            Dim EnableRun As EnableRunDelegate = parameters(1)
+            Dim FinishProcess As FinishProcessDelegate = parameters(1)
             Dim log As IStep.LogSubDelegate = parameters(2)
+            Dim Job As Integer = parameters(3)
+
             Dim index As Integer = 1
             Dim ProcessingFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing")
             Dim DocFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing\Documents")
@@ -128,8 +133,53 @@ Public Class Process
                 End If
                 index = 1
             Next
+
+            If Job = 0 Then
+                For Each folder In DocInputFolder.GetDirectories()
+                    log("Copying folder " + folder.Name)
+                    My.Computer.FileSystem.CopyDirectory(folder.FullName, DocFolder.FullName + "\" + folder.Name)
+                    If Not IsNothing(DrwInputFolder) Then
+                        If Directory.Exists(DrwInputFolder.FullName + "\" + folder.Name + "D") Then
+                            My.Computer.FileSystem.CopyDirectory(DrwInputFolder.FullName + "\" + folder.Name + "D", DrwFolder.FullName + "\" + folder.Name + "D")
+                        Else
+                            log(String.Format("Drawing Folder Missing - Doc Folder {0}", folder.Name))
+                        End If
+                    End If
+
+                    log("Processing folder " + folder.Name + vbCrLf)
+
+                    For Each StepRun In Steps
+                        log(String.Format("Step {0}", index))
+                        StepRun.Run(log)
+                        index += 1
+                        Thread.Sleep(500)
+                    Next
+
+                    log("folder " + folder.Name + " Done - Moving to output Folder" + vbCrLf + vbCrLf)
+
+                    ' Force collect to remove any objects that could be blocking files
+                    GC.Collect()
+
+                    For Each subfolder In DocFolder.GetDirectories()
+                        My.Computer.FileSystem.MoveDirectory(subfolder.FullName, Outfolder.FullName + "\" + subfolder.Name, True)
+                        While subfolder.Exists()
+                            subfolder.Refresh()
+                            Thread.Sleep(1)
+                        End While
+                    Next
+
+                    ProcessingFolder.Delete(True)
+                    ProcessingFolder.Refresh()
+                    If Directory.Exists(Directory.GetCurrentDirectory() + "\Exception") Then
+                        My.Computer.FileSystem.DeleteDirectory(Directory.GetCurrentDirectory() + "\Exception", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                    End If
+
+
+                Next
+            End If
+
             log("PROCESS DONE")
-            EnableRun()
+            FinishProcess(Outfolder.FullName)
         Catch e As Exception
             MessageBox.Show(e.Message)
         End Try

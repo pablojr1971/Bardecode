@@ -9,7 +9,7 @@ Public Class StepSplitPDFSize
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
         LogSub("Start Splitting PDFs")
         Me.RecursiveRun(New DirectoryInfo(SplitPDFSizeProperties.InputFolder), SplitPDFSizeProperties.ProcessSubFolders, LogSub)
-        LogSub("Splitting Done")
+        LogSub("Splitting Done" + vbCrLf)
     End Sub
 
     Private Sub RecursiveRun(Folders As DirectoryInfo, RunSubFolders As Boolean, LogSub As IStep.LogSubDelegate)

@@ -17,17 +17,6 @@ Public Class FrmMain
     Private Folders As List(Of DirectoryInfo) = New List(Of DirectoryInfo)()
     Private Files As List(Of FileInfo) = New List(Of FileInfo)()
 
-    Private Sub RunButton_Click(sender As Object, e As EventArgs)
-        ' need to create a process object 
-        ' create a instance of the process class
-        ' load the steps of the process 
-        ' invoke the method run for each step in the step list
-        ' generate a log file registering everything that the process are doing
-        ' This method should handle exceptions with a try catch because it will be the main engine
-        txProcessLog.Clear()
-        RunProcess()
-    End Sub
-
     Private Sub btSelect_Click(sender As Object, e As EventArgs) Handles btSelect.Click
         With New FrmProcessesSearch(Me)
             txProcess.Text = .SelectedProcessName
@@ -37,12 +26,27 @@ Public Class FrmMain
     End Sub
 
     Private Sub RunProcess() Handles btRun.Click
-        Dim ProcessObj As Process = New Process(_ProcessId, CInt(txJobNumber.Text))
+        If _ProcessId <= 0 Then
+            MessageBox.Show("Select the process to run", "Process Missing", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        If (Trim(txJobNumber.Text) = "") Then
+            If MessageBox.Show("Without Job Number, The process will run with the whole Input folder and not filter boxes that are already done, " + _
+                               "Are you sure?", "Missing Job Number", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+                Exit Sub
+            End If
+        End If
+
+        Dim job As Integer = 0
+        Integer.TryParse(txJobNumber.Text, job)
+        Dim ProcessObj As Process = New Process(_ProcessId, job)
 
         ' If we want to write the log in a file, or in another place
         ' we just need to change this delegate function and pass one that 
         ' do what we want
         btRun.Enabled = False
+        txProcessLog.Clear()
         ProcessObj.Run(AddressOf writeLog)
     End Sub
 
@@ -58,8 +62,15 @@ Public Class FrmMain
         txProcessLog.AppendText(Date.Now.ToShortTimeString + " - " + text + vbCrLf)
     End Sub
 
-    Public Sub EnableRun()
+    Public Sub FinishProcess(Path As String)
         btRun.Enabled = True
+        Dim filename As String = String.Format("\Log-{0:dd-MM-yyyy_hhmmss}.txt", DateTime.Now)
+        Dim objWriter As New System.IO.StreamWriter(Path + filename)
+        For Each line In txProcessLog.Lines
+            objWriter.WriteLine(line)
+        Next
+        objWriter.Close()
+        objWriter.Dispose()
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load

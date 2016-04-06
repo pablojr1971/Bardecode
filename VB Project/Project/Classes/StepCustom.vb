@@ -146,6 +146,7 @@ Public Class StepCustom
 
     Private Sub CountPages(LogSub As IStep.LogSubDelegate)
         RecursiveCountPages(LogSub, New DirectoryInfo(CustomPropeties.Input1))
+        LogSub("Count Pages Done" + vbCrLf)
     End Sub
 
     Private Shared Sub RecursiveCountPages(Logsub As IStep.LogSubDelegate, Dir As DirectoryInfo)

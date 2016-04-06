@@ -81,10 +81,11 @@ Public Class StepOCR
                 img = Nothing
 
                 tess.Arguments = String.Format("""" + outdir + "\page{0}.{1}"" """ + outdir + "\page{0}"" ""pdf""", index, format)
-                If index Mod 100 Then
+                If index Mod 100 = 0 Then
                     LogSub(String.Format("Processing Page {0}", index))
                 End If
                 With System.Diagnostics.Process.Start(tess)
+                    .PriorityClass = ProcessPriorityClass.High
                     .Dispose()
                 End With
                 pdfs.Add(String.Format(outdir + "\page{0}.pdf", index))
@@ -94,10 +95,7 @@ Public Class StepOCR
         Next
 
         While System.Diagnostics.Process.GetProcessesByName("Tesseract").Count > 0
-            ' Wait till all OCR processes started on the loop finish
-            ' We need to wait because if the we don't when merge the pdfs the file will be locked to the tesseract process
-            ' and we will get an error saying that the tile is being used in another process
-            Threading.Thread.Sleep(100)
+            Threading.Thread.Sleep(1)
         End While
 
         rasterizer.Dispose()
@@ -112,7 +110,7 @@ Public Class StepOCR
         If OCRProperties.DeleteInputFile Then
             File.Delete()
         End If
-        LogSub("OCR Done - File:" + File.Name + vbCrLf)
+        LogSub("OCR Done - File:" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf" + vbCrLf)
     End Sub
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepOCR

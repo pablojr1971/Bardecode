@@ -25,7 +25,7 @@ Public NotInheritable Class Utils
             finfo = New FileInfo(File)
             Dim reader As PdfReader = New PdfReader(File)
             If (Not File.EndsWith("_NOBARCODE.pdf") And New FileInfo(File).Name.StartsWith("SP")) Then
-                MergePdfs.Add(String.Format("Add {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber)))
+                MergePdfs.Add(String.Format("Add {3} Drawings of {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber), reader.NumberOfPages))
             End If
 
             writer.AddDocument(reader)
@@ -122,30 +122,30 @@ Public NotInheritable Class Utils
 
         If Height > Width Then
             ' Vertical
-            If (Width > 5651) And (Height > 7993) Then
+            If (Width > 5651) Or (Height > 7993) Then
                 Return PageSize.A0
-            ElseIf (InRange(Width, 5650, 3994) And InRange(Height, 7992, 5651)) Then
+            ElseIf (InRange(Width, 5650, 3994) Or InRange(Height, 7992, 5651)) Then
                 Return PageSize.A1
-            ElseIf (InRange(Width, 3993, 2823) And InRange(Height, 5650, 3994)) Then
+            ElseIf (InRange(Width, 3993, 2823) Or InRange(Height, 5650, 3994)) Then
                 Return PageSize.A2
-            ElseIf (InRange(Width, 2822, 1996) And InRange(Height, 3993, 2823)) Then
+            ElseIf (InRange(Width, 2822, 1996) Or InRange(Height, 3993, 2823)) Then
                 Return PageSize.A3
-            ElseIf (InRange(Width, 1995) And InRange(Height, 2822)) Then
+            ElseIf (InRange(Width, 1995) Or InRange(Height, 2822)) Then
                 Return PageSize.A4
             Else
                 Return PageSize.Undefined
             End If
         Else
             ' Landscape/Horizontal
-            If (Height > 5651) And (Width > 7993) Then
+            If (Height > 5651) Or (Width > 7993) Then
                 Return PageSize.A0
-            ElseIf (InRange(Height, 5650, 3994) And InRange(Width, 7992, 5651)) Then
+            ElseIf (InRange(Height, 5650, 3994) Or InRange(Width, 7992, 5651)) Then
                 Return PageSize.A1
-            ElseIf (InRange(Height, 3993, 2823) And InRange(Width, 5650, 3994)) Then
+            ElseIf (InRange(Height, 3993, 2823) Or InRange(Width, 5650, 3994)) Then
                 Return PageSize.A2
-            ElseIf (InRange(Height, 2822, 1996) And InRange(Width, 3993, 2823)) Then
+            ElseIf (InRange(Height, 2822, 1996) Or InRange(Width, 3993, 2823)) Then
                 Return PageSize.A3
-            ElseIf (InRange(Height, 1995) And InRange(Width, 2822)) Then
+            ElseIf (InRange(Height, 1995) Or InRange(Width, 2822)) Then
                 Return PageSize.A4
             Else
                 Return PageSize.Undefined

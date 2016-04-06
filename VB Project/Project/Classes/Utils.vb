@@ -48,12 +48,14 @@ Public NotInheritable Class Utils
         Dim reader As PdfReader = New PdfReader(file)
         Dim documentcount As Integer = 1
         Dim page As PdfImportedPage = Nothing
+        Dim NewFiles As List(Of String) = New List(Of String)
         ' times 1024 to convert to kBytes and times 1024 to conver to bytes
         Dim LimitBytes As Long = ((MBFileSize * 1024) * 1024)
 
         If reader.FileLength() > LimitBytes Then
             Dim document As Document = New Document()
             Dim pdfwriter As PdfCopy = New PdfSmartCopy(document, New FileStream(file.Replace(".pdf", String.Format("_{0}.pdf", documentcount)), FileMode.Create))
+            NewFiles.Add(file.Replace(".pdf", String.Format("_{0}.pdf", documentcount)))
             document.Open()
             For index = 1 To reader.NumberOfPages
                 page = pdfwriter.GetImportedPage(reader, index)
@@ -67,6 +69,7 @@ Public NotInheritable Class Utils
 
                     document = New Document()
                     pdfwriter = New PdfCopy(document, New FileStream(file.Replace(".pdf", String.Format("_{0}.pdf", documentcount)), FileMode.Create))
+                    NewFiles.Add(file.Replace(".pdf", String.Format("_{0}.pdf", documentcount)))
 
                     document.Open()
                     pdfwriter.AddPage(page)
@@ -81,6 +84,11 @@ Public NotInheritable Class Utils
 
             reader.Close()
             reader = Nothing
+
+            'Renaming the files
+            For Each NewFile In NewFiles
+                My.Computer.FileSystem.RenameFile(NewFile, Path.GetFileName(NewFile).Replace(".pdf", String.Format("-{0}.pdf", documentcount)))
+            Next
 
             My.Computer.FileSystem.DeleteFile(file)
         Else

@@ -121,7 +121,7 @@ Public Class StepCustom
                     FilesToMerge.Add(DrawingDir.FullName + "\" + subfile.Name.Replace(finalFile.Name.Replace("NOBARCODE.pdf", ""), "").Replace("SD", "SP"))
                     FilesToMerge.Add(subfile.FullName)
                 Next
-                outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", "_Final.pdf")
+                outputFile = finalFile.FullName.Replace("_NOBARCODE.pdf", ".pdf")
 
                 For Each line In Utils.MergePdfs(FilesToMerge, outputFile)
                     logsub(line)

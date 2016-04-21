@@ -125,6 +125,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\LogManager.vb" />
     <Compile Include="Classes\OCRParser.vb" />
     <Compile Include="Classes\PropertiesSplitPDFSize.vb" />
     <Compile Include="Classes\StepSplitPDFSize.vb" />

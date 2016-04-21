@@ -13,6 +13,8 @@ Public Class Process
     Private DrwInputFolder As DirectoryInfo = Nothing
     Private Outfolder As DirectoryInfo = Nothing
     Private Steps As List(Of IStep)
+    Private LogObj As LogManager = New LogManager()
+    Private LogSub As IStep.LogSubDelegate
     Public Delegate Sub FinishProcessDelegate(Path As String)
 
     Public Sub New(ProcessId As Integer, JobNumber As Integer)
@@ -57,12 +59,19 @@ Public Class Process
         End With
     End Function
 
+    Public Sub WriteLog(Log As String)
+        LogSub(Log)
+        LogObj.WriteLine(Date.Now.ToShortTimeString + " - " + Log)
+    End Sub
+
     Public Sub Run(LogSub As IStep.LogSubDelegate)
+        Me.LogSub = LogSub
         Dim parameters(4) As Object
         parameters(0) = getToProcessBoxes()
         parameters(1) = CType(AddressOf FrmMain.FinishProcess, FinishProcessDelegate)
-        parameters(2) = LogSub
+        parameters(2) = New IStep.LogSubDelegate(AddressOf WriteLog)
         parameters(3) = Me.JobNo
+        parameters(4) = Me.LogObj
 
         Dim thread As New Thread(AddressOf ThreadTask)
         thread.IsBackground = True
@@ -70,118 +79,159 @@ Public Class Process
     End Sub
 
     Private Sub ThreadTask(ByVal parameters As Object)
+        Dim Boxes As List(Of String) = parameters(0)
+        Dim FinishProcess As FinishProcessDelegate = parameters(1)
+        Dim log As IStep.LogSubDelegate = parameters(2)
+        Dim Job As Integer = parameters(3)
+        Dim LogManager As LogManager = parameters(4)
+
+        Dim index As Integer = 1
+        Dim ProcessingFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing")
+        Dim DocFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing\Documents")
+        Dim DrwFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing\Drawings")
+        Dim Ocrfolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing\OCR")
+
+        Dim expression As String = Nothing
         Try
-            Dim Boxes As List(Of String) = parameters(0)
-            Dim FinishProcess As FinishProcessDelegate = parameters(1)
-            Dim log As IStep.LogSubDelegate = parameters(2)
-            Dim Job As Integer = parameters(3)
-
-            Dim index As Integer = 1
-            Dim ProcessingFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing")
-            Dim DocFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing\Documents")
-            Dim DrwFolder As DirectoryInfo = New DirectoryInfo(Directory.GetCurrentDirectory() + "\Processing\Drawings")
-
-            Dim expression As String = Nothing
             For Each box In Boxes
-                expression = String.Format("({0})(.{{0,}})({1})", JobNo, box)
-                If DocInputFolder.GetDirectories().Where(Function(p) New Regex(expression).Match(p.Name).Success).ToList.Count > 0 Then
-                    If Not ProcessingFolder.Exists() Then
-                        ProcessingFolder.Create()
-                        DocFolder.Create()
-                        DrwFolder.Create()
-                    End If
-
-
-                    log("Copying box " + box)
-                    For Each folder In DocInputFolder.GetDirectories().Where(Function(p) New Regex(expression).Match(p.Name).Success)
-                        My.Computer.FileSystem.CopyDirectory(folder.FullName, DocFolder.FullName + "\" + folder.Name)
-                        If Directory.Exists(DrwInputFolder.FullName + "\" + folder.Name + "D") Then
-                            My.Computer.FileSystem.CopyDirectory(DrwInputFolder.FullName + "\" + folder.Name + "D", DrwFolder.FullName + "\" + folder.Name + "D")
-                        Else
-                            log(String.Format("Drawing Folder Missing - Box No. {0}", box))
+                Try                    
+                    expression = String.Format("({0})(.{{0,}})({1})", JobNo, box)
+                    If DocInputFolder.GetDirectories().Where(Function(p) New Regex(expression).Match(p.Name).Success).ToList.Count > 0 Then
+                        LogManager.CreateLogFile(Outfolder.FullName + "\Log - " + box + ".txt")
+                        If Not ProcessingFolder.Exists() Then
+                            ProcessingFolder.Create()
+                            DocFolder.Create()
+                            DrwFolder.Create()
+                            Ocrfolder.Create()
                         End If
-                    Next
+
+
+                        log("Copying box " + box)
+                        For Each folder In DocInputFolder.GetDirectories().Where(Function(p) New Regex(expression).Match(p.Name).Success)
+                            My.Computer.FileSystem.CopyDirectory(folder.FullName, DocFolder.FullName + "\" + folder.Name)
+                            If Directory.Exists(DrwInputFolder.FullName + "\" + folder.Name + "D") Then
+                                My.Computer.FileSystem.CopyDirectory(DrwInputFolder.FullName + "\" + folder.Name + "D", DrwFolder.FullName + "\" + folder.Name + "D")
+                            Else
+                                log(String.Format("Drawing Folder Missing - Box No. {0}", box))
+                            End If
+                        Next
+                        Thread.Sleep(2000)
+
+                        log("Processing box " + box + vbCrLf)
+
+                        For Each StepRun In Steps
+                            log(String.Format("Step {0}", index))
+                            StepRun.Run(log)
+                            index += 1
+                            Thread.Sleep(500)
+                        Next
+
+                        log("box " + box + " Done - Moving to output Folder" + vbCrLf + vbCrLf)
+
+                        ' Force collect to remove any objects that could be blocking files
+                        GC.Collect()
+
+                        For Each folder In DocFolder.GetDirectories()
+                            My.Computer.FileSystem.MoveDirectory(folder.FullName, Outfolder.FullName + "\" + folder.Name, True)
+                            While folder.Exists()
+                                folder.Refresh()
+                                Thread.Sleep(1)
+                            End While
+                        Next
+
+                        ProcessingFolder.Delete(True)
+                        ProcessingFolder.Refresh()
+                        If Directory.Exists(Directory.GetCurrentDirectory() + "\Exception") Then
+                            My.Computer.FileSystem.DeleteDirectory(Directory.GetCurrentDirectory() + "\Exception", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                        End If
+                        LogManager.CloseLogFile()
+                    End If
+                    index = 1                    
+                Catch e As Exception
+                    log(e.Message + vbCrLf)
+                    log("Errors Running this box. Process Stopped." + vbCrLf)
+                    log(e.Message + vbCrLf)
+                    log("Moving current data to outputFolder.")
+
+                    My.Computer.FileSystem.MoveDirectory(Ocrfolder.FullName, Outfolder.FullName + "\" + box, True)
                     Thread.Sleep(2000)
-
-                    log("Processing box " + box + vbCrLf)
-
-                    For Each StepRun In Steps
-                        log(String.Format("Step {0}", index))
-                        StepRun.Run(log)
-                        index += 1
-                        Thread.Sleep(500)
-                    Next
-
-                    log("box " + box + " Done - Moving to output Folder" + vbCrLf + vbCrLf)
-
-                    ' Force collect to remove any objects that could be blocking files
-                    GC.Collect()
-
-                    For Each folder In DocFolder.GetDirectories()
-                        My.Computer.FileSystem.MoveDirectory(folder.FullName, Outfolder.FullName + "\" + folder.Name, True)
-                        While folder.Exists()
-                            folder.Refresh()
-                            Thread.Sleep(1)
-                        End While
-                    Next
 
                     ProcessingFolder.Delete(True)
                     ProcessingFolder.Refresh()
                     If Directory.Exists(Directory.GetCurrentDirectory() + "\Exception") Then
                         My.Computer.FileSystem.DeleteDirectory(Directory.GetCurrentDirectory() + "\Exception", FileIO.DeleteDirectoryOption.DeleteAllContents)
                     End If
-                End If
-                index = 1
+                    log("Skip to next box.")
+                    index = 1
+                    LogManager.CloseLogFile()
+                    Continue For
+                End Try
             Next
 
             If Job = 0 Then
                 For Each folder In DocInputFolder.GetDirectories()
-                    log("Copying folder " + folder.Name)
-                    My.Computer.FileSystem.CopyDirectory(folder.FullName, DocFolder.FullName + "\" + folder.Name)
-                    If Not IsNothing(DrwInputFolder) Then
-                        If Directory.Exists(DrwInputFolder.FullName + "\" + folder.Name + "D") Then
-                            My.Computer.FileSystem.CopyDirectory(DrwInputFolder.FullName + "\" + folder.Name + "D", DrwFolder.FullName + "\" + folder.Name + "D")
-                        Else
-                            log(String.Format("Drawing Folder Missing - Doc Folder {0}", folder.Name))
+                    Try
+                        LogManager.CreateLogFile(Outfolder.FullName + "\" + folder.Name + ".txt")
+                        log("Copying folder " + folder.Name)
+                        My.Computer.FileSystem.CopyDirectory(folder.FullName, DocFolder.FullName + "\" + folder.Name)
+                        If Not IsNothing(DrwInputFolder) Then
+                            If Directory.Exists(DrwInputFolder.FullName + "\" + folder.Name + "D") Then
+                                My.Computer.FileSystem.CopyDirectory(DrwInputFolder.FullName + "\" + folder.Name + "D", DrwFolder.FullName + "\" + folder.Name + "D")
+                            Else
+                                log(String.Format("Drawing Folder Missing - Doc Folder {0}", folder.Name))
+                            End If
                         End If
-                    End If
 
-                    log("Processing folder " + folder.Name + vbCrLf)
+                        log("Processing folder " + folder.Name + vbCrLf)
 
-                    For Each StepRun In Steps
-                        log(String.Format("Step {0}", index))
-                        StepRun.Run(log)
-                        index += 1
-                        Thread.Sleep(500)
-                    Next
+                        For Each StepRun In Steps
+                            log(String.Format("Step {0}", index))
+                            StepRun.Run(log)
+                            index += 1
+                            Thread.Sleep(500)
+                        Next
 
-                    log("folder " + folder.Name + " Done - Moving to output Folder" + vbCrLf + vbCrLf)
+                        log("folder " + folder.Name + " Done - Moving to output Folder" + vbCrLf + vbCrLf)
 
-                    ' Force collect to remove any objects that could be blocking files
-                    GC.Collect()
+                        ' Force collect to remove any objects that could be blocking files when trying to move
+                        GC.Collect()
 
-                    For Each subfolder In DocFolder.GetDirectories()
-                        My.Computer.FileSystem.MoveDirectory(subfolder.FullName, Outfolder.FullName + "\" + subfolder.Name, True)
-                        While subfolder.Exists()
-                            subfolder.Refresh()
-                            Thread.Sleep(1)
-                        End While
-                    Next
+                        For Each subfolder In DocFolder.GetDirectories()
+                            My.Computer.FileSystem.MoveDirectory(subfolder.FullName, Outfolder.FullName + "\" + subfolder.Name, True)
+                            While subfolder.Exists()
+                                subfolder.Refresh()
+                                Thread.Sleep(1)
+                            End While
+                        Next
 
-                    ProcessingFolder.Delete(True)
-                    ProcessingFolder.Refresh()
-                    If Directory.Exists(Directory.GetCurrentDirectory() + "\Exception") Then
-                        My.Computer.FileSystem.DeleteDirectory(Directory.GetCurrentDirectory() + "\Exception", FileIO.DeleteDirectoryOption.DeleteAllContents)
-                    End If
+                        ProcessingFolder.Delete(True)
+                        ProcessingFolder.Refresh()
+                        If Directory.Exists(Directory.GetCurrentDirectory() + "\Exception") Then
+                            My.Computer.FileSystem.DeleteDirectory(Directory.GetCurrentDirectory() + "\Exception", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                        End If
+                        LogManager.CloseLogFile()
+                    Catch e As Exception
+                        log(e.Message + vbCrLf)
+                        log("Errors Running this box. Process Stopped.")
+                        log("Moving current data to outputFolder.")
 
+                        My.Computer.FileSystem.MoveDirectory(Ocrfolder.FullName, Outfolder.FullName + "\" + folder.Name, True)
+                        Thread.Sleep(2000)
 
+                        ProcessingFolder.Delete(True)
+                        ProcessingFolder.Refresh()
+                        If Directory.Exists(Directory.GetCurrentDirectory() + "\Exception") Then
+                            My.Computer.FileSystem.DeleteDirectory(Directory.GetCurrentDirectory() + "\Exception", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                        End If
+                        LogManager.CloseLogFile()
+                        Continue For
+                    End Try
                 Next
             End If
 
-            log("PROCESS DONE")
             FinishProcess(Outfolder.FullName)
         Catch e As Exception
-            MessageBox.Show(e.Message)
+            log(e.Message + vbCrLf + "Process end with errors")
         End Try
     End Sub
 

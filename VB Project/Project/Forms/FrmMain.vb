@@ -42,35 +42,13 @@ Public Class FrmMain
         Integer.TryParse(txJobNumber.Text, job)
         Dim ProcessObj As Process = New Process(_ProcessId, job)
 
-        ' If we want to write the log in a file, or in another place
-        ' we just need to change this delegate function and pass one that 
-        ' do what we want
         btRun.Enabled = False
         txProcessLog.Clear()
         ProcessObj.Run(AddressOf writeLog)
     End Sub
 
     Private Sub writeLog(Log As String)
-        ' This sub should just write a string into the log edit
-        ' this sub will be passed as a delegate to the step objects to log the process    
-        ' We could ReWrite this function to Write the logs on a text file,
-        ' so if we need to run the process in a assync mode or in a separated thred without visual elements, we can!        
-        UpdateText(Log)
-    End Sub
-
-    Private Sub UpdateText(text As String)
-        txProcessLog.AppendText(Date.Now.ToShortTimeString + " - " + text + vbCrLf)
-    End Sub
-
-    Public Sub FinishProcess(Path As String)
-        btRun.Enabled = True
-        Dim filename As String = String.Format("\Log-{0:dd-MM-yyyy_hhmmss}.txt", DateTime.Now)
-        Dim objWriter As New System.IO.StreamWriter(Path + filename)
-        For Each line In txProcessLog.Lines
-            objWriter.WriteLine(line)
-        Next
-        objWriter.Close()
-        objWriter.Dispose()
+        txProcessLog.AppendText(Date.Now.ToShortTimeString + " - " + Log + vbCrLf)
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -81,5 +59,10 @@ Public Class FrmMain
         With New FrmCopyFiles(Me)
             .Dispose()
         End With
+    End Sub
+
+    Public Sub FinishProcess()
+        btRun.Enabled = True
+        txProcessLog.AppendText("PROCESS DONE")
     End Sub
 End Class

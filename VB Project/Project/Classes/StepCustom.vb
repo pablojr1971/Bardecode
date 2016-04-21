@@ -53,7 +53,7 @@ Public Class StepCustom
         ' each file will have many images and need to be merged into a single multipage PDF
         Dim img As iTextSharp.text.Image = Nothing
         For Each subFolder In New DirectoryInfo(CustomPropeties.Input2).GetDirectories()
-            If subFolder.GetFiles("*.jpg").Length > 0 Then
+            If (subFolder.GetFiles("*.jpg").Length > 0) And (Not subFolder.Name.StartsWith("EDW")) Then
                 filename = subFolder.FullName.Replace("SD", "SP") + ".pdf"
                 document = New Document()
                 fs = New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None)
@@ -71,6 +71,7 @@ Public Class StepCustom
                 fs = Nothing
                 writer = Nothing
                 document = Nothing
+                LogSub("File created - " + filename)
             End If
             subFolder.Delete(True)
         Next
@@ -87,6 +88,10 @@ Public Class StepCustom
         Dim dir2 As DirectoryInfo = New DirectoryInfo(CustomPropeties.Input2)
 
         RecursiveMerge(dir1, dir2, LogSub)
+
+        For Each subfile In dir2.GetFiles("*.PDF")
+            LogSub("Drawing " + subfile.Name + " Not used in the process")
+        Next
 
         LogSub("Merge done" + vbCrLf)
     End Sub
@@ -126,21 +131,15 @@ Public Class StepCustom
                 For Each line In Utils.MergePdfs(FilesToMerge, outputFile)
                     logsub(line)
                 Next
+                Threading.Thread.Sleep(100)
 
+                For Each subfile In FilesToMerge
+                    My.Computer.FileSystem.DeleteFile(subfile)
+                Next
             Next
-
-            ' Delete the files
-            For Each File In Directoryfiles
-                My.Computer.FileSystem.DeleteFile(File.FullName)
-            Next
-            For Each File In FinalFiles
-                My.Computer.FileSystem.DeleteFile(File.FullName)
-            Next
-            If File.Exists(directory.Parent.FullName + "\_001_NOBARCODE.pdf") Then
-                My.Computer.FileSystem.DeleteFile(directory.Parent.FullName + "\_001_NOBARCODE.pdf")
-            End If
         Catch e As Exception
-            MessageBox.Show(e.Message)
+            logsub(e.Message)
+            Throw e
         End Try
     End Sub
 
@@ -150,6 +149,15 @@ Public Class StepCustom
     End Sub
 
     Private Shared Sub RecursiveCountPages(Logsub As IStep.LogSubDelegate, Dir As DirectoryInfo)
+        If File.Exists(Dir.FullName + "\results.csv") Then
+            File.Delete(Dir.FullName + "\results.csv")
+        End If
+        If File.Exists(Dir.FullName + "\bardecodefiler.log") Then
+            File.Delete(Dir.FullName + "\bardecodefiler.log")
+        End If
+        If File.Exists(Dir.FullName + "\_001.pdf") Then
+            File.Delete(Dir.FullName + "\_001.pdf")
+        End If
         For Each subdir In Dir.GetDirectories()
             RecursiveCountPages(Logsub, subdir)
         Next

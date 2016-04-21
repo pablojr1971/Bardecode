@@ -7,7 +7,6 @@ Public NotInheritable Class Utils
     Public Delegate Function AfterMergeDelegate(doc As Document)
 
     Public Shared Function MergePdfs(InputFiles As List(Of String), outputFile As String, Optional AfterMergeFunction As AfterMergeDelegate = Nothing) As List(Of String)
-        MergePdfs = New List(Of String)
         Dim a As Integer = InputFiles.Count
         Dim ret(a) As String
         Dim index As Integer = 0
@@ -16,32 +15,41 @@ Public NotInheritable Class Utils
         Dim writer As PdfCopy = New PdfCopy(document, New FileStream(outputFile, FileMode.Create))
         Dim outinfo As FileInfo = New FileInfo(outputFile)
         Dim finfo As FileInfo = Nothing
-        If IsNothing(writer) Then
-            Exit Function
-        End If
+        Dim reader As PdfReader = Nothing
 
-        document.Open()
-        For Each File In InputFiles
-            finfo = New FileInfo(File)
-            Dim reader As PdfReader = New PdfReader(File)
-            If (Not File.EndsWith("_NOBARCODE.pdf") And New FileInfo(File).Name.StartsWith("SP")) Then
-                MergePdfs.Add(String.Format("Add {3} Drawings of {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber), reader.NumberOfPages))
+        Try
+            MergePdfs = New List(Of String)
+            If IsNothing(writer) Then
+                Exit Function
             End If
 
-            writer.AddDocument(reader)
+            document.Open()
+            For Each File In InputFiles
+                finfo = New FileInfo(File)
+                reader = New PdfReader(File)
+                If (Not File.EndsWith("_NOBARCODE.pdf") And New FileInfo(File).Name.StartsWith("SP")) Then
+                    MergePdfs.Add(String.Format("Add {3} Drawings of {0} to {1} at page {2}", finfo.Name, outinfo.Name, (writer.CurrentPageNumber), reader.NumberOfPages))
+                End If
+
+                writer.AddDocument(reader)
+                reader.Close()
+                finfo = Nothing
+                index += 1
+            Next
+
+            writer.Close()
+            If Not IsNothing(AfterMergeFunction) Then
+                AfterMergeFunction(document)
+            End If
+        Catch e As Exception
+            Throw e
+        Finally
             reader.Close()
-            finfo = Nothing
-            index += 1
-        Next
-
-        writer.Close()
-        If Not IsNothing(AfterMergeFunction) Then
-            AfterMergeFunction(document)
-        End If
-        document.Close()
-
-        writer.Dispose()
-        document.Dispose()
+            document.Close()
+            reader.Dispose()
+            writer.Close()
+            writer.Dispose()
+        End Try
     End Function
 
     Public Shared Sub SplitFileSize(file As String, MBFileSize As Integer)
@@ -164,33 +172,6 @@ Public NotInheritable Class Utils
     Public Shared Function InRange(ByVal value As Integer, ByVal max As Integer, Optional ByVal min As Integer = 0) As Boolean
         Return (value >= min AndAlso value <= max)
     End Function
-
-    Public Shared Sub DoOCR(input As String, output As String)
-        ' just call the tesseract with the image input
-        With System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\Tesseract\tesseract.exe",
-                                              """" + input + """ " + """" + output + """ pdf")
-            .WaitForExit()
-            .Close()
-            .Dispose()
-        End With
-
-    End Sub
-
-    Private Shared Sub CompressAndSaveImage(ByVal img As System.Drawing.Image, ByVal fileName As String, ByVal quality As Long)
-        Dim parameters As New EncoderParameters(1)
-        parameters.Param(0) = New EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality)
-        img.Save(fileName, GetCodecInfo("image/tiff"), parameters)
-    End Sub
-
-    Public Shared Function GetCodecInfo(ByVal mimeType As String) As ImageCodecInfo
-        For Each encoder As ImageCodecInfo In ImageCodecInfo.GetImageEncoders()
-            If encoder.MimeType = mimeType Then
-                Return encoder
-            End If
-        Next encoder
-        Throw New ArgumentOutOfRangeException(String.Format("'{0}' not supported", mimeType))
-    End Function
-
 
     Public Shared Function GetOutputSubFolder(InputFolder As String, CurrentFolder As String) As String
         ' this will return all folders above the input folder, so we can just concat into the outputfolder

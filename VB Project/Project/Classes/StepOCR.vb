@@ -30,6 +30,7 @@ Public Class StepOCR
 
     Public Sub RunFile(File As FileInfo, OutFolder As String, LogSub As IStep.LogSubDelegate)
         LogSub("OCR Start - File:" + File.Name)
+        Dim outputFile As FileInfo = Nothing
         Dim rasterizer As GhostscriptRasterizer = New GhostscriptRasterizer()
         Dim outdir As String = Directory.GetCurrentDirectory() + "\_temp"
 
@@ -85,7 +86,7 @@ Public Class StepOCR
                     LogSub(String.Format("Processing Page {0}", index))
                 End If
                 With System.Diagnostics.Process.Start(tess)
-                    .PriorityClass = ProcessPriorityClass.High
+                    .PriorityClass = ProcessPriorityClass.AboveNormal
                     .Dispose()
                 End With
                 pdfs.Add(String.Format(outdir + "\page{0}.pdf", index))
@@ -101,15 +102,24 @@ Public Class StepOCR
         rasterizer.Dispose()
 
         If OCRProperties.CreateOutputSubFolders Then
-            Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + Utils.GetOutputSubFolder(OCRProperties.InputFolder, File.FullName.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf"))
+            outputFile = New FileInfo(OCRProperties.OutputFolder + Utils.GetOutputSubFolder(OCRProperties.InputFolder, File.FullName.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf"))
+            '            Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + Utils.GetOutputSubFolder(OCRProperties.InputFolder, File.FullName.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf"))
         Else
-            Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + "\" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf")
+            outputFile = New FileInfo(OCRProperties.OutputFolder + "\" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf")
+            '            Utils.MergePdfs(pdfs, OCRProperties.OutputFolder + "\" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf")
         End If
+        Utils.MergePdfs(pdfs, outputFile.FullName)
+
         My.Computer.FileSystem.DeleteDirectory(outdir, FileIO.DeleteDirectoryOption.DeleteAllContents)
         Threading.Thread.Sleep(500)
         If OCRProperties.DeleteInputFile Then
             File.Delete()
         End If
+
+        If Directory.Exists(Directory.GetCurrentDirectory() + "\Processing\OCR") Then
+            My.Computer.FileSystem.CopyFile(outputFile.FullName, Directory.GetCurrentDirectory() + "\Processing\OCR\" + outputFile.Name)
+        End If
+
         LogSub("OCR Done - File:" + File.Name.Replace(".pdf", OCRProperties.OutputNameTemplate) + ".pdf" + vbCrLf)
     End Sub
 

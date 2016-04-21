@@ -84,9 +84,9 @@ Partial Class FrmCopyFiles
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(9, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 13)
+        Me.Label1.Size = New System.Drawing.Size(87, 13)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "From"
+        Me.Label1.Text = "From Documents"
         '
         'Label2
         '
@@ -102,18 +102,18 @@ Partial Class FrmCopyFiles
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(9, 67)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 13)
+        Me.Label3.Size = New System.Drawing.Size(77, 13)
         Me.Label3.TabIndex = 7
-        Me.Label3.Text = "To Drawings"
+        Me.Label3.Text = "From Drawings"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(9, 93)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 13)
+        Me.Label4.Size = New System.Drawing.Size(67, 13)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Processed"
+        Me.Label4.Text = "To Drawings"
         '
         'txProcessed
         '

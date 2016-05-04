@@ -40,8 +40,8 @@ Public Class StepOCR
         tess = New ProcessStartInfo(Directory.GetCurrentDirectory() + "\tesseract\tesseract.exe")
         tess.WindowStyle = ProcessWindowStyle.Hidden
 
-        Dim parameters As New EncoderParameters(1)
-        parameters.Param(0) = New EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 25)
+        'Dim parameters As New EncoderParameters(1)
+        'parameters.Param(0) = New EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 25)
 
         If Not Directory.Exists(outdir) Then
             Directory.CreateDirectory(outdir)

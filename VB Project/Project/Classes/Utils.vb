@@ -6,7 +6,7 @@ Imports System.Drawing.Imaging
 Public NotInheritable Class Utils
     Public Delegate Function AfterMergeDelegate(doc As Document)
 
-    Public Shared Function MergePdfs(InputFiles As List(Of String), outputFile As String, Optional AfterMergeFunction As AfterMergeDelegate = Nothing) As List(Of String)
+    Public Shared Function MergePdfs(InputFiles As List(Of String), outputFile As String, Optional DeleteFiles As Boolean = False, Optional AfterMergeFunction As AfterMergeDelegate = Nothing) As List(Of String)
         Dim a As Integer = InputFiles.Count
         Dim ret(a) As String
         Dim index As Integer = 0
@@ -38,6 +38,13 @@ Public NotInheritable Class Utils
             Next
 
             writer.Close()
+
+            If DeleteFiles Then
+                For Each File In InputFiles
+                    My.Computer.FileSystem.DeleteFile(File)
+                Next
+            End If
+
             If Not IsNothing(AfterMergeFunction) Then
                 AfterMergeFunction(document)
             End If
@@ -144,9 +151,9 @@ Public NotInheritable Class Utils
                 Return PageSize.A1
             ElseIf (InRange(Width, 3993, 2823) Or InRange(Height, 5650, 3994)) Then
                 Return PageSize.A2
-            ElseIf (InRange(Width, 2822, 1996) Or InRange(Height, 3993, 2823)) Then
+            ElseIf (InRange(Width, 2822, 1700) Or InRange(Height, 3993, 2600)) Then
                 Return PageSize.A3
-            ElseIf (InRange(Width, 1995) Or InRange(Height, 2822)) Then
+            ElseIf (InRange(Width, 1699) Or InRange(Height, 2599)) Then
                 Return PageSize.A4
             Else
                 Return PageSize.Undefined
@@ -157,11 +164,11 @@ Public NotInheritable Class Utils
                 Return PageSize.A0
             ElseIf (InRange(Height, 5650, 3994) Or InRange(Width, 7992, 5651)) Then
                 Return PageSize.A1
-            ElseIf (InRange(Height, 3993, 2823) Or InRange(Width, 5650, 3994)) Then
+            ElseIf (InRange(Height, 3993, 3000) Or InRange(Width, 5650, 4200)) Then
                 Return PageSize.A2
-            ElseIf (InRange(Height, 2822, 1996) Or InRange(Width, 3993, 2823)) Then
+            ElseIf (InRange(Height, 2999, 1700) Or InRange(Width, 4199, 2600)) Then
                 Return PageSize.A3
-            ElseIf (InRange(Height, 1995) Or InRange(Width, 2822)) Then
+            ElseIf (InRange(Height, 1699) Or InRange(Width, 2599)) Then
                 Return PageSize.A4
             Else
                 Return PageSize.Undefined

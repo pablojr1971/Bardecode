@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2EE1BE
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportData", "ImportData\ImportData.vbproj", "{5D985400-FCA6-41C3-B427-2B344D78435F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{E8E158BE-5B25-40C4-8EFA-6416A595C921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E158BE-5B25-40C4-8EFA-6416A595C921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E158BE-5B25-40C4-8EFA-6416A595C921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D985400-FCA6-41C3-B427-2B344D78435F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D985400-FCA6-41C3-B427-2B344D78435F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D985400-FCA6-41C3-B427-2B344D78435F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D985400-FCA6-41C3-B427-2B344D78435F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

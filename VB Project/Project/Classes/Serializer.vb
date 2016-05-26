@@ -27,8 +27,6 @@ Public NotInheritable Class Serializer
         End Get
     End Property
 
-
-
     Public Shared Function ToXml(ByVal Obj As Object, ByVal ObjType As System.Type) As String
         Dim xml As New System.Xml.Serialization.XmlSerializer(ObjType)
         Dim sw As New IO.StringWriter()
@@ -40,7 +38,6 @@ Public NotInheritable Class Serializer
             Return ""
         End If
     End Function
-
 
     Public Shared Function FromXml(ByVal Xml As String, ByVal ObjType As System.Type) As Object
         Dim ser As New System.Xml.Serialization.XmlSerializer(ObjType)

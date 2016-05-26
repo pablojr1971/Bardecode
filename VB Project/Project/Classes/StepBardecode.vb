@@ -103,7 +103,6 @@ Public Class StepBardecode
         End With
     End Function
 
-
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
         LogSub("Bardecode Starting")
         SetBardecodeProperties()

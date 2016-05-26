@@ -96,7 +96,7 @@ Public Class StepOCR
         Next
 
         While System.Diagnostics.Process.GetProcessesByName("Tesseract").Count > 0
-            Threading.Thread.Sleep(1)
+            System.Threading.Thread.Sleep(1)
         End While
 
         rasterizer.Dispose()
@@ -111,7 +111,7 @@ Public Class StepOCR
         Utils.MergePdfs(pdfs, outputFile.FullName)
 
         My.Computer.FileSystem.DeleteDirectory(outdir, FileIO.DeleteDirectoryOption.DeleteAllContents)
-        Threading.Thread.Sleep(500)
+        System.Threading.Thread.Sleep(500)
         If OCRProperties.DeleteInputFile Then
             File.Delete()
         End If

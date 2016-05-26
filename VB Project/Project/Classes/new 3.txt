@@ -1,0 +1,164 @@
+    Select Case subelement.Value
+                    Case "EDS1"
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(OutputFolder.FullName, element.Key.Value + "- 01 - Application.pdf"), FileMode.Create))
+                        doc.Open()
+                        copiedPage = writer.GetImportedPage(reader, element.Key.Key)
+                        writer.AddPage(copiedPage)
+                        copiedPage = Nothing
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawpdfname As String = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(DrawingFolder.FullName, drawpdfname))
+                                writer.AddDocument(drawpdfreader)
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                            End If
+                        Next
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                    Case "EDS2"
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(OutputFolder.FullName, element.Key.Value + "- 02 - Decision.pdf"), FileMode.Create))
+                        doc.Open()
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawpdfname As String = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(DrawingFolder.FullName, drawpdfname))
+                                writer.AddDocument(drawpdfreader)
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                            End If
+                        Next
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                    Case "EDS3"
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(OutputFolder.FullName, element.Key.Value + "- 03 - General.pdf"), FileMode.Create))
+                        doc.Open()
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawpdfname As String = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(DrawingFolder.FullName, drawpdfname))
+                                writer.AddDocument(drawpdfreader)
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                            End If
+                        Next
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                    Case "EDS4"
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(OutputFolder.FullName, element.Key.Value + "- 04 - Drawings-LOC-BP.pdf"), FileMode.Create))
+                        doc.Open()
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawpdfname As String = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(DrawingFolder.FullName, drawpdfname))
+                                writer.AddDocument(drawpdfreader)
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                            End If
+                        Next
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                    Case "EDS5"
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(OutputFolder.FullName, element.Key.Value + "- 05 - Drawings-EL-FP-SEC.pdf"), FileMode.Create))
+                        doc.Open()
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawpdfname As String = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(DrawingFolder.FullName, drawpdfname))
+                                writer.AddDocument(drawpdfreader)
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                            End If
+                        Next
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                    Case "EDS6"
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(OutputFolder.FullName, element.Key.Value + "- 06 - Drawings-SP-SL.pdf"), FileMode.Create))
+                        doc.Open()
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > subelement.Key).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawpdfname As String = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(DrawingFolder.FullName, drawpdfname))
+                                writer.AddDocument(drawpdfreader)
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                            End If
+                        Next
+                        copiedPage = writer.GetImportedPage(reader, element.Value.First(Function(p) p.Value = "EDFE").Key)
+                        writer.AddPage(copiedPage)
+                        copiedPage = Nothing
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                End Select

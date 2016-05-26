@@ -32,6 +32,7 @@ Public NotInheritable Class Utils
                 End If
 
                 writer.AddDocument(reader)
+
                 reader.Close()
                 finfo = Nothing
                 index += 1

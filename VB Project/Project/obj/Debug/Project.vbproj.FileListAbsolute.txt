@@ -90,3 +90,9 @@ C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.Native.dll
 C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.dll
 C:\Repository\Bardecode\VB Project\Project\'\Magick.NET-Q16-x64.xml
 C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmCopyFiles.resources
+C:\Repository\Bardecode\VB Project\Project\'\zxing.dll
+C:\Repository\Bardecode\VB Project\Project\'\zxing.presentation.dll
+C:\Repository\Bardecode\VB Project\Project\'\zxing.pdb
+C:\Repository\Bardecode\VB Project\Project\'\zxing.xml
+C:\Repository\Bardecode\VB Project\Project\'\zxing.presentation.pdb
+C:\Repository\Bardecode\VB Project\Project\'\zxing.presentation.xml

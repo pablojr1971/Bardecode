@@ -13,6 +13,12 @@ Public Class StepImgsToPDF
     Dim XImg As XImage = Nothing
     Public ImgsToPDFProperties As PropertiesImgsToPDF
 
+    Public ReadOnly Property Type As StepType Implements IStep.Type
+        Get
+            Return StepType.ImgsToPDF
+        End Get
+    End Property
+
     Public Sub New()
         Me.ImgsToPDFProperties = New PropertiesImgsToPDF()
     End Sub
@@ -54,12 +60,6 @@ Public Class StepImgsToPDF
             Me.Doc.Dispose()
         End If
     End Sub
-
-    Public ReadOnly Property Type As StepType Implements IStep.Type
-        Get
-            Return StepType.ImgsToPDF
-        End Get
-    End Property
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepImgsToPDF
         With ctx.ESteps.Single(Function(p) p.Id = StepId)

@@ -93,8 +93,13 @@ Public Class Process
 
         Dim expression As String = Nothing
         Try
+            If ProcessingFolder.Exists Then
+                ProcessingFolder.Delete(True)
+                ProcessingFolder.Refresh()
+            End If
+
             For Each box In Boxes
-                Try                    
+                Try
                     expression = String.Format("({0})(.{{0,}})({1})", JobNo, box)
                     If DocInputFolder.GetDirectories().Where(Function(p) New Regex(expression).Match(p.Name).Success).ToList.Count > 0 Then
                         LogManager.CreateLogFile(Outfolder.FullName + "\Log - " + box + ".txt")
@@ -146,7 +151,7 @@ Public Class Process
                         End If
                         LogManager.CloseLogFile()
                     End If
-                    index = 1                    
+                    index = 1
                 Catch e As Exception
                     log(e.Message + vbCrLf)
                     log("Errors Running this box. Process Stopped." + vbCrLf)

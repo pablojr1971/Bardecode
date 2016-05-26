@@ -6,6 +6,12 @@ Public Class StepSplitPDFSize
 
     Public SplitPDFSizeProperties As PropertiesSplitPDFSize
 
+    Public ReadOnly Property Type As StepType Implements IStep.Type
+        Get
+            Return StepType.SplitPDFSize
+        End Get
+    End Property
+
     Public Sub Run(LogSub As IStep.LogSubDelegate) Implements IStep.Run
         LogSub("Start Splitting PDFs")
         Me.RecursiveRun(New DirectoryInfo(SplitPDFSizeProperties.InputFolder), SplitPDFSizeProperties.ProcessSubFolders, LogSub)
@@ -25,7 +31,7 @@ Public Class StepSplitPDFSize
                     Continue For
                 End If
             End If
-            LogSub("Processing file " + File.Name)
+            'LogSub("Processing file " + File.Name)
 
             Utils.SplitFileSize(File.FullName, SplitPDFSizeProperties.Size)
         Next
@@ -40,12 +46,6 @@ Public Class StepSplitPDFSize
         Me.SplitPDFSizeProperties = Properties
         Me.SplitPDFSizeProperties.InputFolder = Directory.GetCurrentDirectory() + "\Processing\Documents"
     End Sub
-
-    Public ReadOnly Property Type As StepType Implements IStep.Type
-        Get
-            Return StepType.SplitPDFSize
-        End Get
-    End Property
 
     Public Shared Function LoadStep(StepId As Integer, ctx As VBProjectContext) As StepSplitPDFSize
         With ctx.ESteps.Single(Function(p) p.Id = StepId)

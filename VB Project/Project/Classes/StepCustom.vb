@@ -526,171 +526,186 @@ Public Class StepCustom
                 AuditDrawingAmount = drawingdirInfo.GetFiles("*.jpg").Count()
                 AuditDrawingCount = SeparateImages(drawingdirInfo)
                 outputFolder = Path.Combine(CustomProperties.Output, subfolder.Name)
-                For Each subfile In subfolder.GetFiles("*.pdf")
-                    LogSub(subfile.Name + " Reading Barcodes...")
-                    barcodeList = getPdfBarcodes(subfile)
-                    reader = New PdfReader(subfile.FullName)
+                Dim subfile As FileInfo = New FileInfo(Path.Combine(subfolder.FullName, subfolder.Name + ".pdf"))
+                'Dim ImageList As List(Of String) = subfolder.GetFiles("*.tif").ToList().OrderBy(Function(p) p.Name)
+                LogSub(subfolder.Name + " Reading Barcodes...")
+                barcodeList = getPdfBarcodes(subfile)
+                reader = New PdfReader(subfile.FullName)
 
-                    LogSub(subfile.Name + " Processing...")
-                    For Each element In barcodeList
-                        PageCount = 0
-                        DrawingCount = 0
-                        firstsectionvalue = element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList().First().Value
+                LogSub(subfolder.Name + " Processing...")
+                For Each element In barcodeList
+                    PageCount = 0
+                    DrawingCount = 0
+                    firstsectionvalue = element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList().First().Value
 
-                        ' check if theres any pages between last file and the file start of this file
-                        If (element.Key.Key - LastPageToCopy > 1) Then
-                            For index = (LastPageToCopy + 1) To (element.Key.Key - 1)
-                                RemovedPagesList.Add(index)
-                            Next
-                        End If
+                    ' check if theres any pages between last file and the file start of this file
 
-                        ' get the first barcode in the file after file start
-                        LastPageToCopy = element.Value.First().Key
-                        ' Check if theres any pages between file start barcode and the first section barcode
-                        If (LastPageToCopy > 0) And (LastPageToCopy - element.Key.Key > 1) Then
-                            For index = element.Key.Key + 1 To (LastPageToCopy - 1)
-                                RemovedPagesList.Add(index)
-                            Next
-                        End If
-
-
-                        Dim Placeholders As Integer() = (From placeholder In element.Value
-                                                         Where New Regex("^([S][P])(\d{6})$").Match(placeholder.Value).Success
-                                                         Select placeholder.Key).ToArray()
-                        AuditPlaceHolders += Placeholders.Count()
-
-                        For Each subelement In element.Value.Where(Function(p) p.Value.Contains("EDS")).OrderBy(Function(p) p.Value)
-                            If (element.Value.Where(Function(p) p.Value = subelement.Value And p.Key = (subelement.Key + 1)).Count > 0) Then
-                                RemovedPagesList.Add(subelement.Key)
-                                Continue For
-                            End If
-                            Dim filename As String = Nothing
-                            Select Case subelement.Value
-                                Case "EDS1" : filename = "- 01 - Application.pdf"
-                                Case "EDS2" : filename = "- 02 - Decision.pdf"
-                                Case "EDS3" : filename = "- 03 - General.pdf"
-                                Case "EDS4" : filename = "- 04 - Drawings-LOC-BP.pdf"
-                                Case "EDS5" : filename = "- 05 - Drawings-EL-FP-SEC.pdf"
-                                Case "EDS6" : filename = "- 06 - Drawings-SP-SL.pdf"
-                            End Select
-
-                            doc = New iTextSharp.text.Document()
-                            writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(outputFolder, element.Key.Value + filename), FileMode.Create))
-                            doc.Open()
-
-                            If subelement.Value = firstsectionvalue Then
-                                copiedPage = writer.GetImportedPage(reader, element.Key.Key)
-                                writer.AddPage(copiedPage)
-                                copiedPage = Nothing
-                                PageCount += 1
-                            End If
-
-                            If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > (subelement.Key)) Then
-                                LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > (subelement.Key)).Key - 1)
-                            Else
-                                LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
-                            End If
-                            For index = subelement.Key To LastPageToCopy
-                                If Placeholders.Contains(index) Then
-                                    Dim localindex As Integer = index
-                                    drawpdfname = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
-                                    Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(Path.Combine(drwFolder.FullName, subfolder.Name + "D"), drawpdfname))
-                                    DrawingCount += drawpdfreader.NumberOfPages
-                                    writer.AddDocument(drawpdfreader)
-                                    LogSub(String.Format("Added {0} to {1} on Page {2}", drawpdfreader.NumberOfPages, (element.Key.Value + filename), (index - subelement.Key + 1).ToString()))
-                                    drawpdfreader.Close()
-                                    drawpdfreader.Dispose()
-                                    My.Computer.FileSystem.DeleteFile(Path.Combine(Path.Combine(drwFolder.FullName, subfolder.Name + "D"), drawpdfname))
-                                Else
-                                    copiedPage = writer.GetImportedPage(reader, index)
-                                    writer.AddPage(copiedPage)
-                                    copiedPage = Nothing
-                                    PageCount += 1
-                                End If
-                            Next
-
-                            If (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList.IndexOf(subelement)) = (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).ToList.Count - 1) Then
-                                copiedPage = writer.GetImportedPage(reader, element.Value.First(Function(p) p.Value = "EDFE").Key)
-                                writer.AddPage(copiedPage)
-                                copiedPage = Nothing
-                                PageCount += 1
-                            End If
-
-                            doc.Close()
-                            writer.Close()
-                            writer.Dispose()
-                            doc.Dispose()
-                        Next
-
-                        ' always set last page as the file end page so i can check any blank between the end of this file and the begining of the next one
-                        LastPageToCopy = element.Value.First(Function(p) p.Value = "EDFE").Key
-
-                        If (PageCount + DrawingCount) > 0 Then
-                            Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
-                            connection.Open()
-
-                            Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _
-                                                                       "      SET PAGECOUNT = " + PageCount.ToString() + "," + _
-                                                                       "          DRAWINGCOUNT = " + DrawingCount.ToString() + _
-                                                                       "   WHERE JOBNO = 2017 " + _
-                                                                       "     AND BARCODE = '" + element.Key.Value + "'", connection)
-                            UpdateLogList.Add(String.Format("Updated ScanData barcode {0} - Rows Affected = ", element.Key.Value) + command.ExecuteNonQuery().ToString())
-
-                            connection.Close()
-                            command.Dispose()
-                            connection.Dispose()
-                        End If
-
-                        AuditPageCount += PageCount
-                    Next
-                    If (reader.NumberOfPages - LastPageToCopy >= 1) Then
-                        For index = (LastPageToCopy + 1) To (reader.NumberOfPages)
+                    If (element.Key.Key - LastPageToCopy > 1) Then
+                        For index = (LastPageToCopy + 1) To (element.Key.Key - 1)
                             RemovedPagesList.Add(index)
                         Next
                     End If
 
-                    LogSub("")
+                    ' get the first barcode in the file after file start
+                    LastPageToCopy = element.Value.First().Key
+                    ' Check if theres any pages between file start barcode and the first section barcode
+                    If (LastPageToCopy > 0) And (LastPageToCopy - element.Key.Key > 1) Then
+                        For index = element.Key.Key + 1 To (LastPageToCopy - 1)
+                            RemovedPagesList.Add(index)
+                        Next
+                    End If
 
-                    For Each notusedfile In New DirectoryInfo(Path.Combine(drwFolder.FullName, subfolder.Name + "D")).GetFiles(".pdf")
-                        LogSub("Drawing not Used: " + notusedfile.Name)
+                    Dim Placeholders As Integer() = (From placeholder In element.Value
+                                                     Where New Regex("^([S][P])(\d{6})$").Match(placeholder.Value).Success
+                                                     Select placeholder.Key).ToArray()
+                    AuditPlaceHolders += Placeholders.Count()
+
+                    For Each subelement In element.Value.Where(Function(p) p.Value.Contains("EDS")).OrderBy(Function(p) p.Value)
+                        If (element.Value.Where(Function(p) p.Value = subelement.Value And p.Key = (subelement.Key + 1)).Count > 0) Then
+                            RemovedPagesList.Add(subelement.Key)
+                            Continue For
+                        End If
+                        Dim filename As String = Nothing
+                        Select Case subelement.Value
+                            Case "EDS1" : filename = "- 01 - Application.pdf"
+                            Case "EDS2" : filename = "- 02 - Decision.pdf"
+                            Case "EDS3" : filename = "- 03 - General.pdf"
+                            Case "EDS4" : filename = "- 04 - Drawings-LOC-BP.pdf"
+                            Case "EDS5" : filename = "- 05 - Drawings-EL-FP-SEC.pdf"
+                            Case "EDS6" : filename = "- 06 - Drawings-SP-SL.pdf"
+                        End Select
+
+                        doc = New iTextSharp.text.Document()
+                        If File.Exists(Path.Combine(outputFolder, element.Key.Value + filename)) Then
+                            Throw New Exception("Duplicated section in file " + element.Key.Value)
+                        End If
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(outputFolder, element.Key.Value + filename), FileMode.Create))
+                        doc.Open()
+
+                        If subelement.Value = firstsectionvalue Then
+                            copiedPage = writer.GetImportedPage(reader, element.Key.Key)
+                            writer.AddPage(copiedPage)
+                            copiedPage = Nothing
+                            PageCount += 1
+                        End If
+
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > (subelement.Key)) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > (subelement.Key)).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                drawpdfname = element.Value.Single(Function(p) p.Key = localindex).Value + ".pdf"
+                                Dim drawpdfreader As PdfReader = New PdfReader(Path.Combine(Path.Combine(drwFolder.FullName, subfolder.Name + "D"), drawpdfname))
+                                DrawingCount += drawpdfreader.NumberOfPages
+                                writer.AddDocument(drawpdfreader)
+                                LogSub(String.Format("Added {0} to {1} on Page {2}", drawpdfreader.NumberOfPages, (element.Key.Value + filename), (index - subelement.Key + 1).ToString()))
+                                drawpdfreader.Close()
+                                drawpdfreader.Dispose()
+                                My.Computer.FileSystem.DeleteFile(Path.Combine(Path.Combine(drwFolder.FullName, subfolder.Name + "D"), drawpdfname))
+                            Else
+                                copiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(copiedPage)
+                                copiedPage = Nothing
+                                PageCount += 1
+                            End If
+                        Next
+
+                        If (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList.IndexOf(subelement)) = (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).ToList.Count - 1) Then
+                            copiedPage = writer.GetImportedPage(reader, element.Value.First(Function(p) p.Value = "EDFE").Key)
+                            writer.AddPage(copiedPage)
+                            copiedPage = Nothing
+                            PageCount += 1
+                        End If
+
+                        doc.Close()
+                        writer.Close()
+                        writer.Dispose()
+                        doc.Dispose()
                     Next
 
-                    LogSub("")
-                    AuditPageCountOriginal = reader.NumberOfPages
-                    For Each line In UpdateLogList
-                        LogSub(line)
-                    Next
-                    UpdateLogList.Clear()
+                    ' always set last page as the file end page so i can check any blank between the end of this file and the begining of the next one
+                    LastPageToCopy = element.Value.First(Function(p) p.Value = "EDFE").Key
 
-                    Dim blankpages As String = Nothing
+                    If (PageCount + DrawingCount) > 0 Then
+                        Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
+                        connection.Open()
 
-                    For Each page In RemovedPagesList
-                        blankpages += "-" + page.ToString() + "-"
-                    Next
+                        Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _
+                                                                   "      SET PAGECOUNT = " + PageCount.ToString() + "," + _
+                                                                   "          DRAWINGCOUNT = " + DrawingCount.ToString() + _
+                                                                   "   WHERE JOBNO = 2017 " + _
+                                                                   "     AND BARCODE = '" + element.Key.Value + "'", connection)
+                        UpdateLogList.Add(String.Format("Updated ScanData barcode {0} - Rows Affected = ", element.Key.Value) + command.ExecuteNonQuery().ToString())
 
-                    blankpages = blankpages.Replace("--", ", ")
-                    blankpages = blankpages.Replace("-", "")
+                        connection.Close()
+                        command.Dispose()
+                        connection.Dispose()
+                    End If
 
-                    LogSub("-- Audit --")
-
-                    LogSub("Original File PageCount: " + AuditPageCountOriginal.ToString())
-                    LogSub("After Process PageCount: " + AuditPageCount.ToString())
-                    LogSub("Original Amount of Drws: " + AuditDrawingAmount.ToString())
-                    LogSub("Amount of Drws by Brcd : " + AuditDrawingCount.ToString())
-                    LogSub("Amount of Placeholders : " + AuditPlaceHolders.ToString())
-                    LogSub("Pages Removed from file: " + RemovedPagesList.Count().ToString() + " (" + blankpages + ") ")
-                    LogSub("")
-
-
-                    RemovedPagesList.Clear()
-                    barcodeList.Clear()
-                    reader.Close()
-                    reader.Dispose()
-                    subfile.Delete()
+                    AuditPageCount += PageCount
                 Next
+
+                If reader.NumberOfPages - LastPageToCopy >= 1 Then
+                    For index = (LastPageToCopy + 1) To reader.NumberOfPages
+                        RemovedPagesList.Add(index)
+                    Next
+                End If
+
+
+                LogSub("")
+
+                For Each notusedfile In New DirectoryInfo(Path.Combine(drwFolder.FullName, subfolder.Name + "D")).GetFiles(".pdf")
+                    LogSub("Drawing not Used: " + notusedfile.Name)
+                Next
+
+                LogSub("")
+
+                AuditPageCountOriginal = reader.NumberOfPages
+
+                For Each line In UpdateLogList
+                    LogSub(line)
+                Next
+                UpdateLogList.Clear()
+
+                Dim blankpages As String = Nothing
+
+                For Each page In RemovedPagesList
+                    blankpages += "-" + page.ToString() + "-"
+                Next
+
+                blankpages = blankpages.Replace("--", ", ")
+                blankpages = blankpages.Replace("-", "")
+
+                LogSub("-- Audit --")
+
+                LogSub("Original File PageCount: " + AuditPageCountOriginal.ToString())
+                LogSub("After Process PageCount: " + AuditPageCount.ToString())
+                LogSub("Original Amount of Drws: " + AuditDrawingAmount.ToString())
+                LogSub("Amount of Drws by Brcd : " + AuditDrawingCount.ToString())
+                LogSub("Amount of Placeholders : " + AuditPlaceHolders.ToString())
+                LogSub("Pages Removed from file: " + RemovedPagesList.Count().ToString() + " (" + blankpages + ") ")
+                LogSub("Amount of files in box : " + barcodeList.Count().ToString())
+                LogSub("")
+
+
+                RemovedPagesList.Clear()
+                barcodeList.Clear()
+                reader.Close()
+                reader.Dispose()
+
+                If subfile.Exists Then
+                    subfile.Delete()
+                End If
             Catch Ex As Exception
-                If TypeOf (Ex) Is FileNotFoundException Then
+                If TypeOf (Ex) Is System.IO.FileNotFoundException Then
                     LogSub("Drawing " + Path.Combine(subfolder.Name, drawpdfname) + " not found!")
+                    Throw Ex
+                Else
+                    LogSub(Ex.Message)
+                    Throw Ex
                 End If
             End Try
         Next
@@ -701,41 +716,79 @@ Public Class StepCustom
 
         Dim rasterizer As GhostscriptRasterizer = New GhostscriptRasterizer()
         Dim Barcode As String = Nothing
-        rasterizer.Open(pdf.FullName)
 
-        For index = 1 To rasterizer.PageCount
-            Using Img As System.Drawing.Image = rasterizer.GetPage(200, 200, index)
-                Barcode = getImageBarcode(Img)
+        If pdf.Exists Then
+            rasterizer.Open(pdf.FullName)
+        End If
 
-                If Not IsNothing(Barcode) Then
-                    If New Regex("^([K][T][T])(\d{6})$").Match(Barcode).Success Then
-                        getPdfBarcodes.Add(New KeyValuePair(Of Integer, String)(index, Barcode), New Dictionary(Of Integer, String))
-                    Else
-                        Select Case Barcode
-                            Case "EDSF" : Barcode = "EDS1" ' Application
-                            Case "EDSA" : Barcode = "EDS2" ' Decision
-                            Case "EDSB" : Barcode = "EDS3" ' General
-                            Case "EDSC" : Barcode = "EDS4" ' Drawing LOC BP
-                            Case "EDSD" : Barcode = "EDS5" ' Drawing EL FP SEC
-                            Case "EDSE" : Barcode = "EDS6" ' Drawing SP SL
-                        End Select
-                        If index > 1 Then
-                            getPdfBarcodes.Last.Value.Add(index, Barcode)
+        If pdf.Exists Then
+            For index = 1 To rasterizer.PageCount
+                Using Img As System.Drawing.Image = rasterizer.GetPage(200, 200, index)
+                    Barcode = getImageBarcode(Img)
+
+                    If Not IsNothing(Barcode) Then
+                        If New Regex("^([K][T][T])(\d{6})$").Match(Barcode).Success Then
+                            getPdfBarcodes.Add(New KeyValuePair(Of Integer, String)(index, Barcode), New Dictionary(Of Integer, String))
+                        Else
+                            Select Case Barcode
+                                Case "EDSF" : Barcode = "EDS1" ' Application
+                                Case "EDSA" : Barcode = "EDS2" ' Decision
+                                Case "EDSB" : Barcode = "EDS3" ' General
+                                Case "EDSC" : Barcode = "EDS4" ' Drawing LOC BP
+                                Case "EDSD" : Barcode = "EDS5" ' Drawing EL FP SEC
+                                Case "EDSE" : Barcode = "EDS6" ' Drawing SP SL
+                            End Select
+                            If index > 1 Then
+                                getPdfBarcodes.Last.Value.Add(index, Barcode)
+                            End If
                         End If
                     End If
-                End If
-            End Using
-            Barcode = Nothing
-        Next
-        rasterizer.Close()
-        rasterizer.Dispose()
+                End Using
+                Barcode = Nothing
+            Next
+            rasterizer.Close()
+            rasterizer.Dispose()
+        Else
+            Dim imagelist As List(Of String) = pdf.Directory.GetFiles("*.tif").ToList().OrderBy(Function(p) p.Name)
+
+            For Each Image In imagelist
+                Try
+                    Using Img As System.Drawing.Image = New System.Drawing.Bitmap(Image)
+                        Barcode = getImageBarcode(Img)
+
+                        If Not IsNothing(Barcode) Then
+                            If New Regex("^([K][T][T])(\d{6})$").Match(Barcode).Success Then
+                                getPdfBarcodes.Add(New KeyValuePair(Of Integer, String)(imagelist.IndexOf(Image), Barcode), New Dictionary(Of Integer, String))
+                            Else
+                                Select Case Barcode
+                                    Case "EDSF" : Barcode = "EDS1" ' Application
+                                    Case "EDSA" : Barcode = "EDS2" ' Decision
+                                    Case "EDSB" : Barcode = "EDS3" ' General
+                                    Case "EDSC" : Barcode = "EDS4" ' Drawing LOC BP
+                                    Case "EDSD" : Barcode = "EDS5" ' Drawing EL FP SEC
+                                    Case "EDSE" : Barcode = "EDS6" ' Drawing SP SL
+                                End Select
+                                If imagelist.IndexOf(Image) > 0 Then
+                                    getPdfBarcodes.Last.Value.Add(imagelist.IndexOf(Image), Barcode)
+                                End If
+                            End If
+                        End If
+                    End Using
+                    Barcode = Nothing
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+            Next
+        End If
     End Function
 
     Public Function SeparateImages(Folder As DirectoryInfo) As Integer
         SeparateImages = 0
         Dim lastbarcodeFolder As String = Nothing
         Dim barcode As String = Nothing
-        Dim FolderFiles As List(Of FileInfo) = Folder.GetFiles("*.jpg").ToList()
+        Dim FolderFiles As List(Of FileInfo) = (From file In Folder.GetFiles()
+                                                Where file.Name.EndsWith(".jpg") Or file.Name.EndsWith(".tif")
+                                                Select file).ToList()
         Dim index As Integer = 0
 
         For Each subfile In FolderFiles
@@ -791,13 +844,13 @@ Public Class StepCustom
         ' each file will have many images and need to be merged into a single multipage PDF
         Dim img As iTextSharp.text.Image = Nothing
         For Each subFolder In dir.GetDirectories()
-            If (subFolder.GetFiles("*.jpg").Length > 0) And (Not subFolder.Name.StartsWith("EDW")) Then
+            If (subFolder.GetFiles().Length > 0) And (Not subFolder.Name.StartsWith("EDW")) Then
                 filename = subFolder.FullName.Replace("SD", "SP") + ".pdf"
                 document = New iTextSharp.text.Document()
                 fs = New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.None)
                 writer = PdfWriter.GetInstance(document, fs)
                 document.Open()
-                For Each File In subFolder.GetFiles("*.jpg")
+                For Each File In subFolder.GetFiles()
                     img = iTextSharp.text.Image.GetInstance(File.FullName)
                     img.SetAbsolutePosition(0, 0)
                     document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
@@ -1046,4 +1099,285 @@ Public Class StepCustom
         Next
         LogSub("Files converted" + vbCrLf)
     End Sub
+
+    Private Sub ProcessKetteringImages(LogSub As IStep.LogSubDelegate)
+        ' This Step will be one step to process Everything
+
+        Dim doc As iTextSharp.text.Document = Nothing
+        Dim writer As PdfWriter = Nothing
+        Dim drawpdfreader As PdfReader = Nothing
+
+        Dim barcodeList As Dictionary(Of KeyValuePair(Of Integer, String), Dictionary(Of Integer, String)) = Nothing
+        Dim LastPageToCopy As Integer = -1
+
+        Dim docFolder As DirectoryInfo = New DirectoryInfo(CustomProperties.Input1)
+        Dim drwFolder As DirectoryInfo = New DirectoryInfo(CustomProperties.Input2)
+
+        Dim outputFolder As String = Nothing
+
+        Dim DrawingCount As Integer = 0
+        Dim PageCount As Integer = 0
+
+        Dim AuditPageCount As Integer = 0
+        Dim AuditPageCountOriginal As Integer = 0
+        Dim AuditPlaceHolders As Integer = 0
+        Dim AuditDrawingCount As Integer = 0
+        Dim AuditDrawingAmount As Integer = 0
+
+        Dim UpdateLogList As List(Of String) = New List(Of String)
+        Dim RemovedPagesList As List(Of Integer) = New List(Of Integer)
+
+        Dim drawpdfname As String = Nothing
+
+        Dim firstsectionvalue As String = Nothing
+        Dim tempImg As Image = Nothing
+
+
+        For Each subfolder In docFolder.GetDirectories()
+            Try
+                AuditDrawingAmount = 0
+                AuditDrawingCount = 0
+                AuditPageCount = 0
+                AuditPageCountOriginal = 0
+                AuditPlaceHolders = 0
+                LogSub("Separating Drawings...")
+                Dim drawingdirInfo As DirectoryInfo = New DirectoryInfo(Path.Combine(drwFolder.FullName, subfolder.Name + "D"))
+                AuditDrawingAmount = drawingdirInfo.GetFiles("*.jpg").Count()
+                AuditDrawingCount = SeparateImages(drawingdirInfo)
+                outputFolder = Path.Combine(CustomProperties.Output, subfolder.Name)
+
+                LogSub(subfolder.Name + " Reading Barcodes...")
+                barcodeList = getPdfBarcodesImages(subfolder)
+                Dim imagelist As List(Of String) = (From image In subfolder.GetFiles("*.tif").OrderBy(Function(p) p.Name)
+                                                    Select image.FullName).ToList()
+                LogSub(subfolder.Name + " Processing...")
+                For Each element In barcodeList
+                    PageCount = 0
+                    DrawingCount = 0
+                    firstsectionvalue = element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList().First().Value
+
+                    ' check if theres any pages between last file and the file start of this file
+
+                    If (element.Key.Key - LastPageToCopy > 1) Then
+                        For index = (LastPageToCopy + 1) To (element.Key.Key - 1)
+                            RemovedPagesList.Add(index)
+                            My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(index))
+                        Next
+                    End If
+
+                    ' get the first barcode in the file after file start
+                    LastPageToCopy = element.Value.First().Key
+                    ' Check if theres any pages between file start barcode and the first section barcode
+                    If (LastPageToCopy > 0) And (LastPageToCopy - element.Key.Key > 1) Then
+                        For index = element.Key.Key + 1 To (LastPageToCopy - 1)
+                            RemovedPagesList.Add(index)
+                            My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(index))
+                        Next
+                    End If
+
+                    Dim Placeholders As Integer() = (From placeholder In element.Value
+                                                     Where New Regex("^([S][P])(\d{6})$").Match(placeholder.Value).Success
+                                                     Select placeholder.Key).ToArray()
+                    AuditPlaceHolders += Placeholders.Count()
+
+                    For Each subelement In element.Value.Where(Function(p) p.Value.Contains("EDS")).OrderBy(Function(p) p.Value)
+                        If (element.Value.Where(Function(p) p.Value = subelement.Value And p.Key = (subelement.Key + 1)).Count > 0) Then
+                            RemovedPagesList.Add(subelement.Key)
+                            Continue For
+                        End If
+                        Dim filename As String = Nothing
+                        Select Case subelement.Value
+                            Case "EDS1" : filename = "- 01 - Application.pdf"
+                            Case "EDS2" : filename = "- 02 - Decision.pdf"
+                            Case "EDS3" : filename = "- 03 - General.pdf"
+                            Case "EDS4" : filename = "- 04 - Drawings-LOC-BP.pdf"
+                            Case "EDS5" : filename = "- 05 - Drawings-EL-FP-SEC.pdf"
+                            Case "EDS6" : filename = "- 06 - Drawings-SP-SL.pdf"
+                        End Select
+
+                        doc = New iTextSharp.text.Document()
+                        If File.Exists(Path.Combine(outputFolder, element.Key.Value + filename)) Then
+                            Throw New Exception("Duplicated section in file " + element.Key.Value)
+                        End If
+                        writer = PdfWriter.GetInstance(doc, New FileStream(Path.Combine(outputFolder, element.Key.Value + filename), FileMode.Create))
+                        doc.Open()
+
+                        If subelement.Value = firstsectionvalue Then
+                            tempImg = iTextSharp.text.Image.GetInstance(imagelist.ElementAt(element.Key.Key))
+                            tempImg.SetAbsolutePosition(0, 0)
+                            doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                            doc.NewPage()
+                            writer.DirectContent.AddImage(tempImg)
+                            tempImg = Nothing
+                            PageCount += 1
+                            My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(element.Key.Key))
+                        End If
+
+                        If element.Value.Any(Function(p) p.Value.Contains("EDS") And p.Key > (subelement.Key)) Then
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value.Contains("EDS") And p.Key > (subelement.Key)).Key - 1)
+                        Else
+                            LastPageToCopy = (element.Value.First(Function(p) p.Value = "EDFE").Key - 1)
+                        End If
+                        For index = subelement.Key To LastPageToCopy
+                            If Placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                Dim drawfolder As DirectoryInfo = New DirectoryInfo(Path.Combine(drwFolder.FullName, Path.Combine(subfolder.Name + "D", element.Value.Single(Function(p) p.Key = localindex).Value.Replace("SP", "SD"))))
+                                DrawingCount += drawfolder.GetFiles().Count()
+                                For Each subfile In drawfolder.GetFiles()
+                                    tempImg = Image.GetInstance(subfile.FullName)
+                                    tempImg.SetAbsolutePosition(0, 0)
+                                    doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                                    doc.NewPage()
+                                    writer.DirectContent.AddImage(tempImg)
+                                    tempImg = Nothing
+                                Next
+                                LogSub(String.Format("Added {0} to {1} on Page {2}", drawfolder.GetFiles().Count(), (element.Key.Value + filename), (index - subelement.Key + 1).ToString()))
+                                drawfolder.Delete(True)
+                                drawfolder.Refresh()
+                                drawfolder = Nothing
+                                My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(index))
+                            Else
+                                tempImg = iTextSharp.text.Image.GetInstance(imagelist.ElementAt(index))
+                                tempImg.SetAbsolutePosition(0, 0)
+                                doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                                doc.NewPage()
+                                writer.DirectContent.AddImage(tempImg)
+                                tempImg = Nothing
+                                PageCount += 1
+                                My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(index))
+                            End If
+                        Next
+
+                        If (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList.IndexOf(subelement)) = (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).ToList.Count - 1) Then
+                            tempImg = iTextSharp.text.Image.GetInstance(imagelist.ElementAt(element.Value.First(Function(p) p.Value = "EDFE").Key))
+                            tempImg.SetAbsolutePosition(0, 0)
+                            doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                            doc.NewPage()
+                            writer.DirectContent.AddImage(tempImg)
+                            tempImg = Nothing
+                            PageCount += 1
+                            My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(element.Value.First(Function(p) p.Value = "EDFE").Key))
+                        End If
+
+                        doc.Close()
+                        doc.Dispose()
+                        writer.Close()
+                        writer.Dispose()
+                    Next
+
+                    ' always set last page as the file end page so i can check any blank between the end of this file and the begining of the next one
+                    LastPageToCopy = element.Value.First(Function(p) p.Value = "EDFE").Key
+
+                    If (PageCount + DrawingCount) > 0 Then
+                        Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
+                        connection.Open()
+
+                        Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _
+                                                                   "      SET PAGECOUNT = " + PageCount.ToString() + "," + _
+                                                                   "          DRAWINGCOUNT = " + DrawingCount.ToString() + _
+                                                                   "   WHERE JOBNO = 2017 " + _
+                                                                   "     AND BARCODE = '" + element.Key.Value + "'", connection)
+                        UpdateLogList.Add(String.Format("Updated ScanData barcode {0} - Rows Affected = ", element.Key.Value) + command.ExecuteNonQuery().ToString())
+
+                        connection.Close()
+                        command.Dispose()
+                        connection.Dispose()
+                    End If
+
+                    AuditPageCount += PageCount
+                Next
+
+                If (imagelist.Count - 1) - LastPageToCopy >= 1 Then
+                    For index = (LastPageToCopy + 1) To (imagelist.Count - 1)
+                        RemovedPagesList.Add(index)
+                        My.Computer.FileSystem.DeleteFile(imagelist.ElementAt(index))
+                    Next
+                End If
+
+
+                LogSub("")
+
+                For Each notusedfile In New DirectoryInfo(Path.Combine(drwFolder.FullName, subfolder.Name + "D")).GetDirectories()
+                    LogSub("Drawing not Used: " + notusedfile.Name)
+                Next
+
+                LogSub("")
+
+                AuditPageCountOriginal = imagelist.Count
+
+                For Each line In UpdateLogList
+                    LogSub(line)
+                Next
+                UpdateLogList.Clear()
+
+                Dim blankpages As String = Nothing
+
+                For Each page In RemovedPagesList
+                    blankpages += "-" + imagelist(page).Replace(subfolder.FullName, "") + "-"
+                Next
+
+                blankpages = blankpages.Replace("--", ", ")
+                blankpages = blankpages.Replace("-", "")
+
+                LogSub("-- Audit --")
+
+                LogSub("Original File PageCount: " + AuditPageCountOriginal.ToString())
+                LogSub("After Process PageCount: " + AuditPageCount.ToString())
+                LogSub("Original Amount of Drws: " + AuditDrawingAmount.ToString())
+                LogSub("Amount of Drws by Brcd : " + AuditDrawingCount.ToString())
+                LogSub("Amount of Placeholders : " + AuditPlaceHolders.ToString())
+                LogSub("Pages Removed from file: " + RemovedPagesList.Count().ToString() + " (" + blankpages + ") ")
+                LogSub("Amount of files in box : " + barcodeList.Count().ToString())
+                LogSub("")
+
+
+                RemovedPagesList.Clear()
+                barcodeList.Clear()
+
+            Catch Ex As Exception
+                If TypeOf (Ex) Is System.IO.FileNotFoundException Then
+                    LogSub("Drawing " + Path.Combine(subfolder.Name, drawpdfname) + " not found!")
+                    Throw Ex
+                Else
+                    LogSub(Ex.Message)
+                    Throw Ex
+                End If
+            End Try
+        Next
+    End Sub
+
+    Public Function getPdfBarcodesImages(folder As DirectoryInfo) As Dictionary(Of KeyValuePair(Of Integer, String), Dictionary(Of Integer, String))
+        getPdfBarcodesImages = New Dictionary(Of KeyValuePair(Of Integer, String), Dictionary(Of Integer, String))
+
+        Dim rasterizer As GhostscriptRasterizer = New GhostscriptRasterizer()
+        Dim Barcode As String = Nothing
+
+        Dim imagelist As List(Of String) = (From image In folder.GetFiles("*.tif").OrderBy(Function(p) p.Name)
+                                            Select image.FullName).ToList()
+
+        For Each Image In imagelist
+            Using Img As System.Drawing.Image = New System.Drawing.Bitmap(Image)
+                Barcode = getImageBarcode(Img)
+
+                If Not IsNothing(Barcode) Then
+                    If New Regex("^([K][T][T])(\d{6})$").Match(Barcode).Success Then
+                        getPdfBarcodesImages.Add(New KeyValuePair(Of Integer, String)(imagelist.IndexOf(Image), Barcode), New Dictionary(Of Integer, String))
+                    Else
+                        Select Case Barcode
+                            Case "EDSF" : Barcode = "EDS1" ' Application
+                            Case "EDSA" : Barcode = "EDS2" ' Decision
+                            Case "EDSB" : Barcode = "EDS3" ' General
+                            Case "EDSC" : Barcode = "EDS4" ' Drawing LOC BP
+                            Case "EDSD" : Barcode = "EDS5" ' Drawing EL FP SEC
+                            Case "EDSE" : Barcode = "EDS6" ' Drawing SP SL
+                        End Select
+                        If imagelist.IndexOf(Image) > 0 Then
+                            getPdfBarcodesImages.Last.Value.Add(imagelist.IndexOf(Image), Barcode)
+                        End If
+                    End If
+                End If
+            End Using
+            Barcode = Nothing
+        Next
+    End Function
 End Class

@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2EE1BE
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportData", "ImportData\ImportData.vbproj", "{5D985400-FCA6-41C3-B427-2B344D78435F}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NewProject", "NewProject\NewProject.vbproj", "{3BDCBCD8-06B5-4D06-BD35-1A80BC884A38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{5D985400-FCA6-41C3-B427-2B344D78435F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D985400-FCA6-41C3-B427-2B344D78435F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D985400-FCA6-41C3-B427-2B344D78435F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BDCBCD8-06B5-4D06-BD35-1A80BC884A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BDCBCD8-06B5-4D06-BD35-1A80BC884A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDCBCD8-06B5-4D06-BD35-1A80BC884A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BDCBCD8-06B5-4D06-BD35-1A80BC884A38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

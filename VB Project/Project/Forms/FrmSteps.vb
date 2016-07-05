@@ -34,6 +34,7 @@ Public Class FrmSteps
             Case 2 'SaveImgsToPDF
             Case 3 : SaveCustom()
             Case 4 : SaveSplitPDF()
+            Case 5 : SaveBarcodeRecognition()
         End Select
         Entity.RunOrder = txRunOrder.Text
         Close()
@@ -117,6 +118,11 @@ Public Class FrmSteps
         Entity.StepType = StepType.SplitPDFSize
     End Sub
 
+    Private Sub SaveBarcodeRecognition()
+        Dim props As PropertiesBarcodeRecognition = New PropertiesBarcodeRecognition()
+
+    End Sub
+
     Private Sub LoadBardecode()
         With CType(Serializer.FromXml(Me.Entity.PropertiesObj, GetType(PropertiesBardecode)), PropertiesBardecode)
             tx1BarcodeRegex.Text = .BarcodePattern
@@ -153,5 +159,17 @@ Public Class FrmSteps
             tx5FileTemplate.Text = .FilePattern
             tx5Size.Text = .Size.ToString()
         End With
+    End Sub
+
+    Private Sub bt6NewStep_Click(sender As Object, e As EventArgs) Handles bt6NewStep.Click
+        ' here we should create the new section row
+    End Sub
+
+    Private Sub bt6EditStep_Click(sender As Object, e As EventArgs) Handles bt6EditStep.Click
+        ' here we should edit the section that it's being created or not
+    End Sub
+
+    Private Sub bt6DeleteStep_Click(sender As Object, e As EventArgs) Handles bt6DeleteStep.Click
+        ' here we should delete the section that was created or not
     End Sub
 End Class

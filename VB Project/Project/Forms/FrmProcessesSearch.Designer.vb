@@ -108,7 +108,6 @@ Partial Class FrmProcessesSearch
         '
         Me.dgProcesses.AllowUserToAddRows = False
         Me.dgProcesses.AllowUserToDeleteRows = False
-        Me.dgProcesses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgProcesses.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Number, Me.Steps, Me.Description, Me.Id})
         Me.dgProcesses.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgProcesses.Location = New System.Drawing.Point(3, 16)

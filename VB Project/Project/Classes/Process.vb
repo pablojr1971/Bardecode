@@ -156,10 +156,6 @@ Public Class Process
                     log(e.Message + vbCrLf)
                     log("Errors Running this box. Process Stopped." + vbCrLf)
                     log(e.Message + vbCrLf)
-                    log("Moving current data to outputFolder.")
-
-                    My.Computer.FileSystem.MoveDirectory(Ocrfolder.FullName, Outfolder.FullName + "\" + box, True)
-                    Thread.Sleep(2000)
 
                     ProcessingFolder.Delete(True)
                     ProcessingFolder.Refresh()

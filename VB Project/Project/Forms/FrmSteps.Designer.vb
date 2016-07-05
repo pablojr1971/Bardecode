@@ -33,6 +33,8 @@ Partial Class FrmSteps
         Me.gb1Barcodes = New System.Windows.Forms.GroupBox()
         Me.cx1Barcodes = New System.Windows.Forms.CheckedListBox()
         Me.gb1Patterns = New System.Windows.Forms.GroupBox()
+        Me.rbDrws = New System.Windows.Forms.RadioButton()
+        Me.rbDocs = New System.Windows.Forms.RadioButton()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.cb1SplitMode = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -62,8 +64,12 @@ Partial Class FrmSteps
         Me.tx5Size = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.tx5FileTemplate = New System.Windows.Forms.TextBox()
-        Me.rbDocs = New System.Windows.Forms.RadioButton()
-        Me.rbDrws = New System.Windows.Forms.RadioButton()
+        Me.pgBarcodeRecognition = New System.Windows.Forms.TabPage()
+        Me.gb6Sections = New System.Windows.Forms.GroupBox()
+        Me.dg6Sections = New System.Windows.Forms.DataGridView()
+        Me.bt6NewStep = New System.Windows.Forms.Button()
+        Me.bt6EditStep = New System.Windows.Forms.Button()
+        Me.bt6DeleteStep = New System.Windows.Forms.Button()
         Me.MainPanel.SuspendLayout()
         Me.gbStepSettings.SuspendLayout()
         Me.tcSteps.SuspendLayout()
@@ -78,6 +84,9 @@ Partial Class FrmSteps
         Me.gb4CustomProcess.SuspendLayout()
         Me.pgSplitPDFSize.SuspendLayout()
         Me.gb5Pattern.SuspendLayout()
+        Me.pgBarcodeRecognition.SuspendLayout()
+        Me.gb6Sections.SuspendLayout()
+        CType(Me.dg6Sections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MainPanel
@@ -151,6 +160,7 @@ Partial Class FrmSteps
         Me.tcSteps.Controls.Add(Me.PgImgsToPdf)
         Me.tcSteps.Controls.Add(Me.pgCustom)
         Me.tcSteps.Controls.Add(Me.pgSplitPDFSize)
+        Me.tcSteps.Controls.Add(Me.pgBarcodeRecognition)
         Me.tcSteps.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tcSteps.Location = New System.Drawing.Point(3, 16)
         Me.tcSteps.Name = "tcSteps"
@@ -212,6 +222,28 @@ Partial Class FrmSteps
         Me.gb1Patterns.TabIndex = 1
         Me.gb1Patterns.TabStop = False
         Me.gb1Patterns.Text = "Patterns"
+        '
+        'rbDrws
+        '
+        Me.rbDrws.AutoSize = True
+        Me.rbDrws.Location = New System.Drawing.Point(11, 177)
+        Me.rbDrws.Name = "rbDrws"
+        Me.rbDrws.Size = New System.Drawing.Size(110, 17)
+        Me.rbDrws.TabIndex = 14
+        Me.rbDrws.Text = "Process Drawings"
+        Me.rbDrws.UseVisualStyleBackColor = True
+        '
+        'rbDocs
+        '
+        Me.rbDocs.AutoSize = True
+        Me.rbDocs.Checked = True
+        Me.rbDocs.Location = New System.Drawing.Point(11, 154)
+        Me.rbDocs.Name = "rbDocs"
+        Me.rbDocs.Size = New System.Drawing.Size(120, 17)
+        Me.rbDocs.TabIndex = 13
+        Me.rbDocs.TabStop = True
+        Me.rbDocs.Text = "Process Documents"
+        Me.rbDocs.UseVisualStyleBackColor = True
         '
         'Label19
         '
@@ -301,7 +333,7 @@ Partial Class FrmSteps
         Me.PgOCR.Location = New System.Drawing.Point(4, 22)
         Me.PgOCR.Name = "PgOCR"
         Me.PgOCR.Padding = New System.Windows.Forms.Padding(3)
-        Me.PgOCR.Size = New System.Drawing.Size(468, 294)
+        Me.PgOCR.Size = New System.Drawing.Size(468, 302)
         Me.PgOCR.TabIndex = 1
         Me.PgOCR.Text = "OCR"
         Me.PgOCR.UseVisualStyleBackColor = True
@@ -339,7 +371,7 @@ Partial Class FrmSteps
         Me.PgImgsToPdf.Location = New System.Drawing.Point(4, 22)
         Me.PgImgsToPdf.Name = "PgImgsToPdf"
         Me.PgImgsToPdf.Padding = New System.Windows.Forms.Padding(3)
-        Me.PgImgsToPdf.Size = New System.Drawing.Size(468, 294)
+        Me.PgImgsToPdf.Size = New System.Drawing.Size(468, 302)
         Me.PgImgsToPdf.TabIndex = 2
         Me.PgImgsToPdf.Text = "ImgsToPdf"
         Me.PgImgsToPdf.UseVisualStyleBackColor = True
@@ -389,7 +421,7 @@ Partial Class FrmSteps
         Me.pgCustom.Location = New System.Drawing.Point(4, 22)
         Me.pgCustom.Name = "pgCustom"
         Me.pgCustom.Padding = New System.Windows.Forms.Padding(3)
-        Me.pgCustom.Size = New System.Drawing.Size(468, 294)
+        Me.pgCustom.Size = New System.Drawing.Size(468, 302)
         Me.pgCustom.TabIndex = 3
         Me.pgCustom.Text = "Custom"
         Me.pgCustom.UseVisualStyleBackColor = True
@@ -428,7 +460,7 @@ Partial Class FrmSteps
         Me.pgSplitPDFSize.Location = New System.Drawing.Point(4, 22)
         Me.pgSplitPDFSize.Name = "pgSplitPDFSize"
         Me.pgSplitPDFSize.Padding = New System.Windows.Forms.Padding(3)
-        Me.pgSplitPDFSize.Size = New System.Drawing.Size(468, 294)
+        Me.pgSplitPDFSize.Size = New System.Drawing.Size(468, 302)
         Me.pgSplitPDFSize.TabIndex = 4
         Me.pgSplitPDFSize.Text = "Split PDF by Size"
         Me.pgSplitPDFSize.UseVisualStyleBackColor = True
@@ -478,27 +510,64 @@ Partial Class FrmSteps
         Me.tx5FileTemplate.Size = New System.Drawing.Size(346, 20)
         Me.tx5FileTemplate.TabIndex = 0
         '
-        'rbDocs
+        'pgBarcodeRecognition
         '
-        Me.rbDocs.AutoSize = True
-        Me.rbDocs.Checked = True
-        Me.rbDocs.Location = New System.Drawing.Point(11, 154)
-        Me.rbDocs.Name = "rbDocs"
-        Me.rbDocs.Size = New System.Drawing.Size(120, 17)
-        Me.rbDocs.TabIndex = 13
-        Me.rbDocs.TabStop = True
-        Me.rbDocs.Text = "Process Documents"
-        Me.rbDocs.UseVisualStyleBackColor = True
+        Me.pgBarcodeRecognition.Controls.Add(Me.gb6Sections)
+        Me.pgBarcodeRecognition.Location = New System.Drawing.Point(4, 22)
+        Me.pgBarcodeRecognition.Name = "pgBarcodeRecognition"
+        Me.pgBarcodeRecognition.Padding = New System.Windows.Forms.Padding(3)
+        Me.pgBarcodeRecognition.Size = New System.Drawing.Size(468, 302)
+        Me.pgBarcodeRecognition.TabIndex = 5
+        Me.pgBarcodeRecognition.Text = "Barcode Recognition"
+        Me.pgBarcodeRecognition.UseVisualStyleBackColor = True
         '
-        'rbDrws
+        'gb6Sections
         '
-        Me.rbDrws.AutoSize = True
-        Me.rbDrws.Location = New System.Drawing.Point(11, 177)
-        Me.rbDrws.Name = "rbDrws"
-        Me.rbDrws.Size = New System.Drawing.Size(110, 17)
-        Me.rbDrws.TabIndex = 14
-        Me.rbDrws.Text = "Process Drawings"
-        Me.rbDrws.UseVisualStyleBackColor = True
+        Me.gb6Sections.Controls.Add(Me.bt6NewStep)
+        Me.gb6Sections.Controls.Add(Me.bt6EditStep)
+        Me.gb6Sections.Controls.Add(Me.bt6DeleteStep)
+        Me.gb6Sections.Controls.Add(Me.dg6Sections)
+        Me.gb6Sections.Location = New System.Drawing.Point(6, 6)
+        Me.gb6Sections.Name = "gb6Sections"
+        Me.gb6Sections.Size = New System.Drawing.Size(456, 290)
+        Me.gb6Sections.TabIndex = 0
+        Me.gb6Sections.TabStop = False
+        Me.gb6Sections.Text = "File/Sections"
+        '
+        'dg6Sections
+        '
+        Me.dg6Sections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg6Sections.Location = New System.Drawing.Point(6, 19)
+        Me.dg6Sections.Name = "dg6Sections"
+        Me.dg6Sections.Size = New System.Drawing.Size(444, 236)
+        Me.dg6Sections.TabIndex = 0
+        '
+        'bt6NewStep
+        '
+        Me.bt6NewStep.Location = New System.Drawing.Point(213, 261)
+        Me.bt6NewStep.Name = "bt6NewStep"
+        Me.bt6NewStep.Size = New System.Drawing.Size(75, 23)
+        Me.bt6NewStep.TabIndex = 14
+        Me.bt6NewStep.Text = "New"
+        Me.bt6NewStep.UseVisualStyleBackColor = True
+        '
+        'bt6EditStep
+        '
+        Me.bt6EditStep.Location = New System.Drawing.Point(294, 261)
+        Me.bt6EditStep.Name = "bt6EditStep"
+        Me.bt6EditStep.Size = New System.Drawing.Size(75, 23)
+        Me.bt6EditStep.TabIndex = 13
+        Me.bt6EditStep.Text = "Edit"
+        Me.bt6EditStep.UseVisualStyleBackColor = True
+        '
+        'bt6DeleteStep
+        '
+        Me.bt6DeleteStep.Location = New System.Drawing.Point(375, 261)
+        Me.bt6DeleteStep.Name = "bt6DeleteStep"
+        Me.bt6DeleteStep.Size = New System.Drawing.Size(75, 23)
+        Me.bt6DeleteStep.TabIndex = 12
+        Me.bt6DeleteStep.Text = "Delete"
+        Me.bt6DeleteStep.UseVisualStyleBackColor = True
         '
         'FrmSteps
         '
@@ -529,6 +598,9 @@ Partial Class FrmSteps
         Me.pgSplitPDFSize.ResumeLayout(False)
         Me.gb5Pattern.ResumeLayout(False)
         Me.gb5Pattern.PerformLayout()
+        Me.pgBarcodeRecognition.ResumeLayout(False)
+        Me.gb6Sections.ResumeLayout(False)
+        CType(Me.dg6Sections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -574,4 +646,10 @@ Partial Class FrmSteps
     Friend WithEvents tx5Size As System.Windows.Forms.TextBox
     Friend WithEvents rbDrws As System.Windows.Forms.RadioButton
     Friend WithEvents rbDocs As System.Windows.Forms.RadioButton
+    Friend WithEvents pgBarcodeRecognition As System.Windows.Forms.TabPage
+    Friend WithEvents gb6Sections As System.Windows.Forms.GroupBox
+    Friend WithEvents dg6Sections As System.Windows.Forms.DataGridView
+    Friend WithEvents bt6NewStep As System.Windows.Forms.Button
+    Friend WithEvents bt6EditStep As System.Windows.Forms.Button
+    Friend WithEvents bt6DeleteStep As System.Windows.Forms.Button
 End Class

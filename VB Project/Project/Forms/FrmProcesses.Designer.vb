@@ -34,6 +34,8 @@ Partial Class FrmProcesses
         Me.Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbProcessInfo = New System.Windows.Forms.GroupBox()
+        Me.txDrwInput = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.txOutFolder = New System.Windows.Forms.TextBox()
         Me.txOutput = New System.Windows.Forms.Label()
         Me.txdocInput = New System.Windows.Forms.TextBox()
@@ -42,8 +44,6 @@ Partial Class FrmProcesses
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txDescription = New System.Windows.Forms.TextBox()
         Me.txNumber = New System.Windows.Forms.TextBox()
-        Me.txDrwInput = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MainPanel.SuspendLayout()
         Me.gbSteps.SuspendLayout()
         CType(Me.dgSteps, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,6 +175,22 @@ Partial Class FrmProcesses
         Me.gbProcessInfo.TabStop = False
         Me.gbProcessInfo.Text = "Process Info"
         '
+        'txDrwInput
+        '
+        Me.txDrwInput.Location = New System.Drawing.Point(80, 97)
+        Me.txDrwInput.Name = "txDrwInput"
+        Me.txDrwInput.Size = New System.Drawing.Size(395, 20)
+        Me.txDrwInput.TabIndex = 9
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 100)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Drw In Folder:"
+        '
         'txOutFolder
         '
         Me.txOutFolder.Location = New System.Drawing.Point(80, 123)
@@ -238,22 +254,6 @@ Partial Class FrmProcesses
         Me.txNumber.Name = "txNumber"
         Me.txNumber.Size = New System.Drawing.Size(95, 20)
         Me.txNumber.TabIndex = 0
-        '
-        'txDrwInput
-        '
-        Me.txDrwInput.Location = New System.Drawing.Point(80, 97)
-        Me.txDrwInput.Name = "txDrwInput"
-        Me.txDrwInput.Size = New System.Drawing.Size(395, 20)
-        Me.txDrwInput.TabIndex = 9
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 100)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 13)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Drw In Folder:"
         '
         'FrmProcesses
         '

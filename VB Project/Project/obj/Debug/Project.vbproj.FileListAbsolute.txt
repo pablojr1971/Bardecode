@@ -96,3 +96,5 @@ C:\Repository\Bardecode\VB Project\Project\'\zxing.pdb
 C:\Repository\Bardecode\VB Project\Project\'\zxing.xml
 C:\Repository\Bardecode\VB Project\Project\'\zxing.presentation.pdb
 C:\Repository\Bardecode\VB Project\Project\'\zxing.presentation.xml
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmProcess.resources
+C:\Repository\Bardecode\VB Project\Project\obj\Debug\Project.FrmSection.resources

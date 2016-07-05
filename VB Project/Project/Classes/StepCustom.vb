@@ -66,7 +66,8 @@ Public Class StepCustom
                 For Each File In subFolder.GetFiles("*.jpg")
                     img = Image.GetInstance(File.FullName)
                     img.SetAbsolutePosition(0, 0)
-                    document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
+                    img.ScaleToFit(New Rectangle(0, 0, ((img.Width / 200) * 72), ((img.Height / 200) * 72), 0))
+                    document.SetPageSize(New Rectangle(0, 0, ((img.Width / 200) * 72), ((img.Height / 200) * 72), 0))
                     document.NewPage()
                     writer.DirectContent.AddImage(img)
                     img = Nothing
@@ -75,7 +76,7 @@ Public Class StepCustom
                 fs = Nothing
                 writer = Nothing
                 document = Nothing
-                LogSub("File created - " + filename)
+                LogSub("File created - " + filename)                
             End If
             subFolder.Delete(True)
         Next
@@ -100,7 +101,8 @@ Public Class StepCustom
                 For Each File In subFolder.GetFiles("*.tif")
                     img = Image.GetInstance(File.FullName)
                     img.SetAbsolutePosition(0, 0)
-                    document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
+                    img.ScaleToFit(New Rectangle(0, 0, ((img.Width / 200) * 72), ((img.Height / 200) * 72), 0))
+                    document.SetPageSize(New Rectangle(0, 0, ((img.Width / 200) * 72), ((img.Height / 200) * 72), 0))
                     document.NewPage()
                     writer.DirectContent.AddImage(img)
                     img = Nothing
@@ -284,7 +286,7 @@ Public Class StepCustom
                     For index = 1 To rasterizer.PageCount
                         Dim a As Boolean = True
                         Dim size As Long = 0
-                        Test.Convert(rasterizer.GetPage(200, 200, index), Directory.GetCurrentDirectory() + String.Format("\Images\temp{0}.png", index))
+                        Utils.Convert(rasterizer.GetPage(200, 200, index), Directory.GetCurrentDirectory() + String.Format("\Images\temp{0}.png", index))
                         'With New MagickImage(rasterizer.GetPage(200, 200, index))
                         '    If index = 1 Then
                         '        size = .Height + .Width
@@ -524,7 +526,7 @@ Public Class StepCustom
                 LogSub("Separating Drawings...")
                 Dim drawingdirInfo As DirectoryInfo = New DirectoryInfo(Path.Combine(drwFolder.FullName, subfolder.Name + "D"))
                 AuditDrawingAmount = drawingdirInfo.GetFiles("*.jpg").Count()
-                AuditDrawingCount = SeparateImages(drawingdirInfo)
+                AuditDrawingCount = SeparateImages(drawingdirInfo, True)
                 outputFolder = Path.Combine(CustomProperties.Output, subfolder.Name)
                 Dim subfile As FileInfo = New FileInfo(Path.Combine(subfolder.FullName, subfolder.Name + ".pdf"))
                 'Dim ImageList As List(Of String) = subfolder.GetFiles("*.tif").ToList().OrderBy(Function(p) p.Name)
@@ -577,7 +579,13 @@ Public Class StepCustom
 
                         doc = New iTextSharp.text.Document()
                         If File.Exists(Path.Combine(outputFolder, element.Key.Value + filename)) Then
-                            Throw New Exception("Duplicated section in file " + element.Key.Value)
+                            For Each errorelement In barcodeList
+                                LogSub(errorelement.Key.Key.ToString() + " " + errorelement.Key.Value)
+                                For Each errorsection In errorelement.Value
+                                    LogSub("  - " + errorsection.Key.ToString() + " " + errorsection.Value)
+                                Next
+                            Next
+                            Throw New Exception("Duplicated section in file " + element.Key.Value + " Page " + subelement.Key.ToString())
                         End If
                         writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(outputFolder, element.Key.Value + filename), FileMode.Create))
                         doc.Open()
@@ -700,6 +708,9 @@ Public Class StepCustom
                     subfile.Delete()
                 End If
             Catch Ex As Exception
+                reader.Close()
+                reader.Dispose()
+
                 If TypeOf (Ex) Is System.IO.FileNotFoundException Then
                     LogSub("Drawing " + Path.Combine(subfolder.Name, drawpdfname) + " not found!")
                     Throw Ex
@@ -782,10 +793,15 @@ Public Class StepCustom
         End If
     End Function
 
-    Public Function SeparateImages(Folder As DirectoryInfo) As Integer
+    Public Function SeparateImages(Folder As DirectoryInfo, CreatePdf As Boolean) As Integer
         SeparateImages = 0
         Dim lastbarcodeFolder As String = Nothing
         Dim barcode As String = Nothing
+
+        If Not Folder.Exists Then
+            Exit Function
+        End If
+
         Dim FolderFiles As List(Of FileInfo) = (From file In Folder.GetFiles()
                                                 Where file.Name.EndsWith(".jpg") Or file.Name.EndsWith(".tif")
                                                 Select file).ToList()
@@ -815,7 +831,9 @@ Public Class StepCustom
         Next
 
         Folder.Refresh()
-        MergeDrawings(Folder)
+        If CreatePdf Then
+            MergeDrawings(Folder)
+        End If
     End Function
 
     Public Function getImageBarcode(Img As Bitmap) As String
@@ -853,12 +871,14 @@ Public Class StepCustom
                 For Each File In subFolder.GetFiles()
                     img = iTextSharp.text.Image.GetInstance(File.FullName)
                     img.SetAbsolutePosition(0, 0)
-                    document.SetPageSize(New iTextSharp.text.Rectangle(0, 0, img.Width, img.Height, 0))
+                    img.ScaleToFit(New Rectangle(0, 0, ((img.Width / 200) * 72), ((img.Height / 200) * 72), 0))
+                    document.SetPageSize(New Rectangle(0, 0, ((img.Width / 200) * 72), ((img.Height / 200) * 72), 0))
                     document.NewPage()
                     writer.DirectContent.AddImage(img)
                     img = Nothing
                 Next
                 document.Close()
+                writer.Close()
                 fs = Nothing
                 writer = Nothing
                 document = Nothing
@@ -906,7 +926,7 @@ Public Class StepCustom
 
         For Each boxfolder In docFolder.GetDirectories()
 
-            SeparateImages(New DirectoryInfo(Path.Combine(drwFolder.FullName, boxfolder.Name + "D")))
+            SeparateImages(New DirectoryInfo(Path.Combine(drwFolder.FullName, boxfolder.Name + "D")), True)
 
             For Each InDocument In boxfolder.GetFiles("*.pdf")
                 If OCRProcess Then
@@ -1143,7 +1163,7 @@ Public Class StepCustom
                 LogSub("Separating Drawings...")
                 Dim drawingdirInfo As DirectoryInfo = New DirectoryInfo(Path.Combine(drwFolder.FullName, subfolder.Name + "D"))
                 AuditDrawingAmount = drawingdirInfo.GetFiles("*.jpg").Count()
-                AuditDrawingCount = SeparateImages(drawingdirInfo)
+                AuditDrawingCount = SeparateImages(drawingdirInfo, False)
                 outputFolder = Path.Combine(CustomProperties.Output, subfolder.Name)
 
                 LogSub(subfolder.Name + " Reading Barcodes...")
@@ -1197,15 +1217,16 @@ Public Class StepCustom
 
                         doc = New iTextSharp.text.Document()
                         If File.Exists(Path.Combine(outputFolder, element.Key.Value + filename)) Then
-                            Throw New Exception("Duplicated section in file " + element.Key.Value)
+                            Throw New Exception("Duplicated section in file " + element.Key.Value + " Page " + subelement.Key.ToString())
                         End If
                         writer = PdfWriter.GetInstance(doc, New FileStream(Path.Combine(outputFolder, element.Key.Value + filename), FileMode.Create))
                         doc.Open()
 
-                        If subelement.Value = firstsectionvalue Then
+                        If subelement.Value = firstsectionvalue Then                         
                             tempImg = iTextSharp.text.Image.GetInstance(imagelist.ElementAt(element.Key.Key))
                             tempImg.SetAbsolutePosition(0, 0)
-                            doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                            tempImg.ScaleToFit(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                            doc.SetPageSize(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
                             doc.NewPage()
                             writer.DirectContent.AddImage(tempImg)
                             tempImg = Nothing
@@ -1224,9 +1245,10 @@ Public Class StepCustom
                                 Dim drawfolder As DirectoryInfo = New DirectoryInfo(Path.Combine(drwFolder.FullName, Path.Combine(subfolder.Name + "D", element.Value.Single(Function(p) p.Key = localindex).Value.Replace("SP", "SD"))))
                                 DrawingCount += drawfolder.GetFiles().Count()
                                 For Each subfile In drawfolder.GetFiles()
-                                    tempImg = Image.GetInstance(subfile.FullName)
+                                    tempImg = iTextSharp.text.Image.GetInstance(subfile.FullName)
                                     tempImg.SetAbsolutePosition(0, 0)
-                                    doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                                    tempImg.ScaleToFit(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                                    doc.SetPageSize(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
                                     doc.NewPage()
                                     writer.DirectContent.AddImage(tempImg)
                                     tempImg = Nothing
@@ -1239,7 +1261,8 @@ Public Class StepCustom
                             Else
                                 tempImg = iTextSharp.text.Image.GetInstance(imagelist.ElementAt(index))
                                 tempImg.SetAbsolutePosition(0, 0)
-                                doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                                tempImg.ScaleToFit(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                                doc.SetPageSize(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
                                 doc.NewPage()
                                 writer.DirectContent.AddImage(tempImg)
                                 tempImg = Nothing
@@ -1251,7 +1274,8 @@ Public Class StepCustom
                         If (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).OrderBy(Function(p) p.Value).ToList.IndexOf(subelement)) = (element.Value.Where(Function(p) p.Value.StartsWith("EDS")).ToList.Count - 1) Then
                             tempImg = iTextSharp.text.Image.GetInstance(imagelist.ElementAt(element.Value.First(Function(p) p.Value = "EDFE").Key))
                             tempImg.SetAbsolutePosition(0, 0)
-                            doc.SetPageSize(New iTextSharp.text.Rectangle(0, 0, tempImg.Width, tempImg.Height, 0))
+                            tempImg.ScaleToFit(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                            doc.SetPageSize(New Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
                             doc.NewPage()
                             writer.DirectContent.AddImage(tempImg)
                             tempImg = Nothing
@@ -1277,7 +1301,7 @@ Public Class StepCustom
                                                                    "          DRAWINGCOUNT = " + DrawingCount.ToString() + _
                                                                    "   WHERE JOBNO = 2017 " + _
                                                                    "     AND BARCODE = '" + element.Key.Value + "'", connection)
-                        UpdateLogList.Add(String.Format("Updated ScanData barcode {0} - Rows Affected = ", element.Key.Value) + command.ExecuteNonQuery().ToString())
+                        UpdateLogList.Add(String.Format("Updated ScanData {0} - Rows Affected = ", element.Key.Value) + command.ExecuteNonQuery().ToString())
 
                         connection.Close()
                         command.Dispose()
@@ -1380,4 +1404,253 @@ Public Class StepCustom
             Barcode = Nothing
         Next
     End Function
+
+    Private Sub WolverhamptonConvertPlans(LogSub As IStep.LogSubDelegate)
+        Dim mainFolder As DirectoryInfo = New DirectoryInfo(CustomProperties.Input1)
+        Dim barcode As String = Nothing
+
+        Dim fs As FileStream = Nothing
+        Dim document As iTextSharp.text.Document = Nothing
+        Dim writer As iTextSharp.text.pdf.PdfWriter = Nothing
+        Dim Img As iTextSharp.text.Image = Nothing
+
+        Dim connection As SqlConnection = New SqlConnection(FrmMain.ScanDataStringConnection)
+        connection.Open()
+
+        For Each box In mainFolder.GetDirectories()
+            For Each folder In box.GetDirectories()
+                Dim A4 As Integer = 0
+                Dim A3 As Integer = 0
+                Dim A2 As Integer = 0
+                Dim A1 As Integer = 0
+                Dim A0 As Integer = 0
+
+                Dim pagecount As Integer = 0
+                Dim drawingcount As Integer = 0
+
+                Dim StrOut As String = Nothing
+
+                barcode = folder.Name.Substring(0, 10)
+
+                document = New Document()
+                fs = New FileStream(Path.Combine(box.FullName, folder.Name.Substring(0, 10)) + ".pdf", FileMode.Create, FileAccess.Write, FileShare.None)
+                writer = PdfWriter.GetInstance(document, fs)
+                document.Open()
+
+                For Each Image In folder.GetFiles()
+                    Img = iTextSharp.text.Image.GetInstance(Image.FullName)
+                    Img.SetAbsolutePosition(0, 0)
+                    Img.ScaleToFit(New Rectangle(0, 0, ((Img.Width / 200) * 72), ((Img.Height / 200) * 72), 0))
+                    document.SetPageSize(New Rectangle(0, 0, ((Img.Width / 200) * 72), ((Img.Height / 200) * 72), 0))
+                    document.NewPage()
+
+                    writer.DirectContent.AddImage(Img)
+                    Select Case Utils.PageSize(Img.Height, Img.Width, False)
+                        Case Project.PageSize.A0 : A0 += 1
+                        Case Project.PageSize.A1 : A1 += 1
+                        Case Project.PageSize.A2 : A2 += 1
+                        Case Project.PageSize.A3 : A3 += 1
+                        Case Project.PageSize.A4 : A4 += 1
+                        Case Else : A4 += 1
+                    End Select
+
+                    Img = Nothing
+                    Image.Delete()
+                Next
+                document.Close()
+                fs = Nothing
+                writer = Nothing
+                document = Nothing
+                folder.Delete(True)
+
+                StrOut = String.Format("{0}; {1}; {2}; {3}; {4}", A0, A1, A2, A3, A4)
+                pagecount = A3 + A4
+                drawingcount = A0 + A1 + A2
+
+                If (pagecount + drawingcount) > 0 Then
+
+                    Dim command As SqlCommand = New SqlCommand("   UPDATE SCANDATA " + _
+                                                               "      SET FIELD10 = '" + StrOut + "'," + _
+                                                               "          PAGECOUNT = " + pagecount.ToString() + "," + _
+                                                               "          DRAWINGCOUNT = " + drawingcount.ToString() + _
+                                                               "   WHERE JOBNO = 2001 " + _
+                                                               "     AND BARCODE = '" + barcode + "'", connection)
+                    LogSub(String.Format("Updated ScanData barcode {0} - Rows Affected = ", folder.Name) + command.ExecuteNonQuery().ToString())
+                    command.Dispose()
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub ProcessWolverhampton2(LogSub As IStep.LogSubDelegate)
+        Dim docFolder As DirectoryInfo = New DirectoryInfo(CustomProperties.Input1)
+        Dim drwFolder As DirectoryInfo = New DirectoryInfo(CustomProperties.Input2)
+
+        Dim docReader As PdfReader = Nothing
+        Dim rasterizer As GhostscriptRasterizer = Nothing
+
+        Dim Barcodelist As List(Of Dictionary(Of Integer, String)) = New List(Of Dictionary(Of Integer, String))
+        Dim ImageList As List(Of String) = New List(Of String)
+
+        Dim encoderInfo As ImageCodecInfo = Nothing
+        Dim encoderParams As EncoderParameters = New EncoderParameters(2)
+        encoderParams.Param(1) = New EncoderParameter(Encoder.SaveFlag, CLng(EncoderValue.MultiFrame))
+
+        Dim tess As ProcessStartInfo = New ProcessStartInfo(Directory.GetCurrentDirectory() + "\tesseract\tesseract.exe")
+        tess.WindowStyle = ProcessWindowStyle.Hidden
+
+        Dim pdfs As List(Of String) = New List(Of String)
+
+        Dim barcode As String = Nothing
+
+        Dim doc As Document = Nothing
+        Dim writer As PdfSmartCopy = Nothing
+        Dim tempReader As PdfReader = Nothing
+
+        Dim OCRProcess As Boolean = True
+        Dim doOcr As Boolean = True
+
+        Dim drawpdfname As String = Nothing
+        Dim CopiedPage As PdfImportedPage = Nothing
+
+        Dim tempImg As iTextSharp.text.Image = Nothing
+
+        Dim SectionCount As Integer = 0
+        Dim content As PdfContentByte = Nothing
+        Dim newRect As Rectangle = Nothing
+        Dim importedPage As PdfImportedPage = Nothing
+
+        Dim outdir As String = Directory.GetCurrentDirectory() + "\_temp"
+        If Directory.Exists(outdir) Then
+            Directory.Delete(outdir, True)
+        End If
+        Directory.CreateDirectory(outdir)
+
+        Try
+            For Each boxfolder In docFolder.GetDirectories()
+                SeparateImages(New DirectoryInfo(Path.Combine(drwFolder.FullName, boxfolder.Name + "D")), True)
+
+                ImageList = (From image In boxfolder.GetFiles("*.tif").OrderBy(Function(p) p.Name)
+                             Select image.FullName).ToList()
+
+                For index = 0 To ImageList.Count - 1
+                    Using Img As MagickImage = New MagickImage(ImageList(index))
+                        If Img.TotalColors > 50 Then
+                            encoderInfo = ImageCodecInfo.GetImageEncoders().First(Function(i) i.MimeType = "image/jpeg")
+                            encoderParams.Param(0) = New EncoderParameter(Encoder.Compression, CLng(EncoderValue.CompressionLZW))
+                        Else
+                            encoderInfo = ImageCodecInfo.GetImageEncoders().First(Function(i) i.MimeType = "image/tiff")
+                            encoderParams.Param(0) = New EncoderParameter(Encoder.Compression, CLng(EncoderValue.CompressionCCITT4))
+                        End If
+
+                        With Img.ToBitmap()
+                            .SetResolution(200, 200)
+                            .Save(String.Format(outdir + "\page{0}.tif", index), encoderInfo, encoderParams)
+                        End With
+
+                        tess.Arguments = String.Format("""" + outdir + "\page{0}.tif"" """ + outdir + "\page{0}"" ""pdf""", index)
+                        With System.Diagnostics.Process.Start(tess)
+                            .PriorityClass = ProcessPriorityClass.Normal
+                            .Dispose()
+                        End With
+
+                        pdfs.Add(String.Format(outdir + "\page{0}.pdf", index))
+                        barcode = getImageBarcode(Img.ToBitmap())
+
+                        If Not IsNothing(barcode) Then
+                            If New Regex("^([W][V][C])(\d{7})$").Match(barcode).Success Then
+                                Barcodelist.Add(New Dictionary(Of Integer, String))
+                                Barcodelist.Last().Add(index + 1, barcode)
+                            Else
+                                If Barcodelist.Count > 0 Then
+                                    Barcodelist.Last().Add(index + 1, barcode)
+                                End If
+                            End If
+                        End If
+
+                    End Using
+                    File.Delete(ImageList(index))
+                Next
+
+                While System.Diagnostics.Process.GetProcessesByName("Tesseract").Count > 0
+                    System.Threading.Thread.Sleep(1)
+                End While
+                Utils.MergePdfs(pdfs, Path.Combine(boxfolder.FullName, "NewOCRED.pdf"), True)
+
+                Dim currentFolder As String = Nothing
+                For Each subfile In Barcodelist
+                    currentFolder = Path.Combine(boxfolder.FullName, subfile.First().Value)
+                    If Not Directory.Exists(currentFolder) Then
+                        Directory.CreateDirectory(currentFolder)
+                    End If
+
+                    Dim placeholders As Integer() = (From placeholder In subfile
+                                                     Where New Regex("^([S][P]|[S][D])(\d{6})$").Match(placeholder.Value).Success
+                                                     Select placeholder.Key).ToArray()
+
+                    Dim reader As PdfReader = Nothing
+                    reader = New PdfReader(Path.Combine(boxfolder.FullName, "NewOCRED.pdf"))
+
+                    Dim sections = subfile.Where(Function(p) New Regex("^([R][N][D])|(([W][V][C])(\d{7}))$").Match(p.Value).Success)
+                    Dim lastpage As Integer = 0
+
+                    For sectionindex = 0 To (sections.Count - 1)
+                        If sections.Count > 1 Then
+                            If (sectionindex = 0) And ((sections.ElementAt(0).Key + 1) = (sections.ElementAt(1).Key)) Then
+                                Continue For
+                            End If
+                        End If
+                        doc = New iTextSharp.text.Document()
+                        writer = New PdfSmartCopy(doc, New FileStream(Path.Combine(currentFolder, subfile.First().Value) + String.Format("_{0}.pdf", (sectionindex + 1).ToString("000")), FileMode.Create))
+                        doc.Open()
+
+                        If sections.Count > 1 Then
+                            If (sectionindex = 1) And ((sections.ElementAt(0).Key + 1) = (sections.ElementAt(1).Key)) Then
+                                CopiedPage = writer.GetImportedPage(reader, subfile.First().Key)
+                                writer.AddPage(CopiedPage)
+                                CopiedPage = Nothing
+                            End If
+                        End If
+
+                        If sectionindex = (sections.Count - 1) Then
+                            lastpage = subfile.Single(Function(p) New Regex("^([E][D][F][E])$").Match(p.Value).Success).Key ' file end
+                        Else
+                            lastpage = sections.ElementAt(sectionindex + 1).Key - 1
+                        End If
+
+                        For index = sections.ElementAt(sectionindex).Key To lastpage
+                            If placeholders.Contains(index) Then
+                                Dim localindex As Integer = index
+                                drawpdfname = Path.Combine(Path.Combine(drwFolder.FullName, boxfolder.Name + "D"), (subfile.Single(Function(p) p.Key = localindex).Value + ".pdf"))
+                                If File.Exists(drawpdfname) Then
+                                    Dim drawpdfreader As PdfReader = New PdfReader(drawpdfname)
+                                    writer.AddDocument(drawpdfreader)
+                                    LogSub(String.Format("Added {0} to {1} on Page {2}", drawpdfreader.NumberOfPages, (subfile.First().Value + ".pdf"), (localindex).ToString()))
+                                    drawpdfreader.Close()
+                                    drawpdfreader.Dispose()
+                                    My.Computer.FileSystem.DeleteFile(Path.Combine(Path.Combine(drwFolder.FullName, boxfolder.Name + "D"), drawpdfname))
+                                Else
+                                    LogSub(" ---- WARNING ----")
+                                    LogSub("file " + subfile.Single(Function(p) p.Key = localindex).Value + ".pdf" + " Missing, Must be a CD")
+                                    LogSub("")
+                                End If
+                            Else
+                                CopiedPage = writer.GetImportedPage(reader, index)
+                                writer.AddPage(CopiedPage)
+                                CopiedPage = Nothing
+                            End If
+                        Next
+                        doc.Close()
+                        doc.Dispose()
+                        writer.Close()
+                    Next
+                    reader.Close()
+                    reader.Dispose()
+                Next
+                File.Delete(Path.Combine(boxfolder.FullName, "NewOCRED.pdf"))
+            Next
+        Catch e As Exception
+            LogSub(e.Message)
+        End Try
+    End Sub
 End Class

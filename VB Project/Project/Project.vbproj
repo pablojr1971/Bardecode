@@ -140,9 +140,10 @@
   <ItemGroup>
     <Compile Include="Classes\LogManager.vb" />
     <Compile Include="Classes\OCRParser.vb" />
+    <Compile Include="Classes\PropertiesBarcodeRecognition.vb" />
     <Compile Include="Classes\PropertiesSplitPDFSize.vb" />
     <Compile Include="Classes\StepSplitPDFSize.vb" />
-    <Compile Include="Classes\test.vb" />
+    <Compile Include="Classes\StepBarcodeRecognition.vb" />
     <Compile Include="Classes\Utils.vb" />
     <Compile Include="Classes\Process.vb" />
     <Compile Include="Classes\PropertiesBardecode.vb" />
@@ -170,6 +171,12 @@
     <Compile Include="Forms\FrmCopyFiles.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FrmProcess.Designer.vb">
+      <DependentUpon>FrmProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProcess.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmProcesses.Designer.vb">
       <DependentUpon>FrmProcesses.vb</DependentUpon>
     </Compile>
@@ -180,6 +187,12 @@
       <DependentUpon>FrmProcessesSearch.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmProcessesSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSection.Designer.vb">
+      <DependentUpon>FrmSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSection.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmSteps.Designer.vb">
@@ -236,11 +249,17 @@
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProcess.resx">
+      <DependentUpon>FrmProcess.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProcesses.resx">
       <DependentUpon>FrmProcesses.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProcessesSearch.resx">
       <DependentUpon>FrmProcessesSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSection.resx">
+      <DependentUpon>FrmSection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSteps.resx">
       <DependentUpon>FrmSteps.vb</DependentUpon>

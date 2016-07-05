@@ -5,4 +5,5 @@
     Custom = 3
     SplitPDFSize = 4
     CSVIndexingProperties = 5
+    BardecodeRecognition = 6
 End Enum

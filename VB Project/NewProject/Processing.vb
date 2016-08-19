@@ -83,14 +83,12 @@ Public Class Processing
 
     Public Sub SaveTempImage(Img As MagickImage, Index As Integer)
         If ParamsObj.BWA4 Then
+            '   
+
             '
 
-
-
-
+            '
         End If
-
-
 
         ' check the parameters and save the image according BW or not
     End Sub
@@ -104,7 +102,8 @@ Public Class Processing
         ' if it doesn't match the file start regex, see if it match any of the section barcodes 
         ' if it does, place it as the lastElement on the sections property of the current file
         ' match the every section property should contain a fileEnd as the last parameter
-        ' after have read all the barcodes, should
+        ' after have read all the barcodes, should put everything in a variable and return a list
+
     End Sub
 
     Public Sub ConsistSectionsAndFiles()
@@ -116,8 +115,6 @@ Public Class Processing
 
     Public Sub MountPdfFiles()
         ' mount the pdffiles
-
-
     End Sub
 
     Private Sub CopyBoxToProcessingFolder()
@@ -198,5 +195,4 @@ Public Class Processing
             subFolder.Delete(True)
         Next
     End Sub
-
 End Class

@@ -88,6 +88,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarcodeProcessor.vb" />
+    <Compile Include="DocumentNode.vb" />
     <Compile Include="FrmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +116,7 @@
     <Compile Include="Process.vb" />
     <Compile Include="Processing.vb" />
     <Compile Include="ProcessParams.vb" />
+    <Compile Include="Section.vb" />
     <Compile Include="SectionParams.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +140,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

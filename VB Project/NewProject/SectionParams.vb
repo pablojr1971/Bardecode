@@ -1,5 +1,10 @@
-﻿Public Class SectionParams
-    Property SectionRegex As String
+﻿Imports System.Text.RegularExpressions
+
+Public Class SectionParams
+    Property Id As Integer
+    Property Process As Integer
+    Property Name As String
+    Property Regex As Regex
     Property outName As String
     Property FolderName As String
     Property required As Boolean

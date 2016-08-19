@@ -1,0 +1,13 @@
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\bin\Debug\CSVSystem.exe.config
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\bin\Debug\CSVSystem.exe
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\bin\Debug\CSVSystem.pdb
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\bin\Debug\CSVSystem.xml
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\obj\Debug\CSVSystem.Resources.resources
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\obj\Debug\CSVSystem.vbproj.GenerateResource.Cache
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\obj\Debug\CSVSystem.exe
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\obj\Debug\CSVSystem.xml
+C:\Processing VB\CSVSystem\CSVSystem\CSVSystem\obj\Debug\CSVSystem.pdb
+C:\Repository\Bardecode\CSVSystem\CSVSystem\bin\Debug\CSVSystem.exe.config
+C:\Repository\Bardecode\CSVSystem\CSVSystem\obj\Debug\CSVSystem.exe
+C:\Repository\Bardecode\CSVSystem\CSVSystem\obj\Debug\CSVSystem.xml
+C:\Repository\Bardecode\CSVSystem\CSVSystem\obj\Debug\CSVSystem.pdb

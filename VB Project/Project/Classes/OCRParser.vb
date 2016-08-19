@@ -15,7 +15,7 @@ Imports HtmlAgilityPack
 
 ' When we run tesseract, the output is a String containing the HTML data
 ' In the common way you will need to save the String as a HTML file and then call the method
-' In this class you can call the ParseHOCR method passing only a string containing 
+' In this class you can call the ParseHOCR method with a string containing 
 ' the HTML data which is the tesseract output.
 Public Class OCRParser
     Shared doc As HtmlDocument

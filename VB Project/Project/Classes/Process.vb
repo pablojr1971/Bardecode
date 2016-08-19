@@ -2,8 +2,6 @@
 Imports System.IO
 Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
-' this class will contain a collection of steps
-' and then a method run, who will iterate the steps and  run each of them
 
 Public Class Process
     Private ctx As VBProjectContext = New VBProjectContext()

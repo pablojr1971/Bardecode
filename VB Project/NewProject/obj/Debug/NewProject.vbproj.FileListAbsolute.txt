@@ -1,0 +1,4 @@
+C:\Repository\Bardecode\VB Project\NewProject\obj\Debug\NewProject.vbprojResolveAssemblyReference.cache
+C:\Repository\Bardecode\VB Project\NewProject\obj\Debug\NewProject.FrmMain.resources
+C:\Repository\Bardecode\VB Project\NewProject\obj\Debug\NewProject.Resources.resources
+C:\Repository\Bardecode\VB Project\NewProject\obj\Debug\NewProject.vbproj.GenerateResource.Cache

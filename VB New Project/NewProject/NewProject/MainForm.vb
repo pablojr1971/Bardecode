@@ -45,6 +45,7 @@ Public Class MainForm
             "           <SFolderName></SFolderName>      " + vbCrLf + _
             "           <SOncePerFile></SOncePerFile>    " + vbCrLf + _
             "           <SRequired></SRequired>          " + vbCrLf + _
+            "           <SDocPerPage></SDocPerPage>      " + vbCrLf + _
             "       </Section>	                         " + vbCrLf + _
             "   </SectionList>                           " + vbCrLf + _
             "</Process>                                  "
@@ -85,6 +86,7 @@ Public Class MainForm
                 .FolderName = section.SelectSingleNode("SFolderName").InnerText
                 .OncePerFile = CBool(section.SelectSingleNode("SOncePerFile").InnerText)
                 .Required = CBool(section.SelectSingleNode("SRequired").InnerText)
+                .DocPerPage = CBool(section.SelectSingleNode("SDocPerPage").InnerText)
             End With
         Next
 

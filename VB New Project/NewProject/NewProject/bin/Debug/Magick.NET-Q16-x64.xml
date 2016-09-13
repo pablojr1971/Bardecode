@@ -376,6 +376,25 @@
              Class that represents a CMYK color.
             </summary>
         </member>
+        <member name="M:ImageMagick.ColorCMYK.#ctor(ImageMagick.Percentage,ImageMagick.Percentage,ImageMagick.Percentage,ImageMagick.Percentage)">
+            <summary>
+             Initializes a new instance of the ColorCMYK class.
+            </summary>
+            <param name="cyan">Cyan component value of this color.</param>
+            <param name="magenta">Magenta component value of this color.</param>
+            <param name="yellow">Yellow component value of this color.</param>
+            <param name="key">Key (black) component value of this color.</param>
+        </member>
+        <member name="M:ImageMagick.ColorCMYK.#ctor(ImageMagick.Percentage,ImageMagick.Percentage,ImageMagick.Percentage,ImageMagick.Percentage,ImageMagick.Percentage)">
+            <summary>
+             Initializes a new instance of the ColorCMYK class.
+            </summary>
+            <param name="cyan">Cyan component value of this color.</param>
+            <param name="magenta">Magenta component value of this color.</param>
+            <param name="yellow">Yellow component value of this color.</param>
+            <param name="key">Key (black) component value of this color.</param>
+            <param name="alpha">Key (black) component value of this color.</param>
+        </member>
         <member name="M:ImageMagick.ColorCMYK.#ctor(System.UInt16,System.UInt16,System.UInt16,System.UInt16)">
             <summary>
              Initializes a new instance of the ColorCMYK class.
@@ -394,6 +413,14 @@
             <param name="yellow">Yellow component value of this color.</param>
             <param name="key">Key (black) component value of this color.</param>
             <param name="alpha">Key (black) component value of this color.</param>
+        </member>
+        <member name="M:ImageMagick.ColorCMYK.#ctor(System.String)">
+            <summary>
+             Initializes a new instance of the MagickColor class using the specified CMYK hex string or
+             name of the color (http://www.imagemagick.org/script/color.php).
+             For example: #F000, #FF000000, #FFFF000000000000
+            </summary>
+            <param name="color">The RGBA/CMYK hex string or name of the color.</param>
         </member>
         <member name="P:ImageMagick.ColorCMYK.A">
             <summary>
@@ -1320,9 +1347,9 @@
         </member>
         <member name="M:ImageMagick.Defines.DefineCreator.#ctor(ImageMagick.MagickFormat)">
             <summary>
-            Initializes a new instance of the DefineCreator.
+            Initializes a new instance of the <see cref="T:ImageMagick.Defines.DefineCreator"/> class.
             </summary>
-            <param name="format"></param>
+            <param name="format">The format where the defines are for.</param>
         </member>
         <member name="M:ImageMagick.Defines.DefineCreator.CreateDefine(System.String,System.Boolean)">
             <summary>
@@ -1364,9 +1391,14 @@
             <param name="value">The value of the define.</param>
             <returns></returns>
         </member>
+        <member name="P:ImageMagick.Defines.DefineCreator.Format">
+            <summary>
+             The format where the defines are for.
+            </summary>
+        </member>
         <member name="P:ImageMagick.Defines.DefineCreator.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.Defines.DctMethod">
@@ -1451,7 +1483,7 @@
         </member>
         <member name="M:ImageMagick.DdsWriteDefines.#ctor">
             <summary>
-             Initializes a new instance of the DdsWriteDefines class.
+             Initializes a new instance of the <see cref="T:ImageMagick.DdsWriteDefines"/> class.
             </summary>
         </member>
         <member name="P:ImageMagick.DdsWriteDefines.ClusterFit">
@@ -1476,7 +1508,7 @@
         </member>
         <member name="P:ImageMagick.DdsWriteDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.IDefine">
@@ -1506,7 +1538,17 @@
         </member>
         <member name="P:ImageMagick.IDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
+            </summary>
+        </member>
+        <member name="T:ImageMagick.IWriteDefines">
+            <summary>
+             Interface for defines that are used when writing an image.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.IWriteDefines.Format">
+            <summary>
+            The format where the defines are for.
             </summary>
         </member>
         <member name="T:ImageMagick.IReadDefines">
@@ -1557,7 +1599,7 @@
         </member>
         <member name="P:ImageMagick.JpegReadDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.JpegWriteDefines">
@@ -1567,7 +1609,7 @@
         </member>
         <member name="M:ImageMagick.JpegWriteDefines.#ctor">
             <summary>
-             Initializes a new instance of the JpegWriteDefines class.
+             Initializes a new instance of the <see cref="T:ImageMagick.JpegWriteDefines"/> class.
             </summary>
         </member>
         <member name="P:ImageMagick.JpegWriteDefines.DctMethod">
@@ -1602,7 +1644,7 @@
         </member>
         <member name="P:ImageMagick.JpegWriteDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.MagickDefine">
@@ -1662,7 +1704,7 @@
         </member>
         <member name="P:ImageMagick.PdfReadDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.PngReadDefines">
@@ -1697,7 +1739,67 @@
         </member>
         <member name="P:ImageMagick.PngReadDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
+            </summary>
+        </member>
+        <member name="T:ImageMagick.PsdAdditionalInfo">
+            <summary>
+             Specifies which additional info should be written to the output file.
+            </summary>
+        </member>
+        <member name="F:ImageMagick.PsdAdditionalInfo.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ImageMagick.PsdAdditionalInfo.All">
+            <summary>
+            All
+            </summary>
+        </member>
+        <member name="F:ImageMagick.PsdAdditionalInfo.Selective">
+            <summary>
+            Only select the info that does not use geometry.
+            </summary>
+        </member>
+        <member name="T:ImageMagick.PsdReadDefines">
+            <summary>
+             Class for defines that are used when a psd image is read.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.PsdReadDefines.#ctor">
+            <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.PsdReadDefines"/> class.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.PsdReadDefines.AlphaUnblend">
+            <summary>
+             Specifies if alpha unblending should be enabled or disabled (psd:alpha-unblend).
+            </summary>
+        </member>
+        <member name="P:ImageMagick.PsdReadDefines.Defines">
+            <summary>
+             The defines that should be set as a define on an image.
+            </summary>
+        </member>
+        <member name="T:ImageMagick.PsdWriteDefines">
+            <summary>
+             Class for defines that are used when a psd image is written.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.PsdWriteDefines.#ctor">
+            <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.PsdWriteDefines"/> class.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.PsdWriteDefines.AdditionalInfo">
+            <summary>
+             Specifies which additional info should be written to the output file.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.PsdWriteDefines.Defines">
+            <summary>
+             The defines that should be set as a define on an image.
             </summary>
         </member>
         <member name="T:ImageMagick.TiffReadDefines">
@@ -1707,7 +1809,7 @@
         </member>
         <member name="M:ImageMagick.TiffReadDefines.#ctor">
             <summary>
-             Initializes a new instance of the TiffReadDefines class.
+             Initializes a new instance of the <see cref="T:ImageMagick.TiffReadDefines"/> class.
             </summary>
         </member>
         <member name="P:ImageMagick.TiffReadDefines.IgnoreExifPoperties">
@@ -1715,9 +1817,14 @@
              Specifies if the exif profile should be ignored (tiff:exif-properties).
             </summary>
         </member>
+        <member name="P:ImageMagick.TiffReadDefines.IgnoreTags">
+            <summary>
+            Specifies the tiff tags that should be ignored (tiff:ignore-tags).
+            </summary>
+        </member>
         <member name="P:ImageMagick.TiffReadDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set as a define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.TiffWriteDefines">
@@ -1727,7 +1834,7 @@
         </member>
         <member name="M:ImageMagick.TiffWriteDefines.#ctor">
             <summary>
-             Initializes a new instance of the TiffWriteDefines class.
+             Initializes a new instance of the <see cref="T:ImageMagick.TiffWriteDefines"/> class.
             </summary>
         </member>
         <member name="P:ImageMagick.TiffWriteDefines.Alpha">
@@ -1757,7 +1864,7 @@
         </member>
         <member name="P:ImageMagick.TiffWriteDefines.Defines">
             <summary>
-             The defines that should be set as an define on an image
+             The defines that should be set a an define on an image
             </summary>
         </member>
         <member name="T:ImageMagick.DrawableAffine">
@@ -10277,6 +10384,13 @@
             <param name="width">The width of the area to clone</param>
             <param name="height">The height of the area to clone</param>
         </member>
+        <member name="M:ImageMagick.MagickImage.Clut(ImageMagick.MagickImage)">
+            <summary>
+             Apply a color lookup table (CLUT) to the image.
+            </summary>
+            <param name="image">The image to use.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
         <member name="M:ImageMagick.MagickImage.Clut(ImageMagick.MagickImage,ImageMagick.PixelInterpolateMethod)">
             <summary>
              Apply a color lookup table (CLUT) to the image.
@@ -10382,6 +10496,13 @@
              Compares the current instance with another image. Only the size of the image is compared.
             </summary>
             <param name="other">The object to compare this image with.</param>
+        </member>
+        <member name="M:ImageMagick.MagickImage.Composite(ImageMagick.MagickImage)">
+            <summary>
+             Compose an image onto another at specified offset using the 'In' operator.
+            </summary>
+            <param name="image">The image to composite with this image.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
         </member>
         <member name="M:ImageMagick.MagickImage.Composite(ImageMagick.MagickImage,ImageMagick.CompositeOperator)">
             <summary>
@@ -10489,6 +10610,13 @@
              Determines the connected-components of the image
             </summary>
             <param name="connectivity">How many neighbors to visit, choose from 4 or 8.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
+        <member name="M:ImageMagick.MagickImage.ConnectedComponents(ImageMagick.ConnectedComponentsSettings)">
+            <summary>
+             Determines the connected-components of the image
+            </summary>
+            <param name="settings">The settings for this operation.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
         <member name="M:ImageMagick.MagickImage.Contrast">
@@ -13037,11 +13165,27 @@
             <param name="file">The file to write the image to.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
+        <member name="M:ImageMagick.MagickImage.Write(System.IO.FileInfo,ImageMagick.IWriteDefines)">
+            <summary>
+             Writes the image to the specified file.
+            </summary>
+            <param name="file">The file to write the image to.</param>
+            <param name="defines">The defines to set.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
         <member name="M:ImageMagick.MagickImage.Write(System.IO.Stream)">
             <summary>
              Writes the image to the specified stream.
             </summary>
             <param name="stream">The stream to write the image data to.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
+        <member name="M:ImageMagick.MagickImage.Write(System.IO.Stream,ImageMagick.IWriteDefines)">
+            <summary>
+             Writes the image to the specified stream.
+            </summary>
+            <param name="stream">The stream to write the image data to.</param>
+            <param name="defines">The defines to set.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
         <member name="M:ImageMagick.MagickImage.Write(System.IO.Stream,ImageMagick.MagickFormat)">
@@ -13057,6 +13201,14 @@
              Writes the image to the specified file name.
             </summary>
             <param name="fileName">The fully qualified name of the image file, or the relative image file name.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
+        <member name="M:ImageMagick.MagickImage.Write(System.String,ImageMagick.IWriteDefines)">
+            <summary>
+             Writes the image to the specified file name.
+            </summary>
+            <param name="fileName">The fully qualified name of the image file, or the relative image file name.</param>
+            <param name="defines">The defines to set.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
         <member name="M:ImageMagick.MagickImage.#ctor(System.Drawing.Bitmap)">
@@ -13618,12 +13770,30 @@
             <param name="file">The file to write the image to.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
+        <member name="M:ImageMagick.MagickImageCollection.Write(System.IO.FileInfo,ImageMagick.IWriteDefines)">
+            <summary>
+             Writes the images to the specified file. If the output image's file format does not
+             allow multi-image files multiple files will be written.
+            </summary>
+            <param name="file">The file to write the image to.</param>
+            <param name="defines">The defines to set.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
         <member name="M:ImageMagick.MagickImageCollection.Write(System.IO.Stream)">
             <summary>
              Writes the imagse to the specified stream. If the output image's file format does not
              allow multi-image files multiple files will be written.
             </summary>
             <param name="stream">The stream to write the images to.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
+        <member name="M:ImageMagick.MagickImageCollection.Write(System.IO.Stream,ImageMagick.IWriteDefines)">
+            <summary>
+             Writes the imagse to the specified stream. If the output image's file format does not
+             allow multi-image files multiple files will be written.
+            </summary>
+            <param name="stream">The stream to write the images to.</param>
+            <param name="defines">The defines to set.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
         <member name="M:ImageMagick.MagickImageCollection.Write(System.IO.Stream,ImageMagick.MagickFormat)">
@@ -13640,6 +13810,15 @@
              allow multi-image files multiple files will be written.
             </summary>
             <param name="fileName">The fully qualified name of the image file, or the relative image file name.</param>
+            <exception cref="T:ImageMagick.MagickException"/>
+        </member>
+        <member name="M:ImageMagick.MagickImageCollection.Write(System.String,ImageMagick.IWriteDefines)">
+            <summary>
+             Writes the images to the specified file name. If the output image's file format does not
+             allow multi-image files multiple files will be written.
+            </summary>
+            <param name="fileName">The fully qualified name of the image file, or the relative image file name.</param>
+            <param name="defines">The defines to set.</param>
             <exception cref="T:ImageMagick.MagickException"/>
         </member>
         <member name="M:ImageMagick.MagickImageCollection.ToBitmap">
@@ -15919,6 +16098,18 @@
             DoubleFloat
             </summary>
         </member>
+        <member name="T:ImageMagick.ExifTagDescriptionAttribute">
+            <summary>
+            Class that provides a description for an ExifTag value.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.ExifTagDescriptionAttribute.#ctor(System.Object,System.String)">
+            <summary>
+             Initializes a new instance of the ExifTagDescriptionAttribute class.
+            </summary>
+             <param name="value">The value of the exif tag.</param>
+             <param name="description">The description for the value of the exif tag.</param>
+        </member>
         <member name="T:ImageMagick.ExifParts">
             <summary>
              Specifies which parts will be written when the profile is added to an image.
@@ -15982,12 +16173,6 @@
              Initializes a new instance of the ExifProfile class.
             </summary>
             <param name="stream">The stream to read the exif profile from.</param>
-        </member>
-        <member name="P:ImageMagick.ExifProfile.BestPrecision">
-            <summary>
-             Specifies if rationals should be stored with the best precision possible. This is disabled
-             by default, setting this to true will have an impact on the performance.
-            </summary>
         </member>
         <member name="P:ImageMagick.ExifProfile.Parts">
             <summary>
@@ -16073,9 +16258,9 @@
             PhotometricInterpretation
             </summary>
         </member>
-        <member name="F:ImageMagick.ExifTag.Threshholding">
+        <member name="F:ImageMagick.ExifTag.Thresholding">
             <summary>
-            Threshholding
+            Thresholding
             </summary>
         </member>
         <member name="F:ImageMagick.ExifTag.CellWidth">
@@ -17756,6 +17941,26 @@
              The image that needs to be written.
             </summary>
         </member>
+        <member name="T:ImageMagick.ConnectedComponentsSettings">
+            <summary>
+            Class that contains setting for the connected components operation.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.ConnectedComponentsSettings.AreaThreshold">
+            <summary>
+            Eliminate small objects by merging them with their larger neighbors.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.ConnectedComponentsSettings.Connectivity">
+            <summary>
+            How many neighbors to visit, choose from 4 or 8.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.ConnectedComponentsSettings.MeanColor">
+            <summary>
+            Replace the object color in the labeled image with the mean-color from the source image.
+            </summary>
+        </member>
         <member name="T:ImageMagick.MagickReadSettings">
             <summary>
              Class that contains setting for when an image is being read.
@@ -17763,8 +17968,14 @@
         </member>
         <member name="M:ImageMagick.MagickReadSettings.#ctor">
             <summary>
-             Initializes a new instance of the MagickReadSettings class.
+             Initializes a new instance of the <see cref="T:ImageMagick.MagickReadSettings"/> class.
             </summary>
+        </member>
+        <member name="M:ImageMagick.MagickReadSettings.#ctor(ImageMagick.IReadDefines)">
+            <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.MagickReadSettings"/> class with the specified defines.
+            </summary>
+            <param name="readDefines">The read defines to set.</param>
         </member>
         <member name="P:ImageMagick.MagickReadSettings.Defines">
             <summary>
@@ -17858,12 +18069,12 @@
         </member>
         <member name="M:ImageMagick.PixelStorageSettings.#ctor">
             <summary>
-             Initializes a new instance of the PixelStorageSettings class.
+             Initializes a new instance of the <see cref="T:ImageMagick.PixelStorageSettings"/> class.
             </summary>
         </member>
         <member name="M:ImageMagick.PixelStorageSettings.#ctor(ImageMagick.StorageType,System.String)">
             <summary>
-             Initializes a new instance of the PixelStorageSettings class.
+             Initializes a new instance of the <see cref="T:ImageMagick.PixelStorageSettings"/> class.
             </summary>
             <param name="storageType">The pixel storage type</param>
             <param name="mapping">The mapping of the pixels (e.g. RGB/RGBA/ARGB).</param>
@@ -18249,6 +18460,248 @@
             <summary>
              Returns a string that represents the current PointD.
             </summary>
+        </member>
+        <member name="T:ImageMagick.Rational">
+            <summary>
+            Represents a number that can be expressed as a fraction
+            </summary>
+            <remarks>
+            This is a very simplified implimentation of a rational number designed for use with metadata only.
+            </remarks>
+        </member>
+        <member name="M:ImageMagick.Rational.#ctor(System.Double)">
+             <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.Rational"/> struct.
+             </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.#ctor(System.Double,System.Boolean)">
+             <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.Rational"/> struct.
+             </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+            <param name="bestPrecision">Specifies if the instance should be created with the best precision possible.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageMagick.Rational"/> struct.
+            </summary>
+            <param name="value">The integer to create the rational from.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageMagick.Rational"/> struct.
+            </summary>
+            <param name="numerator">The number above the line in a vulgar fraction showing how many of the parts indicated by the denominator are taken.</param>
+            <param name="denominator">The number below the line in a vulgar fraction; a divisor.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.#ctor(System.UInt32,System.UInt32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageMagick.Rational"/> struct.
+            </summary>
+            <param name="numerator">The number above the line in a vulgar fraction showing how many of the parts indicated by the denominator are taken.</param>
+            <param name="denominator">The number below the line in a vulgar fraction; a divisor.</param>
+            <param name="simplify">Specified if the rational should be simplified.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.op_Equality(ImageMagick.Rational,ImageMagick.Rational)">
+            <summary>
+            Determines whether the specified <see cref="T:ImageMagick.Rational"/> instances are considered equal.
+            </summary>
+            <param name="left">The first <see cref="T:ImageMagick.Rational"/>  to compare.</param>
+            <param name="right"> The second <see cref="T:ImageMagick.Rational"/>  to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageMagick.Rational.op_Inequality(ImageMagick.Rational,ImageMagick.Rational)">
+            <summary>
+            Determines whether the specified <see cref="T:ImageMagick.Rational"/> instances are not considered equal.
+            </summary>
+            <param name="left">The first <see cref="T:ImageMagick.Rational"/> to compare.</param>
+            <param name="right"> The second <see cref="T:ImageMagick.Rational"/> to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="P:ImageMagick.Rational.Numerator">
+            <summary>
+            Gets the numerator of a number.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.Rational.Denominator">
+            <summary>
+            Gets the denominator of a number.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.Rational.Equals(System.Object)">
+            <summary>
+             Determines whether the specified <see cref="T:System.Object"/> is equal to this <see cref="T:ImageMagick.Rational"/>.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare this <see cref="T:ImageMagick.Rational"/> with.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.Equals(ImageMagick.Rational)">
+            <summary>
+             Determines whether the specified <see cref="T:ImageMagick.Rational"/> is equal to this <see cref="T:ImageMagick.Rational"/>.
+            </summary>
+            <param name="other">The <see cref="T:ImageMagick.Rational"/> to compare this <see cref="T:ImageMagick.Rational"/> with.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.FromDouble(System.Double)">
+            <summary>
+             Converts the specified <see cref="T:System.Double"/> to an instance of this type.
+            </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.FromDouble(System.Double,System.Boolean)">
+            <summary>
+             Converts the specified <see cref="T:System.Double"/> to an instance of this type.
+            </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+            <param name="bestPrecision">Specifies if the instance should be created with the best precision possible.</param>
+        </member>
+        <member name="M:ImageMagick.Rational.GetHashCode">
+            <summary>
+             Serves as a hash of this type.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.Rational.ToDouble">
+            <summary>
+            Converts a rational number to the nearest <see cref="T:System.Double"/>.
+            </summary>
+            <returns>
+            The <see cref="T:System.Double"/>.
+            </returns>
+        </member>
+        <member name="M:ImageMagick.Rational.ToString">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.Rational.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation using
+            the specified culture-specific format information.
+            </summary>
+            <param name="provider">
+            An object that supplies culture-specific formatting information. 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:ImageMagick.SignedRational">
+            <summary>
+            Represents a number that can be expressed as a fraction
+            </summary>
+            <remarks>
+            This is a very simplified implimentation of a rational number designed for use with metadata only.
+            </remarks>
+        </member>
+        <member name="M:ImageMagick.SignedRational.#ctor(System.Double)">
+             <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.SignedRational"/> struct.
+             </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.#ctor(System.Double,System.Boolean)">
+             <summary>
+             Initializes a new instance of the <see cref="T:ImageMagick.SignedRational"/> struct.
+             </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+            <param name="bestPrecision">Specifies if the instance should be created with the best precision possible.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageMagick.SignedRational"/> struct.
+            </summary>
+            <param name="value">The integer to create the rational from.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageMagick.SignedRational"/> struct.
+            </summary>
+            <param name="numerator">The number above the line in a vulgar fraction showing how many of the parts indicated by the denominator are taken.</param>
+            <param name="denominator">The number below the line in a vulgar fraction; a divisor.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.#ctor(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageMagick.SignedRational"/> struct.
+            </summary>
+            <param name="numerator">The number above the line in a vulgar fraction showing how many of the parts indicated by the denominator are taken.</param>
+            <param name="denominator">The number below the line in a vulgar fraction; a divisor.</param>
+            <param name="simplify">Specified if the rational should be simplified.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.op_Equality(ImageMagick.SignedRational,ImageMagick.SignedRational)">
+            <summary>
+            Determines whether the specified <see cref="T:ImageMagick.SignedRational"/> instances are considered equal.
+            </summary>
+            <param name="left">The first <see cref="T:ImageMagick.SignedRational"/>  to compare.</param>
+            <param name="right"> The second <see cref="T:ImageMagick.SignedRational"/>  to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageMagick.SignedRational.op_Inequality(ImageMagick.SignedRational,ImageMagick.SignedRational)">
+            <summary>
+            Determines whether the specified <see cref="T:ImageMagick.SignedRational"/> instances are not considered equal.
+            </summary>
+            <param name="left">The first <see cref="T:ImageMagick.SignedRational"/> to compare.</param>
+            <param name="right"> The second <see cref="T:ImageMagick.SignedRational"/> to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="P:ImageMagick.SignedRational.Numerator">
+            <summary>
+            Gets the numerator of a number.
+            </summary>
+        </member>
+        <member name="P:ImageMagick.SignedRational.Denominator">
+            <summary>
+            Gets the denominator of a number.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.SignedRational.Equals(System.Object)">
+            <summary>
+             Determines whether the specified <see cref="T:System.Object"/> is equal to this <see cref="T:ImageMagick.SignedRational"/>.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare this <see cref="T:ImageMagick.SignedRational"/> with.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.Equals(ImageMagick.SignedRational)">
+            <summary>
+             Determines whether the specified <see cref="T:ImageMagick.SignedRational"/> is equal to this <see cref="T:ImageMagick.SignedRational"/>.
+            </summary>
+            <param name="other">The <see cref="T:ImageMagick.SignedRational"/> to compare this <see cref="T:ImageMagick.SignedRational"/> with.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.FromDouble(System.Double)">
+            <summary>
+             Converts the specified <see cref="T:System.Double"/> to an instance of this type.
+            </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.FromDouble(System.Double,System.Boolean)">
+            <summary>
+             Converts the specified <see cref="T:System.Double"/> to an instance of this type.
+            </summary>
+            <param name="value">The <see cref="T:System.Double"/> to convert to an instance of this type.</param>
+            <param name="bestPrecision">Specifies if the instance should be created with the best precision possible.</param>
+        </member>
+        <member name="M:ImageMagick.SignedRational.GetHashCode">
+            <summary>
+             Serves as a hash of this type.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.SignedRational.ToDouble">
+            <summary>
+            Converts a rational number to the nearest <see cref="T:System.Double"/>.
+            </summary>
+            <returns>
+            The <see cref="T:System.Double"/>.
+            </returns>
+        </member>
+        <member name="M:ImageMagick.SignedRational.ToString">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation.
+            </summary>
+        </member>
+        <member name="M:ImageMagick.SignedRational.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation using
+            the specified culture-specific format information.
+            </summary>
+            <param name="provider">
+            An object that supplies culture-specific formatting information. 
+            </param>
+            <returns></returns>
         </member>
         <member name="T:ImageMagick.SparseColorArg">
             <summary>

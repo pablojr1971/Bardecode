@@ -226,6 +226,10 @@ Public Class Process
 
                     For Each section In Config.Sections
                         If section.Regex.Match(result.Text).Success Then
+                            If (BarcodeList.Last.Last.SectionName = "DEFAULT" And BarcodeList.Last.Last.Index = Index - 1) Then
+                                BarcodeList.Last.RemoveAt(BarcodeList.Last.Count - 1)
+                            End If
+
                             BarcodeList.Last.Add(New Barcode(Index, _
                                                              section.Name, _
                                                              result.Text))
@@ -260,7 +264,7 @@ Public Class Process
         Dim BarcodeReader As BarcodeReader = New BarcodeReader()
         Dim result As ZXing.Result = Nothing
         Dim LastDirectoryPath As String = Nothing
-        Dim ListOfImages As List(Of FileInfo) = LFDir.GetFiles().OrderBy(Function(p) p.Name).ToList()
+        Dim ListOfImages As List(Of FileInfo) = LFDir.GetFiles("*.jpg").OrderBy(Function(p) p.Name).ToList()
         Dim encoderInfo As System.Drawing.Imaging.ImageCodecInfo = Nothing
         Dim encoderParams As System.Drawing.Imaging.EncoderParameters = New System.Drawing.Imaging.EncoderParameters(1)
 
@@ -308,6 +312,10 @@ Public Class Process
         Dim PdfCopyWriter As iTextSharp.text.pdf.PdfSmartCopy = Nothing
         Dim PdfReader As iTextSharp.text.pdf.PdfReader = Nothing
         Dim tempImg As iTextSharp.text.Image = Nothing
+        Dim DocPerPage As Boolean = False
+        Dim PageIndex As Integer = 0 ' only used when its docperpage
+        Dim CurrentPageCount As Integer = 0 ' only used when its docperpage
+        Dim page As iTextSharp.text.pdf.PdfImportedPage = Nothing
 
         If Config.OCRA4 Then
             ImageList = A4Dir.GetFiles("*.pdf").OrderBy(Function(p) p.Name).ToList()
@@ -328,9 +336,48 @@ Public Class Process
                         If File.Single(Function(p) p.Index = localIndex).SectionName = "PH" Then
                             If System.IO.File.Exists(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue + ".pdf")) Then
                                 PdfReader = New iTextSharp.text.pdf.PdfReader(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue + ".pdf"))
-                                WriteLog(String.Format("Added {0} Drawings to {1} on Page {2}", PdfReader.NumberOfPages, Path.GetFileName(FileName), PdfCopyWriter.CurrentPageNumber))
-                                PdfCopyWriter.AddDocument(PdfReader)
-                                BoxInfo.Files.Last().DrawingCount += PdfReader.NumberOfPages
+                                If DocPerPage Then
+                                    WriteLog(String.Format("Added {0} Drawings to {1} on single page pdfs", PdfReader.NumberOfPages, Path.GetFileName(FileName)))
+
+                                    Dim index2 As Integer = 0
+
+                                    For index2 = 1 To PdfReader.NumberOfPages
+                                        If CurrentPageCount > 0 Then
+                                            CurrentDocument.Close()
+                                            PdfCopyWriter.Close()
+                                            CurrentDocument.Dispose()
+                                            PdfCopyWriter.Dispose()
+                                            CurrentDocument = Nothing
+                                            PdfCopyWriter = Nothing
+                                            page = Nothing
+
+                                            CurrentDocument = New iTextSharp.text.Document()
+                                            PdfCopyWriter = New iTextSharp.text.pdf.PdfSmartCopy(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                                            CurrentDocument.Open()
+                                            CurrentPageCount = 0
+                                        End If
+                                        page = PdfCopyWriter.GetImportedPage(PdfReader, index2)
+
+                                        PdfCopyWriter.AddPage(page)
+                                        BoxInfo.Files.Last().DrawingCount += 1
+                                        PageIndex += 1
+                                        CurrentPageCount = 1
+                                    Next
+
+                                    If DocPerPage Then
+                                        CurrentDocument.Close()
+                                        PdfCopyWriter.Close()
+                                        CurrentDocument.Dispose()
+                                        PdfCopyWriter.Dispose()
+                                        CurrentDocument = Nothing
+                                        PdfCopyWriter = Nothing
+                                        page = Nothing
+                                    End If
+                                Else
+                                    WriteLog(String.Format("Added {0} Drawings to {1} on Page {2}", PdfReader.NumberOfPages, Path.GetFileName(FileName), PdfCopyWriter.CurrentPageNumber))
+                                    PdfCopyWriter.AddDocument(PdfReader)
+                                    BoxInfo.Files.Last().DrawingCount += PdfReader.NumberOfPages
+                                End If
                                 PdfReader.Close()
                                 PdfReader.Dispose()
                                 PdfReader = Nothing
@@ -345,6 +392,12 @@ Public Class Process
                                 PdfCopyWriter.Dispose()
                                 CurrentDocument = Nothing
                                 PdfCopyWriter = Nothing
+
+                                If Not IsNothing(PdfReader) Then
+                                    PdfReader.Close()
+                                    PdfReader.Dispose()
+                                    PdfReader = Nothing
+                                End If
                             End If
 
                             With Config.Sections.Single(Function(p) p.Name = File.Single(Function(q) q.Index = localIndex).SectionName)
@@ -359,15 +412,28 @@ Public Class Process
                                 Else
                                     FileName = Path.Combine(fileFolder, Config.FOutputName + .OutputName)
                                 End If
+
+                                DocPerPage = .DocPerPage
                             End With
 
-                            FileName = ReplaceFileNameParameters(FileName, File.First().BarcodeValue, File.Single(Function(q) q.Index = localIndex).SectionName, File.Single(Function(q) q.Index = localIndex).BarcodeValue, SectionIndex) + ".pdf"
+                            If DocPerPage Then
+                                FileName = ReplaceFileNameParameters(FileName, File.First().BarcodeValue, File.Single(Function(q) q.Index = localIndex).SectionName, File.Single(Function(q) q.Index = localIndex).BarcodeValue, SectionIndex) + "_[PAGECOUNT].pdf"
+                                PageIndex = 1
+                                CurrentPageCount = 0
+                            Else
+                                FileName = ReplaceFileNameParameters(FileName, File.First().BarcodeValue, File.Single(Function(q) q.Index = localIndex).SectionName, File.Single(Function(q) q.Index = localIndex).BarcodeValue, SectionIndex) + ".pdf"
+                            End If
+
                             If Not Directory.Exists(Path.GetDirectoryName(FileName)) Then
                                 Directory.CreateDirectory(Path.GetDirectoryName(FileName))
                             End If
 
                             CurrentDocument = New iTextSharp.text.Document()
-                            PdfCopyWriter = New iTextSharp.text.pdf.PdfSmartCopy(CurrentDocument, New FileStream(FileName, FileMode.Create))
+                            If DocPerPage Then
+                                PdfCopyWriter = New iTextSharp.text.pdf.PdfSmartCopy(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                            Else
+                                PdfCopyWriter = New iTextSharp.text.pdf.PdfSmartCopy(CurrentDocument, New FileStream(FileName, FileMode.Create))
+                            End If
                             CurrentDocument.Open()
 
                             ' When the first section in the XML and first time of the section in the file, add the file Start
@@ -378,20 +444,65 @@ Public Class Process
                                 PdfReader.Dispose()
                                 PdfReader = Nothing
                                 BoxInfo.Files.Last().Pagecount += 1
+                                CurrentPageCount += 1
                             End If
                         End If
                     End If
 
-                    ' Add Pdf to the current document
-                    PdfReader = New iTextSharp.text.pdf.PdfReader(ImageList.ElementAt(Index).FullName)
-                    PdfCopyWriter.AddDocument(PdfReader)
-                    PdfReader.Close()
-                    PdfReader.Dispose()
-                    PdfReader = Nothing
-                    BoxInfo.Files.Last().Pagecount += 1
+                    If DocPerPage Then
+                        ' close and open if it already has a page
+                        ' if it doesn't then add the page, close and open 
+
+                        If CurrentPageCount > 0 Then
+                            If Not IsNothing(CurrentDocument) Then
+                                CurrentDocument.Close()
+                                PdfCopyWriter.Close()
+                                CurrentDocument.Dispose()
+                                PdfCopyWriter.Dispose()
+                                CurrentDocument = Nothing
+                                PdfCopyWriter = Nothing
+                            End If
+
+                            CurrentDocument = New iTextSharp.text.Document()
+                            PdfCopyWriter = New iTextSharp.text.pdf.PdfSmartCopy(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                            PageIndex += 1
+                            CurrentPageCount = 0
+
+                            CurrentDocument.Open()
+                        End If
+
+                        PdfReader = New iTextSharp.text.pdf.PdfReader(ImageList.ElementAt(Index).FullName)
+                        PdfCopyWriter.AddDocument(PdfReader)
+                        PdfReader.Close()
+                        PdfReader.Dispose()
+                        PdfReader = Nothing
+                        BoxInfo.Files.Last().Pagecount += 1
+                        CurrentPageCount += 1
+                    Else
+                        ' Add Pdf to the current document
+                        PdfReader = New iTextSharp.text.pdf.PdfReader(ImageList.ElementAt(Index).FullName)
+                        PdfCopyWriter.AddDocument(PdfReader)
+                        PdfReader.Close()
+                        PdfReader.Dispose()
+                        PdfReader = Nothing
+                        BoxInfo.Files.Last().Pagecount += 1
+                    End If
                 Next
                 If Not IsNothing(CurrentDocument) Then
                     ' Add the file end
+                    If DocPerPage Then
+                        CurrentDocument.Close()
+                        PdfCopyWriter.Close()
+                        CurrentDocument.Dispose()
+                        PdfCopyWriter.Dispose()
+                        CurrentDocument = Nothing
+                        PdfCopyWriter = Nothing
+
+                        CurrentDocument = New iTextSharp.text.Document()
+                        PdfCopyWriter = New iTextSharp.text.pdf.PdfSmartCopy(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                        PageIndex += 1
+                        CurrentDocument.Open()
+                    End If
                     PdfReader = New iTextSharp.text.pdf.PdfReader(ImageList.ElementAt(File.Last().Index).FullName)
                     PdfCopyWriter.AddDocument(PdfReader)
                     PdfReader.Close()
@@ -409,7 +520,6 @@ Public Class Process
             Next
 
         Else
-
             ImageList = A4Dir.GetFiles("*.tif").OrderBy(Function(p) p.Name).ToList()
             Dim localIndex As Integer = 0
 
@@ -428,16 +538,47 @@ Public Class Process
                     If File.Exists(Function(p) p.Index = localIndex) Then
                         If File.Single(Function(p) p.Index = localIndex).SectionName = "PH" Then
                             If Directory.Exists(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue)) Then
-                                WriteLog(String.Format("Added {0} Drawings to {1} on Page {2}", Directory.GetFiles(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue), "*.jpg").Count, Path.GetFileName(FileName), PdfWriter.CurrentPageNumber))
-                                For Each Img In Directory.GetFiles(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue), "*.jpg")
-                                    tempImg = iTextSharp.text.Image.GetInstance(Img)
-                                    tempImg.SetAbsolutePosition(0, 0)
-                                    tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
-                                    CurrentDocument.SetPageSize(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
-                                    CurrentDocument.NewPage()
-                                    PdfWriter.DirectContent.AddImage(tempImg)
-                                    tempImg = Nothing
-                                Next
+                                If DocPerPage Then
+                                    WriteLog(String.Format("Added {0} Drawings to {1} in single page pdfs", Directory.GetFiles(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue), "*.jpg").Count, Path.GetFileName(FileName)))
+                                    For Each Img In Directory.GetFiles(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue), "*.jpg")
+                                        If CurrentPageCount > 0 Then
+                                            CurrentDocument.Close()
+                                            PdfWriter.Close()
+                                            CurrentDocument.Dispose()
+                                            PdfWriter.Dispose()
+                                            CurrentDocument = Nothing
+                                            PdfWriter = Nothing
+
+                                            CurrentDocument = New iTextSharp.text.Document()
+                                            PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                                            CurrentDocument.Open()
+                                        End If
+
+                                        BoxInfo.Files.Last().DrawingCount += 1
+                                        tempImg = iTextSharp.text.Image.GetInstance(Img)
+                                        tempImg.SetAbsolutePosition(0, 0)
+                                        tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                                        CurrentDocument.SetPageSize(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                                        CurrentDocument.NewPage()
+                                        PdfWriter.DirectContent.AddImage(tempImg)
+                                        tempImg = Nothing
+                                        PageIndex += 1
+                                        CurrentPageCount = 1
+                                    Next
+                                Else
+                                    WriteLog(String.Format("Added {0} Drawings to {1} on Page {2}", Directory.GetFiles(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue), "*.jpg").Count, Path.GetFileName(FileName), PdfWriter.CurrentPageNumber))
+                                    For Each Img In Directory.GetFiles(Path.Combine(LFDir.FullName, File.Single(Function(p) p.Index = localIndex).BarcodeValue), "*.jpg")
+                                        ' Add code for split each img in one document
+                                        BoxInfo.Files.Last().DrawingCount += 1
+                                        tempImg = iTextSharp.text.Image.GetInstance(Img)
+                                        tempImg.SetAbsolutePosition(0, 0)
+                                        tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                                        CurrentDocument.SetPageSize(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                                        CurrentDocument.NewPage()
+                                        PdfWriter.DirectContent.AddImage(tempImg)
+                                        tempImg = Nothing
+                                    Next
+                                End If
                             End If
 
                             Continue For
@@ -463,15 +604,28 @@ Public Class Process
                                 Else
                                     FileName = Path.Combine(fileFolder, Config.FOutputName + .OutputName)
                                 End If
+
+                                DocPerPage = .DocPerPage
                             End With
 
-                            FileName = ReplaceFileNameParameters(FileName, File.First().BarcodeValue, File.Single(Function(q) q.Index = localIndex).SectionName, File.Single(Function(q) q.Index = localIndex).BarcodeValue, SectionIndex) + ".pdf"
+                            If DocPerPage Then
+                                FileName = ReplaceFileNameParameters(FileName, File.First().BarcodeValue, File.Single(Function(q) q.Index = localIndex).SectionName, File.Single(Function(q) q.Index = localIndex).BarcodeValue, SectionIndex) + "_[PAGECOUNT].pdf"
+                                PageIndex = 1
+                                CurrentPageCount = 0
+                            Else
+                                FileName = ReplaceFileNameParameters(FileName, File.First().BarcodeValue, File.Single(Function(q) q.Index = localIndex).SectionName, File.Single(Function(q) q.Index = localIndex).BarcodeValue, SectionIndex) + ".pdf"
+                            End If
+
                             If Not Directory.Exists(Path.GetDirectoryName(FileName)) Then
                                 Directory.CreateDirectory(Path.GetDirectoryName(FileName))
                             End If
 
                             CurrentDocument = New iTextSharp.text.Document()
-                            PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(CurrentDocument, New FileStream(FileName, FileMode.Create))
+                            If DocPerPage Then
+                                PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                            Else
+                                PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(CurrentDocument, New FileStream(FileName, FileMode.Create))
+                            End If
                             CurrentDocument.Open()
 
                             ' When the first section in the XML and first time of the section in the file, add the file Start
@@ -484,22 +638,69 @@ Public Class Process
                                 PdfWriter.DirectContent.AddImage(tempImg)
                                 tempImg = Nothing
                                 BoxInfo.Files.Last().Pagecount += 1
+                                CurrentPageCount += 1
                             End If
 
                         End If
                     End If
 
-                    tempImg = iTextSharp.text.Image.GetInstance(ImageList(Index).FullName)
-                    tempImg.SetAbsolutePosition(0, 0)
-                    tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
-                    CurrentDocument.SetPageSize(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
-                    CurrentDocument.NewPage()
-                    PdfWriter.DirectContent.AddImage(tempImg)
-                    tempImg = Nothing
-                    BoxInfo.Files.Last().Pagecount += 1
+                    If DocPerPage Then
+                        If CurrentPageCount > 0 Then
+                            CurrentDocument.Close()
+                            PdfWriter.Close()
+                            CurrentDocument.Dispose()
+                            PdfWriter.Dispose()
+                            CurrentDocument = Nothing
+                            PdfWriter = Nothing
+
+                            CurrentDocument = New iTextSharp.text.Document()
+                            PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                            PageIndex += 1
+                            CurrentPageCount = 0
+
+                            CurrentDocument.Open()
+                        End If
+
+                        tempImg = iTextSharp.text.Image.GetInstance(ImageList(Index).FullName)
+                        tempImg.SetAbsolutePosition(0, 0)
+                        tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                        CurrentDocument.SetPageSize(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                        CurrentDocument.NewPage()
+                        PdfWriter.DirectContent.AddImage(tempImg)
+                        tempImg = Nothing
+                        BoxInfo.Files.Last().Pagecount += 1
+                        CurrentPageCount += 1
+                    Else
+                        tempImg = iTextSharp.text.Image.GetInstance(ImageList(Index).FullName)
+                        tempImg.SetAbsolutePosition(0, 0)
+                        tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                        CurrentDocument.SetPageSize(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
+                        CurrentDocument.NewPage()
+                        PdfWriter.DirectContent.AddImage(tempImg)
+                        tempImg = Nothing
+                        BoxInfo.Files.Last().Pagecount += 1
+                    End If
                 Next
                 If Not IsNothing(CurrentDocument) Then
                     ' Add the file end
+                    If DocPerPage Then
+                        If CurrentPageCount >= 1 Then
+                            CurrentDocument.Close()
+                            PdfWriter.Close()
+                            CurrentDocument.Dispose()
+                            PdfWriter.Dispose()
+                            CurrentDocument = Nothing
+                            PdfWriter = Nothing
+
+
+                            CurrentDocument = New iTextSharp.text.Document()
+                            PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(CurrentDocument, New FileStream(FileName.Replace("[PAGECOUNT]", PageIndex.ToString("0000")), FileMode.Create))
+                            PageIndex += 1
+
+                            CurrentDocument.Open()
+                        End If
+                    End If
+
                     tempImg = iTextSharp.text.Image.GetInstance(ImageList.ElementAt(File.Last().Index).FullName)
                     tempImg.SetAbsolutePosition(0, 0)
                     tempImg.ScaleToFit(New iTextSharp.text.Rectangle(0, 0, ((tempImg.Width / 200) * 72), ((tempImg.Height / 200) * 72), 0))
@@ -715,7 +916,7 @@ Public Class Process
     End Sub
 
     Private Sub SplitFiles()
-
+        SplitFilesRecursive(outDir)
     End Sub
 
     Private Sub SplitFilesRecursive(CurrentDir As DirectoryInfo)
@@ -736,7 +937,7 @@ Public Class Process
         ' times 1024 to convert to kBytes and times 1024 to conver to bytes
         Dim LimitBytes As Long = ((MBFileSize * 1024) * 1024)
 
-        If reader.FileLength() > LimitBytes Then
+        If (reader.FileLength() > LimitBytes) And (reader.NumberOfPages > 1) Then
             Dim document As iTextSharp.text.Document = New iTextSharp.text.Document()
             Dim pdfwriter As iTextSharp.text.pdf.PdfCopy = New iTextSharp.text.pdf.PdfSmartCopy(document, New FileStream(file.Replace(".pdf", String.Format("_{0}.pdf", documentcount)), FileMode.Create))
             NewFiles.Add(file.Replace(".pdf", String.Format("_{0}.pdf", documentcount)))

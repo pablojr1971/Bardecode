@@ -7,4 +7,5 @@ Public Class SectionSetup
     Public Property FolderName As String = Nothing
     Public Property OncePerFile As Boolean = False
     Public Property Required As Boolean = False
+    Public Property DocPerPage As Boolean = False
 End Class
